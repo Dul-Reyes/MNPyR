@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 29 Intervalos de confianza | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 29 Intervalos de confianza | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/CarlosFernandoVG/SeriesBookdown_FC2021-1" />
+  <meta property="og:url" content="https://github.com/Dul-Reyes/MNPyR" />
   
   <meta property="og:description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="github-repo" content="CarlosFernandoVG/SeriesBookdown_FC2021-1" />
+  <meta name="github-repo" content="Dul-Reyes/MNPyR" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 29 Intervalos de confianza | Modelos no paramétricos y de Regresión" />
@@ -34,6 +34,7 @@
   
 <link rel="prev" href="modelo.html"/>
 <link rel="next" href="pruebas-de-hipótesis-1.html"/>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,48 +52,80 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -110,193 +143,226 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Modelos no paramétricos y de Regresión</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#objetivos"><i class="fa fa-check"></i>Objetivos</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<a href="#ref-conover1998practical">1998</a>)</span></a><ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a><ul>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
 <li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a><ul>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
-<li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a><ul>
+<li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>2.1</b> Intervalos de Confianza</a></li>
 <li class="chapter" data-level="2.2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejemplo"><i class="fa fa-check"></i><b>2.2</b> Ejemplo</a></li>
 <li class="chapter" data-level="2.3" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejemplo-en-r-studio"><i class="fa fa-check"></i><b>2.3</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="2.4" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html"><i class="fa fa-check"></i><b>3</b> Prueba de Cuantiles</a><ul>
+<li class="chapter" data-level="3" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html"><i class="fa fa-check"></i><b>3</b> Prueba de Cuantiles</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejemplo-1"><i class="fa fa-check"></i><b>3.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="3.2" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejemplo-en-r-studio-1"><i class="fa fa-check"></i><b>3.2</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="3.3" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejercicios-1"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html"><i class="fa fa-check"></i><b>4</b> Prueba de Signos</a><ul>
+<li class="chapter" data-level="4" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html"><i class="fa fa-check"></i><b>4</b> Prueba de Signos</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejemplo-2"><i class="fa fa-check"></i><b>4.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="4.2" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejemplo-en-r-studio-2"><i class="fa fa-check"></i><b>4.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="4.3" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejercicios-2"><i class="fa fa-check"></i><b>4.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html"><i class="fa fa-check"></i><b>5</b> Prueba Mc Nemar</a><ul>
+<li class="chapter" data-level="5" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html"><i class="fa fa-check"></i><b>5</b> Prueba Mc Nemar</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejemplo-3"><i class="fa fa-check"></i><b>5.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="5.2" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejemplo-en-r-studio-3"><i class="fa fa-check"></i><b>5.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="5.3" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejercicios-3"><i class="fa fa-check"></i><b>5.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.3" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejercicios-2"><i class="fa fa-check"></i><b>5.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html"><i class="fa fa-check"></i><b>6</b> Prueba de Cox Stuart</a><ul>
+<li class="chapter" data-level="6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html"><i class="fa fa-check"></i><b>6</b> Prueba de Cox Stuart</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-4"><i class="fa fa-check"></i><b>6.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="6.2" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="6.3" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.3</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
-<li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a><ul>
+<li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejemplo-5"><i class="fa fa-check"></i><b>7.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="7.2" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejemplo-en-r-studio-5"><i class="fa fa-check"></i><b>7.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="7.3" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejercicios-5"><i class="fa fa-check"></i><b>7.3</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="intervalo-de-confianza-para-la-diferencia-entre-dos-medias.html"><a href="intervalo-de-confianza-para-la-diferencia-entre-dos-medias.html"><i class="fa fa-check"></i><b>8</b> Intervalo de confianza para la diferencia entre dos medias</a></li>
-<li class="chapter" data-level="9" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html"><i class="fa fa-check"></i><b>9</b> Prueba de Kruskal-Wallis</a><ul>
+<li class="chapter" data-level="9" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html"><i class="fa fa-check"></i><b>9</b> Prueba de Kruskal-Wallis</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejemplo-6"><i class="fa fa-check"></i><b>9.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="9.2" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejemplo-en-r-studio-6"><i class="fa fa-check"></i><b>9.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="9.3" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejercicios-6"><i class="fa fa-check"></i><b>9.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="9.3" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejercicios-3"><i class="fa fa-check"></i><b>9.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html"><i class="fa fa-check"></i><b>10</b> Prueba de Igualdad de Varianzas</a><ul>
+<li class="chapter" data-level="10" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html"><i class="fa fa-check"></i><b>10</b> Prueba de Igualdad de Varianzas</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#prueba-de-igualdad-de-varianzas-para-2-poblaciones"><i class="fa fa-check"></i><b>10.1</b> Prueba de Igualdad de Varianzas para 2 poblaciones</a></li>
 <li class="chapter" data-level="10.2" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejemplo-7"><i class="fa fa-check"></i><b>10.2</b> Ejemplo</a></li>
 <li class="chapter" data-level="10.3" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejemplo-en-r-studio-7"><i class="fa fa-check"></i><b>10.3</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="10.4" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejercicios-7"><i class="fa fa-check"></i><b>10.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html"><i class="fa fa-check"></i><b>11</b> Prueba para más de dos Muestras</a><ul>
+<li class="chapter" data-level="11" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html"><i class="fa fa-check"></i><b>11</b> Prueba para más de dos Muestras</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-8"><i class="fa fa-check"></i><b>11.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.2" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="11.3" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejercicios-8"><i class="fa fa-check"></i><b>11.3</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
-<li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a><ul>
+<li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejemplo-9"><i class="fa fa-check"></i><b>12.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="12.2" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejemplo-en-r-studio-9"><i class="fa fa-check"></i><b>12.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="12.3" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejercicios-9"><i class="fa fa-check"></i><b>12.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="12.3" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejercicios-4"><i class="fa fa-check"></i><b>12.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html"><i class="fa fa-check"></i><b>13</b> Prueba de Independencia</a><ul>
+<li class="chapter" data-level="13" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html"><i class="fa fa-check"></i><b>13</b> Prueba de Independencia</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejercicio"><i class="fa fa-check"></i><b>13.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="13.2" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejemplo-en-r-studio-10"><i class="fa fa-check"></i><b>13.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="13.3" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejercicios-10"><i class="fa fa-check"></i><b>13.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="13.3" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejercicios-5"><i class="fa fa-check"></i><b>13.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html"><i class="fa fa-check"></i><b>14</b> Tablas de Contingecia de <span class="math inline">\(r \times c\)</span></a><ul>
+<li class="chapter" data-level="14" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html"><i class="fa fa-check"></i><b>14</b> Tablas de Contingecia de <span class="math inline">\(r \times c\)</span></a>
+<ul>
 <li class="chapter" data-level="14.1" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#prueba-de-chi2-para-tablas-de-contingencia-proporciones"><i class="fa fa-check"></i><b>14.1</b> Prueba de <span class="math inline">\(\chi^2\)</span> para Tablas de Contingencia (Proporciones)</a></li>
 <li class="chapter" data-level="14.2" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejercicio-1"><i class="fa fa-check"></i><b>14.2</b> Ejercicio</a></li>
 <li class="chapter" data-level="14.3" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejemplo-en-r-studio-11"><i class="fa fa-check"></i><b>14.3</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="14.4" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejercicios-11"><i class="fa fa-check"></i><b>14.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="14.4" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejercicios-6"><i class="fa fa-check"></i><b>14.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html"><i class="fa fa-check"></i><b>15</b> Prueba de la Mediana</a><ul>
+<li class="chapter" data-level="15" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html"><i class="fa fa-check"></i><b>15</b> Prueba de la Mediana</a>
+<ul>
 <li class="chapter" data-level="15.0.1" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicio-2"><i class="fa fa-check"></i><b>15.0.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="15.1" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.1</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="15.2" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-12"><i class="fa fa-check"></i><b>15.2</b> Ejercicios</a></li>
+<li class="chapter" data-level="15.2" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-7"><i class="fa fa-check"></i><b>15.2</b> Ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
-<li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a><ul>
+<li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejemplo-10"><i class="fa fa-check"></i><b>16.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="16.2" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejemplo-en-r-studio-13"><i class="fa fa-check"></i><b>16.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="16.3" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejercicios-13"><i class="fa fa-check"></i><b>16.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="16.3" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejercicios-8"><i class="fa fa-check"></i><b>16.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html"><i class="fa fa-check"></i><b>17</b> Prueba Kolmogorov</a><ul>
+<li class="chapter" data-level="17" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html"><i class="fa fa-check"></i><b>17</b> Prueba Kolmogorov</a>
+<ul>
 <li class="chapter" data-level="17.1" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejemplo-11"><i class="fa fa-check"></i><b>17.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="17.2" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejemplo-en-r-studio-14"><i class="fa fa-check"></i><b>17.2</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="17.3" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#otro-ejemplo-en-r"><i class="fa fa-check"></i><b>17.3</b> Otro ejemplo en R</a></li>
-<li class="chapter" data-level="17.4" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejercicios-14"><i class="fa fa-check"></i><b>17.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="17.4" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejercicios-9"><i class="fa fa-check"></i><b>17.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html"><i class="fa fa-check"></i><b>18</b> Prueba Kolmogorov-Smirnov</a><ul>
+<li class="chapter" data-level="18" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html"><i class="fa fa-check"></i><b>18</b> Prueba Kolmogorov-Smirnov</a>
+<ul>
 <li class="chapter" data-level="18.1" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html#ejemplo-12"><i class="fa fa-check"></i><b>18.1</b> Ejemplo</a></li>
-<li class="chapter" data-level="18.2" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html#ejercicios-15"><i class="fa fa-check"></i><b>18.2</b> Ejercicios</a></li>
+<li class="chapter" data-level="18.2" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html#ejercicios-10"><i class="fa fa-check"></i><b>18.2</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html"><i class="fa fa-check"></i><b>19</b> Prueba Lilliefors para Normalidad</a><ul>
+<li class="chapter" data-level="19" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html"><i class="fa fa-check"></i><b>19</b> Prueba Lilliefors para Normalidad</a>
+<ul>
 <li class="chapter" data-level="19.1" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejemplo-13"><i class="fa fa-check"></i><b>19.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="19.2" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejemplo-en-r-studio-15"><i class="fa fa-check"></i><b>19.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="19.3" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#otro-ejemplo-en-r-1"><i class="fa fa-check"></i><b>19.3</b> Otro ejemplo en R</a></li>
-<li class="chapter" data-level="19.4" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejercicios-16"><i class="fa fa-check"></i><b>19.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="19.3" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejercicios-11"><i class="fa fa-check"></i><b>19.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html"><i class="fa fa-check"></i><b>20</b> Pueba de Lilliefors Exponencial</a><ul>
+<li class="chapter" data-level="20" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html"><i class="fa fa-check"></i><b>20</b> Pueba de Lilliefors Exponencial</a>
+<ul>
 <li class="chapter" data-level="20.1" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejemplo-14"><i class="fa fa-check"></i><b>20.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="20.2" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejemplo-en-r-studio-16"><i class="fa fa-check"></i><b>20.2</b> Ejemplo en R-Studio</a></li>
-<li class="chapter" data-level="20.3" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejercicios-17"><i class="fa fa-check"></i><b>20.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="20.3" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejercicios-12"><i class="fa fa-check"></i><b>20.3</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html"><i class="fa fa-check"></i><b>21</b> Prueba Anderson-Darling</a><ul>
+<li class="chapter" data-level="21" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html"><i class="fa fa-check"></i><b>21</b> Prueba Anderson-Darling</a>
+<ul>
 <li class="chapter" data-level="21.0.1" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html#ejemplo-15"><i class="fa fa-check"></i><b>21.0.1</b> Ejemplo</a></li>
 <li class="chapter" data-level="21.1" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html#ejemplo-en-r-studio-17"><i class="fa fa-check"></i><b>21.1</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html"><i class="fa fa-check"></i><b>22</b> Otras estadísticas</a><ul>
+<li class="chapter" data-level="22" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html"><i class="fa fa-check"></i><b>22</b> Otras estadísticas</a>
+<ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
-<li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a><ul>
+<li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
+<ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
 <li class="chapter" data-level="23.2" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>23.2</b> Propiedades de los estimadores</a></li>
 </ul></li>
-<li class="chapter" data-level="24" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html"><i class="fa fa-check"></i><b>24</b> Modelo sin intercepto</a><ul>
+<li class="chapter" data-level="24" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html"><i class="fa fa-check"></i><b>24</b> Modelo sin intercepto</a>
+<ul>
 <li class="chapter" data-level="24.1" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-1"><i class="fa fa-check"></i><b>24.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
-<li class="chapter" data-level="24.2" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#propiedades-de-los-estimadores-1"><i class="fa fa-check"></i><b>24.2</b> Propiedades de los estimadores</a><ul>
+<li class="chapter" data-level="24.2" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#propiedades-de-los-estimadores-1"><i class="fa fa-check"></i><b>24.2</b> Propiedades de los estimadores</a>
+<ul>
 <li class="chapter" data-level="24.2.1" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#ejemplo-en-r-studio-18"><i class="fa fa-check"></i><b>24.2.1</b> Ejemplo en R-Studio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="25" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html"><i class="fa fa-check"></i><b>25</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="25" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html"><i class="fa fa-check"></i><b>25</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="25.1" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-beta_0"><i class="fa fa-check"></i><b>25.1</b> Intervalo para <span class="math inline">\(\beta_{0}\)</span></a></li>
 <li class="chapter" data-level="25.2" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-beta_1"><i class="fa fa-check"></i><b>25.2</b> Intervalo para <span class="math inline">\(\beta_{1}\)</span></a></li>
 <li class="chapter" data-level="25.3" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-sigma2"><i class="fa fa-check"></i><b>25.3</b> Intervalo para <span class="math inline">\(\sigma^2\)</span></a></li>
 <li class="chapter" data-level="25.4" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-el-valor-esperado-y"><i class="fa fa-check"></i><b>25.4</b> Intervalo para el valor esperado <span class="math inline">\(y\)</span></a></li>
-<li class="chapter" data-level="25.5" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-de-predicción"><i class="fa fa-check"></i><b>25.5</b> Intervalo de predicción</a><ul>
+<li class="chapter" data-level="25.5" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-de-predicción"><i class="fa fa-check"></i><b>25.5</b> Intervalo de predicción</a>
+<ul>
 <li class="chapter" data-level="25.5.1" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#ejemplo-16"><i class="fa fa-check"></i><b>25.5.1</b> Ejemplo</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="26" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>26</b> Pruebas de hipótesis</a><ul>
+<li class="chapter" data-level="26" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>26</b> Pruebas de hipótesis</a>
+<ul>
 <li class="chapter" data-level="26.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#pruebas-para-beta_0"><i class="fa fa-check"></i><b>26.1</b> Pruebas para <span class="math inline">\(\beta_{0}\)</span></a></li>
 <li class="chapter" data-level="26.2" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-para-beta_1"><i class="fa fa-check"></i><b>26.2</b> Prueba para <span class="math inline">\(\beta_{1}\)</span></a></li>
 <li class="chapter" data-level="26.3" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-para-sigma2"><i class="fa fa-check"></i><b>26.3</b> Prueba para <span class="math inline">\(\sigma^2\)</span></a></li>
 <li class="chapter" data-level="26.4" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#análisis-de-la-varianza-anova"><i class="fa fa-check"></i><b>26.4</b> Análisis de la varianza (ANOVA)</a></li>
 <li class="chapter" data-level="26.5" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#coeficiente-de-determinación"><i class="fa fa-check"></i><b>26.5</b> Coeficiente de determinación</a></li>
 <li class="chapter" data-level="26.6" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#propiedades-de-r2"><i class="fa fa-check"></i><b>26.6</b> Propiedades de <span class="math inline">\(R^2\)</span></a></li>
-<li class="chapter" data-level="26.7" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#relación-r2-y-la-correlación-de-pearson"><i class="fa fa-check"></i><b>26.7</b> Relación <span class="math inline">\(R^2\)</span> y la correlación de Pearson</a><ul>
+<li class="chapter" data-level="26.7" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#relación-r2-y-la-correlación-de-pearson"><i class="fa fa-check"></i><b>26.7</b> Relación <span class="math inline">\(R^2\)</span> y la correlación de Pearson</a>
+<ul>
 <li class="chapter" data-level="26.7.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#ejemplo-17"><i class="fa fa-check"></i><b>26.7.1</b> Ejemplo</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="27" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html"><i class="fa fa-check"></i><b>27</b> Validación de supuestos</a><ul>
+<li class="chapter" data-level="27" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html"><i class="fa fa-check"></i><b>27</b> Validación de supuestos</a>
+<ul>
 <li class="chapter" data-level="27.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#análisis-de-residuales"><i class="fa fa-check"></i><b>27.1</b> Análisis de residuales</a></li>
-<li class="chapter" data-level="27.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>27.2</b> Supuesto de normalidad</a><ul>
+<li class="chapter" data-level="27.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>27.2</b> Supuesto de normalidad</a>
+<ul>
 <li class="chapter" data-level="27.2.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#validación-del-supuesto-de-normalidad"><i class="fa fa-check"></i><b>27.2.1</b> Validación del supuesto de normalidad</a></li>
 </ul></li>
 <li class="chapter" data-level="27.3" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-linealidad"><i class="fa fa-check"></i><b>27.3</b> Supuesto de linealidad</a></li>
-<li class="chapter" data-level="27.4" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-homocedasticidad"><i class="fa fa-check"></i><b>27.4</b> Supuesto de homocedasticidad</a><ul>
+<li class="chapter" data-level="27.4" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-homocedasticidad"><i class="fa fa-check"></i><b>27.4</b> Supuesto de homocedasticidad</a>
+<ul>
 <li class="chapter" data-level="27.4.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#prueba-de-breusch-pagan"><i class="fa fa-check"></i><b>27.4.1</b> Prueba de Breusch-Pagan</a></li>
 <li class="chapter" data-level="27.4.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#prueba-de-white"><i class="fa fa-check"></i><b>27.4.2</b> Prueba de White</a></li>
 <li class="chapter" data-level="27.4.3" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#ejemplo-18"><i class="fa fa-check"></i><b>27.4.3</b> Ejemplo</a></li>
 </ul></li>
-<li class="chapter" data-level="27.5" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-outlier-e-influyentes"><i class="fa fa-check"></i><b>27.5</b> Valores outlier e influyentes</a><ul>
+<li class="chapter" data-level="27.5" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-outlier-e-influyentes"><i class="fa fa-check"></i><b>27.5</b> Valores outlier e influyentes</a>
+<ul>
 <li class="chapter" data-level="27.5.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-outlier"><i class="fa fa-check"></i><b>27.5.1</b> Valores outlier</a></li>
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
-<li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a><ul>
+<li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
+<ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
 <li class="chapter" data-level="28.2" data-path="modelo.html"><a href="modelo.html#estimación-por-máxima-verosimilitud"><i class="fa fa-check"></i><b>28.2</b> Estimación por máxima verosimilitud</a></li>
 </ul></li>
-<li class="chapter" data-level="29" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html"><i class="fa fa-check"></i><b>29</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="29" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html"><i class="fa fa-check"></i><b>29</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="29.1" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalo-para-beta_j"><i class="fa fa-check"></i><b>29.1</b> Intervalo para <span class="math inline">\(\beta_{j}\)</span></a></li>
 <li class="chapter" data-level="29.2" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalo-para-sigma2-1"><i class="fa fa-check"></i><b>29.2</b> Intervalo para <span class="math inline">\(\sigma^2\)</span></a></li>
 <li class="chapter" data-level="29.3" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalos-de-la-respuesta-media"><i class="fa fa-check"></i><b>29.3</b> Intervalos de la respuesta media</a></li>
 <li class="chapter" data-level="29.4" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalos-de-predicción"><i class="fa fa-check"></i><b>29.4</b> Intervalos de predicción</a></li>
 </ul></li>
-<li class="chapter" data-level="30" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html"><i class="fa fa-check"></i><b>30</b> Pruebas de hipótesis</a><ul>
+<li class="chapter" data-level="30" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html"><i class="fa fa-check"></i><b>30</b> Pruebas de hipótesis</a>
+<ul>
 <li class="chapter" data-level="30.1" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#región-de-rechazo-para-beta_j"><i class="fa fa-check"></i><b>30.1</b> Región de rechazo para <span class="math inline">\(\beta_{j}\)</span></a></li>
 <li class="chapter" data-level="30.2" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#prueba-para-sigma2-1"><i class="fa fa-check"></i><b>30.2</b> Prueba para <span class="math inline">\(\sigma^2\)</span></a></li>
 <li class="chapter" data-level="30.3" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#análisis-de-la-varianza-anova-1"><i class="fa fa-check"></i><b>30.3</b> Análisis de la varianza (ANOVA)</a></li>
 <li class="chapter" data-level="30.4" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#coeficiente-de-determinación-1"><i class="fa fa-check"></i><b>30.4</b> Coeficiente de determinación</a></li>
 <li class="chapter" data-level="30.5" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#r2-ajustado"><i class="fa fa-check"></i><b>30.5</b> <span class="math inline">\(R^2\)</span> ajustado</a></li>
 </ul></li>
-<li class="chapter" data-level="31" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html"><i class="fa fa-check"></i><b>31</b> Validación de supuestos</a><ul>
+<li class="chapter" data-level="31" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html"><i class="fa fa-check"></i><b>31</b> Validación de supuestos</a>
+<ul>
 <li class="chapter" data-level="31.1" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#supuesto-de-multicolinealidad"><i class="fa fa-check"></i><b>31.1</b> Supuesto de multicolinealidad</a></li>
 <li class="chapter" data-level="31.2" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#detección-de-multicolinealidad"><i class="fa fa-check"></i><b>31.2</b> Detección de multicolinealidad</a></li>
 <li class="chapter" data-level="31.3" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#ejemplo-19"><i class="fa fa-check"></i><b>31.3</b> Ejemplo</a></li>
@@ -322,18 +388,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intervalos-de-confianza-2" class="section level1">
+<div id="intervalos-de-confianza-2" class="section level1" number="29">
 <h1><span class="header-section-number">Capítulo 29</span> Intervalos de confianza</h1>
 <p>En las secciones anteriores se obtuvieron, de manera puntual, las estimaciones de los parámetros desconocidos del modelo de regresión lineal múltiple. Sin embargo, a continuación se mostrará que se pueden realizar intervalos con un nivel de confianza <span class="math inline">\(\alpha\)</span> en donde los parámetros desconocidos tengan una alta probabilidad de pertenecer a este conjunto.</p>
-<div id="intervalo-para-beta_j" class="section level2">
+<div id="intervalo-para-beta_j" class="section level2" number="29.1">
 <h2><span class="header-section-number">29.1</span> Intervalo para <span class="math inline">\(\beta_{j}\)</span></h2>
 <p>Para la construcción del intervalo de confianza para el parámetro desconocido <span class="math inline">\(\beta_{j}\)</span>, con <span class="math inline">\(j=0,1,\ldots,n\)</span> se mantiene la hipótesis de que los errores se distribuyen como variables aleatorias normales con media cero y varianza <span class="math inline">\(I_{n}\sigma^2\)</span>, como consecuencia <span class="math inline">\(\underline{Y}\)</span> se distribuye de forma normal, con media <span class="math inline">\(X\underline{\beta}\)</span> y varianza <span class="math inline">\(\sigma^2 I_{n}\)</span>, es decir:</p>
 <p><span class="math display">\[\underline{Y} \sim \mathbf{N}(X\underline{\beta},\sigma^2 I_{n})\]</span></p>
 <p>De acuerdo con (Montgomery, Peck y Vining, 2012), el estimador <span class="math inline">\(\underline{\hat{\beta}}\)</span> por mínimos cuadrados es una combinación lineal de las observaciones, el cual también se distribuye con normalidad, con el vector medio <span class="math inline">\(\underline{\beta}\)</span> y varianza <span class="math inline">\(\sigma^2(X&#39;X)^{-1}\)</span>, lo cual vimos en el teorema 3.4, al igual que pudimos demostrar que el estimador es insesgado <span class="math inline">\(\mathbf{E}[\underline{\hat{\beta}}]=\underline{\beta}\)</span> y varianza <span class="math inline">\(Var(\underline{\beta})=\sigma^2(X&#39;X)^{-1}\)</span> por lo que de manera conjunta <span class="math inline">\(\underline{\hat{\beta}}\)</span> se distribuye con normalidad de la forma:</p>
-<p><span class="math display">\[\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X&#39;X)^{-1})\]</span> Esto implica que la distribución marginal de cualquier coeficiente de la regresión <span class="math inline">\(\hat{\beta}_{j}\)</span> asimismo se distribuye normal, con media <span class="math inline">\(\beta_{j}\)</span> y varianza <span class="math inline">\(\sigma^2 C_{(j+1)(j+1)}\)</span> donde <span class="math inline">\(C_{(j+1)(j+1)}\)</span> es el j-ésimo elemento de la diagonal de la matriz <span class="math inline">\((X&#39;X)^{-1}\)</span>, es decir, <span class="math inline">\(\hat{\beta_{j}}\)</span> tiene una distribución normal asociada de la forma:</p>
+<p><span class="math display">\[\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X&#39;X)^{-1})\]</span>
+Esto implica que la distribución marginal de cualquier coeficiente de la regresión <span class="math inline">\(\hat{\beta}_{j}\)</span> asimismo se distribuye normal, con media <span class="math inline">\(\beta_{j}\)</span> y varianza <span class="math inline">\(\sigma^2 C_{(j+1)(j+1)}\)</span> donde <span class="math inline">\(C_{(j+1)(j+1)}\)</span> es el j-ésimo elemento de la diagonal de la matriz <span class="math inline">\((X&#39;X)^{-1}\)</span>, es decir, <span class="math inline">\(\hat{\beta_{j}}\)</span> tiene una distribución normal asociada de la forma:</p>
 <p><span class="math display">\[\hat{\beta_{j}} \sim \mathbf{N}(\beta_{j}, \sigma^2C_{(j+1)(j+1)}\]</span></p>
 <p>Normalizando se tiene que:</p>
-<p><span class="math display">\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1)\]</span> Como <span class="math inline">\(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\)</span>, tenemos:</p>
+<p><span class="math display">\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1)\]</span>
+Como <span class="math inline">\(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\)</span>, tenemos:</p>
 <p><span class="math display">\[\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}}{n-k-1}}} \sim t_{n-k-1}\]</span></p>
 <p>De esta forma se obtiene la cantidad pivotal para <span class="math inline">\(\beta_{j}\)</span> sl simplificar la ecuación anterior</p>
 <p><span class="math display">\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}}\sim t_{n-k-1}\]</span></p>
@@ -345,18 +413,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Por lo tanto el intervalo de confianza <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\beta_{j}\)</span> es:</p>
 <p><span class="math display">\[\beta_{j} \in \left(\hat{\beta_{j}}-t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}} \ \ , \ \ \hat{\beta_{j}}+t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}} \ \right)\]</span></p>
 <p>A manera de ejemplo, para j=1 se tiene el siguiente intervalo de confianza para <span class="math inline">\(\beta_1\)</span></p>
-<p><span class="math display">\[\beta_{1} \in \left(\hat{\beta_{j}}-t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{22}}} \ \ , \ \ \hat{\beta_{j}}+t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{22}}} \  \right).\]</span> Y así sucesivamente para <span class="math inline">\(j \in \mathbf{N}\)</span> tal que <span class="math inline">\(j \in [0,k]\)</span> donde <span class="math inline">\(k\)</span> es el número total de variables explicativas con la que se ajustó el modelo de regresión múltiple.</p>
+<p><span class="math display">\[\beta_{1} \in \left(\hat{\beta_{j}}-t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{22}}} \ \ , \ \ \hat{\beta_{j}}+t^{\alpha/2}_{n-k-1}{\sqrt{\hat{\sigma}^2C_{22}}} \  \right).\]</span>
+Y así sucesivamente para <span class="math inline">\(j \in \mathbf{N}\)</span> tal que <span class="math inline">\(j \in [0,k]\)</span> donde <span class="math inline">\(k\)</span> es el número total de variables explicativas con la que se ajustó el modelo de regresión múltiple.</p>
 </div>
-<div id="intervalo-para-sigma2-1" class="section level2">
+<div id="intervalo-para-sigma2-1" class="section level2" number="29.2">
 <h2><span class="header-section-number">29.2</span> Intervalo para <span class="math inline">\(\sigma^2\)</span></h2>
 <p>Para hacer inferencias sobre <span class="math inline">\(\sigma^2\)</span> se hace notar la siguiente cantidad pivotal:</p>
 <p><span class="math display">\[\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}=\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}\]</span></p>
 <p>De esta manera, el intervalo de confianza <span class="math inline">\(1-\alpha\)</span> queda definido de la siguiente manera:</p>
-<p><span class="math display">\[\mathbf{P}\left[ \chi^{2(\alpha/2)}_{n-k-1}&lt;\frac{SC_{error}}{\sigma^2}&lt;\chi^{2(1-\alpha/2)}_{n-k-1}\right]=1-\alpha\]</span> <span class="math display">\[\mathbf{P}\left[ \frac{1}{\chi^{2(\alpha/2)}_{n-k-1}}&gt;\frac{\sigma^2}{SC_{error}}&gt;\frac{1}{\chi^{2(1-\alpha/2)}_{n-k-1}}\right]=1-\alpha\]</span> <span class="math display">\[\mathbf{P}\left[ \frac{SC_{error}}{\chi^{2(1-\alpha/2)}_{n-k-1}}&lt;\sigma^2&lt;\frac{SC_{error}}{\chi^{2(\alpha/2)}_{n-k-1}}\right]=1-\alpha\]</span></p>
+<p><span class="math display">\[\mathbf{P}\left[ \chi^{2(\alpha/2)}_{n-k-1}&lt;\frac{SC_{error}}{\sigma^2}&lt;\chi^{2(1-\alpha/2)}_{n-k-1}\right]=1-\alpha\]</span>
+<span class="math display">\[\mathbf{P}\left[ \frac{1}{\chi^{2(\alpha/2)}_{n-k-1}}&gt;\frac{\sigma^2}{SC_{error}}&gt;\frac{1}{\chi^{2(1-\alpha/2)}_{n-k-1}}\right]=1-\alpha\]</span>
+<span class="math display">\[\mathbf{P}\left[ \frac{SC_{error}}{\chi^{2(1-\alpha/2)}_{n-k-1}}&lt;\sigma^2&lt;\frac{SC_{error}}{\chi^{2(\alpha/2)}_{n-k-1}}\right]=1-\alpha\]</span></p>
 <p>Por lo tanto, el intervalo de confianza <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\sigma^2\)</span> es:</p>
 <p><span class="math display">\[\sigma^2 \in \left(\frac{SC_{error}}{\chi^{2(1-\alpha/2)}_{n-k-1}}\ \ , \ \ \frac{SC_{error}}{\chi^{2(\alpha/2)}_{n-k-1}}\right).\]</span></p>
 </div>
-<div id="intervalos-de-la-respuesta-media" class="section level2">
+<div id="intervalos-de-la-respuesta-media" class="section level2" number="29.3">
 <h2><span class="header-section-number">29.3</span> Intervalos de la respuesta media</h2>
 <p>La estimación del valor de <span class="math inline">\(Y\)</span> a través de una <span class="math inline">\(X\)</span> dada, se le conoce como <strong>respuesta media</strong> en un determinado punto, es decir, si se conocen los valores de las variables explicativas <span class="math inline">\(x_{1},x_{2}, \ldots , x_{k}\)</span> en determinado punto, entonces se puede calcular la estimación del valor <span class="math inline">\(Y\)</span> en ese punto, para ello se define al vector de valores conocidos <span class="math inline">\(x^*\)</span> como:</p>
 <p><span class="math display">\[x^*= \left( 1 \ \ x_{1} \ \ x_{2} \ \ \ldots \ \ x_{k}\right).\]</span></p>
@@ -372,18 +443,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><strong>Demostración:</strong></p>
 <p><strong>a)</strong> Para demostrar la esperanza del valor esperado, se observa que:</p>
 <p>Por hipótesis</p>
-<p><span class="math display">\[\mathbf{E}[\hat{Y^*}]=\mathbf{E}[x^*\underline{\hat{\beta}}]\]</span> Por linealidad de la esperanza</p>
-<p><span class="math display">\[\mathbf{E}[\hat{Y^*}]=x^*\mathbf{E}[\underline{\hat{\beta}}]\]</span> Ya que <span class="math inline">\(\underline{\hat{\beta}}\)</span> es insesgado</p>
+<p><span class="math display">\[\mathbf{E}[\hat{Y^*}]=\mathbf{E}[x^*\underline{\hat{\beta}}]\]</span>
+Por linealidad de la esperanza</p>
+<p><span class="math display">\[\mathbf{E}[\hat{Y^*}]=x^*\mathbf{E}[\underline{\hat{\beta}}]\]</span>
+Ya que <span class="math inline">\(\underline{\hat{\beta}}\)</span> es insesgado</p>
 <p><span class="math display">\[\therefore \mathbf{E}[\hat{Y^*}]= x^*\underline{\beta}.\blacksquare\]</span></p>
 <p><strong>b)</strong> Para la varianza se tiene:</p>
 <p>Por hipótesis</p>
 <p><span class="math display">\[Var(\hat{Y^*})=Var(x^*\underline{\hat{\beta}})\]</span></p>
-<p><span class="math display">\[Var(\hat{Y^*})=x^*Var(\underline{\hat{\beta}})x^{*&#39;}\]</span> Por el <strong>Teorema 3.4</strong></p>
-<p><span class="math display">\[Var(\hat{Y^*})=x^*\sigma^2(X&#39;X)^{-1}x^{*&#39;}\]</span> <span class="math display">\[\therefore Var(\hat{Y^*})=\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*.\blacksquare\]</span></p>
+<p><span class="math display">\[Var(\hat{Y^*})=x^*Var(\underline{\hat{\beta}})x^{*&#39;}\]</span>
+Por el <strong>Teorema 3.4</strong></p>
+<p><span class="math display">\[Var(\hat{Y^*})=x^*\sigma^2(X&#39;X)^{-1}x^{*&#39;}\]</span>
+<span class="math display">\[\therefore Var(\hat{Y^*})=\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*.\blacksquare\]</span></p>
 <p>Bajo el supuesto de normalidad se tiene que la respuesta media de <span class="math inline">\(Y\)</span> en un determinado punto, sigue una distribución normal con parámetros:</p>
 <p><span class="math display">\[\hat{Y^*} \sim \mathbf{N}_{n}\left(x^*\underline{\beta} ,\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*\right).\]</span></p>
 <p>Al estandarizar para obtener la cantidad pivotal se obtiene:</p>
-<p><span class="math display">\[\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*}}\sim \mathbf{N}(0,1)\]</span> Como <span class="math inline">\(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\)</span>, al dividir una distribución normal con una distribución <span class="math inline">\(\chi^2\)</span>, se obtiene una distribución <span class="math inline">\(t-Student\)</span></p>
+<p><span class="math display">\[\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*}}\sim \mathbf{N}(0,1)\]</span>
+Como <span class="math inline">\(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\)</span>, al dividir una distribución normal con una distribución <span class="math inline">\(\chi^2\)</span>, se obtiene una distribución <span class="math inline">\(t-Student\)</span></p>
 <p><span class="math display">\[\frac{\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*&#39;}(X&#39;X)^{-1}x^*}}}{\sqrt{\frac{\hat{\sigma}^2}{\sigma^2}}} \sim t_{n-k-1}.\]</span></p>
 <p>Simplificando la ecuación anterior se obtiene la cantidad pivotal deseada:</p>
 <p><span class="math display">\[\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\hat{\sigma}^2 x^{*&#39;}(X&#39;X)^{-1}x^*}}\sim t_{n-k-1.}\]</span></p>
@@ -396,9 +472,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Por lo tanto, el intervalo de confianza <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\mathbf{E}[Y \mid X=x^*]=x^*\underline{\beta}\)</span> es:</p>
 <p><span class="math display">\[x^*\underline{\beta} \in \left(x^*\underline{\hat{\beta}}-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2 x^{*&#39;}(X&#39;X)^{-1}x^*} \ \ , \ \ x^*\underline{\hat{\beta}}+t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2 x^{*&#39;}(X&#39;X)^{-1}x^*} \ \right).\]</span></p>
 </div>
-<div id="intervalos-de-predicción" class="section level2">
+<div id="intervalos-de-predicción" class="section level2" number="29.4">
 <h2><span class="header-section-number">29.4</span> Intervalos de predicción</h2>
-<p>La diferencia entre los intervalos de respuesta media y el intervalo de confianza para el valor esperado <span class="math inline">\(Y\)</span>, es que en el intervalo del valor esperado se desea hallar el valor que en promedio se debería obtener al conocer el vector <span class="math inline">\(x^*(x^*\underline{\beta})\)</span>, es decir, se busca el valor de la regresión en el punto <span class="math inline">\(x^*\)</span>, mientras que en un intervalo de predicción se &quot;predice&quot; un valor <span class="math inline">\(Y\)</span> dado que se conocen los valores de las variables explicativas, reflejadas en el vector <span class="math inline">\(x_{o}\)</span>.</p>
+<p>La diferencia entre los intervalos de respuesta media y el intervalo de confianza para el valor esperado <span class="math inline">\(Y\)</span>, es que en el intervalo del valor esperado se desea hallar el valor que en promedio se debería obtener al conocer el vector <span class="math inline">\(x^*(x^*\underline{\beta})\)</span>, es decir, se busca el valor de la regresión en el punto <span class="math inline">\(x^*\)</span>, mientras que en un intervalo de predicción se “predice” un valor <span class="math inline">\(Y\)</span> dado que se conocen los valores de las variables explicativas, reflejadas en el vector <span class="math inline">\(x_{o}\)</span>.</p>
 <p>De esta manera se desea estimar la observación <span class="math inline">\(Y=x_{0}\underline{\beta}+\epsilon\)</span>, por medio de <span class="math inline">\(\hat{Y}_{x}=x_{0}\underline{\hat{\beta}}+\epsilon\)</span>, donde <span class="math inline">\(\epsilon \sim \mathbf{N} (0, \sigma^2).\)</span></p>
 <p>Para ello se define al vector de valores conocidos <span class="math inline">\(x_{0}\)</span> como:</p>
 <p><span class="math inline">\(x_{0}=\left( 1 \ \ x_{1} \ \ x_{2} \ \ \ldots \ \ x_{k} \right).\)</span></p>
@@ -433,7 +509,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>De esta manera al suponer normalidad, estandarizando y dividiendo entre <span class="math inline">\(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\)</span> se obtiene la cantidad pivotal deseada:</p>
 <p><span class="math display">\[\frac{\hat{Y}_{x}-x_{0}\underline{\beta}}{\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}} \sim t_{n-k-1}.\]</span></p>
 <p>Por lo tanto, el intervalo de confianza <span class="math inline">\(1-\alpha\)</span> para la predicción de <span class="math inline">\(Y\)</span> es:</p>
-<p><span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}&lt;\frac{\hat{Y}_{x}-x_{0}\underline{\beta}}{\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}}&lt;t^{\alpha/2}_{n-k-1}\right]=1-\alpha\]</span> <span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}&lt;\frac{x_{0}\underline{\hat{\beta}}+\epsilon-x_{0}\underline{\beta}}{\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}}&lt;t^{\alpha/2}_{n-k-1}\right]=1-\alpha\]</span> <span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\hat{\beta}}+\epsilon-x_{0}\underline{\beta}&lt;t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span> <span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\beta}-x_{0}\underline{\hat{\beta}}-\epsilon&lt;t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span></p>
+<p><span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}&lt;\frac{\hat{Y}_{x}-x_{0}\underline{\beta}}{\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}}&lt;t^{\alpha/2}_{n-k-1}\right]=1-\alpha\]</span>
+<span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}&lt;\frac{x_{0}\underline{\hat{\beta}}+\epsilon-x_{0}\underline{\beta}}{\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}}&lt;t^{\alpha/2}_{n-k-1}\right]=1-\alpha\]</span>
+<span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\hat{\beta}}+\epsilon-x_{0}\underline{\beta}&lt;t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span>
+<span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\beta}-x_{0}\underline{\hat{\beta}}-\epsilon&lt;t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span></p>
 <p><span class="math display">\[\mathbf{P}\left[-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\beta}-\epsilon-x_{0}\underline{\hat{\beta}}&lt;t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span></p>
 <p><span class="math display">\[\mathbf{P}\left[x_{0}\underline{\hat{\beta}}-t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)}&lt;x_{0}\underline{\beta}-\epsilon&lt;x_{0}\underline{\hat{\beta}}+t^{\alpha/2}_{n-k-1}\sqrt{\hat{\sigma}^2\left(1+x&#39;_{0}(X&#39;X)^{-1}x_{0}\right)} \ \right]=1-\alpha\]</span></p>
 <p>Dado que <span class="math inline">\(\epsilon\)</span> es una variable aleatoria simétrica y de media 0 entonces se puede sustituir <span class="math inline">\(-\epsilon\)</span> por <span class="math inline">\(\epsilon\)</span>, así:</p>
@@ -505,7 +584,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
