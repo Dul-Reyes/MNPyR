@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 13 Prueba de Independencia | Modelos no paramétricos y de Regresión</title>
+  <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 13 Prueba de Independencia | Modelos no paramétricos y de Regresión" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/CarlosFernandoVG/SeriesBookdown_FC2021-1" />
+  
+  <meta property="og:description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
+  <meta name="github-repo" content="CarlosFernandoVG/SeriesBookdown_FC2021-1" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 13 Prueba de Independencia | Modelos no paramétricos y de Regresión" />
+  
+  <meta name="twitter:description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
+  
+
+<meta name="author" content="Sofía Villers Gómez" />
+<meta name="author" content="Dulce María Reyes Varela" />
+<meta name="author" content="Carlos Fernando Vásquez Guerra" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tablas-de-contingencia-de-2x2.html"/>
+<link rel="next" href="tablas-de-contingecia-de-r-times-c.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Modelos no paramétricos y de Regresión</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objetivos"><i class="fa fa-check"></i>Objetivos</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
+</ul></li>
+<li class="part"><span><b>I Un primer vistazo</b></span></li>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<a href="#ref-conover1998practical">1998</a>)</span></a><ul>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a><ul>
+<li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>2.1</b> Intervalos de Confianza</a></li>
+<li class="chapter" data-level="2.2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejemplo"><i class="fa fa-check"></i><b>2.2</b> Ejemplo</a></li>
+<li class="chapter" data-level="2.3" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejemplo-en-r-studio"><i class="fa fa-check"></i><b>2.3</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="2.4" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html"><i class="fa fa-check"></i><b>3</b> Prueba de Cuantiles</a><ul>
+<li class="chapter" data-level="3.1" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejemplo-1"><i class="fa fa-check"></i><b>3.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="3.2" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejemplo-en-r-studio-1"><i class="fa fa-check"></i><b>3.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="3.3" data-path="prueba-de-cuantiles.html"><a href="prueba-de-cuantiles.html#ejercicios-1"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html"><i class="fa fa-check"></i><b>4</b> Prueba de Signos</a><ul>
+<li class="chapter" data-level="4.1" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejemplo-2"><i class="fa fa-check"></i><b>4.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="4.2" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejemplo-en-r-studio-2"><i class="fa fa-check"></i><b>4.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="4.3" data-path="prueba-de-signos.html"><a href="prueba-de-signos.html#ejercicios-2"><i class="fa fa-check"></i><b>4.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html"><i class="fa fa-check"></i><b>5</b> Prueba Mc Nemar</a><ul>
+<li class="chapter" data-level="5.1" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejemplo-3"><i class="fa fa-check"></i><b>5.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="5.2" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejemplo-en-r-studio-3"><i class="fa fa-check"></i><b>5.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="5.3" data-path="prueba-mc-nemar.html"><a href="prueba-mc-nemar.html#ejercicios-3"><i class="fa fa-check"></i><b>5.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html"><i class="fa fa-check"></i><b>6</b> Prueba de Cox Stuart</a><ul>
+<li class="chapter" data-level="6.1" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-4"><i class="fa fa-check"></i><b>6.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="6.2" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="6.3" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a><ul>
+<li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejemplo-5"><i class="fa fa-check"></i><b>7.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="7.2" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejemplo-en-r-studio-5"><i class="fa fa-check"></i><b>7.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="7.3" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#ejercicios-5"><i class="fa fa-check"></i><b>7.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="intervalo-de-confianza-para-la-diferencia-entre-dos-medias.html"><a href="intervalo-de-confianza-para-la-diferencia-entre-dos-medias.html"><i class="fa fa-check"></i><b>8</b> Intervalo de confianza para la diferencia entre dos medias</a></li>
+<li class="chapter" data-level="9" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html"><i class="fa fa-check"></i><b>9</b> Prueba de Kruskal-Wallis</a><ul>
+<li class="chapter" data-level="9.1" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejemplo-6"><i class="fa fa-check"></i><b>9.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="9.2" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejemplo-en-r-studio-6"><i class="fa fa-check"></i><b>9.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="9.3" data-path="prueba-de-kruskal-wallis.html"><a href="prueba-de-kruskal-wallis.html#ejercicios-6"><i class="fa fa-check"></i><b>9.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html"><i class="fa fa-check"></i><b>10</b> Prueba de Igualdad de Varianzas</a><ul>
+<li class="chapter" data-level="10.1" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#prueba-de-igualdad-de-varianzas-para-2-poblaciones"><i class="fa fa-check"></i><b>10.1</b> Prueba de Igualdad de Varianzas para 2 poblaciones</a></li>
+<li class="chapter" data-level="10.2" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejemplo-7"><i class="fa fa-check"></i><b>10.2</b> Ejemplo</a></li>
+<li class="chapter" data-level="10.3" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejemplo-en-r-studio-7"><i class="fa fa-check"></i><b>10.3</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="10.4" data-path="prueba-de-igualdad-de-varianzas.html"><a href="prueba-de-igualdad-de-varianzas.html#ejercicios-7"><i class="fa fa-check"></i><b>10.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html"><i class="fa fa-check"></i><b>11</b> Prueba para más de dos Muestras</a><ul>
+<li class="chapter" data-level="11.1" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-8"><i class="fa fa-check"></i><b>11.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="11.2" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="11.3" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejercicios-8"><i class="fa fa-check"></i><b>11.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a><ul>
+<li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejemplo-9"><i class="fa fa-check"></i><b>12.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="12.2" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejemplo-en-r-studio-9"><i class="fa fa-check"></i><b>12.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="12.3" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#ejercicios-9"><i class="fa fa-check"></i><b>12.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html"><i class="fa fa-check"></i><b>13</b> Prueba de Independencia</a><ul>
+<li class="chapter" data-level="13.1" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejercicio"><i class="fa fa-check"></i><b>13.1</b> Ejercicio</a></li>
+<li class="chapter" data-level="13.2" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejemplo-en-r-studio-10"><i class="fa fa-check"></i><b>13.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="13.3" data-path="prueba-de-independencia.html"><a href="prueba-de-independencia.html#ejercicios-10"><i class="fa fa-check"></i><b>13.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html"><i class="fa fa-check"></i><b>14</b> Tablas de Contingecia de <span class="math inline">\(r \times c\)</span></a><ul>
+<li class="chapter" data-level="14.1" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#prueba-de-chi2-para-tablas-de-contingencia-proporciones"><i class="fa fa-check"></i><b>14.1</b> Prueba de <span class="math inline">\(\chi^2\)</span> para Tablas de Contingencia (Proporciones)</a></li>
+<li class="chapter" data-level="14.2" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejercicio-1"><i class="fa fa-check"></i><b>14.2</b> Ejercicio</a></li>
+<li class="chapter" data-level="14.3" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejemplo-en-r-studio-11"><i class="fa fa-check"></i><b>14.3</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="14.4" data-path="tablas-de-contingecia-de-r-times-c.html"><a href="tablas-de-contingecia-de-r-times-c.html#ejercicios-11"><i class="fa fa-check"></i><b>14.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html"><i class="fa fa-check"></i><b>15</b> Prueba de la Mediana</a><ul>
+<li class="chapter" data-level="15.0.1" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicio-2"><i class="fa fa-check"></i><b>15.0.1</b> Ejercicio</a></li>
+<li class="chapter" data-level="15.1" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.1</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="15.2" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-12"><i class="fa fa-check"></i><b>15.2</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a><ul>
+<li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejemplo-10"><i class="fa fa-check"></i><b>16.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="16.2" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejemplo-en-r-studio-13"><i class="fa fa-check"></i><b>16.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="16.3" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#ejercicios-13"><i class="fa fa-check"></i><b>16.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html"><i class="fa fa-check"></i><b>17</b> Prueba Kolmogorov</a><ul>
+<li class="chapter" data-level="17.1" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejemplo-11"><i class="fa fa-check"></i><b>17.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="17.2" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejemplo-en-r-studio-14"><i class="fa fa-check"></i><b>17.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="17.3" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#otro-ejemplo-en-r"><i class="fa fa-check"></i><b>17.3</b> Otro ejemplo en R</a></li>
+<li class="chapter" data-level="17.4" data-path="prueba-kolmogorov.html"><a href="prueba-kolmogorov.html#ejercicios-14"><i class="fa fa-check"></i><b>17.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html"><i class="fa fa-check"></i><b>18</b> Prueba Kolmogorov-Smirnov</a><ul>
+<li class="chapter" data-level="18.1" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html#ejemplo-12"><i class="fa fa-check"></i><b>18.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="18.2" data-path="prueba-kolmogorov-smirnov.html"><a href="prueba-kolmogorov-smirnov.html#ejercicios-15"><i class="fa fa-check"></i><b>18.2</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html"><i class="fa fa-check"></i><b>19</b> Prueba Lilliefors para Normalidad</a><ul>
+<li class="chapter" data-level="19.1" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejemplo-13"><i class="fa fa-check"></i><b>19.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="19.2" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejemplo-en-r-studio-15"><i class="fa fa-check"></i><b>19.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="19.3" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#otro-ejemplo-en-r-1"><i class="fa fa-check"></i><b>19.3</b> Otro ejemplo en R</a></li>
+<li class="chapter" data-level="19.4" data-path="prueba-lilliefors-para-normalidad.html"><a href="prueba-lilliefors-para-normalidad.html#ejercicios-16"><i class="fa fa-check"></i><b>19.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html"><i class="fa fa-check"></i><b>20</b> Pueba de Lilliefors Exponencial</a><ul>
+<li class="chapter" data-level="20.1" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejemplo-14"><i class="fa fa-check"></i><b>20.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="20.2" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejemplo-en-r-studio-16"><i class="fa fa-check"></i><b>20.2</b> Ejemplo en R-Studio</a></li>
+<li class="chapter" data-level="20.3" data-path="pueba-de-lilliefors-exponencial.html"><a href="pueba-de-lilliefors-exponencial.html#ejercicios-17"><i class="fa fa-check"></i><b>20.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html"><i class="fa fa-check"></i><b>21</b> Prueba Anderson-Darling</a><ul>
+<li class="chapter" data-level="21.0.1" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html#ejemplo-15"><i class="fa fa-check"></i><b>21.0.1</b> Ejemplo</a></li>
+<li class="chapter" data-level="21.1" data-path="prueba-anderson-darling.html"><a href="prueba-anderson-darling.html#ejemplo-en-r-studio-17"><i class="fa fa-check"></i><b>21.1</b> Ejemplo en R-Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html"><i class="fa fa-check"></i><b>22</b> Otras estadísticas</a><ul>
+<li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a><ul>
+<li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
+<li class="chapter" data-level="23.2" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#propiedades-de-los-estimadores"><i class="fa fa-check"></i><b>23.2</b> Propiedades de los estimadores</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html"><i class="fa fa-check"></i><b>24</b> Modelo sin intercepto</a><ul>
+<li class="chapter" data-level="24.1" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-1"><i class="fa fa-check"></i><b>24.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
+<li class="chapter" data-level="24.2" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#propiedades-de-los-estimadores-1"><i class="fa fa-check"></i><b>24.2</b> Propiedades de los estimadores</a><ul>
+<li class="chapter" data-level="24.2.1" data-path="modelo-sin-intercepto.html"><a href="modelo-sin-intercepto.html#ejemplo-en-r-studio-18"><i class="fa fa-check"></i><b>24.2.1</b> Ejemplo en R-Studio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html"><i class="fa fa-check"></i><b>25</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="25.1" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-beta_0"><i class="fa fa-check"></i><b>25.1</b> Intervalo para <span class="math inline">\(\beta_{0}\)</span></a></li>
+<li class="chapter" data-level="25.2" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-beta_1"><i class="fa fa-check"></i><b>25.2</b> Intervalo para <span class="math inline">\(\beta_{1}\)</span></a></li>
+<li class="chapter" data-level="25.3" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-sigma2"><i class="fa fa-check"></i><b>25.3</b> Intervalo para <span class="math inline">\(\sigma^2\)</span></a></li>
+<li class="chapter" data-level="25.4" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-para-el-valor-esperado-y"><i class="fa fa-check"></i><b>25.4</b> Intervalo para el valor esperado <span class="math inline">\(y\)</span></a></li>
+<li class="chapter" data-level="25.5" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#intervalo-de-predicción"><i class="fa fa-check"></i><b>25.5</b> Intervalo de predicción</a><ul>
+<li class="chapter" data-level="25.5.1" data-path="intervalos-de-confianza-1.html"><a href="intervalos-de-confianza-1.html#ejemplo-16"><i class="fa fa-check"></i><b>25.5.1</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html"><i class="fa fa-check"></i><b>26</b> Pruebas de hipótesis</a><ul>
+<li class="chapter" data-level="26.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#pruebas-para-beta_0"><i class="fa fa-check"></i><b>26.1</b> Pruebas para <span class="math inline">\(\beta_{0}\)</span></a></li>
+<li class="chapter" data-level="26.2" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-para-beta_1"><i class="fa fa-check"></i><b>26.2</b> Prueba para <span class="math inline">\(\beta_{1}\)</span></a></li>
+<li class="chapter" data-level="26.3" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#prueba-para-sigma2"><i class="fa fa-check"></i><b>26.3</b> Prueba para <span class="math inline">\(\sigma^2\)</span></a></li>
+<li class="chapter" data-level="26.4" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#análisis-de-la-varianza-anova"><i class="fa fa-check"></i><b>26.4</b> Análisis de la varianza (ANOVA)</a></li>
+<li class="chapter" data-level="26.5" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#coeficiente-de-determinación"><i class="fa fa-check"></i><b>26.5</b> Coeficiente de determinación</a></li>
+<li class="chapter" data-level="26.6" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#propiedades-de-r2"><i class="fa fa-check"></i><b>26.6</b> Propiedades de <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="26.7" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#relación-r2-y-la-correlación-de-pearson"><i class="fa fa-check"></i><b>26.7</b> Relación <span class="math inline">\(R^2\)</span> y la correlación de Pearson</a><ul>
+<li class="chapter" data-level="26.7.1" data-path="pruebas-de-hipótesis.html"><a href="pruebas-de-hipótesis.html#ejemplo-17"><i class="fa fa-check"></i><b>26.7.1</b> Ejemplo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html"><i class="fa fa-check"></i><b>27</b> Validación de supuestos</a><ul>
+<li class="chapter" data-level="27.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#análisis-de-residuales"><i class="fa fa-check"></i><b>27.1</b> Análisis de residuales</a></li>
+<li class="chapter" data-level="27.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>27.2</b> Supuesto de normalidad</a><ul>
+<li class="chapter" data-level="27.2.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#validación-del-supuesto-de-normalidad"><i class="fa fa-check"></i><b>27.2.1</b> Validación del supuesto de normalidad</a></li>
+</ul></li>
+<li class="chapter" data-level="27.3" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-linealidad"><i class="fa fa-check"></i><b>27.3</b> Supuesto de linealidad</a></li>
+<li class="chapter" data-level="27.4" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#supuesto-de-homocedasticidad"><i class="fa fa-check"></i><b>27.4</b> Supuesto de homocedasticidad</a><ul>
+<li class="chapter" data-level="27.4.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#prueba-de-breusch-pagan"><i class="fa fa-check"></i><b>27.4.1</b> Prueba de Breusch-Pagan</a></li>
+<li class="chapter" data-level="27.4.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#prueba-de-white"><i class="fa fa-check"></i><b>27.4.2</b> Prueba de White</a></li>
+<li class="chapter" data-level="27.4.3" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#ejemplo-18"><i class="fa fa-check"></i><b>27.4.3</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="27.5" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-outlier-e-influyentes"><i class="fa fa-check"></i><b>27.5</b> Valores outlier e influyentes</a><ul>
+<li class="chapter" data-level="27.5.1" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-outlier"><i class="fa fa-check"></i><b>27.5.1</b> Valores outlier</a></li>
+<li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a><ul>
+<li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
+<li class="chapter" data-level="28.2" data-path="modelo.html"><a href="modelo.html#estimación-por-máxima-verosimilitud"><i class="fa fa-check"></i><b>28.2</b> Estimación por máxima verosimilitud</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html"><i class="fa fa-check"></i><b>29</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="29.1" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalo-para-beta_j"><i class="fa fa-check"></i><b>29.1</b> Intervalo para <span class="math inline">\(\beta_{j}\)</span></a></li>
+<li class="chapter" data-level="29.2" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalo-para-sigma2-1"><i class="fa fa-check"></i><b>29.2</b> Intervalo para <span class="math inline">\(\sigma^2\)</span></a></li>
+<li class="chapter" data-level="29.3" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalos-de-la-respuesta-media"><i class="fa fa-check"></i><b>29.3</b> Intervalos de la respuesta media</a></li>
+<li class="chapter" data-level="29.4" data-path="intervalos-de-confianza-2.html"><a href="intervalos-de-confianza-2.html#intervalos-de-predicción"><i class="fa fa-check"></i><b>29.4</b> Intervalos de predicción</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html"><i class="fa fa-check"></i><b>30</b> Pruebas de hipótesis</a><ul>
+<li class="chapter" data-level="30.1" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#región-de-rechazo-para-beta_j"><i class="fa fa-check"></i><b>30.1</b> Región de rechazo para <span class="math inline">\(\beta_{j}\)</span></a></li>
+<li class="chapter" data-level="30.2" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#prueba-para-sigma2-1"><i class="fa fa-check"></i><b>30.2</b> Prueba para <span class="math inline">\(\sigma^2\)</span></a></li>
+<li class="chapter" data-level="30.3" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#análisis-de-la-varianza-anova-1"><i class="fa fa-check"></i><b>30.3</b> Análisis de la varianza (ANOVA)</a></li>
+<li class="chapter" data-level="30.4" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#coeficiente-de-determinación-1"><i class="fa fa-check"></i><b>30.4</b> Coeficiente de determinación</a></li>
+<li class="chapter" data-level="30.5" data-path="pruebas-de-hipótesis-1.html"><a href="pruebas-de-hipótesis-1.html#r2-ajustado"><i class="fa fa-check"></i><b>30.5</b> <span class="math inline">\(R^2\)</span> ajustado</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html"><i class="fa fa-check"></i><b>31</b> Validación de supuestos</a><ul>
+<li class="chapter" data-level="31.1" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#supuesto-de-multicolinealidad"><i class="fa fa-check"></i><b>31.1</b> Supuesto de multicolinealidad</a></li>
+<li class="chapter" data-level="31.2" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#detección-de-multicolinealidad"><i class="fa fa-check"></i><b>31.2</b> Detección de multicolinealidad</a></li>
+<li class="chapter" data-level="31.3" data-path="validación-de-supuestos-1.html"><a href="validación-de-supuestos-1.html#ejemplo-19"><i class="fa fa-check"></i><b>31.3</b> Ejemplo</a></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="apéndice.html"><a href="apéndice.html"><i class="fa fa-check"></i><b>32</b> Apéndice</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Hecho con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelos no paramétricos y de Regresión</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prueba-de-independencia" class="section level1">
+<h1><span class="header-section-number">Capítulo 13</span> Prueba de Independencia</h1>
+<p><strong>Datos</strong></p>
+<p>Una muestra aleatoria de tamaño <span class="math inline">\(N\)</span>. Las observaciones en la muestra aleatoria son clasificados de acuerdo a dos criterios, usando el primer criterio cada observación es asociada con uno de los <span class="math inline">\(r\)</span> renglones, y usando el segundo criterio cada observación es asociada con una de las <span class="math inline">\(C\)</span> columnas. Sea <span class="math inline">\(O_{ij}\)</span> el número de observaciones asociadas con el renglón <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> simultáneamente; el número total de observaciones en el renglón <span class="math inline">\(i\)</span> es designado por <span class="math inline">\(R_{i}\)</span>, (en lugar de <span class="math inline">\(n_{i}\)</span> como la prueba anterior, para enfatizar que los totales de las filas ahora son aleatorios en lugar de fijos), y en la columna <span class="math inline">\(j\)</span> por <span class="math inline">\(C_{j}\)</span>. La suma de los números en todas las celdas es <span class="math inline">\(N\)</span>.</p>
+<p>Los datos se organizan en la siguiente tabla de contingencia:</p>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|} 
+\hline
+&amp;\textbf{Columna 1} &amp;\textbf{Columna 2} &amp;\ldots&amp;\textbf{Columna c}&amp;\textbf{Totales}\\
+\hline
+\textbf{Renglón 1} &amp;O_{11} &amp;O_{12} &amp;\ldots&amp;O_{1c}&amp;R_1\\
+\hline
+\textbf{Renglón 2} &amp;O_{21} &amp;O_{22} &amp;\ldots&amp;O_{2c}&amp;R_2\\
+\hline
+\vdots&amp; \vdots&amp; \vdots&amp; \ddots&amp;\vdots&amp; \vdots\\
+\textbf{Renglón r}&amp;O_{r1} &amp;O_{r2} &amp;\ldots&amp;O_{rc}&amp;R_r\\
+\hline
+\textbf{Totales}&amp;C_1&amp;C_2&amp;\ldots&amp;C_c&amp;N\\
+\hline
+\end {array}
+\end{equation*}
+\]</span> <strong>Supuestos</strong></p>
+<ul>
+<li><p>La muestra de <span class="math inline">\(N\)</span> observaciones es una muestra aleatoria. (Cada observación tiene la misma probabilidad como cualquier otra observación de ser clasificada en el renglón <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> independientemente de las otras observaciones).</p></li>
+<li><p>Cada observación puede ser clasificada en una de las <span class="math inline">\(r\)</span> diferentes categorías de acuerdo al primer criterio y en una de las <span class="math inline">\(C\)</span> diferentes categorías de acuerdo al segundo criterio.</p></li>
+</ul>
+<p><strong>Estadístico de Prueba</strong></p>
+<p>El estadístico de prueba <span class="math inline">\(T\)</span> es obtenido de la siguiente manera:</p>
+<p><span class="math display">\[T=\sum_{i=1}^{r}\sum_{j=1}^{c}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}, \ \ \ Donde\ \ E_{ij}=\frac{R_{j}C_{j}}{N}\]</span></p>
+<p>Una expresión equivalente para <span class="math inline">\(T\)</span>, mas adecuado para el uso de su calculadora es:</p>
+<p><span class="math display">\[T=\sum_{i=1}^{r}\sum_{j=1}^{c}\frac{O_{ij}^{2}}{E_{ij}}-N\]</span></p>
+<p><strong>Distribución de T</strong></p>
+<p>La distribución nula de T es obtenida aproximadamente por la Distribución <span class="math inline">\(\chi^2\)</span> con <span class="math inline">\((r-1)\times(c-1)\)</span> grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.</p>
+<p>Es decir,</p>
+<p><span class="math display">\[T\sim \chi^2_{(r-1)(c-1)}\]</span></p>
+<p><strong>Hipótesis</strong></p>
+<p><span class="math display">\[\textbf{H}_0: \ \mbox{El evento} \  &quot;una\ observación\ está\ en\ la\ fila\ i&quot;\ \mbox{es independiente}\]</span> <span class="math display">\[\mbox{del evento} \ &quot;esa\ misma\ observación\ está\ en\ la\ columna\ j&quot;\ \mbox{para todos} \ \ i,\ j.\]</span></p>
+<p><span class="math display">\[es \ decir,\]</span></p>
+<p><span class="math display">\[\textbf{H}_0: \mathbf{P}[\ \ renglón\ \ i\ ,\ \ columna\ \ j\ \ ]= \mathbf{P}[\ \ renglón\ \ i \ \ ]*\mathbf{P}[\ \ columna\ \ j\ \ ]\ \ \ \ \forall \  \ i,\ j.\]</span></p>
+<p><span class="math display">\[vs\]</span></p>
+<p><span class="math display">\[\textbf{H}_a:\mathbf{P}[\ \ renglón\ \ i\ ,\ columna\ \ j\ \ ]\ \  \neq \ \mathbf{P}[ \ \ renglón\ i\ \ ]*P[\ \ columna\ j\ \  ]\ \ \ \ ; \ para\ alguna\ \ i \ , \ j. \ \]</span></p>
+<p><strong>Regla de decisión</strong></p>
+<p>Rechazo <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T&gt; \chi^2(1-\alpha)\)</span> con <span class="math inline">\((r-1)\times(c-1)\)</span> grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.</p>
+<p>Ahora un ejercicio:</p>
+<div id="ejercicio" class="section level2">
+<h2><span class="header-section-number">13.1</span> Ejercicio</h2>
+<p>Se especula que la preferencia del cereal ToastyOs está asociada con el nivel educativo de las personas. Si esto resulta cierto, Tabisco Food, la distribuidora del producto, siente que debería aprovechar este mercado dando un mayor empuje de su campaña de marketing a este segmento de la población. Sin embargo, antes de comprometerse a esta tarea se decidió realizar un análisis objetivo que verifiquen las especulaciones. Para esto se tomó una muestra aleatoria de 500 individuos que han probado el producto con los siguientes resultados:</p>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{|c|c|c|c|} 
+\hline
+\mbox{Preferencia}&amp; \mbox{Sin Universidad}&amp;\mbox{Nivel de Estudios Truncados}&amp;\mbox{Graduados}\\
+\hline
+\mbox{Gusta}&amp; 75&amp;90&amp;135\\
+\hline
+\mbox{Neutral/No les gusta}&amp; 25&amp;60&amp;115\\
+\hline
+\end {array}
+\end{equation*}
+\]</span></p>
+<p><strong>Paso 1</strong> Prueba a utilizar <strong>Tablas de Contingencia rxc prueba de Independencia</strong></p>
+<p>Es una prueba de independencia ya que sólo tenemos una población.</p>
+<p><strong>Paso 2</strong> Planteamiento de hipótesis</p>
+<p><span class="math display">\[\textbf{H}_0: \ \mbox{El nivel educativo es independiente de la preferencia hacia el producto.}\]</span></p>
+<p><span class="math display">\[vs\]</span></p>
+<p><span class="math display">\[\textbf{H}_a:\ \mbox{El nivel educativo no es independiente de la preferencia hacia el producto.}\]</span></p>
+<p><strong>Paso 3</strong> Estadístico de Prueba</p>
+<p>Para poder calcular el estadístico de prueba no ayudaremos de cierto calculos previos.</p>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{||c| c| c |c |c||} 
+\hline 
+\mbox{Preferencia}&amp; \mbox{Sin Universidad}&amp;\mbox{Nivel de Estudios Truncados}&amp;\mbox{Graduados} &amp;\mbox{ Totales} \\  
+ \hline
+\mbox{Gusta}&amp;75&amp;90&amp;135&amp;300\\
+ \hline
+\mbox{Neutral/No les gusta}&amp;25&amp;60&amp;115&amp;200\\
+ \hline
+\mbox{Totales}&amp;100&amp;150&amp;250&amp;500\\
+ \hline
+\end{array}
+\end{equation*}
+\]</span></p>
+<p>Ahora:</p>
+<p><span class="math inline">\(P[Guste\ el\ producto]= \frac{300}{500}=.6= 60\ \%\ de\ la\ población\ le\ gusta\ el\ cereal\)</span></p>
+<p><span class="math inline">\(P[No\ Guste\ el\ producto]= \frac{200}{500}=.4= 40\ \%\ de\ la\ población\ no\ le\ gusta\ el\ cereal\)</span></p>
+<p><span class="math inline">\(P[Sin\ universidad]= \frac{100}{500}=.2= 20\ \%\ de\ la\ población\ no\ tiene\ universidad.\)</span></p>
+<p><span class="math inline">\(P[Estudios\ truncados]= \frac{150}{500}=.3= 30\ \%\ de\ la\ población\ tiene\ estudios\ truncados.\)</span></p>
+<p><span class="math inline">\(P[Graduados]= \frac{250}{500}=.5= 50\ \%\ de\ la\ población\ están\ graduados.\)</span></p>
+<p>Bajo <span class="math inline">\(H_0\)</span> el nivel educativo y la preferencia por el cereal son independientes:</p>
+<p>Ahora:</p>
+<p><span class="math inline">\(P[Guste\ el\ producto\ y\ sin\ universidad]=\)</span> <span class="math inline">\(P[Guste\ el\ producto]*P[sin\ universidad]=.6*.2=.12\)</span></p>
+<p><span class="math inline">\(P[Guste\ el\ producto\ y\ Estudios\ truncados]=\)</span> <span class="math inline">\(P[Guste\ el\ producto]*P[Estudios\ truncados]=.6*.3=.18\)</span></p>
+<p><span class="math inline">\(P[Guste\ el\ producto\ y\ Graduados]=\)</span> <span class="math inline">\(P[Guste\ el\ producto]*P[Graduados]=.6*.5=.30\)</span></p>
+<p>Análogo para no gustar el producto.</p>
+<p>Ahora vamos a calcular los valores esperados:</p>
+<p><span class="math display">\[E_{11}=\frac{300*100}{500}=60 \ \ E_{12}=\frac{300*150}{500}=90 \ \  E_{13}=\frac{300*250}{500}=150\]</span> <span class="math display">\[E_{21}=\frac{200*100}{500}=40 \ \  E_{22}=\frac{200*150}{500}=60 \ \ E_{23}=\frac{200*250}{500}=100\]</span></p>
+<p>Regresando al Estadístico de Prueba:</p>
+<p><span class="math display">\[T=\sum_{i=1}^{2}\sum_{j=1}^{3}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}= \frac{(75-60)^2}{60}+\frac{(90-90)^2}{90}+\frac{(135-150)^2}{150}+\]</span> <span class="math display">\[\frac{(25-40)^2}{40}+\frac{(60-60)^2}{60}+\frac{(115-100)^2}{100}=13.125\]</span></p>
+<p><strong>Paso 4</strong> Procedimiento completo</p>
+<p>Utilizaremos un <span class="math inline">\(\alpha=0.05\)</span></p>
+<p>Entonces tenemos <span class="math inline">\(\chi^2_{(.95,(2-1)*(3-1))}=\chi^2_{(.95,2)}=5.99\)</span></p>
+<p><strong>Paso 5</strong> Regla de decisión</p>
+<p>Rechazo <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T&gt; \chi^2(1-\alpha)\)</span> con <span class="math inline">\((r-1)\times(c-1)\)</span> grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.</p>
+<p>como <span class="math inline">\(\chi^2=5.99 &lt; T=13.125\)</span></p>
+<p><span class="math inline">\(\therefore\)</span> Rechazo <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Paso 6</strong> Conclusión</p>
+<p>Existe evidencia suficiente para suponer que hay una relación entre la preferencia del cereal y el nivel educativo.</p>
+</div>
+<div id="ejemplo-en-r-studio-10" class="section level2">
+<h2><span class="header-section-number">13.2</span> Ejemplo en R-Studio</h2>
+<p>Ahora haremos la réplica en R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Preferencia=<span class="kw">c</span>(<span class="st">&quot;Gusta&quot;</span>,<span class="st">&quot;Neutral/No les gusta&quot;</span>)
+Sin_Universidad=<span class="kw">c</span>(<span class="dv">75</span>,<span class="dv">25</span>)
+Nivel_Truncado=<span class="kw">c</span>(<span class="dv">90</span>,<span class="dv">60</span>)
+Graduados=<span class="kw">c</span>(<span class="dv">135</span>,<span class="dv">115</span>)
+datos=<span class="kw">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados)
+datos</code></pre></div>
+<pre><code>           Preferencia Sin_Universidad Nivel_Truncado Graduados
+1                Gusta              75             90       135
+2 Neutral/No les gusta              25             60       115</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#ahora, vamos a calcular los totales y adjuntarlos a la tabla</span>
+Preferencia=<span class="kw">c</span>(Preferencia,<span class="st">&quot;Totales&quot;</span>)
+Sin_Universidad=<span class="kw">c</span>(Sin_Universidad, <span class="kw">sum</span>(Sin_Universidad))
+Nivel_Truncado=<span class="kw">c</span>(Nivel_Truncado, <span class="kw">sum</span>(Nivel_Truncado))
+Graduados=<span class="kw">c</span>(Graduados,<span class="kw">sum</span>(Graduados))
+Totales=<span class="kw">c</span>(Sin_Universidad[<span class="dv">1</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="op">+</span>Graduados[<span class="dv">1</span>],Sin_Universidad[<span class="dv">2</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="op">+</span>Graduados[<span class="dv">2</span>],
+           Sin_Universidad[<span class="dv">1</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="op">+</span>Graduados[<span class="dv">1</span>]<span class="op">+</span>Sin_Universidad[<span class="dv">2</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="op">+</span>Graduados[<span class="dv">2</span>])
+datos=<span class="kw">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados,Totales)
+datos</code></pre></div>
+<pre><code>           Preferencia Sin_Universidad Nivel_Truncado Graduados Totales
+1                Gusta              75             90       135     300
+2 Neutral/No les gusta              25             60       115     200
+3              Totales             100            150       250     500</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#ESTADÍSTICO DE PRUEBA</span>
+<span class="co">#Primero calcularemos los valores esperados</span>
+Esperados=<span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>,<span class="dt">ncol =</span> <span class="dv">3</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) {
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {
+    Esperados[i,j]=(datos<span class="op">$</span>Totales[i]<span class="op">*</span>datos[<span class="dv">3</span>,j<span class="op">+</span><span class="dv">1</span>])<span class="op">/</span>datos<span class="op">$</span>Totales[<span class="dv">3</span>]
+  }  
+}
+<span class="co">#Ahora sí, vamos a calcular el estadístico completo</span>
+Totales=<span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>,<span class="dt">ncol =</span> <span class="dv">3</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) {
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {
+    Totales[i,j]=(datos[i,j<span class="op">+</span><span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(Esperados[i,j])
+  }  
+}
+T1=<span class="kw">sum</span>(Totales)<span class="op">-</span>datos<span class="op">$</span>Totales[<span class="dv">3</span>]
+<span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))</code></pre></div>
+<pre><code>[1] &quot;Estadístico T1 = &quot; &quot;13.125&quot;           </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alpha=.<span class="dv">05</span>
+<span class="co">#Ahora vamos a calcular nuestro cuantil</span>
+cuantil=<span class="kw">qchisq</span>(<span class="dv">1</span><span class="op">-</span>alpha,<span class="dv">2</span>)
+<span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))</code></pre></div>
+<pre><code>[1] &quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;
+[2] &quot;5.99146454710798&quot;                                </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span>(T1<span class="op">&gt;</span>cuantil){
+  <span class="kw">print</span>(<span class="st">&quot;Se rechaza $H_0$&quot;</span>)
+  <span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))
+  <span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))
+}</code></pre></div>
+<pre><code>[1] &quot;Se rechaza $H_0$&quot;
+[1] &quot;Estadístico T1 = &quot; &quot;13.125&quot;           
+[1] &quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;
+[2] &quot;5.99146454710798&quot;                                </code></pre>
+<p>Observamos que la estadística de prueba tiene un valor de 13.125 y su correspondiente p-value es menor a 0.05, por lo tanto con <span class="math inline">\(\alpha=5\%\)</span> rechazaremos <span class="math inline">\(H_0\)</span> y concluimos existe evidencia suficiente para suponer que hay una relación entre la preferencia del cereal y el nivel educativo.</p>
+<p>Ahora podemos utilizar la prueba en R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tabla&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">135</span>,<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">115</span>),<span class="dt">ncol=</span><span class="dv">3</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)
+<span class="kw">dimnames</span>(tabla)&lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Preferencia=</span><span class="kw">c</span>(<span class="st">&quot;Gustar&quot;</span>,<span class="st">&quot;Neutral o no les gusta&quot;</span>), <span class="dt">Nivel=</span><span class="kw">c</span>(<span class="st">&quot;Sin universidad&quot;</span>,<span class="st">&quot;Estudios truncados&quot;</span>,
+                      <span class="st">&quot;Graduados&quot;</span>))
+
+
+tabla</code></pre></div>
+<pre><code>                        Nivel
+Preferencia              Sin universidad Estudios truncados Graduados
+  Gustar                              75                 90       135
+  Neutral o no les gusta              25                 60       115</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla)</code></pre></div>
+<pre><code>
+    Pearson&#39;s Chi-squared test
+
+data:  tabla
+X-squared = 13.125, df = 2, p-value = 0.001412</code></pre>
+</div>
+<div id="ejercicios-10" class="section level2">
+<h2><span class="header-section-number">13.3</span> Ejercicios</h2>
+<ol style="list-style-type: decimal">
+<li>Queremos probar si la selección de cierto deporte es independienye del género. Para ellos se les pregunto a 100 hombres y 100 mujeres que deporte entre arquería, boxeo y ciclismo preferian practicar y en la siguiente tabla se resume las respuestas que dieron:</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{|c ||c |c |c|c|}
+\hline 
+\mbox{Género} &amp; \mbox{Arquería}&amp;\mbox{Boxeo} &amp;\mbox{Ciclismo}&amp; \mbox{Total} \\
+\hline 
+\mbox{Mujer} &amp; 35 &amp;  15 &amp; 50&amp;\textbf{100}\\
+ \hline 
+\mbox{Varon}&amp; 10 &amp; 30 &amp;60&amp;\textbf{100}\\ 
+\hline 
+\mbox{Total}&amp;\textbf{45}&amp;\textbf{45}&amp;\textbf{110}&amp;\textbf{200}\\
+\hline 
+\end{array}
+\end{equation*}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>En un estudio, llevado a cabo por el INE, se tomó una muestra aleatoria de ciudadanos registrados en el Padrón Electoral. Se obtuvo información sobre el partido por el que votaron para Presidente y si tenían o no estudios universitarios.</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{|c|c c c c c c c|}
+\hline
+X_{2}&amp;X_{1}&amp;&amp;&amp;&amp;&amp;&amp;\\
+ \hline
+SI &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI\\
+NO &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI &amp; PRI\\
+ \hline
+SI &amp; PRI &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp;PAN\\
+NO &amp; PRI &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN\\
+ \hline
+SI &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN\\
+NO &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN&amp;\\
+ \hline
+\end{array}
+\end{equation*}
+\]</span></p>
+<p>Considere <span class="math inline">\(X_{1}\)</span>= Partido por el cual votó, <span class="math inline">\(X_{2}\)</span>=tiene o no estudios universitarios.</p>
+<p>Se desea probar si existe asociación entre el partido por el cual votó y si tienen o no estudios universitarios. Plantee, en el contexto del problema, las hipótesis, estadística de prueba y obtenga su conclusión con un nivel de significancia del <span class="math inline">\(5\%\)</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>En una encuesta telefónica se preguntó a los participantes hasta que grado estaban de acuerdo con la proposición: “se debe prohibir fumar en lugares públicos”. Con base en los datos recabados se desea saber si existen diferencias significativas en el grado en el que están de acuerdo hombres y mujeres con respecto a prohibir fumar en lugares públicos.</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation*}
+\begin{array}{||c |c |c |c| c | c ||}
+\hline 
+\mbox{Sexo} &amp; \mbox{Muy de acuerdo}&amp; \mbox{De acuerdo} &amp; \mbox{Neutral} &amp; \mbox{En desacuerdo} &amp;  \mbox{En total desacuerdo}\\
+\hline 
+\mbox{Mujer} &amp; 41 &amp;  16 &amp; 28 &amp; 27 &amp; 31\\
+ \hline 
+\mbox{Varon} &amp; 22 &amp; 40 &amp; 14 &amp; 39 &amp; 41 \\
+\hline 
+\end{array}
+\end{equation*}
+\]</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tablas-de-contingencia-de-2x2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tablas-de-contingecia-de-r-times-c.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "github", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
