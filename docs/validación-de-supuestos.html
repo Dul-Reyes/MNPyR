@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 27 Validación de supuestos | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 27 Validación de supuestos | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="pruebas-de-hipótesis.html"/>
 <link rel="next" href="modelo-de-regresión-lineal-múltiple.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,8 +52,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -66,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,7 +125,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -149,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -523,8 +521,8 @@ predecir, de alguna manera, el tiempo promedio que tardarían en procesar un nú
 <p>Verificamos gráficamente que hubiera una relación lineal entre las variables, estimamos los parámetros del modelo de regresión lineal simple con intercepto y sin intercepto. Luego construimos intervalos de confianza para los parámetros estimados, para el valor esperado y la predicción. Realizamos pruebas de hipótesis sobre los estimadores de los parámetros. Calculamos el coeficiente de determinación y realizamos un análisis de varianza sobre el modelo seleccionado.</p>
 <p>Como se mencionó en nuestro capítulo debemos verificar que los supuestoshechos para ajustar este modelo de regresión lineal simple se cumplen.</p>
 <p>Esta vez vamos a ocupar la función en R para el modelo de regresión que es <strong>lm()</strong>.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="validación-de-supuestos.html#cb261-1" aria-hidden="true"></a>M1=<span class="kw">lm</span>(Tiempo<span class="op">~</span>Facturas)</span>
-<span id="cb261-2"><a href="validación-de-supuestos.html#cb261-2" aria-hidden="true"></a>M1</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="validación-de-supuestos.html#cb261-1" aria-hidden="true" tabindex="-1"></a>M1<span class="ot">=</span><span class="fu">lm</span>(Tiempo<span class="sc">~</span>Facturas)</span>
+<span id="cb261-2"><a href="validación-de-supuestos.html#cb261-2" aria-hidden="true" tabindex="-1"></a>M1</span></code></pre></div>
 <pre><code>
 Call:
 lm(formula = Tiempo ~ Facturas)
@@ -537,40 +535,40 @@ Coefficients:
 <ul>
 <li><span class="math inline">\(\textbf{Los residuales ordinarios}\)</span></li>
 </ul>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="validación-de-supuestos.html#cb263-1" aria-hidden="true"></a><span class="kw">head</span>(M1<span class="op">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="validación-de-supuestos.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(M1<span class="sc">$</span>residuals)</span></code></pre></div>
 <pre><code>         1          2          3          4          5          6 
 -0.2241648  0.4807915 -0.4645390 -0.1014177 -0.2113303 -0.2966252 </code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-111-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><span class="math inline">\(\textbf{Los residuales estandarizados}\)</span></li>
 </ul>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="validación-de-supuestos.html#cb265-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">rstandard</span>(M1))</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="validación-de-supuestos.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rstandard</span>(M1))</span></code></pre></div>
 <pre><code>         1          2          3          4          5          6 
 -0.6921686  1.5065958 -1.4483299 -0.3248760 -0.6625061 -0.9303669 </code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="validación-de-supuestos.html#cb267-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="kw">rstandard</span>(M1),<span class="dt">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Residuales estandarizados&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Observaciones&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="validación-de-supuestos.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rstandard</span>(M1),<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Residuales estandarizados&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Observaciones&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-113-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><span class="math inline">\(\textbf{Los residuales estudentizados}\)</span></li>
 </ul>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="validación-de-supuestos.html#cb268-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">rstudent</span>(M1))</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="validación-de-supuestos.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">rstudent</span>(M1))</span></code></pre></div>
 <pre><code>         1          2          3          4          5          6 
 -0.6855868  1.5433247 -1.4786993 -0.3196249 -0.6557278 -0.9280596 </code></pre>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="validación-de-supuestos.html#cb270-1" aria-hidden="true"></a><span class="kw">plot</span>(<span class="kw">rstudent</span>(M1),<span class="dt">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Residuales estudentizados&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Observaciones&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="validación-de-supuestos.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rstudent</span>(M1),<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Residuales estudentizados&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Observaciones&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-115-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Validación de supuesto de normalidad</strong></p>
 <p>Para validar gráficamente la normalidad de los errores debemos graficar los errores contra los cuantiles de la distribución normal. Para esto aplicaremos la función en R <strong>qqnorm()</strong> y con <strong>qqline()</strong> obtenemos la recta diagonal que nos servirá para ver que tan lejos o cerca de la distribución normal están cayendo los residuales del modelo.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="validación-de-supuestos.html#cb271-1" aria-hidden="true"></a><span class="kw">qqnorm</span>(<span class="kw">rstandard</span>(M1),<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>),<span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb271-2"><a href="validación-de-supuestos.html#cb271-2" aria-hidden="true"></a><span class="kw">qqline</span>(<span class="kw">rstandard</span>(M1),<span class="dt">distribution =</span> qnorm,<span class="dt">col=</span><span class="st">&quot;deeppink4&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="validación-de-supuestos.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rstandard</span>(M1),<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>),<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb271-2"><a href="validación-de-supuestos.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">rstandard</span>(M1),<span class="at">distribution =</span> qnorm,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-116-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.</p>
 <p>Podemos aplicar la prueba de bondad de ajuste <strong>Lilliefors para normalidad</strong> vista en Bondad de Ajuste:</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="validación-de-supuestos.html#cb272-1" aria-hidden="true"></a>nortest<span class="op">::</span><span class="kw">ad.test</span>(<span class="kw">rstandard</span>(M1))</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="validación-de-supuestos.html#cb272-1" aria-hidden="true" tabindex="-1"></a>nortest<span class="sc">::</span><span class="fu">ad.test</span>(<span class="fu">rstandard</span>(M1))</span></code></pre></div>
 <pre><code>
     Anderson-Darling normality test
 
 data:  rstandard(M1)
 A = 0.2675, p-value = 0.6615</code></pre>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="validación-de-supuestos.html#cb274-1" aria-hidden="true"></a><span class="kw">lillie.test</span>(<span class="kw">rstandard</span>(M1))</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="validación-de-supuestos.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lillie.test</span>(<span class="fu">rstandard</span>(M1))</span></code></pre></div>
 <pre><code>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
@@ -593,7 +591,7 @@ D = 0.088454, p-value = 0.7946</code></pre>
 </ul>
 <p>Adicionalmente aplicaremos las pruebas vistas en el capítulo para tener certeza estadística de la validez del supuesto de homocedasticidad.</p>
 <p><strong>Prueba de Breusch-Pagan</strong></p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="validación-de-supuestos.html#cb276-1" aria-hidden="true"></a><span class="kw">bptest</span>(M1)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="validación-de-supuestos.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bptest</span>(M1)</span></code></pre></div>
 <pre><code>
     studentized Breusch-Pagan test
 
@@ -602,9 +600,9 @@ BP = 0.13226, df = 1, p-value = 0.7161</code></pre>
 <p>El valor del <span class="math inline">\(p-value\)</span> es mayor, por lo que la hipótesis de homocedasticidad no se rechaza.</p>
 <p><strong>Prueba White</strong></p>
 <pre><code>[1] &quot;Dia&quot;      &quot;Facturas&quot; &quot;Tiempo&quot;  </code></pre>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="validación-de-supuestos.html#cb279-1" aria-hidden="true"></a>dataset=<span class="kw">data.frame</span>(x, y)</span>
-<span id="cb279-2"><a href="validación-de-supuestos.html#cb279-2" aria-hidden="true"></a>model1=<span class="st"> </span><span class="kw">VAR</span>(dataset, <span class="dt">p =</span> <span class="dv">1</span>)</span>
-<span id="cb279-3"><a href="validación-de-supuestos.html#cb279-3" aria-hidden="true"></a><span class="kw">whites.htest</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="validación-de-supuestos.html#cb279-1" aria-hidden="true" tabindex="-1"></a>dataset<span class="ot">=</span><span class="fu">data.frame</span>(x, y)</span>
+<span id="cb279-2"><a href="validación-de-supuestos.html#cb279-2" aria-hidden="true" tabindex="-1"></a>model1<span class="ot">=</span> <span class="fu">VAR</span>(dataset, <span class="at">p =</span> <span class="dv">1</span>)</span>
+<span id="cb279-3"><a href="validación-de-supuestos.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="fu">whites.htest</span>(model1)</span></code></pre></div>
 <pre><code>
 White&#39;s Test for Heteroskedasticity:
 ==================================== 
@@ -628,7 +626,7 @@ White&#39;s Test for Heteroskedasticity:
 <p>Las hipótesis que se plantean en la prueba de Durbin-Watson es:</p>
 <p><span class="math display">\[\textbf{H}_0: \mbox{La autocorrelación de los residuales es igual a } 0 \ \ \  vs \ \ \  \textbf{H}_a: \mbox{La autocorrelación de los residuales es} \neq 0\]</span></p>
 <p>En R se puede hacer la prueba de Durbin Watson con el comando <strong>dwtest()</strong>.</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="validación-de-supuestos.html#cb281-1" aria-hidden="true"></a><span class="kw">dwtest</span>(M1)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="validación-de-supuestos.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dwtest</span>(M1)</span></code></pre></div>
 <pre><code>
     Durbin-Watson test
 

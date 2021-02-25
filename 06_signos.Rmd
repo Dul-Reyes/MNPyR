@@ -352,3 +352,38 @@ $$
 \end{array}
 \end{equation*}
 $$
+
+
+3. Se tienen dos trituradores de alimentos y se tiene la sospecha de que el aparato B es mas eficiente que el aparato A. Para probar dicha sospecha, se probaron en ambos trituradores diferentes alimentos y se registró el tiempo en minutos que le tomaba a cada aparato convertir el alimento en puré. Los resultados fueron los siguientes.
+
+
+$$
+\begin{equation*}
+\begin{array}{||c| |c| |c| |c|} 
+\hline 
+\mbox{Alimento} & \mbox{A} & \mbox{B}\\
+ \hline
+1&0.5&0.6\\
+ \hline
+2&1&0.9\\
+ \hline
+3&1.2&1.2\\
+ \hline
+4&0.8&0.9\\
+ \hline
+5&0.4&0.5\\
+ \hline
+6&1.5&1.8\\
+ \hline
+7&0.3&0.4\\
+ \hline
+8&1.2&1.4\\
+ \hline
+9&0.7&0.9\\
+\hline
+\hline
+\end{array}
+\end{equation*}
+$$
+
+Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use $\alpha=5\%$

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 21 Prueba Anderson-Darling | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 21 Prueba Anderson-Darling | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="pueba-de-lilliefors-exponencial.html"/>
 <link rel="next" href="otras-estadísticas.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,8 +52,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -66,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,7 +125,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -149,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -872,34 +870,34 @@ Normal\ con\ N(\overline{X},S^2) &amp; (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} &
 <div id="ejemplo-en-r-studio-17" class="section level2" number="21.1">
 <h2><span class="header-section-number">21.1</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="prueba-anderson-darling.html#cb204-1" aria-hidden="true"></a><span class="co">#Datos</span></span>
-<span id="cb204-2"><a href="prueba-anderson-darling.html#cb204-2" aria-hidden="true"></a>i=<span class="dv">1</span><span class="op">:</span><span class="dv">15</span></span>
-<span id="cb204-3"><a href="prueba-anderson-darling.html#cb204-3" aria-hidden="true"></a>n=<span class="dv">15</span></span>
-<span id="cb204-4"><a href="prueba-anderson-darling.html#cb204-4" aria-hidden="true"></a>X=<span class="kw">c</span>(<span class="op">-</span><span class="fl">4.1302</span>, <span class="fl">9.315</span>, <span class="fl">3.9757</span>, <span class="fl">8.49</span>, <span class="fl">5.6204</span>, <span class="fl">-6.9098</span>, <span class="fl">-0.1426</span>, <span class="fl">-2.3838</span>,</span>
-<span id="cb204-5"><a href="prueba-anderson-darling.html#cb204-5" aria-hidden="true"></a>                            <span class="fl">-2.0039</span>, <span class="fl">1.7349</span>, <span class="fl">5.7442</span>,<span class="fl">2.7931</span>,<span class="fl">6.2938</span>,<span class="fl">11.7337</span>,<span class="op">-</span><span class="fl">0.1318</span>)</span>
-<span id="cb204-6"><a href="prueba-anderson-darling.html#cb204-6" aria-hidden="true"></a>X_i=<span class="kw">c</span>(<span class="op">-</span><span class="fl">6.9098</span>,<span class="op">-</span><span class="fl">4.1302</span>,<span class="op">-</span><span class="fl">2.3838</span>,<span class="op">-</span><span class="fl">2.0039</span>, <span class="fl">-0.1426</span>,<span class="op">-</span><span class="fl">0.1318</span>,<span class="fl">1.7349</span>,<span class="fl">2.7931</span>,<span class="fl">3.9757</span>,<span class="fl">5.6204</span>,</span>
-<span id="cb204-7"><a href="prueba-anderson-darling.html#cb204-7" aria-hidden="true"></a>      <span class="fl">5.7442</span>,<span class="fl">6.2938</span>,<span class="fl">8.4900</span>,<span class="fl">9.3150</span>,<span class="fl">11.7337</span>)</span>
-<span id="cb204-8"><a href="prueba-anderson-darling.html#cb204-8" aria-hidden="true"></a>F_Xi=<span class="kw">c</span>( <span class="fl">0.0357</span>, <span class="fl">0.1004</span>,<span class="fl">0.1709</span>,<span class="fl">0.1896</span>,<span class="fl">0.2985</span>,<span class="fl">0.2992</span>,<span class="fl">0.4304</span>,<span class="fl">0.5094</span>,<span class="fl">0.5973</span>,<span class="fl">0.7108</span>,</span>
-<span id="cb204-9"><a href="prueba-anderson-darling.html#cb204-9" aria-hidden="true"></a>        <span class="fl">0.7187</span>,<span class="fl">0.7525</span>,<span class="fl">0.8634</span>,<span class="fl">0.8945</span>,<span class="fl">0.9560</span>)</span>
-<span id="cb204-10"><a href="prueba-anderson-darling.html#cb204-10" aria-hidden="true"></a>L1=<span class="kw">c</span>( <span class="fl">-3.3313</span>,<span class="op">-</span><span class="fl">2.2984</span>,<span class="op">-</span><span class="fl">1.7665</span>,<span class="op">-</span><span class="fl">1.6623</span>,<span class="op">-</span><span class="fl">1.2089</span>,<span class="op">-</span><span class="fl">1.2066</span>,<span class="op">-</span><span class="fl">0.8430</span>,<span class="op">-</span><span class="fl">0.6743</span>,<span class="op">-</span><span class="fl">0.5153</span>,<span class="op">-</span><span class="fl">0.3412</span>,<span class="op">-</span><span class="fl">0.3301</span>,</span>
-<span id="cb204-11"><a href="prueba-anderson-darling.html#cb204-11" aria-hidden="true"></a>      <span class="fl">-0.2842</span>,<span class="op">-</span><span class="fl">0.1468</span>,<span class="op">-</span><span class="fl">0.1113</span>,<span class="op">-</span><span class="fl">0.0449</span>)    <span class="co">#ln(F*(Xi))</span></span>
-<span id="cb204-12"><a href="prueba-anderson-darling.html#cb204-12" aria-hidden="true"></a>L2=<span class="kw">c</span>(<span class="op">-</span><span class="fl">3.1245</span>,<span class="op">-</span><span class="fl">2.2498</span>,<span class="op">-</span><span class="fl">1.9911</span>,<span class="op">-</span><span class="fl">1.3967</span>,<span class="op">-</span><span class="fl">1.2686</span>,<span class="op">-</span><span class="fl">1.2408</span>,<span class="op">-</span><span class="fl">0.9095</span>,</span>
-<span id="cb204-13"><a href="prueba-anderson-darling.html#cb204-13" aria-hidden="true"></a><span class="fl">-0.7123</span>,<span class="op">-</span><span class="fl">0.5628</span>,<span class="op">-</span><span class="fl">0.3555</span>,<span class="op">-</span><span class="fl">0.3545</span>,<span class="op">-</span><span class="fl">0.2103</span>,<span class="op">-</span><span class="fl">0.1874</span>,<span class="op">-</span><span class="fl">0.1058</span>,<span class="op">-</span><span class="fl">0.0363</span>)  <span class="co">#ln(1-F*(Xn-i+1))</span></span>
-<span id="cb204-14"><a href="prueba-anderson-darling.html#cb204-14" aria-hidden="true"></a>Qi=<span class="kw">c</span>(<span class="op">-</span><span class="fl">0.4303</span>,<span class="op">-</span><span class="fl">0.9096</span>,<span class="op">-</span><span class="fl">1.2525</span>,<span class="op">-</span><span class="fl">1.4275</span>,<span class="op">-</span><span class="fl">1.4865</span>,<span class="op">-</span><span class="fl">1.7948</span>,<span class="op">-</span><span class="fl">1.5189</span>,<span class="op">-</span><span class="fl">1.3866</span>,<span class="op">-</span><span class="fl">1.2218</span>,<span class="op">-</span><span class="fl">0.8826</span>,</span>
-<span id="cb204-15"><a href="prueba-anderson-darling.html#cb204-15" aria-hidden="true"></a><span class="fl">-0.9586</span>,<span class="op">-</span><span class="fl">0.7583</span>,<span class="op">-</span><span class="fl">0.5570</span>,<span class="op">-</span><span class="fl">0.3909</span>,<span class="op">-</span><span class="fl">0.1572</span>)</span>
-<span id="cb204-16"><a href="prueba-anderson-darling.html#cb204-16" aria-hidden="true"></a></span>
-<span id="cb204-17"><a href="prueba-anderson-darling.html#cb204-17" aria-hidden="true"></a><span class="co">#Ahora calcularemos el estadistico de prueba</span></span>
-<span id="cb204-18"><a href="prueba-anderson-darling.html#cb204-18" aria-hidden="true"></a>A_<span class="dv">2</span>=<span class="op">-</span>n<span class="op">-</span>(<span class="kw">sum</span>(Qi))</span>
-<span id="cb204-19"><a href="prueba-anderson-darling.html#cb204-19" aria-hidden="true"></a>A_<span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="prueba-anderson-darling.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
+<span id="cb204-2"><a href="prueba-anderson-darling.html#cb204-2" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb204-3"><a href="prueba-anderson-darling.html#cb204-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">15</span></span>
+<span id="cb204-4"><a href="prueba-anderson-darling.html#cb204-4" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">4.1302</span>, <span class="fl">9.315</span>, <span class="fl">3.9757</span>, <span class="fl">8.49</span>, <span class="fl">5.6204</span>, <span class="sc">-</span><span class="fl">6.9098</span>, <span class="sc">-</span><span class="fl">0.1426</span>, <span class="sc">-</span><span class="fl">2.3838</span>,</span>
+<span id="cb204-5"><a href="prueba-anderson-darling.html#cb204-5" aria-hidden="true" tabindex="-1"></a>                            <span class="sc">-</span><span class="fl">2.0039</span>, <span class="fl">1.7349</span>, <span class="fl">5.7442</span>,<span class="fl">2.7931</span>,<span class="fl">6.2938</span>,<span class="fl">11.7337</span>,<span class="sc">-</span><span class="fl">0.1318</span>)</span>
+<span id="cb204-6"><a href="prueba-anderson-darling.html#cb204-6" aria-hidden="true" tabindex="-1"></a>X_i<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">6.9098</span>,<span class="sc">-</span><span class="fl">4.1302</span>,<span class="sc">-</span><span class="fl">2.3838</span>,<span class="sc">-</span><span class="fl">2.0039</span>, <span class="sc">-</span><span class="fl">0.1426</span>,<span class="sc">-</span><span class="fl">0.1318</span>,<span class="fl">1.7349</span>,<span class="fl">2.7931</span>,<span class="fl">3.9757</span>,<span class="fl">5.6204</span>,</span>
+<span id="cb204-7"><a href="prueba-anderson-darling.html#cb204-7" aria-hidden="true" tabindex="-1"></a>      <span class="fl">5.7442</span>,<span class="fl">6.2938</span>,<span class="fl">8.4900</span>,<span class="fl">9.3150</span>,<span class="fl">11.7337</span>)</span>
+<span id="cb204-8"><a href="prueba-anderson-darling.html#cb204-8" aria-hidden="true" tabindex="-1"></a>F_Xi<span class="ot">=</span><span class="fu">c</span>( <span class="fl">0.0357</span>, <span class="fl">0.1004</span>,<span class="fl">0.1709</span>,<span class="fl">0.1896</span>,<span class="fl">0.2985</span>,<span class="fl">0.2992</span>,<span class="fl">0.4304</span>,<span class="fl">0.5094</span>,<span class="fl">0.5973</span>,<span class="fl">0.7108</span>,</span>
+<span id="cb204-9"><a href="prueba-anderson-darling.html#cb204-9" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.7187</span>,<span class="fl">0.7525</span>,<span class="fl">0.8634</span>,<span class="fl">0.8945</span>,<span class="fl">0.9560</span>)</span>
+<span id="cb204-10"><a href="prueba-anderson-darling.html#cb204-10" aria-hidden="true" tabindex="-1"></a>L1<span class="ot">=</span><span class="fu">c</span>( <span class="sc">-</span><span class="fl">3.3313</span>,<span class="sc">-</span><span class="fl">2.2984</span>,<span class="sc">-</span><span class="fl">1.7665</span>,<span class="sc">-</span><span class="fl">1.6623</span>,<span class="sc">-</span><span class="fl">1.2089</span>,<span class="sc">-</span><span class="fl">1.2066</span>,<span class="sc">-</span><span class="fl">0.8430</span>,<span class="sc">-</span><span class="fl">0.6743</span>,<span class="sc">-</span><span class="fl">0.5153</span>,<span class="sc">-</span><span class="fl">0.3412</span>,<span class="sc">-</span><span class="fl">0.3301</span>,</span>
+<span id="cb204-11"><a href="prueba-anderson-darling.html#cb204-11" aria-hidden="true" tabindex="-1"></a>      <span class="sc">-</span><span class="fl">0.2842</span>,<span class="sc">-</span><span class="fl">0.1468</span>,<span class="sc">-</span><span class="fl">0.1113</span>,<span class="sc">-</span><span class="fl">0.0449</span>)    <span class="co">#ln(F*(Xi))</span></span>
+<span id="cb204-12"><a href="prueba-anderson-darling.html#cb204-12" aria-hidden="true" tabindex="-1"></a>L2<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.1245</span>,<span class="sc">-</span><span class="fl">2.2498</span>,<span class="sc">-</span><span class="fl">1.9911</span>,<span class="sc">-</span><span class="fl">1.3967</span>,<span class="sc">-</span><span class="fl">1.2686</span>,<span class="sc">-</span><span class="fl">1.2408</span>,<span class="sc">-</span><span class="fl">0.9095</span>,</span>
+<span id="cb204-13"><a href="prueba-anderson-darling.html#cb204-13" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.7123</span>,<span class="sc">-</span><span class="fl">0.5628</span>,<span class="sc">-</span><span class="fl">0.3555</span>,<span class="sc">-</span><span class="fl">0.3545</span>,<span class="sc">-</span><span class="fl">0.2103</span>,<span class="sc">-</span><span class="fl">0.1874</span>,<span class="sc">-</span><span class="fl">0.1058</span>,<span class="sc">-</span><span class="fl">0.0363</span>)  <span class="co">#ln(1-F*(Xn-i+1))</span></span>
+<span id="cb204-14"><a href="prueba-anderson-darling.html#cb204-14" aria-hidden="true" tabindex="-1"></a>Qi<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4303</span>,<span class="sc">-</span><span class="fl">0.9096</span>,<span class="sc">-</span><span class="fl">1.2525</span>,<span class="sc">-</span><span class="fl">1.4275</span>,<span class="sc">-</span><span class="fl">1.4865</span>,<span class="sc">-</span><span class="fl">1.7948</span>,<span class="sc">-</span><span class="fl">1.5189</span>,<span class="sc">-</span><span class="fl">1.3866</span>,<span class="sc">-</span><span class="fl">1.2218</span>,<span class="sc">-</span><span class="fl">0.8826</span>,</span>
+<span id="cb204-15"><a href="prueba-anderson-darling.html#cb204-15" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.9586</span>,<span class="sc">-</span><span class="fl">0.7583</span>,<span class="sc">-</span><span class="fl">0.5570</span>,<span class="sc">-</span><span class="fl">0.3909</span>,<span class="sc">-</span><span class="fl">0.1572</span>)</span>
+<span id="cb204-16"><a href="prueba-anderson-darling.html#cb204-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-17"><a href="prueba-anderson-darling.html#cb204-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora calcularemos el estadistico de prueba</span></span>
+<span id="cb204-18"><a href="prueba-anderson-darling.html#cb204-18" aria-hidden="true" tabindex="-1"></a>A_2<span class="ot">=</span><span class="sc">-</span>n<span class="sc">-</span>(<span class="fu">sum</span>(Qi))</span>
+<span id="cb204-19"><a href="prueba-anderson-darling.html#cb204-19" aria-hidden="true" tabindex="-1"></a>A_2</span></code></pre></div>
 <pre><code>[1] 0.1331</code></pre>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="prueba-anderson-darling.html#cb206-1" aria-hidden="true"></a><span class="co">#Ahora aplicaremos el ajuste correspondiente</span></span>
-<span id="cb206-2"><a href="prueba-anderson-darling.html#cb206-2" aria-hidden="true"></a></span>
-<span id="cb206-3"><a href="prueba-anderson-darling.html#cb206-3" aria-hidden="true"></a>A_2ajust=(<span class="dv">1</span><span class="op">+</span><span class="dv">4</span><span class="op">/</span>n<span class="op">+</span><span class="dv">25</span><span class="op">/</span>n<span class="op">^</span><span class="dv">2</span>)<span class="op">*</span>A_<span class="dv">2</span></span>
-<span id="cb206-4"><a href="prueba-anderson-darling.html#cb206-4" aria-hidden="true"></a>A_2ajust</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="prueba-anderson-darling.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora aplicaremos el ajuste correspondiente</span></span>
+<span id="cb206-2"><a href="prueba-anderson-darling.html#cb206-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb206-3"><a href="prueba-anderson-darling.html#cb206-3" aria-hidden="true" tabindex="-1"></a>A_2ajust<span class="ot">=</span>(<span class="dv">1</span><span class="sc">+</span><span class="dv">4</span><span class="sc">/</span>n<span class="sc">+</span><span class="dv">25</span><span class="sc">/</span>n<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>A_2</span>
+<span id="cb206-4"><a href="prueba-anderson-darling.html#cb206-4" aria-hidden="true" tabindex="-1"></a>A_2ajust</span></code></pre></div>
 <pre><code>[1] 0.1833822</code></pre>
 <p>Por la tabla auxiliar tenemos <span class="math inline">\(A_{0.95}=0.751\)</span>, de esta manera se tiene que 0.751 = <span class="math inline">\(A_{0.95} &gt; A_{n}^2=0.1846\)</span>, como el valor crítico <span class="math inline">\(A_{0.95}\)</span> es mayor a comparación de <span class="math inline">\(A_{n}^2=0.1846\)</span>, entonces no rechazamos <span class="math inline">\(H_0\)</span>. Podemos concluir que a un nivel de significancia <span class="math inline">\(\alpha\)</span>=0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución normal.</p>
 <p>Ahora podemos utilizar la prueba en R</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="prueba-anderson-darling.html#cb208-1" aria-hidden="true"></a><span class="kw">ad.test</span>(X)   <span class="co">#Recordemos que la función no hace el ajuste</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="prueba-anderson-darling.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ad.test</span>(X)   <span class="co">#Recordemos que la función no hace el ajuste</span></span></code></pre></div>
 <pre><code>
     Anderson-Darling normality test
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 13 Prueba de Independencia | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 13 Prueba de Independencia | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="tablas-de-contingencia-de-2x2.html"/>
 <link rel="next" href="tablas-de-contingecia-de-r-times-c.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,8 +52,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -66,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,7 +125,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -149,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -514,57 +512,57 @@ individuos que han probado el producto con los siguientes resultados:</p>
 <div id="ejemplo-en-r-studio-10" class="section level2" number="13.2">
 <h2><span class="header-section-number">13.2</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="prueba-de-independencia.html#cb108-1" aria-hidden="true"></a>Preferencia=<span class="kw">c</span>(<span class="st">&quot;Gusta&quot;</span>,<span class="st">&quot;Neutral/No les gusta&quot;</span>)</span>
-<span id="cb108-2"><a href="prueba-de-independencia.html#cb108-2" aria-hidden="true"></a>Sin_Universidad=<span class="kw">c</span>(<span class="dv">75</span>,<span class="dv">25</span>)</span>
-<span id="cb108-3"><a href="prueba-de-independencia.html#cb108-3" aria-hidden="true"></a>Nivel_Truncado=<span class="kw">c</span>(<span class="dv">90</span>,<span class="dv">60</span>)</span>
-<span id="cb108-4"><a href="prueba-de-independencia.html#cb108-4" aria-hidden="true"></a>Graduados=<span class="kw">c</span>(<span class="dv">135</span>,<span class="dv">115</span>)</span>
-<span id="cb108-5"><a href="prueba-de-independencia.html#cb108-5" aria-hidden="true"></a>datos=<span class="kw">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados)</span>
-<span id="cb108-6"><a href="prueba-de-independencia.html#cb108-6" aria-hidden="true"></a>datos</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="prueba-de-independencia.html#cb108-1" aria-hidden="true" tabindex="-1"></a>Preferencia<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;Gusta&quot;</span>,<span class="st">&quot;Neutral/No les gusta&quot;</span>)</span>
+<span id="cb108-2"><a href="prueba-de-independencia.html#cb108-2" aria-hidden="true" tabindex="-1"></a>Sin_Universidad<span class="ot">=</span><span class="fu">c</span>(<span class="dv">75</span>,<span class="dv">25</span>)</span>
+<span id="cb108-3"><a href="prueba-de-independencia.html#cb108-3" aria-hidden="true" tabindex="-1"></a>Nivel_Truncado<span class="ot">=</span><span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">60</span>)</span>
+<span id="cb108-4"><a href="prueba-de-independencia.html#cb108-4" aria-hidden="true" tabindex="-1"></a>Graduados<span class="ot">=</span><span class="fu">c</span>(<span class="dv">135</span>,<span class="dv">115</span>)</span>
+<span id="cb108-5"><a href="prueba-de-independencia.html#cb108-5" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">=</span><span class="fu">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados)</span>
+<span id="cb108-6"><a href="prueba-de-independencia.html#cb108-6" aria-hidden="true" tabindex="-1"></a>datos</span></code></pre></div>
 <pre><code>           Preferencia Sin_Universidad Nivel_Truncado Graduados
 1                Gusta              75             90       135
 2 Neutral/No les gusta              25             60       115</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="prueba-de-independencia.html#cb110-1" aria-hidden="true"></a><span class="co">#ahora, vamos a calcular los totales y adjuntarlos a la tabla</span></span>
-<span id="cb110-2"><a href="prueba-de-independencia.html#cb110-2" aria-hidden="true"></a>Preferencia=<span class="kw">c</span>(Preferencia,<span class="st">&quot;Totales&quot;</span>)</span>
-<span id="cb110-3"><a href="prueba-de-independencia.html#cb110-3" aria-hidden="true"></a>Sin_Universidad=<span class="kw">c</span>(Sin_Universidad, <span class="kw">sum</span>(Sin_Universidad))</span>
-<span id="cb110-4"><a href="prueba-de-independencia.html#cb110-4" aria-hidden="true"></a>Nivel_Truncado=<span class="kw">c</span>(Nivel_Truncado, <span class="kw">sum</span>(Nivel_Truncado))</span>
-<span id="cb110-5"><a href="prueba-de-independencia.html#cb110-5" aria-hidden="true"></a>Graduados=<span class="kw">c</span>(Graduados,<span class="kw">sum</span>(Graduados))</span>
-<span id="cb110-6"><a href="prueba-de-independencia.html#cb110-6" aria-hidden="true"></a>Totales=<span class="kw">c</span>(Sin_Universidad[<span class="dv">1</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="op">+</span>Graduados[<span class="dv">1</span>],Sin_Universidad[<span class="dv">2</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="op">+</span>Graduados[<span class="dv">2</span>],</span>
-<span id="cb110-7"><a href="prueba-de-independencia.html#cb110-7" aria-hidden="true"></a>           Sin_Universidad[<span class="dv">1</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="op">+</span>Graduados[<span class="dv">1</span>]<span class="op">+</span>Sin_Universidad[<span class="dv">2</span>]<span class="op">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="op">+</span>Graduados[<span class="dv">2</span>])</span>
-<span id="cb110-8"><a href="prueba-de-independencia.html#cb110-8" aria-hidden="true"></a>datos=<span class="kw">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados,Totales)</span>
-<span id="cb110-9"><a href="prueba-de-independencia.html#cb110-9" aria-hidden="true"></a>datos</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="prueba-de-independencia.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ahora, vamos a calcular los totales y adjuntarlos a la tabla</span></span>
+<span id="cb110-2"><a href="prueba-de-independencia.html#cb110-2" aria-hidden="true" tabindex="-1"></a>Preferencia<span class="ot">=</span><span class="fu">c</span>(Preferencia,<span class="st">&quot;Totales&quot;</span>)</span>
+<span id="cb110-3"><a href="prueba-de-independencia.html#cb110-3" aria-hidden="true" tabindex="-1"></a>Sin_Universidad<span class="ot">=</span><span class="fu">c</span>(Sin_Universidad, <span class="fu">sum</span>(Sin_Universidad))</span>
+<span id="cb110-4"><a href="prueba-de-independencia.html#cb110-4" aria-hidden="true" tabindex="-1"></a>Nivel_Truncado<span class="ot">=</span><span class="fu">c</span>(Nivel_Truncado, <span class="fu">sum</span>(Nivel_Truncado))</span>
+<span id="cb110-5"><a href="prueba-de-independencia.html#cb110-5" aria-hidden="true" tabindex="-1"></a>Graduados<span class="ot">=</span><span class="fu">c</span>(Graduados,<span class="fu">sum</span>(Graduados))</span>
+<span id="cb110-6"><a href="prueba-de-independencia.html#cb110-6" aria-hidden="true" tabindex="-1"></a>Totales<span class="ot">=</span><span class="fu">c</span>(Sin_Universidad[<span class="dv">1</span>]<span class="sc">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="sc">+</span>Graduados[<span class="dv">1</span>],Sin_Universidad[<span class="dv">2</span>]<span class="sc">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="sc">+</span>Graduados[<span class="dv">2</span>],</span>
+<span id="cb110-7"><a href="prueba-de-independencia.html#cb110-7" aria-hidden="true" tabindex="-1"></a>           Sin_Universidad[<span class="dv">1</span>]<span class="sc">+</span>Nivel_Truncado[<span class="dv">1</span>]<span class="sc">+</span>Graduados[<span class="dv">1</span>]<span class="sc">+</span>Sin_Universidad[<span class="dv">2</span>]<span class="sc">+</span>Nivel_Truncado[<span class="dv">2</span>]<span class="sc">+</span>Graduados[<span class="dv">2</span>])</span>
+<span id="cb110-8"><a href="prueba-de-independencia.html#cb110-8" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">=</span><span class="fu">data.frame</span>(Preferencia,Sin_Universidad,Nivel_Truncado,Graduados,Totales)</span>
+<span id="cb110-9"><a href="prueba-de-independencia.html#cb110-9" aria-hidden="true" tabindex="-1"></a>datos</span></code></pre></div>
 <pre><code>           Preferencia Sin_Universidad Nivel_Truncado Graduados Totales
 1                Gusta              75             90       135     300
 2 Neutral/No les gusta              25             60       115     200
 3              Totales             100            150       250     500</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="prueba-de-independencia.html#cb112-1" aria-hidden="true"></a><span class="co">#ESTADÍSTICO DE PRUEBA</span></span>
-<span id="cb112-2"><a href="prueba-de-independencia.html#cb112-2" aria-hidden="true"></a><span class="co">#Primero calcularemos los valores esperados</span></span>
-<span id="cb112-3"><a href="prueba-de-independencia.html#cb112-3" aria-hidden="true"></a>Esperados=<span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>,<span class="dt">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb112-4"><a href="prueba-de-independencia.html#cb112-4" aria-hidden="true"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) {</span>
-<span id="cb112-5"><a href="prueba-de-independencia.html#cb112-5" aria-hidden="true"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
-<span id="cb112-6"><a href="prueba-de-independencia.html#cb112-6" aria-hidden="true"></a>    Esperados[i,j]=(datos<span class="op">$</span>Totales[i]<span class="op">*</span>datos[<span class="dv">3</span>,j<span class="op">+</span><span class="dv">1</span>])<span class="op">/</span>datos<span class="op">$</span>Totales[<span class="dv">3</span>]</span>
-<span id="cb112-7"><a href="prueba-de-independencia.html#cb112-7" aria-hidden="true"></a>  }  </span>
-<span id="cb112-8"><a href="prueba-de-independencia.html#cb112-8" aria-hidden="true"></a>}</span>
-<span id="cb112-9"><a href="prueba-de-independencia.html#cb112-9" aria-hidden="true"></a><span class="co">#Ahora sí, vamos a calcular el estadístico completo</span></span>
-<span id="cb112-10"><a href="prueba-de-independencia.html#cb112-10" aria-hidden="true"></a>Totales=<span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>,<span class="dt">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb112-11"><a href="prueba-de-independencia.html#cb112-11" aria-hidden="true"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) {</span>
-<span id="cb112-12"><a href="prueba-de-independencia.html#cb112-12" aria-hidden="true"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
-<span id="cb112-13"><a href="prueba-de-independencia.html#cb112-13" aria-hidden="true"></a>    Totales[i,j]=(datos[i,j<span class="op">+</span><span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(Esperados[i,j])</span>
-<span id="cb112-14"><a href="prueba-de-independencia.html#cb112-14" aria-hidden="true"></a>  }  </span>
-<span id="cb112-15"><a href="prueba-de-independencia.html#cb112-15" aria-hidden="true"></a>}</span>
-<span id="cb112-16"><a href="prueba-de-independencia.html#cb112-16" aria-hidden="true"></a>T1=<span class="kw">sum</span>(Totales)<span class="op">-</span>datos<span class="op">$</span>Totales[<span class="dv">3</span>]</span>
-<span id="cb112-17"><a href="prueba-de-independencia.html#cb112-17" aria-hidden="true"></a><span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="prueba-de-independencia.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ESTADÍSTICO DE PRUEBA</span></span>
+<span id="cb112-2"><a href="prueba-de-independencia.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Primero calcularemos los valores esperados</span></span>
+<span id="cb112-3"><a href="prueba-de-independencia.html#cb112-3" aria-hidden="true" tabindex="-1"></a>Esperados<span class="ot">=</span><span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">2</span>,<span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb112-4"><a href="prueba-de-independencia.html#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) {</span>
+<span id="cb112-5"><a href="prueba-de-independencia.html#cb112-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
+<span id="cb112-6"><a href="prueba-de-independencia.html#cb112-6" aria-hidden="true" tabindex="-1"></a>    Esperados[i,j]<span class="ot">=</span>(datos<span class="sc">$</span>Totales[i]<span class="sc">*</span>datos[<span class="dv">3</span>,j<span class="sc">+</span><span class="dv">1</span>])<span class="sc">/</span>datos<span class="sc">$</span>Totales[<span class="dv">3</span>]</span>
+<span id="cb112-7"><a href="prueba-de-independencia.html#cb112-7" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb112-8"><a href="prueba-de-independencia.html#cb112-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb112-9"><a href="prueba-de-independencia.html#cb112-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora sí, vamos a calcular el estadístico completo</span></span>
+<span id="cb112-10"><a href="prueba-de-independencia.html#cb112-10" aria-hidden="true" tabindex="-1"></a>Totales<span class="ot">=</span><span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">2</span>,<span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb112-11"><a href="prueba-de-independencia.html#cb112-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) {</span>
+<span id="cb112-12"><a href="prueba-de-independencia.html#cb112-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
+<span id="cb112-13"><a href="prueba-de-independencia.html#cb112-13" aria-hidden="true" tabindex="-1"></a>    Totales[i,j]<span class="ot">=</span>(datos[i,j<span class="sc">+</span><span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(Esperados[i,j])</span>
+<span id="cb112-14"><a href="prueba-de-independencia.html#cb112-14" aria-hidden="true" tabindex="-1"></a>  }  </span>
+<span id="cb112-15"><a href="prueba-de-independencia.html#cb112-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb112-16"><a href="prueba-de-independencia.html#cb112-16" aria-hidden="true" tabindex="-1"></a>T1<span class="ot">=</span><span class="fu">sum</span>(Totales)<span class="sc">-</span>datos<span class="sc">$</span>Totales[<span class="dv">3</span>]</span>
+<span id="cb112-17"><a href="prueba-de-independencia.html#cb112-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))</span></code></pre></div>
 <pre><code>[1] &quot;Estadístico T1 = &quot; &quot;13.125&quot;           </code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="prueba-de-independencia.html#cb114-1" aria-hidden="true"></a>alpha=.<span class="dv">05</span></span>
-<span id="cb114-2"><a href="prueba-de-independencia.html#cb114-2" aria-hidden="true"></a><span class="co">#Ahora vamos a calcular nuestro cuantil</span></span>
-<span id="cb114-3"><a href="prueba-de-independencia.html#cb114-3" aria-hidden="true"></a>cuantil=<span class="kw">qchisq</span>(<span class="dv">1</span><span class="op">-</span>alpha,<span class="dv">2</span>)</span>
-<span id="cb114-4"><a href="prueba-de-independencia.html#cb114-4" aria-hidden="true"></a><span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="prueba-de-independencia.html#cb114-1" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">=</span>.<span class="dv">05</span></span>
+<span id="cb114-2"><a href="prueba-de-independencia.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora vamos a calcular nuestro cuantil</span></span>
+<span id="cb114-3"><a href="prueba-de-independencia.html#cb114-3" aria-hidden="true" tabindex="-1"></a>cuantil<span class="ot">=</span><span class="fu">qchisq</span>(<span class="dv">1</span><span class="sc">-</span>alpha,<span class="dv">2</span>)</span>
+<span id="cb114-4"><a href="prueba-de-independencia.html#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))</span></code></pre></div>
 <pre><code>[1] &quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;
 [2] &quot;5.99146454710798&quot;                                </code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="prueba-de-independencia.html#cb116-1" aria-hidden="true"></a><span class="cf">if</span>(T1<span class="op">&gt;</span>cuantil){</span>
-<span id="cb116-2"><a href="prueba-de-independencia.html#cb116-2" aria-hidden="true"></a>  <span class="kw">print</span>(<span class="st">&quot;Se rechaza $H_0$&quot;</span>)</span>
-<span id="cb116-3"><a href="prueba-de-independencia.html#cb116-3" aria-hidden="true"></a>  <span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))</span>
-<span id="cb116-4"><a href="prueba-de-independencia.html#cb116-4" aria-hidden="true"></a>  <span class="kw">print</span>(<span class="kw">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))</span>
-<span id="cb116-5"><a href="prueba-de-independencia.html#cb116-5" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="prueba-de-independencia.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(T1<span class="sc">&gt;</span>cuantil){</span>
+<span id="cb116-2"><a href="prueba-de-independencia.html#cb116-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Se rechaza $H_0$&quot;</span>)</span>
+<span id="cb116-3"><a href="prueba-de-independencia.html#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="st">&quot;Estadístico T1 = &quot;</span>, T1))</span>
+<span id="cb116-4"><a href="prueba-de-independencia.html#cb116-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="st">&quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;</span>, cuantil))</span>
+<span id="cb116-5"><a href="prueba-de-independencia.html#cb116-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Se rechaza $H_0$&quot;
 [1] &quot;Estadístico T1 = &quot; &quot;13.125&quot;           
 [1] &quot;Cuantil Ji-cuadrado con 2 grados de libertad  = &quot;
@@ -572,17 +570,17 @@ individuos que han probado el producto con los siguientes resultados:</p>
 <p>Observamos que la estadística de prueba tiene un valor de 13.125 y su correspondiente p-value es menor a 0.05, por lo tanto con <span class="math inline">\(\alpha=5\%\)</span> rechazaremos <span class="math inline">\(H_0\)</span> y concluimos existe evidencia suficiente para suponer que hay una relación entre la preferencia del cereal y el nivel
 educativo.</p>
 <p>Ahora podemos utilizar la prueba en R:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="prueba-de-independencia.html#cb118-1" aria-hidden="true"></a>tabla&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">135</span>,<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">115</span>),<span class="dt">ncol=</span><span class="dv">3</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</span>
-<span id="cb118-2"><a href="prueba-de-independencia.html#cb118-2" aria-hidden="true"></a><span class="kw">dimnames</span>(tabla)&lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Preferencia=</span><span class="kw">c</span>(<span class="st">&quot;Gustar&quot;</span>,<span class="st">&quot;Neutral o no les gusta&quot;</span>), <span class="dt">Nivel=</span><span class="kw">c</span>(<span class="st">&quot;Sin universidad&quot;</span>,<span class="st">&quot;Estudios truncados&quot;</span>,</span>
-<span id="cb118-3"><a href="prueba-de-independencia.html#cb118-3" aria-hidden="true"></a>                      <span class="st">&quot;Graduados&quot;</span>))</span>
-<span id="cb118-4"><a href="prueba-de-independencia.html#cb118-4" aria-hidden="true"></a></span>
-<span id="cb118-5"><a href="prueba-de-independencia.html#cb118-5" aria-hidden="true"></a></span>
-<span id="cb118-6"><a href="prueba-de-independencia.html#cb118-6" aria-hidden="true"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="prueba-de-independencia.html#cb118-1" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">135</span>,<span class="dv">25</span>,<span class="dv">60</span>,<span class="dv">115</span>),<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb118-2"><a href="prueba-de-independencia.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(tabla)<span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Preferencia=</span><span class="fu">c</span>(<span class="st">&quot;Gustar&quot;</span>,<span class="st">&quot;Neutral o no les gusta&quot;</span>), <span class="at">Nivel=</span><span class="fu">c</span>(<span class="st">&quot;Sin universidad&quot;</span>,<span class="st">&quot;Estudios truncados&quot;</span>,</span>
+<span id="cb118-3"><a href="prueba-de-independencia.html#cb118-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Graduados&quot;</span>))</span>
+<span id="cb118-4"><a href="prueba-de-independencia.html#cb118-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="prueba-de-independencia.html#cb118-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-6"><a href="prueba-de-independencia.html#cb118-6" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
 <pre><code>                        Nivel
 Preferencia              Sin universidad Estudios truncados Graduados
   Gustar                              75                 90       135
   Neutral o no les gusta              25                 60       115</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="prueba-de-independencia.html#cb120-1" aria-hidden="true"></a><span class="kw">chisq.test</span>(tabla)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="prueba-de-independencia.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabla)</span></code></pre></div>
 <pre><code>
     Pearson&#39;s Chi-squared test
 
@@ -634,7 +632,7 @@ NO &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN&amp;\\
 <p>Se desea probar si existe asociación entre el partido por el cual votó y si tienen o no estudios universitarios. Plantee, en el contexto del problema, las hipótesis, estadística de prueba y obtenga su conclusión con un nivel de significancia del <span class="math inline">\(5\%\)</span></p>
 <ol start="3" style="list-style-type: decimal">
 <li>En una encuesta telefónica se preguntó a los participantes hasta que grado estaban de acuerdo
-con la proposición: “se debe prohibir fumar en lugares públicos”. Con base en los datos recabados se desea saber si existen diferencias significativas en el grado en el que están de acuerdo hombres y mujeres con respecto a prohibir fumar en lugares públicos.</li>
+con la proposición: “se debe prohibir fumar en lugares públicos.” Con base en los datos recabados se desea saber si existen diferencias significativas en el grado en el que están de acuerdo hombres y mujeres con respecto a prohibir fumar en lugares públicos.</li>
 </ol>
 <p><span class="math display">\[
 \begin{equation*}

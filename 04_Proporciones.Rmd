@@ -274,12 +274,9 @@ Graficamos la función binomial
 
 ```{r,echo=FALSE}
 
-
 w=0:20
-plot(0:20,dbinom(0:20,20,0.7),type="h",xlab = " ",ylab = " ",col= "deeppink4",
-lwd=7,main="Función de distribución de una 
-    variable Binomial(20,0.7)")
-
+plot(0:20,dbinom(0:20,20,0.7),type="h",xlab = " ",
+     ylab = " ",col= "deeppink4",lwd=7,main="Función de distribución de una          variable Binomial(20,0.7)")
 
 ```
 
