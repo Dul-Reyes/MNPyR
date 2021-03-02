@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 11 Prueba para más de dos Muestras | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 11 Prueba para más de dos Muestras | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-igualdad-de-varianzas.html"/>
 <link rel="next" href="tablas-de-contingencia.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -491,46 +493,46 @@ Como <span class="math inline">\(T_2=6.006 \ngtr 11.344=t_{1-\alpha}\)</span> en
 <div id="ejemplo-en-r-studio-8" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="prueba-para-más-de-dos-muestras.html#cb89-1" aria-hidden="true" tabindex="-1"></a>M1<span class="ot">=</span><span class="fu">c</span>(<span class="dv">83</span>,<span class="dv">91</span>,<span class="dv">94</span>,<span class="dv">89</span>,<span class="dv">89</span>,<span class="dv">96</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">90</span>)</span>
-<span id="cb89-2"><a href="prueba-para-más-de-dos-muestras.html#cb89-2" aria-hidden="true" tabindex="-1"></a>M2<span class="ot">=</span><span class="fu">c</span>(<span class="dv">91</span>,<span class="dv">90</span>,<span class="dv">81</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">83</span>,<span class="dv">88</span>,<span class="dv">91</span>,<span class="dv">89</span>,<span class="dv">84</span>)</span>
-<span id="cb89-3"><a href="prueba-para-más-de-dos-muestras.html#cb89-3" aria-hidden="true" tabindex="-1"></a>M3<span class="ot">=</span><span class="fu">c</span>(<span class="dv">101</span>,<span class="dv">100</span>,<span class="dv">91</span>,<span class="dv">93</span>,<span class="dv">96</span>,<span class="dv">95</span>,<span class="dv">94</span>)</span>
-<span id="cb89-4"><a href="prueba-para-más-de-dos-muestras.html#cb89-4" aria-hidden="true" tabindex="-1"></a>M4<span class="ot">=</span><span class="fu">c</span>(<span class="dv">78</span>,<span class="dv">82</span>,<span class="dv">81</span>,<span class="dv">77</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">80</span>,<span class="dv">81</span>)</span>
-<span id="cb89-5"><a href="prueba-para-más-de-dos-muestras.html#cb89-5" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">=</span><span class="fu">length</span>(M1)</span>
-<span id="cb89-6"><a href="prueba-para-más-de-dos-muestras.html#cb89-6" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">=</span><span class="fu">length</span>(M2)</span>
-<span id="cb89-7"><a href="prueba-para-más-de-dos-muestras.html#cb89-7" aria-hidden="true" tabindex="-1"></a>n3<span class="ot">=</span><span class="fu">length</span>(M3)</span>
-<span id="cb89-8"><a href="prueba-para-más-de-dos-muestras.html#cb89-8" aria-hidden="true" tabindex="-1"></a>n4<span class="ot">=</span><span class="fu">length</span>(M4)</span>
-<span id="cb89-9"><a href="prueba-para-más-de-dos-muestras.html#cb89-9" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>n1<span class="sc">+</span>n2<span class="sc">+</span>n3<span class="sc">+</span>n4</span>
-<span id="cb89-10"><a href="prueba-para-más-de-dos-muestras.html#cb89-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-11"><a href="prueba-para-más-de-dos-muestras.html#cb89-11" aria-hidden="true" tabindex="-1"></a>U1<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">abs</span>(M1<span class="sc">-</span><span class="fu">mean</span>(M1)))</span>
-<span id="cb89-12"><a href="prueba-para-más-de-dos-muestras.html#cb89-12" aria-hidden="true" tabindex="-1"></a>U2<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">abs</span>(M2<span class="sc">-</span><span class="fu">mean</span>(M2)))</span>
-<span id="cb89-13"><a href="prueba-para-más-de-dos-muestras.html#cb89-13" aria-hidden="true" tabindex="-1"></a>U3<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">abs</span>(M3<span class="sc">-</span><span class="fu">mean</span>(M3)))</span>
-<span id="cb89-14"><a href="prueba-para-más-de-dos-muestras.html#cb89-14" aria-hidden="true" tabindex="-1"></a>U4<span class="ot">=</span><span class="fu">sort</span>(<span class="fu">abs</span>(M4<span class="sc">-</span><span class="fu">mean</span>(M4)))</span>
-<span id="cb89-15"><a href="prueba-para-más-de-dos-muestras.html#cb89-15" aria-hidden="true" tabindex="-1"></a><span class="co">#U=rbind(U1,U2,U3,U4)</span></span>
-<span id="cb89-16"><a href="prueba-para-más-de-dos-muestras.html#cb89-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Asignación de rango</span></span>
-<span id="cb89-17"><a href="prueba-para-más-de-dos-muestras.html#cb89-17" aria-hidden="true" tabindex="-1"></a>R1<span class="ot">=</span><span class="fu">c</span>(<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="dv">5</span>,<span class="dv">11</span>,<span class="fl">12.5</span>,<span class="fl">12.5</span>,<span class="dv">25</span>,<span class="dv">33</span>,<span class="dv">34</span>)</span>
-<span id="cb89-18"><a href="prueba-para-más-de-dos-muestras.html#cb89-18" aria-hidden="true" tabindex="-1"></a>R2<span class="ot">=</span><span class="fu">c</span>(<span class="dv">14</span>,<span class="fl">18.5</span>,<span class="fl">18.5</span>,<span class="dv">20</span>,<span class="fl">23.5</span>,<span class="fl">23.5</span>,<span class="dv">26</span>,<span class="fl">28.5</span>,<span class="fl">28.5</span>,<span class="dv">32</span>)</span>
-<span id="cb89-19"><a href="prueba-para-más-de-dos-muestras.html#cb89-19" aria-hidden="true" tabindex="-1"></a>R3<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">15</span>,<span class="dv">21</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">31</span>)</span>
-<span id="cb89-20"><a href="prueba-para-más-de-dos-muestras.html#cb89-20" aria-hidden="true" tabindex="-1"></a>R4<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">22</span>)</span>
-<span id="cb89-21"><a href="prueba-para-más-de-dos-muestras.html#cb89-21" aria-hidden="true" tabindex="-1"></a><span class="co">#rangos al cuadrado</span></span>
-<span id="cb89-22"><a href="prueba-para-más-de-dos-muestras.html#cb89-22" aria-hidden="true" tabindex="-1"></a>R1s<span class="ot">=</span>R1<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb89-23"><a href="prueba-para-más-de-dos-muestras.html#cb89-23" aria-hidden="true" tabindex="-1"></a>R2s<span class="ot">=</span>R2<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb89-24"><a href="prueba-para-más-de-dos-muestras.html#cb89-24" aria-hidden="true" tabindex="-1"></a>R3s<span class="ot">=</span>R3<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb89-25"><a href="prueba-para-más-de-dos-muestras.html#cb89-25" aria-hidden="true" tabindex="-1"></a>R4s<span class="ot">=</span>R4<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb89-26"><a href="prueba-para-más-de-dos-muestras.html#cb89-26" aria-hidden="true" tabindex="-1"></a><span class="co">#suma del cuadrado de los rangos</span></span>
-<span id="cb89-27"><a href="prueba-para-más-de-dos-muestras.html#cb89-27" aria-hidden="true" tabindex="-1"></a>S1<span class="ot">=</span><span class="fu">sum</span>(R1s)</span>
-<span id="cb89-28"><a href="prueba-para-más-de-dos-muestras.html#cb89-28" aria-hidden="true" tabindex="-1"></a>S2<span class="ot">=</span><span class="fu">sum</span>(R2s)</span>
-<span id="cb89-29"><a href="prueba-para-más-de-dos-muestras.html#cb89-29" aria-hidden="true" tabindex="-1"></a>S3<span class="ot">=</span><span class="fu">sum</span>(R3s)</span>
-<span id="cb89-30"><a href="prueba-para-más-de-dos-muestras.html#cb89-30" aria-hidden="true" tabindex="-1"></a>S4<span class="ot">=</span><span class="fu">sum</span>(R4s)</span>
-<span id="cb89-31"><a href="prueba-para-más-de-dos-muestras.html#cb89-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-32"><a href="prueba-para-más-de-dos-muestras.html#cb89-32" aria-hidden="true" tabindex="-1"></a>S<span class="ot">=</span><span class="fu">sum</span>(S1,S2,S3,S4)<span class="sc">/</span>N</span>
-<span id="cb89-33"><a href="prueba-para-más-de-dos-muestras.html#cb89-33" aria-hidden="true" tabindex="-1"></a>R4<span class="ot">=</span><span class="fu">sum</span>(R1s<span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">sum</span>(R2s<span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">sum</span>(R3s<span class="sc">^</span><span class="dv">2</span>)<span class="sc">+</span><span class="fu">sum</span>(R4s<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb89-34"><a href="prueba-para-más-de-dos-muestras.html#cb89-34" aria-hidden="true" tabindex="-1"></a>D2<span class="ot">=</span>(R4<span class="sc">-</span>N<span class="sc">*</span>S<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(N<span class="dv">-1</span>)</span>
-<span id="cb89-35"><a href="prueba-para-más-de-dos-muestras.html#cb89-35" aria-hidden="true" tabindex="-1"></a>T2<span class="ot">=</span>(S1<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n1<span class="sc">+</span>S2<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n2<span class="sc">+</span>S3<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n3<span class="sc">+</span>S4<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>n4<span class="sc">-</span>N<span class="sc">*</span>S<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>D2</span>
-<span id="cb89-36"><a href="prueba-para-más-de-dos-muestras.html#cb89-36" aria-hidden="true" tabindex="-1"></a>T2</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="prueba-para-más-de-dos-muestras.html#cb89-1" aria-hidden="true"></a>M1=<span class="kw">c</span>(<span class="dv">83</span>,<span class="dv">91</span>,<span class="dv">94</span>,<span class="dv">89</span>,<span class="dv">89</span>,<span class="dv">96</span>,<span class="dv">91</span>,<span class="dv">92</span>,<span class="dv">90</span>)</span>
+<span id="cb89-2"><a href="prueba-para-más-de-dos-muestras.html#cb89-2" aria-hidden="true"></a>M2=<span class="kw">c</span>(<span class="dv">91</span>,<span class="dv">90</span>,<span class="dv">81</span>,<span class="dv">83</span>,<span class="dv">84</span>,<span class="dv">83</span>,<span class="dv">88</span>,<span class="dv">91</span>,<span class="dv">89</span>,<span class="dv">84</span>)</span>
+<span id="cb89-3"><a href="prueba-para-más-de-dos-muestras.html#cb89-3" aria-hidden="true"></a>M3=<span class="kw">c</span>(<span class="dv">101</span>,<span class="dv">100</span>,<span class="dv">91</span>,<span class="dv">93</span>,<span class="dv">96</span>,<span class="dv">95</span>,<span class="dv">94</span>)</span>
+<span id="cb89-4"><a href="prueba-para-más-de-dos-muestras.html#cb89-4" aria-hidden="true"></a>M4=<span class="kw">c</span>(<span class="dv">78</span>,<span class="dv">82</span>,<span class="dv">81</span>,<span class="dv">77</span>,<span class="dv">79</span>,<span class="dv">81</span>,<span class="dv">80</span>,<span class="dv">81</span>)</span>
+<span id="cb89-5"><a href="prueba-para-más-de-dos-muestras.html#cb89-5" aria-hidden="true"></a>n1=<span class="kw">length</span>(M1)</span>
+<span id="cb89-6"><a href="prueba-para-más-de-dos-muestras.html#cb89-6" aria-hidden="true"></a>n2=<span class="kw">length</span>(M2)</span>
+<span id="cb89-7"><a href="prueba-para-más-de-dos-muestras.html#cb89-7" aria-hidden="true"></a>n3=<span class="kw">length</span>(M3)</span>
+<span id="cb89-8"><a href="prueba-para-más-de-dos-muestras.html#cb89-8" aria-hidden="true"></a>n4=<span class="kw">length</span>(M4)</span>
+<span id="cb89-9"><a href="prueba-para-más-de-dos-muestras.html#cb89-9" aria-hidden="true"></a>N=n1<span class="op">+</span>n2<span class="op">+</span>n3<span class="op">+</span>n4</span>
+<span id="cb89-10"><a href="prueba-para-más-de-dos-muestras.html#cb89-10" aria-hidden="true"></a></span>
+<span id="cb89-11"><a href="prueba-para-más-de-dos-muestras.html#cb89-11" aria-hidden="true"></a>U1=<span class="kw">sort</span>(<span class="kw">abs</span>(M1<span class="op">-</span><span class="kw">mean</span>(M1)))</span>
+<span id="cb89-12"><a href="prueba-para-más-de-dos-muestras.html#cb89-12" aria-hidden="true"></a>U2=<span class="kw">sort</span>(<span class="kw">abs</span>(M2<span class="op">-</span><span class="kw">mean</span>(M2)))</span>
+<span id="cb89-13"><a href="prueba-para-más-de-dos-muestras.html#cb89-13" aria-hidden="true"></a>U3=<span class="kw">sort</span>(<span class="kw">abs</span>(M3<span class="op">-</span><span class="kw">mean</span>(M3)))</span>
+<span id="cb89-14"><a href="prueba-para-más-de-dos-muestras.html#cb89-14" aria-hidden="true"></a>U4=<span class="kw">sort</span>(<span class="kw">abs</span>(M4<span class="op">-</span><span class="kw">mean</span>(M4)))</span>
+<span id="cb89-15"><a href="prueba-para-más-de-dos-muestras.html#cb89-15" aria-hidden="true"></a><span class="co">#U=rbind(U1,U2,U3,U4)</span></span>
+<span id="cb89-16"><a href="prueba-para-más-de-dos-muestras.html#cb89-16" aria-hidden="true"></a><span class="co">#Asignación de rango</span></span>
+<span id="cb89-17"><a href="prueba-para-más-de-dos-muestras.html#cb89-17" aria-hidden="true"></a>R1=<span class="kw">c</span>(<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="dv">5</span>,<span class="dv">11</span>,<span class="fl">12.5</span>,<span class="fl">12.5</span>,<span class="dv">25</span>,<span class="dv">33</span>,<span class="dv">34</span>)</span>
+<span id="cb89-18"><a href="prueba-para-más-de-dos-muestras.html#cb89-18" aria-hidden="true"></a>R2=<span class="kw">c</span>(<span class="dv">14</span>,<span class="fl">18.5</span>,<span class="fl">18.5</span>,<span class="dv">20</span>,<span class="fl">23.5</span>,<span class="fl">23.5</span>,<span class="dv">26</span>,<span class="fl">28.5</span>,<span class="fl">28.5</span>,<span class="dv">32</span>)</span>
+<span id="cb89-19"><a href="prueba-para-más-de-dos-muestras.html#cb89-19" aria-hidden="true"></a>R3=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">15</span>,<span class="dv">21</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">31</span>)</span>
+<span id="cb89-20"><a href="prueba-para-más-de-dos-muestras.html#cb89-20" aria-hidden="true"></a>R4=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">22</span>)</span>
+<span id="cb89-21"><a href="prueba-para-más-de-dos-muestras.html#cb89-21" aria-hidden="true"></a><span class="co">#rangos al cuadrado</span></span>
+<span id="cb89-22"><a href="prueba-para-más-de-dos-muestras.html#cb89-22" aria-hidden="true"></a>R1s=R1<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb89-23"><a href="prueba-para-más-de-dos-muestras.html#cb89-23" aria-hidden="true"></a>R2s=R2<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb89-24"><a href="prueba-para-más-de-dos-muestras.html#cb89-24" aria-hidden="true"></a>R3s=R3<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb89-25"><a href="prueba-para-más-de-dos-muestras.html#cb89-25" aria-hidden="true"></a>R4s=R4<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb89-26"><a href="prueba-para-más-de-dos-muestras.html#cb89-26" aria-hidden="true"></a><span class="co">#suma del cuadrado de los rangos</span></span>
+<span id="cb89-27"><a href="prueba-para-más-de-dos-muestras.html#cb89-27" aria-hidden="true"></a>S1=<span class="kw">sum</span>(R1s)</span>
+<span id="cb89-28"><a href="prueba-para-más-de-dos-muestras.html#cb89-28" aria-hidden="true"></a>S2=<span class="kw">sum</span>(R2s)</span>
+<span id="cb89-29"><a href="prueba-para-más-de-dos-muestras.html#cb89-29" aria-hidden="true"></a>S3=<span class="kw">sum</span>(R3s)</span>
+<span id="cb89-30"><a href="prueba-para-más-de-dos-muestras.html#cb89-30" aria-hidden="true"></a>S4=<span class="kw">sum</span>(R4s)</span>
+<span id="cb89-31"><a href="prueba-para-más-de-dos-muestras.html#cb89-31" aria-hidden="true"></a></span>
+<span id="cb89-32"><a href="prueba-para-más-de-dos-muestras.html#cb89-32" aria-hidden="true"></a>S=<span class="kw">sum</span>(S1,S2,S3,S4)<span class="op">/</span>N</span>
+<span id="cb89-33"><a href="prueba-para-más-de-dos-muestras.html#cb89-33" aria-hidden="true"></a>R4=<span class="kw">sum</span>(R1s<span class="op">^</span><span class="dv">2</span>)<span class="op">+</span><span class="kw">sum</span>(R2s<span class="op">^</span><span class="dv">2</span>)<span class="op">+</span><span class="kw">sum</span>(R3s<span class="op">^</span><span class="dv">2</span>)<span class="op">+</span><span class="kw">sum</span>(R4s<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb89-34"><a href="prueba-para-más-de-dos-muestras.html#cb89-34" aria-hidden="true"></a>D2=(R4<span class="op">-</span>N<span class="op">*</span>S<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(N<span class="dv">-1</span>)</span>
+<span id="cb89-35"><a href="prueba-para-más-de-dos-muestras.html#cb89-35" aria-hidden="true"></a>T2=(S1<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n1<span class="op">+</span>S2<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n2<span class="op">+</span>S3<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n3<span class="op">+</span>S4<span class="op">^</span><span class="dv">2</span><span class="op">/</span>n4<span class="op">-</span>N<span class="op">*</span>S<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>D2</span>
+<span id="cb89-36"><a href="prueba-para-más-de-dos-muestras.html#cb89-36" aria-hidden="true"></a>T2</span></code></pre></div>
 <pre><code>[1] 6.006228</code></pre>
 <p>Ya que utilizamos la estadística <span class="math inline">\(T_2\)</span>, entonces el cuantil que hay que buscar es en una distribución Ji-cuadrada con <span class="math inline">\(k-1=3\)</span> grados de libertad. Consideremos <span class="math inline">\(\alpha=0.01\)</span>.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="prueba-para-más-de-dos-muestras.html#cb91-1" aria-hidden="true" tabindex="-1"></a>t<span class="ot">=</span><span class="fu">qchisq</span>(.<span class="dv">99</span>,<span class="dv">3</span>)</span>
-<span id="cb91-2"><a href="prueba-para-más-de-dos-muestras.html#cb91-2" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="prueba-para-más-de-dos-muestras.html#cb91-1" aria-hidden="true"></a>t=<span class="kw">qchisq</span>(.<span class="dv">99</span>,<span class="dv">3</span>)</span>
+<span id="cb91-2"><a href="prueba-para-más-de-dos-muestras.html#cb91-2" aria-hidden="true"></a>t</span></code></pre></div>
 <pre><code>[1] 11.34487</code></pre>
 <p>Como <span class="math inline">\(T_2=6.006\ngtr11.344=t_{1-\alpha}\)</span> entonces no se cumple la regla de decisión y no rechazamos <span class="math inline">\(H_0\)</span>. Conlcuimos que no hay evidencia suficiente para decir que las distribuciones de los rendimientos de los 4 métodos de cultivo no sean idénticos, excepto por diferencias en las medias.</p>
 <p>##Ejercicios</p>

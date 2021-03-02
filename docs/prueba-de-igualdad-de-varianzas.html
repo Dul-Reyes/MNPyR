@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 10 Prueba de Igualdad de Varianzas | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 10 Prueba de Igualdad de Varianzas | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-kruskal-wallis.html"/>
 <link rel="next" href="prueba-para-más-de-dos-muestras.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -535,18 +537,18 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 <div id="ejemplo-en-r-studio-7" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="prueba-de-igualdad-de-varianzas.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos</span></span>
-<span id="cb63-2"><a href="prueba-de-igualdad-de-varianzas.html#cb63-2" aria-hidden="true" tabindex="-1"></a>TasasActuales <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">32</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">27</span>,<span class="dv">35</span>,<span class="dv">48</span>,<span class="dv">31</span>,<span class="dv">28</span>)</span>
-<span id="cb63-3"><a href="prueba-de-igualdad-de-varianzas.html#cb63-3" aria-hidden="true" tabindex="-1"></a>TasasPasadas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">39</span>,<span class="dv">21</span>,<span class="dv">58</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">17</span>,<span class="dv">19</span>)</span>
-<span id="cb63-4"><a href="prueba-de-igualdad-de-varianzas.html#cb63-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-5"><a href="prueba-de-igualdad-de-varianzas.html#cb63-5" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(TasasActuales)  <span class="co">#Tamaño de TasasActuales</span></span>
-<span id="cb63-6"><a href="prueba-de-igualdad-de-varianzas.html#cb63-6" aria-hidden="true" tabindex="-1"></a>m<span class="ot">=</span><span class="fu">length</span>(TasasPasadas)   <span class="co">#Tamaño de TasasPasadas</span></span>
-<span id="cb63-7"><a href="prueba-de-igualdad-de-varianzas.html#cb63-7" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>n<span class="sc">+</span>m                    <span class="co">#Tamaño Total</span></span>
-<span id="cb63-8"><a href="prueba-de-igualdad-de-varianzas.html#cb63-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-9"><a href="prueba-de-igualdad-de-varianzas.html#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de TasasActuales y TasasPasadas</span></span>
-<span id="cb63-10"><a href="prueba-de-igualdad-de-varianzas.html#cb63-10" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">=</span><span class="fu">matrix</span>(<span class="fu">c</span>(TasasActuales,TasasPasadas), <span class="at">byrow=</span><span class="cn">FALSE</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb63-11"><a href="prueba-de-igualdad-de-varianzas.html#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos)<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;TasasActuales: X&quot;</span>, <span class="st">&quot;TasasPasadas: Y&quot;</span>)</span>
-<span id="cb63-12"><a href="prueba-de-igualdad-de-varianzas.html#cb63-12" aria-hidden="true" tabindex="-1"></a>datos</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="prueba-de-igualdad-de-varianzas.html#cb63-1" aria-hidden="true"></a><span class="co"># Datos</span></span>
+<span id="cb63-2"><a href="prueba-de-igualdad-de-varianzas.html#cb63-2" aria-hidden="true"></a>TasasActuales =<span class="st"> </span><span class="kw">c</span>(<span class="dv">32</span>,<span class="dv">36</span>,<span class="dv">41</span>,<span class="dv">27</span>,<span class="dv">35</span>,<span class="dv">48</span>,<span class="dv">31</span>,<span class="dv">28</span>)</span>
+<span id="cb63-3"><a href="prueba-de-igualdad-de-varianzas.html#cb63-3" aria-hidden="true"></a>TasasPasadas =<span class="st"> </span><span class="kw">c</span>(<span class="dv">39</span>,<span class="dv">21</span>,<span class="dv">58</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">22</span>,<span class="dv">17</span>,<span class="dv">19</span>)</span>
+<span id="cb63-4"><a href="prueba-de-igualdad-de-varianzas.html#cb63-4" aria-hidden="true"></a></span>
+<span id="cb63-5"><a href="prueba-de-igualdad-de-varianzas.html#cb63-5" aria-hidden="true"></a>n=<span class="kw">length</span>(TasasActuales)  <span class="co">#Tamaño de TasasActuales</span></span>
+<span id="cb63-6"><a href="prueba-de-igualdad-de-varianzas.html#cb63-6" aria-hidden="true"></a>m=<span class="kw">length</span>(TasasPasadas)   <span class="co">#Tamaño de TasasPasadas</span></span>
+<span id="cb63-7"><a href="prueba-de-igualdad-de-varianzas.html#cb63-7" aria-hidden="true"></a>N=n<span class="op">+</span>m                    <span class="co">#Tamaño Total</span></span>
+<span id="cb63-8"><a href="prueba-de-igualdad-de-varianzas.html#cb63-8" aria-hidden="true"></a></span>
+<span id="cb63-9"><a href="prueba-de-igualdad-de-varianzas.html#cb63-9" aria-hidden="true"></a><span class="co"># Matriz de TasasActuales y TasasPasadas</span></span>
+<span id="cb63-10"><a href="prueba-de-igualdad-de-varianzas.html#cb63-10" aria-hidden="true"></a>datos=<span class="kw">matrix</span>(<span class="kw">c</span>(TasasActuales,TasasPasadas), <span class="dt">byrow=</span><span class="ot">FALSE</span>, <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb63-11"><a href="prueba-de-igualdad-de-varianzas.html#cb63-11" aria-hidden="true"></a><span class="kw">colnames</span>(datos)=<span class="kw">c</span>(<span class="st">&quot;TasasActuales: X&quot;</span>, <span class="st">&quot;TasasPasadas: Y&quot;</span>)</span>
+<span id="cb63-12"><a href="prueba-de-igualdad-de-varianzas.html#cb63-12" aria-hidden="true"></a>datos</span></code></pre></div>
 <pre><code>     TasasActuales: X TasasPasadas: Y
 [1,]               32              39
 [2,]               36              21
@@ -556,30 +558,30 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 [6,]               48              22
 [7,]               31              17
 [8,]               28              19</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="prueba-de-igualdad-de-varianzas.html#cb65-1" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">=</span><span class="fl">0.05</span>  <span class="co">#Nivel de significancia </span></span>
-<span id="cb65-2"><a href="prueba-de-igualdad-de-varianzas.html#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-3"><a href="prueba-de-igualdad-de-varianzas.html#cb65-3" aria-hidden="true" tabindex="-1"></a>Xbarra<span class="ot">=</span><span class="fu">mean</span>(TasasActuales)</span>
-<span id="cb65-4"><a href="prueba-de-igualdad-de-varianzas.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media muestral de X: &quot;</span>, Xbarra, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="prueba-de-igualdad-de-varianzas.html#cb65-1" aria-hidden="true"></a>alpha=<span class="fl">0.05</span>  <span class="co">#Nivel de significancia </span></span>
+<span id="cb65-2"><a href="prueba-de-igualdad-de-varianzas.html#cb65-2" aria-hidden="true"></a></span>
+<span id="cb65-3"><a href="prueba-de-igualdad-de-varianzas.html#cb65-3" aria-hidden="true"></a>Xbarra=<span class="kw">mean</span>(TasasActuales)</span>
+<span id="cb65-4"><a href="prueba-de-igualdad-de-varianzas.html#cb65-4" aria-hidden="true"></a><span class="kw">cat</span>(<span class="st">&quot;Media muestral de X: &quot;</span>, Xbarra, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>Media muestral de X:  34.75 </code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="prueba-de-igualdad-de-varianzas.html#cb67-1" aria-hidden="true" tabindex="-1"></a>Ybarra<span class="ot">=</span><span class="fu">mean</span>(TasasPasadas)</span>
-<span id="cb67-2"><a href="prueba-de-igualdad-de-varianzas.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media muestral de Y: &quot;</span>, Ybarra, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="prueba-de-igualdad-de-varianzas.html#cb67-1" aria-hidden="true"></a>Ybarra=<span class="kw">mean</span>(TasasPasadas)</span>
+<span id="cb67-2"><a href="prueba-de-igualdad-de-varianzas.html#cb67-2" aria-hidden="true"></a><span class="kw">cat</span>(<span class="st">&quot;Media muestral de Y: &quot;</span>, Ybarra, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>Media muestral de Y:  31.5 </code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="prueba-de-igualdad-de-varianzas.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores absolutos de la desviacion de la media de X</span></span>
-<span id="cb69-2"><a href="prueba-de-igualdad-de-varianzas.html#cb69-2" aria-hidden="true" tabindex="-1"></a>desvX<span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb69-3"><a href="prueba-de-igualdad-de-varianzas.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb69-4"><a href="prueba-de-igualdad-de-varianzas.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  desvX[i]<span class="ot">=</span><span class="fu">abs</span>(TasasActuales[i] <span class="sc">-</span> Xbarra)</span>
-<span id="cb69-5"><a href="prueba-de-igualdad-de-varianzas.html#cb69-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-6"><a href="prueba-de-igualdad-de-varianzas.html#cb69-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="prueba-de-igualdad-de-varianzas.html#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores absolutos de la desviacion de la media de Y</span></span>
-<span id="cb69-8"><a href="prueba-de-igualdad-de-varianzas.html#cb69-8" aria-hidden="true" tabindex="-1"></a>desvY <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb69-9"><a href="prueba-de-igualdad-de-varianzas.html#cb69-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb69-10"><a href="prueba-de-igualdad-de-varianzas.html#cb69-10" aria-hidden="true" tabindex="-1"></a>  desvY[i] <span class="ot">=</span> <span class="fu">abs</span>(TasasPasadas[i] <span class="sc">-</span> Ybarra)</span>
-<span id="cb69-11"><a href="prueba-de-igualdad-de-varianzas.html#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-12"><a href="prueba-de-igualdad-de-varianzas.html#cb69-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-13"><a href="prueba-de-igualdad-de-varianzas.html#cb69-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos la matriz U, V</span></span>
-<span id="cb69-14"><a href="prueba-de-igualdad-de-varianzas.html#cb69-14" aria-hidden="true" tabindex="-1"></a>desviacion <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(desvX,desvY), <span class="at">byrow=</span> <span class="cn">FALSE</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb69-15"><a href="prueba-de-igualdad-de-varianzas.html#cb69-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(desviacion) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;U&quot;</span>,<span class="st">&quot;V&quot;</span>)</span>
-<span id="cb69-16"><a href="prueba-de-igualdad-de-varianzas.html#cb69-16" aria-hidden="true" tabindex="-1"></a>desviacion</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="prueba-de-igualdad-de-varianzas.html#cb69-1" aria-hidden="true"></a><span class="co"># Valores absolutos de la desviacion de la media de X</span></span>
+<span id="cb69-2"><a href="prueba-de-igualdad-de-varianzas.html#cb69-2" aria-hidden="true"></a>desvX=<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb69-3"><a href="prueba-de-igualdad-de-varianzas.html#cb69-3" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb69-4"><a href="prueba-de-igualdad-de-varianzas.html#cb69-4" aria-hidden="true"></a>  desvX[i]=<span class="kw">abs</span>(TasasActuales[i] <span class="op">-</span><span class="st"> </span>Xbarra)</span>
+<span id="cb69-5"><a href="prueba-de-igualdad-de-varianzas.html#cb69-5" aria-hidden="true"></a>}</span>
+<span id="cb69-6"><a href="prueba-de-igualdad-de-varianzas.html#cb69-6" aria-hidden="true"></a></span>
+<span id="cb69-7"><a href="prueba-de-igualdad-de-varianzas.html#cb69-7" aria-hidden="true"></a><span class="co"># Valores absolutos de la desviacion de la media de Y</span></span>
+<span id="cb69-8"><a href="prueba-de-igualdad-de-varianzas.html#cb69-8" aria-hidden="true"></a>desvY =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb69-9"><a href="prueba-de-igualdad-de-varianzas.html#cb69-9" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb69-10"><a href="prueba-de-igualdad-de-varianzas.html#cb69-10" aria-hidden="true"></a>  desvY[i] =<span class="st"> </span><span class="kw">abs</span>(TasasPasadas[i] <span class="op">-</span><span class="st"> </span>Ybarra)</span>
+<span id="cb69-11"><a href="prueba-de-igualdad-de-varianzas.html#cb69-11" aria-hidden="true"></a>}</span>
+<span id="cb69-12"><a href="prueba-de-igualdad-de-varianzas.html#cb69-12" aria-hidden="true"></a></span>
+<span id="cb69-13"><a href="prueba-de-igualdad-de-varianzas.html#cb69-13" aria-hidden="true"></a><span class="co"># Creamos la matriz U, V</span></span>
+<span id="cb69-14"><a href="prueba-de-igualdad-de-varianzas.html#cb69-14" aria-hidden="true"></a>desviacion =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(desvX,desvY), <span class="dt">byrow=</span> <span class="ot">FALSE</span>, <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb69-15"><a href="prueba-de-igualdad-de-varianzas.html#cb69-15" aria-hidden="true"></a><span class="kw">colnames</span>(desviacion) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;U&quot;</span>,<span class="st">&quot;V&quot;</span>)</span>
+<span id="cb69-16"><a href="prueba-de-igualdad-de-varianzas.html#cb69-16" aria-hidden="true"></a>desviacion</span></code></pre></div>
 <pre><code>         U    V
 [1,]  2.75  7.5
 [2,]  1.25 10.5
@@ -589,14 +591,14 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 [6,] 13.25  9.5
 [7,]  3.75 14.5
 [8,]  6.75 12.5</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="prueba-de-igualdad-de-varianzas.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignamos los rangos</span></span>
-<span id="cb71-2"><a href="prueba-de-igualdad-de-varianzas.html#cb71-2" aria-hidden="true" tabindex="-1"></a>rang <span class="ot">=</span> <span class="fu">rank</span>(desviacion)</span>
-<span id="cb71-3"><a href="prueba-de-igualdad-de-varianzas.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co">#rang</span></span>
-<span id="cb71-4"><a href="prueba-de-igualdad-de-varianzas.html#cb71-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-5"><a href="prueba-de-igualdad-de-varianzas.html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Los acomodamos en una nueva matriz U, V</span></span>
-<span id="cb71-6"><a href="prueba-de-igualdad-de-varianzas.html#cb71-6" aria-hidden="true" tabindex="-1"></a>rangos <span class="ot">=</span> <span class="fu">matrix</span>(rang, <span class="at">byrow=</span><span class="cn">FALSE</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb71-7"><a href="prueba-de-igualdad-de-varianzas.html#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rangos) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Rangos U&quot;</span>, <span class="st">&quot;Rangos V&quot;</span>)</span>
-<span id="cb71-8"><a href="prueba-de-igualdad-de-varianzas.html#cb71-8" aria-hidden="true" tabindex="-1"></a>rangos</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="prueba-de-igualdad-de-varianzas.html#cb71-1" aria-hidden="true"></a><span class="co"># Asignamos los rangos</span></span>
+<span id="cb71-2"><a href="prueba-de-igualdad-de-varianzas.html#cb71-2" aria-hidden="true"></a>rang =<span class="st"> </span><span class="kw">rank</span>(desviacion)</span>
+<span id="cb71-3"><a href="prueba-de-igualdad-de-varianzas.html#cb71-3" aria-hidden="true"></a><span class="co">#rang</span></span>
+<span id="cb71-4"><a href="prueba-de-igualdad-de-varianzas.html#cb71-4" aria-hidden="true"></a></span>
+<span id="cb71-5"><a href="prueba-de-igualdad-de-varianzas.html#cb71-5" aria-hidden="true"></a><span class="co"># Los acomodamos en una nueva matriz U, V</span></span>
+<span id="cb71-6"><a href="prueba-de-igualdad-de-varianzas.html#cb71-6" aria-hidden="true"></a>rangos =<span class="st"> </span><span class="kw">matrix</span>(rang, <span class="dt">byrow=</span><span class="ot">FALSE</span>, <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb71-7"><a href="prueba-de-igualdad-de-varianzas.html#cb71-7" aria-hidden="true"></a><span class="kw">colnames</span>(rangos) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rangos U&quot;</span>, <span class="st">&quot;Rangos V&quot;</span>)</span>
+<span id="cb71-8"><a href="prueba-de-igualdad-de-varianzas.html#cb71-8" aria-hidden="true"></a>rangos</span></code></pre></div>
 <pre><code>     Rangos U Rangos V
 [1,]        4      8.0
 [2,]        2     11.0
@@ -606,30 +608,30 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 [6,]       13     10.0
 [7,]        5     14.5
 [8,]        7     12.0</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="prueba-de-igualdad-de-varianzas.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangos de U al cuadrado</span></span>
-<span id="cb73-2"><a href="prueba-de-igualdad-de-varianzas.html#cb73-2" aria-hidden="true" tabindex="-1"></a>rangosU2 <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb73-3"><a href="prueba-de-igualdad-de-varianzas.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb73-4"><a href="prueba-de-igualdad-de-varianzas.html#cb73-4" aria-hidden="true" tabindex="-1"></a>  rangosU2[i] <span class="ot">=</span> (rangos[i,<span class="dv">1</span>])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb73-5"><a href="prueba-de-igualdad-de-varianzas.html#cb73-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-6"><a href="prueba-de-igualdad-de-varianzas.html#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co">#rangosU2</span></span>
-<span id="cb73-7"><a href="prueba-de-igualdad-de-varianzas.html#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-8"><a href="prueba-de-igualdad-de-varianzas.html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangos de V al cuadrado</span></span>
-<span id="cb73-9"><a href="prueba-de-igualdad-de-varianzas.html#cb73-9" aria-hidden="true" tabindex="-1"></a>rangosV2 <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb73-10"><a href="prueba-de-igualdad-de-varianzas.html#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb73-11"><a href="prueba-de-igualdad-de-varianzas.html#cb73-11" aria-hidden="true" tabindex="-1"></a>  rangosV2[i] <span class="ot">=</span> (rangos[i,<span class="dv">2</span>])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb73-12"><a href="prueba-de-igualdad-de-varianzas.html#cb73-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb73-13"><a href="prueba-de-igualdad-de-varianzas.html#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="co">#rangosV2</span></span>
-<span id="cb73-14"><a href="prueba-de-igualdad-de-varianzas.html#cb73-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-15"><a href="prueba-de-igualdad-de-varianzas.html#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma de los rangos al cuadrado de U</span></span>
-<span id="cb73-16"><a href="prueba-de-igualdad-de-varianzas.html#cb73-16" aria-hidden="true" tabindex="-1"></a>sumarangosU2 <span class="ot">=</span> <span class="fu">sum</span>(rangosU2)</span>
-<span id="cb73-17"><a href="prueba-de-igualdad-de-varianzas.html#cb73-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-18"><a href="prueba-de-igualdad-de-varianzas.html#cb73-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Suma de los rangos al cuadrado de V</span></span>
-<span id="cb73-19"><a href="prueba-de-igualdad-de-varianzas.html#cb73-19" aria-hidden="true" tabindex="-1"></a>sumarangosV2 <span class="ot">=</span> <span class="fu">sum</span>(rangosV2)</span>
-<span id="cb73-20"><a href="prueba-de-igualdad-de-varianzas.html#cb73-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-21"><a href="prueba-de-igualdad-de-varianzas.html#cb73-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Nueva matriz con los rangos^2</span></span>
-<span id="cb73-22"><a href="prueba-de-igualdad-de-varianzas.html#cb73-22" aria-hidden="true" tabindex="-1"></a>rangos2 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(rangosU2,rangosV2), <span class="at">byrow=</span><span class="cn">FALSE</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb73-23"><a href="prueba-de-igualdad-de-varianzas.html#cb73-23" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rangos2) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Rangos al cuadrado U&quot;</span>, <span class="st">&quot;Rangos al cuadrado V&quot;</span>)</span>
-<span id="cb73-24"><a href="prueba-de-igualdad-de-varianzas.html#cb73-24" aria-hidden="true" tabindex="-1"></a>rangos2</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="prueba-de-igualdad-de-varianzas.html#cb73-1" aria-hidden="true"></a><span class="co"># Rangos de U al cuadrado</span></span>
+<span id="cb73-2"><a href="prueba-de-igualdad-de-varianzas.html#cb73-2" aria-hidden="true"></a>rangosU2 =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb73-3"><a href="prueba-de-igualdad-de-varianzas.html#cb73-3" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb73-4"><a href="prueba-de-igualdad-de-varianzas.html#cb73-4" aria-hidden="true"></a>  rangosU2[i] =<span class="st"> </span>(rangos[i,<span class="dv">1</span>])<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb73-5"><a href="prueba-de-igualdad-de-varianzas.html#cb73-5" aria-hidden="true"></a>}</span>
+<span id="cb73-6"><a href="prueba-de-igualdad-de-varianzas.html#cb73-6" aria-hidden="true"></a><span class="co">#rangosU2</span></span>
+<span id="cb73-7"><a href="prueba-de-igualdad-de-varianzas.html#cb73-7" aria-hidden="true"></a></span>
+<span id="cb73-8"><a href="prueba-de-igualdad-de-varianzas.html#cb73-8" aria-hidden="true"></a><span class="co"># Rangos de V al cuadrado</span></span>
+<span id="cb73-9"><a href="prueba-de-igualdad-de-varianzas.html#cb73-9" aria-hidden="true"></a>rangosV2 =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb73-10"><a href="prueba-de-igualdad-de-varianzas.html#cb73-10" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb73-11"><a href="prueba-de-igualdad-de-varianzas.html#cb73-11" aria-hidden="true"></a>  rangosV2[i] =<span class="st"> </span>(rangos[i,<span class="dv">2</span>])<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb73-12"><a href="prueba-de-igualdad-de-varianzas.html#cb73-12" aria-hidden="true"></a>}</span>
+<span id="cb73-13"><a href="prueba-de-igualdad-de-varianzas.html#cb73-13" aria-hidden="true"></a><span class="co">#rangosV2</span></span>
+<span id="cb73-14"><a href="prueba-de-igualdad-de-varianzas.html#cb73-14" aria-hidden="true"></a></span>
+<span id="cb73-15"><a href="prueba-de-igualdad-de-varianzas.html#cb73-15" aria-hidden="true"></a><span class="co"># Suma de los rangos al cuadrado de U</span></span>
+<span id="cb73-16"><a href="prueba-de-igualdad-de-varianzas.html#cb73-16" aria-hidden="true"></a>sumarangosU2 =<span class="st"> </span><span class="kw">sum</span>(rangosU2)</span>
+<span id="cb73-17"><a href="prueba-de-igualdad-de-varianzas.html#cb73-17" aria-hidden="true"></a></span>
+<span id="cb73-18"><a href="prueba-de-igualdad-de-varianzas.html#cb73-18" aria-hidden="true"></a><span class="co"># Suma de los rangos al cuadrado de V</span></span>
+<span id="cb73-19"><a href="prueba-de-igualdad-de-varianzas.html#cb73-19" aria-hidden="true"></a>sumarangosV2 =<span class="st"> </span><span class="kw">sum</span>(rangosV2)</span>
+<span id="cb73-20"><a href="prueba-de-igualdad-de-varianzas.html#cb73-20" aria-hidden="true"></a></span>
+<span id="cb73-21"><a href="prueba-de-igualdad-de-varianzas.html#cb73-21" aria-hidden="true"></a><span class="co"># Nueva matriz con los rangos^2</span></span>
+<span id="cb73-22"><a href="prueba-de-igualdad-de-varianzas.html#cb73-22" aria-hidden="true"></a>rangos2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(rangosU2,rangosV2), <span class="dt">byrow=</span><span class="ot">FALSE</span>, <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb73-23"><a href="prueba-de-igualdad-de-varianzas.html#cb73-23" aria-hidden="true"></a><span class="kw">colnames</span>(rangos2) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rangos al cuadrado U&quot;</span>, <span class="st">&quot;Rangos al cuadrado V&quot;</span>)</span>
+<span id="cb73-24"><a href="prueba-de-igualdad-de-varianzas.html#cb73-24" aria-hidden="true"></a>rangos2</span></code></pre></div>
 <pre><code>     Rangos al cuadrado U Rangos al cuadrado V
 [1,]                   16                64.00
 [2,]                    4               121.00
@@ -639,27 +641,27 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 [6,]                  169               100.00
 [7,]                   25               210.25
 [8,]                   49               144.00</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="prueba-de-igualdad-de-varianzas.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Promedio de los rangos^2</span></span>
-<span id="cb75-2"><a href="prueba-de-igualdad-de-varianzas.html#cb75-2" aria-hidden="true" tabindex="-1"></a>promrangos2 <span class="ot">=</span> (sumarangosU2<span class="sc">+</span> sumarangosV2)<span class="sc">/</span>N</span>
-<span id="cb75-3"><a href="prueba-de-igualdad-de-varianzas.html#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-4"><a href="prueba-de-igualdad-de-varianzas.html#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Rangos de U^4</span></span>
-<span id="cb75-5"><a href="prueba-de-igualdad-de-varianzas.html#cb75-5" aria-hidden="true" tabindex="-1"></a>rangosU4 <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb75-6"><a href="prueba-de-igualdad-de-varianzas.html#cb75-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb75-7"><a href="prueba-de-igualdad-de-varianzas.html#cb75-7" aria-hidden="true" tabindex="-1"></a>  rangosU4[i] <span class="ot">=</span> (rangosU2[i])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb75-8"><a href="prueba-de-igualdad-de-varianzas.html#cb75-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb75-9"><a href="prueba-de-igualdad-de-varianzas.html#cb75-9" aria-hidden="true" tabindex="-1"></a><span class="co">#rangosU4</span></span>
-<span id="cb75-10"><a href="prueba-de-igualdad-de-varianzas.html#cb75-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-11"><a href="prueba-de-igualdad-de-varianzas.html#cb75-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Rangos de V^4</span></span>
-<span id="cb75-12"><a href="prueba-de-igualdad-de-varianzas.html#cb75-12" aria-hidden="true" tabindex="-1"></a>rangosV4 <span class="ot">=</span> <span class="fu">c</span>()</span>
-<span id="cb75-13"><a href="prueba-de-igualdad-de-varianzas.html#cb75-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
-<span id="cb75-14"><a href="prueba-de-igualdad-de-varianzas.html#cb75-14" aria-hidden="true" tabindex="-1"></a>  rangosV4[i] <span class="ot">=</span> (rangosV2[i])<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb75-15"><a href="prueba-de-igualdad-de-varianzas.html#cb75-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb75-16"><a href="prueba-de-igualdad-de-varianzas.html#cb75-16" aria-hidden="true" tabindex="-1"></a><span class="co">#rangosV4</span></span>
-<span id="cb75-17"><a href="prueba-de-igualdad-de-varianzas.html#cb75-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-18"><a href="prueba-de-igualdad-de-varianzas.html#cb75-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Nueva matriz con los rangos^4</span></span>
-<span id="cb75-19"><a href="prueba-de-igualdad-de-varianzas.html#cb75-19" aria-hidden="true" tabindex="-1"></a>rangos4 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(rangosU4,rangosV4), <span class="at">byrow=</span><span class="cn">FALSE</span>, <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb75-20"><a href="prueba-de-igualdad-de-varianzas.html#cb75-20" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rangos4) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Rangos a la cuarta U&quot;</span>, <span class="st">&quot;Rangos a la cuarta V&quot;</span>)</span>
-<span id="cb75-21"><a href="prueba-de-igualdad-de-varianzas.html#cb75-21" aria-hidden="true" tabindex="-1"></a>rangos4</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="prueba-de-igualdad-de-varianzas.html#cb75-1" aria-hidden="true"></a><span class="co">#Promedio de los rangos^2</span></span>
+<span id="cb75-2"><a href="prueba-de-igualdad-de-varianzas.html#cb75-2" aria-hidden="true"></a>promrangos2 =<span class="st"> </span>(sumarangosU2<span class="op">+</span><span class="st"> </span>sumarangosV2)<span class="op">/</span>N</span>
+<span id="cb75-3"><a href="prueba-de-igualdad-de-varianzas.html#cb75-3" aria-hidden="true"></a></span>
+<span id="cb75-4"><a href="prueba-de-igualdad-de-varianzas.html#cb75-4" aria-hidden="true"></a><span class="co">#Rangos de U^4</span></span>
+<span id="cb75-5"><a href="prueba-de-igualdad-de-varianzas.html#cb75-5" aria-hidden="true"></a>rangosU4 =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb75-6"><a href="prueba-de-igualdad-de-varianzas.html#cb75-6" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb75-7"><a href="prueba-de-igualdad-de-varianzas.html#cb75-7" aria-hidden="true"></a>  rangosU4[i] =<span class="st"> </span>(rangosU2[i])<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb75-8"><a href="prueba-de-igualdad-de-varianzas.html#cb75-8" aria-hidden="true"></a>}</span>
+<span id="cb75-9"><a href="prueba-de-igualdad-de-varianzas.html#cb75-9" aria-hidden="true"></a><span class="co">#rangosU4</span></span>
+<span id="cb75-10"><a href="prueba-de-igualdad-de-varianzas.html#cb75-10" aria-hidden="true"></a></span>
+<span id="cb75-11"><a href="prueba-de-igualdad-de-varianzas.html#cb75-11" aria-hidden="true"></a><span class="co">#Rangos de V^4</span></span>
+<span id="cb75-12"><a href="prueba-de-igualdad-de-varianzas.html#cb75-12" aria-hidden="true"></a>rangosV4 =<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb75-13"><a href="prueba-de-igualdad-de-varianzas.html#cb75-13" aria-hidden="true"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</span>
+<span id="cb75-14"><a href="prueba-de-igualdad-de-varianzas.html#cb75-14" aria-hidden="true"></a>  rangosV4[i] =<span class="st"> </span>(rangosV2[i])<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb75-15"><a href="prueba-de-igualdad-de-varianzas.html#cb75-15" aria-hidden="true"></a>}</span>
+<span id="cb75-16"><a href="prueba-de-igualdad-de-varianzas.html#cb75-16" aria-hidden="true"></a><span class="co">#rangosV4</span></span>
+<span id="cb75-17"><a href="prueba-de-igualdad-de-varianzas.html#cb75-17" aria-hidden="true"></a></span>
+<span id="cb75-18"><a href="prueba-de-igualdad-de-varianzas.html#cb75-18" aria-hidden="true"></a><span class="co">#Nueva matriz con los rangos^4</span></span>
+<span id="cb75-19"><a href="prueba-de-igualdad-de-varianzas.html#cb75-19" aria-hidden="true"></a>rangos4 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(rangosU4,rangosV4), <span class="dt">byrow=</span><span class="ot">FALSE</span>, <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb75-20"><a href="prueba-de-igualdad-de-varianzas.html#cb75-20" aria-hidden="true"></a><span class="kw">colnames</span>(rangos4) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rangos a la cuarta U&quot;</span>, <span class="st">&quot;Rangos a la cuarta V&quot;</span>)</span>
+<span id="cb75-21"><a href="prueba-de-igualdad-de-varianzas.html#cb75-21" aria-hidden="true"></a>rangos4</span></code></pre></div>
 <pre><code>     Rangos a la cuarta U Rangos a la cuarta V
 [1,]                  256              4096.00
 [2,]                   16             14641.00
@@ -669,44 +671,44 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 [6,]                28561             10000.00
 [7,]                  625             44205.06
 [8,]                 2401             20736.00</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="prueba-de-igualdad-de-varianzas.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Suma de los rangos a la cuarta^4</span></span>
-<span id="cb77-2"><a href="prueba-de-igualdad-de-varianzas.html#cb77-2" aria-hidden="true" tabindex="-1"></a>sumarangos4 <span class="ot">=</span> <span class="fu">sum</span>(rangosU4) <span class="sc">+</span> <span class="fu">sum</span>(rangosV4)</span>
-<span id="cb77-3"><a href="prueba-de-igualdad-de-varianzas.html#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-4"><a href="prueba-de-igualdad-de-varianzas.html#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculamos el estadístico de prueba T1 porque tenemos empates</span></span>
-<span id="cb77-5"><a href="prueba-de-igualdad-de-varianzas.html#cb77-5" aria-hidden="true" tabindex="-1"></a>T1<span class="ot">=</span>(sumarangosU2 <span class="sc">-</span> (n<span class="sc">*</span>promrangos2))<span class="sc">/</span>(<span class="fu">sqrt</span>(((      ((n<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(N<span class="dv">-1</span>))<span class="sc">/</span>N)<span class="sc">*</span>sumarangos4 )<span class="sc">-</span>(((n<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(N<span class="dv">-1</span>))<span class="sc">*</span>(promrangos2<span class="sc">^</span><span class="dv">2</span>))))</span>
-<span id="cb77-6"><a href="prueba-de-igualdad-de-varianzas.html#cb77-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-7"><a href="prueba-de-igualdad-de-varianzas.html#cb77-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;T1 = &quot;</span>, T1, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="prueba-de-igualdad-de-varianzas.html#cb77-1" aria-hidden="true"></a><span class="co">#Suma de los rangos a la cuarta^4</span></span>
+<span id="cb77-2"><a href="prueba-de-igualdad-de-varianzas.html#cb77-2" aria-hidden="true"></a>sumarangos4 =<span class="st"> </span><span class="kw">sum</span>(rangosU4) <span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(rangosV4)</span>
+<span id="cb77-3"><a href="prueba-de-igualdad-de-varianzas.html#cb77-3" aria-hidden="true"></a></span>
+<span id="cb77-4"><a href="prueba-de-igualdad-de-varianzas.html#cb77-4" aria-hidden="true"></a><span class="co">#Calculamos el estadístico de prueba T1 porque tenemos empates</span></span>
+<span id="cb77-5"><a href="prueba-de-igualdad-de-varianzas.html#cb77-5" aria-hidden="true"></a>T1=(sumarangosU2 <span class="op">-</span><span class="st"> </span>(n<span class="op">*</span>promrangos2))<span class="op">/</span>(<span class="kw">sqrt</span>(((      ((n<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(N<span class="dv">-1</span>))<span class="op">/</span>N)<span class="op">*</span>sumarangos4 )<span class="op">-</span>(((n<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(N<span class="dv">-1</span>))<span class="op">*</span>(promrangos2<span class="op">^</span><span class="dv">2</span>))))</span>
+<span id="cb77-6"><a href="prueba-de-igualdad-de-varianzas.html#cb77-6" aria-hidden="true"></a></span>
+<span id="cb77-7"><a href="prueba-de-igualdad-de-varianzas.html#cb77-7" aria-hidden="true"></a><span class="kw">cat</span>(<span class="st">&quot;T1 = &quot;</span>, T1, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>T1 =  -2.208273 </code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="prueba-de-igualdad-de-varianzas.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Regla de decision</span></span>
-<span id="cb79-2"><a href="prueba-de-igualdad-de-varianzas.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="co">#cat(&quot;Rechazamos H_0 a un nivel de significancia alpha=&quot;, alpha, &quot;si T1&gt;t1 o T1&lt;t2, en donde t1 y t2 son #los cuantiles de la Normal estándar \n&quot;)</span></span>
-<span id="cb79-3"><a href="prueba-de-igualdad-de-varianzas.html#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-4"><a href="prueba-de-igualdad-de-varianzas.html#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos los cuantiles t1 y t2 </span></span>
-<span id="cb79-5"><a href="prueba-de-igualdad-de-varianzas.html#cb79-5" aria-hidden="true" tabindex="-1"></a>t1 <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>(alpha<span class="sc">/</span><span class="dv">2</span>),<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb79-6"><a href="prueba-de-igualdad-de-varianzas.html#cb79-6" aria-hidden="true" tabindex="-1"></a>t2 <span class="ot">=</span> <span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>)</span>
-<span id="cb79-7"><a href="prueba-de-igualdad-de-varianzas.html#cb79-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-8"><a href="prueba-de-igualdad-de-varianzas.html#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="co">#cat(&quot;t1 = &quot;, t1, &quot;\n&quot;)</span></span>
-<span id="cb79-9"><a href="prueba-de-igualdad-de-varianzas.html#cb79-9" aria-hidden="true" tabindex="-1"></a><span class="co">#cat(&quot;t2 = &quot;, t2, &quot;\n&quot;)</span></span>
-<span id="cb79-10"><a href="prueba-de-igualdad-de-varianzas.html#cb79-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-11"><a href="prueba-de-igualdad-de-varianzas.html#cb79-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>((T1<span class="sc">&gt;</span>t1) <span class="sc">||</span> (T1<span class="sc">&lt;</span>t2)) {</span>
-<span id="cb79-12"><a href="prueba-de-igualdad-de-varianzas.html#cb79-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Rechazamos H_0&quot;</span>)</span>
-<span id="cb79-13"><a href="prueba-de-igualdad-de-varianzas.html#cb79-13" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb79-14"><a href="prueba-de-igualdad-de-varianzas.html#cb79-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;No rechazamos H_0&quot;</span>)</span>
-<span id="cb79-15"><a href="prueba-de-igualdad-de-varianzas.html#cb79-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="prueba-de-igualdad-de-varianzas.html#cb79-1" aria-hidden="true"></a><span class="co">#Regla de decision</span></span>
+<span id="cb79-2"><a href="prueba-de-igualdad-de-varianzas.html#cb79-2" aria-hidden="true"></a><span class="co">#cat(&quot;Rechazamos H_0 a un nivel de significancia alpha=&quot;, alpha, &quot;si T1&gt;t1 o T1&lt;t2, en donde t1 y t2 son #los cuantiles de la Normal estándar \n&quot;)</span></span>
+<span id="cb79-3"><a href="prueba-de-igualdad-de-varianzas.html#cb79-3" aria-hidden="true"></a></span>
+<span id="cb79-4"><a href="prueba-de-igualdad-de-varianzas.html#cb79-4" aria-hidden="true"></a><span class="co"># Calculamos los cuantiles t1 y t2 </span></span>
+<span id="cb79-5"><a href="prueba-de-igualdad-de-varianzas.html#cb79-5" aria-hidden="true"></a>t1 =<span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span><span class="op">-</span>(alpha<span class="op">/</span><span class="dv">2</span>),<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>)</span>
+<span id="cb79-6"><a href="prueba-de-igualdad-de-varianzas.html#cb79-6" aria-hidden="true"></a>t2 =<span class="st"> </span><span class="kw">qnorm</span>(alpha<span class="op">/</span><span class="dv">2</span>,<span class="dt">mean=</span><span class="dv">0</span>,<span class="dt">sd=</span><span class="dv">1</span>)</span>
+<span id="cb79-7"><a href="prueba-de-igualdad-de-varianzas.html#cb79-7" aria-hidden="true"></a></span>
+<span id="cb79-8"><a href="prueba-de-igualdad-de-varianzas.html#cb79-8" aria-hidden="true"></a><span class="co">#cat(&quot;t1 = &quot;, t1, &quot;\n&quot;)</span></span>
+<span id="cb79-9"><a href="prueba-de-igualdad-de-varianzas.html#cb79-9" aria-hidden="true"></a><span class="co">#cat(&quot;t2 = &quot;, t2, &quot;\n&quot;)</span></span>
+<span id="cb79-10"><a href="prueba-de-igualdad-de-varianzas.html#cb79-10" aria-hidden="true"></a></span>
+<span id="cb79-11"><a href="prueba-de-igualdad-de-varianzas.html#cb79-11" aria-hidden="true"></a><span class="cf">if</span>((T1<span class="op">&gt;</span>t1) <span class="op">||</span><span class="st"> </span>(T1<span class="op">&lt;</span>t2)) {</span>
+<span id="cb79-12"><a href="prueba-de-igualdad-de-varianzas.html#cb79-12" aria-hidden="true"></a>  <span class="kw">print</span>(<span class="st">&quot;Rechazamos H_0&quot;</span>)</span>
+<span id="cb79-13"><a href="prueba-de-igualdad-de-varianzas.html#cb79-13" aria-hidden="true"></a>} <span class="cf">else</span> {</span>
+<span id="cb79-14"><a href="prueba-de-igualdad-de-varianzas.html#cb79-14" aria-hidden="true"></a>  <span class="kw">print</span>(<span class="st">&quot;No rechazamos H_0&quot;</span>)</span>
+<span id="cb79-15"><a href="prueba-de-igualdad-de-varianzas.html#cb79-15" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>[1] &quot;Rechazamos H_0&quot;</code></pre>
 <p>Ya que utilizamos la estadística <span class="math inline">\(T_1\)</span>, entonces el cuantil que hay que buscar es en una distribución normal. Con <span class="math inline">\(\alpha=0.05\)</span>,hace que <span class="math inline">\(\frac{\alpha}{2}=0.025\)</span> y <span class="math inline">\(1-\frac{\alpha}{2}=0.975\)</span></p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="prueba-de-igualdad-de-varianzas.html#cb81-1" aria-hidden="true" tabindex="-1"></a>t1<span class="ot">=</span><span class="fu">qnorm</span>(.<span class="dv">025</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb81-2"><a href="prueba-de-igualdad-de-varianzas.html#cb81-2" aria-hidden="true" tabindex="-1"></a>t1</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="prueba-de-igualdad-de-varianzas.html#cb81-1" aria-hidden="true"></a>t1=<span class="kw">qnorm</span>(.<span class="dv">025</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb81-2"><a href="prueba-de-igualdad-de-varianzas.html#cb81-2" aria-hidden="true"></a>t1</span></code></pre></div>
 <pre><code>[1] -1.959964</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="prueba-de-igualdad-de-varianzas.html#cb83-1" aria-hidden="true" tabindex="-1"></a>t2<span class="ot">=</span><span class="fu">qnorm</span>(.<span class="dv">975</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb83-2"><a href="prueba-de-igualdad-de-varianzas.html#cb83-2" aria-hidden="true" tabindex="-1"></a>t2</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="prueba-de-igualdad-de-varianzas.html#cb83-1" aria-hidden="true"></a>t2=<span class="kw">qnorm</span>(.<span class="dv">975</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb83-2"><a href="prueba-de-igualdad-de-varianzas.html#cb83-2" aria-hidden="true"></a>t2</span></code></pre></div>
 <pre><code>[1] 1.959964</code></pre>
 <p>Como <span class="math inline">\(T_1=-2.21\leq -1.96 =t_1\)</span> entonces se cumple la regla de decisión y rechazamos <span class="math inline">\(H_0\)</span> a un nivel <span class="math inline">\(\alpha=5\%\)</span>. Concluimos que existe evidencia suficiente para decir que las varianzas de las tasas de flujo de la corriente son diferentes.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="prueba-de-igualdad-de-varianzas.html#cb85-1" aria-hidden="true" tabindex="-1"></a>pvalue<span class="ot">=</span><span class="dv">2</span><span class="sc">*</span><span class="fu">min</span>(<span class="fu">pnorm</span>(T1,<span class="dv">0</span>,<span class="dv">1</span>),(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(T1,<span class="dv">0</span>,<span class="dv">1</span>)))</span>
-<span id="cb85-2"><a href="prueba-de-igualdad-de-varianzas.html#cb85-2" aria-hidden="true" tabindex="-1"></a>pvalue</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="prueba-de-igualdad-de-varianzas.html#cb85-1" aria-hidden="true"></a>pvalue=<span class="dv">2</span><span class="op">*</span><span class="kw">min</span>(<span class="kw">pnorm</span>(T1,<span class="dv">0</span>,<span class="dv">1</span>),(<span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(T1,<span class="dv">0</span>,<span class="dv">1</span>)))</span>
+<span id="cb85-2"><a href="prueba-de-igualdad-de-varianzas.html#cb85-2" aria-hidden="true"></a>pvalue</span></code></pre></div>
 <pre><code>[1] 0.02722523</code></pre>
 <p>Ahora utilizaremos la prueba en R:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="prueba-de-igualdad-de-varianzas.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Función en R</span></span>
-<span id="cb87-2"><a href="prueba-de-igualdad-de-varianzas.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(TasasActuales,TasasPasadas,<span class="at">conf.level =</span>.<span class="dv">95</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="prueba-de-igualdad-de-varianzas.html#cb87-1" aria-hidden="true"></a><span class="co">#Función en R</span></span>
+<span id="cb87-2"><a href="prueba-de-igualdad-de-varianzas.html#cb87-2" aria-hidden="true"></a><span class="kw">var.test</span>(TasasActuales,TasasPasadas,<span class="dt">conf.level =</span>.<span class="dv">95</span> )</span></code></pre></div>
 <pre><code>
     F test to compare two variances
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 17 Prueba Kolmogorov | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 17 Prueba Kolmogorov | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-la-ji-cuadrada.html"/>
 <link rel="next" href="prueba-kolmogorov-smirnov.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -399,7 +401,7 @@ Es decir, si la <strong>figura 1</strong> proporciona <span class="math inline">
 Si <span class="math inline">\(F^*(x)\)</span> y <span class="math inline">\(S(x)\)</span> son como se indica, la distancia vertical máxima entre los dos gráficos se produce justo antes del tercer paso de <span class="math inline">\(S(x)\)</span>.
 Esta distancia es de aproximadamente 0.5 en la <strong>figura 2</strong>; por lo tanto, el estadístico Kolmogorov T es igual a 0.5 en este caso.
 Los valores grandes de <span class="math inline">\(T\)</span> según lo determinado por la correspondiente tabla (Tabla de Cuantiles Kolmogorov) conducen a rechazar <span class="math inline">\(F^*(x)\)</span> como una aproximación razonable a la función de distribución verdadera desconocida <span class="math inline">\(F(x)\)</span>.</p>
-<p>La prueba de Kolmogorov puede preferirse a la prueba de Ji-Cuadrada para bondad del ajuste si el tamaño de la muestra es pequeño; la prueba de Kolmogorov es exacta incluso para muestras pequeñas, mientras que la prueba de Ji-cuadrada supone que el número de observaciones es lo suficientemente grande como para que la distribución de <span class="math inline">\(\chi^2\)</span> proporcione una buena aproximación como la distribución del estadístico de prueba. Existe controversia sobre ¿qué prueba es la más “poderosa?” pero la sensación general parece ser que la prueba de Kolmogorov es probablemente más poderosa que la prueba de Ji-cuadrada en la mayoría de las situaciones que involucran datos ordinales.</p>
+<p>La prueba de Kolmogorov puede preferirse a la prueba de Ji-Cuadrada para bondad del ajuste si el tamaño de la muestra es pequeño; la prueba de Kolmogorov es exacta incluso para muestras pequeñas, mientras que la prueba de Ji-cuadrada supone que el número de observaciones es lo suficientemente grande como para que la distribución de <span class="math inline">\(\chi^2\)</span> proporcione una buena aproximación como la distribución del estadístico de prueba. Existe controversia sobre ¿qué prueba es la más “poderosa”?, pero la sensación general parece ser que la prueba de Kolmogorov es probablemente más poderosa que la prueba de Ji-cuadrada en la mayoría de las situaciones que involucran datos ordinales.</p>
 <p><strong>Datos</strong></p>
 <p>Los datos consisten en una muestra aleatoria <span class="math inline">\(X_{1},X_{2},\ldots,X_{n}\)</span> de tamaño <span class="math inline">\(n\)</span> asociada con alguna función de distribución desconocida, denotada por <span class="math inline">\(F(x)\)</span>.</p>
 <p><strong>Supuestos</strong></p>
@@ -713,13 +715,13 @@ La siguiente tabla representa los cálculos para encontrar nuestro Estadístico 
 <div id="ejemplo-en-r-studio-14" class="section level2" number="17.2">
 <h2><span class="header-section-number">17.2</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="prueba-kolmogorov.html#cb172-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="co">#Representa el numero de nuestra muestra</span></span>
-<span id="cb172-2"><a href="prueba-kolmogorov.html#cb172-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.203</span>,<span class="fl">0.329</span>,<span class="fl">0.382</span>,<span class="fl">0.477</span>,<span class="fl">0.480</span>,<span class="fl">0.503</span>,<span class="fl">0.554</span>,<span class="fl">0.581</span>,<span class="fl">0.621</span>, <span class="fl">0.710</span>) <span class="co">#Los datos de la muestra</span></span>
-<span id="cb172-3"><a href="prueba-kolmogorov.html#cb172-3" aria-hidden="true" tabindex="-1"></a>X_i <span class="ot">=</span> <span class="fu">sort</span>(x) <span class="co">#ordena nuestros datos</span></span>
-<span id="cb172-4"><a href="prueba-kolmogorov.html#cb172-4" aria-hidden="true" tabindex="-1"></a>F_<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.203</span>,<span class="fl">0.329</span>,<span class="fl">0.382</span>,<span class="fl">0.477</span>,<span class="fl">0.480</span>,<span class="fl">0.503</span>,<span class="fl">0.554</span>,<span class="fl">0.581</span>,<span class="fl">0.621</span>, <span class="fl">0.710</span>)</span>
-<span id="cb172-5"><a href="prueba-kolmogorov.html#cb172-5" aria-hidden="true" tabindex="-1"></a>Sn<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">10</span>,<span class="dv">1</span>)</span>
-<span id="cb172-6"><a href="prueba-kolmogorov.html#cb172-6" aria-hidden="true" tabindex="-1"></a>Tabla <span class="ot">=</span> <span class="fu">cbind</span>(i,<span class="at">X_i=</span>X_i,F_,Sn,<span class="st">&quot;|F_-Sn|&quot;</span><span class="ot">=</span><span class="fu">abs</span>(F_<span class="sc">-</span>Sn))</span>
-<span id="cb172-7"><a href="prueba-kolmogorov.html#cb172-7" aria-hidden="true" tabindex="-1"></a>Tabla</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="prueba-kolmogorov.html#cb172-1" aria-hidden="true"></a>i =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="co">#Representa el numero de nuestra muestra</span></span>
+<span id="cb172-2"><a href="prueba-kolmogorov.html#cb172-2" aria-hidden="true"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.203</span>,<span class="fl">0.329</span>,<span class="fl">0.382</span>,<span class="fl">0.477</span>,<span class="fl">0.480</span>,<span class="fl">0.503</span>,<span class="fl">0.554</span>,<span class="fl">0.581</span>,<span class="fl">0.621</span>, <span class="fl">0.710</span>) <span class="co">#Los datos de la muestra</span></span>
+<span id="cb172-3"><a href="prueba-kolmogorov.html#cb172-3" aria-hidden="true"></a>X_i =<span class="st"> </span><span class="kw">sort</span>(x) <span class="co">#ordena nuestros datos</span></span>
+<span id="cb172-4"><a href="prueba-kolmogorov.html#cb172-4" aria-hidden="true"></a>F_=<span class="kw">c</span>(<span class="fl">0.203</span>,<span class="fl">0.329</span>,<span class="fl">0.382</span>,<span class="fl">0.477</span>,<span class="fl">0.480</span>,<span class="fl">0.503</span>,<span class="fl">0.554</span>,<span class="fl">0.581</span>,<span class="fl">0.621</span>, <span class="fl">0.710</span>)</span>
+<span id="cb172-5"><a href="prueba-kolmogorov.html#cb172-5" aria-hidden="true"></a>Sn=<span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">6</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">7</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">8</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">9</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">1</span>)</span>
+<span id="cb172-6"><a href="prueba-kolmogorov.html#cb172-6" aria-hidden="true"></a>Tabla =<span class="st"> </span><span class="kw">cbind</span>(i,<span class="dt">X_i=</span>X_i,F_,Sn,<span class="st">&quot;|F_-Sn|&quot;</span>=<span class="kw">abs</span>(F_<span class="op">-</span>Sn))</span>
+<span id="cb172-7"><a href="prueba-kolmogorov.html#cb172-7" aria-hidden="true"></a>Tabla</span></code></pre></div>
 <pre><code>       i   X_i    F_  Sn |F_-Sn|
  [1,]  1 0.203 0.203 0.1   0.103
  [2,]  2 0.329 0.329 0.2   0.129
@@ -731,13 +733,13 @@ La siguiente tabla representa los cálculos para encontrar nuestro Estadístico 
  [8,]  8 0.581 0.581 0.8   0.219
  [9,]  9 0.621 0.621 0.9   0.279
 [10,] 10 0.710 0.710 1.0   0.290</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="prueba-kolmogorov.html#cb174-1" aria-hidden="true" tabindex="-1"></a>EstdPrueba <span class="ot">=</span> <span class="fu">max</span>(Tabla [,<span class="dv">5</span>])</span>
-<span id="cb174-2"><a href="prueba-kolmogorov.html#cb174-2" aria-hidden="true" tabindex="-1"></a>EstdPrueba</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="prueba-kolmogorov.html#cb174-1" aria-hidden="true"></a>EstdPrueba =<span class="st"> </span><span class="kw">max</span>(Tabla [,<span class="dv">5</span>])</span>
+<span id="cb174-2"><a href="prueba-kolmogorov.html#cb174-2" aria-hidden="true"></a>EstdPrueba</span></code></pre></div>
 <pre><code>[1] 0.29</code></pre>
 <p>Observamos que la estadística de prueba tiene un valor de 0.29. El cuantil W que acumula <span class="math inline">\(1-\alpha\)</span> de probabilidad, usando <span class="math inline">\(\alpha=0.05\)</span> es W = 0.409, encontrado en las tablas correspondientes. Por lo tanto tenemos que <span class="math inline">\(T_1 &lt; W\)</span>, entonces no rechazamos la hipotesis nula.y su correspondiente p-value es mucho mayor a 0.05, por lo tanto con <span class="math inline">\(\alpha=5\%\)</span> no rechazaremos <span class="math inline">\(H_0\)</span> y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es uniforme en el intervalo (0,1).</p>
 <p>Ahora haremos la prueba usando la función <strong>“ks.test”</strong> de R.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="prueba-kolmogorov.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Prueba</span></span>
-<span id="cb176-2"><a href="prueba-kolmogorov.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(X_i,Sn)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="prueba-kolmogorov.html#cb176-1" aria-hidden="true"></a><span class="co">#Prueba</span></span>
+<span id="cb176-2"><a href="prueba-kolmogorov.html#cb176-2" aria-hidden="true"></a><span class="kw">ks.test</span>(X_i,Sn)</span></code></pre></div>
 <pre><code>
     Two-sample Kolmogorov-Smirnov test
 
@@ -749,10 +751,10 @@ alternative hypothesis: two-sided</code></pre>
 <h2><span class="header-section-number">17.3</span> Otro ejemplo en R</h2>
 <p>Se mencionó que uno de los usos de estas pruebas es para validar el supuesto de normalidad en los modelos de regresión lineal. Veremos ahora un ejemplo en donde los datos a los que se aplica la prueba de bondad de ajuste son los residuales de una regresión lineal simple.</p>
 <p>La base de datos <strong>“Loblolly”</strong> en R, contiene información sobre tres características de arboles de pino originarios del sudeste de Estados Unidos. Al ajustar un modelo de regresión lineal simple entre <span class="math inline">\(X=&quot;edad&quot;\)</span> y <span class="math inline">\(Y=&quot;altura&quot;\)</span>, deseamos probar con un nivel de significancia del <span class="math inline">\(1\%\)</span> que los residuales estandarizados se distribuyen normal estándar.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="prueba-kolmogorov.html#cb178-1" aria-hidden="true" tabindex="-1"></a>m1<span class="ot">=</span><span class="fu">lm</span>(Loblolly<span class="sc">$</span>height<span class="sc">~</span>Loblolly<span class="sc">$</span>age)</span>
-<span id="cb178-2"><a href="prueba-kolmogorov.html#cb178-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rstandard</span>(m1)</span>
-<span id="cb178-3"><a href="prueba-kolmogorov.html#cb178-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb178-4"><a href="prueba-kolmogorov.html#cb178-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(x,<span class="st">&quot;pnorm&quot;</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="prueba-kolmogorov.html#cb178-1" aria-hidden="true"></a>m1=<span class="kw">lm</span>(Loblolly<span class="op">$</span>height<span class="op">~</span>Loblolly<span class="op">$</span>age)</span>
+<span id="cb178-2"><a href="prueba-kolmogorov.html#cb178-2" aria-hidden="true"></a>x=<span class="kw">rstandard</span>(m1)</span>
+<span id="cb178-3"><a href="prueba-kolmogorov.html#cb178-3" aria-hidden="true"></a></span>
+<span id="cb178-4"><a href="prueba-kolmogorov.html#cb178-4" aria-hidden="true"></a><span class="kw">ks.test</span>(x,<span class="st">&quot;pnorm&quot;</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>
     One-sample Kolmogorov-Smirnov test
 

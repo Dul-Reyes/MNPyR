@@ -58,11 +58,11 @@ $$\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \mathbf{P}[Y > t_{2}]=\alpha_{2}$$
 
 Donde $Y \sim Bin (n,p^*)$.
 
-y calculamos el$p-value$ de la siguiente manera:
+y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=2*min \{ \mathbf{P}[Y\leq T],\mathbf{P}[Y \geq T] \}$$
 
-Sugerimos que si $n > 20$,el$p-value$ puede obtenerse usando:
+Sugerimos que si $n > 20$,el $p-value$ puede obtenerse usando:
 
 $$\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 y
@@ -168,7 +168,7 @@ donde $\alpha=\alpha_{1}+\alpha_{2}$ y $Y \sim Bin (n,p)$ .
 
 3) Hacer $L= p_{1}$ y $U=p_{2}$
 
-Sugerimos si $n>30$ podemos usar:
+Recordemos que mucha de la teoría abarcada en este material esta basado en el libro @conover1998practical y en dicha referencia se pueden encontrar tablas con los valores de los intervalos de confianza para muestras menores a 30, cuando se tienen más grandes, es decir si $n>30$, se pueden utilizar las siguientes expresiones para el cálculo de los intervalos.
 
 $$L=\frac{O_{1}}{n}-Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}} \ \ \ \ \  U=\frac{O_{1}}{n}+Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}}$$
 

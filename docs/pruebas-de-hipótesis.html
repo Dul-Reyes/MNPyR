@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 26 Pruebas de hipótesis | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 26 Pruebas de hipótesis | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="intervalos-de-confianza-1.html"/>
 <link rel="next" href="validación-de-supuestos.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -621,25 +623,25 @@ predecir, de alguna manera, el tiempo promedio que tardarían en procesar un nú
 <p><strong>Prueba de hipótesis para <span class="math inline">\(\beta_{0}\)</span> y <span class="math inline">\(\beta_{1}\)</span></strong></p>
 <p>Haremos el cálculo del estadístico de prueba para probar la hipótesis: <span class="math inline">\(\textbf{H}_0=\hat{\beta_{0}}=0 \ \ \ vs \ \ \ \textbf{H}_a \neq 0\)</span> con una confianza del <span class="math inline">\(90\%\)</span> y sustituimos en la siguiente ecuación:</p>
 <p><span class="math display">\[t^*=\frac{\hat{\beta_{0}}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}}.\]</span></p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="pruebas-de-hipótesis.html#cb249-1" aria-hidden="true" tabindex="-1"></a>t_est<span class="ot">=</span>beta0<span class="sc">/</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>n<span class="sc">+</span>x_barra<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro)</span>
-<span id="cb249-2"><a href="pruebas-de-hipótesis.html#cb249-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb249-3"><a href="pruebas-de-hipótesis.html#cb249-3" aria-hidden="true" tabindex="-1"></a>t_est</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="pruebas-de-hipótesis.html#cb249-1" aria-hidden="true"></a>t_est=beta0<span class="op">/</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n<span class="op">+</span>x_barra<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro)</span>
+<span id="cb249-2"><a href="pruebas-de-hipótesis.html#cb249-2" aria-hidden="true"></a></span>
+<span id="cb249-3"><a href="pruebas-de-hipótesis.html#cb249-3" aria-hidden="true"></a>t_est</span></code></pre></div>
 <pre><code>[1] 5.24827</code></pre>
 <p>Ahora buscamos el cuantil de la distribución <span class="math inline">\(t-Student\)</span> para comprar nuestro estadístico.</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="pruebas-de-hipótesis.html#cb251-1" aria-hidden="true" tabindex="-1"></a>qt<span class="ot">=</span><span class="fu">qt</span>(.<span class="dv">95</span>,n<span class="dv">-2</span>) </span>
-<span id="cb251-2"><a href="pruebas-de-hipótesis.html#cb251-2" aria-hidden="true" tabindex="-1"></a>qt</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="pruebas-de-hipótesis.html#cb251-1" aria-hidden="true"></a>qt=<span class="kw">qt</span>(.<span class="dv">95</span>,n<span class="dv">-2</span>) </span>
+<span id="cb251-2"><a href="pruebas-de-hipótesis.html#cb251-2" aria-hidden="true"></a>qt</span></code></pre></div>
 <pre><code>[1] 1.701131</code></pre>
 <p>Como nuestro estadístico (5.2482) es mayor que (1.7011). Entonces rechazamos <span class="math inline">\(\textbf{H}_0\)</span>. Por lo tanto con una confianza del <span class="math inline">\(90\%\)</span> podemos decir que <span class="math inline">\(\beta_{0} \neq 0.\)</span></p>
 <p>Ahora haremos la prueba para la hipótesis <span class="math inline">\(\textbf{H}_0:\hat{\beta_{1}}=0 \ \ vs \ \ \textbf{H}_{a}:\hat{\beta_{1}} \neq 0\)</span> con una confianza del <span class="math inline">\(90\%\)</span>. Sustituimos en la siguiente ecuación:</p>
 <p><span class="math display">\[t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}\]</span></p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="pruebas-de-hipótesis.html#cb253-1" aria-hidden="true" tabindex="-1"></a>t_est<span class="ot">=</span>beta1<span class="sc">/</span><span class="fu">sqrt</span>(s2_gorro<span class="sc">/</span>Sxx)</span>
-<span id="cb253-2"><a href="pruebas-de-hipótesis.html#cb253-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb253-3"><a href="pruebas-de-hipótesis.html#cb253-3" aria-hidden="true" tabindex="-1"></a>t_est</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="pruebas-de-hipótesis.html#cb253-1" aria-hidden="true"></a>t_est=beta1<span class="op">/</span><span class="kw">sqrt</span>(s2_gorro<span class="op">/</span>Sxx)</span>
+<span id="cb253-2"><a href="pruebas-de-hipótesis.html#cb253-2" aria-hidden="true"></a></span>
+<span id="cb253-3"><a href="pruebas-de-hipótesis.html#cb253-3" aria-hidden="true"></a>t_est</span></code></pre></div>
 <pre><code>[1] 13.79718</code></pre>
 <p>Ahora buscamos el cuantil de la distribución <span class="math inline">\(t-Student\)</span> para comparar nuestro estadístico:</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="pruebas-de-hipótesis.html#cb255-1" aria-hidden="true" tabindex="-1"></a>qt<span class="ot">=</span><span class="fu">qt</span>(.<span class="dv">95</span>,n<span class="dv">-2</span>) </span>
-<span id="cb255-2"><a href="pruebas-de-hipótesis.html#cb255-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-3"><a href="pruebas-de-hipótesis.html#cb255-3" aria-hidden="true" tabindex="-1"></a>qt</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="pruebas-de-hipótesis.html#cb255-1" aria-hidden="true"></a>qt=<span class="kw">qt</span>(.<span class="dv">95</span>,n<span class="dv">-2</span>) </span>
+<span id="cb255-2"><a href="pruebas-de-hipótesis.html#cb255-2" aria-hidden="true"></a></span>
+<span id="cb255-3"><a href="pruebas-de-hipótesis.html#cb255-3" aria-hidden="true"></a>qt</span></code></pre></div>
 <pre><code>[1] 1.701131</code></pre>
 <p>Como nuestro estadístico (13.7971) es mayor que (1.7011). Entonces rechazamos <span class="math inline">\(\textbf{H}_0\)</span>. Por lo tanto con una confianza del <span class="math inline">\(90\%\)</span> podemos decir que <span class="math inline">\(\beta_{1} \neq 0.\)</span></p>
 <p>Con éstas dos pruebas corroboramos que los datos ajustan a un modelo de regresión lineal que considera a la variable facturas y el intercepto, esto debido a que ambos parámetros resultaron ser distintos de cero.</p>
@@ -651,8 +653,8 @@ predecir, de alguna manera, el tiempo promedio que tardarían en procesar un nú
 <p>Por último vamos a calcular el coeficiente de determinación de nuestro modelo. Como se menciona en nuestro capítulo, este coeficiente mide la proporción de la variación explicada por el modelo en relación a la variación total existente en los datos, y por eso es un valor entre 0 y 1.</p>
 <p>Y sustituiremos en la siguiente expresión:</p>
 <p><span class="math display">\[R^2=\frac{\hat{\beta_{1}}S_{xy}}{\sum_{i=1}^{n}(y_{i}-\overline{y})^2}\]</span></p>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="pruebas-de-hipótesis.html#cb257-1" aria-hidden="true" tabindex="-1"></a>R_2<span class="ot">=</span>(beta1<span class="sc">*</span>Sxy)<span class="sc">/</span><span class="fu">sum</span>((y<span class="sc">-</span>y_barra)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb257-2"><a href="pruebas-de-hipótesis.html#cb257-2" aria-hidden="true" tabindex="-1"></a>R_2</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="pruebas-de-hipótesis.html#cb257-1" aria-hidden="true"></a>R_<span class="dv">2</span>=(beta1<span class="op">*</span>Sxy)<span class="op">/</span><span class="kw">sum</span>((y<span class="op">-</span>y_barra)<span class="op">^</span><span class="dv">2</span>)</span>
+<span id="cb257-2"><a href="pruebas-de-hipótesis.html#cb257-2" aria-hidden="true"></a>R_<span class="dv">2</span></span></code></pre></div>
 <pre><code>[1] 0.8717727</code></pre>
 <p>Lo que quiere decir que nuestro modelo está explicando <span class="math inline">\(87.17\%\)</span> de la variabilidad observada en la variable facturas. El ideal es tener un modelo que explique el <span class="math inline">\(100\%\)</span> pero como vimos, debido a que estamos ajustando una recta y esta no pasa por todos los puntos algún error en el ajuste estamos cometiendo.</p>
 

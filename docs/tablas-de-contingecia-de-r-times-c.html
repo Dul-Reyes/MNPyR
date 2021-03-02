@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 14 Tablas de Contingecia de \(r \times c\) | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 14 Tablas de Contingecia de \(r \times c\) | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-independencia.html"/>
 <link rel="next" href="prueba-de-la-mediana.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -513,72 +515,72 @@ entonces buscamos <span class="math inline">\(\chi^2_{(3)}=7.815\)</span></p>
 <div id="ejemplo-en-r-studio-11" class="section level2" number="14.3">
 <h2><span class="header-section-number">14.3</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">14</span>,<span class="dv">17</span>,<span class="dv">9</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">3</span>,<span class="dv">82</span>,<span class="dv">36</span>,<span class="dv">46</span>,<span class="dv">34</span>,<span class="dv">12</span>,<span class="dv">128</span>),<span class="at">nrow=</span><span class="dv">3</span>,<span class="at">byrow=</span>T, </span>
-<span id="cb122-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">dimnames=</span><span class="fu">list</span>(<span class="st">&quot;Escuelas&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;EscuelaPrivada&quot;</span>,<span class="st">&quot;EscuelaPublica&quot;</span>,<span class="st">&quot;Totales&quot;</span>), </span>
-<span id="cb122-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Puntajes&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;cat1&quot;</span>,<span class="st">&quot;cat2&quot;</span>,<span class="st">&quot;cat3&quot;</span>,<span class="st">&quot;cat4&quot;</span>,<span class="st">&quot;Totales&quot;</span>)))</span>
-<span id="cb122-4"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-4" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-1" aria-hidden="true"></a>data &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">14</span>,<span class="dv">17</span>,<span class="dv">9</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">3</span>,<span class="dv">82</span>,<span class="dv">36</span>,<span class="dv">46</span>,<span class="dv">34</span>,<span class="dv">12</span>,<span class="dv">128</span>),<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span>T, </span>
+<span id="cb122-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-2" aria-hidden="true"></a>               <span class="dt">dimnames=</span><span class="kw">list</span>(<span class="st">&quot;Escuelas&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;EscuelaPrivada&quot;</span>,<span class="st">&quot;EscuelaPublica&quot;</span>,<span class="st">&quot;Totales&quot;</span>), </span>
+<span id="cb122-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-3" aria-hidden="true"></a>                             <span class="st">&quot;Puntajes&quot;</span>=<span class="kw">c</span>(<span class="st">&quot;cat1&quot;</span>,<span class="st">&quot;cat2&quot;</span>,<span class="st">&quot;cat3&quot;</span>,<span class="st">&quot;cat4&quot;</span>,<span class="st">&quot;Totales&quot;</span>)))</span>
+<span id="cb122-4"><a href="tablas-de-contingecia-de-r-times-c.html#cb122-4" aria-hidden="true"></a>data</span></code></pre></div>
 <pre><code>                Puntajes
 Escuelas         cat1 cat2 cat3 cat4 Totales
   EscuelaPrivada    6   14   17    9      46
   EscuelaPublica   30   32   17    3      82
   Totales          36   46   34   12     128</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
-<span id="cb124-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-3" aria-hidden="true" tabindex="-1"></a>O11<span class="ot">=</span><span class="dv">6</span></span>
-<span id="cb124-4"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-4" aria-hidden="true" tabindex="-1"></a>O12<span class="ot">=</span><span class="dv">14</span></span>
-<span id="cb124-5"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-5" aria-hidden="true" tabindex="-1"></a>O13<span class="ot">=</span><span class="dv">17</span></span>
-<span id="cb124-6"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-6" aria-hidden="true" tabindex="-1"></a>O14<span class="ot">=</span><span class="dv">9</span></span>
-<span id="cb124-7"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-7" aria-hidden="true" tabindex="-1"></a>O21<span class="ot">=</span><span class="dv">30</span></span>
-<span id="cb124-8"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-8" aria-hidden="true" tabindex="-1"></a>O22<span class="ot">=</span><span class="dv">32</span></span>
-<span id="cb124-9"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-9" aria-hidden="true" tabindex="-1"></a>O23<span class="ot">=</span><span class="dv">17</span></span>
-<span id="cb124-10"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-10" aria-hidden="true" tabindex="-1"></a>O24<span class="ot">=</span><span class="dv">3</span></span>
-<span id="cb124-11"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-11" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">=</span><span class="dv">46</span></span>
-<span id="cb124-12"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-12" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">=</span><span class="dv">82</span></span>
-<span id="cb124-13"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-13" aria-hidden="true" tabindex="-1"></a>C1<span class="ot">=</span><span class="dv">36</span></span>
-<span id="cb124-14"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-14" aria-hidden="true" tabindex="-1"></a>C2<span class="ot">=</span><span class="dv">46</span></span>
-<span id="cb124-15"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-15" aria-hidden="true" tabindex="-1"></a>C3<span class="ot">=</span><span class="dv">34</span></span>
-<span id="cb124-16"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-16" aria-hidden="true" tabindex="-1"></a>C4<span class="ot">=</span><span class="dv">12</span></span>
-<span id="cb124-17"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-17" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>n1<span class="sc">+</span>n2</span>
-<span id="cb124-18"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-19"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora calcularemos los Eij</span></span>
-<span id="cb124-20"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-21"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-21" aria-hidden="true" tabindex="-1"></a>E11<span class="ot">=</span>n1<span class="sc">*</span>C1<span class="sc">/</span>N</span>
-<span id="cb124-22"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-22" aria-hidden="true" tabindex="-1"></a>E12<span class="ot">=</span>n1<span class="sc">*</span>C2<span class="sc">/</span>N</span>
-<span id="cb124-23"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-23" aria-hidden="true" tabindex="-1"></a>E13<span class="ot">=</span>n1<span class="sc">*</span>C3<span class="sc">/</span>N</span>
-<span id="cb124-24"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-24" aria-hidden="true" tabindex="-1"></a>E14<span class="ot">=</span>n1<span class="sc">*</span>C4<span class="sc">/</span>N</span>
-<span id="cb124-25"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-25" aria-hidden="true" tabindex="-1"></a>E21<span class="ot">=</span>n2<span class="sc">*</span>C1<span class="sc">/</span>N</span>
-<span id="cb124-26"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-26" aria-hidden="true" tabindex="-1"></a>E22<span class="ot">=</span>n2<span class="sc">*</span>C2<span class="sc">/</span>N</span>
-<span id="cb124-27"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-27" aria-hidden="true" tabindex="-1"></a>E23<span class="ot">=</span>n2<span class="sc">*</span>C3<span class="sc">/</span>N</span>
-<span id="cb124-28"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-28" aria-hidden="true" tabindex="-1"></a>E24<span class="ot">=</span>n2<span class="sc">*</span>C4<span class="sc">/</span>N</span>
-<span id="cb124-29"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-30"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora calcularemos los (Oij-Eij)^2/Eij</span></span>
-<span id="cb124-31"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-32"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-32" aria-hidden="true" tabindex="-1"></a>j1<span class="ot">=</span>(O11<span class="sc">-</span>E11)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E11</span>
-<span id="cb124-33"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-33" aria-hidden="true" tabindex="-1"></a>j2<span class="ot">=</span>(O12<span class="sc">-</span>E12)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E12</span>
-<span id="cb124-34"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-34" aria-hidden="true" tabindex="-1"></a>j3<span class="ot">=</span>(O13<span class="sc">-</span>E13)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E13</span>
-<span id="cb124-35"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-35" aria-hidden="true" tabindex="-1"></a>j4<span class="ot">=</span>(O14<span class="sc">-</span>E14)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E14</span>
-<span id="cb124-36"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-36" aria-hidden="true" tabindex="-1"></a>j5<span class="ot">=</span>(O21<span class="sc">-</span>E21)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E21</span>
-<span id="cb124-37"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-37" aria-hidden="true" tabindex="-1"></a>j6<span class="ot">=</span>(O22<span class="sc">-</span>E22)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E22</span>
-<span id="cb124-38"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-38" aria-hidden="true" tabindex="-1"></a>j7<span class="ot">=</span>(O23<span class="sc">-</span>E23)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E23</span>
-<span id="cb124-39"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-39" aria-hidden="true" tabindex="-1"></a>j8<span class="ot">=</span>(O24<span class="sc">-</span>E24)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>E24</span>
-<span id="cb124-40"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-41"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-41" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora calculamos el estadístico de prueba</span></span>
-<span id="cb124-42"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-43"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-43" aria-hidden="true" tabindex="-1"></a>T<span class="ot">=</span><span class="fu">sum</span>(j1,j2,j3,j4,j5,j6,j7,j8)</span>
-<span id="cb124-44"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-44" aria-hidden="true" tabindex="-1"></a>T</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-1" aria-hidden="true"></a><span class="co">#Datos</span></span>
+<span id="cb124-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-2" aria-hidden="true"></a></span>
+<span id="cb124-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-3" aria-hidden="true"></a>O11=<span class="dv">6</span></span>
+<span id="cb124-4"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-4" aria-hidden="true"></a>O12=<span class="dv">14</span></span>
+<span id="cb124-5"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-5" aria-hidden="true"></a>O13=<span class="dv">17</span></span>
+<span id="cb124-6"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-6" aria-hidden="true"></a>O14=<span class="dv">9</span></span>
+<span id="cb124-7"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-7" aria-hidden="true"></a>O21=<span class="dv">30</span></span>
+<span id="cb124-8"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-8" aria-hidden="true"></a>O22=<span class="dv">32</span></span>
+<span id="cb124-9"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-9" aria-hidden="true"></a>O23=<span class="dv">17</span></span>
+<span id="cb124-10"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-10" aria-hidden="true"></a>O24=<span class="dv">3</span></span>
+<span id="cb124-11"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-11" aria-hidden="true"></a>n1=<span class="dv">46</span></span>
+<span id="cb124-12"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-12" aria-hidden="true"></a>n2=<span class="dv">82</span></span>
+<span id="cb124-13"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-13" aria-hidden="true"></a>C1=<span class="dv">36</span></span>
+<span id="cb124-14"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-14" aria-hidden="true"></a>C2=<span class="dv">46</span></span>
+<span id="cb124-15"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-15" aria-hidden="true"></a>C3=<span class="dv">34</span></span>
+<span id="cb124-16"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-16" aria-hidden="true"></a>C4=<span class="dv">12</span></span>
+<span id="cb124-17"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-17" aria-hidden="true"></a>N=n1<span class="op">+</span>n2</span>
+<span id="cb124-18"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-18" aria-hidden="true"></a></span>
+<span id="cb124-19"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-19" aria-hidden="true"></a><span class="co">#Ahora calcularemos los Eij</span></span>
+<span id="cb124-20"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-20" aria-hidden="true"></a></span>
+<span id="cb124-21"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-21" aria-hidden="true"></a>E11=n1<span class="op">*</span>C1<span class="op">/</span>N</span>
+<span id="cb124-22"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-22" aria-hidden="true"></a>E12=n1<span class="op">*</span>C2<span class="op">/</span>N</span>
+<span id="cb124-23"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-23" aria-hidden="true"></a>E13=n1<span class="op">*</span>C3<span class="op">/</span>N</span>
+<span id="cb124-24"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-24" aria-hidden="true"></a>E14=n1<span class="op">*</span>C4<span class="op">/</span>N</span>
+<span id="cb124-25"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-25" aria-hidden="true"></a>E21=n2<span class="op">*</span>C1<span class="op">/</span>N</span>
+<span id="cb124-26"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-26" aria-hidden="true"></a>E22=n2<span class="op">*</span>C2<span class="op">/</span>N</span>
+<span id="cb124-27"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-27" aria-hidden="true"></a>E23=n2<span class="op">*</span>C3<span class="op">/</span>N</span>
+<span id="cb124-28"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-28" aria-hidden="true"></a>E24=n2<span class="op">*</span>C4<span class="op">/</span>N</span>
+<span id="cb124-29"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-29" aria-hidden="true"></a></span>
+<span id="cb124-30"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-30" aria-hidden="true"></a><span class="co">#Ahora calcularemos los (Oij-Eij)^2/Eij</span></span>
+<span id="cb124-31"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-31" aria-hidden="true"></a></span>
+<span id="cb124-32"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-32" aria-hidden="true"></a>j1=(O11<span class="op">-</span>E11)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E11</span>
+<span id="cb124-33"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-33" aria-hidden="true"></a>j2=(O12<span class="op">-</span>E12)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E12</span>
+<span id="cb124-34"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-34" aria-hidden="true"></a>j3=(O13<span class="op">-</span>E13)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E13</span>
+<span id="cb124-35"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-35" aria-hidden="true"></a>j4=(O14<span class="op">-</span>E14)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E14</span>
+<span id="cb124-36"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-36" aria-hidden="true"></a>j5=(O21<span class="op">-</span>E21)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E21</span>
+<span id="cb124-37"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-37" aria-hidden="true"></a>j6=(O22<span class="op">-</span>E22)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E22</span>
+<span id="cb124-38"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-38" aria-hidden="true"></a>j7=(O23<span class="op">-</span>E23)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E23</span>
+<span id="cb124-39"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-39" aria-hidden="true"></a>j8=(O24<span class="op">-</span>E24)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>E24</span>
+<span id="cb124-40"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-40" aria-hidden="true"></a></span>
+<span id="cb124-41"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-41" aria-hidden="true"></a><span class="co">#Ahora calculamos el estadístico de prueba</span></span>
+<span id="cb124-42"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-42" aria-hidden="true"></a></span>
+<span id="cb124-43"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-43" aria-hidden="true"></a>T=<span class="kw">sum</span>(j1,j2,j3,j4,j5,j6,j7,j8)</span>
+<span id="cb124-44"><a href="tablas-de-contingecia-de-r-times-c.html#cb124-44" aria-hidden="true"></a>T</span></code></pre></div>
 <pre><code>[1] 17.28581</code></pre>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co">#El cuantil es de una distribución ji.cuadrada con (r-1)(c-1) grados de libertad en este caso serian 3 gl</span></span>
-<span id="cb126-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb126-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-1" aria-hidden="true"></a><span class="co">#El cuantil es de una distribución ji.cuadrada con (r-1)(c-1) grados de libertad en este caso serian 3 gl</span></span>
+<span id="cb126-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-2" aria-hidden="true"></a></span>
+<span id="cb126-3"><a href="tablas-de-contingecia-de-r-times-c.html#cb126-3" aria-hidden="true"></a><span class="kw">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>[1] 7.814728</code></pre>
 <p>Observamos que la estadística de prueba tiene un valor de 17.28 y su correspondiente <span class="math inline">\(p-value\)</span> es menor a 0.05, por lo tanto con <span class="math inline">\(\alpha=5\%\)</span> rechazaremos <span class="math inline">\(H_0\)</span> y concluimos existe evidencia suficiente para suponer la distribución de los puntajes en la prueba es distinta entre las escuelas privadas y las escuelas públicas.</p>
 <p>Ahora podemos utilizar la prueba en R:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb128-1" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">14</span>,<span class="dv">17</span>,<span class="dv">9</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">3</span>,<span class="dv">82</span>),<span class="at">ncol=</span><span class="dv">5</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb128-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb128-2" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb128-1" aria-hidden="true"></a>tabla&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">14</span>,<span class="dv">17</span>,<span class="dv">9</span>,<span class="dv">46</span>,<span class="dv">30</span>,<span class="dv">32</span>,<span class="dv">17</span>,<span class="dv">3</span>,<span class="dv">82</span>),<span class="dt">ncol=</span><span class="dv">5</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</span>
+<span id="cb128-2"><a href="tablas-de-contingecia-de-r-times-c.html#cb128-2" aria-hidden="true"></a>tabla</span></code></pre></div>
 <pre><code>     [,1] [,2] [,3] [,4] [,5]
 [1,]    6   14   17    9   46
 [2,]   30   32   17    3   82</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabla)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="tablas-de-contingecia-de-r-times-c.html#cb130-1" aria-hidden="true"></a><span class="kw">chisq.test</span>(tabla)</span></code></pre></div>
 <pre><code>
     Pearson&#39;s Chi-squared test
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 16 Prueba de la Ji-cuadrada | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 16 Prueba de la Ji-cuadrada | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="bondad-de-ajuste.html"/>
 <link rel="next" href="prueba-kolmogorov.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -489,60 +491,60 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 <div id="ejemplo-en-r-studio-13" class="section level2" number="16.2">
 <h2><span class="header-section-number">16.2</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="prueba-de-la-ji-cuadrada.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Número de hogares</span></span>
-<span id="cb156-2"><a href="prueba-de-la-ji-cuadrada.html#cb156-2" aria-hidden="true" tabindex="-1"></a>observados <span class="ot">=</span><span class="fu">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">21</span>,<span class="dv">4</span>) </span>
-<span id="cb156-3"><a href="prueba-de-la-ji-cuadrada.html#cb156-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Matriz de frecuencias observadas</span></span>
-<span id="cb156-4"><a href="prueba-de-la-ji-cuadrada.html#cb156-4" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">=</span><span class="fu">matrix</span>(observados,<span class="at">nrow=</span><span class="dv">1</span>)</span>
-<span id="cb156-5"><a href="prueba-de-la-ji-cuadrada.html#cb156-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Número de niños</span></span>
-<span id="cb156-6"><a href="prueba-de-la-ji-cuadrada.html#cb156-6" aria-hidden="true" tabindex="-1"></a>num_ninos<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;4&quot;</span>,<span class="st">&quot;5+&quot;</span>)</span>
-<span id="cb156-7"><a href="prueba-de-la-ji-cuadrada.html#cb156-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Asigna nombres a la tabla de cada categoría</span></span>
-<span id="cb156-8"><a href="prueba-de-la-ji-cuadrada.html#cb156-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(tabla)<span class="ot">=</span><span class="fu">list</span>(<span class="cn">NULL</span>,num_ninos)</span>
-<span id="cb156-9"><a href="prueba-de-la-ji-cuadrada.html#cb156-9" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="prueba-de-la-ji-cuadrada.html#cb156-1" aria-hidden="true"></a><span class="co">#Número de hogares</span></span>
+<span id="cb156-2"><a href="prueba-de-la-ji-cuadrada.html#cb156-2" aria-hidden="true"></a>observados =<span class="kw">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">21</span>,<span class="dv">4</span>) </span>
+<span id="cb156-3"><a href="prueba-de-la-ji-cuadrada.html#cb156-3" aria-hidden="true"></a><span class="co">#Matriz de frecuencias observadas</span></span>
+<span id="cb156-4"><a href="prueba-de-la-ji-cuadrada.html#cb156-4" aria-hidden="true"></a>tabla=<span class="kw">matrix</span>(observados,<span class="dt">nrow=</span><span class="dv">1</span>)</span>
+<span id="cb156-5"><a href="prueba-de-la-ji-cuadrada.html#cb156-5" aria-hidden="true"></a><span class="co">#Número de niños</span></span>
+<span id="cb156-6"><a href="prueba-de-la-ji-cuadrada.html#cb156-6" aria-hidden="true"></a>num_ninos=<span class="kw">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;4&quot;</span>,<span class="st">&quot;5+&quot;</span>)</span>
+<span id="cb156-7"><a href="prueba-de-la-ji-cuadrada.html#cb156-7" aria-hidden="true"></a><span class="co">#Asigna nombres a la tabla de cada categoría</span></span>
+<span id="cb156-8"><a href="prueba-de-la-ji-cuadrada.html#cb156-8" aria-hidden="true"></a><span class="kw">dimnames</span>(tabla)=<span class="kw">list</span>(<span class="ot">NULL</span>,num_ninos)</span>
+<span id="cb156-9"><a href="prueba-de-la-ji-cuadrada.html#cb156-9" aria-hidden="true"></a>tabla</span></code></pre></div>
 <pre><code>       0   1   2  3  4 5+
 [1,] 273 361 263 78 21  4</code></pre>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="prueba-de-la-ji-cuadrada.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Una de las categorías es menor a 5, asi que colapsamos la categoría 5+</span></span>
-<span id="cb158-2"><a href="prueba-de-la-ji-cuadrada.html#cb158-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-3"><a href="prueba-de-la-ji-cuadrada.html#cb158-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Número de hogares</span></span>
-<span id="cb158-4"><a href="prueba-de-la-ji-cuadrada.html#cb158-4" aria-hidden="true" tabindex="-1"></a>observados <span class="ot">=</span><span class="fu">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">25</span>)</span>
-<span id="cb158-5"><a href="prueba-de-la-ji-cuadrada.html#cb158-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Matriz de frecuencias observadas</span></span>
-<span id="cb158-6"><a href="prueba-de-la-ji-cuadrada.html#cb158-6" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">=</span><span class="fu">matrix</span>(observados,<span class="at">nrow=</span><span class="dv">1</span>)</span>
-<span id="cb158-7"><a href="prueba-de-la-ji-cuadrada.html#cb158-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Número de niños</span></span>
-<span id="cb158-8"><a href="prueba-de-la-ji-cuadrada.html#cb158-8" aria-hidden="true" tabindex="-1"></a>num_ninos<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;4+&quot;</span>)</span>
-<span id="cb158-9"><a href="prueba-de-la-ji-cuadrada.html#cb158-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Asigna nombres a la tabla de cada categoría</span></span>
-<span id="cb158-10"><a href="prueba-de-la-ji-cuadrada.html#cb158-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(tabla)<span class="ot">=</span><span class="fu">list</span>(<span class="cn">NULL</span>,num_ninos)</span>
-<span id="cb158-11"><a href="prueba-de-la-ji-cuadrada.html#cb158-11" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="prueba-de-la-ji-cuadrada.html#cb158-1" aria-hidden="true"></a><span class="co">#Una de las categorías es menor a 5, asi que colapsamos la categoría 5+</span></span>
+<span id="cb158-2"><a href="prueba-de-la-ji-cuadrada.html#cb158-2" aria-hidden="true"></a></span>
+<span id="cb158-3"><a href="prueba-de-la-ji-cuadrada.html#cb158-3" aria-hidden="true"></a><span class="co">#Número de hogares</span></span>
+<span id="cb158-4"><a href="prueba-de-la-ji-cuadrada.html#cb158-4" aria-hidden="true"></a>observados =<span class="kw">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">25</span>)</span>
+<span id="cb158-5"><a href="prueba-de-la-ji-cuadrada.html#cb158-5" aria-hidden="true"></a><span class="co">#Matriz de frecuencias observadas</span></span>
+<span id="cb158-6"><a href="prueba-de-la-ji-cuadrada.html#cb158-6" aria-hidden="true"></a>tabla=<span class="kw">matrix</span>(observados,<span class="dt">nrow=</span><span class="dv">1</span>)</span>
+<span id="cb158-7"><a href="prueba-de-la-ji-cuadrada.html#cb158-7" aria-hidden="true"></a><span class="co">#Número de niños</span></span>
+<span id="cb158-8"><a href="prueba-de-la-ji-cuadrada.html#cb158-8" aria-hidden="true"></a>num_ninos=<span class="kw">c</span>(<span class="st">&quot;0&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>,<span class="st">&quot;4+&quot;</span>)</span>
+<span id="cb158-9"><a href="prueba-de-la-ji-cuadrada.html#cb158-9" aria-hidden="true"></a><span class="co">#Asigna nombres a la tabla de cada categoría</span></span>
+<span id="cb158-10"><a href="prueba-de-la-ji-cuadrada.html#cb158-10" aria-hidden="true"></a><span class="kw">dimnames</span>(tabla)=<span class="kw">list</span>(<span class="ot">NULL</span>,num_ninos)</span>
+<span id="cb158-11"><a href="prueba-de-la-ji-cuadrada.html#cb158-11" aria-hidden="true"></a>tabla</span></code></pre></div>
 <pre><code>       0   1   2  3 4+
 [1,] 273 361 263 78 25</code></pre>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="prueba-de-la-ji-cuadrada.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Total</span></span>
-<span id="cb160-2"><a href="prueba-de-la-ji-cuadrada.html#cb160-2" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="fu">sum</span>(observados)</span>
-<span id="cb160-3"><a href="prueba-de-la-ji-cuadrada.html#cb160-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-4"><a href="prueba-de-la-ji-cuadrada.html#cb160-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculamos las probabilidades</span></span>
-<span id="cb160-5"><a href="prueba-de-la-ji-cuadrada.html#cb160-5" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>,<span class="fl">1.40</span>)</span>
-<span id="cb160-6"><a href="prueba-de-la-ji-cuadrada.html#cb160-6" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="prueba-de-la-ji-cuadrada.html#cb160-1" aria-hidden="true"></a><span class="co">#Total</span></span>
+<span id="cb160-2"><a href="prueba-de-la-ji-cuadrada.html#cb160-2" aria-hidden="true"></a>N=<span class="kw">sum</span>(observados)</span>
+<span id="cb160-3"><a href="prueba-de-la-ji-cuadrada.html#cb160-3" aria-hidden="true"></a></span>
+<span id="cb160-4"><a href="prueba-de-la-ji-cuadrada.html#cb160-4" aria-hidden="true"></a><span class="co">#Calculamos las probabilidades</span></span>
+<span id="cb160-5"><a href="prueba-de-la-ji-cuadrada.html#cb160-5" aria-hidden="true"></a>p=<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>,<span class="fl">1.40</span>)</span>
+<span id="cb160-6"><a href="prueba-de-la-ji-cuadrada.html#cb160-6" aria-hidden="true"></a>p</span></code></pre></div>
 <pre><code>[1] 0.24659696 0.34523575 0.24166502 0.11277701 0.03947195</code></pre>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="prueba-de-la-ji-cuadrada.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculamos los valores esperados</span></span>
-<span id="cb162-2"><a href="prueba-de-la-ji-cuadrada.html#cb162-2" aria-hidden="true" tabindex="-1"></a>esperados<span class="ot">=</span>N<span class="sc">*</span>p</span>
-<span id="cb162-3"><a href="prueba-de-la-ji-cuadrada.html#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(esperados,<span class="dv">0</span>) <span class="co">#Hacemos esto por que estamos hablando de niños</span></span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="prueba-de-la-ji-cuadrada.html#cb162-1" aria-hidden="true"></a><span class="co">#Calculamos los valores esperados</span></span>
+<span id="cb162-2"><a href="prueba-de-la-ji-cuadrada.html#cb162-2" aria-hidden="true"></a>esperados=N<span class="op">*</span>p</span>
+<span id="cb162-3"><a href="prueba-de-la-ji-cuadrada.html#cb162-3" aria-hidden="true"></a><span class="kw">round</span>(esperados,<span class="dv">0</span>) <span class="co">#Hacemos esto por que estamos hablando de niños</span></span></code></pre></div>
 <pre><code>[1] 247 345 242 113  39</code></pre>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="prueba-de-la-ji-cuadrada.html#cb164-1" aria-hidden="true" tabindex="-1"></a>residuos<span class="ot">=</span><span class="fu">round</span>((observados<span class="sc">-</span>esperados)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>esperados,<span class="dv">4</span>)</span>
-<span id="cb164-2"><a href="prueba-de-la-ji-cuadrada.html#cb164-2" aria-hidden="true" tabindex="-1"></a>ji_cal<span class="ot">=</span><span class="fu">sum</span>(residuos)</span>
-<span id="cb164-3"><a href="prueba-de-la-ji-cuadrada.html#cb164-3" aria-hidden="true" tabindex="-1"></a>ji_cal</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="prueba-de-la-ji-cuadrada.html#cb164-1" aria-hidden="true"></a>residuos=<span class="kw">round</span>((observados<span class="op">-</span>esperados)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>esperados,<span class="dv">4</span>)</span>
+<span id="cb164-2"><a href="prueba-de-la-ji-cuadrada.html#cb164-2" aria-hidden="true"></a>ji_cal=<span class="kw">sum</span>(residuos)</span>
+<span id="cb164-3"><a href="prueba-de-la-ji-cuadrada.html#cb164-3" aria-hidden="true"></a>ji_cal</span></code></pre></div>
 <pre><code>[1] 21.4605</code></pre>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="prueba-de-la-ji-cuadrada.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co">#En un principio teníamos 6 categorías pero colapsamos una, entonces </span></span>
-<span id="cb166-2"><a href="prueba-de-la-ji-cuadrada.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="co">#tenemos 5 categorías menos una que corresponden a nuestros grados de libertad.</span></span>
-<span id="cb166-3"><a href="prueba-de-la-ji-cuadrada.html#cb166-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-4"><a href="prueba-de-la-ji-cuadrada.html#cb166-4" aria-hidden="true" tabindex="-1"></a>ji_teo<span class="ot">=</span><span class="fu">qchisq</span>(<span class="fl">0.95</span>,<span class="at">df=</span><span class="dv">4</span>)</span>
-<span id="cb166-5"><a href="prueba-de-la-ji-cuadrada.html#cb166-5" aria-hidden="true" tabindex="-1"></a>ji_teo</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="prueba-de-la-ji-cuadrada.html#cb166-1" aria-hidden="true"></a><span class="co">#En un principio teníamos 6 categorías pero colapsamos una, entonces </span></span>
+<span id="cb166-2"><a href="prueba-de-la-ji-cuadrada.html#cb166-2" aria-hidden="true"></a><span class="co">#tenemos 5 categorías menos una que corresponden a nuestros grados de libertad.</span></span>
+<span id="cb166-3"><a href="prueba-de-la-ji-cuadrada.html#cb166-3" aria-hidden="true"></a></span>
+<span id="cb166-4"><a href="prueba-de-la-ji-cuadrada.html#cb166-4" aria-hidden="true"></a>ji_teo=<span class="kw">qchisq</span>(<span class="fl">0.95</span>,<span class="dt">df=</span><span class="dv">4</span>)</span>
+<span id="cb166-5"><a href="prueba-de-la-ji-cuadrada.html#cb166-5" aria-hidden="true"></a>ji_teo</span></code></pre></div>
 <pre><code>[1] 9.487729</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="prueba-de-la-ji-cuadrada.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Como Ji-Cal&gt;Ji_teo rechazamos H0.</span></span>
-<span id="cb168-2"><a href="prueba-de-la-ji-cuadrada.html#cb168-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb168-3"><a href="prueba-de-la-ji-cuadrada.html#cb168-3" aria-hidden="true" tabindex="-1"></a>p_value<span class="ot">=</span><span class="fu">pchisq</span>(ji_cal,<span class="at">df=</span><span class="dv">4</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
-<span id="cb168-4"><a href="prueba-de-la-ji-cuadrada.html#cb168-4" aria-hidden="true" tabindex="-1"></a>p_value</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="prueba-de-la-ji-cuadrada.html#cb168-1" aria-hidden="true"></a><span class="co">#Como Ji-Cal&gt;Ji_teo rechazamos H0.</span></span>
+<span id="cb168-2"><a href="prueba-de-la-ji-cuadrada.html#cb168-2" aria-hidden="true"></a></span>
+<span id="cb168-3"><a href="prueba-de-la-ji-cuadrada.html#cb168-3" aria-hidden="true"></a>p_value=<span class="kw">pchisq</span>(ji_cal,<span class="dt">df=</span><span class="dv">4</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</span>
+<span id="cb168-4"><a href="prueba-de-la-ji-cuadrada.html#cb168-4" aria-hidden="true"></a>p_value</span></code></pre></div>
 <pre><code>[1] 0.0002565777</code></pre>
 <p>Observamos que la estadística de prueba tiene un valor de 21.46 y su correspondiente p-value es menor a 0.05, por lo tanto con <span class="math inline">\(\alpha=5\%\)</span> rechazaremos <span class="math inline">\(H_0\)</span> y concluimos existe evidencia suficiente para suponer que el número de niños por hogar no sigue una distribución Poisson(1.40).</p>
 <p>Ahora podemos utilizar la prueba de R:</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="prueba-de-la-ji-cuadrada.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">25</span>), <span class="at">p =</span> <span class="fu">c</span>(<span class="fl">0.2466</span>,<span class="fl">0.3452</span>,<span class="fl">0.2417</span>,</span>
-<span id="cb170-2"><a href="prueba-de-la-ji-cuadrada.html#cb170-2" aria-hidden="true" tabindex="-1"></a>                                       <span class="fl">0.1128</span>,<span class="fl">0.03947</span>), <span class="at">rescale.p=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="prueba-de-la-ji-cuadrada.html#cb170-1" aria-hidden="true"></a><span class="kw">chisq.test</span>(<span class="kw">c</span>(<span class="dv">273</span>,<span class="dv">361</span>,<span class="dv">263</span>,<span class="dv">78</span>,<span class="dv">25</span>), <span class="dt">p =</span> <span class="kw">c</span>(<span class="fl">0.2466</span>,<span class="fl">0.3452</span>,<span class="fl">0.2417</span>,</span>
+<span id="cb170-2"><a href="prueba-de-la-ji-cuadrada.html#cb170-2" aria-hidden="true"></a>                                       <span class="fl">0.1128</span>,<span class="fl">0.03947</span>), <span class="dt">rescale.p=</span><span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>
     Chi-squared test for given probabilities
 

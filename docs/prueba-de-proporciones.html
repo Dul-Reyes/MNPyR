@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 2 Prueba de Proporciones | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 2 Prueba de Proporciones | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
@@ -34,7 +34,7 @@
   
 <link rel="prev" href="pruebas-binomiales.html"/>
 <link rel="next" href="prueba-de-cuantiles.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -64,7 +66,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -125,6 +126,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
@@ -147,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation"><span>Conover</span> (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
@@ -393,14 +395,14 @@ Una prueba de proporciones puede ser útil para ayudar a responder este tipo de 
 <p><strong>Datos</strong></p>
 <p>Los datos consisten en una muestra</p>
 <p><span class="math display">\[X_{1},X_{2},X_{3},\cdots,X_{n}  \mbox{ una  muestra aleatoria  de  tamaño  n  de  la  población.}\]</span></p>
-<p>cuyo resultado se puede clasificar en dos y sólo dos categorías “categoría 1” o “categoría 2.” El número de observaciones en la categoría 1 es <span class="math inline">\(O_{1}\)</span> y el número de observaciones en la categoría 2 es <span class="math inline">\(O_{2}=n-O_{1}\)</span></p>
+<p>cuyo resultado se puede clasificar en dos y sólo dos categorías “categoría 1” o “categoría 2”. El número de observaciones en la categoría 1 es <span class="math inline">\(O_{1}\)</span> y el número de observaciones en la categoría 2 es <span class="math inline">\(O_{2}=n-O_{1}\)</span></p>
 <p><strong>Supuestos</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>Los <span class="math inline">\(n\)</span> ensayos son mutuamente independientes.</p></li>
 <li><p>La probabilidad <span class="math inline">\(p\)</span> de que el resultado de cada ensayo caiga en la categoría 1 es la misma en cada uno de los ensayos.</p></li>
 </ol>
 <p><strong>Estadístico de Prueba</strong></p>
-<p>Como nos preocupa la probabilidad del resultado “clase 1,” dejaremos que el estadístico de prueba <span class="math inline">\(T\)</span> sea el número de veces que el resultado es <strong>“clase 1”</strong>.
+<p>Como nos preocupa la probabilidad del resultado “clase 1”, dejaremos que el estadístico de prueba <span class="math inline">\(T\)</span> sea el número de veces que el resultado es <strong>“clase 1”</strong>.
 Es decir, si <span class="math inline">\(n&lt;20\)</span> utilizar el estadístico</p>
 <p><span class="math display">\[T=O_{1}\]</span>
 <span class="math display">\[ T \sim Bin (n,p^*)\]</span>
@@ -421,9 +423,9 @@ Donde <span class="math inline">\(Z_{q}\)</span> es el cuantil de una distribuci
 <p>Debemos encontrar <span class="math inline">\(t_{1}\)</span> y <span class="math inline">\(t_{2}\)</span> tales que:</p>
 <p><span class="math display">\[\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \mathbf{P}[Y &gt; t_{2}]=\alpha_{2}\]</span></p>
 <p>Donde <span class="math inline">\(Y \sim Bin (n,p^*)\)</span>.</p>
-<p>y calculamos el<span class="math inline">\(p-value\)</span> de la siguiente manera:</p>
+<p>y calculamos el <span class="math inline">\(p-value\)</span> de la siguiente manera:</p>
 <p><span class="math display">\[p-value=2*min \{ \mathbf{P}[Y\leq T],\mathbf{P}[Y \geq T] \}\]</span></p>
-<p>Sugerimos que si <span class="math inline">\(n &gt; 20\)</span>,el<span class="math inline">\(p-value\)</span> puede obtenerse usando:</p>
+<p>Sugerimos que si <span class="math inline">\(n &gt; 20\)</span>,el <span class="math inline">\(p-value\)</span> puede obtenerse usando:</p>
 <p><span class="math display">\[\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]</span>
 y</p>
 <p><span class="math display">\[\mathbf{P}[Y\geq t_{obs}] \thickapprox 1-\mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]</span>
@@ -481,7 +483,7 @@ donde <span class="math inline">\(\alpha=\alpha_{1}+\alpha_{2}\)</span> y <span 
 <ol start="3" style="list-style-type: decimal">
 <li>Hacer <span class="math inline">\(L= p_{1}\)</span> y <span class="math inline">\(U=p_{2}\)</span></li>
 </ol>
-<p>Sugerimos si <span class="math inline">\(n&gt;30\)</span> podemos usar:</p>
+<p>Recordemos que mucha de la teoría abarcada en este material esta basado en el libro <span class="citation">Conover (<a href="#ref-conover1998practical" role="doc-biblioref">1998</a>)</span> y en dicha referencia se pueden encontrar tablas con los valores de los intervalos de confianza para muestras menores a 30, cuando se tienen más grandes, es decir si <span class="math inline">\(n&gt;30\)</span>, se pueden utilizar las siguientes expresiones para el cálculo de los intervalos.</p>
 <p><span class="math display">\[L=\frac{O_{1}}{n}-Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}} \ \ \ \ \  U=\frac{O_{1}}{n}+Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}}\]</span></p>
 <p>Ahora aplicaremos lo anterior en un ejemplo ilustrativo:</p>
 </div>
@@ -534,25 +536,25 @@ De manera alternativa:</p>
 <h2><span class="header-section-number">2.3</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
 <p>La estadística de prueba será <span class="math inline">\(T=O_1\)</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="prueba-de-proporciones.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos</span></span>
-<span id="cb1-2"><a href="prueba-de-proporciones.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="prueba-de-proporciones.html#cb1-3" aria-hidden="true" tabindex="-1"></a>T<span class="ot">=</span><span class="dv">18</span>                                   <span class="co">#Número de éxitos</span></span>
-<span id="cb1-4"><a href="prueba-de-proporciones.html#cb1-4" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">=</span><span class="fl">0.05</span>                             <span class="co">#Nivel de significancia</span></span>
-<span id="cb1-5"><a href="prueba-de-proporciones.html#cb1-5" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span>                                   <span class="co">#Tamaño de la muestra</span></span>
-<span id="cb1-6"><a href="prueba-de-proporciones.html#cb1-6" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fl">0.70</span>                                 <span class="co">#Proporción  </span></span>
-<span id="cb1-7"><a href="prueba-de-proporciones.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="prueba-de-proporciones.html#cb1-8" aria-hidden="true" tabindex="-1"></a>t<span class="ot">=</span><span class="fu">qbinom</span>(.<span class="dv">95</span>,n,p)                       <span class="co">#Valor crítico</span></span>
-<span id="cb1-9"><a href="prueba-de-proporciones.html#cb1-9" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="prueba-de-proporciones.html#cb1-1" aria-hidden="true"></a><span class="co"># Datos</span></span>
+<span id="cb1-2"><a href="prueba-de-proporciones.html#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="prueba-de-proporciones.html#cb1-3" aria-hidden="true"></a>T=<span class="dv">18</span>                                   <span class="co">#Número de éxitos</span></span>
+<span id="cb1-4"><a href="prueba-de-proporciones.html#cb1-4" aria-hidden="true"></a>alpha=<span class="fl">0.05</span>                             <span class="co">#Nivel de significancia</span></span>
+<span id="cb1-5"><a href="prueba-de-proporciones.html#cb1-5" aria-hidden="true"></a>n=<span class="dv">20</span>                                   <span class="co">#Tamaño de la muestra</span></span>
+<span id="cb1-6"><a href="prueba-de-proporciones.html#cb1-6" aria-hidden="true"></a>p=<span class="fl">0.70</span>                                 <span class="co">#Proporción  </span></span>
+<span id="cb1-7"><a href="prueba-de-proporciones.html#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="prueba-de-proporciones.html#cb1-8" aria-hidden="true"></a>t=<span class="kw">qbinom</span>(.<span class="dv">95</span>,n,p)                       <span class="co">#Valor crítico</span></span>
+<span id="cb1-9"><a href="prueba-de-proporciones.html#cb1-9" aria-hidden="true"></a>t</span></code></pre></div>
 <pre><code>[1] 17</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="prueba-de-proporciones.html#cb3-1" aria-hidden="true" tabindex="-1"></a>pvalue<span class="ot">=</span><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">17</span>,<span class="dv">20</span>,.<span class="dv">7</span>)                 <span class="co">#P-value</span></span>
-<span id="cb3-2"><a href="prueba-de-proporciones.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="prueba-de-proporciones.html#cb3-3" aria-hidden="true" tabindex="-1"></a>pvalue</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="prueba-de-proporciones.html#cb3-1" aria-hidden="true"></a>pvalue=<span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">17</span>,<span class="dv">20</span>,.<span class="dv">7</span>)                 <span class="co">#P-value</span></span>
+<span id="cb3-2"><a href="prueba-de-proporciones.html#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="prueba-de-proporciones.html#cb3-3" aria-hidden="true"></a>pvalue</span></code></pre></div>
 <pre><code>[1] 0.03548313</code></pre>
 <p>Según el planteamiento de las hipótesis, este es un Caso C (de cola superior), por lo que siguiendo la regla de decisión tenemos que como <span class="math inline">\(T=18&gt;17=t\)</span>, entonces se rechaza <span class="math inline">\(H_0\)</span> y por lo tanto se concluye que hay información suficiente para decir que la probabilidad de que un graduado del tecnológico de Texas pase el examen es mayor al 70%.</p>
 <p>Graficamos la función binomial</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Utilizando la función de R, debemos tener cuidado ya que nuestra muestra es pequeña:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="prueba-de-proporciones.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(T,n, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">alternative =</span> <span class="fu">c</span>(<span class="st">&quot;greater&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="prueba-de-proporciones.html#cb5-1" aria-hidden="true"></a><span class="kw">binom.test</span>(T,n, <span class="dt">p =</span> <span class="fl">0.7</span>, <span class="dt">alternative =</span> <span class="kw">c</span>(<span class="st">&quot;greater&quot;</span>))</span></code></pre></div>
 <pre><code>
     Exact binomial test
 
@@ -573,6 +575,12 @@ probability of success
 <li><p>En una muestra de 150 partidos de básquetbol universitario, el equipo de casa ganó 98 partidos. Realice una prueba para determinar si los datos sustentan la hipótesis de que en el básquetbol universitario el equipo de casa tiene ventaja. ¿A qué conclusión llega con <span class="math inline">\(\alpha= 0.05\)</span>?</p></li>
 </ol>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references hanging-indent">
+<div id="ref-conover1998practical">
+<p>Conover, William Jay. 1998. <em>Practical Nonparametric Statistics</em>. Vol. 350. John Wiley &amp; Sons.</p>
 </div>
 </div>
             </section>
