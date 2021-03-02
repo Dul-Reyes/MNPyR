@@ -51,7 +51,7 @@ $$\mathbf{P}[Y \leq t]=\alpha/2$$
 Donde $Y \sim Bin (n,1/2)$.
 
 
-Por otro lado, si $n>20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
+Por otro lado, si $n>20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el siguiente cuantil:
 
 $$t=\frac{1}{2}\left(n+z_{\alpha/2}\ \sqrt{n}\right)$$
 

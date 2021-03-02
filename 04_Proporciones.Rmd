@@ -28,10 +28,10 @@ $$ T \sim Bin (n,p^*)$$
 Donde $p^*$ es la probabilidad especificada en la hipótesis nula de nuestra prueba a realizar y $n$ es el tamaño de la muestra.
 
 
-Por otro lado, si $n\geq20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
+Por otro lado, si $n\geq20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el siguiente cuantil:
 
-$$t_{2}=np+Z_{q}\sqrt{np(1-p)}$$
-Donde $Z_{q}$ es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.
+$$t=np+Z_{q}\sqrt{np(1-p)}$$
+Donde $Z_{q}$ es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente[^4.1].
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
@@ -246,7 +246,7 @@ $\therefore$ como $p-value=0.035<\alpha=0.05$ entonces rechazo $H_0$.
 
 **Paso 6** Conclusión
  
-Existe información suficiente para decir que los alumnos que acreditaron el examen están por arriba del promedio del Estado que es del 70%, en otras palabras la probabiliad de que un graduado del Tecnológico de Texas pase el examen general de leyes es mayor al 70%.
+Existe información suficiente para decir que los alumnos que acreditaron el examen están por arriba del promedio del Estado que es del 70%, en otras palabras la probabilidad de que un graduado del Tecnológico de Texas pase el examen general de leyes es mayor al 70%.
 
 ## Ejemplo en R-Studio
 
@@ -268,6 +268,7 @@ pvalue=1-pbinom(17,20,.7)                 #P-value
 
 pvalue
 ```
+
 Según el planteamiento de las hipótesis, este es un Caso C (de cola superior), por lo que siguiendo la regla de decisión tenemos que como $T=18>17=t$, entonces se rechaza $H_0$ y por lo tanto se concluye que hay información suficiente para decir que la probabilidad de que un graduado del tecnológico de Texas pase el examen es mayor al 70%.
 
 Graficamos la función binomial
@@ -290,7 +291,9 @@ binom.test(T,n, p = 0.7, alternative = c("greater"))
 
 1. Un fabricante de teléfonos móviles afirma que sólo el 5% de todas las unidades que vende sufre una falla durante el primer mes de operación normal. Una organización de consumidores ha pedido a 45 consumidores que han adquirido estos teléfonos móviles, que reporten cualquier mal funcionamiento durante el primer mes. Al final de éste sólo siete consumidores reportaron mal funcionamiento. Si la organización de consumidores cree que la proporción de teléfonos que sufrirán alguna falla es mayor al valor afirmado por el fabricante. ¿Con una $\alpha$ del 10% podría la organización sustentar su creencia?
 
-2. Un candidato a través de encuestas propias afirma que el 65% o más de los votantes están a su favor. Sin embargo, a través de una encuentas a 20 personas, 10 están a su favor. Probar que a un nivel de significancia del 5%, la hipótesis de que el candidato a sobreestimado los votos a su favor.
+2. Un candidato a través de encuestas propias afirma que el 65% o más de los votantes están a su favor. Sin embargo, a través de una encuesta a 20 personas, 10 están a su favor. Probar que a un nivel de significancia del 5%, la hipótesis de que el candidato a sobrestimado los votos a su favor.
 
 
 3. En una muestra de 150 partidos de básquetbol universitario, el equipo de casa ganó 98 partidos. Realice una prueba para determinar si los datos sustentan la hipótesis de que en el básquetbol universitario el equipo de casa tiene ventaja. ¿A qué conclusión llega con $\alpha= 0.05$?
+
+[^4.1]: Véase que de acuerdo al tipo de cuantil (de cola inferior o superior), el signo del cuantil $Z_q$ cambiará.

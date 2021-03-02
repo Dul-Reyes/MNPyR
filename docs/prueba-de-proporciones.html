@@ -407,9 +407,9 @@ Es decir, si <span class="math inline">\(n&lt;20\)</span> utilizar el estadísti
 <p><span class="math display">\[T=O_{1}\]</span>
 <span class="math display">\[ T \sim Bin (n,p^*)\]</span>
 Donde <span class="math inline">\(p^*\)</span> es la probabilidad especificada en la hipótesis nula de nuestra prueba a realizar y <span class="math inline">\(n\)</span> es el tamaño de la muestra.</p>
-<p>Por otro lado, si <span class="math inline">\(n\geq20\)</span> puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el estadístico:</p>
-<p><span class="math display">\[t_{2}=np+Z_{q}\sqrt{np(1-p)}\]</span>
-Donde <span class="math inline">\(Z_{q}\)</span> es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.</p>
+<p>Por otro lado, si <span class="math inline">\(n\geq20\)</span> puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el siguiente cuantil:</p>
+<p><span class="math display">\[t=np+Z_{q}\sqrt{np(1-p)}\]</span>
+Donde <span class="math inline">\(Z_{q}\)</span> es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <p>Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:</p>
 <p><strong>Hipótesis</strong></p>
 <p><strong>Caso A</strong> (Prueba de dos colas)</p>
@@ -530,7 +530,7 @@ De manera alternativa:</p>
 <p><span class="math display">\[p-value= \mathbf{P}[Y \geq T] \  = \ \mathbf{P}[Y \geq 18]=1-\mathbf{P}[Y &lt; 18]= 0.035\]</span></p>
 <p><span class="math inline">\(\therefore\)</span> como <span class="math inline">\(p-value=0.035&lt;\alpha=0.05\)</span> entonces rechazo <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>Paso 6</strong> Conclusión</p>
-<p>Existe información suficiente para decir que los alumnos que acreditaron el examen están por arriba del promedio del Estado que es del 70%, en otras palabras la probabiliad de que un graduado del Tecnológico de Texas pase el examen general de leyes es mayor al 70%.</p>
+<p>Existe información suficiente para decir que los alumnos que acreditaron el examen están por arriba del promedio del Estado que es del 70%, en otras palabras la probabilidad de que un graduado del Tecnológico de Texas pase el examen general de leyes es mayor al 70%.</p>
 </div>
 <div id="ejemplo-en-r-studio" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Ejemplo en R-Studio</h2>
@@ -571,7 +571,7 @@ probability of success
 <h2><span class="header-section-number">2.4</span> Ejercicios</h2>
 <ol style="list-style-type: decimal">
 <li><p>Un fabricante de teléfonos móviles afirma que sólo el 5% de todas las unidades que vende sufre una falla durante el primer mes de operación normal. Una organización de consumidores ha pedido a 45 consumidores que han adquirido estos teléfonos móviles, que reporten cualquier mal funcionamiento durante el primer mes. Al final de éste sólo siete consumidores reportaron mal funcionamiento. Si la organización de consumidores cree que la proporción de teléfonos que sufrirán alguna falla es mayor al valor afirmado por el fabricante. ¿Con una <span class="math inline">\(\alpha\)</span> del 10% podría la organización sustentar su creencia?</p></li>
-<li><p>Un candidato a través de encuestas propias afirma que el 65% o más de los votantes están a su favor. Sin embargo, a través de una encuentas a 20 personas, 10 están a su favor. Probar que a un nivel de significancia del 5%, la hipótesis de que el candidato a sobreestimado los votos a su favor.</p></li>
+<li><p>Un candidato a través de encuestas propias afirma que el 65% o más de los votantes están a su favor. Sin embargo, a través de una encuesta a 20 personas, 10 están a su favor. Probar que a un nivel de significancia del 5%, la hipótesis de que el candidato a sobrestimado los votos a su favor.</p></li>
 <li><p>En una muestra de 150 partidos de básquetbol universitario, el equipo de casa ganó 98 partidos. Realice una prueba para determinar si los datos sustentan la hipótesis de que en el básquetbol universitario el equipo de casa tiene ventaja. ¿A qué conclusión llega con <span class="math inline">\(\alpha= 0.05\)</span>?</p></li>
 </ol>
 
@@ -582,6 +582,12 @@ probability of success
 <div id="ref-conover1998practical">
 <p>Conover, William Jay. 1998. <em>Practical Nonparametric Statistics</em>. Vol. 350. John Wiley &amp; Sons.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Véase que de acuerdo al tipo de cuantil (de cola inferior o superior), el signo del cuantil <span class="math inline">\(Z_q\)</span> cambiará.<a href="prueba-de-proporciones.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
