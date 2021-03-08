@@ -28,7 +28,6 @@ $$\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
 Entonces las pruebas de hipótesis para $\beta_{0},$ en sus tres casos, que el valor de $\beta_{0}$ sea igual, inferior o superior al punto crítico deseado ($b_{0}$) tienen las siguientes reglas de decisión, con un nivel de significancia $\alpha$.
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis & Región\ de\ rechazo: \\
@@ -40,7 +39,6 @@ H_0:\beta_{0}\leq b_{0} \ vs. \ H_a:\beta_{0} > b_{0} & t^*>t^{\alpha}_{(n-2)} \
 H_0:\beta_{0}\geq b_{0} \ vs. \ H_a:\beta_{0} < b_{0} & t^*<t^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 
@@ -68,7 +66,6 @@ $$\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
 
 Por lo tanto tenemos la prueba de hipótesis para $\beta_{1}$ en sus tres casos, que el valor de $\beta_{1}$ sea igual, inferior o superior al punto crítico deseado ($b_{1}$) y sus respectivas regiones de rechazo con un nivel de significancia $\alpha.$
 $$
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis & Región\ de\ rechazo: \\
@@ -81,7 +78,6 @@ H_0:\beta_{1}\leq b_{1} \ vs. \ H_a:\beta_{1} > b_{1} & t^*>t^{\alpha}_{(n-2)} \
 H_0:\beta_{1}\geq b_{1} \ vs. \ H_a:\beta_{1} < b_{1} & t^*<t^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*} 
 $$
 
 Para ejemplificar, suponga que quiere ajustar un modelo de regresión lineal simple, sin embargo, duda si realmente la variable respuesta $y$ depende de la variable regresora $x$, es decir, sospecha que $\beta_{1}=0.$ Para ello se raliza la siguiente prueba de hipótesis valuando $\beta_{1}$ en el punto crítico de interés $b_{1}=0:$
@@ -99,7 +95,6 @@ Si se rechaza $H_0$ entonces $\beta_{1} \neq 0$ por lo que la variable respuesta
 Para $\sigma^2$ se tiene las siguientes reglas de decisión con un nivel de significancia $\alpha:$
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis & Región\ de\ rechazo: \\
@@ -112,7 +107,6 @@ H_0:\sigma^2 \leq s \ vs. \ H_a:\sigma^2 > s & t^*>\chi^{\alpha}_{(n-2)} \\
 H_0:\sigma^2\geq s \ vs. \ H_a:\sigma^2 < s & t^*<\chi^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*}
 $$
 donde el estadístico $t^*:$
 
@@ -214,11 +208,9 @@ $$F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}$$
 Ahora se ocupará el **Cuadrado Medio** denotado como **CM**, la cual corresponde a la Suma de Cuadrados entre los grados de libertad. Así, se define al cuadrado medio de la regresión $CM_{reg}$ y al cuadrado medio del error $CM_{error}$ como:
 
 $$
-\begin{equation*}
 \begin{array}{c c c}
 CM_{reg}=\frac{SC_{reg}}{1} & y & CM_{error}=\frac{SC_{error}}{n-2}. \\
 \end{array}
-\end{equation*}
 $$
 
 De igual manera, haciendo el ajuste, la prueba $F$ queda definida como:
@@ -239,7 +231,6 @@ Ya que si $x \sim t_{(n-1)}$ entonces $x^2 \sim F_{(1,n-2)}.$
 El siguiente cuadro resume la información anterior, mejor conocida como **Tabla ANOVA:**
 
 $$
-\begin{equation*}
 \begin{array}{|c| c| c| c| c|}
 \hline
 &Grados\ de\ libertad & Suma\ de\ Cuadrados & Cuadrado\ Medio & Prueba\ F \\
@@ -252,7 +243,6 @@ Error     & n-2 & \sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2=SC_{T}-\hat{\beta_{1}}S_{x
 Total     & n-1 & \sum_{i=1}^{n}(y_{i}-\overline{y})^2 & - & - \\
 \hline
 \end{array}
-\end{equation*}
 $$                                     
 
 
@@ -277,7 +267,6 @@ El coeficiente de determinación $R^2$ satisface las siguientes propiedades:
 En particular, se buscan valores de $R^2$ cercanos a 1, ya que esto indica que la mayor parte de la variabilidad de $y$ es determinada o explicada por el modelo de regresión. La magnitud de $R^2$ también depende del rango de variabilidad de la variable regresora. En general $R^2$ aumenta a medida que la propagación de los valores de $x$ aumenta, y disminuye a medida que la propagación de los valores de $x$ disminuyan, siempre que el modelo asumido es correcto. 
 
 $$
-\begin{equation*}
 \begin{array}{|c |c|}
 \hline
 \textbf{Valor de} \ R^2 & \textbf{Tipo de correlación} \\
@@ -292,7 +281,6 @@ R^2=0 & No\ hay\ correlación \\
 R^2=1 & Correlación\ perfecta \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 

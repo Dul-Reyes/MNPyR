@@ -1,5 +1,7 @@
 
-# Escalas de Medición @conover1998practical
+# Escalas de Medición
+
+Este capítulo es una traducción de @conover1998practical.
 
 A continuación se definirán los tipos de escalas que se le asigna a una variable. Hay cuatro escalas básicas las cuales son: **nominal, ordinal, de intervalo y de razón.** A las variables que se consideran con escala ordinal y nominal también se les conoce como **variables categóricas**, mientras que a las variables que se consideran con escala de intervalo y razón se conocen como **variables cuantitativas**.
 

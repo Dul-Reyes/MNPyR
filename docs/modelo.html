@@ -34,7 +34,7 @@
   
 <link rel="prev" href="modelo-de-regresión-lineal-múltiple.html"/>
 <link rel="next" href="intervalos-de-confianza-2.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -392,20 +392,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Capítulo 28</span> Modelo</h1>
 <p>El objetivo del modelo de regresión lineal múltiple consiste en modelar <span class="math inline">\(\underline{Y}\)</span> a través de <span class="math inline">\(k\)</span> variables regresoras en <span class="math inline">\(n\)</span> observaciones independientes. Es decir, se tiene el siguiente modelo:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{ c c c c c c c c c c c c c }
 Y_{1}  &amp; = &amp; \beta_{0} &amp; + &amp; \beta_{1}x_{11}&amp; +&amp; \beta_{2}x_{12} &amp; +&amp; \cdots &amp; + &amp; \beta_{k}x_{1k} &amp; + &amp; \epsilon_{1}  \\ 
 Y_{2}  &amp; = &amp; \beta_{0} &amp; + &amp; \beta_{1}x_{21}&amp; +&amp; \beta_{2}x_{22} &amp; +&amp; \cdots &amp; + &amp; \beta_{k}x_{2k} &amp; + &amp; \epsilon_{2}  \\
 \vdots  &amp;  &amp; \vdots &amp;  &amp; \vdots&amp; &amp; \vdots &amp; &amp; \vdots &amp; &amp; \vdots &amp;  &amp; \vdots  \\
 Y_{n}  &amp; = &amp; \beta_{0} &amp; + &amp; \beta_{1}x_{n1}&amp; +&amp; \beta_{2}x_{n2} &amp; +&amp; \cdots &amp; + &amp; \beta_{k}x_{nk} &amp; + &amp; \epsilon_{n}  \\ 
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>El anterior conjunto de igualdades puede ser denotado matricialmente mediante la siguiente igualdad:</p>
 <p><span class="math display">\[\underline{Y}=X\underline{\beta}+\underline{\epsilon}\]</span></p>
 <p>donde:
 <span class="math display">\[
-\begin{equation*}
 \underline{Y}=
 \left(
 \begin{array}{c}
@@ -423,10 +420,8 @@ y_{n}\\
 1      &amp; x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{nk}\\
 \end{array}
 \right)
-\end{equation*}
 \]</span>
 <span class="math display">\[
-\begin{equation*}
 \underline{\beta}=
 \left(
 \begin{array}{c}
@@ -444,11 +439,9 @@ y_{n}\\
 \epsilon_{n}\\
 \end{array}
 \right)
-\end{equation*}
 \]</span>
 Sustituyendo en la ecuación anterior, se observa que el modelo de regresión multiple puede ser visto como:
 <span class="math display">\[
-\begin{equation*}
 \left(
 \begin{array}{c}
 y_{1} \\
@@ -481,11 +474,9 @@ y_{n}\\
 \epsilon_{n}\\
 \end{array}
 \right)
-\end{equation*}
 \]</span></p>
 <p>La dimensión de las matrices señaladas anteriormente se mencionan en el siguiente recuadro:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Matriz &amp; Dimensión \\
@@ -496,7 +487,6 @@ X                   &amp; n \times (k+1) \\
 \underline{\beta}    &amp; (k+1) \times 1 \\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Finalmente para definir correctamente el modelo es necesario realizar las siguientes suposiciones acerca de las matrices del modelo de regresión lineal múltiple.</p>
 <p><strong>Definición 3.2</strong> Sea <span class="math inline">\(X\)</span> la denominada <span class="math inline">\(matriz \ diseño\)</span> entonces satisface que:</p>
@@ -506,7 +496,6 @@ X                   &amp; n \times (k+1) \\
 <p>Éste supuesto es importante ya que satisface que <span class="math inline">\(k+1\leq n\)</span>, es decir, <strong>el máximo número de variables con el que se ajusta el modelo no puede ser superior al número de observaciones.</strong></p>
 <p>De igual forma, observe que el supuesto de la varianza de los errores en la <strong>definición 3.1</strong>, puede reescribirse en forma matricial:</p>
 <p><span class="math display">\[
-\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -516,11 +505,9 @@ Cov(\epsilon_{2},\epsilon_{1})&amp;Var(\epsilon_{2}) &amp; Cov(\epsilon_{2},\eps
 Cov(\epsilon_{n},\epsilon_{1})   &amp; Cov(\epsilon_{n},\epsilon_{2}) &amp; Cov(\epsilon_{n},\epsilon_{3}) &amp; \ldots &amp; Var(\epsilon_{n})\\
 \end{array}
 \right)
-\end{equation*}
 \]</span></p>
 <p>Por <strong>definición 3.1</strong>, <span class="math inline">\(Cov(\epsilon_{i},\epsilon_{j})=0 \ \ \ i\neq j\)</span></p>
 <p><span class="math display">\[
-\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -530,11 +517,9 @@ Var(\epsilon_{1}) &amp; 0 &amp; 0 &amp; \ldots &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; \ldots &amp; Var(\epsilon_{n})\\
 \end{array}
 \right)
-\end{equation*}
 \]</span></p>
 <p>Por <strong>definición 3.1</strong>, <span class="math inline">\(Var(\epsilon_{i})=\sigma^2\)</span></p>
 <p><span class="math display">\[
-\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -544,7 +529,6 @@ Var(\epsilon)=
 0 &amp; 0 &amp; 0 &amp; \ldots &amp;\sigma^2  \\
 \end{array}
 \right)
-\end{equation*}
 \]</span></p>
 <p><span class="math inline">\(\therefore Var(\epsilon)=\sigma^2 I_{n \times n}. \blacksquare\)</span></p>
 <div id="estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2" class="section level2" number="28.1">
@@ -557,7 +541,6 @@ Se les conoce como <strong>residuales.</strong></p>
 <p>Antes de continuar es necesario ver algunos resultados importantes de equivalencia y notación.</p>
 <p>De la <strong>definición 3.3</strong> se sabe que los valores esperados de <span class="math inline">\(y_{i}\)</span> pueden ser definidos como:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c}
 \hat{y_{1}} \\
 \hat{y_{2}} \\
@@ -570,11 +553,9 @@ Se les conoce como <strong>residuales.</strong></p>
 &amp;\vdots &amp;&amp; \vdots &amp;&amp; \vdots &amp;&amp; \vdots &amp;&amp; \vdots\\
 =&amp;\hat{\beta_{0}}&amp;+&amp;\hat{\beta_{1}} x_{n1} &amp;+&amp; \hat{\beta_{2}}x_{n2}&amp;+&amp; \ldots &amp;+&amp;\hat{\beta_{k}} x_{nk}\\ 
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>La anterior ecuación puede ser descompuesta en forma matricial de la siguiente manera:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \left(
 \begin{array}{c}
 \hat{y_{1}} \\
@@ -599,7 +580,6 @@ Se les conoce como <strong>residuales.</strong></p>
 \hat{\beta_{k}}\\
 \end{array}
 \right)
-\end{equation*}
 \]</span></p>
 <p>Por lo tanto, podemos renombrar a las matrices de acuerdo a los elementos que las conforman.</p>
 <p>Se tiene la siguiente igualdad para los valores estimados <span class="math inline">\(\underline{\hat{Y}}.\)</span></p>
@@ -747,36 +727,78 @@ Por lo tanto <span class="math inline">\(\underline{\hat{\beta}}\)</span> es un 
 Ya que la <span class="math inline">\(Var(\underline{Y})=\sigma^2I_{n}\)</span></p>
 <p><span class="math display">\[=(X&#39;X)^{-1}X&#39;[(X&#39;X)^{-1}X&#39;]&#39;\sigma^2\]</span>
 <span class="math display">\[=\sigma^2(X&#39;X)^{-1}X&#39;X(X&#39;X)^{-1}\]</span>
-<span class="math display">\[=\sigma^2I(X&#39;X)^{-1}\]</span>
-<span class="math display">\[\therefore Var(\underline{\hat{\beta}})=\sigma^2(X&#39;X)^{-1}\]</span>
+<span class="math display">\[
+=\sigma^2I(X&#39;X)^{-1}
+\]</span>
+<span class="math display">\[
+\therefore Var(\underline{\hat{\beta}})=\sigma^2(X&#39;X)^{-1}
+\]</span>
 Para comprobar que el estimador <span class="math inline">\(\underline{\hat{\beta}}\)</span> es el estimador insesgado de mínima varianza, se propone a un estimador <span class="math inline">\(\underline{\tilde{\beta}}\)</span> el cual cumple con ser lineal e insesgado. Para ello sea <span class="math inline">\(\underline{\tilde{\beta}}\)</span> un estimador linealmente insesgado para <span class="math inline">\(\underline{\beta}\)</span>. Es decir, existe una matriz de <span class="math inline">\(A_{(k+1)\times n}\)</span> tal que <span class="math inline">\(\underline{\tilde{\beta}}=A \underline{Y}.\)</span>
 De esta forma:</p>
-<p><span class="math display">\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]\]</span>
-<span class="math display">\[=A \mathbf{E}[\underline{Y}]\]</span>
+<p><span class="math display">\[
+\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]
+\]</span>
+<span class="math display">\[
+=A \mathbf{E}[\underline{Y}]
+\]</span>
 Ya que <span class="math inline">\(\mathbf{E}[\underline{Y}]=X\underline{\beta}\)</span></p>
-<p><span class="math display">\[=AX\underline{\beta}\]</span>
-<span class="math display">\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}\]</span></p>
+<p><span class="math display">\[
+=AX\underline{\beta}
+\]</span>
+<span class="math display">\[
+\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}
+\]</span></p>
 <p>Para que sea un estimador insesgado, entonces <span class="math inline">\(AX\)</span> tiene que cumplir: <span class="math inline">\(AX=I\)</span>, así:</p>
-<p><span class="math display">\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}\]</span></p>
-<p><span class="math display">\[\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.\blacksquare\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}
+\]</span></p>
+<p><span class="math display">\[
+\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.\blacksquare
+\]</span></p>
 <p>Para conocer la varianza de <span class="math inline">\(\underline{\tilde{\beta}}\)</span> se tiene:</p>
-<p><span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A&#39;\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA&#39;.\]</span>
+<p><span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A&#39;
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA&#39;.
+\]</span>
 Sea <span class="math inline">\(C\)</span> una matriz de dimensión <span class="math inline">\((k+1) \times n\)</span> tal que <span class="math inline">\(C=A-(X&#39;X)^{-1}X&#39;\)</span>. Observe que <span class="math inline">\(CX=0\)</span> ya que <span class="math inline">\(CX=AX-(X&#39;X)^{-1}X&#39;X=I-I=0.\)</span>
 De esta forma se tiene la siguiente igualdad:</p>
-<p><span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)((X&#39;X)^{-1}X&#39;+C)&#39;\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)\left[ ((X&#39;X)^{-1}X&#39;)&#39;+C&#39;\right]\]</span></p>
-<p><span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)[X(X&#39;X)^{-1}+C&#39;]\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X&#39;X)^{-1}X&#39;X(X&#39;X)^{-1}+(X&#39;X)^{-1}X&#39;C&#39;+CX(X&#39;X)^{-1}+CC&#39;]\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X&#39;X)^{-1}X&#39;X(X&#39;X)^{-1}+[CX(X&#39;X)^{-1}]&#39;+CX(X&#39;X)^{-1}+CC&#39;\right]\]</span>
+<p><span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)((X&#39;X)^{-1}X&#39;+C)&#39;
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)\left[ ((X&#39;X)^{-1}X&#39;)&#39;+C&#39;\right]
+\]</span></p>
+<p><span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X&#39;X)^{-1}X&#39;+C)[X(X&#39;X)^{-1}+C&#39;]
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X&#39;X)^{-1}X&#39;X(X&#39;X)^{-1}+(X&#39;X)^{-1}X&#39;C&#39;+CX(X&#39;X)^{-1}+CC&#39;]
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X&#39;X)^{-1}X&#39;X(X&#39;X)^{-1}+[CX(X&#39;X)^{-1}]&#39;+CX(X&#39;X)^{-1}+CC&#39;\right]
+\]</span>
 Debido a que <span class="math inline">\(CX=0\)</span></p>
-<p><span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X&#39;X)^{-1}+0+0+CC&#39;\right]\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X&#39;X)^{-1}+CC&#39;]\]</span>
-<span class="math display">\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X&#39;X)^{-1}+\sigma^2CC&#39;.\]</span></p>
-<p><span class="math display">\[\therefore \  Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC&#39;. \blacksquare\]</span></p>
+<p><span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X&#39;X)^{-1}+0+0+CC&#39;\right]
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X&#39;X)^{-1}+CC&#39;]
+\]</span>
+<span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X&#39;X)^{-1}+\sigma^2CC&#39;.
+\]</span></p>
+<p><span class="math display">\[
+\therefore \  Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC&#39;. \blacksquare
+\]</span></p>
 <p>Además se observa que <span class="math inline">\(CC&#39;\)</span>, es una matriz semidefinida positiva ya que los valores propios de <span class="math inline">\(CC&#39;\)</span> son reales y no negativos, además debido al supuesto de que <span class="math inline">\(X\)</span> es de rango completo para las columnas se cumple que <span class="math inline">\(rango(CC&#39;)=rango(X)=k+1,\)</span> esto es importante, ya que si no se cumple se tendría una solución no trivial, por lo que <span class="math inline">\(0\)</span> podría ser una solución para un egeinvalor por lo que no sería semidefinido positivo. Como <span class="math inline">\(CC&#39;\geq0\)</span>, se observa que:</p>
-<p><span class="math display">\[Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).\]</span>
+<p><span class="math display">\[
+Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).
+\]</span>
 Por lo que la varianza del estimador propuesto es mayor al obtenido por mínimos cuadrados. Por lo tanto, el estimador de <span class="math inline">\(MC\)</span> de <span class="math inline">\(\underline{\beta}\)</span> es el mejor estimador linealmente insesgado y de mínima varianza.<span class="math inline">\(\blacksquare\)</span></p>
 <p>Las anteriores propiedades de los estimadores son importantes ya que garantizan que los valores estimados <span class="math inline">\(\underline{\hat{Y}}\)</span>, asignan valores que efectivamente recaen en el hiperplano propuesto en el modelo de regresión lineal múltiple.</p>
 <p><strong>Teorema 3.5</strong> Sea <span class="math inline">\(\underline{\hat{Y}}\)</span>, los valores estimados de <span class="math inline">\(Y\)</span>, de forma que <span class="math inline">\(\underline{\hat{Y}}=X\underline{\hat{\beta}}\)</span>, entonces se cumple:</p>
@@ -784,42 +806,90 @@ Por lo que la varianza del estimador propuesto es mayor al obtenido por mínimos
 <p><strong>b)</strong> <span class="math inline">\(\textbf{Var}(\underline{\hat{Y}})=\sigma^2H.\)</span></p>
 <p><strong>Demostración:</strong></p>
 <p><strong>a)</strong> Para demostrar la esperanza de los valores estimados, se observa que:</p>
-<p><span class="math display">\[\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]\]</span>
-<span class="math display">\[\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]\]</span></p>
-<p><span class="math display">\[\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]
+\]</span>
+<span class="math display">\[
+\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]
+\]</span></p>
+<p><span class="math display">\[
+\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare
+\]</span></p>
 <p><strong>b)</strong> Para la varianza se tiene:</p>
-<p><span class="math display">\[Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})\]</span>
-<span class="math display">\[Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X&#39;\]</span>
-<span class="math display">\[Var(\underline{\hat{Y}})=X\sigma^2(X&#39;X)^{-1}X&#39;\]</span></p>
-<p><span class="math display">\[Var(\underline{\hat{Y}})=\sigma^2X(X&#39;X)^{-1}X&#39;\]</span></p>
-<p><span class="math display">\[\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare\]</span></p>
+<p><span class="math display">\[
+Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})
+\]</span>
+<span class="math display">\[
+Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X&#39;
+\]</span>
+<span class="math display">\[
+Var(\underline{\hat{Y}})=X\sigma^2(X&#39;X)^{-1}X&#39;
+\]</span></p>
+<p><span class="math display">\[
+Var(\underline{\hat{Y}})=\sigma^2X(X&#39;X)^{-1}X&#39;
+\]</span></p>
+<p><span class="math display">\[
+\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare
+\]</span></p>
 <p><strong>Teorema 3.6</strong> Sea <span class="math inline">\(\underline{e}\)</span> los residuales del modelo, de forma <span class="math inline">\(\underline{e}=\underline{Y}-\underline{\hat{Y}}\)</span>, entonces cumplen con:</p>
 <p><strong>a)</strong> <span class="math inline">\(\mathbf{E}[\underline{e}]=0.\)</span></p>
 <p><strong>b)</strong> <span class="math inline">\(\textbf{Var}(\underline{e})=\sigma^2(I-H).\)</span></p>
 <p><strong>Demostración:</strong></p>
 <p><span class="math inline">\(**a)**\)</span> Para demostar la esperanza de los residuales, se observa que:</p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]\]</span>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]
+\]</span>
 Por el <strong>corolario 4</strong></p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]\]</span>
-<span class="math display">\[\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]
+\]</span>
+<span class="math display">\[
+\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]
+\]</span></p>
 <p>Por el <strong>teorema 3.4</strong></p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=(I-H)X\beta\]</span></p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}\]</span>
-<span class="math display">\[\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X&#39;X)^{-1}X&#39;X\underline{\beta}\]</span>
-<span class="math display">\[\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X&#39;X(X&#39;X)^{-1}X&#39;\right]&#39;\underline{\beta}\]</span></p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX&#39;]&#39;\underline{\beta}\]</span></p>
-<p><span class="math display">\[\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}\]</span>
-<span class="math display">\[\therefore \mathbf{E}[\underline{e}]=0. \blacksquare\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=(I-H)X\beta
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}
+\]</span>
+<span class="math display">\[
+\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X&#39;X)^{-1}X&#39;X\underline{\beta}
+\]</span>
+<span class="math display">\[
+\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X&#39;X(X&#39;X)^{-1}X&#39;\right]&#39;\underline{\beta}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX&#39;]&#39;\underline{\beta}
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}
+\]</span>
+<span class="math display">\[
+\therefore \mathbf{E}[\underline{e}]=0. \blacksquare
+\]</span></p>
 <p><strong>b)</strong> Para la varianza se tiene:</p>
-<p><span class="math display">\[Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)\]</span></p>
+<p><span class="math display">\[
+Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)
+\]</span></p>
 <p>Por el <strong>corolario 4</strong></p>
-<p><span class="math display">\[Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)\]</span>
-<span class="math display">\[Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)&#39;\]</span>
+<p><span class="math display">\[
+Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)
+\]</span>
+<span class="math display">\[
+Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)&#39;
+\]</span>
 Por el <strong>teorema 3.3</strong></p>
-<p><span class="math display">\[Var(\underline{e})=(I-H)\sigma^2(I-H)\]</span>
+<p><span class="math display">\[
+Var(\underline{e})=(I-H)\sigma^2(I-H)
+\]</span>
 Por idempotencia de <span class="math inline">\(I-H\)</span></p>
-<p><span class="math display">\[Var(\underline{e})=\sigma^2(I-H)(I-H)\]</span></p>
-<p><span class="math display">\[\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare\]</span></p>
+<p><span class="math display">\[
+Var(\underline{e})=\sigma^2(I-H)(I-H)
+\]</span></p>
+<p><span class="math display">\[
+\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare
+\]</span></p>
 </div>
 <div id="estimación-por-máxima-verosimilitud" class="section level2" number="28.2">
 <h2><span class="header-section-number">28.2</span> Estimación por máxima verosimilitud</h2>
@@ -838,11 +908,19 @@ Por idempotencia de <span class="math inline">\(I-H\)</span></p>
 <p><strong>b)</strong> <span class="math inline">\(\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)&#39;\left(\underline{Y}-X \underline{\hat{\beta}}\right).\)</span></p>
 <p><strong>Demostración:</strong></p>
 <p>Por hipótesis <span class="math inline">\(\underline{Y}\sim \mathbf{N}_{n}(X\underline{\beta},\sigma^2 I_{n})\)</span>, escribiendo la función de verosimilitud se tiene que:</p>
-<p><span class="math display">\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)&#39;(\underline{Y}-\mu) \right]\]</span></p>
-<p><span class="math display">\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta}) \right]\]</span>
-<span class="math display">\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta}) \right].\]</span></p>
+<p><span class="math display">\[
+L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)&#39;(\underline{Y}-\mu) \right]
+\]</span></p>
+<p><span class="math display">\[
+L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta}) \right]
+\]</span>
+<span class="math display">\[
+L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta}) \right].
+\]</span></p>
 <p>Aplicando logaritmo natural a la función de verosimilitud:</p>
-<p><span class="math display">\[ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})\]</span>
+<p><span class="math display">\[
+ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})
+\]</span>
 <span class="math display">\[ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}[ln(2\pi)+ln(\sigma^2)]-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})\]</span>
 <span class="math display">\[ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi)-\frac{n}{2}ln(\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})\]</span></p>
 <p><strong>a)</strong> Derivando respecto a <span class="math inline">\(\underline{\beta}\)</span> para obtener su estimador.</p>
@@ -864,12 +942,13 @@ Por idempotencia de <span class="math inline">\(I-H\)</span></p>
 <span class="math display">\[(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})=n\sigma^2\]</span>
 <span class="math display">\[\therefore \hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)&#39;\left(\underline{Y}-X \underline{\hat{\beta}}\right).\blacksquare\]</span></p>
 <p>Por lo tanto los estimadores de máxima verosimilitud son:</p>
-<p>$$
-=(X’X)^{-1}X’ \</p>
-<p>y \</p>
-<p>^2=( -X)’(-X )
-
-$$</p>
+<p><span class="math display">\[
+\begin{array}{c}
+\underline{\hat{\beta}}=(X&#39;X)^{-1}X&#39;\underline{Y} \\
+y \\
+\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)&#39;\left(\underline{Y}-X \underline{\hat{\beta}}\right) \blacksquare
+\end{array}
+\]</span></p>
 <p>Se observa que el estimador de <span class="math inline">\(\underline{\beta}\)</span> obtenido por el método de mínimos cuadrados es similar al estimador por máxima verosimilitud, sin embargo, éste último aporta mayor información al proporcionar el estimador para la varianza del modelo <span class="math inline">\(\hat{\sigma}^2.\)</span></p>
 <p>De igual forma el estimador <span class="math inline">\(\hat{\sigma}^2_{MV}\)</span> guarda cierta relación con la suma de cuadrados residuales ya que se tiene:</p>
 <p><span class="math display">\[\hat{\sigma}^2_{MV}=\frac{1}{n}(\underline{Y}-X\underline{\beta})&#39;(\underline{Y}-X\underline{\beta})\]</span>
@@ -939,7 +1018,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

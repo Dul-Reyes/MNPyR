@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-igualdad-de-varianzas.html"/>
 <link rel="next" href="tablas-de-contingencia.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -397,7 +397,6 @@ Los rangos se asignan de menor a mayor y asignamos el promedio de los rangos cor
 <p>Se tienen <span class="math inline">\(k\)</span> m.a que pueden tener distintos tamaños, la <span class="math inline">\(j-ésima\)</span> m.a, de tamaño <span class="math inline">\(n_j\)</span> es <span class="math display">\[x_{j1},\ x_{j2},\ x_{j3},\ \cdots, \ x_{jn_j}.\]</span></p>
 <p>Así.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c c c} 
 Muestra \ 1&amp;Muestra\ 2&amp;Muestra\ 3&amp;...&amp; Muestra\ k \\
 x_{11}&amp;x_{21}&amp;x_{31}&amp;...&amp;x_{k1}\\
@@ -405,7 +404,6 @@ x_{12}&amp;x_{22}&amp;x_{32}&amp;...&amp;x_{k2}\\
 \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
 x_{1n_1}&amp;x_{2n_2}&amp;x_{3n_3}&amp;...&amp;x_{kn_k}\\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Sea <span class="math inline">\(N\)</span> el número total de observaciones:</p>
 <p><span class="math display">\[N=\sum_{j=1}^k n_j\]</span></p>
@@ -445,7 +443,6 @@ Donde <span class="math inline">\(t_{1-\alpha/2}\)</span> es el cuantil <span cl
 <h2><span class="header-section-number">11.1</span> Ejemplo</h2>
 <p>Retomando en ejemplo de los 4 métodos de cultivo de maíz, probaremos ahora si las varianzas de la cantidad de cosecha por <span class="math inline">\(m^2\)</span> de tierra de cada terreno son diferentes.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c c} 
 \textbf{Método 1} &amp; \textbf{Método 2} &amp; \textbf{Método 3} &amp; \textbf{Método 4}\\
 83&amp;91&amp;101&amp;78\\
@@ -459,7 +456,6 @@ Donde <span class="math inline">\(t_{1-\alpha/2}\)</span> es el cuantil <span cl
 90&amp;89&amp;  &amp;\\
   &amp;84&amp;  &amp;\\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><strong>Paso 1</strong> Prueba a utilizar <strong>Prueba de Igualdad de Varianzas para mas de dos muestras</strong></p>
 <p><strong>Paso 2</strong> Formulamos las hipótesis</p>
@@ -540,7 +536,6 @@ Como <span class="math inline">\(T_2=6.006 \ngtr 11.344=t_{1-\alpha}\)</span> en
 <li>Una muestra aleatoria de 5 diferentes marcas de focos son probados para medir la duración del foco, y los resultados fueron los siguientes:</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c||c||} 
 \hline 
 A &amp; B&amp;C&amp;D&amp;E \\ 
@@ -557,7 +552,6 @@ A &amp; B&amp;C&amp;D&amp;E \\
 \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use <span class="math inline">\(\alpha=10\%\)</span></p>
 
@@ -611,7 +605,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

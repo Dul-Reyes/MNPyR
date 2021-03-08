@@ -138,7 +138,6 @@ La empresa sospecha que la tasa esta disminuyendo. ¿Podemos corroborar la sospe
 Los datos están en la siguiente tabla, los cuales estan emparejados por mes ya que estas tasa de descarga siguen un ciclo anual,Se sabe que la tasa de descarga sigue un ciclo anual, por lo que no se puede emparejar las descargas de corriente durante dos meses diferentes; sin embargo, al emparejar los mismos meses consecutivos, se puede investigar la existencia de una tendencia. Los datos son los siguientes::
 
 $$
-\begin{equation*}
 \begin{array}{|c| c c|c| c c|} 
 \hline
 \textbf{Mes} & \textbf{Primer Año} & \textbf{Segundo Año} & \textbf{Mes} & \textbf{Primer Año} & \textbf{Segundo Año}\\
@@ -156,7 +155,6 @@ Mayo&110&138&Noviembre&29.3&27.1 \\
 Junio&86&98.1&Diciembre&16&15.7 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Los datos ya estan emparejados ahora sólo debemos asignar los signos considerando $X_i$ el primer año y $Y_i$ el segundo año.
@@ -164,7 +162,6 @@ Los datos ya estan emparejados ahora sólo debemos asignar los signos consideran
 Recordando que cada par de datos en la muestra se clasificará por un signo $"+"$ cuando $X_{i} < Y_{i}$, por un signo "-" cuando $X_{i} > Y_{i}$ y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c c c|} 
 \hline
 \textbf{Mes} & \textbf{Primer Año} & \textbf{Segundo Año}&\textbf{Signo}\\
@@ -183,7 +180,6 @@ Noviembre&29.3&27.1&- \\
 Diciembre&16&15.7&-\\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 **Paso 1** Escribimos la prueba a utilizar
@@ -290,7 +286,6 @@ cox.stuart.test(x)
 1. Un programa ecológico sobre la contaminación de un río tomó 5 muestras de agua de  diferentes lugares de un río antes y después de dos años, obteniéndose los siguientes resultados. Los números representan la media de la contaminación, donde medidas grandes indican alta contaminación.
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c||} 
 \hline 
 \textbf{Numero de Muestras} & \textbf{Medidas iniciales} & \textbf{Medidas después de 2 años}  \\  
@@ -312,7 +307,6 @@ $$
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Se está interesado en saber si el programa de rehabilitación ecológica ha tenido efecto en la reducción de la contaminación. Use $\alpha =1%$.

@@ -12,7 +12,6 @@ Se tienen $k$ m.a que pueden tener distintos tamaños, la $j-ésima$ m.a, de tam
 Así.
 
 $$
-\begin{equation*}
 \begin{array}{c c c c c} 
 Muestra \ 1&Muestra\ 2&Muestra\ 3&...& Muestra\ k \\
 x_{11}&x_{21}&x_{31}&...&x_{k1}\\
@@ -20,7 +19,6 @@ x_{12}&x_{22}&x_{32}&...&x_{k2}\\
 \vdots&\vdots&\vdots&\ddots&\vdots\\
 x_{1n_1}&x_{2n_2}&x_{3n_3}&...&x_{kn_k}\\
 \end{array}
-\end{equation*}
 $$
 
 Sea $N$ el número total de observaciones: 
@@ -93,7 +91,6 @@ Ahora resolveremos un ejercicio:
 Retomando en ejemplo de los 4 métodos de cultivo de maíz, probaremos ahora si las varianzas de la cantidad de cosecha por $m^2$ de tierra de cada terreno son diferentes.
 
 $$
-\begin{equation*}
 \begin{array}{c c c c} 
 \textbf{Método 1} & \textbf{Método 2} & \textbf{Método 3} & \textbf{Método 4}\\
 83&91&101&78\\
@@ -107,7 +104,6 @@ $$
 90&89&  &\\
   &84&  &\\
 \end{array}
-\end{equation*}
 $$
 
 
@@ -224,7 +220,6 @@ Como $T_2=6.006\ngtr11.344=t_{1-\alpha}$ entonces no se cumple la regla de decis
 1. Una muestra aleatoria de 5 diferentes marcas de focos son probados para medir la duración del foco, y los resultados fueron los siguientes:
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c||c||} 
 \hline 
 A & B&C&D&E \\ 
@@ -241,7 +236,6 @@ A & B&C&D&E \\
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use $\alpha=10\%$

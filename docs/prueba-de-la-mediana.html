@@ -34,7 +34,7 @@
   
 <link rel="prev" href="tablas-de-contingecia-de-r-times-c.html"/>
 <link rel="next" href="bondad-de-ajuste.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -395,7 +395,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Datos</strong></p>
 <p>Para cada una de las poblaciones <span class="math inline">\(c\)</span> se obtiene una muestra aleatoria de tamaño <span class="math inline">\(n_{i}\)</span>, <span class="math inline">\(i = 1,2,\ldots, c\)</span>. Se determina la mediana de la muestra combinada; es decir, se determina el número que excedió aproximadamente la mitad de las observaciones en toda la muestra <span class="math inline">\(N = n_{1} + n_{2}+ \ldots + n_{c}\)</span>. Esto se llama mediana. Sea <span class="math inline">\(O_{1i}\)</span>, el número de observaciones en la <span class="math inline">\(i\)</span>-ésima muestra que excede la mediana y, sea <span class="math inline">\(O_{2i}\)</span> el número en la <span class="math inline">\(i\)</span>-ésima muestra que sea menor o igual a la mediana, organice los conteos de frecuencia en una tabla de contingencia <span class="math inline">\(2\times c\)</span> de la siguiente manera:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c|c|c|c|c|c}
  &amp; \textbf{Muestra 1}  &amp; \textbf{Muestra 2}    &amp; \cdots &amp; \textbf{Muestra c} &amp;\textbf{Totales}     \\
 \hline
@@ -405,7 +404,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \hline
 \textbf{Totales}    &amp; n_{1}  &amp; n_{2}  &amp; \cdots &amp; n_{c}  &amp; N \\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Sea <span class="math inline">\(a\)</span> el número total de observaciones mas grandes a la mediana en todas las muestras, sea <span class="math inline">\(b\)</span> el número total de observaciones menores o iguales a la mediana. Entonces <span class="math inline">\(a+b=N\)</span> es el número total de observaciones.</p>
 <p><strong>Supuestos</strong></p>
@@ -440,8 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">15.0.1</span> Ejercicio</h3>
 <p>Se asignaron al azar cuatro métodos diferentes de cultivo de maíz a un gran número de parcelas diferentes y se calculó el rendimiento por acre para cada parcela. Los datos son los siguientes:</p>
 <p><span class="math display">\[
-\begin{equation*}
- \begin{array}{ c c c c c } 
+\begin{array}{ c c c c c } 
 \textbf{Método 1} &amp; \textbf{Método 2} &amp; \textbf{Método 3} &amp; \textbf{Método 4} \\ 
 83 &amp; 91 &amp;101  &amp;78  \\ 
 91 &amp; 90 &amp;100 &amp;82 \\
@@ -454,7 +451,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 90 &amp; 89 &amp; &amp;  \\
    &amp; 84 &amp;  &amp;  \\
 \end{array}
- \end{equation*}
 \]</span></p>
 <p>Para determinar si existe una diferencia en los rendimientos como resultado del método utilizado, se empleó la prueba mediana porque se consideró que una diferencia en las medianas de la población podría interpretarse como una diferencia en el valor del método utilizado.</p>
 <p><strong>Paso 1</strong> Prueba a utilizar <strong>Tablas de contingencia, Prueba de la mediana</strong></p>
@@ -464,7 +460,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[\textbf{H}_a: \ \mbox{Al menos dos de los métodos difieren con respecto al rendimiento medio(mediana) por acre.}\]</span></p>
 <p>En el conteo rápido revela que hay 34 observaciones en total, por lo que el promedio de las observaciones más pequeñas decimoséptima y decimoctava es la mediana, y se ve que es 89. Luego, para cada método (muestra), el número de valores que exceden 89 y el número que es menor o igual a 89 se registra en la siguiente forma.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c|c|c|c|c|c}
  &amp; \textbf{Método 1} &amp; \textbf{Método 2} &amp; \textbf{Método 3} &amp; \textbf{Método 4}&amp; \textbf{Totales} \\
 \hline
@@ -474,7 +469,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \hline
 \textbf{Totales}  &amp; 9  &amp; 10  &amp; 7 &amp; 8  &amp; 34 \\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><strong>Paso 3</strong> Estadístico de Prueba</p>
 <p><span class="math display">\[T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}\]</span></p>
@@ -589,7 +583,6 @@ odds ratio
 <li><p>Se subastaron varios contratos de explotación de petróleo al mejor postor. Para cada contrato se recibieron una o más ofertas selladas. Pruebe la hipótesis de que los contratos que eventualmente se convirtieron en productores de petróleo tuvieron la misma mediana de ofertas que los contratos que no produjeron petróleo. A continuación se muestra una muestra aleatoria de cada tipo de contrato.</p></li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c | c |}
 \hline
 &amp;\mbox{Número de ofertas en cada contrato de arrendamiento} \\
@@ -599,7 +592,6 @@ odds ratio
 \mbox{No  productores}&amp;6, 2, 1, 1, 3, 1, 2, 4, 8, 1, 2\\
     \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 
 </div>
@@ -652,7 +644,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

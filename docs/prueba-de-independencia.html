@@ -34,7 +34,7 @@
   
 <link rel="prev" href="tablas-de-contingencia-de-2x2.html"/>
 <link rel="next" href="tablas-de-contingecia-de-r-times-c.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -395,7 +395,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Sea <span class="math inline">\(O_{ij}\)</span> el número de observaciones asociadas con el renglón <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> simultáneamente; el número total de observaciones en el renglón <span class="math inline">\(i\)</span> es designado por <span class="math inline">\(R_{i}\)</span>, (en lugar de <span class="math inline">\(n_{i}\)</span> como la prueba anterior, para enfatizar que los totales de las filas ahora son aleatorios en lugar de fijos), y en la columna <span class="math inline">\(j\)</span> por <span class="math inline">\(C_{j}\)</span>. La suma de los números en todas las celdas es <span class="math inline">\(N\)</span>.</p>
 <p>Los datos se organizan en la siguiente tabla de contingencia:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|c|c|c|c|} 
 \hline
 &amp;\textbf{Columna 1} &amp;\textbf{Columna 2} &amp;\ldots&amp;\textbf{Columna c}&amp;\textbf{Totales}\\
@@ -410,7 +409,6 @@ Sea <span class="math inline">\(O_{ij}\)</span> el número de observaciones asoc
 \textbf{Totales}&amp;C_1&amp;C_2&amp;\ldots&amp;C_c&amp;N\\
 \hline
 \end {array}
-\end{equation*}
 \]</span>
 <strong>Supuestos</strong></p>
 <ul>
@@ -445,7 +443,6 @@ de la población. Sin embargo, antes de comprometerse a esta tarea se decidió r
 objetivo que verifiquen las especulaciones. Para esto se tomó una muestra aleatoria de 500
 individuos que han probado el producto con los siguientes resultados:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|c|c|} 
 \hline
 \mbox{Preferencia}&amp; \mbox{Sin Universidad}&amp;\mbox{Nivel de Estudios Truncados}&amp;\mbox{Graduados}\\
@@ -455,7 +452,6 @@ individuos que han probado el producto con los siguientes resultados:</p>
 \mbox{Neutral/No les gusta}&amp; 25&amp;60&amp;115\\
 \hline
 \end {array}
-\end{equation*}
 \]</span></p>
 <p><strong>Paso 1</strong> Prueba a utilizar <strong>Tablas de Contingencia rxc prueba de Independencia</strong></p>
 <p>Es una prueba de independencia ya que sólo tenemos una población.</p>
@@ -466,7 +462,6 @@ individuos que han probado el producto con los siguientes resultados:</p>
 <p><strong>Paso 3</strong> Estadístico de Prueba</p>
 <p>Para poder calcular el estadístico de prueba no ayudaremos de cierto calculos previos.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| c| c |c |c||} 
 \hline 
 \mbox{Preferencia}&amp; \mbox{Sin Universidad}&amp;\mbox{Nivel de Estudios Truncados}&amp;\mbox{Graduados} &amp;\mbox{ Totales} \\  
@@ -478,7 +473,6 @@ individuos que han probado el producto con los siguientes resultados:</p>
 \mbox{Totales}&amp;100&amp;150&amp;250&amp;500\\
  \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Ahora:</p>
 <p><span class="math inline">\(P[Guste\ el\ producto]= \frac{300}{500}=.6= 60\ \%\ de\ la\ población\ le\ gusta\ el\ cereal\)</span></p>
@@ -595,7 +589,6 @@ X-squared = 13.125, df = 2, p-value = 0.001412</code></pre>
 <li>Queremos probar si la selección de cierto deporte es independienye del género. Para ellos se les pregunto a 100 hombres y 100 mujeres que deporte entre arquería, boxeo y ciclismo preferian practicar y en la siguiente tabla se resume las respuestas que dieron:</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c ||c |c |c|c|}
 \hline 
 \mbox{Género} &amp; \mbox{Arquería}&amp;\mbox{Boxeo} &amp;\mbox{Ciclismo}&amp; \mbox{Total} \\
@@ -607,13 +600,11 @@ X-squared = 13.125, df = 2, p-value = 0.001412</code></pre>
 \mbox{Total}&amp;\textbf{45}&amp;\textbf{45}&amp;\textbf{110}&amp;\textbf{200}\\
 \hline 
 \end{array}
-\end{equation*}
 \]</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>En un estudio, llevado a cabo por el INE, se tomó una muestra aleatoria de ciudadanos registrados en el Padrón Electoral. Se obtuvo información sobre el partido por el que votaron para Presidente y si tenían o no estudios universitarios.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c c c c c c c|}
 \hline
 X_{2}&amp;X_{1}&amp;&amp;&amp;&amp;&amp;&amp;\\
@@ -628,7 +619,6 @@ SI &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN\\
 NO &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN&amp;\\
  \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Considere <span class="math inline">\(X_{1}\)</span>= Partido por el cual votó, <span class="math inline">\(X_{2}\)</span>=tiene o no estudios universitarios.</p>
 <p>Se desea probar si existe asociación entre el partido por el cual votó y si tienen o no estudios universitarios. Plantee, en el contexto del problema, las hipótesis, estadística de prueba y obtenga su conclusión con un nivel de significancia del <span class="math inline">\(5\%\)</span></p>
@@ -637,7 +627,6 @@ NO &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN &amp; PAN&amp;\\
 con la proposición: “se debe prohibir fumar en lugares públicos”. Con base en los datos recabados se desea saber si existen diferencias significativas en el grado en el que están de acuerdo hombres y mujeres con respecto a prohibir fumar en lugares públicos.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c |c |c |c| c | c ||}
 \hline 
 \mbox{Sexo} &amp; \mbox{Muy de acuerdo}&amp; \mbox{De acuerdo} &amp; \mbox{Neutral} &amp; \mbox{En desacuerdo} &amp;  \mbox{En total desacuerdo}\\
@@ -647,7 +636,6 @@ con la proposición: “se debe prohibir fumar en lugares públicos”. Con base
 \mbox{Varon} &amp; 22 &amp; 40 &amp; 14 &amp; 39 &amp; 41 \\
 \hline 
 \end{array}
-\end{equation*}
 \]</span></p>
 
 </div>
@@ -700,7 +688,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

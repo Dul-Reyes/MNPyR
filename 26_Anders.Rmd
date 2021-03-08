@@ -50,7 +50,6 @@ ajustes a la estadística con la finalidad de que la prueba sea más potente par
 casos:
 
 $$
-\begin{equation*}
 \begin{array}{|c c| c c c c|}
 \hline
 \textbf{Caso} & \textbf{Ajuste en el estadístico} &\textbf{0.90} &\textbf{0.95} & \textbf{0.975} & \textbf{0.99} \\
@@ -62,7 +61,6 @@ Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.6
 \mbox{Log-logística con} \ \ Log-log(\hat{\alpha},\hat{\beta}) & (1+\frac{0.25}{\sqrt{n}})A_{n}^{2} & 0.563 & 0.660 & 0.769 & 0.906 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 **Regla de Decisión**
@@ -135,7 +133,6 @@ $$A_n^2=0.1340$$
 
 8) Aplicando el ajuste de la tabla anterior:
 $$
-\begin{equation*}
 \begin{array}{|c c| c c c c|}
 \hline
 \textbf{Caso} & \textbf{Ajuste en el estadístico} &\textbf{0.90} &\textbf{0.95} & \textbf{0.975} & \textbf{0.99} \\
@@ -144,7 +141,6 @@ $$
 Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.632 & 0.751 & 0.870 & 1.029 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 $$ (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2}=(1+\frac{4}{15}+\frac{25}{15^2})A_{n}^{2}=0.1846$$

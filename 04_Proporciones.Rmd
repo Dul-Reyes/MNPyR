@@ -187,11 +187,14 @@ La prueba a utilizar **Prueba de proporciones caso C cola superior**
 
 **Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado
 
-$$\textbf{H}_{0}: \mbox{La probabilidad de que un graduado pase el examen es menor/igual al 70%.}$$ 
+$$
+\begin{array}{c}
+\textbf{H}_{0}: \mbox{La probabilidad de que un graduado pase el examen es menor/igual al } 70\%.\\
+vs\\
+\textbf{H}_{a}: \mbox{La probabilidad de que un graduado pase el examen es mayor al }70\%.
+\end{array}
+$$ 
 
-$$vs$$
-
-$$\textbf{H}_{a}: \mbox{La probabilidad de que un graduado pase el examen es mayor al 70%.}$$
 De manera alternativa:
 
 

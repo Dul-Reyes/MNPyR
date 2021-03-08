@@ -37,7 +37,6 @@ Ahora haremos un ejemplo para ilustar la teoría:
 Se desea mezclar una masa de pastel hasta que se alcance una consistencia específica. Se mezclan cinco lotes de la mezcla usando la batidora A, y los otros cinco lotes se mezclan usando la batidora B. Los tiempos requeridos para mezclar se dan de la siguinte manera (en minutos):
 
 $$
-\begin{equation*}
 \begin{array}{c c}
 \textbf{Batidora A} & \textbf{Batidora A} \\
 7.3 & 7.4 \\
@@ -46,7 +45,6 @@ $$
 7.8 & 6.7 \\
 7.2 & 7.1 \\
 \end{array}
-\end{equation*}
 $$
 Se busca un intervalo de confianza del 95% para la diferencia de medias en los tiempos de mezcla, más específicamente para $\mathbf{E}(X)-\mathbf{E}(Y)$, donde $X$ se refiere a la $batidora\ A$ y $Y$ se refiere a la $batidora\ B$.
 
@@ -67,7 +65,6 @@ $$k=18-(5)(6)/2=3$$
 Ordenamos las muestras de menor a mayor, las $X_s$ las usaremos como filas y las $Y_s$ las usaremos como columnas para formar la matriz de diferencias $X_{i}-Y_{j}$:
 
 $$
-\begin{equation*}
 \begin{array}{|l| r r r r r|}
 \hline
 X_{i} \ Y_{j} & 6.7 & 6.8 & 6.9 & 7.1 & 7.4 \\
@@ -79,7 +76,6 @@ X_{i} \ Y_{j} & 6.7 & 6.8 & 6.9 & 7.1 & 7.4 \\
 7.8 & 1.1 & 1.0 & 0.9 &  0.7 &  0.4 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 **Paso 4**
@@ -87,14 +83,12 @@ $$
 Entonces las más grandes y las más pequeñas diferencias son encontradas:
 
 $$
-\begin{equation*}
 \begin{array}{c c c c}
 \mbox{Diferencias Pequeñas} & & \mbox{ Diferencias Grandes} \\
 6.9 - 7.4 = -0.5 & & 7.8 - 6.7 = 1.1\\
 6.9 - 7.1 = -0.2 & & 7.8 - 6.8 = 1.0\\
 7.2 - 7.4 = -0.2 = \textbf{L} & & 7.8 - 6.9 = 0.9 = \textbf{U}\\
 \end{array}
-\end{equation*}
 $$
 
 **Paso 5**

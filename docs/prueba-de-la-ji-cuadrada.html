@@ -34,7 +34,7 @@
   
 <link rel="prev" href="bondad-de-ajuste.html"/>
 <link rel="next" href="prueba-kolmogorov.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -426,7 +426,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Un gobierno local tiene registros del número de niños y el número de hogares en el área. Se sabe que el número promedio de niños por hogar es 1.40. Se sugiere que el número de niños por hogar se pueda modelar por una distribución Poisson con parámetro 1.40.
 Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados se muestran en la siguiente tabla:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c |c c c c c c c|}
 \hline
 \textbf{Número de niños} &amp;0 &amp;1 &amp;2&amp; 3&amp;4 &amp;5+&amp; \\
@@ -434,11 +433,9 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 \textbf{Número de hogares} &amp; 273&amp; 361&amp;263 &amp;78 &amp; 21 &amp; 4&amp; \\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><strong>NOTA:</strong> Como tenemos una categoría con obeservaciones menores a 5 colapsamos la categoría.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c |c c c c c|}
 \hline
 \textbf{  Número de niños} &amp;0 &amp;1 &amp;2&amp; 3&amp;4+  \\
@@ -446,7 +443,6 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 \textbf{Número de hogares} &amp; 273&amp; 361&amp;263 &amp;78 &amp; 25  \\
 \hline
 \end{array}
-\end{equation*}
  \]</span></p>
 <p><strong>Paso 1</strong> Prueba a utilizar <strong>Prueba Ji-cuadrada</strong></p>
 <p><strong>Paso 2</strong> Planteamiento de hipótesis:</p>
@@ -457,7 +453,6 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 <p><strong>Nota</strong> En R-Studio tenemos dpois(c(0,1,2,3,4),1.40) para la primera categoría.</p>
 <p>Nos ayudaremos de la siguiente tablita:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c c c}
 \hline
 \textbf{Número de niños} &amp; \textbf{Número de hogares} &amp; P_{i} &amp; e_i=n \times P_i \\
@@ -470,7 +465,6 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 \hline
 &amp;n=1000&amp;.9854\approx1 &amp;9854\approx1000 \\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><strong>Paso 3</strong> Estadístico de prueba</p>
 <p><span class="math display">\[Q=\sum_{j=0}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}=\sum_{j=0}^{4}\frac{(f_{j}-e_{j})^2}{e_{j}}=\]</span>
@@ -557,7 +551,6 @@ X-squared = 20.96, df = 4, p-value = 0.0003226</code></pre>
 <li>Se lanza un dado 600 veces se obtuvieron los siguientes resultados.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c ||c |c |c|c|c|c|}
 \hline 
 \textbf{Número del dado} &amp; 1&amp; 2&amp; 3&amp;4&amp;5&amp;6 \\
@@ -565,14 +558,12 @@ X-squared = 20.96, df = 4, p-value = 0.0003226</code></pre>
 \textbf{Observaciones} &amp; 87 &amp;  96 &amp;108&amp;89&amp;122&amp;98 \\
  \hline 
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use <span class="math inline">\(\alpha=0.10\)</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Cierto banco otorga crédito a las personas con una tasa preferencial, de tal manera que los acreditados pueden pagar en cualquier momento desde que piden el préstamo hasta 8 semanas posteriores para que les sea respetada la tasa preferencial. Se seleccionaron aleatoriamente a 1,000 personas y observó su comportamiento de pago, generando de esta manera la siguiente tabla de frecuencia:</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|  }
 \hline
 \mbox{Semana}&amp; \mbox{Créditos Pagados}\\
@@ -588,7 +579,6 @@ X-squared = 20.96, df = 4, p-value = 0.0003226</code></pre>
 \mbox{8 semanas o más} &amp; 1\\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Probar que el pago de estos créditos, sigue una distribución binomial con parámetros <span class="math inline">\(n = 10\)</span> y <span class="math inline">\(p = 0.25\)</span>.</p>
 
@@ -642,7 +632,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

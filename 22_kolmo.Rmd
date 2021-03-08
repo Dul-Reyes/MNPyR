@@ -274,7 +274,6 @@ Realice la prueba de Kolmogorov al $5\%$ de significancia.
 2. Se desea probar la hipótesis de que los tiempos entre las llegadas de los pacientes a un hospital con una emergencia se distribuyen exponencial con media $\bar{x}$. Para ello se registró el tiempo transcurrido entre las llegadas sucesivas de pacientes en una mañana. El tiempo en minutos es el siguiente:
 
 $$
-\begin{equation*}
 \begin{array}{c c c}
 14.3, & 38.0, & 3.8,  \\ 
 10.8, & 6.1,& 10.1, \\ 
@@ -283,7 +282,6 @@ $$
 1.5, & 3.3, & 1.2,  \\   
 20.0, & 7.1,& 8.1.\\
 \end{array}
-\end{equation*}
 $$
 
 Pruebe la hipótesis con un nivel se significancia del $5\%$.

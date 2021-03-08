@@ -19,7 +19,6 @@ Una segunda muestra aleatoria de $n_{2}$ observaciones se extrae de una segunda 
 Los datos se organizan en la siguiente tabla de contingencia:
 
 $$
-\begin{equation*}
 \begin{array}{c|c|c|c}
  & \textbf{Clase 1} & \textbf{Clase 2} & \textbf{Total}     \\
 \hline
@@ -29,7 +28,6 @@ $$
 \hline
 \textbf{Total}       & C_{1} & C_{2}   & N=n_{1}+n_{2} \\
 \end{array}
-\end{equation*}
 $$
 
 El número total de observaciones es denotado por $N$.
@@ -177,7 +175,6 @@ Donde $p_{1}$ es la probabilidad de elegir al azar un guardia marino con buena v
 $\textbf{Paso 3}$ La tabla de contingencia, en este caso es:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|c|c|}
 \hline
  & \textbf{Buena Visión} & \textbf{Mala Visión} & \textbf{Total}   \\
@@ -189,7 +186,6 @@ $$
 \textbf{Total}  & C_{1}=1376 & C_{2}=265   & N=n_{1}+n_{2}=1641 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 

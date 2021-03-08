@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-cuantiles.html"/>
 <link rel="next" href="prueba-mc-nemar.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -457,7 +457,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Ejemplo</h2>
 <p>Un grupo de 6 amigos se puso a dieta, en un intento para perder peso obtuvieron los siguientes resultados:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c c } 
 \textbf{Nombre} &amp; \textbf{Peso Antes} &amp; \textbf{Peso Después} \\
 \hline
@@ -468,12 +467,10 @@ Ray   &amp; 182 &amp; 178 \\
 Abdul &amp; 201 &amp; 203 \\
 Phil  &amp; 188 &amp; 181 \\
 \end{array} 
-\end{equation*} 
 \]</span></p>
 <p>El grupo de amigos desea ver si la dieta que están realizando es efectiva.</p>
 <p>Recordando que cada par de datos en la muestra se clasificará por un signo <span class="math inline">\(&quot;+&quot;\)</span> cuando <span class="math inline">\(X_{i} &lt; Y_{i}\)</span>, por un signo “-” cuando <span class="math inline">\(X_{i} &gt; Y_{i}\)</span> y se omitirán las parejas cuando <span class="math inline">\(X_i = Y_i\)</span>. Y el tamaño de la muestra después de quitar los empates será <span class="math inline">\(n\)</span>, haremos lo siguiente:
 <span class="math display">\[
-\begin{equation*}
 \begin{array}{|c |c |c |c c c|}
 \hline
 \textbf{Nombre} &amp; \textbf{Peso Antes} &amp; \textbf{Peso Después} &amp; \textbf{Signo} \\
@@ -487,7 +484,6 @@ Abdul &amp; 201 &amp; 203  &amp;  &quot;+&quot; \\
 Phil  &amp; 188 &amp; 181  &amp;  &quot;-&quot;  \\
 \hline
 \end{array} 
-\end{equation*} 
 \]</span></p>
 <p><strong>Paso 1</strong> Escribimos la prueba a utilizar</p>
 <p>La prueba a utilizar <strong>Prueba de signos Caso B cola inferior</strong></p>
@@ -564,7 +560,6 @@ probability of success
 <li>En una encuesta anual para determinar si los salarios en el sector federal son proporcionales con los pagos en el sector privado, los trabajadores publicos y privados fueron emparejados tan cerca como fue posible (con respecto al tipo de trabajo, formación académica, años de experiencia, etc.) los salarios se ordenaron en parejas.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c| |c||} 
 \hline 
 \textbf{Pareja i}  &amp; \textbf{Privado} &amp; \textbf{Gobierno} \\ 
@@ -607,14 +602,12 @@ probability of success
 \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Probar la hipótesis nula de que los salarios son iguales contra la hipótesis alternativa de que el salario de los trabajadores federales es generalmente menor a la contraparte en el sector privado. Uitiliza <span class="math inline">\(\alpha=0.1\)</span>.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Una oficina tiene dos computadoras : A y B. En un estudio del uso del ordenador, la compañía ha recabado registro de las tasas de uso por 5 semanas. La meta es decidir cual computadora se pone bajo un contrato de servicio porque tiene una tasa alta de uso. Con los datos de las tasas de uso de la siguiente tabla se puede hacer una recomendación preliminar respecto a que computadora contratar?</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c| |c||} 
 \hline 
 \textbf{Semanas} &amp; \textbf{Computadora A} &amp; \textbf{Computadora B} \\ 
@@ -636,13 +629,11 @@ probability of success
 \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Se tienen dos trituradores de alimentos y se tiene la sospecha de que el aparato B es mas eficiente que el aparato A. Para probar dicha sospecha, se probaron en ambos trituradores diferentes alimentos y se registró el tiempo en minutos que le tomaba a cada aparato convertir el alimento en puré. Los resultados fueron los siguientes.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c|} 
 \hline 
 \mbox{Alimento} &amp; \mbox{A} &amp; \mbox{B}\\
@@ -667,7 +658,6 @@ probability of success
 \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use <span class="math inline">\(\alpha=5\%\)</span></p>
 
@@ -721,7 +711,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

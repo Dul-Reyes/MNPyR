@@ -34,7 +34,7 @@
   
 <link rel="prev" href="intervalos-de-confianza-1.html"/>
 <link rel="next" href="validación-de-supuestos.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -408,7 +408,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]</span>
 Entonces las pruebas de hipótesis para <span class="math inline">\(\beta_{0},\)</span> en sus tres casos, que el valor de <span class="math inline">\(\beta_{0}\)</span> sea igual, inferior o superior al punto crítico deseado (<span class="math inline">\(b_{0}\)</span>) tienen las siguientes reglas de decisión, con un nivel de significancia <span class="math inline">\(\alpha\)</span>.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis &amp; Región\ de\ rechazo: \\
@@ -420,7 +419,6 @@ H_0:\beta_{0}\leq b_{0} \ vs. \ H_a:\beta_{0} &gt; b_{0} &amp; t^*&gt;t^{\alpha}
 H_0:\beta_{0}\geq b_{0} \ vs. \ H_a:\beta_{0} &lt; b_{0} &amp; t^*&lt;t^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><strong>Para ejemplificar</strong></p>
 <p>Suponga que se quiere ajustar un modelo con intercepto o sin intercepto. En éste caso, conviene realizar una prueba de hipótesis de dos colas sobre <span class="math inline">\(\beta_{0}\)</span> valuando el punto crítico <span class="math inline">\(b_{0}=0\)</span>, es decir, se desea probar que <span class="math inline">\(\beta_{0}=0\)</span>, ya que si, con un nivel de significancia <span class="math inline">\(\alpha\)</span>, se rechaza <span class="math inline">\(H_0\)</span> se tiene evidencia de que el modelo a ajustar debería ser el modelo con intercepto. Detallando la prueba, en este caso en particular, tenemos:</p>
@@ -437,7 +435,6 @@ H_0:\beta_{0}\geq b_{0} \ vs. \ H_a:\beta_{0} &lt; b_{0} &amp; t^*&lt;t^{1-\alph
 <p><span class="math display">\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]</span></p>
 <p>Por lo tanto tenemos la prueba de hipótesis para <span class="math inline">\(\beta_{1}\)</span> en sus tres casos, que el valor de <span class="math inline">\(\beta_{1}\)</span> sea igual, inferior o superior al punto crítico deseado (<span class="math inline">\(b_{1}\)</span>) y sus respectivas regiones de rechazo con un nivel de significancia <span class="math inline">\(\alpha.\)</span>
 <span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis &amp; Región\ de\ rechazo: \\
@@ -450,7 +447,6 @@ H_0:\beta_{1}\leq b_{1} \ vs. \ H_a:\beta_{1} &gt; b_{1} &amp; t^*&gt;t^{\alpha}
 H_0:\beta_{1}\geq b_{1} \ vs. \ H_a:\beta_{1} &lt; b_{1} &amp; t^*&lt;t^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*} 
 \]</span></p>
 <p>Para ejemplificar, suponga que quiere ajustar un modelo de regresión lineal simple, sin embargo, duda si realmente la variable respuesta <span class="math inline">\(y\)</span> depende de la variable regresora <span class="math inline">\(x\)</span>, es decir, sospecha que <span class="math inline">\(\beta_{1}=0.\)</span> Para ello se raliza la siguiente prueba de hipótesis valuando <span class="math inline">\(\beta_{1}\)</span> en el punto crítico de interés <span class="math inline">\(b_{1}=0:\)</span></p>
 <p><span class="math display">\[\textbf{H}_0: \hat{\beta_{1}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0\]</span></p>
@@ -462,7 +458,6 @@ Si se rechaza <span class="math inline">\(H_0\)</span> entonces <span class="mat
 <h2><span class="header-section-number">26.3</span> Prueba para <span class="math inline">\(\sigma^2\)</span></h2>
 <p>Para <span class="math inline">\(\sigma^2\)</span> se tiene las siguientes reglas de decisión con un nivel de significancia <span class="math inline">\(\alpha:\)</span></p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis &amp; Región\ de\ rechazo: \\
@@ -475,7 +470,6 @@ H_0:\sigma^2 \leq s \ vs. \ H_a:\sigma^2 &gt; s &amp; t^*&gt;\chi^{\alpha}_{(n-2
 H_0:\sigma^2\geq s \ vs. \ H_a:\sigma^2 &lt; s &amp; t^*&lt;\chi^{1-\alpha}_{(n-2)} \\
 \hline
 \end{array}
-\end{equation*}
 \]</span>
 donde el estadístico <span class="math inline">\(t^*:\)</span></p>
 <p><span class="math display">\[t^*=\frac{(n-2)\hat{\sigma}^2}{s}\]</span>
@@ -539,11 +533,9 @@ Sabemos que el modelo de Regresión Lineal con errores normales tiene las siguie
 <p><span class="math display">\[F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}\]</span>
 Ahora se ocupará el <strong>Cuadrado Medio</strong> denotado como <strong>CM</strong>, la cual corresponde a la Suma de Cuadrados entre los grados de libertad. Así, se define al cuadrado medio de la regresión <span class="math inline">\(CM_{reg}\)</span> y al cuadrado medio del error <span class="math inline">\(CM_{error}\)</span> como:</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c}
 CM_{reg}=\frac{SC_{reg}}{1} &amp; y &amp; CM_{error}=\frac{SC_{error}}{n-2}. \\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>De igual manera, haciendo el ajuste, la prueba <span class="math inline">\(F\)</span> queda definida como:</p>
 <p><span class="math display">\[F=\frac{CM_{reg}}{CM_{error}}.\]</span>
@@ -556,7 +548,6 @@ La cual es equivalente a la prueba t.</p>
 <p>Ya que si <span class="math inline">\(x \sim t_{(n-1)}\)</span> entonces <span class="math inline">\(x^2 \sim F_{(1,n-2)}.\)</span></p>
 <p>El siguiente cuadro resume la información anterior, mejor conocida como <strong>Tabla ANOVA:</strong></p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c| c| c| c| c|}
 \hline
 &amp;Grados\ de\ libertad &amp; Suma\ de\ Cuadrados &amp; Cuadrado\ Medio &amp; Prueba\ F \\
@@ -569,7 +560,6 @@ Error     &amp; n-2 &amp; \sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2=SC_{T}-\hat{\beta_
 Total     &amp; n-1 &amp; \sum_{i=1}^{n}(y_{i}-\overline{y})^2 &amp; - &amp; - \\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 </div>
 <div id="coeficiente-de-determinación" class="section level2" number="26.5">
@@ -588,7 +578,6 @@ Total     &amp; n-1 &amp; \sum_{i=1}^{n}(y_{i}-\overline{y})^2 &amp; - &amp; - \
 </ul>
 <p>En particular, se buscan valores de <span class="math inline">\(R^2\)</span> cercanos a 1, ya que esto indica que la mayor parte de la variabilidad de <span class="math inline">\(y\)</span> es determinada o explicada por el modelo de regresión. La magnitud de <span class="math inline">\(R^2\)</span> también depende del rango de variabilidad de la variable regresora. En general <span class="math inline">\(R^2\)</span> aumenta a medida que la propagación de los valores de <span class="math inline">\(x\)</span> aumenta, y disminuye a medida que la propagación de los valores de <span class="math inline">\(x\)</span> disminuyan, siempre que el modelo asumido es correcto.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{|c |c|}
 \hline
 \textbf{Valor de} \ R^2 &amp; \textbf{Tipo de correlación} \\
@@ -603,7 +592,6 @@ R^2=0 &amp; No\ hay\ correlación \\
 R^2=1 &amp; Correlación\ perfecta \\
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 </div>
 <div id="relación-r2-y-la-correlación-de-pearson" class="section level2" number="26.7">
@@ -709,7 +697,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

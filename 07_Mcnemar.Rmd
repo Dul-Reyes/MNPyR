@@ -10,7 +10,6 @@ Luego se ingresan estos datos en una tabla de contingencia de la siguiente forma
 
 
 $$
-\begin{equation*}
 \begin{array}{ c| c| c }
  & \textbf{ahora en contra}  & \textbf{ahora a favor}\\
 \hline
@@ -18,7 +17,6 @@ $$
 \hline
 \textbf{antes a favor} & Número\ de\ (1,0) & Número\ de\ (1,1) \\
 \end{array} 
-\end{equation*}
 $$
 
 **Datos**
@@ -32,7 +30,6 @@ Dentro de cada par de datos en la muestra se tiene $X$ e $Y$ que sólo tomarán 
 En general los datos se resumen en una tabla de contingencia de la forma:
 
 $$
-\begin{equation*}
 \begin{array}{ c| c| c }
  & \textbf{después 0}  & \textbf{después 1}\\
 \hline
@@ -40,7 +37,6 @@ $$
 \hline
 \textbf{antes 1} & \textbf{c}=Número\ de\ (1,0) &\textbf{d}=Número\ de\ (1,1) \\
 \end{array} 
-\end{equation*}
 $$
 
 **Supuestos**
@@ -116,7 +112,6 @@ Ahora aplicaremos lo anterior en un ejemplo ilustrativo:
 May y Johnson (1997) publicaron el resultado de un estudio en el cual los investigadores querían determinar el efecto de la hipnosis en reducir el dolor asociado con la venopunción en pacientes juveniles de cáncer. Los datos se observan en la siguiente tabla:
 
 $$
-\begin{equation*}
 \begin{array}{ c| c c| c }
                      & Después\ de\ la\ hipnosis &            & \\
 \hline
@@ -128,7 +123,6 @@ Antes\ de\ la hipnosis & \textbf{Sin Dolor}     & \textbf{Con Dolor}& Total\\
 \hline
 Total     & 30              & 9               & 39 \\
 \end{array} 
-\end{equation*}
 $$
 
 
@@ -268,7 +262,6 @@ mcnemar.test(data, correct = FALSE) #SIN CORRECCION POR CONTINUIDAD
 2.  Un investigador intenta determinar si un fármaco tiene un efecto sobre una enfermedad particular. Se cuenta con la información de los individuos en el estudio con el diagnóstico (enfermedad: presente o ausente ) antes del tratamiento, y el diagnóstico después del tratamiento
 
 $$
-\begin{equation*}
 \begin{array}{c| c c|c} 
 &\mbox{Después de tratamiento}&&\\
 \hline
@@ -280,5 +273,4 @@ $$
 \hline
 \mbox{Total}&160&154&314\\
 \end{array}
-\end{equation*}
 $$

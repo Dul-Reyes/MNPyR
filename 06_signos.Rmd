@@ -132,7 +132,6 @@ Ahora aplicaremos lo anterior en un ejemplo ilustrativo:
 Un grupo de 6 amigos se puso a dieta, en un intento para perder peso obtuvieron los siguientes resultados:
 
 $$
-\begin{equation*}
 \begin{array}{c c c c } 
 \textbf{Nombre} & \textbf{Peso Antes} & \textbf{Peso Después} \\
 \hline
@@ -143,7 +142,6 @@ Ray   & 182 & 178 \\
 Abdul & 201 & 203 \\
 Phil  & 188 & 181 \\
 \end{array} 
-\end{equation*} 
 $$
 
 
@@ -151,7 +149,6 @@ El grupo de amigos desea ver si la dieta que están realizando es efectiva.
 
 Recordando que cada par de datos en la muestra se clasificará por un signo $"+"$ cuando $X_{i} < Y_{i}$, por un signo "-" cuando $X_{i} > Y_{i}$ y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
 $$
-\begin{equation*}
 \begin{array}{|c |c |c |c c c|}
 \hline
 \textbf{Nombre} & \textbf{Peso Antes} & \textbf{Peso Después} & \textbf{Signo} \\
@@ -165,7 +162,6 @@ Abdul & 201 & 203  &  "+" \\
 Phil  & 188 & 181  &  "-"  \\
 \hline
 \end{array} 
-\end{equation*} 
 $$
 
 **Paso 1** Escribimos la prueba a utilizar
@@ -277,7 +273,6 @@ binom.test(T,n,p=0.5,alternative = "less")
 1. En una encuesta anual para determinar si los salarios en el sector federal son proporcionales con los pagos en el sector privado, los trabajadores publicos y privados fueron emparejados tan cerca como fue posible (con respecto al tipo de trabajo, formación académica, años de experiencia, etc.) los salarios se ordenaron en parejas.
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c||} 
 \hline 
 \textbf{Pareja i}  & \textbf{Privado} & \textbf{Gobierno} \\ 
@@ -320,7 +315,6 @@ $$
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Probar la hipótesis nula de que los salarios son iguales contra la hipótesis alternativa de que el salario de los trabajadores federales es generalmente menor a la contraparte en el sector privado. Uitiliza $\alpha=0.1$.
@@ -328,7 +322,6 @@ Probar la hipótesis nula de que los salarios son iguales contra la hipótesis a
 2. Una oficina tiene dos computadoras : A y B. En un estudio del uso del ordenador, la compañía ha recabado registro de las tasas de uso por 5 semanas. La meta es decidir cual computadora se pone bajo un contrato de servicio porque tiene una tasa alta de uso. Con los datos de las tasas de uso de la siguiente tabla se puede hacer una recomendación preliminar respecto a que computadora contratar?
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c||} 
 \hline 
 \textbf{Semanas} & \textbf{Computadora A} & \textbf{Computadora B} \\ 
@@ -350,7 +343,6 @@ $$
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 
@@ -358,7 +350,6 @@ $$
 
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c|} 
 \hline 
 \mbox{Alimento} & \mbox{A} & \mbox{B}\\
@@ -383,7 +374,6 @@ $$
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use $\alpha=5\%$

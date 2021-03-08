@@ -9,7 +9,6 @@ Sea $O_{ij}$ el número de observaciones asociadas con el renglón $i$ y la colu
 Los datos se organizan en la siguiente tabla de contingencia:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|c|c|c|c|} 
 \hline
 &\textbf{Columna 1} &\textbf{Columna 2} &\ldots&\textbf{Columna c}&\textbf{Totales}\\
@@ -24,7 +23,6 @@ $$
 \textbf{Totales}&C_1&C_2&\ldots&C_c&N\\
 \hline
 \end {array}
-\end{equation*}
 $$
 **Supuestos**
 
@@ -82,7 +80,6 @@ objetivo que verifiquen las especulaciones. Para esto se tomó una muestra aleat
 individuos que han probado el producto con los siguientes resultados: 
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|c|c|} 
 \hline
 \mbox{Preferencia}& \mbox{Sin Universidad}&\mbox{Nivel de Estudios Truncados}&\mbox{Graduados}\\
@@ -92,7 +89,6 @@ $$
 \mbox{Neutral/No les gusta}& 25&60&115\\
 \hline
 \end {array}
-\end{equation*}
 $$
 
 **Paso 1** Prueba a utilizar **Tablas de Contingencia rxc prueba de Independencia**
@@ -113,7 +109,6 @@ $$\textbf{H}_a:\ \mbox{El nivel educativo no es independiente de la preferencia 
 Para poder calcular el estadístico de prueba no ayudaremos de cierto calculos previos.
 
 $$
-\begin{equation*}
 \begin{array}{||c| c| c |c |c||} 
 \hline 
 \mbox{Preferencia}& \mbox{Sin Universidad}&\mbox{Nivel de Estudios Truncados}&\mbox{Graduados} &\mbox{ Totales} \\  
@@ -125,7 +120,6 @@ $$
 \mbox{Totales}&100&150&250&500\\
  \hline
 \end{array}
-\end{equation*}
 $$
 
 Ahora:
@@ -262,7 +256,6 @@ chisq.test(tabla)
 1. Queremos probar si la selección de cierto deporte es independienye del género. Para ellos se les pregunto a 100 hombres y 100 mujeres que deporte entre arquería, boxeo y ciclismo preferian practicar y en la siguiente tabla se resume las respuestas que dieron:
 
 $$
-\begin{equation*}
 \begin{array}{|c ||c |c |c|c|}
 \hline 
 \mbox{Género} & \mbox{Arquería}&\mbox{Boxeo} &\mbox{Ciclismo}& \mbox{Total} \\
@@ -274,13 +267,11 @@ $$
 \mbox{Total}&\textbf{45}&\textbf{45}&\textbf{110}&\textbf{200}\\
 \hline 
 \end{array}
-\end{equation*}
 $$
 
 2. En un estudio, llevado a cabo por el INE, se tomó una muestra aleatoria de ciudadanos registrados en el Padrón Electoral. Se obtuvo información sobre el partido por el que votaron para Presidente y si tenían o no estudios universitarios.
 
 $$
-\begin{equation*}
 \begin{array}{|c|c c c c c c c|}
 \hline
 X_{2}&X_{1}&&&&&&\\
@@ -295,7 +286,6 @@ SI & PAN & PAN & PAN & PAN & PAN & PAN & PAN\\
 NO & PAN & PAN & PAN & PAN & PAN & PAN&\\
  \hline
 \end{array}
-\end{equation*}
 $$
 
 Considere $X_{1}$= Partido por el cual votó, $X_{2}$=tiene o no estudios universitarios.
@@ -307,7 +297,6 @@ Se desea probar si existe asociación entre el partido por el cual votó y si ti
 con la proposición: “se debe prohibir fumar en lugares públicos”. Con base en los datos recabados se desea saber si existen diferencias significativas en el grado en el que están de acuerdo hombres y mujeres con respecto a prohibir fumar en lugares públicos.
 
 $$
-\begin{equation*}
 \begin{array}{||c |c |c |c| c | c ||}
 \hline 
 \mbox{Sexo} & \mbox{Muy de acuerdo}& \mbox{De acuerdo} & \mbox{Neutral} & \mbox{En desacuerdo} &  \mbox{En total desacuerdo}\\
@@ -317,5 +306,4 @@ $$
 \mbox{Varon} & 22 & 40 & 14 & 39 & 41 \\
 \hline 
 \end{array}
-\end{equation*}
 $$

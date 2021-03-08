@@ -9,7 +9,6 @@ Una **tabla de contingencia** es un arreglo de números naturales en forma de ma
 Por ejemplo:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|c|c|} 
 \hline
 &\textbf{Fuma} &\textbf{No Fuma} &\textbf{Total}\\
@@ -20,8 +19,7 @@ $$
 \hline
 \textbf{Total}& 33& 31 &64\\
 \hline
-\end {array}
-\end {equation*}
+\end{array}
 $$
 
 Queremos saber si influye el género en fumar.

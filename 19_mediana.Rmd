@@ -9,7 +9,6 @@ Para probar si varias $c$ poblaciones tienen la misma mediana, se extrae una mue
 Para cada una de las poblaciones $c$ se obtiene una muestra aleatoria de tamaño $n_{i}$, $i = 1,2,\ldots, c$. Se determina la mediana de la muestra combinada; es decir, se determina el número que excedió aproximadamente la mitad de las observaciones en toda la muestra $N = n_{1} + n_{2}+ \ldots + n_{c}$. Esto se llama mediana. Sea $O_{1i}$, el número de observaciones en la $i$-ésima muestra que excede la mediana y, sea $O_{2i}$ el número en la $i$-ésima muestra que sea menor o igual a la mediana, organice los conteos de frecuencia en una tabla de contingencia $2\times c$ de la siguiente manera:
 
 $$
-\begin{equation*}
 \begin{array}{c|c|c|c|c|c}
  & \textbf{Muestra 1}  & \textbf{Muestra 2}    & \cdots & \textbf{Muestra c} &\textbf{Totales}     \\
 \hline
@@ -19,7 +18,6 @@ $$
 \hline
 \textbf{Totales}    & n_{1}  & n_{2}  & \cdots & n_{c}  & N \\
 \end{array}
-\end{equation*}
 $$
 
 Sea $a$ el número total de observaciones mas grandes a la mediana en todas las muestras, sea $b$ el número total de observaciones menores o iguales a la mediana. Entonces $a+b=N$ es el número total de observaciones.
@@ -84,8 +82,7 @@ Aplicaremos nuestros conocimientos en el siguiente ejercicio:
 Se asignaron al azar cuatro métodos diferentes de cultivo de maíz a un gran número de parcelas diferentes y se calculó el rendimiento por acre para cada parcela. Los datos son los siguientes:
 
 $$
-\begin{equation*}
- \begin{array}{ c c c c c } 
+\begin{array}{ c c c c c } 
 \textbf{Método 1} & \textbf{Método 2} & \textbf{Método 3} & \textbf{Método 4} \\ 
 83 & 91 &101  &78  \\ 
 91 & 90 &100 &82 \\
@@ -98,7 +95,6 @@ $$
 90 & 89 & &  \\
    & 84 &  &  \\
 \end{array}
- \end{equation*}
 $$
 
 Para determinar si existe una diferencia en los rendimientos como resultado del método utilizado, se empleó la prueba mediana porque se consideró que una diferencia en las medianas de la población podría interpretarse como una diferencia en el valor del método utilizado.
@@ -118,7 +114,6 @@ $$\textbf{H}_a: \ \mbox{Al menos dos de los métodos difieren con respecto al re
 En el conteo rápido revela que hay 34 observaciones en total, por lo que el promedio de las observaciones más pequeñas decimoséptima y decimoctava es la mediana, y se ve que es 89. Luego, para cada método (muestra), el número de valores que exceden 89 y el número que es menor o igual a 89 se registra en la siguiente forma.
 
 $$
-\begin{equation*}
 \begin{array}{c|c|c|c|c|c}
  & \textbf{Método 1} & \textbf{Método 2} & \textbf{Método 3} & \textbf{Método 4}& \textbf{Totales} \\
 \hline
@@ -128,7 +123,6 @@ $$
 \hline
 \textbf{Totales}  & 9  & 10  & 7 & 8  & 34 \\
 \end{array}
-\end{equation*}
 $$
 
 **Paso 3** Estadístico de Prueba
@@ -229,7 +223,6 @@ Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por $m^2
 2. Se subastaron varios contratos de explotación de petróleo al mejor postor. Para cada contrato se recibieron una o más ofertas selladas. Pruebe la hipótesis de que los contratos que eventualmente se convirtieron en productores de petróleo tuvieron la misma mediana de ofertas que los contratos que no produjeron petróleo. A continuación se muestra una muestra aleatoria de cada tipo de contrato.
 
 $$
-\begin{equation*}
 \begin{array}{|c | c |}
 \hline
 &\mbox{Número de ofertas en cada contrato de arrendamiento} \\
@@ -239,7 +232,6 @@ $$
 \mbox{No  productores}&6, 2, 1, 1, 3, 1, 2, 4, 8, 1, 2\\
     \hline
 \end{array}
-\end{equation*}
 $$
 
 

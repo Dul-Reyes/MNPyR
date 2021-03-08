@@ -4,7 +4,6 @@ author:
   - "Sofía Villers Gómez"
   - "Dulce María Reyes Varela"
   - "Carlos Fernando Vásquez Guerra"
-
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

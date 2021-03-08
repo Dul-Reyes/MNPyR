@@ -155,7 +155,6 @@ Ahora vamos a resolver un ejemplo:
 Una cuenca hidrográfica particular se ha construido extensivamente en los últimos años, con desarrollos de vivienda, represas, etc. una muestra aleatoria de las tasas de flujo de la corriente (pies cúbicos por minuto) para una corriente en esa cuenca hidrográfica se compara con una muestra de las tasas de tiempos anteriores para ver si la variabilidad ha cambiado.
 
 $$
-\begin{equation*}
 \begin{array}{c c c} 
 \textbf{Tasas Actuales} &  & \textbf{Tasas Pasadas} \\
 32 & & 39 \\
@@ -167,7 +166,6 @@ $$
 31 & & 17 \\
 28 & & 19 \\
 \end{array}
-\end{equation*}
 $$
 
 Es significativa la diferencia en las varianzas? Utiliza $\alpha$=0.05
@@ -189,7 +187,6 @@ $$\textbf{H}_a: \ Var(\mbox{tasas pasadas}) \ \neq  \ Var(\mbox{tasas actuales})
 Primero como $\mu_{1}$ y $\mu_{2}$ son desconocidas se usará $\overline{X}$ para $\mu_{1}$ y $\overline{Y}$ para $\mu_{2}$.
 
 $$
-\begin{equation*}
 \begin{array}{c c c c c c c c }
 \mbox{Medidas} & \mbox{Originales} & \mbox{Desviación} & \mbox{Absoluta} & \mbox{Rangos} & \mbox{Rangos} & \mbox{Rangos} & \mbox{Al Cuadrado} \\
 \mbox{Tasas Actuales} & \mbox{Tasas Pasadas} & \mbox{Actuales} & \mbox{Pasadas} & \mbox{Actuales} & \mbox{Pasadas}& \mbox{Actuales} & \mbox{Pasadas} \\
@@ -205,7 +202,6 @@ $$
 \hline
 \overline{X}= 34.75 & \overline{Y}= 31.5 & & & & & T=381
 \end{array}
-\end{equation*}
 $$
 
 
@@ -407,7 +403,6 @@ var.test(TasasActuales,TasasPasadas,conf.level =.95 )
 1. Un banco de sangre mantuvo un registro de la frecuencia cardíaca de varios donadores de sangre.
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c||} 
 \hline 
 \mbox{Hombres}& \mbox{Mujeres} \\  
@@ -432,7 +427,6 @@ $$
  \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 ¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia $5\%$
@@ -441,7 +435,6 @@ $$
 2. Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia $10\%$
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c||} 
 \hline 
 \mbox{Des Moines}& \mbox{Spokane} \\ 
@@ -472,5 +465,4 @@ $$
  \hline
 \hline
 \end{array}
-\end{equation*}
 $$

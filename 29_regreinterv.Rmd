@@ -379,7 +379,7 @@ intery_esperado=cbind(y_espLiminf,y_espLimisup)
 intery_esperado
 ```
 
-* El procedimiento es análogo al del valor esperado se aplica para el cálculo del intervalo de conﬁanza para la predicción
+* El procedimiento es análogo al del valor esperado se aplica para el cálculo del intervalo de confianza para la predicción
 
 
 

@@ -22,7 +22,6 @@ $$t=\frac{\hat{\beta_{j}}-b}{\sqrt{\hat{\sigma}^2(X'X)^{-1}_{(j+1)(j+1)}}}.$$
 Usando el estadístico anterior se definen las regiones de rechazo para cada caso de $\beta_{j}$ como:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis &  Región\ de\ rechazo: \\
@@ -35,7 +34,6 @@ H_0:\beta_{j}\leq b \ vs. \ H_a:\beta_{j} > b & t>t^{(\alpha)}_{(n-k-1)} \\
 H_0:\beta_{j}\geq b \ vs. \ H_a:\beta_{j} < b & t<t^{(1-\alpha)}_{(n-k-1)} \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Para ejemplificar lo anterior:
@@ -68,7 +66,6 @@ Donde $\sigma^2_{0}$ es el valor crítico que se desea poner a prueba, para veri
 A continuación, tenemos las siguientes regiones de rechazo:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Hipótesis & Región\ de\ rechazo: \\
@@ -81,7 +78,6 @@ H_0:\sigma^2 \leq \sigma^2_{o} \ vs. \ H_a:\sigma^2 > \sigma^2_{o} & S>\chi^{2(\
 H_0:\sigma^2 \geq \sigma^2_{o} \ vs. \ H_a:\sigma^2 < \sigma^2_{o} & S<\chi^{2(1-\alpha)}_{(n-k-1)} \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 ## Análisis de la varianza (ANOVA)
@@ -158,7 +154,6 @@ La forma en que se resume la información es mostrada en la siguiente tabla mejo
 
 **Tabla ANOVA**
 $$
-\begin{equation*}
 \begin{array}{|c| c| c| c| c|}
 \hline
 &Grados\ de\ libertad & Suma\ de\ Cuadrados & Cuadrado\ Medio & Prueba\ F \\
@@ -171,7 +166,6 @@ Error     & n-k-1& \underline{Y}'(I-H)\underline{Y} & \frac{SC_{error}}{n-k-1} &
 Total     & n-1 & \underline{Y}'\underline{Y}-n\overline{y}^2 & - & - \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 ## Coeficiente de determinación

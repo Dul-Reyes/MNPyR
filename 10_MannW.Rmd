@@ -198,7 +198,6 @@ Una agencia publicitaria está investigando a qué tipo de avisos les prestan m�
 Utilizaremos $\alpha$= 5%.
 
 $$
-\begin{equation*}
 \begin{array}{||c| c c c c c c||} 
 \hline
 \textbf{Comida} & 25 & 41 & 42 & 45 & 47 & 50 \\
@@ -206,7 +205,6 @@ $$
 \textbf{Bebidas}& 23 & 28 & 30 & 35 & 38 &  \\ 
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Podemos ver que m=6 (en este caso comidas) y n= 5 (en este caso bebidas)
@@ -230,7 +228,6 @@ $$\mbox{sobre comida es distinta a las distribución de los anuncios de bebidas.
 **Ordenamos de menor a mayor** 
  
 $$
-\begin{equation*}
 \begin{array}{ |c| c c c c c c c c c c c| }
 \hline
  \textbf{Tipo de aviso} & B & C & B & B & B & B & C & C & C & C & C \\ 
@@ -240,7 +237,6 @@ $$
  \textbf{Rango}         & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ 
  \hline
 \end{array}
-\end{equation*}
 $$
 
 **Paso 3** Estadístico de prueba
@@ -338,7 +334,6 @@ Con esta prueba se rechaza la hipótesis nula de que ambas distribuciones son ig
 
 
 $$
-\begin{equation*}
 \begin{array}{|c| c c c c c c c c|} 
 \hline 
 \textbf{Método} &\textbf{Puntajes} &&&&& & & \\ 
@@ -348,7 +343,6 @@ $$
 \mbox{Nuevo} & 64 & 60 & 68 & 73 & 72 & 70& & \\ 
 \hline
 \end{array}
-\end{equation*}
 $$
 
 ¿Con una $\alpha$ del 5% podría decir que la efectividad (medida con los punatjes) de ambos métodos es similar?
@@ -356,7 +350,6 @@ $$
 2. En un laboratorio con entorno controlado, 10 hombres y 10 mujeres  fueron evaluados para determinar la temperatura ambiente que encontraron más cómoda. los resultados fueron los siguientes:
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c||} 
 \hline 
 \textbf{Hombres} & \textbf{Mujeres} \\  
@@ -383,7 +376,6 @@ $$
   \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 

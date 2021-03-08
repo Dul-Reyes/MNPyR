@@ -16,7 +16,6 @@ $$n_{i}= O_{i1}+O_{i2}+\cdots+O_{ic}\ \ \ \ \ \ \ \ \   \forall \ \ i.$$
 Los datos se organizan en la siguiente tabla de contingencia de $r \times c$:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|c|c|c|c|}
 \hline
  & \textbf{Clase 1}  & \textbf{Clase 2}    & \cdots & \textbf{Clase c} &\textbf{Total}     \\
@@ -32,7 +31,6 @@ $$
 \textbf{Total}       & C_{1}  & C_{2}  & \cdots & C_{c}  & N \\
 \hline
 \end{array}
-\end{equation*} 
 $$
 
 El número total de observaciones de todas las muestras es denotado por $N$:
@@ -105,7 +103,6 @@ Ahora aplicaremos los conocimientos en el próximo ejemplo:
 Una muestra de estudiantes seleccionados aleatoriamente de escuelas secundarias privadas recibió pruebas de rendimiento estandarizadas con los siguientes resultados:
 
 $$
-\begin{equation*}
 \begin{array}{ |c|cc c c c c|}
 \hline
 &\textbf{Puntaje de Prueba}&&&&\\
@@ -119,7 +116,6 @@ $$
 \textbf{Totales} & 36	& 46 & 34 & 12 & 128 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 **Paso 1** Prueba a utilizar: **Tablas de Contingencia de $r\times c$**
@@ -140,7 +136,6 @@ Para poder calcular nuestro estadístico de prueba podemos auxiliarnos de una pe
 * $E_{ij}:$
 
 $$
-\begin{equation*}
 \begin{array}{ |c|cccc|  }
 \hline
 &\textbf{Columnas} & & &\\
@@ -152,7 +147,6 @@ $$
 \textbf{Renglón 2} & 23.1	& 29.5 & 21.8 & 7.7 \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 
@@ -261,7 +255,6 @@ chisq.test(tabla)
 2. Estamos interesados en estudiar la fiabilidad de cierto componente informático con relación al distribuidor que nos lo suministra. Para realizar esto, tomamos una muestra de 100 componentes de cada uno de los tres distribuidores que nos sirven el producto comprobando el número de defectuosos en cada lote. La siguiente tabla muestra el número de defectuosos para cada uno de los distribuidores. 
 
 $$
-\begin{equation*}
 \begin{array}{|c | c| c|}
 \hline
 &\mbox{Componentes Defectuosos}& \mbox{Componentes Correctos}\\
@@ -273,7 +266,6 @@ $$
 \mbox{Distribuidor 3}&9&81\\
     \hline
 \end{array}
-\end{equation*}
 $$
 
 Plantea la hipótesis correspondiente  y concluye de acuerdo al contexto.

@@ -12,7 +12,6 @@ $$X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \mbox{de la} \ \ i-ésima \
 Así:
 
 $$
-\begin{equation*}
 \begin{array}{c c c c c} 
 Muestra \ 1&Muestra\ 2&Muestra\ 3&...&Muestra\ k \\
 x_{11}&x_{21}&x_{31}&...&x_{k1}\\
@@ -20,7 +19,6 @@ x_{12}&x_{22}&x_{32}&...&x_{k2}\\
 \ldots&\ldots&\ldots&\ddots&\ldots\\
 x_{1n_1}&x_{2n_2}&x_{3n_3}&...&x_{kn_k}\\
 \end{array}
-\end{equation*}   
 $$
 
 
@@ -70,7 +68,6 @@ $$R_{i}=\sum_{j=1}^{n_{i}} R(X_{ij}),  i= 1, 2,\cdots,k$$
 Se calcula $R_{i}$ para cada muestra, si hay observaciones repetidas, se le asigna el promedio de los rangos de las observaciones repetidas.
 
 $$
-\begin{equation*}
 \begin{array}{c c c c c} 
 Rangos & Rangos & Rangos & \cdots  & Rangos \\
 Muestra\ 1 & Muestra \ 2 & Muestra\ 3 & \cdots & Muestra\ k \\
@@ -82,7 +79,6 @@ R(X_{1n_{1}}) &R(X_{2n_{2}})   &R(X_{3n_{3}})   & \cdots &  R(X_{kn_{k}}) \\
 \hline
 R_{1} & R_{2} & R_{3} & \cdots&R_{k} \\
 \end{array}
-\end{equation*}
 $$
 
 
@@ -125,7 +121,6 @@ Se tienen 4 métodos de cultivo de maíz, para ver si hay diferencia entre uno y
 
 **Paso 1** Prueba a utilizar **Prueba Kruskal-Wallis**
 $$
-\begin{equation*}
 \begin{array}{|c| c| c| c|} 
 \hline
 \textbf{Método 1} & \textbf{Método 2} & \textbf{Método 3} & \textbf{Método 4}\\
@@ -142,7 +137,6 @@ $$
   &84&  &\\
   \hline
 \end{array}
-\end{equation*}
 $$
 **Paso 2** Planteamiento de hipótesis 
 
@@ -184,7 +178,6 @@ ahora regresando al problema:
 **Paso 4** Planteamiento completo
 
 $$
-\begin{equation*}
 \begin{array}{||c c c c c c c c ||} 
 \hline
 \mbox{Método 1} & \mbox{Rango} & \mbox{Método 2} & \mbox{Rango}  & \mbox{Método 3} & \mbox{Rango} & \mbox{Método 4} & \mbox{Rango} \\  
@@ -213,8 +206,7 @@ $$
 \hline
 \hline
 \end{array}
- \end{equation*}
- $$
+$$
  
 
 **Supuestos:**
@@ -254,9 +246,7 @@ $$T= 25.46$$
 **Paso 5** Regla de decisión
 
 
-* Si k =3 y $n_{i} \ \leq  \ 5 \cdots \ \forall $i$ \ y \ NO HAY EMPATES $Tablas Kruskal-Wallis$ \cdots$
-
-y rechazo $H_0$ a un nivel de significancia $\alpha$ si $T > \omega^{1-\alpha}$ donde el cuantil se busca en tablas Kruskal-Wallis, en caso de no encontrar el valor se ocupa:
+* Si $k =3$ y $n_{i} \ \leq  \ 5 \cdots \ \forall i$  y NO HAY EMPATES, usar tablas Kruskal-Wallis y rechazo $H_0$ a un nivel de significancia $\alpha$ si $T > \omega^{1-\alpha}$ donde el cuantil se busca en tablas Kruskal-Wallis, en caso de no encontrar el valor se ocupa:
 
 * En general, rechazamos $H_0$ a un nivel de significancia $\alpha$ si $T > \chi_{k-1}^2(1- \alpha)$
 
@@ -341,7 +331,6 @@ En este caso observamos que todos los $p-value$s de las comparaciones dos a dos 
 1. Una muestra aleatoria de 5 diferentes marcas de focos son probados para medir la duración del foco, y los resultados fueron los siguientes:
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c||c||} 
 \hline 
 A & B&C&D&E \\ 
@@ -358,7 +347,6 @@ A & B&C&D&E \\
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Los datos observados indican una diferencia significativa entre las marcas? De haber diferencia, que marcas parecen ser las diferentes? Use $\alpha=10\%$
@@ -366,7 +354,6 @@ Los datos observados indican una diferencia significativa entre las marcas? De h
 2. Tres maestros desean comparar las claificaciones que pusieron en el semestre pasado para ver si alguno tiende a dar calificaciones diferentes que los otros.
 
 $$
-\begin{equation*}
 \begin{array}{||c| |c| |c| |c||} 
 \hline 
 \mbox{Calificación} & A & B&C \\  
@@ -383,7 +370,6 @@ $$
 \hline
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Con los datos observados se puede corroborar la sospecha de que alguno de los maestros da calificaciones diferentes a los otros? Use $\alpha=5\%$
@@ -392,7 +378,6 @@ Con los datos observados se puede corroborar la sospecha de que alguno de los ma
 Realiza la prueba correspondiente para poder concluir si, ¿Hay diferencia significativa entre la efectividad de las Dietas?
 
 $$
-\begin{equation*}
 \begin{array}{c c c c} 
 \textbf{Dieta 1} & \textbf{Dieta 2} & \textbf{Dieta 3} & \textbf{Dieta 4}\\
 6.1&5&7.6&6.2\\
@@ -401,7 +386,6 @@ $$
 2.4&5.7&7.9&4.6\\
 9.1&2.1&5.9&7\\
 \end{array}
-\end{equation*}
 $$
 
 

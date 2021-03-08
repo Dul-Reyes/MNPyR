@@ -709,7 +709,7 @@ beta_gorro
 
 **Residuales**
 
-Ahora calcularemos los residuales, es decir la diferencia entre los valores observados y los valores estimados. $e_i = y_i −\hat{y_i}$ 
+Ahora calcularemos los residuales, es decir la diferencia entre los valores observados y los valores estimados ($e_i = y_i-\hat{y}_i$)
 
 Primero calculamos el vector de los valores estimados $\hat{y}$:
 
@@ -718,7 +718,7 @@ y_gorro=beta0+beta1*x
 ```
 
 
-Y luego los residuales y los graﬁcamos
+Luego los residuales y los graficamos
 
 
 ```{r}
@@ -727,7 +727,7 @@ plot(e,type = "p",pch=16, ylab="residuales",col="deeppink4")
 abline(a=0,b=0, col="green4")
 ```
 
-Para que el modelo propuesto ajuste bien a los datos originales esperariamos que los residuales estuvieran lo mas cercano al cero (linea amarilla). Mas adelante veremos como usar estos gráﬁco para veriﬁcar algunos de los supuestos del modelo.
+Para que el modelo propuesto ajuste bien a los datos originales esperaríamos que los residuales estuvieran lo mas cercano al cero (linea amarilla). Mas adelante veremos como usar estos gráficos para verificar algunos de los supuestos del modelo.
 
 
 

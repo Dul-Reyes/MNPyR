@@ -1,4 +1,4 @@
-escalas-de-medición-conover1998practical
+escalas-de-medición
 variables-categóricas
 escala-nominal
 escala-ordinal

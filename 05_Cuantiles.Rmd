@@ -283,7 +283,6 @@ binom.test(T_1,n,p=0.5,alternative = "less")
 1. Una muestra aleatoria de niños de tercer año de secundaria mostró las siguientes observaciones de peso (kg)
 
 $$
-\begin{equation*}
 \begin{array}{|c| |c| |c| |c| |c|} 
 \hline
 64&	60&	44&	54&	61\\
@@ -292,7 +291,6 @@ $$
 75&	38&	53&	58&46\\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Probar:
@@ -306,7 +304,6 @@ c)	El tercer decil no es mayor a 45kg.
 2. La siguiente es una muestra de 15 departamentos nuevos de 2 recamaras con estacionamiento en la colonias Roma, Condesa y Escandón. Los datos están en millones de pesos.
 
 $$
-\begin{equation*}
 \begin{array}{|c| |c| |c|} 
 \hline
 6.4&	5&	4.2\\
@@ -316,7 +313,6 @@ $$
 8.1&	5.8&	6.3\\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Probar:

@@ -34,7 +34,7 @@
   
 <link rel="prev" href="prueba-de-kruskal-wallis.html"/>
 <link rel="next" href="prueba-para-más-de-dos-muestras.html"/>
-<script src="libs/header-attrs-2.6.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -149,17 +149,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#licencia"><i class="fa fa-check"></i>Licencia</a></li>
 </ul></li>
 <li class="part"><span><b>I Un primer vistazo</b></span></li>
-<li class="chapter" data-level="1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición <span class="citation">Conover (<span>1998</span>)</span></a>
+<li class="chapter" data-level="1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html"><i class="fa fa-check"></i><b>1</b> Escalas de Medición</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
+<li class="chapter" data-level="1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-categóricas"><i class="fa fa-check"></i><b>1.1</b> Variables categóricas</a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
-<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
+<li class="chapter" data-level="1.1.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-nominal"><i class="fa fa-check"></i><b>1.1.1</b> Escala nominal:</a></li>
+<li class="chapter" data-level="1.1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-ordinal"><i class="fa fa-check"></i><b>1.1.2</b> Escala ordinal:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
+<li class="chapter" data-level="1.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#variables-cuantitativas"><i class="fa fa-check"></i><b>1.2</b> Variables cuantitativas</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
-<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición-conover1998practical.html"><a href="escalas-de-medición-conover1998practical.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-intervalo"><i class="fa fa-check"></i><b>1.2.1</b> Escala de intervalo:</a></li>
+<li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
@@ -469,7 +469,6 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 <h2><span class="header-section-number">10.2</span> Ejemplo</h2>
 <p>Una cuenca hidrográfica particular se ha construido extensivamente en los últimos años, con desarrollos de vivienda, represas, etc. una muestra aleatoria de las tasas de flujo de la corriente (pies cúbicos por minuto) para una corriente en esa cuenca hidrográfica se compara con una muestra de las tasas de tiempos anteriores para ver si la variabilidad ha cambiado.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c} 
 \textbf{Tasas Actuales} &amp;  &amp; \textbf{Tasas Pasadas} \\
 32 &amp; &amp; 39 \\
@@ -481,7 +480,6 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 31 &amp; &amp; 17 \\
 28 &amp; &amp; 19 \\
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>Es significativa la diferencia en las varianzas? Utiliza <span class="math inline">\(\alpha\)</span>=0.05</p>
 <p><strong>Paso 1</strong> Prueba a utilizar <strong>Prueba de Igualdad de Varianzas</strong></p>
@@ -492,7 +490,6 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 <p><strong>Paso 4</strong> Procedimiento completo</p>
 <p>Primero como <span class="math inline">\(\mu_{1}\)</span> y <span class="math inline">\(\mu_{2}\)</span> son desconocidas se usará <span class="math inline">\(\overline{X}\)</span> para <span class="math inline">\(\mu_{1}\)</span> y <span class="math inline">\(\overline{Y}\)</span> para <span class="math inline">\(\mu_{2}\)</span>.</p>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{c c c c c c c c }
 \mbox{Medidas} &amp; \mbox{Originales} &amp; \mbox{Desviación} &amp; \mbox{Absoluta} &amp; \mbox{Rangos} &amp; \mbox{Rangos} &amp; \mbox{Rangos} &amp; \mbox{Al Cuadrado} \\
 \mbox{Tasas Actuales} &amp; \mbox{Tasas Pasadas} &amp; \mbox{Actuales} &amp; \mbox{Pasadas} &amp; \mbox{Actuales} &amp; \mbox{Pasadas}&amp; \mbox{Actuales} &amp; \mbox{Pasadas} \\
@@ -508,7 +505,6 @@ Donde <span class="math inline">\(N= n+m\)</span></p>
 \hline
 \overline{X}= 34.75 &amp; \overline{Y}= 31.5 &amp; &amp; &amp; &amp; &amp; T=381
 \end{array}
-\end{equation*}
 \]</span></p>
 <p><span class="math inline">\(T\)</span>= Sumas del cuadrado de los rangos (Actuales) = 381</p>
 <p><span class="math inline">\(\overline{R^2}= \frac{1}{16}\left(16+4+36+\cdots+210.25+144\right)\)</span>=93.46</p>
@@ -725,7 +721,6 @@ ratio of variances
 <li>Un banco de sangre mantuvo un registro de la frecuencia cardíaca de varios donadores de sangre.</li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c||} 
 \hline 
 \mbox{Hombres}&amp; \mbox{Mujeres} \\  
@@ -750,14 +745,12 @@ ratio of variances
  \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 <p>¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia <span class="math inline">\(5\%\)</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia <span class="math inline">\(10\%\)</span></li>
 </ol>
 <p><span class="math display">\[
-\begin{equation*}
 \begin{array}{||c| |c||} 
 \hline 
 \mbox{Des Moines}&amp; \mbox{Spokane} \\ 
@@ -788,7 +781,6 @@ ratio of variances
  \hline
 \hline
 \end{array}
-\end{equation*}
 \]</span></p>
 
 </div>
@@ -841,7 +833,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["_main.pdf"],
 "toc": {
 "collapse": "section"
 }

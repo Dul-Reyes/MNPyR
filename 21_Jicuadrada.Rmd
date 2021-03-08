@@ -62,7 +62,6 @@ Un gobierno local tiene registros del número de niños y el número de hogares 
 Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados se muestran en la siguiente tabla:
 
 $$
-\begin{equation*}
 \begin{array}{|c |c c c c c c c|}
 \hline
 \textbf{Número de niños} &0 &1 &2& 3&4 &5+& \\
@@ -70,13 +69,11 @@ $$
 \textbf{Número de hogares} & 273& 361&263 &78 & 21 & 4& \\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 **NOTA:** Como tenemos una categoría con obeservaciones menores a 5 colapsamos la categoría.
 
 $$
-\begin{equation*}
 \begin{array}{|c |c c c c c|}
 \hline
 \textbf{  Número de niños} &0 &1 &2& 3&4+  \\
@@ -84,7 +81,6 @@ $$
 \textbf{Número de hogares} & 273& 361&263 &78 & 25  \\
 \hline
 \end{array}
-\end{equation*}
  $$
  
  
@@ -107,7 +103,6 @@ Nos ayudaremos de la siguiente tablita:
 
 
 $$
-\begin{equation*}
 \begin{array}{c c c c c}
 \hline
 \textbf{Número de niños} & \textbf{Número de hogares} & P_{i} & e_i=n \times P_i \\
@@ -120,7 +115,6 @@ $$
 \hline
 &n=1000&.9854\approx1 &9854\approx1000 \\
 \end{array}
-\end{equation*}
 $$
 
 **Paso 3** Estadístico de prueba
@@ -221,7 +215,6 @@ chisq.test(c(273,361,263,78,25), p = c(0.2466,0.3452,0.2417,
 1. Se lanza un dado 600 veces se obtuvieron los siguientes resultados.
 
 $$
-\begin{equation*}
 \begin{array}{|c ||c |c |c|c|c|c|}
 \hline 
 \textbf{Número del dado} & 1& 2& 3&4&5&6 \\
@@ -229,7 +222,6 @@ $$
 \textbf{Observaciones} & 87 &  96 &108&89&122&98 \\
  \hline 
 \end{array}
-\end{equation*}
 $$
 
 ¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use $\alpha=0.10$
@@ -237,7 +229,6 @@ $$
 2. Cierto banco otorga crédito a las personas con una tasa preferencial, de tal manera que los acreditados pueden pagar en cualquier momento desde que piden el préstamo hasta 8 semanas posteriores para que les sea respetada la tasa preferencial. Se seleccionaron aleatoriamente a 1,000 personas y observó su comportamiento de pago, generando de esta manera la siguiente tabla de frecuencia:
 
 $$
-\begin{equation*}
 \begin{array}{|c|c|  }
 \hline
 \mbox{Semana}& \mbox{Créditos Pagados}\\
@@ -253,7 +244,6 @@ $$
 \mbox{8 semanas o más} & 1\\
 \hline
 \end{array}
-\end{equation*}
 $$
 
 Probar que el pago de estos créditos, sigue una distribución binomial con parámetros $n = 10$ y $p = 0.25$.
