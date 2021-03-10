@@ -2,21 +2,27 @@
 
 La prueba de signos merece una consideración especial debido a su versatilidad, su gran utilidad y simplicidad. Ésta es una prueba de proporciones cuando el valor específico $p^*=1/2$ y para los casos de dos colas, cola inferior y cola superior la máxima probabilidad para rechazar la hipótesis nula $H_0$ se da cuando $p = 1/2$. Frecuentemente la prueba de signos también es apropiada para analizar datos de un vector aleatorio $(X,Y)$ y ver si alguna de sus entradas tiene valores más grandes que la otra. De esta manera, si una variable tiende a tener valores mayores que la otra, se puede utilizar la prueba de signos para determinar si las medias de éstas variables son diferentes. 
 
-**Datos**
+## Datos
 
 Los datos consisten en observaciones bivariadas aleatorias:  
 
 $$(X_{1},Y_{1}),(X_{2},Y_{2}),(X_{3},Y_{3}),\cdots,(X_{n'},Y_{n'})$$
 
-Dentro de cada par de datos en la muestra se clasificará por un signo $"+"$ cuando $X_{i} < Y_{i}$, por un signo "-" cuando $X_{i} > Y_{i}$ y se omitirán las parejas cuando $Xi = Yi$. El tamaño de la muestra después de quitar los empates será $n$. 
+Dentro de cada par de datos en la muestra se clasificará de la siguiente manera:
 
-**Supuestos**
++ Por un signo $"+"$ cuando $X_{i} < Y_{i}$
++ Por un signo "-" cuando $X_{i} > Y_{i}$ 
++ Se omitirán las parejas cuando $Xi = Yi$. 
+
+El tamaño de la muestra después de quitar los empates será $n$. 
+
+## Supuestos
 
 1) Las variables aleatorias bivariadas $(X_{i},Y_{i})$ son mutuamente independientes.
 
 2) La escala de medida es al menos ordinal dentro de cada par.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 $$T=Total\ de\ signos\ "+"$$
 
@@ -27,9 +33,9 @@ $$T\sim Bin(n,1/2)$$
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]$$ 
 
@@ -37,7 +43,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -66,7 +72,7 @@ Sugerimos que si $n > 20$, el $p-value$ puede obtenerse más sencillo usando la 
 $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right)$$
 $$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)$$
 
-**Caso B** (Prueba de cola inferior)
+### Caso B (Prueba de cola inferior) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]$$ 
 
@@ -74,8 +80,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]$$
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -95,7 +100,7 @@ Sugerimos que si $n > 20$,el $p-value$ puede obtenerse más sencillo usando la a
 
 $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)$$
 
-**Caso C** (Prueba de cola superior)
+### Caso C (Prueba de cola superior) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]$$ 
 
@@ -103,7 +108,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -147,7 +152,13 @@ $$
 
 El grupo de amigos desea ver si la dieta que están realizando es efectiva.
 
-Recordando que cada par de datos en la muestra se clasificará por un signo $"+"$ cuando $X_{i} < Y_{i}$, por un signo "-" cuando $X_{i} > Y_{i}$ y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
+Recordando que cada par de datos en la muestra se clasificará de la siguiente manera:
+
++ $"+"$ cuando $X_{i} < Y_{i}$
++ $"-"$ cuando $X_{i} > Y_{i}$ 
+
+y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
+
 $$
 \begin{array}{|c |c |c |c c c|}
 \hline
@@ -268,7 +279,7 @@ binom.test(T,n,p=0.5,alternative = "less")
 ```
 
 
-##Ejercicios
+## Ejercicios
 
 1. En una encuesta anual para determinar si los salarios en el sector federal son proporcionales con los pagos en el sector privado, los trabajadores publicos y privados fueron emparejados tan cerca como fue posible (con respecto al tipo de trabajo, formación académica, años de experiencia, etc.) los salarios se ordenaron en parejas.
 

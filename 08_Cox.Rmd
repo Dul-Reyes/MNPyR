@@ -6,14 +6,14 @@ intentar descubrir si hay o no una tendencia es fijarse en las diferencias del t
 Si $\{X_{i}\}^{n}_{i=1}$ tuviera una tendencia creciente, esperaríamos que las diferencias $X_{i+c} - X_{i}$ fuesen, en promedio, positivas, en cambio, si la tendencia fuese decreciente, se esperaría que las $X_{i+c} - X_{i}$ fueran negativas, en promedio.
 Note que la elección de $c$ produce las mayores distancias entre índices temporales para diferencias homogéneas de la serie de tiempo.
 
-**Datos**
+## Datos
 
 Los datos son observaciones consecutivas de una serie de tiempo $\{X_{i}\}^{n}_{i=1}$.
 
 En esta prueba se agrupan en  parejas de la forma $(X_{i},X_{i+c})$ a las que se les asigna el signo $"+"$ si $X_{i+c} > X_{i}$, el signo $"-"$ si $X_{i+c} < X_{i}$ o "0" si hay empates. 
 
 
-**Supuestos**
+## Supuestos
 
 1) Las variables aleatorias $X_{1}, X_{2}, \ldots, X_{n}$ son mutuamente independientes.
 
@@ -21,7 +21,7 @@ En esta prueba se agrupan en  parejas de la forma $(X_{i},X_{i+c})$ a las que se
 
 3) Las $X_{i}s$ son todas idénticamente distribuidas o existe una tendencia creciente o decreciente.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 $$T=Total\ de\ signos\ "+"$$
 
@@ -31,10 +31,9 @@ $$T\sim Bin(n,1/2)$$
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
+## Hipótesis
 
-**Hipótesis**
-
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]$$ 
 
@@ -42,7 +41,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -71,7 +70,7 @@ Sugerimos que si $n>20$,el $p-value$ puede obtenerse más sencillo usando la apr
 $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)$$
 $$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)$$
 
-**Caso B** (Prueba de cola inferior)
+### Caso B (Prueba de cola inferior) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]$$ 
 
@@ -79,7 +78,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -99,7 +98,7 @@ Sugerimos que si $n>20$,el $p-value$ puede obtenerse más sencillo usando la apr
 
 $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}})$$
 
-**Caso C** (Prueba de cola superior)
+### Caso C (Prueba de cola superior) {-}
 
 $$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]$$ 
 
@@ -107,7 +106,7 @@ $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -245,7 +244,7 @@ La estadística de prueba será $T=5$. Tomaremos $\alpha=5\%$
 
 #Datos
 
-T=5              #Número de éxitos (+)
+T_1=5              #Número de éxitos (+)
 alpha=0.05       #Nivel de significancia
 n=12              #Tamaño de la muestra 
 p=0.5            #Para la prueba de cox "p" siempre será 1/2
@@ -263,7 +262,7 @@ Calculamos $t$ y el $p-value$:
 ```{r}
 t=qbinom(.05,n,p)       #Cuantil a comparar con el estadístico
 t
-pvalue=dbinom(T_1,n,p)  #p-value
+pvalue=pbinom(T_1,n,p)  #p-value
 pvalue
 ```
 Tenemos que como $T=5\nleq 3 =t$, entonces NO se rechaza $H_0$ y por lo tanto se concluye que NO hay información suficiente para decir que la tasa promedio de descarga mensual este disminuyendo.
@@ -280,8 +279,7 @@ library(randtests)
 cox.stuart.test(x)
 ```
 
-
-##Ejercicios
+## Ejercicios
 
 1. Un programa ecológico sobre la contaminación de un río tomó 5 muestras de agua de  diferentes lugares de un río antes y después de dos años, obteniéndose los siguientes resultados. Los números representan la media de la contaminación, donde medidas grandes indican alta contaminación.
 

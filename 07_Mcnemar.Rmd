@@ -19,7 +19,7 @@ $$
 \end{array} 
 $$
 
-**Datos**
+## Datos
 
 Los datos consisten en observaciones bivariadas aleatorias:  
 
@@ -39,7 +39,7 @@ $$
 \end{array} 
 $$
 
-**Supuestos**
+## Supuestos
 
 1) Cada pareja ($X_{i},Y_{i}$) son mutuamente independientes.
 
@@ -47,7 +47,7 @@ $$
 
 3) La probabilidad de que se observe (0,1) es $\geq$ que la de (1,0) o la de (1,0) es $\geq$ (0,1) para todos los elementos de la muestra.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 $$T_{1}=\frac{(b-c)^2}{(b+c)} \ \thickapprox \ \chi^{2}_{(1)}$$
 Es decir, la distribución de $T_{1}$ es aproximadamente $\chi^{2}_{(1)}$.
@@ -62,9 +62,9 @@ Es decir, la distribución de $T_{2}$ es exactamente  $Bin(b+c,p)$
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0]$$ 
 $$vs$$
@@ -74,7 +74,7 @@ $$\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0]$$
 
 Es decir, se quiere ver si la probabilidad de que el individuo pase de 0 a 1 es la misma que la probabilidad de que pase de 1 a 0. En otras palabras, se quiere comprobar si el efecto del tratamiento fue neutro o si hay alguna tendencia tras el mismo.
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -228,7 +228,7 @@ Calculamos $t$ y el $p-value$:
 ```{r}
 t=qbinom(.05,n,p)       #Valor con el que vamos a comparar el estadístico
 t
-pvalue=dbinom(T_2,n,p)   #P-value
+pvalue=2*min(c(pbinom(T_2,n,p), pbinom(T_2,n,p,lower.tail = F)))   #P-value
 pvalue
 ```
 Tenemos que como $T_2=4\leq 5 =t$, entonces se rechaza $H_0$ como ya rechazamos en la cola inferior no es necesario probar la cola superior, pero si NO hubieramos rechazado con la primer ecuación debemos probar si $T_2>n-t$.

@@ -593,7 +593,7 @@ La estadística de prueba será \(T=O_1\)
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{pvalue=}\DecValTok{1}\OperatorTok{{-}}\KeywordTok{pbinom}\NormalTok{(}\DecValTok{17}\NormalTok{,}\DecValTok{20}\NormalTok{,.}\DecValTok{7}\NormalTok{)                 }\CommentTok{\#P{-}value}
-
+\CommentTok{\#Otra opción sería: 1{-}pbinom(17,20,.7, lower.tail = F)}
 \NormalTok{pvalue}
 \end{Highlighting}
 \end{Shaded}
@@ -1011,15 +1011,29 @@ Probar:
 
 La prueba de signos merece una consideración especial debido a su versatilidad, su gran utilidad y simplicidad. Ésta es una prueba de proporciones cuando el valor específico \(p^*=1/2\) y para los casos de dos colas, cola inferior y cola superior la máxima probabilidad para rechazar la hipótesis nula \(H_0\) se da cuando \(p = 1/2\). Frecuentemente la prueba de signos también es apropiada para analizar datos de un vector aleatorio \((X,Y)\) y ver si alguna de sus entradas tiene valores más grandes que la otra. De esta manera, si una variable tiende a tener valores mayores que la otra, se puede utilizar la prueba de signos para determinar si las medias de éstas variables son diferentes.
 
-\textbf{Datos}
+\hypertarget{datos}{%
+\section{Datos}\label{datos}}
 
 Los datos consisten en observaciones bivariadas aleatorias:
 
 \[(X_{1},Y_{1}),(X_{2},Y_{2}),(X_{3},Y_{3}),\cdots,(X_{n'},Y_{n'})\]
 
-Dentro de cada par de datos en la muestra se clasificará por un signo \("+"\) cuando \(X_{i} < Y_{i}\), por un signo ``-'' cuando \(X_{i} > Y_{i}\) y se omitirán las parejas cuando \(Xi = Yi\). El tamaño de la muestra después de quitar los empates será \(n\).
+Dentro de cada par de datos en la muestra se clasificará de la siguiente manera:
 
-\textbf{Supuestos}
+\begin{itemize}
+\tightlist
+\item
+  Por un signo \("+"\) cuando \(X_{i} < Y_{i}\)
+\item
+  Por un signo ``-'' cuando \(X_{i} > Y_{i}\)
+\item
+  Se omitirán las parejas cuando \(Xi = Yi\).
+\end{itemize}
+
+El tamaño de la muestra después de quitar los empates será \(n\).
+
+\hypertarget{supuestos}{%
+\section{Supuestos}\label{supuestos}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1029,7 +1043,8 @@ Dentro de cada par de datos en la muestra se clasificará por un signo \("+"\) c
   La escala de medida es al menos ordinal dentro de cada par.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba}}
 
 \[T=Total\ de\ signos\ "+"\]
 
@@ -1039,9 +1054,12 @@ La distribución nula de \(T\) es una distribución binomial con \(n\) el númer
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis}{%
+\section{Hipótesis}\label{hipuxf3tesis}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]\]
 
@@ -1049,7 +1067,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1076,7 +1096,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 \[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)\]
 
-\textbf{Caso B} (Prueba de cola inferior)
+\hypertarget{caso-b-prueba-de-cola-inferior}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]\]
 
@@ -1084,7 +1106,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-1}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-1}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1104,7 +1128,9 @@ Sugerimos que si \(n > 20\),el \(p-value\) puede obtenerse más sencillo usando 
 
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 
-\textbf{Caso C} (Prueba de cola superior)
+\hypertarget{caso-c-prueba-de-cola-superior}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]\]
 
@@ -1112,7 +1138,9 @@ Sugerimos que si \(n > 20\),el \(p-value\) puede obtenerse más sencillo usando 
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-2}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-2}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1154,7 +1182,18 @@ Phil  & 188 & 181 \\
 
 El grupo de amigos desea ver si la dieta que están realizando es efectiva.
 
-Recordando que cada par de datos en la muestra se clasificará por un signo \("+"\) cuando \(X_{i} < Y_{i}\), por un signo ``-'' cuando \(X_{i} > Y_{i}\) y se omitirán las parejas cuando \(X_i = Y_i\). Y el tamaño de la muestra después de quitar los empates será \(n\), haremos lo siguiente:
+Recordando que cada par de datos en la muestra se clasificará de la siguiente manera:
+
+\begin{itemize}
+\tightlist
+\item
+  \("+"\) cuando \(X_{i} < Y_{i}\)
+\item
+  \("-"\) cuando \(X_{i} > Y_{i}\)
+\end{itemize}
+
+y se omitirán las parejas cuando \(X_i = Y_i\). Y el tamaño de la muestra después de quitar los empates será \(n\), haremos lo siguiente:
+
 \[
 \begin{array}{|c |c |c |c c c|}
 \hline
@@ -1312,7 +1351,8 @@ probability of success
              0.1666667 
 \end{verbatim}
 
-\#\#Ejercicios
+\hypertarget{ejercicios-2}{%
+\section{Ejercicios}\label{ejercicios-2}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1458,7 +1498,8 @@ Luego se ingresan estos datos en una tabla de contingencia de la siguiente forma
 \end{array} 
 \]
 
-\textbf{Datos}
+\hypertarget{datos-1}{%
+\section{Datos}\label{datos-1}}
 
 Los datos consisten en observaciones bivariadas aleatorias:
 
@@ -1478,7 +1519,8 @@ En general los datos se resumen en una tabla de contingencia de la forma:
 \end{array} 
 \]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-1}{%
+\section{Supuestos}\label{supuestos-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1490,7 +1532,8 @@ En general los datos se resumen en una tabla de contingencia de la forma:
   La probabilidad de que se observe (0,1) es \(\geq\) que la de (1,0) o la de (1,0) es \(\geq\) (0,1) para todos los elementos de la muestra.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-1}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-1}}
 
 \[T_{1}=\frac{(b-c)^2}{(b+c)} \ \thickapprox \ \chi^{2}_{(1)}\]
 Es decir, la distribución de \(T_{1}\) es aproximadamente \(\chi^{2}_{(1)}\).
@@ -1503,9 +1546,12 @@ Es decir, la distribución de \(T_{2}\) es exactamente \(Bin(b+c,p)\)
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-1}{%
+\section{Hipótesis}\label{hipuxf3tesis-1}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas-1}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-1}}
+
 
 \[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0]\]
 \[vs\]
@@ -1514,7 +1560,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 Es decir, se quiere ver si la probabilidad de que el individuo pase de 0 a 1 es la misma que la probabilidad de que pase de 1 a 0. En otras palabras, se quiere comprobar si el efecto del tratamiento fue neutro o si hay alguna tendencia tras el mismo.
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-3}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-3}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1676,13 +1724,13 @@ Calculamos \(t\) y el \(p-value\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pvalue=}\KeywordTok{dbinom}\NormalTok{(T\_}\DecValTok{2}\NormalTok{,n,p)   }\CommentTok{\#P{-}value}
+\NormalTok{pvalue=}\DecValTok{2}\OperatorTok{*}\KeywordTok{min}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\KeywordTok{pbinom}\NormalTok{(T\_}\DecValTok{2}\NormalTok{,n,p), }\KeywordTok{pbinom}\NormalTok{(T\_}\DecValTok{2}\NormalTok{,n,p,}\DataTypeTok{lower.tail =}\NormalTok{ F)))   }\CommentTok{\#P{-}value}
 \NormalTok{pvalue}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[1] 0.027771
+[1] 0.07681274
 \end{verbatim}
 
 Tenemos que como \(T_2=4\leq 5 =t\), entonces se rechaza \(H_0\) como ya rechazamos en la cola inferior no es necesario probar la cola superior, pero si NO hubieramos rechazado con la primer ecuación debemos probar si \(T_2>n-t\).
@@ -1747,8 +1795,8 @@ data:  data
 McNemar's chi-squared = 4, df = 1, p-value = 0.0455
 \end{verbatim}
 
-\hypertarget{ejercicios-2}{%
-\section{Ejercicios}\label{ejercicios-2}}
+\hypertarget{ejercicios-3}{%
+\section{Ejercicios}\label{ejercicios-3}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1781,13 +1829,15 @@ intentar descubrir si hay o no una tendencia es fijarse en las diferencias del t
 Si \(\{X_{i}\}^{n}_{i=1}\) tuviera una tendencia creciente, esperaríamos que las diferencias \(X_{i+c} - X_{i}\) fuesen, en promedio, positivas, en cambio, si la tendencia fuese decreciente, se esperaría que las \(X_{i+c} - X_{i}\) fueran negativas, en promedio.
 Note que la elección de \(c\) produce las mayores distancias entre índices temporales para diferencias homogéneas de la serie de tiempo.
 
-\textbf{Datos}
+\hypertarget{datos-2}{%
+\section{Datos}\label{datos-2}}
 
 Los datos son observaciones consecutivas de una serie de tiempo \(\{X_{i}\}^{n}_{i=1}\).
 
 En esta prueba se agrupan en parejas de la forma \((X_{i},X_{i+c})\) a las que se les asigna el signo \("+"\) si \(X_{i+c} > X_{i}\), el signo \("-"\) si \(X_{i+c} < X_{i}\) o ``0'' si hay empates.
 
-\textbf{Supuestos}
+\hypertarget{supuestos-2}{%
+\section{Supuestos}\label{supuestos-2}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1799,7 +1849,8 @@ En esta prueba se agrupan en parejas de la forma \((X_{i},X_{i+c})\) a las que s
   Las \(X_{i}s\) son todas idénticamente distribuidas o existe una tendencia creciente o decreciente.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-2}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-2}}
 
 \[T=Total\ de\ signos\ "+"\]
 
@@ -1809,9 +1860,12 @@ La distribución nula de \(T\) es una distribución binomial con \(n\) el númer
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-2}{%
+\section{Hipótesis}\label{hipuxf3tesis-2}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas-2}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-2}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]\]
 
@@ -1819,7 +1873,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-4}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-4}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1846,7 +1902,9 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 \[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)\]
 
-\textbf{Caso B} (Prueba de cola inferior)
+\hypertarget{caso-b-prueba-de-cola-inferior-1}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-1}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]\]
 
@@ -1854,7 +1912,9 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-5}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-5}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1874,7 +1934,9 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}})\]
 
-\textbf{Caso C} (Prueba de cola superior)
+\hypertarget{caso-c-prueba-de-cola-superior-1}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-1}}
+
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]\]
 
@@ -1882,7 +1944,9 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-6}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-6}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -2026,7 +2090,7 @@ La estadística de prueba será \(T=5\). Tomaremos \(\alpha=5\%\)
 \begin{Highlighting}[]
 \CommentTok{\#Datos}
 
-\NormalTok{T=}\DecValTok{5}              \CommentTok{\#Número de éxitos (+)}
+\NormalTok{T\_}\DecValTok{1}\NormalTok{=}\DecValTok{5}              \CommentTok{\#Número de éxitos (+)}
 \NormalTok{alpha=}\FloatTok{0.05}       \CommentTok{\#Nivel de significancia}
 \NormalTok{n=}\DecValTok{12}              \CommentTok{\#Tamaño de la muestra }
 \NormalTok{p=}\FloatTok{0.5}            \CommentTok{\#Para la prueba de cox "p" siempre será 1/2}
@@ -2054,13 +2118,13 @@ Calculamos \(t\) y el \(p-value\):
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pvalue=}\KeywordTok{dbinom}\NormalTok{(T\_}\DecValTok{1}\NormalTok{,n,p)  }\CommentTok{\#p{-}value}
+\NormalTok{pvalue=}\KeywordTok{pbinom}\NormalTok{(T\_}\DecValTok{1}\NormalTok{,n,p)  }\CommentTok{\#p{-}value}
 \NormalTok{pvalue}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-[1] 0.05371094
+[1] 0.387207
 \end{verbatim}
 
 Tenemos que como \(T=5\nleq 3 =t\), entonces NO se rechaza \(H_0\) y por lo tanto se concluye que NO hay información suficiente para decir que la tasa promedio de descarga mensual este disminuyendo.
@@ -2104,7 +2168,8 @@ statistic = 4, n = 12, p-value = 0.3877
 alternative hypothesis: non randomness
 \end{verbatim}
 
-\#\#Ejercicios
+\hypertarget{ejercicios-4}{%
+\section{Ejercicios}\label{ejercicios-4}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3101,8 +3166,8 @@ P value adjustment method: holm
 
 En este caso observamos que todos los \(p-value\)s de las comparaciones dos a dos son menores a 0.05 por lo tanto con un \(\alpha\) del 5\% podemos conlcuir que todos los métodos tienen distribuciones de los rendimientos distintas.
 
-\hypertarget{ejercicios-3}{%
-\section{Ejercicios}\label{ejercicios-3}}
+\hypertarget{ejercicios-5}{%
+\section{Ejercicios}\label{ejercicios-5}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4437,8 +4502,8 @@ data:  tabla
 X-squared = 8.8934, df = 2, p-value = 0.01172
 \end{verbatim}
 
-\hypertarget{ejercicios-4}{%
-\section{Ejercicios}\label{ejercicios-4}}
+\hypertarget{ejercicios-6}{%
+\section{Ejercicios}\label{ejercicios-6}}
 
 \hypertarget{prueba-de-independencia}{%
 \chapter{Prueba de Independencia}\label{prueba-de-independencia}}
@@ -4755,8 +4820,8 @@ data:  tabla
 X-squared = 13.125, df = 2, p-value = 0.001412
 \end{verbatim}
 
-\hypertarget{ejercicios-5}{%
-\section{Ejercicios}\label{ejercicios-5}}
+\hypertarget{ejercicios-7}{%
+\section{Ejercicios}\label{ejercicios-7}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5126,8 +5191,8 @@ data:  tabla
 X-squared = 17.286, df = 4, p-value = 0.001701
 \end{verbatim}
 
-\hypertarget{ejercicios-6}{%
-\section{Ejercicios}\label{ejercicios-6}}
+\hypertarget{ejercicios-8}{%
+\section{Ejercicios}\label{ejercicios-8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5500,8 +5565,8 @@ odds ratio
 
 Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por \(m^2\).
 
-\hypertarget{ejercicios-7}{%
-\section{Ejercicios}\label{ejercicios-7}}
+\hypertarget{ejercicios-9}{%
+\section{Ejercicios}\label{ejercicios-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5815,8 +5880,8 @@ data:  c(273, 361, 263, 78, 25)
 X-squared = 20.96, df = 4, p-value = 0.0003226
 \end{verbatim}
 
-\hypertarget{ejercicios-8}{%
-\section{Ejercicios}\label{ejercicios-8}}
+\hypertarget{ejercicios-10}{%
+\section{Ejercicios}\label{ejercicios-10}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6139,8 +6204,8 @@ alternative hypothesis: two-sided
 
 Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspondiente \(p-value\) es \(26.13\%\), por lo tanto con \(\alpha=5\%\) no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es normal(0,1).
 
-\hypertarget{ejercicios-9}{%
-\section{Ejercicios}\label{ejercicios-9}}
+\hypertarget{ejercicios-11}{%
+\section{Ejercicios}\label{ejercicios-11}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6448,8 +6513,8 @@ D = 0.2, p-value = 0.9383
 alternative hypothesis: two-sided
 \end{verbatim}
 
-\hypertarget{ejercicios-10}{%
-\section{Ejercicios}\label{ejercicios-10}}
+\hypertarget{ejercicios-12}{%
+\section{Ejercicios}\label{ejercicios-12}}
 
 \hypertarget{prueba-lilliefors-para-normalidad}{%
 \chapter{Prueba Lilliefors para Normalidad}\label{prueba-lilliefors-para-normalidad}}
@@ -6765,8 +6830,8 @@ D = 0.08739, p-value = 0.4436
 
 Observamos que la estadística de prueba tiene un valor de 0.08739 y su correspondiente p-value es \(44.36\%\), por lo tanto no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es \(N(0,1)\). Esperabamos que la prueba diera ese resultado ya que por construcción la muestra proviene de una distribucion \(N(0,1)\).
 
-\hypertarget{ejercicios-11}{%
-\section{Ejercicios}\label{ejercicios-11}}
+\hypertarget{ejercicios-13}{%
+\section{Ejercicios}\label{ejercicios-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7064,8 +7129,8 @@ D = 0.15238, p-value = 0.458
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejercicios-12}{%
-\section{Ejercicios}\label{ejercicios-12}}
+\hypertarget{ejercicios-14}{%
+\section{Ejercicios}\label{ejercicios-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
