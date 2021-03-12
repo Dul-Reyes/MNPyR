@@ -10,7 +10,7 @@ Después de aplicar el tratamiento los mismos $N$ objetos son nuevamente examina
 
 El uso de las tablas de contingencia fue introducido anteriormente, y se vio que el procedimiento estadístico apropiado era una variación de la prueba de signos conocida como **McNemar**.
 
-**Datos**
+## Datos
 
 Una muestra aleatoria de $n_{1}$ observaciones se extrae de una población (o antes de aplicar un tratamiento) y cada observación se clasifica en la clase 1 o 2, los números totales en las dos clases son $O_{11}$  y $O_{12}$ respectivamente, donde $O_{11} + O_{12}= n_{1}$.
 
@@ -32,7 +32,7 @@ $$
 
 El número total de observaciones es denotado por $N$.
 
-**Supuestos**
+## Supuestos
 
 1) Cada muestra es una muestra aleatoria.
 
@@ -40,7 +40,7 @@ El número total de observaciones es denotado por $N$.
 
 3) Cada observación puede clasificarse en \ $Clase\  1$ \  o \ $Clase\ 2$.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 Si alguna columna total es cero, el estadístico de prueba es definido asi:
 
@@ -55,9 +55,9 @@ La distribución exacta de $T_1$ es difícil de array debido a todas las diferen
 
 Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribución normal estándar cuyos cuantiles se dan en la tabla correspondiente.
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** Prueba de dos colas
+### Caso A Prueba de dos colas {-}
 
 $$\textbf{H}_0: p_{1} = p_{2}$$
 
@@ -68,7 +68,7 @@ $$\textbf{H}_a: p_{1} \neq p_{2}$$
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
 
-**Regla de Decisión**
+#### Regla de Decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
@@ -87,7 +87,7 @@ donde $Z$ es una normal estándar.
 Para la hipótesis anterior, también es usual usar $T_{1}^2$ en lugar de $T_{1}$ como estadístico de prueba. Entonces la región de rechazo es la cola superior de la distribución $\chi^2$ con 1 grado de libertad, obtenidos en la tabla de la Distribución $\chi^2$.
 
 
-**Caso B** Prueba de cola inferior
+### Caso B Prueba de cola inferior {-}
 
 $$\textbf{H}_0: p_{1} \geq p_{2}$$
 
@@ -97,7 +97,7 @@ $$\textbf{H}_a: p_{1} < p_{2}$$
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
 
-**Regla de Decisión**
+#### Regla de Decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
@@ -111,7 +111,7 @@ Ahora calcularemos el $p-value$ de la siguiente manera:
 $$p-value=\mathbf{P}[Z<T_{1}]$$
 donde $Z$ es una normal estándar.
 
-**Caso C** Prueba de cola superior
+### Caso C Prueba de cola superior {-}
 
 $$\textbf{H}_0: p_{1} \leq p_{2}$$
 
@@ -122,7 +122,7 @@ $$\textbf{H}_a: p_{1} > p_{2}$$
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
 
 
-**Regla de Decisión**
+#### Regla de Decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 

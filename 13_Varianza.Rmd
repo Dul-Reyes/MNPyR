@@ -2,9 +2,9 @@
 
 Usualmente para comparar varias poblaciones nos basamos en las medias u otras medidas de ubicación de las poblaciones, en algunas situaciones las varianzas podrían ser nuestro campo de interés. Por ejemplo, se ha afirmado que el efecto de sembrar nubes con yoduro de plata podría aumentar la varianza de la lluvia resultante.
 
-## Prueba de Igualdad de Varianzas para 2 poblaciones
+## Prueba de Igualdad de Varianzas para 2 poblaciones {-}
 
-**Datos**
+## Datos
 
 Consiste en dos muestras aleatorias
 
@@ -13,7 +13,7 @@ $$\mbox{Sea} \ \ x_{1},x_{2},x_{3},\cdots,x_{n} \ \ \mbox{una muestra aleatoria 
  
 $$\mbox{Sea} \ \ y_{1},y_{2},y_{3},\cdots,y_{m} \ \ \mbox{una muestra aleatoria de tamaño} \ m \  \mbox{de la} \ poblacion\ 2.$$
 
-**Supuestos**
+## Supuestos
 
 1) Ambas muestras son aleatorias de su respectiva población.
 
@@ -43,18 +43,18 @@ Si varios valores de  $U$ y/o $V$  son exactamente iguales entre sí (empatados)
 Sean $R(U_{i})$ y $R(V_{j})$  los rangos así asignados.
 
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
-**Si no hay empates**
++ **Si no hay empates**
 
-Si no hay empates de la poblacion $U$ con la población $V$ ocupamos:
+Si no hay empates de la población $U$ con la población $V$ ocupamos:
 
 
 $$T=\sum_{i=1}^{n}[R(U_{i})]^2$$
 
 La suma de los cuadrados de los rangos asignados a la $población \ 1$.
 
-**Si  hay empates**
++ **Si  hay empates**
 
 $$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}$$
 
@@ -73,9 +73,9 @@ Donde $N= n+m$
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis: 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** Prueba de dos colas
+### Caso A Prueba de dos colas {-}
 
 $$\textbf{H}_0: \ X \ \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}$$
 
@@ -84,7 +84,7 @@ $$vs$$
 $$\textbf{H}_a: \ Var(x) \neq  Var(Y)$$
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si:
 
@@ -107,7 +107,7 @@ y el $p-value$ de la cola superior es aproximadamente:
 
 $$p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
 
-**Caso B** Prueba de cola inferior
+### Caso B Prueba de cola inferior {-}
 
 $$\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}$$
 
@@ -115,7 +115,7 @@ $$vs$$
 
 $$\textbf{H}_a: \ Var(x) < Var(Y)$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si:
 
@@ -126,7 +126,7 @@ y el $p-value$ se calcula:
 
 $$ p-value= \mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
 
-**Caso C** Prueba de cola superior
+### Caso C Prueba de cola superior {-}
 
 $$\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}$$
 
@@ -135,7 +135,7 @@ $$vs$$
 $$\textbf{H}_a: \ Var(x) > Var(Y)$$
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si:
 
@@ -397,7 +397,7 @@ var.test(TasasActuales,TasasPasadas,conf.level =.95 )
 ```
 
 
-##Ejercicios
+## Ejercicios
 
 
 1. Un banco de sangre mantuvo un registro de la frecuencia cardíaca de varios donadores de sangre.

@@ -3,7 +3,7 @@
 Supongamos que un científico desea saber si la tasa de mortalidad va en aumento, si la tasa de pobreza está cambiando o si la tasa de algún grupo cívico está a favor de una política en particular. En muchos casos existe una proporción hipotética $p$ de una población en estudio y una poporción específica $p^*$ y se pretende llevar a cabo una comparación para saber si la proporción hipotética es igual, menor o mayor que la proporción específica $p^*$. 
 Una prueba de proporciones puede ser útil para ayudar a responder este tipo de preguntas. 
 
-**Datos**
+## Datos
 
 Los datos consisten en una muestra 
 
@@ -12,13 +12,13 @@ $$X_{1},X_{2},X_{3},\cdots,X_{n}  \mbox{ una  muestra aleatoria  de  tamaño  n 
 
 cuyo resultado se puede clasificar en dos y sólo dos categorías "categoría 1" o "categoría 2". El número de observaciones en la categoría 1 es $O_{1}$ y el número de observaciones en la categoría 2 es $O_{2}=n-O_{1}$
 
-**Supuestos**
+## Supuestos
 
 1) Los $n$ ensayos son mutuamente independientes.
 
 2) La probabilidad $p$ de que el resultado de cada ensayo caiga en la categoría 1 es la misma en cada uno de los ensayos.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 Como nos preocupa la probabilidad del resultado "clase 1", dejaremos que el estadístico de prueba $T$ sea el número de veces que el resultado es **"clase 1"**.
 Es decir, si $n<20$ utilizar el estadístico
@@ -36,15 +36,15 @@ Donde $Z_{q}$ es el cuantil de una distribución normal estándar que se puede o
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_0: p = p^*$$
 $$vs$$
 $$\textbf{H}_a: p \neq p^*$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -71,7 +71,7 @@ $$\mathbf{P}[Y\geq t_{obs}] \thickapprox 1-\mathcal{N} \left(\frac{t_{obs}-np^*-
 Con $\mathcal{N}(\cdot)$ la función de distribución de la normal estándar.
 
 
-**Caso B** (Prueba de cola inferior)
+### Caso B (Prueba de cola inferior) {-}
 
 $$\textbf{H}_0: p  \geq p^*$$
 
@@ -80,7 +80,7 @@ $$vs$$
 $$\textbf{H}_a: p <p^*$$ 
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -102,7 +102,7 @@ Sugerimos que si $n > 20$, el $p-value$ puede obtenerse usando:
 $$\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
 
-**Caso C** (Prueba de cola supeior)
+### Caso C (Prueba de cola superior) {-}
 
 $$\textbf{H}_{0}: p  \leq p^*$$
 
@@ -111,7 +111,7 @@ $$vs$$
 $$\textbf{H}_{a}: p >p^*$$ 
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 

@@ -298,7 +298,8 @@ La distribución de probabilidad binomial se introdujo para describir las probab
 Supongamos que un científico desea saber si la tasa de mortalidad va en aumento, si la tasa de pobreza está cambiando o si la tasa de algún grupo cívico está a favor de una política en particular. En muchos casos existe una proporción hipotética \(p\) de una población en estudio y una poporción específica \(p^*\) y se pretende llevar a cabo una comparación para saber si la proporción hipotética es igual, menor o mayor que la proporción específica \(p^*\).
 Una prueba de proporciones puede ser útil para ayudar a responder este tipo de preguntas.
 
-\textbf{Datos}
+\hypertarget{datos}{%
+\section{Datos}\label{datos}}
 
 Los datos consisten en una muestra
 
@@ -306,7 +307,8 @@ Los datos consisten en una muestra
 
 cuyo resultado se puede clasificar en dos y sólo dos categorías ``categoría 1'' o ``categoría 2''. El número de observaciones en la categoría 1 es \(O_{1}\) y el número de observaciones en la categoría 2 es \(O_{2}=n-O_{1}\)
 
-\textbf{Supuestos}
+\hypertarget{supuestos}{%
+\section{Supuestos}\label{supuestos}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -316,7 +318,8 @@ cuyo resultado se puede clasificar en dos y sólo dos categorías ``categoría 1
   La probabilidad \(p\) de que el resultado de cada ensayo caiga en la categoría 1 es la misma en cada uno de los ensayos.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba}}
 
 Como nos preocupa la probabilidad del resultado ``clase 1'', dejaremos que el estadístico de prueba \(T\) sea el número de veces que el resultado es \textbf{``clase 1''}.
 Es decir, si \(n<20\) utilizar el estadístico
@@ -332,15 +335,20 @@ Donde \(Z_{q}\) es el cuantil de una distribución normal estándar que se puede
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis}{%
+\section{Hipótesis}\label{hipuxf3tesis}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas}}
+
 
 \[\textbf{H}_0: p = p^*\]
 \[vs\]
 \[\textbf{H}_a: p \neq p^*\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -366,7 +374,9 @@ y
 \[\mathbf{P}[Y\geq t_{obs}] \thickapprox 1-\mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
 Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
-\textbf{Caso B} (Prueba de cola inferior)
+\hypertarget{caso-b-prueba-de-cola-inferior}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior}}
+
 
 \[\textbf{H}_0: p  \geq p^*\]
 
@@ -374,7 +384,9 @@ Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
 \[\textbf{H}_a: p <p^*\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-1}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-1}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -394,7 +406,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse usando:
 
 \[\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
 
-\textbf{Caso C} (Prueba de cola supeior)
+\hypertarget{caso-c-prueba-de-cola-superior}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior}}
+
 
 \[\textbf{H}_{0}: p  \leq p^*\]
 
@@ -402,7 +416,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse usando:
 
 \[\textbf{H}_{a}: p >p^*\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-2}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-2}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -662,13 +678,15 @@ es un número \(x\) tal que:
   En el caso de una variable aleatoria continua se da la igualdad.
 \end{itemize}
 
-\textbf{Datos}
+\hypertarget{datos-1}{%
+\section{Datos}\label{datos-1}}
 
 Los datos consisten en una muestra
 
 \[X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} \ n \  \mbox{de la población}\]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-1}{%
+\section{Supuestos}\label{supuestos-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -678,7 +696,8 @@ Los datos consisten en una muestra
   La escala de medida de las \(X_{i}s\) es al menos ordinal.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-1}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-1}}
 
 \[T_{1}\]
 El número de observaciones en la muestra que son \textbf{menores o iguales} al valor \(x^*\) sobre el que se va a hacer la hipótesis.
@@ -698,9 +717,12 @@ Donde \(Z_{q}\) es el cuantil de una distribución normal estándar que se puede
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-1}{%
+\section{Hipótesis}\label{hipuxf3tesis-1}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas-1}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-1}}
+
 
 \[\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*\]
 
@@ -708,7 +730,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-3}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-3}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -733,15 +757,21 @@ y
 \[\mathbf{P}[Y\geq T_{2}] \thickapprox 1-\mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
 Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
-\textbf{Caso B} (Prueba de cola inferior)
+\hypertarget{caso-b-prueba-de-cola-inferior-1}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-1}}
+
 
 \[\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*\]
 
 \[vs\]
 
-\[\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*\]
+\[
+\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*
+\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-4}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-4}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -761,7 +791,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 
 \[\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
 
-\textbf{Caso C} (Prueba de cola supeior)
+\hypertarget{caso-c-prueba-de-cola-supeior}{%
+\subsection*{Caso C (Prueba de cola supeior)}\label{caso-c-prueba-de-cola-supeior}}
+
 
 \[\textbf{H}_0: x_{p} \geq x^* \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]\leq p^*\]
 
@@ -769,7 +801,9 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 
 \[\textbf{H}_a: x_{p} < x^*  \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]> p^*\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-5}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-5}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -1011,8 +1045,8 @@ Probar:
 
 La prueba de signos merece una consideración especial debido a su versatilidad, su gran utilidad y simplicidad. Ésta es una prueba de proporciones cuando el valor específico \(p^*=1/2\) y para los casos de dos colas, cola inferior y cola superior la máxima probabilidad para rechazar la hipótesis nula \(H_0\) se da cuando \(p = 1/2\). Frecuentemente la prueba de signos también es apropiada para analizar datos de un vector aleatorio \((X,Y)\) y ver si alguna de sus entradas tiene valores más grandes que la otra. De esta manera, si una variable tiende a tener valores mayores que la otra, se puede utilizar la prueba de signos para determinar si las medias de éstas variables son diferentes.
 
-\hypertarget{datos}{%
-\section{Datos}\label{datos}}
+\hypertarget{datos-2}{%
+\section{Datos}\label{datos-2}}
 
 Los datos consisten en observaciones bivariadas aleatorias:
 
@@ -1032,8 +1066,8 @@ Dentro de cada par de datos en la muestra se clasificará de la siguiente manera
 
 El tamaño de la muestra después de quitar los empates será \(n\).
 
-\hypertarget{supuestos}{%
-\section{Supuestos}\label{supuestos}}
+\hypertarget{supuestos-2}{%
+\section{Supuestos}\label{supuestos-2}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1043,8 +1077,8 @@ El tamaño de la muestra después de quitar los empates será \(n\).
   La escala de medida es al menos ordinal dentro de cada par.
 \end{enumerate}
 
-\hypertarget{estaduxedstico-de-prueba}{%
-\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba}}
+\hypertarget{estaduxedstico-de-prueba-2}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-2}}
 
 \[T=Total\ de\ signos\ "+"\]
 
@@ -1054,11 +1088,11 @@ La distribución nula de \(T\) es una distribución binomial con \(n\) el númer
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\hypertarget{hipuxf3tesis}{%
-\section{Hipótesis}\label{hipuxf3tesis}}
+\hypertarget{hipuxf3tesis-2}{%
+\section{Hipótesis}\label{hipuxf3tesis-2}}
 
-\hypertarget{caso-a-prueba-de-dos-colas}{%
-\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas}}
+\hypertarget{caso-a-prueba-de-dos-colas-2}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-2}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]\]
@@ -1067,8 +1101,8 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n}}
+\hypertarget{regla-de-decisiuxf3n-6}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-6}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1096,8 +1130,8 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 \[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)\]
 
-\hypertarget{caso-b-prueba-de-cola-inferior}{%
-\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior}}
+\hypertarget{caso-b-prueba-de-cola-inferior-2}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-2}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]\]
@@ -1106,8 +1140,8 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse más sencillo usando
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n-1}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-1}}
+\hypertarget{regla-de-decisiuxf3n-7}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-7}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1128,8 +1162,8 @@ Sugerimos que si \(n > 20\),el \(p-value\) puede obtenerse más sencillo usando 
 
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 
-\hypertarget{caso-c-prueba-de-cola-superior}{%
-\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior}}
+\hypertarget{caso-c-prueba-de-cola-superior-1}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-1}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]\]
@@ -1138,8 +1172,8 @@ Sugerimos que si \(n > 20\),el \(p-value\) puede obtenerse más sencillo usando 
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n-2}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-2}}
+\hypertarget{regla-de-decisiuxf3n-8}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-8}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1498,8 +1532,8 @@ Luego se ingresan estos datos en una tabla de contingencia de la siguiente forma
 \end{array} 
 \]
 
-\hypertarget{datos-1}{%
-\section{Datos}\label{datos-1}}
+\hypertarget{datos-3}{%
+\section{Datos}\label{datos-3}}
 
 Los datos consisten en observaciones bivariadas aleatorias:
 
@@ -1519,8 +1553,8 @@ En general los datos se resumen en una tabla de contingencia de la forma:
 \end{array} 
 \]
 
-\hypertarget{supuestos-1}{%
-\section{Supuestos}\label{supuestos-1}}
+\hypertarget{supuestos-3}{%
+\section{Supuestos}\label{supuestos-3}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1532,8 +1566,8 @@ En general los datos se resumen en una tabla de contingencia de la forma:
   La probabilidad de que se observe (0,1) es \(\geq\) que la de (1,0) o la de (1,0) es \(\geq\) (0,1) para todos los elementos de la muestra.
 \end{enumerate}
 
-\hypertarget{estaduxedstico-de-prueba-1}{%
-\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-1}}
+\hypertarget{estaduxedstico-de-prueba-3}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-3}}
 
 \[T_{1}=\frac{(b-c)^2}{(b+c)} \ \thickapprox \ \chi^{2}_{(1)}\]
 Es decir, la distribución de \(T_{1}\) es aproximadamente \(\chi^{2}_{(1)}\).
@@ -1546,11 +1580,11 @@ Es decir, la distribución de \(T_{2}\) es exactamente \(Bin(b+c,p)\)
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\hypertarget{hipuxf3tesis-1}{%
-\section{Hipótesis}\label{hipuxf3tesis-1}}
+\hypertarget{hipuxf3tesis-3}{%
+\section{Hipótesis}\label{hipuxf3tesis-3}}
 
-\hypertarget{caso-a-prueba-de-dos-colas-1}{%
-\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-1}}
+\hypertarget{caso-a-prueba-de-dos-colas-3}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-3}}
 
 
 \[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0]\]
@@ -1560,8 +1594,8 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 Es decir, se quiere ver si la probabilidad de que el individuo pase de 0 a 1 es la misma que la probabilidad de que pase de 1 a 0. En otras palabras, se quiere comprobar si el efecto del tratamiento fue neutro o si hay alguna tendencia tras el mismo.
 
-\hypertarget{regla-de-decisiuxf3n-3}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-3}}
+\hypertarget{regla-de-decisiuxf3n-9}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-9}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1829,15 +1863,15 @@ intentar descubrir si hay o no una tendencia es fijarse en las diferencias del t
 Si \(\{X_{i}\}^{n}_{i=1}\) tuviera una tendencia creciente, esperaríamos que las diferencias \(X_{i+c} - X_{i}\) fuesen, en promedio, positivas, en cambio, si la tendencia fuese decreciente, se esperaría que las \(X_{i+c} - X_{i}\) fueran negativas, en promedio.
 Note que la elección de \(c\) produce las mayores distancias entre índices temporales para diferencias homogéneas de la serie de tiempo.
 
-\hypertarget{datos-2}{%
-\section{Datos}\label{datos-2}}
+\hypertarget{datos-4}{%
+\section{Datos}\label{datos-4}}
 
 Los datos son observaciones consecutivas de una serie de tiempo \(\{X_{i}\}^{n}_{i=1}\).
 
 En esta prueba se agrupan en parejas de la forma \((X_{i},X_{i+c})\) a las que se les asigna el signo \("+"\) si \(X_{i+c} > X_{i}\), el signo \("-"\) si \(X_{i+c} < X_{i}\) o ``0'' si hay empates.
 
-\hypertarget{supuestos-2}{%
-\section{Supuestos}\label{supuestos-2}}
+\hypertarget{supuestos-4}{%
+\section{Supuestos}\label{supuestos-4}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1849,8 +1883,8 @@ En esta prueba se agrupan en parejas de la forma \((X_{i},X_{i+c})\) a las que s
   Las \(X_{i}s\) son todas idénticamente distribuidas o existe una tendencia creciente o decreciente.
 \end{enumerate}
 
-\hypertarget{estaduxedstico-de-prueba-2}{%
-\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-2}}
+\hypertarget{estaduxedstico-de-prueba-4}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-4}}
 
 \[T=Total\ de\ signos\ "+"\]
 
@@ -1860,11 +1894,11 @@ La distribución nula de \(T\) es una distribución binomial con \(n\) el númer
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\hypertarget{hipuxf3tesis-2}{%
-\section{Hipótesis}\label{hipuxf3tesis-2}}
+\hypertarget{hipuxf3tesis-4}{%
+\section{Hipótesis}\label{hipuxf3tesis-4}}
 
-\hypertarget{caso-a-prueba-de-dos-colas-2}{%
-\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-2}}
+\hypertarget{caso-a-prueba-de-dos-colas-4}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-4}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]\]
@@ -1873,8 +1907,8 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n-4}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-4}}
+\hypertarget{regla-de-decisiuxf3n-10}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-10}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1902,8 +1936,8 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)\]
 \[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)\]
 
-\hypertarget{caso-b-prueba-de-cola-inferior-1}{%
-\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-1}}
+\hypertarget{caso-b-prueba-de-cola-inferior-3}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-3}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]\]
@@ -1912,8 +1946,8 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n-5}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-5}}
+\hypertarget{regla-de-decisiuxf3n-11}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-11}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -1934,8 +1968,8 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}})\]
 
-\hypertarget{caso-c-prueba-de-cola-superior-1}{%
-\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-1}}
+\hypertarget{caso-c-prueba-de-cola-superior-2}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-2}}
 
 
 \[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]\]
@@ -1944,8 +1978,8 @@ Sugerimos que si \(n>20\),el \(p-value\) puede obtenerse más sencillo usando la
 
 \[\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]\]
 
-\hypertarget{regla-de-decisiuxf3n-6}{%
-\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-6}}
+\hypertarget{regla-de-decisiuxf3n-12}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-12}}
 
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
@@ -2262,7 +2296,8 @@ Esta prueba está diseñada para determinar si dos muestras han sido extraídas 
 
 A diferencia de las pruebas binomiales bivariadas vistas en la sección anterior, esta no se basa en una muestra por pares. En lugar usa dos muestras independientes, una de cada población a probar.
 
-\textbf{Datos}
+\hypertarget{datos-5}{%
+\section{Datos}\label{datos-5}}
 
 Se considera que los datos provienen de dos muestras aleatorias:
 
@@ -2278,7 +2313,8 @@ Sea:
 
 \[G(t) \ \mbox{la función de distribución de probabilidad de Y.}\]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-5}{%
+\section{Supuestos}\label{supuestos-5}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2304,13 +2340,22 @@ Sea:
   Si hay empates entonces asignamos el promedio de los rangos
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-5}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-5}}
 
-\textbf{Si no hay empates}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Si no hay empates}
+\end{itemize}
 
 \[T=\sum_{i=1}^{n}R(X_{i})\]
 
-\textbf{Si hay empates}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Si hay empates}
+\end{itemize}
 
 \[T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}\]
 
@@ -2318,9 +2363,12 @@ Sea:
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-5}{%
+\section{Hipótesis}\label{hipuxf3tesis-5}}
 
-\textbf{Caso A} (Prueba de dos colas)
+\hypertarget{caso-a-prueba-de-dos-colas-5}{%
+\subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-5}}
+
 
 \[\textbf{H}_0: F(x) = G(x) \ \  \forall\ x, \ \ \  \mbox{alternativo} \ \ \  \textbf{H}_0:\mathbf{E}[X] = \mathbf{E}[Y]\]
 
@@ -2329,7 +2377,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 \[\textbf{H}_a: F(x) \neq G(x) \ \ \mbox{para alguna} \ x,  \ \ \mbox{alternativo} \ \ \  \textbf{H}_a:
 \mathbf{E}[X] \neq \mathbf{E}[Y]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-13}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-13}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -2368,11 +2418,15 @@ y calculamos el \(p-value\)de la siguiente manera:
 \[p-value=2*min\{\mathbf{P}[Z\leq T_{1}],\mathbf{P}[Z\geq T_{1}]\}\]
 Donde \(Z\) es la variable aleatoria normal estándar.
 
-\textbf{Caso B} (Prueba de cola inferior)
+\hypertarget{caso-b-prueba-de-cola-inferior-4}{%
+\subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-4}}
+
 
 \[\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{alternativo} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-14}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-14}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -2399,11 +2453,15 @@ y calculamos el \(p-value\) de la siguiente manera:
 \[p-value=\mathbf{P}[Z\leq T_{1}]\]
 Donde \(Z\) es la variable aleatoria normal estándar.
 
-\textbf{Caso C} (Prueba de cola superior)
+\hypertarget{caso-c-prueba-de-cola-superior-3}{%
+\subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-3}}
+
 
 \[\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) < G(x), \  \ \mbox{alternativo} \ \ \textbf{H}_a:\mathbf{E}[X]  > \mathbf{E}[Y]\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-15}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-15}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
 
@@ -2686,11 +2744,13 @@ Suponiendo que estas temperaturas son una muestra aleatoria de la población, ¿
 \hypertarget{intervalo-de-confianza-para-la-diferencia-entre-dos-medias}{%
 \chapter{Intervalo de confianza para la diferencia entre dos medias}\label{intervalo-de-confianza-para-la-diferencia-entre-dos-medias}}
 
-\textbf{Datos}
+\hypertarget{datos-6}{%
+\section{Datos}\label{datos-6}}
 
 Los datos consisten en dos muestras aleatorias \(X_{1}, \ldots, X_{n}\) y \(Y_{1}, \ldots, Y_{m}\) de tamaño \(n\) y \(m\), respectivamente. Sea \(X\) y \(Y\) las variables aleatorias con la misma distribución que las \(X_{i}\) y las \(Y_{j}\), respectivamente.
 
-\textbf{Supuestos}
+\hypertarget{supuestos-6}{%
+\section{Supuestos}\label{supuestos-6}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2702,7 +2762,8 @@ Los datos consisten en dos muestras aleatorias \(X_{1}, \ldots, X_{n}\) y \(Y_{1
   Las dos funciones de distribución de la población son idénticas, excepto por una posible diferencia en los parámetros de ubicación. Es decir, hay una constante \(d\) (por ejemplo) tal que \(X\) tiene la misma función de distribución que \(Y + d\).
 \end{enumerate}
 
-\textbf{Método}
+\hypertarget{muxe9todo}{%
+\section{Método}\label{muxe9todo}}
 
 Determine el cuantil \(\alpha/2\) (\(\omega_{\alpha/2}\)) para \(n\) y \(m\) de las tablas correspondientes a \textbf{Prueba Mann-Whitney}, o si \(n\) y \(m\) son mayores a 20 se ocupa la aproximación del cuantil, donde \(1-\alpha\) es el coeficiente de confianza.Note que esto se puede utilizar incluso si hay muchos empates.
 
@@ -2720,9 +2781,10 @@ Entonces el intervalo de confianza es obtenido por:
 
 \[\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha\]
 
-Ahora haremos un ejemplo para ilustar la teoría:
+Ahora haremos un ejemplo para ilustrar la teoría:
 
-\textbf{Ejemplo}
+\hypertarget{ejemplo-6}{%
+\section{Ejemplo}\label{ejemplo-6}}
 
 Se desea mezclar una masa de pastel hasta que se alcance una consistencia específica. Se mezclan cinco lotes de la mezcla usando la batidora A, y los otros cinco lotes se mezclan usando la batidora B. Los tiempos requeridos para mezclar se dan de la siguinte manera (en minutos):
 
@@ -2791,7 +2853,8 @@ El intervalo de confianza del 95\% \((L,U)\) para la diferencia de medias, es de
 Se obtienen \(k\) \(m.a.i.\) de \(k\) distintas poblaciones (\(k\geq 2\)) y queremos probar la hipótesis nula de que todas las poblaciones tienen la misma distribución contra la alternativa de que algunas de las poblaciones tienden a tener distribución distinta.
 Un caso particular, si \(k=2\) se tiene la prueba de \textbf{Mann-Whitney}.
 
-\textbf{Datos}
+\hypertarget{datos-7}{%
+\section{Datos}\label{datos-7}}
 
 Se tienen \(k\ \ m.a.\) que pueden tener incluso distintos tamaños, la \(i-ésima\ \ m.a.\) de tamaño \(n_{i}\) es:
 \[X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \mbox{de la} \ \ i-ésima \ \ \mbox{población.})\]
@@ -2812,21 +2875,23 @@ sea \(N\) el número total de observaciones:
 
 \[ N= \sum_{i=1}^{k} n_{i}\]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-7}{%
+\section{Supuestos}\label{supuestos-7}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
 \item
   Todas las muestras son muestras aleatorias de sus respectivas poblaciones.
 \item
-  Además de la independecia dentro de las muestras, suponemos que hay independencia entre las muestras (es decir, las poblaciones son independientes).
+  Además de la independencia dentro de las muestras, suponemos que hay independencia entre las muestras (es decir, las poblaciones son independientes).
 \item
   Las \(k\) poblaciones son idénticas o algunas de las poblaciones tienden a tener valores más grandes que las otras poblaciones.
 \item
   La escala de medida es al menos ordinal.
 \end{enumerate}
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-6}{%
+\section{Hipótesis}\label{hipuxf3tesis-6}}
 
 \[\textbf{H}_0: \ \mbox{Las funciones de distribución de las} \ \  k \ \ \mbox{poblaciones son idénticas.}\]
 
@@ -2871,7 +2936,8 @@ R_{1} & R_{2} & R_{3} & \cdots&R_{k} \\
 \end{array}
 \]
 
-\textbf{Estadístico de prueba}
+\hypertarget{estaduxedstico-de-prueba-6}{%
+\section{Estadístico de prueba}\label{estaduxedstico-de-prueba-6}}
 
 \[T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right)\]
 donde \(N\) y \(R_{i}\) son como los definimos anteriormente y donde:
@@ -2881,7 +2947,8 @@ donde \(N\) y \(R_{i}\) son como los definimos anteriormente y donde:
 
 \[ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1) \]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-16}{%
+\section{Regla de decisión}\label{regla-de-decisiuxf3n-16}}
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si \(T>\omega_{1-\alpha}\), donde \(\omega_{1-\alpha}\) se obtiene de la tabla de cuantiles de la distribución de \(T\) (tablas Kruskal-Wallis). En caso de no encontrarse en la tabla, los tamaños de muestra correspondientes se utiliza la aproximación Ji-cuadrada con \(k-1\) grados de libertad para el estadístico de prueba.
 
@@ -2901,8 +2968,8 @@ Donde \(R_i\) y \(R_j\) son las sumas de los rangos de las dos muestras, \(t_{1-
 
 Ahora veamos cómo se hace un ejemplo:
 
-\hypertarget{ejemplo-6}{%
-\section{Ejemplo}\label{ejemplo-6}}
+\hypertarget{ejemplo-7}{%
+\section{Ejemplo}\label{ejemplo-7}}
 
 Se tienen 4 métodos de cultivo de maíz, para ver si hay diferencia entre uno y otro se utilizan terrenos similares y se aplican los distintos métodos y se ve la cantidad de cosecha por \(m^2\) de tierra de cada terreno obtenido.
 
@@ -3252,9 +3319,11 @@ Con los datos observados se puede corroborar la sospecha de que alguno de los ma
 Usualmente para comparar varias poblaciones nos basamos en las medias u otras medidas de ubicación de las poblaciones, en algunas situaciones las varianzas podrían ser nuestro campo de interés. Por ejemplo, se ha afirmado que el efecto de sembrar nubes con yoduro de plata podría aumentar la varianza de la lluvia resultante.
 
 \hypertarget{prueba-de-igualdad-de-varianzas-para-2-poblaciones}{%
-\section{Prueba de Igualdad de Varianzas para 2 poblaciones}\label{prueba-de-igualdad-de-varianzas-para-2-poblaciones}}
+\section*{Prueba de Igualdad de Varianzas para 2 poblaciones}\label{prueba-de-igualdad-de-varianzas-para-2-poblaciones}}
 
-\textbf{Datos}
+
+\hypertarget{datos-8}{%
+\section{Datos}\label{datos-8}}
 
 Consiste en dos muestras aleatorias
 
@@ -3262,7 +3331,8 @@ Consiste en dos muestras aleatorias
 
 \[\mbox{Sea} \ \ y_{1},y_{2},y_{3},\cdots,y_{m} \ \ \mbox{una muestra aleatoria de tamaño} \ m \  \mbox{de la} \ poblacion\ 2.\]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-8}{%
+\section{Supuestos}\label{supuestos-8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3293,17 +3363,26 @@ Si varios valores de \(U\) y/o \(V\) son exactamente iguales entre sí (empatado
 
 Sean \(R(U_{i})\) y \(R(V_{j})\) los rangos así asignados.
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-7}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-7}}
 
-\textbf{Si no hay empates}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Si no hay empates}
+\end{itemize}
 
-Si no hay empates de la poblacion \(U\) con la población \(V\) ocupamos:
+Si no hay empates de la población \(U\) con la población \(V\) ocupamos:
 
 \[T=\sum_{i=1}^{n}[R(U_{i})]^2\]
 
 La suma de los cuadrados de los rangos asignados a la \(población \ 1\).
 
-\textbf{Si hay empates}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Si hay empates}
+\end{itemize}
 
 \[T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}\]
 
@@ -3322,9 +3401,12 @@ Donde \(N= n+m\)
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-7}{%
+\section{Hipótesis}\label{hipuxf3tesis-7}}
 
-\textbf{Caso A} Prueba de dos colas
+\hypertarget{caso-a-prueba-de-dos-colas-6}{%
+\subsection*{Caso A Prueba de dos colas}\label{caso-a-prueba-de-dos-colas-6}}
+
 
 \[\textbf{H}_0: \ X \ \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}\]
 
@@ -3332,7 +3414,9 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_a: \ Var(x) \neq  Var(Y)\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-17}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-17}}
+
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si:
 
@@ -3354,7 +3438,9 @@ y el \(p-value\) de la cola superior es aproximadamente:
 
 \[p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]\]
 
-\textbf{Caso B} Prueba de cola inferior
+\hypertarget{caso-b-prueba-de-cola-inferior-5}{%
+\subsection*{Caso B Prueba de cola inferior}\label{caso-b-prueba-de-cola-inferior-5}}
+
 
 \[\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}\]
 
@@ -3362,7 +3448,9 @@ y el \(p-value\) de la cola superior es aproximadamente:
 
 \[\textbf{H}_a: \ Var(x) < Var(Y)\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-18}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-18}}
+
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si:
 
@@ -3372,7 +3460,9 @@ y el \(p-value\) se calcula:
 
 \[ p-value= \mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]\]
 
-\textbf{Caso C} Prueba de cola superior
+\hypertarget{caso-c-prueba-de-cola-superior-4}{%
+\subsection*{Caso C Prueba de cola superior}\label{caso-c-prueba-de-cola-superior-4}}
+
 
 \[\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, excepto por medias diferentes.}\]
 
@@ -3380,7 +3470,9 @@ y el \(p-value\) se calcula:
 
 \[\textbf{H}_a: \ Var(x) > Var(Y)\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-19}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-19}}
+
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si:
 
@@ -3392,8 +3484,8 @@ y el \(p-value\) se calcula:
 
 Ahora vamos a resolver un ejemplo:
 
-\hypertarget{ejemplo-7}{%
-\section{Ejemplo}\label{ejemplo-7}}
+\hypertarget{ejemplo-8}{%
+\section{Ejemplo}\label{ejemplo-8}}
 
 Una cuenca hidrográfica particular se ha construido extensivamente en los últimos años, con desarrollos de vivienda, represas, etc. una muestra aleatoria de las tasas de flujo de la corriente (pies cúbicos por minuto) para una corriente en esa cuenca hidrográfica se compara con una muestra de las tasas de tiempos anteriores para ver si la variabilidad ha cambiado.
 
@@ -3783,7 +3875,8 @@ ratio of variances
           0.223342 
 \end{verbatim}
 
-\#\#Ejercicios
+\hypertarget{ejercicios-6}{%
+\section{Ejercicios}\label{ejercicios-6}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3870,7 +3963,8 @@ Los rangos se asignan de menor a mayor y asignamos el promedio de los rangos cor
 
 Calculamos la suma del cuadrado de los rangos asignados de cada muestra, denotamos por \[S_{1},S_{2},\cdots,S_{k} \  \ \mbox{la suma de los rangos de cada muestra.}\]
 
-\textbf{Datos}
+\hypertarget{datos-9}{%
+\section{Datos}\label{datos-9}}
 
 Se tienen \(k\) m.a que pueden tener distintos tamaños, la \(j-ésima\) m.a, de tamaño \(n_j\) es \[x_{j1},\ x_{j2},\ x_{j3},\ \cdots, \ x_{jn_j}.\]
 
@@ -3890,7 +3984,8 @@ Sea \(N\) el número total de observaciones:
 
 \[N=\sum_{j=1}^k n_j\]
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-8}{%
+\section{Hipótesis}\label{hipuxf3tesis-8}}
 
 \[\textbf{H}_0: \ \mbox{Las} \  k  \ \mbox{poblaciones son identicas, excepto por diferencia en las medias.}\]
 
@@ -3898,9 +3993,14 @@ Sea \(N\) el número total de observaciones:
 
 \[\textbf{H}_a: \mbox{Algunas de las varianzas de las poblaciones no son idénticas entre sí.}\]
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-8}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-8}}
 
-\textbf{Cuando tenemos empates}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cuando tenemos empates}
+\end{itemize}
 
 \[T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right]\]
 donde:
@@ -3916,9 +4016,9 @@ donde:
   \(\overline{S}= \frac{1}{N}\sum_{j=1}^{k}S_{j}\) Es el promedio de los cuadrados de todos los rangos.
 \item
   \(D^2=\frac{1}{N-1}\left[\sum_{i=1}^{N}R^4_{j}-N(\overline{S})^2\right]\) y \(\sum{R_{i}^4}\) representa la suma de los rangos después de elevarlos a la cuarta potencia.
+\item
+  \textbf{Cuando no tenemos empates}
 \end{itemize}
-
-\textbf{Cuando no tenemos empates}
 
 \(D^2\) y \(\overline{S}\) se simplifican:
 
@@ -3926,7 +4026,8 @@ donde:
 
 \[\overline{S}=(N+1)(2N+1)/6\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-20}{%
+\section{Regla de decisión}\label{regla-de-decisiuxf3n-20}}
 
 Rechazamos \(H_0\) si:
 
@@ -3939,7 +4040,8 @@ y calculamos el \(p-value\)
 \[p-value= \mathbf{P}\left[\chi^2>T_{2}\right]\]
 es la probabilidad de una variable aleatoria \(\chi^2\) con \(k-1\) grados de libertad sea mayor a el valor observado de \(T_2\).
 
-\textbf{Comparación múltiple}
+\hypertarget{comparaciuxf3n-muxfaltiple}{%
+\section{Comparación múltiple}\label{comparaciuxf3n-muxfaltiple}}
 
 Si la hipótesis nula es rechazada, podriamos utilizar el siguiente procediemiento para determinar cuales pares de poblaciones tienden a ser diferentes.
 
@@ -3950,8 +4052,8 @@ Donde \(t_{1-\alpha/2}\) es el cuantil \(1-\alpha/2\) de la distribución \(t\) 
 
 Ahora resolveremos un ejercicio:
 
-\hypertarget{ejemplo-8}{%
-\section{Ejemplo}\label{ejemplo-8}}
+\hypertarget{ejemplo-9}{%
+\section{Ejemplo}\label{ejemplo-9}}
 
 Retomando en ejemplo de los 4 métodos de cultivo de maíz, probaremos ahora si las varianzas de la cantidad de cosecha por \(m^2\) de tierra de cada terreno son diferentes.
 
@@ -4179,7 +4281,8 @@ Después de aplicar el tratamiento los mismos \(N\) objetos son nuevamente exami
 
 El uso de las tablas de contingencia fue introducido anteriormente, y se vio que el procedimiento estadístico apropiado era una variación de la prueba de signos conocida como \textbf{McNemar}.
 
-\textbf{Datos}
+\hypertarget{datos-10}{%
+\section{Datos}\label{datos-10}}
 
 Una muestra aleatoria de \(n_{1}\) observaciones se extrae de una población (o antes de aplicar un tratamiento) y cada observación se clasifica en la clase 1 o 2, los números totales en las dos clases son \(O_{11}\) y \(O_{12}\) respectivamente, donde \(O_{11} + O_{12}= n_{1}\).
 
@@ -4201,7 +4304,8 @@ Los datos se organizan en la siguiente tabla de contingencia:
 
 El número total de observaciones es denotado por \(N\).
 
-\textbf{Supuestos}
+\hypertarget{supuestos-9}{%
+\section{Supuestos}\label{supuestos-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -4213,7 +4317,8 @@ El número total de observaciones es denotado por \(N\).
   Cada observación puede clasificarse en ~\(Clase\  1\) ~ o ~\(Clase\ 2\).
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-9}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-9}}
 
 Si alguna columna total es cero, el estadístico de prueba es definido asi:
 
@@ -4227,9 +4332,12 @@ La distribución exacta de \(T_1\) es difícil de array debido a todas las difer
 
 Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribución normal estándar cuyos cuantiles se dan en la tabla correspondiente.
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-9}{%
+\section{Hipótesis}\label{hipuxf3tesis-9}}
 
-\textbf{Caso A} Prueba de dos colas
+\hypertarget{caso-a-prueba-de-dos-colas-7}{%
+\subsection*{Caso A Prueba de dos colas}\label{caso-a-prueba-de-dos-colas-7}}
+
 
 \[\textbf{H}_0: p_{1} = p_{2}\]
 
@@ -4239,7 +4347,9 @@ Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribuc
 
 Donde \(p_{1}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 1\) y \(p_{2}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 2\).
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-21}{%
+\subsubsection*{Regla de Decisión}\label{regla-de-decisiuxf3n-21}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
@@ -4256,7 +4366,9 @@ donde \(Z\) es una normal estándar.
 
 Para la hipótesis anterior, también es usual usar \(T_{1}^2\) en lugar de \(T_{1}\) como estadístico de prueba. Entonces la región de rechazo es la cola superior de la distribución \(\chi^2\) con 1 grado de libertad, obtenidos en la tabla de la Distribución \(\chi^2\).
 
-\textbf{Caso B} Prueba de cola inferior
+\hypertarget{caso-b-prueba-de-cola-inferior-6}{%
+\subsection*{Caso B Prueba de cola inferior}\label{caso-b-prueba-de-cola-inferior-6}}
+
 
 \[\textbf{H}_0: p_{1} \geq p_{2}\]
 
@@ -4266,7 +4378,9 @@ Para la hipótesis anterior, también es usual usar \(T_{1}^2\) en lugar de \(T_
 
 Donde \(p_{1}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 1\) y \(p_{2}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 2\).
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-22}{%
+\subsubsection*{Regla de Decisión}\label{regla-de-decisiuxf3n-22}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
@@ -4279,7 +4393,9 @@ Ahora calcularemos el \(p-value\) de la siguiente manera:
 \[p-value=\mathbf{P}[Z<T_{1}]\]
 donde \(Z\) es una normal estándar.
 
-\textbf{Caso C} Prueba de cola superior
+\hypertarget{caso-c-prueba-de-cola-superior-5}{%
+\subsection*{Caso C Prueba de cola superior}\label{caso-c-prueba-de-cola-superior-5}}
+
 
 \[\textbf{H}_0: p_{1} \leq p_{2}\]
 
@@ -4289,7 +4405,9 @@ donde \(Z\) es una normal estándar.
 
 Donde \(p_{1}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 1\) y \(p_{2}\) es la probabilidad de elegir al azar un elemento de la \(clase\ 1\) en la \(población\ 2\).
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-23}{%
+\subsubsection*{Regla de Decisión}\label{regla-de-decisiuxf3n-23}}
+
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
@@ -4304,8 +4422,8 @@ donde \(Z\) es una normal estándar.
 
 Ahora hagamos un ejercicio:
 
-\hypertarget{ejemplo-9}{%
-\section{Ejemplo}\label{ejemplo-9}}
+\hypertarget{ejemplo-10}{%
+\section{Ejemplo}\label{ejemplo-10}}
 
 En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio).Para probar la siguiente hipótesis nula. Utilizaremos \(\alpha\)=0.05
 
@@ -4502,13 +4620,14 @@ data:  tabla
 X-squared = 8.8934, df = 2, p-value = 0.01172
 \end{verbatim}
 
-\hypertarget{ejercicios-6}{%
-\section{Ejercicios}\label{ejercicios-6}}
+\hypertarget{ejercicios-7}{%
+\section{Ejercicios}\label{ejercicios-7}}
 
 \hypertarget{prueba-de-independencia}{%
 \chapter{Prueba de Independencia}\label{prueba-de-independencia}}
 
-\textbf{Datos}
+\hypertarget{datos-11}{%
+\section{Datos}\label{datos-11}}
 
 Una muestra aleatoria de tamaño \(N\). Las observaciones en la muestra aleatoria son clasificados de acuerdo a dos criterios, usando el primer criterio cada observación es asociada con uno de los \(r\) renglones, y usando el segundo criterio cada observación es asociada con una de las \(C\) columnas.
 Sea \(O_{ij}\) el número de observaciones asociadas con el renglón \(i\) y la columna \(j\) simultáneamente; el número total de observaciones en el renglón \(i\) es designado por \(R_{i}\), (en lugar de \(n_{i}\) como la prueba anterior, para enfatizar que los totales de las filas ahora son aleatorios en lugar de fijos), y en la columna \(j\) por \(C_{j}\). La suma de los números en todas las celdas es \(N\).
@@ -4531,7 +4650,9 @@ Los datos se organizan en la siguiente tabla de contingencia:
 \hline
 \end {array}
 \]
-\textbf{Supuestos}
+
+\hypertarget{supuestos-10}{%
+\section{Supuestos}\label{supuestos-10}}
 
 \begin{itemize}
 \item
@@ -4540,7 +4661,8 @@ Los datos se organizan en la siguiente tabla de contingencia:
   Cada observación puede ser clasificada en una de las \(r\) diferentes categorías de acuerdo al primer criterio y en una de las \(C\) diferentes categorías de acuerdo al segundo criterio.
 \end{itemize}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-10}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-10}}
 
 El estadístico de prueba \(T\) es obtenido de la siguiente manera:
 
@@ -4558,7 +4680,8 @@ Es decir,
 
 \[T\sim \chi^2_{(r-1)(c-1)}\]
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-10}{%
+\section{Hipótesis}\label{hipuxf3tesis-10}}
 
 \[\textbf{H}_0: \ \mbox{El evento} \  "una\ observación\ está\ en\ la\ fila\ i"\ \mbox{es independiente}\]
 \[\mbox{del evento} \ "esa\ misma\ observación\ está\ en\ la\ columna\ j"\ \mbox{para todos} \ \ i,\ j.\]
@@ -4571,7 +4694,9 @@ Es decir,
 
 \[\textbf{H}_a:\mathbf{P}[\ \ renglón\ \ i\ ,\ columna\ \ j\ \ ]\ \  \neq \ \mathbf{P}[ \ \ renglón\ i\ \ ]*P[\ \ columna\ j\ \  ]\ \ \ \ ; \ para\ alguna\ \ i \ , \ j. \ \]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-24}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-24}}
+
 
 Rechazo \(H_0\) si \(T> \chi^2(1-\alpha)\) con \((r-1)\times(c-1)\) grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
@@ -4820,8 +4945,8 @@ data:  tabla
 X-squared = 13.125, df = 2, p-value = 0.001412
 \end{verbatim}
 
-\hypertarget{ejercicios-7}{%
-\section{Ejercicios}\label{ejercicios-7}}
+\hypertarget{ejercicios-8}{%
+\section{Ejercicios}\label{ejercicios-8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4901,11 +5026,13 @@ Como una generalización inmediata de la tabla de contingencia \(2 \times 2\) me
 Éstas tablas de contingencia pueden usarse, como en la sección anterior, para presentar una tabulación de los datos contenidos en varias muestras, donde los datos representan al menos una escala de medición nominal, y para probar la hipótesis de que las probabilidades no difieren de muestra en muestra.
 
 \hypertarget{prueba-de-chi2-para-tablas-de-contingencia-proporciones}{%
-\section{\texorpdfstring{Prueba de \(\chi^2\) para Tablas de Contingencia (Proporciones)}{Prueba de \textbackslash chi\^{}2 para Tablas de Contingencia (Proporciones)}}\label{prueba-de-chi2-para-tablas-de-contingencia-proporciones}}
+\section*{\texorpdfstring{Prueba de \(\chi^2\) para Tablas de Contingencia (Proporciones)}{Prueba de \textbackslash chi\^{}2 para Tablas de Contingencia (Proporciones)}}\label{prueba-de-chi2-para-tablas-de-contingencia-proporciones}}
 
-\textbf{Datos}
 
-Hay \(r\) poblaciones en total, y se extrae una muestra aleatoria de cada población. Supongamos que \(n_{i}\) representa el número de observaciones en la muestra \(i-ésima\) (de la población \(i-ésima\)) para \(1 \leq i \leq r\). Cada observación en cada muestra es clasificada en una de las \(C\) diferentes categorias.
+\hypertarget{datos-12}{%
+\section{Datos}\label{datos-12}}
+
+Hay \(r\) poblaciones en total, y se extrae una muestra aleatoria de cada población. Supongamos que \(n_{i}\) representa el número de observaciones en la muestra \(i-ésima\) (de la población \(i-ésima\)) para \(1 \leq i \leq r\). Cada observación en cada muestra es clasificada en una de las \(C\) diferentes categorías.
 
 Sea \(O_{ij}\) el número de observaciones de la \(i-ésima\) muestra de la categoría \(j\):
 
@@ -4938,7 +5065,8 @@ El número de observaciones en la \(j-ésima\) columna denotada como \(C_{j}\). 
 
 \[C_{j}=O_{1j}+O_{2j}+\cdots+O_{rj}, \ \ \ \ \ para\ \ j= 1,2,\ldots,c. \]
 
-\textbf{Supuestos}
+\hypertarget{supuestos-11}{%
+\section{Supuestos}\label{supuestos-11}}
 
 \begin{itemize}
 \item
@@ -4949,7 +5077,8 @@ El número de observaciones en la \(j-ésima\) columna denotada como \(C_{j}\). 
   Cada observación puede clasificarse en exactamente una de las categorías o clases \(C\).
 \end{itemize}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-11}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-11}}
 
 El estadístico de prueba \(T\) es obtenido de la siguiente manera:
 
@@ -4973,7 +5102,8 @@ Es decir,
 
 \[T\sim \chi^2_{(r-1)(c-1)}\]
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-11}{%
+\section{Hipótesis}\label{hipuxf3tesis-11}}
 
 Sea la probabilidad de que un valor seleccionado aleatoriamente de la i-ésima población se clasifique en la \(j\)-ésima clase, denotado por \(p_{ij}\) para \(i= 1, 2,\ldots,r\) y \(j=1,2,\ldots,c.\)
 
@@ -4990,7 +5120,9 @@ en otros términos:
 
 \[\textbf{H}_a: \ p_{ij} \ \neq \  p_{kj} \ \ \mbox{para algún par} \ \  i \ \ \mbox{y} \ \ k.\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-25}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-25}}
+
 
 Rechazo \(H_0\) si \(T> \chi^2(1-\alpha)\) con \((r-1)\times(c-1)\) grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
@@ -5191,8 +5323,8 @@ data:  tabla
 X-squared = 17.286, df = 4, p-value = 0.001701
 \end{verbatim}
 
-\hypertarget{ejercicios-8}{%
-\section{Ejercicios}\label{ejercicios-8}}
+\hypertarget{ejercicios-9}{%
+\section{Ejercicios}\label{ejercicios-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5233,7 +5365,8 @@ La prueba mediana está diseñada para examinar si varias muestras provienen de 
 
 Para probar si varias \(c\) poblaciones tienen la misma mediana, se extrae una muestra aleatoria de cada población (la escala de medición es al menos ordinal, o el término ``mediana'' no tendría sentido). Se construye una tabla de contingencia \(2\times c\) y las dos entidades en la \(i-ésima\) columna son los números de observaciones en la \(i-ésima\) muestra que están por encima y por debajo de la gran mediana (la mediana de todas las observaciones combinadas). La prueba de \(\chi^2\) habitual se aplica luego a la tabla de contingencia.
 
-\textbf{Datos}
+\hypertarget{datos-13}{%
+\section{Datos}\label{datos-13}}
 
 Para cada una de las poblaciones \(c\) se obtiene una muestra aleatoria de tamaño \(n_{i}\), \(i = 1,2,\ldots, c\). Se determina la mediana de la muestra combinada; es decir, se determina el número que excedió aproximadamente la mitad de las observaciones en toda la muestra \(N = n_{1} + n_{2}+ \ldots + n_{c}\). Esto se llama mediana. Sea \(O_{1i}\), el número de observaciones en la \(i\)-ésima muestra que excede la mediana y, sea \(O_{2i}\) el número en la \(i\)-ésima muestra que sea menor o igual a la mediana, organice los conteos de frecuencia en una tabla de contingencia \(2\times c\) de la siguiente manera:
 
@@ -5251,7 +5384,8 @@ Para cada una de las poblaciones \(c\) se obtiene una muestra aleatoria de tama�
 
 Sea \(a\) el número total de observaciones mas grandes a la mediana en todas las muestras, sea \(b\) el número total de observaciones menores o iguales a la mediana. Entonces \(a+b=N\) es el número total de observaciones.
 
-\textbf{Supuestos}
+\hypertarget{supuestos-12}{%
+\section{Supuestos}\label{supuestos-12}}
 
 \begin{itemize}
 \item
@@ -5264,7 +5398,8 @@ Sea \(a\) el número total de observaciones mas grandes a la mediana en todas la
   Si todas las poblaciones tienen la misma mediana, todas las poblaciones tienen la misma probabilidad \(p\) de que una observación exceda la mediana.
 \end{itemize}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-12}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-12}}
 
 El estadístico de prueba es obtenido por el reordenamiento del estadístico utilizado en la prueba anterior, notando que \(O_{2i}=n_{i}-O_{1i}\) en el caso especial con 2 renglones.
 
@@ -5288,7 +5423,8 @@ Es decir,
 
 \[T\sim \chi^2_{(c-1)}\]
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-12}{%
+\section{Hipótesis}\label{hipuxf3tesis-12}}
 
 \[\textbf{H}_0: \ \mbox{Todas las} \  c \  \mbox{poblaciones tienen la misma mediana.}\]
 
@@ -5296,11 +5432,14 @@ Es decir,
 
 \[\textbf{H}_a:\mbox{ Al menos 2 de las poblaciones tienen diferente mediana.}\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-26}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-26}}
+
 
 Rechazo \(H_0\) si \(T> \chi^2(1-\alpha)\) con \((c-1)\) grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
-\textbf{Comparación Múltiple}
+\hypertarget{comparaciuxf3n-muxfaltiple-1}{%
+\section{Comparación Múltiple}\label{comparaciuxf3n-muxfaltiple-1}}
 
 Si la hipótesis nula es rechazada, se pueden hacer comparaciones múltiples por parejas entre poblaciones utilizando la prueba de mediana repetidamente en tablas de contingencia de \(2 \times 2\). En cada comparación se encuentra la mediana de las dos muestras, y el número por encima o por debajo de esa mediana se utiliza en la tabla de contingencia \(2 \times 2\). Calculamos el estadístico de prueba T para la prueba y si \(T\) es más grande que el cuantil \(1-\alpha\) de la distribución \(\chi^2\) con 1 grado de libertad encontrado en tablas de dicha distribución, entonces decimos que las medianas de esas 2 poblaciones son iguales.
 
@@ -5565,8 +5704,8 @@ odds ratio
 
 Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por \(m^2\).
 
-\hypertarget{ejercicios-9}{%
-\section{Ejercicios}\label{ejercicios-9}}
+\hypertarget{ejercicios-10}{%
+\section{Ejercicios}\label{ejercicios-10}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5596,7 +5735,7 @@ Las pruebas de bondad de ajuste se utilizan para decidir si un conjunto de datos
 
 Estas pruebas son importantes por que existen métodos estadísticos que se basan en algún supuesto de la distribución de los datos y si tal supuesto no se cumple, el método no es válido. Por ejemplo, el modelo de regresión lineal supone que los errores tienen distribución normal y de no validarse este supuesto entonces la inferencia hecha sobre los parámetros del modelo de regresión carece de sustento estadístico.
 
-La hipótesis nula en este tipo de pruebas es que los datos tienen la distribución requerida. Algunas veces la hipótesis nula específica totalmente a la distribución (es decir también especifica el valor de los parametros), otras veces sólo especifica de que distribución se trata (sin importar los parámetros).
+La hipótesis nula en este tipo de pruebas es que los datos tienen la distribución requerida. Algunas veces la hipótesis nula específica totalmente a la distribución (es decir también especifica el valor de los parámetros), otras veces sólo especifica de que distribución se trata (sin importar los parámetros).
 
 Las pruebas de bondad de ajuste desarrolladas dependen de la variable aleatoria que se esta modelando. Para distribuciones discretas, se comparan las frecuencias esperadas con las observadas. (Prueba Ji-
 Cuadrada). Para distribuciones continuas, se compara la función de distribución empírica con la de distribución requerida. (Prueba Kolmogorov-Smirnov, Lilliefors, Anderson-Darling)
@@ -5604,13 +5743,15 @@ Cuadrada). Para distribuciones continuas, se compara la función de distribució
 \hypertarget{prueba-de-la-ji-cuadrada}{%
 \chapter{Prueba de la Ji-cuadrada}\label{prueba-de-la-ji-cuadrada}}
 
-\textbf{Datos}
+\hypertarget{datos-14}{%
+\section{Datos}\label{datos-14}}
 
 \[X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}\]
 
 Cada una de las variables se pueden acomodar en alguna clase \("k"\) (o categoría)
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-13}{%
+\section{Hipótesis}\label{hipuxf3tesis-13}}
 
 \[\textbf{H}_0: \ \mbox{Los datos siguen una distribución} \ \  F_{0}(x).\]
 
@@ -5638,7 +5779,8 @@ Vamos a buscar las probabilidades de ocurrencia en cada categoría.
 
 Calcular los valores esperados \(e_{j}\); Donde \(e_{j}=n \times P_{j}\)
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-13}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-13}}
 
 \[Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \chi^2_{(k-1)}\]
 
@@ -5655,7 +5797,9 @@ Calcular los valores esperados \(e_{j}\); Donde \(e_{j}=n \times P_{j}\)
   \(Q \sim \chi^2_{(k-1-r)}\) ~Donde \(k\)=Número de clases o intervalos, ~ \(r\)=Número de parámetros estimados.
 \end{itemize}
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-27}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-27}}
+
 
 Rechazamos \(H_0\) si \(Q\)\textgreater{} \(q_{teórica}\)
 
@@ -5665,8 +5809,8 @@ Rechazamos \(H_0\) si \(Q\)\textgreater{} \(q_{teórica}\)
   Cuando \(Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha)\)
 \end{itemize}
 
-\hypertarget{ejemplo-10}{%
-\section{Ejemplo}\label{ejemplo-10}}
+\hypertarget{ejemplo-11}{%
+\section{Ejemplo}\label{ejemplo-11}}
 
 Un gobierno local tiene registros del número de niños y el número de hogares en el área. Se sabe que el número promedio de niños por hogar es 1.40. Se sugiere que el número de niños por hogar se pueda modelar por una distribución Poisson con parámetro 1.40.
 Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados se muestran en la siguiente tabla:
@@ -5691,7 +5835,7 @@ Para probar esta hipótesis se toma una muestra de 1000 hogares; los resultados 
 \textbf{Número de hogares} & 273& 361&263 &78 & 25  \\
 \hline
 \end{array}
- \]
+\]
 
 \textbf{Paso 1} Prueba a utilizar \textbf{Prueba Ji-cuadrada}
 
@@ -5880,8 +6024,8 @@ data:  c(273, 361, 263, 78, 25)
 X-squared = 20.96, df = 4, p-value = 0.0003226
 \end{verbatim}
 
-\hypertarget{ejercicios-10}{%
-\section{Ejercicios}\label{ejercicios-10}}
+\hypertarget{ejercicios-11}{%
+\section{Ejercicios}\label{ejercicios-11}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5951,11 +6095,13 @@ Los valores grandes de \(T\) según lo determinado por la correspondiente tabla 
 
 La prueba de Kolmogorov puede preferirse a la prueba de Ji-Cuadrada para bondad del ajuste si el tamaño de la muestra es pequeño; la prueba de Kolmogorov es exacta incluso para muestras pequeñas, mientras que la prueba de Ji-cuadrada supone que el número de observaciones es lo suficientemente grande como para que la distribución de \(\chi^2\) proporcione una buena aproximación como la distribución del estadístico de prueba. Existe controversia sobre ¿qué prueba es la más ``poderosa''?, pero la sensación general parece ser que la prueba de Kolmogorov es probablemente más poderosa que la prueba de Ji-cuadrada en la mayoría de las situaciones que involucran datos ordinales.
 
-\textbf{Datos}
+\hypertarget{datos-15}{%
+\section{Datos}\label{datos-15}}
 
 Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tamaño \(n\) asociada con alguna función de distribución desconocida, denotada por \(F(x)\).
 
-\textbf{Supuestos}
+\hypertarget{supuestos-13}{%
+\section{Supuestos}\label{supuestos-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -5964,11 +6110,14 @@ Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tam
   La muestra es una muestra aleatoria.
 \end{enumerate}
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-14}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-14}}
 
 Sea \(S(x)\) la función de distribución empírica basada en la muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\). El estadístico de prueba es definido diferente para los 3 casos para las hipótesis correspondientes. Sea \(F^*(x)\) una función de distribución hipotética completamente especificada.
 
-\textbf{Caso A }(Prueba de 2 colas)
+\hypertarget{caso-a-prueba-de-2-colas}{%
+\subsection*{Caso A (Prueba de 2 colas)}\label{caso-a-prueba-de-2-colas}}
+
 
 Sea el estadístico de prueba \(T\) la mayor distancia vertical entre \(S(x)\) y \(F^*(x)\)(denotado por sup o el supremo).
 
@@ -5976,23 +6125,30 @@ Sea el estadístico de prueba \(T\) la mayor distancia vertical entre \(S(x)\) y
 
 Esto se lee ``\(T\) es igual al supremo para todas las \(x\), del valor absoluto de la diferencia de \(F^*(x)-S(x)\)''
 
-\textbf{Caso B }(Prueba de 1 cola)
+\hypertarget{caso-b-prueba-de-1-cola}{%
+\subsection*{Caso B (Prueba de 1 cola)}\label{caso-b-prueba-de-1-cola}}
+
 
 Denotamos el estadístico de prueba \(T^+\) la mayor distancia vertical alcanzada por \(F^*(x)\) sobre \(S(x)\).
 
 \[T^+=\underset{x}{sup}[F^*(x)-S(x)] \]
 Que es similar a \(T\), a excepción que solo vamos a considerar la mayor diferencia alcanzada por \(F^*(x)\) sobre la función \(S(x)\).
 
-\textbf{Caso C }(Prueba de 1 cola)
+\hypertarget{caso-c-prueba-de-1-cola}{%
+\subsection*{Caso C (Prueba de 1 cola)}\label{caso-c-prueba-de-1-cola}}
+
 
 Denotamos el estadístico de prueba \(T^-\) la mayor distancia vertical alcanzada por \(S(x)\) sobre \(F^*(x)\).
 
 \[T^-=\underset{x}{sup}[S(x)-F^*(x)] \]
 Que es similar a \(T\), a excepción que solo vamos a considerar la mayor diferencia alcanzada por \(S(x)\) sobre la función \(F^*(x)\).
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-14}{%
+\section{Hipótesis}\label{hipuxf3tesis-14}}
 
-\textbf{Caso A} (Prueba de 2 colas)
+\hypertarget{caso-a-prueba-de-2-colas-1}{%
+\subsection*{Caso A (Prueba de 2 colas)}\label{caso-a-prueba-de-2-colas-1}}
+
 
 \[\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty \]
 
@@ -6000,11 +6156,15 @@ Que es similar a \(T\), a excepción que solo vamos a considerar la mayor difere
 
 \[\textbf{H}_a: \ F(x) \neq F^*(x) \ \ \ \ \mbox{para al menos un  valor de} \   x.\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-28}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-28}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T>W\). Donde \(W\) es el cuantil \((1-\alpha)\), obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 2 colas.
 
-\textbf{Caso B} (Prueba de 1 cola)
+\hypertarget{caso-b-prueba-de-1-cola-1}{%
+\subsection*{Caso B (Prueba de 1 cola)}\label{caso-b-prueba-de-1-cola-1}}
+
 
 \[\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty\]
 
@@ -6012,11 +6172,15 @@ Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T>W\). Donde \(W\) e
 
 \[Ha: \ F(x) < F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-29}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-29}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T^+>W\). Donde \(W\) es el cuantil \((1-\alpha)\),obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola.
 
-\textbf{Caso C} (Prueba de 1 cola)
+\hypertarget{caso-c-prueba-de-1-cola-1}{%
+\subsection*{Caso C (Prueba de 1 cola)}\label{caso-c-prueba-de-1-cola-1}}
+
 
 \[\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty\]
 
@@ -6024,14 +6188,16 @@ Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T^+>W\). Donde \(W\)
 
 \[\textbf{H}_a: \ F(x) > F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-30}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-30}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T^->W\). Donde \(W\) es el cuantil \((1-\alpha)\),obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola.
 
 Vamos a aplicar este conocimiento en un ejemplo:
 
-\hypertarget{ejemplo-11}{%
-\section{Ejemplo}\label{ejemplo-11}}
+\hypertarget{ejemplo-12}{%
+\section{Ejemplo}\label{ejemplo-12}}
 
 Una muestra aleatoria de tamaño 10, es obtenida:
 
@@ -6204,8 +6370,8 @@ alternative hypothesis: two-sided
 
 Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspondiente \(p-value\) es \(26.13\%\), por lo tanto con \(\alpha=5\%\) no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es normal(0,1).
 
-\hypertarget{ejercicios-11}{%
-\section{Ejercicios}\label{ejercicios-11}}
+\hypertarget{ejercicios-12}{%
+\section{Ejercicios}\label{ejercicios-12}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6254,9 +6420,13 @@ La prueba de Kolmogorov presenta la ventaja de que los datos no deben ser catego
 
 Para probar la suposición de la distribución \(F^*(x)\) se realiza la siguiente contraste:
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-15}{%
+\section{Hipótesis}\label{hipuxf3tesis-15}}
 
-\textbf{Caso A} (Prueba de 2 colas) Solo será este caso
+\hypertarget{caso-a-prueba-de-2-colas-2}{%
+\subsection{Caso A (Prueba de 2 colas)}\label{caso-a-prueba-de-2-colas-2}}
+
+Solo será este caso
 
 \[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty\]
 
@@ -6264,7 +6434,9 @@ Para probar la suposición de la distribución \(F^*(x)\) se realiza la siguient
 
 \[\textbf{H}_a: \ F(x) \neq F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.\]
 
-\textbf{Regla de decisión}
+\hypertarget{regla-de-decisiuxf3n-31}{%
+\subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-31}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(D_{n}>W\). Donde \(W\) es el cuantil \((1-\alpha)\), obtenido en la tabla correspondiente a nuestra prueba O para la prueba de 2 colas en las tablas de Kolmogorov.
 
@@ -6310,8 +6482,8 @@ Donde:
 Finalmente, se observa que si \(H_0\) es cierta si \(D_{n} \longrightarrow \ 0\) ya que las diferencias entre la diferencias entre la función empírica y la propuestas son mínimas, lo que cumple con el \textbf{Teorema de Glivenko-Cantelli} ; por lo que hay evidencia para rechazar \(H_0\) cuando \(D_{n} > W\) Donde \(W\) es el cuantil que acumula el \(1- \alpha\) de probabilidad de la distribución asociada a \(D_{n}\) la cual puede obtenerse de la tablas correspondientes la cual muestra los cuantiles de la distribución
 Kolmogorov-Smirnov o la Tabla Kolmogorov para 2 colas.
 
-\hypertarget{ejemplo-12}{%
-\section{Ejemplo}\label{ejemplo-12}}
+\hypertarget{ejemplo-13}{%
+\section{Ejemplo}\label{ejemplo-13}}
 
 Dada la siguiente muestra
 
@@ -6513,8 +6685,8 @@ D = 0.2, p-value = 0.9383
 alternative hypothesis: two-sided
 \end{verbatim}
 
-\hypertarget{ejercicios-12}{%
-\section{Ejercicios}\label{ejercicios-12}}
+\hypertarget{ejercicios-13}{%
+\section{Ejercicios}\label{ejercicios-13}}
 
 \hypertarget{prueba-lilliefors-para-normalidad}{%
 \chapter{Prueba Lilliefors para Normalidad}\label{prueba-lilliefors-para-normalidad}}
@@ -6528,7 +6700,8 @@ La prueba de Kolmogorov se ha modificado para permitir su uso en varias situacio
 
 La primera modificación a la prueba de Kolmogorov es para probar la hipótesis compuesta de la normalidad. Es decir, la hipótesis nula establece que la población es una de la familia de distribuciones normales sin especificar la media o la varianza de la distribución normal. Ésta prueba fue presentada por primera vez por Hubert Lilliefors (1967). Una característica interesante de esta prueba es que este es uno de los primeros casos en que el compilador se utilizó para generar números aleatorios con el fin de obtener estimaciones precisas de los verdaderos cuantiles de la distribución exacta del estadístico de la prueba y además, aproximar a los parámetros a través del uso de los estimadores puntuales.
 
-\textbf{Datos}
+\hypertarget{datos-16}{%
+\section{Datos}\label{datos-16}}
 
 Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tamaño \(n\) asociada con alguna función de distribución desconocida, denotada por \(F(x)\).
 
@@ -6548,7 +6721,8 @@ Después calcularemos los valores de muestra ``normalizados'' \(Z_{i}\) definido
 
 El estadístico de prueba se calcula a partir de \(Z_{i}s\) en lugar de a partir de la muestra aleatoria. original
 
-\textbf{Supuestos}
+\hypertarget{supuestos-14}{%
+\section{Supuestos}\label{supuestos-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6557,7 +6731,8 @@ El estadístico de prueba se calcula a partir de \(Z_{i}s\) en lugar de a partir
   La muestra es una muestra aleatoria.
 \end{enumerate}
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-16}{%
+\section{Hipótesis}\label{hipuxf3tesis-16}}
 
 \[\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución normal,}\]
 \[\mbox{con media y desviación estándar desconocidas.}\]
@@ -6565,19 +6740,22 @@ El estadístico de prueba se calcula a partir de \(Z_{i}s\) en lugar de a partir
 
 \[\textbf{H}_a: \ \mbox{La función de distribución de las} \ \ X_{i}s \ \  \mbox{no es normal.}\]
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-15}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-15}}
 
 Normalmente, el estadístico de prueba es el mismo para la prueba de Kolmogorov de dos colas, definida como la distancia vertical máxima entre la función de distribución empírica de \(X_{i}s\) y la función de distribución normal con media \(\mu=\overline{X}\) y desviación estándar \(\sigma=s\).
 Sin embargo, el siguiente método para calcular el estadístico de prueba es un poco más fácil, ya que es equivalente al método indicado. Es decir, el cálculo del estadístico \(T_{1}\) será en función de la \(Z_{i}s\).
 
 \[T_{1}=\underset{x}{sup}|F^*(x)-S(x)|\]
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-32}{%
+\subsubsection*{Regla de Decisión}\label{regla-de-decisiuxf3n-32}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T_{1}> W_{1-\alpha}\) donde \(W_{1-\alpha}\) es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 
-\hypertarget{ejemplo-13}{%
-\section{Ejemplo}\label{ejemplo-13}}
+\hypertarget{ejemplo-14}{%
+\section{Ejemplo}\label{ejemplo-14}}
 
 Los siguientes datos, corresponden a una muestra aleatoria en la que mide la pérdida y ganancia de peso en \(KG\) de un grupo después de vacaciones.
 
@@ -6830,8 +7008,8 @@ D = 0.08739, p-value = 0.4436
 
 Observamos que la estadística de prueba tiene un valor de 0.08739 y su correspondiente p-value es \(44.36\%\), por lo tanto no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es \(N(0,1)\). Esperabamos que la prueba diera ese resultado ya que por construcción la muestra proviene de una distribucion \(N(0,1)\).
 
-\hypertarget{ejercicios-13}{%
-\section{Ejercicios}\label{ejercicios-13}}
+\hypertarget{ejercicios-14}{%
+\section{Ejercicios}\label{ejercicios-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6849,7 +7027,8 @@ Observamos que la estadística de prueba tiene un valor de 0.08739 y su correspo
 Otro problema importante de bondad de ajuste es la prueba para la distribución exponencial con media no especificada. Este problema es importante porque el supuesto de una distribución exponencial con media desconocida tiene muchas aplicaciones, particularmente donde las variables aleatorias bajo estudio representan el tiempo de espera o el tiempo en que ocurre cierto evento.
 Lilliefors en 1969 desarrolló una prueba análoga a la prueba de Kolmogorov-Smirnov y dió una tabla de valores críticos basados en simulaciones Monte Carlo.
 
-\textbf{Datos}
+\hypertarget{datos-17}{%
+\section{Datos}\label{datos-17}}
 
 Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tamaño \(n\) que sigue una distribución exponencial con media \(\hat{\lambda} = \frac{1}{\overline{X}}\),el cual corresponde al estimador puntual de la media.
 
@@ -6859,7 +7038,8 @@ Después calcularemos los valores de muestra \(Z_{i}\) definidos por:
 
 El estadístico de prueba se calcula a partir de \(Z_{i}s\) en lugar de a partir de la muestra aleatoria. original.
 
-\textbf{Supuestos}
+\hypertarget{supuestos-15}{%
+\section{Supuestos}\label{supuestos-15}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6868,7 +7048,8 @@ El estadístico de prueba se calcula a partir de \(Z_{i}s\) en lugar de a partir
   La muestra es una muestra aleatoria.
 \end{enumerate}
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-17}{%
+\section{Hipótesis}\label{hipuxf3tesis-17}}
 
 \[\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución exponencial:}\]
 
@@ -6887,18 +7068,21 @@ Donde \(\lambda\) es un parámetro desconocido.
 
 \[\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}\]
 
-\textbf{Estadistico de Prueba}
+\hypertarget{estadistico-de-prueba}{%
+\section{Estadistico de Prueba}\label{estadistico-de-prueba}}
 
 El estadístico de prueba está dada por la máxima distancia vertical:
 
 \[T_{2}=\underset{x}{sup} \ | \ F^*(x)-S(x) \ |\]
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-33}{%
+\subsubsection*{Regla de Decisión}\label{regla-de-decisiuxf3n-33}}
+
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T_{2}> W_{1-\alpha}\) donde \(W_{1-\alpha}\) es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 
-\hypertarget{ejemplo-14}{%
-\section{Ejemplo}\label{ejemplo-14}}
+\hypertarget{ejemplo-15}{%
+\section{Ejemplo}\label{ejemplo-15}}
 
 Dada la siguiente muestra
 
@@ -7129,8 +7313,8 @@ D = 0.15238, p-value = 0.458
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejercicios-14}{%
-\section{Ejercicios}\label{ejercicios-14}}
+\hypertarget{ejercicios-15}{%
+\section{Ejercicios}\label{ejercicios-15}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7151,11 +7335,13 @@ Pruebe la hipótesis nula de que el tiempo entre las llegadas de los clientes se
 La prueba de Anderson Darling, al igual que la prueba de Lilliefors sirve para probar la
 hipótesis de que una muestra aleatoria sigue una cierta distribución especificada.
 
-\textbf{Datos}
+\hypertarget{datos-18}{%
+\section{Datos}\label{datos-18}}
 
 Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tamaño \(n\) asociada con alguna función de distribución desconocida, denotada por \(F(x)\).
 
-\textbf{Supuestos}
+\hypertarget{supuestos-16}{%
+\section{Supuestos}\label{supuestos-16}}
 
 \begin{itemize}
 \tightlist
@@ -7163,9 +7349,12 @@ Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tam
   La muestra es una muestra aleatoria.
 \end{itemize}
 
-\textbf{Hipótesis}
+\hypertarget{hipuxf3tesis-18}{%
+\section{Hipótesis}\label{hipuxf3tesis-18}}
 
-\textbf{Caso A} (Prueba de 2 colas) Solo será este caso
+\hypertarget{caso-a-prueba-de-2-colas-solo-seruxe1-este-caso}{%
+\subsection*{Caso A (Prueba de 2 colas) Solo será este caso}\label{caso-a-prueba-de-2-colas-solo-seruxe1-este-caso}}
+
 
 \[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty\]
 
@@ -7187,7 +7376,8 @@ siguiente función \textbf{QEDF}:
 Una característica importante es que se usa la expresión \(\frac{1}{F^*(X)(1-F^*(X))}\)
 debido a que se busca que las colas de distribución tengan un peso cuantificablemente mayor, con la finalidad de detectar diferencias en las colas de la distribución.
 
-\textbf{Estadístico de Prueba}
+\hypertarget{estaduxedstico-de-prueba-16}{%
+\section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-16}}
 
 Resolviendo la integral se obtiene la estadístico de la forma:
 
@@ -7212,14 +7402,15 @@ Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.6
 \end{array}
 \]
 
-\textbf{Regla de Decisión}
+\hypertarget{regla-de-decisiuxf3n-34}{%
+\section{Regla de Decisión}\label{regla-de-decisiuxf3n-34}}
 
 Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(A_{n}^2> A_{1-\alpha}\) donde \(A_{n}^{2}\) ya tiene el ajuste para cada caso mencionado anteriormente y \(A_{1-\alpha}\) es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 
 Para ejemplificar la prueba de \(Anderson-Darling\) veamos el siguiente ejemplo:
 
-\hypertarget{ejemplo-15}{%
-\subsection{Ejemplo}\label{ejemplo-15}}
+\hypertarget{ejemplo-16}{%
+\subsection{Ejemplo}\label{ejemplo-16}}
 
 Se desea probar si la siguiente muestra:
 
@@ -7413,7 +7604,7 @@ Con este pequeño cambio, la prueba de Kuiper es tan sensible en las colas como 
 
 Las pruebas \textbf{Anderson--Darling} y \textbf{Cramér--von Mises} pertenecen a un grupo llamado \textbf{estadísticas EDF cuadráticas}, en donde el término EDF se refiere a que se basan en la función de distribución empírica.
 
-Este grupo de estadíticas esta definido de la siguiente manera:
+Este grupo de estadísticas esta definido de la siguiente manera:
 \[n\int_{-\infty}^{\infty}(S(x)-F_0(x))^2w(x)dF_0(x)\]
 En donde la diferencia entre la distribución empírica y la hipótetica está calculada con el término cuadrático y el término \(w(x)\) es un peso que se da esas diferencias.
 
@@ -8594,8 +8785,8 @@ Dado que \(\epsilon\) es una variable aleatoria simétrica y con media 0 se tien
 
 \[\beta_{0}+\beta_{1}x^*+\epsilon \in \left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*-t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2},\hat{\beta_{0}}+\hat{\beta_{1}}x^*+t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right].\]
 
-\hypertarget{ejemplo-16}{%
-\subsection{Ejemplo}\label{ejemplo-16}}
+\hypertarget{ejemplo-17}{%
+\subsection{Ejemplo}\label{ejemplo-17}}
 
 Retomando los datos de la sección anterior, recordemos que el gerente del departamento de ventas de la compañía \textbf{CALLCENT} desea predecir, de alguna manera, el tiempo promedio que tardarían en procesar un número dado de facturas. Esto con el objetivo de llevar a cabo una buena logística de diversas operaciones dentro de la empresa.
 
@@ -9065,8 +9256,8 @@ Para el modelo de regresión lineal, en particular, se cumple que:
 
 \[r^2=R^2.\]
 
-\hypertarget{ejemplo-17}{%
-\subsection{Ejemplo}\label{ejemplo-17}}
+\hypertarget{ejemplo-18}{%
+\subsection{Ejemplo}\label{ejemplo-18}}
 
 En las secciones anteriores tomamos los datos de \textbf{CALLCENT} y comenzamos a resolver el problema que el gerente nos planteó de poder
 predecir, de alguna manera, el tiempo promedio que tardarían en procesar un número dado de facturas.
@@ -9077,7 +9268,9 @@ Verificamos gráficamente que hubiera una relación lineal entre las variables, 
 
 Como se mencionó en nuestro capítulo debemos aplicar pruebas estadísticas que nos aseguren que las estimaciones de los parámetros serán distintos de cero.
 
-\textbf{Prueba de hipótesis para \(\beta_{0}\) y \(\beta_{1}\)}
+\hypertarget{prueba-de-hipuxf3tesis-para-beta_0-y-beta_1}{%
+\subsubsection*{\texorpdfstring{Prueba de hipótesis para \(\beta_{0}\) y \(\beta_{1}\)}{Prueba de hipótesis para \textbackslash beta\_\{0\} y \textbackslash beta\_\{1\}}}\label{prueba-de-hipuxf3tesis-para-beta_0-y-beta_1}}
+
 
 Haremos el cálculo del estadístico de prueba para probar la hipótesis: \(\textbf{H}_0=\hat{\beta_{0}}=0 \ \ \ vs \ \ \ \textbf{H}_a \neq 0\) con una confianza del \(90\%\) y sustituimos en la siguiente ecuación:
 
@@ -9151,7 +9344,9 @@ Con éstas dos pruebas corroboramos que los datos ajustan a un modelo de regresi
   Si la prueba de hipótesis para \(\beta_{1}\) hubiera resultado en no rechazar \(\textbf{H}_0\) entonces, se buscaría ajustar un modelo con otra variable (diferente a las facturas) ya que los datos estarían diciendo que la variable facturas no es significativa para explicar el tiempo promedio de su llegada.
 \end{itemize}
 
-\textbf{Coeficiente de determinación}
+\hypertarget{coeficiente-de-determinaciuxf3n-1}{%
+\subsubsection*{Coeficiente de determinación}\label{coeficiente-de-determinaciuxf3n-1}}
+
 
 Por último vamos a calcular el coeficiente de determinación de nuestro modelo. Como se menciona en nuestro capítulo, este coeficiente mide la proporción de la variación explicada por el modelo en relación a la variación total existente en los datos, y por eso es un valor entre 0 y 1.
 
@@ -9375,8 +9570,8 @@ White's Test for Heteroskedasticity:
 
 Se observa que en el anterior caso particular la prueba de White supone como válida la hipótesis nula la homocedasticidad de la muestra, debido a que el \(p-value\) es alto, (de 0.5244), lo que conlleva a que no se rechace la hipótesis nula con un nivel de significancia \(\alpha=0.05\), por lo que se acepta que la muestra se comporta con homocedasticidad.
 
-\hypertarget{ejemplo-18}{%
-\subsection{Ejemplo}\label{ejemplo-18}}
+\hypertarget{ejemplo-19}{%
+\subsection{Ejemplo}\label{ejemplo-19}}
 
 En las secciones anteriores tomamos los datos de \textbf{CALLCENT} y comenzamos a resolver el problema que el gerente nos planteó de poder
 predecir, de alguna manera, el tiempo promedio que tardarían en procesar un número dado de facturas.
@@ -10978,8 +11173,8 @@ Total     & n-1 & \underline{Y}'\underline{Y}-n\overline{y}^2 & - & - \\
 \end{array}
 \]
 
-\hypertarget{coeficiente-de-determinaciuxf3n-1}{%
-\section{Coeficiente de determinación}\label{coeficiente-de-determinaciuxf3n-1}}
+\hypertarget{coeficiente-de-determinaciuxf3n-2}{%
+\section{Coeficiente de determinación}\label{coeficiente-de-determinaciuxf3n-2}}
 
 El coeficiente de determinación con frecuencia se le asocia a la proporción de la variación explicada por la variable regresora \(X\), ya que \(0 \leq SC_{reg} \leq SC_{T}\) entonces los valores del coeficiente de determinación están entre \(0 \leq R^2 \leq 1.\) Cabe mencionar que este coeficiente proporciona una idea muy cercana a la variabilidad que cae sobre la regresión, sin embargo, no hayq ue perder de vista que en primera instancia ésta medida sirve como una aproximación.
 
@@ -11047,8 +11242,8 @@ De esta manera el coeficiente \(\kappa\) es calculado como:
 
 \[\kappa=\frac{\lambda_{max}}{\lambda_{min}}.\]
 
-\hypertarget{ejemplo-19}{%
-\section{Ejemplo}\label{ejemplo-19}}
+\hypertarget{ejemplo-20}{%
+\section{Ejemplo}\label{ejemplo-20}}
 
 Se tiene información sobre las cajetillas vendidas y queremos saber que factores influyen en dichas ventas.
 

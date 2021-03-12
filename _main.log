@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  10 MAR 2021 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  11 MAR 2021 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1185,1338 +1185,1350 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.43 ... {7}Prueba U-Mann y Witney}{46}{chapter.7}
+l.43 ...ne {6}Prueba de Cox Stuart}{39}{chapter.6}
                                                    [1
 
 ]
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
 [2]
-LaTeX Info: Redefining \. on input line 143.
-LaTeX Info: Redefining \% on input line 143.
-[3])
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+[3]
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
+[4])
 \tf@toc=\write5
 \openout5 = `_main.toc'.
 
 LaTeX Info: Redefining \. on input line 169.
 LaTeX Info: Redefining \% on input line 169.
-[4] [5
+[5] [6
 
 ]
 LaTeX Info: Redefining \. on input line 244.
 LaTeX Info: Redefining \% on input line 244.
-[6] [7
+[7] [8
 
 ]
 Cap\'{\i }tulo 1.
-[8
+[9
 
 ]
 LaTeX Info: Redefining \. on input line 290.
 LaTeX Info: Redefining \% on input line 290.
-[9]
+[10]
 
 LaTeX Warning: Command \' invalid in math mode on input line 293.
 
-[10
-
-]
-Cap\'{\i }tulo 2.
 [11
 
 ]
-LaTeX Info: Redefining \. on input line 391.
-LaTeX Info: Redefining \% on input line 391.
-[12]
-LaTeX Info: Redefining \. on input line 446.
-LaTeX Info: Redefining \% on input line 446.
+Cap\'{\i }tulo 2.
+[12
+
+]
+LaTeX Info: Redefining \. on input line 385.
+LaTeX Info: Redefining \% on input line 385.
 [13]
-LaTeX Info: Redefining \. on input line 509.
-LaTeX Info: Redefining \% on input line 509.
+LaTeX Info: Redefining \. on input line 435.
+LaTeX Info: Redefining \% on input line 435.
 [14]
+LaTeX Info: Redefining \. on input line 502.
+LaTeX Info: Redefining \% on input line 502.
+[15]
 
-LaTeX Warning: Command \' invalid in math mode on input line 510.
+LaTeX Warning: Command \' invalid in math mode on input line 526.
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 576.
+LaTeX Info: Redefining \. on input line 580.
+LaTeX Info: Redefining \% on input line 580.
+[16]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 592.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 584.
-LaTeX Info: Redefining \. on input line 591.
-LaTeX Info: Redefining \% on input line 591.
-[15]
-<_main_files/figure-latex/unnamed-chunk-4-1.pdf, id=447, 448.67625pt x 247.9262
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 600.
+<_main_files/figure-latex/unnamed-chunk-4-1.pdf, id=600, 448.67625pt x 247.9262
 5pt>
 File: _main_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-4-1.pdf  used o
-n input line 609.
+n input line 625.
 (pdftex.def)             Requested size: 448.67516pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 640.
-LaTeX Info: Redefining \% on input line 640.
-[16 <./_main_files/figure-latex/unnamed-chunk-4-1.pdf>]
-LaTeX Info: Redefining \. on input line 646.
-LaTeX Info: Redefining \% on input line 646.
+LaTeX Info: Redefining \. on input line 625.
+LaTeX Info: Redefining \% on input line 625.
 [17]
+LaTeX Info: Redefining \. on input line 662.
+LaTeX Info: Redefining \% on input line 662.
+[18 <./_main_files/figure-latex/unnamed-chunk-4-1.pdf>]
 Cap\'{\i }tulo 3.
-[18
+[19
 
 ]
-LaTeX Info: Redefining \. on input line 748.
-LaTeX Info: Redefining \% on input line 748.
-[19]
-LaTeX Info: Redefining \. on input line 798.
-LaTeX Info: Redefining \% on input line 798.
+LaTeX Info: Redefining \. on input line 764.
+LaTeX Info: Redefining \% on input line 764.
 [20]
-LaTeX Info: Redefining \. on input line 860.
-LaTeX Info: Redefining \% on input line 860.
+LaTeX Info: Redefining \. on input line 820.
+LaTeX Info: Redefining \% on input line 820.
 [21]
-<_main_files/figure-latex/unnamed-chunk-7-1.pdf, id=499, 428.60126pt x 255.9562
+LaTeX Info: Redefining \. on input line 882.
+LaTeX Info: Redefining \% on input line 882.
+[22]
+<_main_files/figure-latex/unnamed-chunk-7-1.pdf, id=673, 428.60126pt x 255.9562
 5pt>
 File: _main_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-7-1.pdf  used o
-n input line 895.
+n input line 929.
 (pdftex.def)             Requested size: 428.6002pt x 255.95561pt.
-LaTeX Info: Redefining \. on input line 899.
-LaTeX Info: Redefining \% on input line 899.
-[22 <./_main_files/figure-latex/unnamed-chunk-7-1.pdf>]
-LaTeX Info: Redefining \. on input line 1004.
-LaTeX Info: Redefining \% on input line 1004.
+LaTeX Info: Redefining \. on input line 929.
+LaTeX Info: Redefining \% on input line 929.
 [23]
-LaTeX Info: Redefining \. on input line 1010.
-LaTeX Info: Redefining \% on input line 1010.
-[24]
+LaTeX Info: Redefining \. on input line 988.
+LaTeX Info: Redefining \% on input line 988.
+[24 <./_main_files/figure-latex/unnamed-chunk-7-1.pdf>]
+LaTeX Info: Redefining \. on input line 1044.
+LaTeX Info: Redefining \% on input line 1044.
+[25]
 Cap\'{\i }tulo 4.
-[25
+[26
 
 ]
-LaTeX Info: Redefining \. on input line 1115.
-LaTeX Info: Redefining \% on input line 1115.
-[26]
-LaTeX Info: Redefining \. on input line 1170.
-LaTeX Info: Redefining \% on input line 1170.
+LaTeX Info: Redefining \. on input line 1149.
+LaTeX Info: Redefining \% on input line 1149.
 [27]
-
-LaTeX Warning: Command \' invalid in math mode on input line 1237.
-
-LaTeX Info: Redefining \. on input line 1239.
-LaTeX Info: Redefining \% on input line 1239.
+LaTeX Info: Redefining \. on input line 1204.
+LaTeX Info: Redefining \% on input line 1204.
 [28]
-<_main_files/figure-latex/unnamed-chunk-11-1.pdf, id=577, 428.60126pt x 247.926
+
+LaTeX Warning: Command \' invalid in math mode on input line 1271.
+
+LaTeX Info: Redefining \. on input line 1273.
+LaTeX Info: Redefining \% on input line 1273.
+[29]
+<_main_files/figure-latex/unnamed-chunk-11-1.pdf, id=750, 428.60126pt x 247.926
 25pt>
 File: _main_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-11-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-11-1.pdf  used 
-on input line 1305.
+on input line 1339.
 (pdftex.def)             Requested size: 428.6002pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 1305.
-LaTeX Info: Redefining \% on input line 1305.
-[29]
-LaTeX Info: Redefining \. on input line 1407.
-LaTeX Info: Redefining \% on input line 1407.
-[30 <./_main_files/figure-latex/unnamed-chunk-11-1.pdf>]
-LaTeX Info: Redefining \. on input line 1481.
-LaTeX Info: Redefining \% on input line 1481.
-[31]
+LaTeX Info: Redefining \. on input line 1339.
+LaTeX Info: Redefining \% on input line 1339.
+[30]
+LaTeX Info: Redefining \. on input line 1441.
+LaTeX Info: Redefining \% on input line 1441.
+[31 <./_main_files/figure-latex/unnamed-chunk-11-1.pdf>]
+LaTeX Info: Redefining \. on input line 1515.
+LaTeX Info: Redefining \% on input line 1515.
+[32]
 Cap\'{\i }tulo 5.
 
-LaTeX Warning: Command \' invalid in math mode on input line 1495.
+LaTeX Warning: Command \' invalid in math mode on input line 1529.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1495.
+LaTeX Warning: Command \' invalid in math mode on input line 1529.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1497.
+LaTeX Warning: Command \' invalid in math mode on input line 1531.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1497.
+LaTeX Warning: Command \' invalid in math mode on input line 1531.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1516.
+LaTeX Warning: Command \' invalid in math mode on input line 1550.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1516.
+LaTeX Warning: Command \' invalid in math mode on input line 1550.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1518.
+LaTeX Warning: Command \' invalid in math mode on input line 1552.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1518.
+LaTeX Warning: Command \' invalid in math mode on input line 1552.
 
-[32
+[33
 
 ]
-LaTeX Info: Redefining \. on input line 1597.
-LaTeX Info: Redefining \% on input line 1597.
-[33]
-
-LaTeX Warning: Command \' invalid in math mode on input line 1600.
-
-LaTeX Info: Redefining \. on input line 1667.
-LaTeX Info: Redefining \% on input line 1667.
+LaTeX Info: Redefining \. on input line 1631.
+LaTeX Info: Redefining \% on input line 1631.
 [34]
-<_main_files/figure-latex/unnamed-chunk-16-1.pdf, id=641, 430.60875pt x 247.926
+
+LaTeX Warning: Command \' invalid in math mode on input line 1634.
+
+LaTeX Info: Redefining \. on input line 1701.
+LaTeX Info: Redefining \% on input line 1701.
+[35]
+<_main_files/figure-latex/unnamed-chunk-16-1.pdf, id=814, 430.60875pt x 247.926
 25pt>
 File: _main_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-16-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-16-1.pdf  used 
-on input line 1710.
+on input line 1744.
 (pdftex.def)             Requested size: 430.60768pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 1710.
-LaTeX Info: Redefining \% on input line 1710.
-[35]
-LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 178
-1.
+LaTeX Info: Redefining \. on input line 1744.
+LaTeX Info: Redefining \% on input line 1744.
+[36]
+LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 181
+5.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \. on input line 1781.
-LaTeX Info: Redefining \% on input line 1781.
-[36 <./_main_files/figure-latex/unnamed-chunk-16-1.pdf>]
-LaTeX Info: Redefining \. on input line 1824.
-LaTeX Info: Redefining \% on input line 1824.
-[37]
+LaTeX Info: Redefining \. on input line 1815.
+LaTeX Info: Redefining \% on input line 1815.
+[37 <./_main_files/figure-latex/unnamed-chunk-16-1.pdf>]
+LaTeX Info: Redefining \. on input line 1858.
+LaTeX Info: Redefining \% on input line 1858.
+[38]
 Cap\'{\i }tulo 6.
-[38
+[39
 
 ]
-LaTeX Info: Redefining \. on input line 1921.
-LaTeX Info: Redefining \% on input line 1921.
-[39]
-LaTeX Info: Redefining \. on input line 1976.
-LaTeX Info: Redefining \% on input line 1976.
+LaTeX Info: Redefining \. on input line 1955.
+LaTeX Info: Redefining \% on input line 1955.
 [40]
-
-LaTeX Warning: Command \' invalid in math mode on input line 2039.
-
-LaTeX Info: Redefining \. on input line 2041.
-LaTeX Info: Redefining \% on input line 2041.
+LaTeX Info: Redefining \. on input line 2010.
+LaTeX Info: Redefining \% on input line 2010.
 [41]
-<_main_files/figure-latex/unnamed-chunk-22-1.pdf, id=714, 430.60875pt x 247.926
+
+LaTeX Warning: Command \' invalid in math mode on input line 2073.
+
+LaTeX Info: Redefining \. on input line 2075.
+LaTeX Info: Redefining \% on input line 2075.
+[42]
+<_main_files/figure-latex/unnamed-chunk-22-1.pdf, id=889, 430.60875pt x 247.926
 25pt>
 File: _main_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-22-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-22-1.pdf  used 
-on input line 2104.
+on input line 2138.
 (pdftex.def)             Requested size: 430.60768pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 2104.
-LaTeX Info: Redefining \% on input line 2104.
-[42]
-LaTeX Info: Redefining \. on input line 2179.
-LaTeX Info: Redefining \% on input line 2179.
-[43 <./_main_files/figure-latex/unnamed-chunk-22-1.pdf>]
-LaTeX Info: Redefining \. on input line 2251.
-LaTeX Info: Redefining \% on input line 2251.
-[44] [45
+LaTeX Info: Redefining \. on input line 2138.
+LaTeX Info: Redefining \% on input line 2138.
+[43]
+LaTeX Info: Redefining \. on input line 2213.
+LaTeX Info: Redefining \% on input line 2213.
+[44 <./_main_files/figure-latex/unnamed-chunk-22-1.pdf>]
+LaTeX Info: Redefining \. on input line 2285.
+LaTeX Info: Redefining \% on input line 2285.
+[45] [46
 
 ]
 Cap\'{\i }tulo 7.
-[46
+[47
 
 ]
-LaTeX Info: Redefining \. on input line 2373.
-LaTeX Info: Redefining \% on input line 2373.
-[47]
-LaTeX Info: Redefining \. on input line 2418.
-LaTeX Info: Redefining \% on input line 2418.
+LaTeX Info: Redefining \. on input line 2409.
+LaTeX Info: Redefining \% on input line 2409.
 [48]
-LaTeX Info: Redefining \. on input line 2491.
-LaTeX Info: Redefining \% on input line 2491.
+LaTeX Info: Redefining \. on input line 2460.
+LaTeX Info: Redefining \% on input line 2460.
 [49]
-LaTeX Info: Redefining \. on input line 2535.
-LaTeX Info: Redefining \% on input line 2535.
+LaTeX Info: Redefining \. on input line 2524.
+LaTeX Info: Redefining \% on input line 2524.
 [50]
-LaTeX Info: Redefining \. on input line 2631.
-LaTeX Info: Redefining \% on input line 2631.
+LaTeX Info: Redefining \. on input line 2576.
+LaTeX Info: Redefining \% on input line 2576.
 [51]
-LaTeX Info: Redefining \. on input line 2687.
-LaTeX Info: Redefining \% on input line 2687.
+LaTeX Info: Redefining \. on input line 2663.
+LaTeX Info: Redefining \% on input line 2663.
 [52]
+LaTeX Info: Redefining \. on input line 2745.
+LaTeX Info: Redefining \% on input line 2745.
+[53]
 Cap\'{\i }tulo 8.
 
-LaTeX Warning: Command \' invalid in math mode on input line 2717.
+LaTeX Warning: Command \' invalid in math mode on input line 2778.
 
-[53
+[54
 
 ]
-LaTeX Info: Redefining \. on input line 2789.
-LaTeX Info: Redefining \% on input line 2789.
-[54]
+LaTeX Info: Redefining \. on input line 2851.
+LaTeX Info: Redefining \% on input line 2851.
+[55]
 Cap\'{\i }tulo 9.
 
-LaTeX Warning: Command \' invalid in math mode on input line 2796.
+LaTeX Warning: Command \' invalid in math mode on input line 2859.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 2797.
+LaTeX Warning: Command \' invalid in math mode on input line 2860.
 
-[55
+[56
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 2851.
+LaTeX Warning: Command \' invalid in math mode on input line 2916.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 2851.
+LaTeX Warning: Command \' invalid in math mode on input line 2916.
 
-LaTeX Info: Redefining \. on input line 2894.
-LaTeX Info: Redefining \% on input line 2894.
-[56]
-LaTeX Info: Redefining \. on input line 2957.
-LaTeX Info: Redefining \% on input line 2957.
+LaTeX Info: Redefining \. on input line 2948.
+LaTeX Info: Redefining \% on input line 2948.
 [57]
-LaTeX Info: Redefining \. on input line 3039.
-LaTeX Info: Redefining \% on input line 3039.
+LaTeX Info: Redefining \. on input line 3003.
+LaTeX Info: Redefining \% on input line 3003.
 [58]
-LaTeX Info: Redefining \. on input line 3108.
-LaTeX Info: Redefining \% on input line 3108.
+LaTeX Info: Redefining \. on input line 3091.
+LaTeX Info: Redefining \% on input line 3091.
 [59]
-LaTeX Info: Redefining \. on input line 3177.
-LaTeX Info: Redefining \% on input line 3177.
+LaTeX Info: Redefining \. on input line 3148.
+LaTeX Info: Redefining \% on input line 3148.
 [60]
-LaTeX Info: Redefining \. on input line 3250.
-LaTeX Info: Redefining \% on input line 3250.
+LaTeX Info: Redefining \. on input line 3232.
+LaTeX Info: Redefining \% on input line 3232.
 [61]
+LaTeX Info: Redefining \. on input line 3317.
+LaTeX Info: Redefining \% on input line 3317.
+[62]
 Cap\'{\i }tulo 10.
 
-LaTeX Warning: Command \' invalid in math mode on input line 3261.
+LaTeX Warning: Command \' invalid in math mode on input line 3330.
 
-[62
+[63
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 3304.
+LaTeX Warning: Command \' invalid in math mode on input line 3379.
 
-LaTeX Info: Redefining \. on input line 3342.
-LaTeX Info: Redefining \% on input line 3342.
-[63]
-LaTeX Info: Redefining \. on input line 3391.
-LaTeX Info: Redefining \% on input line 3391.
+LaTeX Info: Redefining \. on input line 3415.
+LaTeX Info: Redefining \% on input line 3415.
 [64]
-Overfull \hbox (31.1434pt too wide) detected at line 3446
+LaTeX Info: Redefining \. on input line 3467.
+LaTeX Info: Redefining \% on input line 3467.
+[65]
+Overfull \hbox (31.1434pt too wide) detected at line 3538
 []
  []
 
-LaTeX Info: Redefining \. on input line 3450.
-LaTeX Info: Redefining \% on input line 3450.
-[65]
-LaTeX Info: Redefining \. on input line 3497.
-LaTeX Info: Redefining \% on input line 3497.
+LaTeX Info: Redefining \. on input line 3538.
+LaTeX Info: Redefining \% on input line 3538.
 [66]
-LaTeX Info: Redefining \. on input line 3581.
-LaTeX Info: Redefining \% on input line 3581.
+LaTeX Info: Redefining \. on input line 3576.
+LaTeX Info: Redefining \% on input line 3576.
 [67]
-LaTeX Info: Redefining \. on input line 3649.
-LaTeX Info: Redefining \% on input line 3649.
+LaTeX Info: Redefining \. on input line 3661.
+LaTeX Info: Redefining \% on input line 3661.
 [68]
-LaTeX Info: Redefining \. on input line 3728.
-LaTeX Info: Redefining \% on input line 3728.
+Underfull \vbox (badness 1275) detected at line 3727
+ []
+
+LaTeX Info: Redefining \. on input line 3727.
+LaTeX Info: Redefining \% on input line 3727.
 [69]
-LaTeX Info: Redefining \. on input line 3863.
-LaTeX Info: Redefining \% on input line 3863.
+LaTeX Info: Redefining \. on input line 3813.
+LaTeX Info: Redefining \% on input line 3813.
 [70]
-LaTeX Info: Redefining \. on input line 3866.
-LaTeX Info: Redefining \% on input line 3866.
+LaTeX Info: Redefining \. on input line 3913.
+LaTeX Info: Redefining \% on input line 3913.
 [71]
+LaTeX Info: Redefining \. on input line 3959.
+LaTeX Info: Redefining \% on input line 3959.
+[72]
 Cap\'{\i }tulo 11.
 
-LaTeX Warning: Command \' invalid in math mode on input line 3875.
+LaTeX Warning: Command \' invalid in math mode on input line 3969.
 
-[72
+[73
 
 ]
-LaTeX Info: Redefining \. on input line 3972.
-LaTeX Info: Redefining \% on input line 3972.
-[73]
-LaTeX Info: Redefining \. on input line 4016.
-LaTeX Info: Redefining \% on input line 4016.
+LaTeX Info: Redefining \. on input line 4056.
+LaTeX Info: Redefining \% on input line 4056.
 [74]
-LaTeX Info: Redefining \. on input line 4077.
-LaTeX Info: Redefining \% on input line 4077.
+LaTeX Info: Redefining \. on input line 4115.
+LaTeX Info: Redefining \% on input line 4115.
 [75]
-LaTeX Info: Redefining \. on input line 4121.
-LaTeX Info: Redefining \% on input line 4121.
-[76] [77
+LaTeX Info: Redefining \. on input line 4178.
+LaTeX Info: Redefining \% on input line 4178.
+[76]
+LaTeX Info: Redefining \. on input line 4223.
+LaTeX Info: Redefining \% on input line 4223.
+[77] [78
 
 ]
 Cap\'{\i }tulo 12.
-[78
+[79
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 4240.
+LaTeX Warning: Command \' invalid in math mode on input line 4348.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4240.
+LaTeX Warning: Command \' invalid in math mode on input line 4348.
 
-
-LaTeX Warning: Command \' invalid in math mode on input line 4267.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4267.
-
-LaTeX Info: Redefining \. on input line 4273.
-LaTeX Info: Redefining \% on input line 4273.
-[79]
-
-LaTeX Warning: Command \' invalid in math mode on input line 4290.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4290.
-
-LaTeX Info: Redefining \. on input line 4326.
-LaTeX Info: Redefining \% on input line 4326.
+LaTeX Info: Redefining \. on input line 4375.
+LaTeX Info: Redefining \% on input line 4375.
 [80]
-LaTeX Info: Redefining \. on input line 4384.
-LaTeX Info: Redefining \% on input line 4384.
+
+LaTeX Warning: Command \' invalid in math mode on input line 4379.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4379.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4406.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4406.
+
+LaTeX Info: Redefining \. on input line 4429.
+LaTeX Info: Redefining \% on input line 4429.
 [81]
-LaTeX Info: Redefining \. on input line 4479.
-LaTeX Info: Redefining \% on input line 4479.
+LaTeX Info: Redefining \. on input line 4484.
+LaTeX Info: Redefining \% on input line 4484.
 [82]
-LaTeX Info: Redefining \. on input line 4509.
-LaTeX Info: Redefining \% on input line 4509.
+LaTeX Info: Redefining \. on input line 4557.
+LaTeX Info: Redefining \% on input line 4557.
 [83]
+LaTeX Info: Redefining \. on input line 4627.
+LaTeX Info: Redefining \% on input line 4627.
+[84]
 Cap\'{\i }tulo 13.
-[84
+[85
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 4563.
+LaTeX Warning: Command \' invalid in math mode on input line 4686.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4563.
+LaTeX Warning: Command \' invalid in math mode on input line 4686.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4564.
+LaTeX Warning: Command \' invalid in math mode on input line 4687.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4564.
+LaTeX Warning: Command \' invalid in math mode on input line 4687.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4568.
+LaTeX Warning: Command \' invalid in math mode on input line 4691.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4568.
+LaTeX Warning: Command \' invalid in math mode on input line 4691.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4572.
+LaTeX Warning: Command \' invalid in math mode on input line 4695.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4572.
+LaTeX Warning: Command \' invalid in math mode on input line 4695.
 
-LaTeX Info: Redefining \. on input line 4630.
-LaTeX Info: Redefining \% on input line 4630.
-[85]
-
-LaTeX Warning: Command \' invalid in math mode on input line 4634.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4636.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4638.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4640.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4642.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4642.
-
-LaTeX Info: Redefining \. on input line 4692.
-LaTeX Info: Redefining \% on input line 4692.
+LaTeX Info: Redefining \. on input line 4733.
+LaTeX Info: Redefining \% on input line 4733.
 [86]
-LaTeX Info: Redefining \. on input line 4778.
-LaTeX Info: Redefining \% on input line 4778.
+
+LaTeX Warning: Command \' invalid in math mode on input line 4759.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4761.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4763.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4765.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4767.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 4767.
+
+LaTeX Info: Redefining \. on input line 4803.
+LaTeX Info: Redefining \% on input line 4803.
 [87]
-LaTeX Info: Redefining \. on input line 4881.
-LaTeX Info: Redefining \% on input line 4881.
+LaTeX Info: Redefining \. on input line 4875.
+LaTeX Info: Redefining \% on input line 4875.
 [88]
-LaTeX Info: Redefining \. on input line 4898.
-LaTeX Info: Redefining \% on input line 4898.
+LaTeX Info: Redefining \. on input line 4978.
+LaTeX Info: Redefining \% on input line 4978.
 [89]
+LaTeX Info: Redefining \. on input line 5023.
+LaTeX Info: Redefining \% on input line 5023.
+[90]
 Cap\'{\i }tulo 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 4898.
+(Font)              <24.88> on input line 5023.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 4898.
+(Font)              <20.74> on input line 5023.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 4898.
+(Font)              <17.28> on input line 5023.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 4904.
+(Font)              <14.4> on input line 5029.
 
-LaTeX Warning: Command \' invalid in math mode on input line 4908.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 4908.
+LaTeX Warning: Command \' invalid in math mode on input line 5035.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4910.
+LaTeX Warning: Command \' invalid in math mode on input line 5035.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4937.
+LaTeX Warning: Command \' invalid in math mode on input line 5037.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 4937.
+LaTeX Warning: Command \' invalid in math mode on input line 5064.
 
-[90
+
+LaTeX Warning: Command \' invalid in math mode on input line 5064.
+
+[91
 
 ]
-LaTeX Info: Redefining \. on input line 5000.
-LaTeX Info: Redefining \% on input line 5000.
-[91]
-
-LaTeX Warning: Command \' invalid in math mode on input line 5056.
-
-LaTeX Info: Redefining \. on input line 5076.
-LaTeX Info: Redefining \% on input line 5076.
+LaTeX Info: Redefining \. on input line 5119.
+LaTeX Info: Redefining \% on input line 5119.
 [92]
-LaTeX Info: Redefining \. on input line 5146.
-LaTeX Info: Redefining \% on input line 5146.
+
+LaTeX Warning: Command \' invalid in math mode on input line 5188.
+
+LaTeX Info: Redefining \. on input line 5198.
+LaTeX Info: Redefining \% on input line 5198.
 [93]
-LaTeX Info: Redefining \. on input line 5227.
-LaTeX Info: Redefining \% on input line 5227.
+LaTeX Info: Redefining \. on input line 5278.
+LaTeX Info: Redefining \% on input line 5278.
 [94]
-LaTeX Info: Redefining \. on input line 5230.
-LaTeX Info: Redefining \% on input line 5230.
+LaTeX Info: Redefining \. on input line 5349.
+LaTeX Info: Redefining \% on input line 5349.
 [95]
+LaTeX Info: Redefining \. on input line 5362.
+LaTeX Info: Redefining \% on input line 5362.
+[96]
 Cap\'{\i }tulo 15.
 
-LaTeX Warning: Command \' invalid in math mode on input line 5234.
+LaTeX Warning: Command \' invalid in math mode on input line 5366.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 5234.
+LaTeX Warning: Command \' invalid in math mode on input line 5366.
 
-[96
+[97
 
 ]
-LaTeX Info: Redefining \. on input line 5328.
-LaTeX Info: Redefining \% on input line 5328.
-[97]
-LaTeX Info: Redefining \. on input line 5369.
-LaTeX Info: Redefining \% on input line 5369.
+LaTeX Info: Redefining \. on input line 5453.
+LaTeX Info: Redefining \% on input line 5453.
 [98]
-LaTeX Info: Redefining \. on input line 5455.
-LaTeX Info: Redefining \% on input line 5455.
+LaTeX Info: Redefining \. on input line 5508.
+LaTeX Info: Redefining \% on input line 5508.
 [99]
-LaTeX Info: Redefining \. on input line 5564.
-LaTeX Info: Redefining \% on input line 5564.
+LaTeX Info: Redefining \. on input line 5594.
+LaTeX Info: Redefining \% on input line 5594.
 [100]
-LaTeX Info: Redefining \. on input line 5592.
-LaTeX Info: Redefining \% on input line 5592.
-[101] [102
+LaTeX Info: Redefining \. on input line 5703.
+LaTeX Info: Redefining \% on input line 5703.
+[101]
+LaTeX Info: Redefining \. on input line 5731.
+LaTeX Info: Redefining \% on input line 5731.
+[102] [103
 
 ]
 Cap\'{\i }tulo 16.
-[103
+[104
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 5660.
+LaTeX Warning: Command \' invalid in math mode on input line 5804.
 
-LaTeX Info: Redefining \. on input line 5731.
-LaTeX Info: Redefining \% on input line 5731.
-[104]
-
-LaTeX Warning: Command \' invalid in math mode on input line 5735.
-
-LaTeX Info: Redefining \. on input line 5808.
-LaTeX Info: Redefining \% on input line 5808.
+LaTeX Info: Redefining \. on input line 5869.
+LaTeX Info: Redefining \% on input line 5869.
 [105]
-LaTeX Info: Redefining \. on input line 5929.
-LaTeX Info: Redefining \% on input line 5929.
+
+LaTeX Warning: Command \' invalid in math mode on input line 5879.
+
+LaTeX Info: Redefining \. on input line 5936.
+LaTeX Info: Redefining \% on input line 5936.
 [106]
-LaTeX Info: Redefining \. on input line 5934.
-LaTeX Info: Redefining \% on input line 5934.
+LaTeX Info: Redefining \. on input line 6035.
+LaTeX Info: Redefining \% on input line 6035.
 [107]
+LaTeX Info: Redefining \. on input line 6078.
+LaTeX Info: Redefining \% on input line 6078.
+[108]
 Cap\'{\i }tulo 17.
-<_main_files/figure-latex/unnamed-chunk-54-1.pdf, id=1100, 436.63126pt x 246.92
+<_main_files/figure-latex/unnamed-chunk-54-1.pdf, id=1364, 436.63126pt x 246.92
 25pt>
 File: _main_files/figure-latex/unnamed-chunk-54-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-54-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-54-1.pdf  used 
-on input line 5944.
+on input line 6088.
 (pdftex.def)             Requested size: 436.63019pt x 246.92188pt.
-[108
+[109
 
  <./_main_files/figure-latex/unnamed-chunk-54-1.pdf>]
-LaTeX Info: Redefining \. on input line 5997.
-LaTeX Info: Redefining \% on input line 5997.
-[109]
-LaTeX Info: Redefining \. on input line 6057.
-LaTeX Info: Redefining \% on input line 6057.
+LaTeX Info: Redefining \. on input line 6143.
+LaTeX Info: Redefining \% on input line 6143.
 [110]
-LaTeX Info: Redefining \. on input line 6135.
-LaTeX Info: Redefining \% on input line 6135.
+LaTeX Info: Redefining \. on input line 6197.
+LaTeX Info: Redefining \% on input line 6197.
 [111]
-LaTeX Info: Redefining \. on input line 6203.
-LaTeX Info: Redefining \% on input line 6203.
+LaTeX Info: Redefining \. on input line 6275.
+LaTeX Info: Redefining \% on input line 6275.
 [112]
-LaTeX Info: Redefining \. on input line 6248.
-LaTeX Info: Redefining \% on input line 6248.
+LaTeX Info: Redefining \. on input line 6332.
+LaTeX Info: Redefining \% on input line 6332.
 [113]
+LaTeX Info: Redefining \. on input line 6414.
+LaTeX Info: Redefining \% on input line 6414.
+[114]
+LaTeX Info: Redefining \. on input line 6414.
+LaTeX Info: Redefining \% on input line 6414.
+[115]
 Cap\'{\i }tulo 18.
 
-LaTeX Warning: Command \' invalid in math mode on input line 6278.
+LaTeX Warning: Command \' invalid in math mode on input line 6450.
 
-[114
+[116
 
 ]
-LaTeX Info: Redefining \. on input line 6331.
-LaTeX Info: Redefining \% on input line 6331.
-[115]
-Overfull \hbox (172.33978pt too wide) in paragraph at lines 6391--6414
- [][] 
- []
-
-LaTeX Info: Redefining \. on input line 6415.
-LaTeX Info: Redefining \% on input line 6415.
-[116]
-LaTeX Info: Redefining \. on input line 6478.
-LaTeX Info: Redefining \% on input line 6478.
+LaTeX Info: Redefining \. on input line 6495.
+LaTeX Info: Redefining \% on input line 6495.
 [117]
-LaTeX Info: Redefining \. on input line 6520.
-LaTeX Info: Redefining \% on input line 6520.
-[118]
-Cap\'{\i }tulo 19.
-[119
-
-]
-LaTeX Info: Redefining \. on input line 6597.
-LaTeX Info: Redefining \% on input line 6597.
-[120]
-Overfull \hbox (304.4505pt too wide) in paragraph at lines 6660--6683
+Overfull \hbox (172.33978pt too wide) in paragraph at lines 6563--6586
  [][] 
  []
 
-LaTeX Info: Redefining \. on input line 6684.
-LaTeX Info: Redefining \% on input line 6684.
-[121]
-LaTeX Info: Redefining \. on input line 6736.
-LaTeX Info: Redefining \% on input line 6736.
+LaTeX Info: Redefining \. on input line 6587.
+LaTeX Info: Redefining \% on input line 6587.
+[118]
+LaTeX Info: Redefining \. on input line 6650.
+LaTeX Info: Redefining \% on input line 6650.
+[119]
+LaTeX Info: Redefining \. on input line 6692.
+LaTeX Info: Redefining \% on input line 6692.
+[120]
+Cap\'{\i }tulo 19.
+[121
+
+]
+LaTeX Info: Redefining \. on input line 6768.
+LaTeX Info: Redefining \% on input line 6768.
 [122]
-LaTeX Info: Redefining \. on input line 6811.
-LaTeX Info: Redefining \% on input line 6811.
+Overfull \hbox (304.4505pt too wide) in paragraph at lines 6838--6861
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 6862.
+LaTeX Info: Redefining \% on input line 6862.
 [123]
-<_main_files/figure-latex/unnamed-chunk-65-1.pdf, id=1225, 436.63126pt x 213.79
+LaTeX Info: Redefining \. on input line 6914.
+LaTeX Info: Redefining \% on input line 6914.
+[124]
+LaTeX Info: Redefining \. on input line 6989.
+LaTeX Info: Redefining \% on input line 6989.
+[125]
+<_main_files/figure-latex/unnamed-chunk-65-1.pdf, id=1525, 436.63126pt x 213.79
 875pt>
 File: _main_files/figure-latex/unnamed-chunk-65-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-65-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-65-1.pdf  used 
-on input line 6813.
+on input line 6991.
 (pdftex.def)             Requested size: 436.63019pt x 213.79822pt.
-LaTeX Info: Redefining \. on input line 6847.
-LaTeX Info: Redefining \% on input line 6847.
-[124 <./_main_files/figure-latex/unnamed-chunk-65-1.pdf>]
+LaTeX Info: Redefining \. on input line 7025.
+LaTeX Info: Redefining \% on input line 7025.
+[126 <./_main_files/figure-latex/unnamed-chunk-65-1.pdf>]
 Cap\'{\i }tulo 20.
-[125
+[127
 
 ]
-LaTeX Info: Redefining \. on input line 6969.
-LaTeX Info: Redefining \% on input line 6969.
-[126]
-Overfull \hbox (292.72804pt too wide) in paragraph at lines 6993--7016
+LaTeX Info: Redefining \. on input line 7135.
+LaTeX Info: Redefining \% on input line 7135.
+[128]
+Overfull \hbox (292.72804pt too wide) in paragraph at lines 7177--7200
  [][] 
  []
 
-LaTeX Info: Redefining \. on input line 7046.
-LaTeX Info: Redefining \% on input line 7046.
-[127]
-LaTeX Info: Redefining \. on input line 7126.
-LaTeX Info: Redefining \% on input line 7126.
-[128]
-LaTeX Info: Redefining \. on input line 7149.
-LaTeX Info: Redefining \% on input line 7149.
+LaTeX Info: Redefining \. on input line 7230.
+LaTeX Info: Redefining \% on input line 7230.
 [129]
-Cap\'{\i }tulo 21.
-[130
-
-]
-LaTeX Info: Redefining \. on input line 7262.
-LaTeX Info: Redefining \% on input line 7262.
+LaTeX Info: Redefining \. on input line 7310.
+LaTeX Info: Redefining \% on input line 7310.
+[130]
+LaTeX Info: Redefining \. on input line 7333.
+LaTeX Info: Redefining \% on input line 7333.
 [131]
-LaTeX Info: Redefining \. on input line 7349.
-LaTeX Info: Redefining \% on input line 7349.
-[132]
-LaTeX Info: Redefining \. on input line 7408.
-LaTeX Info: Redefining \% on input line 7408.
+Cap\'{\i }tulo 21.
+[132
+
+]
+LaTeX Info: Redefining \. on input line 7434.
+LaTeX Info: Redefining \% on input line 7434.
 [133]
+LaTeX Info: Redefining \. on input line 7526.
+LaTeX Info: Redefining \% on input line 7526.
+[134]
+LaTeX Info: Redefining \. on input line 7596.
+LaTeX Info: Redefining \% on input line 7596.
+[135]
+LaTeX Info: Redefining \. on input line 7599.
+LaTeX Info: Redefining \% on input line 7599.
+[136]
 Cap\'{\i }tulo 22.
-[134
-
-]
-LaTeX Info: Redefining \. on input line 7541.
-LaTeX Info: Redefining \% on input line 7541.
-[135] [136
-
-]
-Cap\'{\i }tulo 23.
 [137
 
 ]
-LaTeX Info: Redefining \. on input line 7637.
-LaTeX Info: Redefining \% on input line 7637.
-[138]
-LaTeX Info: Redefining \. on input line 7674.
-LaTeX Info: Redefining \% on input line 7674.
-[139]
-LaTeX Info: Redefining \. on input line 7705.
-LaTeX Info: Redefining \% on input line 7705.
-[140]
-LaTeX Info: Redefining \. on input line 7745.
-LaTeX Info: Redefining \% on input line 7745.
-[141]
-LaTeX Info: Redefining \. on input line 7785.
-LaTeX Info: Redefining \% on input line 7785.
-[142]
-LaTeX Info: Redefining \. on input line 7823.
-LaTeX Info: Redefining \% on input line 7823.
-[143]
-LaTeX Info: Redefining \. on input line 7851.
-LaTeX Info: Redefining \% on input line 7851.
-[144]
-LaTeX Info: Redefining \. on input line 7892.
-LaTeX Info: Redefining \% on input line 7892.
-[145]
-LaTeX Info: Redefining \. on input line 7927.
-LaTeX Info: Redefining \% on input line 7927.
-[146]
-LaTeX Info: Redefining \. on input line 7966.
-LaTeX Info: Redefining \% on input line 7966.
-[147]
-Cap\'{\i }tulo 24.
-[148
+LaTeX Info: Redefining \. on input line 7732.
+LaTeX Info: Redefining \% on input line 7732.
+[138] [139
 
 ]
-LaTeX Info: Redefining \. on input line 8069.
-LaTeX Info: Redefining \% on input line 8069.
+Cap\'{\i }tulo 23.
+[140
+
+]
+LaTeX Info: Redefining \. on input line 7828.
+LaTeX Info: Redefining \% on input line 7828.
+[141]
+LaTeX Info: Redefining \. on input line 7865.
+LaTeX Info: Redefining \% on input line 7865.
+[142]
+LaTeX Info: Redefining \. on input line 7896.
+LaTeX Info: Redefining \% on input line 7896.
+[143]
+LaTeX Info: Redefining \. on input line 7936.
+LaTeX Info: Redefining \% on input line 7936.
+[144]
+LaTeX Info: Redefining \. on input line 7976.
+LaTeX Info: Redefining \% on input line 7976.
+[145]
+LaTeX Info: Redefining \. on input line 8014.
+LaTeX Info: Redefining \% on input line 8014.
+[146]
+LaTeX Info: Redefining \. on input line 8042.
+LaTeX Info: Redefining \% on input line 8042.
+[147]
+LaTeX Info: Redefining \. on input line 8083.
+LaTeX Info: Redefining \% on input line 8083.
+[148]
+LaTeX Info: Redefining \. on input line 8118.
+LaTeX Info: Redefining \% on input line 8118.
 [149]
-LaTeX Info: Redefining \. on input line 8111.
-LaTeX Info: Redefining \% on input line 8111.
+LaTeX Info: Redefining \. on input line 8157.
+LaTeX Info: Redefining \% on input line 8157.
 [150]
-LaTeX Info: Redefining \. on input line 8147.
-LaTeX Info: Redefining \% on input line 8147.
-[151]
-LaTeX Info: Redefining \. on input line 8184.
-LaTeX Info: Redefining \% on input line 8184.
+Cap\'{\i }tulo 24.
+[151
+
+]
+LaTeX Info: Redefining \. on input line 8260.
+LaTeX Info: Redefining \% on input line 8260.
 [152]
-<_main_files/figure-latex/unnamed-chunk-76-1.pdf, id=1400, 436.63126pt x 247.92
+LaTeX Info: Redefining \. on input line 8302.
+LaTeX Info: Redefining \% on input line 8302.
+[153]
+LaTeX Info: Redefining \. on input line 8338.
+LaTeX Info: Redefining \% on input line 8338.
+[154]
+LaTeX Info: Redefining \. on input line 8375.
+LaTeX Info: Redefining \% on input line 8375.
+[155]
+<_main_files/figure-latex/unnamed-chunk-76-1.pdf, id=1717, 436.63126pt x 247.92
 625pt>
 File: _main_files/figure-latex/unnamed-chunk-76-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-76-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-76-1.pdf  used 
-on input line 8258.
+on input line 8449.
 (pdftex.def)             Requested size: 436.63019pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 8258.
-LaTeX Info: Redefining \% on input line 8258.
-[153]
-LaTeX Info: Redefining \. on input line 8322.
-LaTeX Info: Redefining \% on input line 8322.
-[154 <./_main_files/figure-latex/unnamed-chunk-76-1.pdf>]
-<_main_files/figure-latex/unnamed-chunk-84-1.pdf, id=1427, 436.63126pt x 212.79
+LaTeX Info: Redefining \. on input line 8449.
+LaTeX Info: Redefining \% on input line 8449.
+[156]
+LaTeX Info: Redefining \. on input line 8513.
+LaTeX Info: Redefining \% on input line 8513.
+[157 <./_main_files/figure-latex/unnamed-chunk-76-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-84-1.pdf, id=1745, 436.63126pt x 212.79
 5pt>
 File: _main_files/figure-latex/unnamed-chunk-84-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-84-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-84-1.pdf  used 
-on input line 8338.
+on input line 8529.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-LaTeX Info: Redefining \. on input line 8343.
-LaTeX Info: Redefining \% on input line 8343.
-[155 <./_main_files/figure-latex/unnamed-chunk-84-1.pdf>]
+LaTeX Info: Redefining \. on input line 8534.
+LaTeX Info: Redefining \% on input line 8534.
+[158 <./_main_files/figure-latex/unnamed-chunk-84-1.pdf>]
 Cap\'{\i }tulo 25.
-[156
+[159
 
 ]
-LaTeX Info: Redefining \. on input line 8400.
-LaTeX Info: Redefining \% on input line 8400.
-[157]
-LaTeX Info: Redefining \. on input line 8437.
-LaTeX Info: Redefining \% on input line 8437.
-[158]
-LaTeX Info: Redefining \. on input line 8477.
-LaTeX Info: Redefining \% on input line 8477.
-[159]
-LaTeX Info: Redefining \. on input line 8507.
-LaTeX Info: Redefining \% on input line 8507.
+LaTeX Info: Redefining \. on input line 8591.
+LaTeX Info: Redefining \% on input line 8591.
 [160]
-LaTeX Info: Redefining \. on input line 8546.
-LaTeX Info: Redefining \% on input line 8546.
+LaTeX Info: Redefining \. on input line 8628.
+LaTeX Info: Redefining \% on input line 8628.
 [161]
-LaTeX Info: Redefining \. on input line 8585.
-LaTeX Info: Redefining \% on input line 8585.
+LaTeX Info: Redefining \. on input line 8668.
+LaTeX Info: Redefining \% on input line 8668.
 [162]
-Overfull \hbox (39.18929pt too wide) detected at line 8589
+LaTeX Info: Redefining \. on input line 8698.
+LaTeX Info: Redefining \% on input line 8698.
+[163]
+LaTeX Info: Redefining \. on input line 8737.
+LaTeX Info: Redefining \% on input line 8737.
+[164]
+LaTeX Info: Redefining \. on input line 8776.
+LaTeX Info: Redefining \% on input line 8776.
+[165]
+Overfull \hbox (39.18929pt too wide) detected at line 8780
 \OT1/lmr/bx/n/10 P [] \OT1/lmr/m/n/10 = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10
  
  []
 
 
-Overfull \hbox (86.4533pt too wide) detected at line 8591
+Overfull \hbox (86.4533pt too wide) detected at line 8782
 \OT1/lmr/bx/n/10 P [] \OT1/lmr/m/n/10 = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10
  
  []
 
 
-Overfull \hbox (29.93643pt too wide) detected at line 8595
+Overfull \hbox (29.93643pt too wide) detected at line 8786
 \OML/lmm/m/it/10 ^^L[] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 ^^L[]x[] \OT1/lmr/m/n
 /10 + \OML/lmm/m/it/10 ^^O \OMS/lmsy/m/n/10 2 [] \OML/lmm/m/it/10 :
  []
 
-LaTeX Info: Redefining \. on input line 8635.
-LaTeX Info: Redefining \% on input line 8635.
-[163]
-<_main_files/figure-latex/unnamed-chunk-95-1.pdf, id=1484, 436.63126pt x 247.92
+LaTeX Info: Redefining \. on input line 8826.
+LaTeX Info: Redefining \% on input line 8826.
+[166]
+<_main_files/figure-latex/unnamed-chunk-95-1.pdf, id=1801, 436.63126pt x 247.92
 625pt>
 File: _main_files/figure-latex/unnamed-chunk-95-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-95-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-95-1.pdf  used 
-on input line 8715.
+on input line 8906.
 (pdftex.def)             Requested size: 436.63019pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 8715.
-LaTeX Info: Redefining \% on input line 8715.
-[164]
-LaTeX Info: Redefining \. on input line 8756.
-LaTeX Info: Redefining \% on input line 8756.
-[165 <./_main_files/figure-latex/unnamed-chunk-95-1.pdf>]
+LaTeX Info: Redefining \. on input line 8906.
+LaTeX Info: Redefining \% on input line 8906.
+[167]
+LaTeX Info: Redefining \. on input line 8947.
+LaTeX Info: Redefining \% on input line 8947.
+[168 <./_main_files/figure-latex/unnamed-chunk-95-1.pdf>]
 Cap\'{\i }tulo 26.
 
-LaTeX Warning: Command \' invalid in math mode on input line 8792.
+LaTeX Warning: Command \' invalid in math mode on input line 8983.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 8792.
+LaTeX Warning: Command \' invalid in math mode on input line 8983.
 
-[166
+[169
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 8830.
+LaTeX Warning: Command \' invalid in math mode on input line 9021.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 8830.
+LaTeX Warning: Command \' invalid in math mode on input line 9021.
 
-LaTeX Info: Redefining \. on input line 8846.
-LaTeX Info: Redefining \% on input line 8846.
-[167]
-
-LaTeX Warning: Command \' invalid in math mode on input line 8859.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 8859.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 8862.
-
-LaTeX Info: Redefining \. on input line 8897.
-LaTeX Info: Redefining \% on input line 8897.
-[168]
-LaTeX Info: Redefining \. on input line 8939.
-LaTeX Info: Redefining \% on input line 8939.
-[169]
-LaTeX Info: Redefining \. on input line 8990.
-LaTeX Info: Redefining \% on input line 8990.
+LaTeX Info: Redefining \. on input line 9037.
+LaTeX Info: Redefining \% on input line 9037.
 [170]
 
-LaTeX Warning: Command \' invalid in math mode on input line 9005.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9045.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9046.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9046.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9047.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9047.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9048.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 9049.
+LaTeX Warning: Command \' invalid in math mode on input line 9050.
 
 
 LaTeX Warning: Command \' invalid in math mode on input line 9050.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 9051.
+LaTeX Warning: Command \' invalid in math mode on input line 9053.
 
-LaTeX Info: Redefining \. on input line 9061.
-LaTeX Info: Redefining \% on input line 9061.
+LaTeX Info: Redefining \. on input line 9088.
+LaTeX Info: Redefining \% on input line 9088.
 [171]
-LaTeX Info: Redefining \. on input line 9115.
-LaTeX Info: Redefining \% on input line 9115.
+LaTeX Info: Redefining \. on input line 9130.
+LaTeX Info: Redefining \% on input line 9130.
 [172]
-LaTeX Info: Redefining \. on input line 9176.
-LaTeX Info: Redefining \% on input line 9176.
+LaTeX Info: Redefining \. on input line 9181.
+LaTeX Info: Redefining \% on input line 9181.
 [173]
-Cap\'{\i }tulo 27.
-[174
 
-]
-
-LaTeX Warning: Command \' invalid in math mode on input line 9209.
+LaTeX Warning: Command \' invalid in math mode on input line 9196.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 9221.
+LaTeX Warning: Command \' invalid in math mode on input line 9236.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 9224.
+LaTeX Warning: Command \' invalid in math mode on input line 9237.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 9227.
+LaTeX Warning: Command \' invalid in math mode on input line 9237.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9238.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9238.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9239.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9240.
 
 
 LaTeX Warning: Command \' invalid in math mode on input line 9241.
 
+
+LaTeX Warning: Command \' invalid in math mode on input line 9242.
+
 LaTeX Info: Redefining \. on input line 9252.
 LaTeX Info: Redefining \% on input line 9252.
+[174]
+LaTeX Info: Redefining \. on input line 9308.
+LaTeX Info: Redefining \% on input line 9308.
 [175]
-<_main_files/figure-latex/unnamed-chunk-103-1.pdf, id=1565, 465.74pt x 246.9225
+LaTeX Info: Redefining \. on input line 9371.
+LaTeX Info: Redefining \% on input line 9371.
+[176]
+Cap\'{\i }tulo 27.
+[177
+
+]
+
+LaTeX Warning: Command \' invalid in math mode on input line 9404.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9416.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9419.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9422.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 9436.
+
+LaTeX Info: Redefining \. on input line 9447.
+LaTeX Info: Redefining \% on input line 9447.
+[178]
+<_main_files/figure-latex/unnamed-chunk-103-1.pdf, id=1886, 465.74pt x 246.9225
 pt>
 File: _main_files/figure-latex/unnamed-chunk-103-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-103-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-103-1.pdf  used
- on input line 9265.
+ on input line 9460.
 (pdftex.def)             Requested size: 452.98248pt x 240.1588pt.
-<_main_files/figure-latex/unnamed-chunk-104-1.pdf, id=1566, 465.74pt x 246.9225
+<_main_files/figure-latex/unnamed-chunk-104-1.pdf, id=1887, 465.74pt x 246.9225
 pt>
 File: _main_files/figure-latex/unnamed-chunk-104-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-104-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-104-1.pdf  used
- on input line 9267.
+ on input line 9462.
 (pdftex.def)             Requested size: 452.98248pt x 240.1588pt.
-LaTeX Info: Redefining \. on input line 9267.
-LaTeX Info: Redefining \% on input line 9267.
-[176 <./_main_files/figure-latex/unnamed-chunk-103-1.pdf>]
-LaTeX Info: Redefining \. on input line 9287.
-LaTeX Info: Redefining \% on input line 9287.
-[177 <./_main_files/figure-latex/unnamed-chunk-104-1.pdf>]
-<_main_files/figure-latex/unnamed-chunk-105-1.pdf, id=1611, 449.68pt x 248.93pt
+LaTeX Info: Redefining \. on input line 9462.
+LaTeX Info: Redefining \% on input line 9462.
+[179 <./_main_files/figure-latex/unnamed-chunk-103-1.pdf>]
+LaTeX Info: Redefining \. on input line 9482.
+LaTeX Info: Redefining \% on input line 9482.
+[180 <./_main_files/figure-latex/unnamed-chunk-104-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-105-1.pdf, id=1933, 449.68pt x 248.93pt
 >
 File: _main_files/figure-latex/unnamed-chunk-105-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-105-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-105-1.pdf  used
- on input line 9297.
+ on input line 9492.
 (pdftex.def)             Requested size: 449.68575pt x 248.93317pt.
-<_main_files/figure-latex/unnamed-chunk-105-2.pdf, id=1612, 449.68pt x 248.93pt
+<_main_files/figure-latex/unnamed-chunk-105-2.pdf, id=1934, 449.68pt x 248.93pt
 >
 File: _main_files/figure-latex/unnamed-chunk-105-2.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-105-2.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-105-2.pdf  used
- on input line 9299.
+ on input line 9494.
 (pdftex.def)             Requested size: 449.68575pt x 248.93317pt.
-LaTeX Info: Redefining \. on input line 9299.
-LaTeX Info: Redefining \% on input line 9299.
-[178 <./_main_files/figure-latex/unnamed-chunk-105-1.pdf>]
-Overfull \hbox (21.65079pt too wide) detected at line 9315
+LaTeX Info: Redefining \. on input line 9494.
+LaTeX Info: Redefining \% on input line 9494.
+[181 <./_main_files/figure-latex/unnamed-chunk-105-1.pdf>]
+Overfull \hbox (21.65079pt too wide) detected at line 9510
 [][] \OT1/lmr/m/n/10 :  []   \OML/lmm/m/it/10 ^^[[] \OT1/lmr/m/n/10 = \OML/lmm/
 m/it/10 ^^[[]    vs    [][] \OT1/lmr/m/n/10 :  []   \OML/lmm/m/it/10 ^^[[] \OMS
 /lmsy/m/n/10 6\OT1/lmr/m/n/10 = \OML/lmm/m/it/10 ^^[[]    \OMS/lmsy/m/n/10 8  \
 OML/lmm/m/it/10 j \OT1/lmr/m/n/10 = 1\OML/lmm/m/it/10 ; [] ; n:
  []
 
-LaTeX Info: Redefining \. on input line 9323.
-LaTeX Info: Redefining \% on input line 9323.
-[179 <./_main_files/figure-latex/unnamed-chunk-105-2.pdf>]
-Overfull \hbox (19.42857pt too wide) detected at line 9347
+LaTeX Info: Redefining \. on input line 9518.
+LaTeX Info: Redefining \% on input line 9518.
+[182 <./_main_files/figure-latex/unnamed-chunk-105-2.pdf>]
+Overfull \hbox (19.42857pt too wide) detected at line 9542
 [][] \OT1/lmr/m/n/10 :  []   \OML/lmm/m/it/10 ^^[[] \OT1/lmr/m/n/10 = \OML/lmm/
 m/it/10 ^^[[]    vs    [][] \OT1/lmr/m/n/10 :  []   \OML/lmm/m/it/10 ^^[[] \OMS
 /lmsy/m/n/10 6\OT1/lmr/m/n/10 = \OML/lmm/m/it/10 ^^[[]    \OMS/lmsy/m/n/10 8 \O
 ML/lmm/m/it/10 j \OT1/lmr/m/n/10 = 1\OML/lmm/m/it/10 ; [] ; n:
  []
 
-LaTeX Info: Redefining \. on input line 9374.
-LaTeX Info: Redefining \% on input line 9374.
-[180]
-<_main_files/figure-latex/unnamed-chunk-111-1.pdf, id=1663, 436.63126pt x 212.7
+LaTeX Info: Redefining \. on input line 9569.
+LaTeX Info: Redefining \% on input line 9569.
+[183]
+<_main_files/figure-latex/unnamed-chunk-111-1.pdf, id=1985, 436.63126pt x 212.7
 95pt>
 File: _main_files/figure-latex/unnamed-chunk-111-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-111-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-111-1.pdf  used
- on input line 9429.
+ on input line 9624.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-LaTeX Info: Redefining \. on input line 9429.
-LaTeX Info: Redefining \% on input line 9429.
-[181]
-<_main_files/figure-latex/unnamed-chunk-113-1.pdf, id=1670, 436.63126pt x 212.7
+LaTeX Info: Redefining \. on input line 9624.
+LaTeX Info: Redefining \% on input line 9624.
+[184]
+<_main_files/figure-latex/unnamed-chunk-113-1.pdf, id=1991, 436.63126pt x 212.7
 95pt>
 File: _main_files/figure-latex/unnamed-chunk-113-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-113-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-113-1.pdf  used
- on input line 9454.
+ on input line 9649.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-<_main_files/figure-latex/unnamed-chunk-115-1.pdf, id=1671, 436.63126pt x 212.7
+<_main_files/figure-latex/unnamed-chunk-115-1.pdf, id=1992, 436.63126pt x 212.7
 95pt>
 File: _main_files/figure-latex/unnamed-chunk-115-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-115-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-115-1.pdf  used
- on input line 9479.
+ on input line 9674.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-LaTeX Info: Redefining \. on input line 9479.
-LaTeX Info: Redefining \% on input line 9479.
-[182 <./_main_files/figure-latex/unnamed-chunk-111-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 9674.
+LaTeX Info: Redefining \% on input line 9674.
+[185 <./_main_files/figure-latex/unnamed-chunk-111-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-113-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-113-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<_main_files/figure-latex/unnamed-chunk-116-1.pdf, id=1697, 436.63126pt x 246.9
+<_main_files/figure-latex/unnamed-chunk-116-1.pdf, id=2018, 436.63126pt x 246.9
 225pt>
 File: _main_files/figure-latex/unnamed-chunk-116-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-116-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-116-1.pdf  used
- on input line 9492.
+ on input line 9687.
 (pdftex.def)             Requested size: 436.63019pt x 246.92188pt.
-LaTeX Info: Redefining \. on input line 9511.
-LaTeX Info: Redefining \% on input line 9511.
-[183 <./_main_files/figure-latex/unnamed-chunk-115-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 9706.
+LaTeX Info: Redefining \% on input line 9706.
+[186 <./_main_files/figure-latex/unnamed-chunk-115-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-116-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-116-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<_main_files/figure-latex/unnamed-chunk-118-1.pdf, id=1729, 436.63126pt x 247.9
+<_main_files/figure-latex/unnamed-chunk-118-1.pdf, id=2051, 436.63126pt x 247.9
 2625pt>
 File: _main_files/figure-latex/unnamed-chunk-118-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-118-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-118-1.pdf  used
- on input line 9530.
+ on input line 9725.
 (pdftex.def)             Requested size: 436.63019pt x 247.92564pt.
-<_main_files/figure-latex/unnamed-chunk-119-1.pdf, id=1730, 436.63126pt x 212.7
+<_main_files/figure-latex/unnamed-chunk-119-1.pdf, id=2052, 436.63126pt x 212.7
 95pt>
 File: _main_files/figure-latex/unnamed-chunk-119-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-119-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-119-1.pdf  used
- on input line 9536.
+ on input line 9731.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-LaTeX Info: Redefining \. on input line 9539.
-LaTeX Info: Redefining \% on input line 9539.
-[184 <./_main_files/figure-latex/unnamed-chunk-118-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 9734.
+LaTeX Info: Redefining \% on input line 9734.
+[187 <./_main_files/figure-latex/unnamed-chunk-118-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-119-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-119-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<_main_files/figure-latex/unnamed-chunk-120-1.pdf, id=1762, 436.63126pt x 212.7
+<_main_files/figure-latex/unnamed-chunk-120-1.pdf, id=2084, 436.63126pt x 212.7
 95pt>
 File: _main_files/figure-latex/unnamed-chunk-120-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-120-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-120-1.pdf  used
- on input line 9546.
+ on input line 9741.
 (pdftex.def)             Requested size: 436.63019pt x 212.79446pt.
-LaTeX Info: Redefining \. on input line 9604.
-LaTeX Info: Redefining \% on input line 9604.
-[185 <./_main_files/figure-latex/unnamed-chunk-120-1.pdf>]
-Overfull \hbox (8.47163pt too wide) detected at line 9614
+LaTeX Info: Redefining \. on input line 9799.
+LaTeX Info: Redefining \% on input line 9799.
+[188 <./_main_files/figure-latex/unnamed-chunk-120-1.pdf>]
+Overfull \hbox (8.47163pt too wide) detected at line 9809
 [][] \OT1/lmr/m/n/10 : []0   \OML/lmm/m/it/10 vs   [][] \OT1/lmr/m/n/10 : [] \O
 MS/lmsy/m/n/10 6\OT1/lmr/m/n/10 = 0
  []
 
-LaTeX Info: Redefining \. on input line 9657.
-LaTeX Info: Redefining \% on input line 9657.
-[186]
-<_main_files/figure-latex/unnamed-chunk-125-1.pdf, id=1787, 436.63126pt x 248.9
+LaTeX Info: Redefining \. on input line 9852.
+LaTeX Info: Redefining \% on input line 9852.
+[189]
+<_main_files/figure-latex/unnamed-chunk-125-1.pdf, id=2108, 436.63126pt x 248.9
 3pt>
 File: _main_files/figure-latex/unnamed-chunk-125-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-125-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-125-1.pdf  used
- on input line 9663.
+ on input line 9858.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-<_main_files/figure-latex/unnamed-chunk-126-1.pdf, id=1788, 436.63126pt x 255.9
+<_main_files/figure-latex/unnamed-chunk-126-1.pdf, id=2109, 436.63126pt x 255.9
 5625pt>
 File: _main_files/figure-latex/unnamed-chunk-126-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-126-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-126-1.pdf  used
- on input line 9672.
+ on input line 9867.
 (pdftex.def)             Requested size: 436.63019pt x 255.95561pt.
-LaTeX Info: Redefining \. on input line 9672.
-LaTeX Info: Redefining \% on input line 9672.
-[187 <./_main_files/figure-latex/unnamed-chunk-125-1.pdf>]
-<_main_files/figure-latex/unnamed-chunk-127-1.pdf, id=1812, 436.63126pt x 248.9
+LaTeX Info: Redefining \. on input line 9867.
+LaTeX Info: Redefining \% on input line 9867.
+[190 <./_main_files/figure-latex/unnamed-chunk-125-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-127-1.pdf, id=2133, 436.63126pt x 248.9
 3pt>
 File: _main_files/figure-latex/unnamed-chunk-127-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-127-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-127-1.pdf  used
- on input line 9687.
+ on input line 9882.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-LaTeX Info: Redefining \. on input line 9687.
-LaTeX Info: Redefining \% on input line 9687.
-[188 <./_main_files/figure-latex/unnamed-chunk-126-1.pdf>]
+LaTeX Info: Redefining \. on input line 9882.
+LaTeX Info: Redefining \% on input line 9882.
+[191 <./_main_files/figure-latex/unnamed-chunk-126-1.pdf>]
 
-LaTeX Warning: Command \' invalid in math mode on input line 9699.
+LaTeX Warning: Command \' invalid in math mode on input line 9894.
 
-LaTeX Info: Redefining \. on input line 9708.
-LaTeX Info: Redefining \% on input line 9708.
-[189 <./_main_files/figure-latex/unnamed-chunk-127-1.pdf>]
-<_main_files/figure-latex/unnamed-chunk-128-1.pdf, id=1857, 433.62pt x 184.69pt
+LaTeX Info: Redefining \. on input line 9903.
+LaTeX Info: Redefining \% on input line 9903.
+[192 <./_main_files/figure-latex/unnamed-chunk-127-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-128-1.pdf, id=2179, 433.62pt x 184.69pt
 >
 File: _main_files/figure-latex/unnamed-chunk-128-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-128-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-128-1.pdf  used
- on input line 9721.
+ on input line 9916.
 (pdftex.def)             Requested size: 433.61894pt x 184.68953pt.
-[190
+[193
 
  <./_main_files/figure-latex/unnamed-chunk-128-1.pdf>]
-LaTeX Info: Redefining \. on input line 9771.
-LaTeX Info: Redefining \% on input line 9771.
-[191]
+LaTeX Info: Redefining \. on input line 9966.
+LaTeX Info: Redefining \% on input line 9966.
+[194]
 Cap\'{\i }tulo 28.
 
-LaTeX Warning: Command \' invalid in math mode on input line 9868.
+LaTeX Warning: Command \' invalid in math mode on input line 10063.
 
 
-LaTeX Warning: Command \~ invalid in math mode on input line 9880.
+LaTeX Warning: Command \~ invalid in math mode on input line 10075.
 
-[192
+[195
 
 ]
-LaTeX Info: Redefining \. on input line 9967.
-LaTeX Info: Redefining \% on input line 9967.
-[193]
-LaTeX Info: Redefining \. on input line 10043.
-LaTeX Info: Redefining \% on input line 10043.
-[194]
-LaTeX Info: Redefining \. on input line 10091.
-LaTeX Info: Redefining \% on input line 10091.
-[195]
-LaTeX Info: Redefining \. on input line 10141.
-LaTeX Info: Redefining \% on input line 10141.
+LaTeX Info: Redefining \. on input line 10162.
+LaTeX Info: Redefining \% on input line 10162.
 [196]
-LaTeX Info: Redefining \. on input line 10199.
-LaTeX Info: Redefining \% on input line 10199.
+LaTeX Info: Redefining \. on input line 10238.
+LaTeX Info: Redefining \% on input line 10238.
 [197]
-LaTeX Info: Redefining \. on input line 10260.
-LaTeX Info: Redefining \% on input line 10260.
+LaTeX Info: Redefining \. on input line 10286.
+LaTeX Info: Redefining \% on input line 10286.
 [198]
-LaTeX Info: Redefining \. on input line 10332.
-LaTeX Info: Redefining \% on input line 10332.
+LaTeX Info: Redefining \. on input line 10336.
+LaTeX Info: Redefining \% on input line 10336.
 [199]
-LaTeX Info: Redefining \. on input line 10417.
-LaTeX Info: Redefining \% on input line 10417.
+LaTeX Info: Redefining \. on input line 10394.
+LaTeX Info: Redefining \% on input line 10394.
 [200]
-LaTeX Info: Redefining \. on input line 10477.
-LaTeX Info: Redefining \% on input line 10477.
+LaTeX Info: Redefining \. on input line 10455.
+LaTeX Info: Redefining \% on input line 10455.
 [201]
-LaTeX Info: Redefining \. on input line 10526.
-LaTeX Info: Redefining \% on input line 10526.
+LaTeX Info: Redefining \. on input line 10527.
+LaTeX Info: Redefining \% on input line 10527.
 [202]
-LaTeX Info: Redefining \. on input line 10560.
-LaTeX Info: Redefining \% on input line 10560.
+LaTeX Info: Redefining \. on input line 10612.
+LaTeX Info: Redefining \% on input line 10612.
 [203]
+LaTeX Info: Redefining \. on input line 10672.
+LaTeX Info: Redefining \% on input line 10672.
+[204]
+LaTeX Info: Redefining \. on input line 10721.
+LaTeX Info: Redefining \% on input line 10721.
+[205]
+LaTeX Info: Redefining \. on input line 10755.
+LaTeX Info: Redefining \% on input line 10755.
+[206]
 Cap\'{\i }tulo 29.
-[204
+[207
 
 ]
-LaTeX Info: Redefining \. on input line 10629.
-LaTeX Info: Redefining \% on input line 10629.
-[205]
-LaTeX Info: Redefining \. on input line 10673.
-LaTeX Info: Redefining \% on input line 10673.
-[206]
-LaTeX Info: Redefining \. on input line 10711.
-LaTeX Info: Redefining \% on input line 10711.
-[207]
-LaTeX Info: Redefining \. on input line 10760.
-LaTeX Info: Redefining \% on input line 10760.
+LaTeX Info: Redefining \. on input line 10824.
+LaTeX Info: Redefining \% on input line 10824.
 [208]
-LaTeX Info: Redefining \. on input line 10797.
-LaTeX Info: Redefining \% on input line 10797.
+LaTeX Info: Redefining \. on input line 10868.
+LaTeX Info: Redefining \% on input line 10868.
 [209]
-LaTeX Info: Redefining \. on input line 10800.
-LaTeX Info: Redefining \% on input line 10800.
+LaTeX Info: Redefining \. on input line 10906.
+LaTeX Info: Redefining \% on input line 10906.
 [210]
+LaTeX Info: Redefining \. on input line 10955.
+LaTeX Info: Redefining \% on input line 10955.
+[211]
+LaTeX Info: Redefining \. on input line 10992.
+LaTeX Info: Redefining \% on input line 10992.
+[212]
+LaTeX Info: Redefining \. on input line 10995.
+LaTeX Info: Redefining \% on input line 10995.
+[213]
 Cap\'{\i }tulo 30.
 
-LaTeX Warning: Command \' invalid in math mode on input line 10827.
+LaTeX Warning: Command \' invalid in math mode on input line 11022.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 10827.
+LaTeX Warning: Command \' invalid in math mode on input line 11022.
 
-[211
+[214
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 10872.
+LaTeX Warning: Command \' invalid in math mode on input line 11067.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 10872.
+LaTeX Warning: Command \' invalid in math mode on input line 11067.
 
-LaTeX Info: Redefining \. on input line 10889.
-LaTeX Info: Redefining \% on input line 10889.
-[212]
-LaTeX Info: Redefining \. on input line 10947.
-LaTeX Info: Redefining \% on input line 10947.
-[213]
-
-LaTeX Warning: Command \' invalid in math mode on input line 10972.
-
-LaTeX Info: Redefining \. on input line 10997.
-LaTeX Info: Redefining \% on input line 10997.
-[214]
-LaTeX Info: Redefining \. on input line 11001.
-LaTeX Info: Redefining \% on input line 11001.
+LaTeX Info: Redefining \. on input line 11084.
+LaTeX Info: Redefining \% on input line 11084.
 [215]
+LaTeX Info: Redefining \. on input line 11142.
+LaTeX Info: Redefining \% on input line 11142.
+[216]
+
+LaTeX Warning: Command \' invalid in math mode on input line 11167.
+
+LaTeX Info: Redefining \. on input line 11192.
+LaTeX Info: Redefining \% on input line 11192.
+[217]
+LaTeX Info: Redefining \. on input line 11196.
+LaTeX Info: Redefining \% on input line 11196.
+[218]
 Cap\'{\i }tulo 31.
-[216
+[219
 
 ]
 
-LaTeX Warning: Command \' invalid in math mode on input line 11043.
+LaTeX Warning: Command \' invalid in math mode on input line 11238.
 
-LaTeX Info: Redefining \. on input line 11099.
-LaTeX Info: Redefining \% on input line 11099.
-[217]
+LaTeX Info: Redefining \. on input line 11294.
+LaTeX Info: Redefining \% on input line 11294.
+[220]
 
-LaTeX Warning: Command \' invalid in math mode on input line 11116.
+LaTeX Warning: Command \' invalid in math mode on input line 11311.
 
-<_main_files/figure-latex/unnamed-chunk-132-1.pdf, id=2006, 419.5675pt x 247.92
+<_main_files/figure-latex/unnamed-chunk-132-1.pdf, id=2327, 419.5675pt x 247.92
 625pt>
 File: _main_files/figure-latex/unnamed-chunk-132-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-132-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-132-1.pdf  used
- on input line 11153.
+ on input line 11348.
 (pdftex.def)             Requested size: 419.56647pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 11153.
-LaTeX Info: Redefining \% on input line 11153.
-[218]
-<_main_files/figure-latex/unnamed-chunk-133-1.pdf, id=2011, 440.64626pt x 249.9
+LaTeX Info: Redefining \. on input line 11348.
+LaTeX Info: Redefining \% on input line 11348.
+[221]
+<_main_files/figure-latex/unnamed-chunk-133-1.pdf, id=2332, 440.64626pt x 249.9
 3375pt>
 File: _main_files/figure-latex/unnamed-chunk-133-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-133-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-133-1.pdf  used
- on input line 11165.
+ on input line 11360.
 (pdftex.def)             Requested size: 440.65862pt x 249.94075pt.
-<_main_files/figure-latex/unnamed-chunk-134-1.pdf, id=2012, 465.74pt x 249.9337
+<_main_files/figure-latex/unnamed-chunk-134-1.pdf, id=2333, 465.74pt x 249.9337
 5pt>
 File: _main_files/figure-latex/unnamed-chunk-134-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-134-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-134-1.pdf  used
- on input line 11175.
+ on input line 11370.
 (pdftex.def)             Requested size: 452.98248pt x 243.08759pt.
-LaTeX Info: Redefining \. on input line 11175.
-LaTeX Info: Redefining \% on input line 11175.
-[219 <./_main_files/figure-latex/unnamed-chunk-132-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 11370.
+LaTeX Info: Redefining \% on input line 11370.
+[222 <./_main_files/figure-latex/unnamed-chunk-132-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-133-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-133-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<_main_files/figure-latex/unnamed-chunk-135-1.pdf, id=2050, 465.74pt x 249.9337
+<_main_files/figure-latex/unnamed-chunk-135-1.pdf, id=2373, 465.74pt x 249.9337
 5pt>
 File: _main_files/figure-latex/unnamed-chunk-135-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-135-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-135-1.pdf  used
- on input line 11185.
+ on input line 11380.
 (pdftex.def)             Requested size: 452.98248pt x 243.08759pt.
-<_main_files/figure-latex/unnamed-chunk-136-1.pdf, id=2051, 436.63126pt x 247.9
+<_main_files/figure-latex/unnamed-chunk-136-1.pdf, id=2374, 436.63126pt x 247.9
 2625pt>
 File: _main_files/figure-latex/unnamed-chunk-136-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-136-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-136-1.pdf  used
- on input line 11195.
+ on input line 11390.
 (pdftex.def)             Requested size: 436.63019pt x 247.92564pt.
-LaTeX Info: Redefining \. on input line 11195.
-LaTeX Info: Redefining \% on input line 11195.
-[220 <./_main_files/figure-latex/unnamed-chunk-134-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 11390.
+LaTeX Info: Redefining \% on input line 11390.
+[223 <./_main_files/figure-latex/unnamed-chunk-134-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-135-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-135-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-LaTeX Info: Redefining \. on input line 11260.
-LaTeX Info: Redefining \% on input line 11260.
-[221 <./_main_files/figure-latex/unnamed-chunk-136-1.pdf>]
-LaTeX Info: Redefining \. on input line 11328.
-LaTeX Info: Redefining \% on input line 11328.
-[222]
-<_main_files/figure-latex/unnamed-chunk-143-1.pdf, id=2116, 436.63126pt x 246.9
+LaTeX Info: Redefining \. on input line 11455.
+LaTeX Info: Redefining \% on input line 11455.
+[224 <./_main_files/figure-latex/unnamed-chunk-136-1.pdf>]
+LaTeX Info: Redefining \. on input line 11523.
+LaTeX Info: Redefining \% on input line 11523.
+[225]
+<_main_files/figure-latex/unnamed-chunk-143-1.pdf, id=2437, 436.63126pt x 246.9
 225pt>
 File: _main_files/figure-latex/unnamed-chunk-143-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-143-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-143-1.pdf  used
- on input line 11395.
+ on input line 11590.
 (pdftex.def)             Requested size: 436.63019pt x 246.92188pt.
-LaTeX Info: Redefining \. on input line 11395.
-LaTeX Info: Redefining \% on input line 11395.
-[223]
-<_main_files/figure-latex/unnamed-chunk-145-1.pdf, id=2121, 436.63126pt x 214.8
+LaTeX Info: Redefining \. on input line 11590.
+LaTeX Info: Redefining \% on input line 11590.
+[226]
+<_main_files/figure-latex/unnamed-chunk-145-1.pdf, id=2442, 436.63126pt x 214.8
 025pt>
 File: _main_files/figure-latex/unnamed-chunk-145-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-145-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-145-1.pdf  used
- on input line 11420.
+ on input line 11615.
 (pdftex.def)             Requested size: 436.63019pt x 214.80197pt.
-<_main_files/figure-latex/unnamed-chunk-146-1.pdf, id=2122, 436.63126pt x 214.8
+<_main_files/figure-latex/unnamed-chunk-146-1.pdf, id=2443, 436.63126pt x 214.8
 025pt>
 File: _main_files/figure-latex/unnamed-chunk-146-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-146-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-146-1.pdf  used
- on input line 11422.
+ on input line 11617.
 (pdftex.def)             Requested size: 436.63019pt x 214.80197pt.
-LaTeX Info: Redefining \. on input line 11422.
-LaTeX Info: Redefining \% on input line 11422.
-[224 <./_main_files/figure-latex/unnamed-chunk-143-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 11617.
+LaTeX Info: Redefining \% on input line 11617.
+[227 <./_main_files/figure-latex/unnamed-chunk-143-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-145-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-145-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<_main_files/figure-latex/unnamed-chunk-147-1.pdf, id=2154, 436.63126pt x 214.8
+<_main_files/figure-latex/unnamed-chunk-147-1.pdf, id=2475, 436.63126pt x 214.8
 025pt>
 File: _main_files/figure-latex/unnamed-chunk-147-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-147-1.pdf>
 Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-147-1.pdf  used
- on input line 11430.
+ on input line 11625.
 (pdftex.def)             Requested size: 436.63019pt x 214.80197pt.
-LaTeX Info: Redefining \. on input line 11467.
-LaTeX Info: Redefining \% on input line 11467.
-[225 <./_main_files/figure-latex/unnamed-chunk-146-1.pdf> <./_main_files/figure
+LaTeX Info: Redefining \. on input line 11662.
+LaTeX Info: Redefining \% on input line 11662.
+[228 <./_main_files/figure-latex/unnamed-chunk-146-1.pdf> <./_main_files/figure
 -latex/unnamed-chunk-147-1.pdf
 
 pdfTeX warning: pdflatex (file ./_main_files/figure-latex/unnamed-chunk-147-1.p
 df): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-LaTeX Info: Redefining \. on input line 11491.
-LaTeX Info: Redefining \% on input line 11491.
-[226]
+LaTeX Info: Redefining \. on input line 11686.
+LaTeX Info: Redefining \% on input line 11686.
+[229]
 Cap\'{\i }tulo 32.
-[227
+[230
 
 ]
-LaTeX Info: Redefining \. on input line 11580.
-LaTeX Info: Redefining \% on input line 11580.
-[228] (./_main.bbl
+LaTeX Info: Redefining \. on input line 11775.
+LaTeX Info: Redefining \% on input line 11775.
+[231] (./_main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[229]) [230
+[232]) [233
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11599.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 11599.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11794.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 11794.
 (./_main.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 11599.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 11794.
 
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 11599.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 11599.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 11794.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 11794.
  ) 
 Here is how much of TeX's memory you used:
- 28508 strings out of 492649
- 485191 string characters out of 6129622
- 585675 words of memory out of 5000000
- 30928 multiletter control sequences out of 15000+600000
+ 28936 strings out of 492649
+ 492062 string characters out of 6129622
+ 591248 words of memory out of 5000000
+ 31115 multiletter control sequences out of 15000+600000
  134241 words of font info for 196 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,54p,1147b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2548,10 +2560,10 @@ mtk10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/loc
 al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
 /local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on _main.pdf (231 pages, 2525206 bytes).
+Output written on _main.pdf (234 pages, 2542056 bytes).
 PDF statistics:
- 2913 PDF objects out of 2984 (max. 8388607)
- 2445 compressed objects within 25 object streams
- 712 named destinations out of 1000 (max. 500000)
- 17783 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 3489 PDF objects out of 3580 (max. 8388607)
+ 3012 compressed objects within 31 object streams
+ 953 named destinations out of 1000 (max. 500000)
+ 18327 words of extra memory for PDF output out of 20736 (max. 10000000)
 

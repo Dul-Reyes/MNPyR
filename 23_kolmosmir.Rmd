@@ -7,9 +7,11 @@ La prueba de Kolmogorov presenta la ventaja de que los datos no deben ser catego
 
 Para probar la suposición de la distribución $F^*(x)$ se realiza la siguiente contraste:
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de 2 colas) Solo será este caso
+### Caso A (Prueba de 2 colas) 
+
+Solo será este caso
 
 $$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty$$
 
@@ -17,8 +19,7 @@ $$vs$$
 
 $$\textbf{H}_a: \ F(x) \neq F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.$$
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $D_{n}>W$. Donde $W$ es el cuantil $(1-\alpha)$, obtenido en la tabla correspondiente a nuestra prueba O para la prueba de 2 colas en las tablas de Kolmogorov.
 

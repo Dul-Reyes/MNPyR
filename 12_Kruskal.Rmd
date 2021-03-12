@@ -4,7 +4,7 @@ Se obtienen $k$ $m.a.i.$ de $k$ distintas poblaciones ($k\geq 2$) y queremos pro
 Un caso particular, si $k=2$ se tiene la prueba de **Mann-Whitney**.
 
 
-**Datos** 
+## Datos
 
 Se tienen $k\ \ m.a.$ que pueden tener incluso distintos tamaños, la $i-ésima\ \ m.a.$ de tamaño $n_{i}$ es:
 $$X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \mbox{de la} \ \ i-ésima \ \ \mbox{población.})$$
@@ -27,18 +27,18 @@ sea $N$ el número total de observaciones:
 $$ N= \sum_{i=1}^{k} n_{i}$$
 
 
-**Supuestos**
+## Supuestos
 
 
 1) Todas las muestras son muestras aleatorias de sus respectivas poblaciones.
 
-2) Además de la independecia dentro de las muestras, suponemos que hay independencia entre las muestras (es decir, las poblaciones son independientes).
+2) Además de la independencia dentro de las muestras, suponemos que hay independencia entre las muestras (es decir, las poblaciones son independientes).
 
 3) Las $k$ poblaciones son idénticas o algunas de las poblaciones tienden a tener valores más grandes que las otras poblaciones.
 
 4) La escala de medida es al menos ordinal.
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{Las funciones de distribución de las} \ \  k \ \ \mbox{poblaciones son idénticas.}$$
 
@@ -81,8 +81,7 @@ R_{1} & R_{2} & R_{3} & \cdots&R_{k} \\
 \end{array}
 $$
 
-
-**Estadístico de prueba**
+## Estadístico de prueba
 
 $$T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right)$$
 donde $N$ y $R_{i}$ son como los definimos anteriormente y donde:
@@ -92,8 +91,7 @@ $$ S^2 = \frac{1}{N-1}\left(\sum_{todos\ los\ rangos}R(X_{ij})^2-N\frac{(N+1)^2}
 
 $$ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1) $$
 
-
-**Regla de decisión**
+## Regla de decisión
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si $T>\omega_{1-\alpha}$, donde $\omega_{1-\alpha}$ se obtiene de la tabla de cuantiles de la distribución de $T$ (tablas Kruskal-Wallis). En caso de no encontrarse en la tabla, los tamaños de muestra correspondientes se utiliza la aproximación Ji-cuadrada con $k-1$ grados de libertad para el estadístico de prueba.
 

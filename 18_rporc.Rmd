@@ -4,11 +4,11 @@
 Como una generalización inmediata de la tabla de contingencia $2 \times 2$ mencionadas anteriormente, tenemos la tabla de contingencia con $r$ renglones y $c$ columnas, llamada **tablas de contingencia de $r \times c$**.
 Éstas tablas de contingencia pueden usarse, como en la sección anterior, para presentar una tabulación de los datos contenidos en varias muestras, donde los datos representan al menos una escala de medición nominal, y para probar la hipótesis de que las probabilidades no difieren de muestra en muestra.
 
-## Prueba de $\chi^2$ para Tablas de Contingencia (Proporciones)
+## Prueba de $\chi^2$ para Tablas de Contingencia (Proporciones) {-}
 
-**Datos**
+## Datos
 
-Hay $r$ poblaciones en total, y se extrae una muestra aleatoria de cada población. Supongamos que $n_{i}$ representa el número de observaciones en la muestra $i-ésima$ (de la población $i-ésima$) para $1 \leq i \leq r$. Cada observación en cada muestra es clasificada en una de las $C$ diferentes categorias.
+Hay $r$ poblaciones en total, y se extrae una muestra aleatoria de cada población. Supongamos que $n_{i}$ representa el número de observaciones en la muestra $i-ésima$ (de la población $i-ésima$) para $1 \leq i \leq r$. Cada observación en cada muestra es clasificada en una de las $C$ diferentes categorías.
 
 Sea $O_{ij}$ el número de observaciones de la $i-ésima$ muestra de la categoría $j$:
 
@@ -41,8 +41,7 @@ El número de observaciones en la $j-ésima$ columna denotada como $C_{j}$. Esto
 
 $$C_{j}=O_{1j}+O_{2j}+\cdots+O_{rj}, \ \ \ \ \ para\ \ j= 1,2,\ldots,c. $$
 
-
-**Supuestos**
+## Supuestos
 
 * Cada muestra es una muestra aleatoria.
 
@@ -50,7 +49,7 @@ $$C_{j}=O_{1j}+O_{2j}+\cdots+O_{rj}, \ \ \ \ \ para\ \ j= 1,2,\ldots,c. $$
 
 * Cada observación puede clasificarse en exactamente una de las categorías o clases $C$.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 El estadístico de prueba $T$ es obtenido de la siguiente manera:
 
@@ -74,7 +73,7 @@ Es decir,
 
 $$T\sim \chi^2_{(r-1)(c-1)}$$
 
-**Hipótesis**
+## Hipótesis
 
 Sea la probabilidad de que un valor seleccionado aleatoriamente de la i-ésima población se clasifique en la $j$-ésima clase, denotado por $p_{ij}$ para $i= 1, 2,\ldots,r$ y  $j=1,2,\ldots,c.$
 
@@ -92,7 +91,7 @@ $$vs$$
 $$\textbf{H}_a: \ p_{ij} \ \neq \  p_{kj} \ \ \mbox{para algún par} \ \  i \ \ \mbox{y} \ \ k.$$
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(r-1)\times(c-1)$ grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución. 
 

@@ -306,7 +306,7 @@ Verificamos gráficamente que hubiera una relación lineal entre las variables, 
 
 Como se mencionó en nuestro capítulo debemos aplicar pruebas estadísticas que nos aseguren que las estimaciones de los parámetros serán distintos de cero.
 
-**Prueba de hipótesis para $\beta_{0}$ y $\beta_{1}$**
+#### Prueba de hipótesis para $\beta_{0}$ y $\beta_{1}${-}
 
 Haremos el cálculo del estadístico de prueba para probar la hipótesis: $\textbf{H}_0=\hat{\beta_{0}}=0 \ \ \ vs \ \ \ \textbf{H}_a \neq 0$ con una confianza del $90\%$ y sustituimos en la siguiente ecuación:
 
@@ -352,7 +352,7 @@ Con éstas dos pruebas corroboramos que los datos ajustan a un modelo de regresi
 
 * Si la prueba de hipótesis para $\beta_{1}$ hubiera resultado en no rechazar $\textbf{H}_0$ entonces, se buscaría ajustar un modelo con otra variable (diferente a las facturas) ya que los datos estarían diciendo que la variable facturas no es significativa para explicar el tiempo promedio de su llegada.
 
-**Coeficiente de determinación**
+#### Coeficiente de determinación {-}
 
 Por último vamos a calcular el coeficiente de determinación de nuestro modelo. Como se menciona en nuestro capítulo, este coeficiente mide la proporción de la variación explicada por el modelo en relación a la variación total existente en los datos, y por eso es un valor entre 0 y 1.
 

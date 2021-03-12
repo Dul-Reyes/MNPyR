@@ -3,7 +3,7 @@
 Otro problema importante de bondad de ajuste es la prueba para la distribución exponencial con media no especificada. Este problema es importante porque el supuesto de una distribución exponencial con media desconocida tiene muchas aplicaciones, particularmente donde las variables aleatorias bajo estudio representan el tiempo de espera o el tiempo en que ocurre cierto evento. 
 Lilliefors en 1969 desarrolló una prueba análoga a la prueba de Kolmogorov-Smirnov y dió una tabla de valores críticos basados en simulaciones Monte Carlo. 
 
-**Datos**
+## Datos
 
 Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tamaño $n$ que sigue una distribución exponencial con media $\hat{\lambda} = \frac{1}{\overline{X}}$,el cual corresponde al estimador puntual de la media.
 
@@ -13,11 +13,11 @@ $$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,n$$
 
 El estadístico de prueba se calcula a partir de $Z_{i}s$ en lugar de a partir de la muestra aleatoria. original.
 
-**Supuestos**
+## Supuestos
 
 1) La muestra es una muestra aleatoria.
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución exponencial:}$$
 
@@ -37,13 +37,13 @@ $$vs$$
 $$\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}$$
 
 
-**Estadistico de Prueba**
+## Estadistico de Prueba
 
 El estadístico de prueba está dada por la máxima distancia vertical:
 
 $$T_{2}=\underset{x}{sup} \ | \ F^*(x)-S(x) \ |$$
 
-**Regla de Decisión**
+#### Regla de Decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T_{2}> W_{1-\alpha}$ donde $W_{1-\alpha}$ es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 

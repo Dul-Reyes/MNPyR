@@ -58,20 +58,19 @@ Los valores grandes de $T$ según lo determinado por la correspondiente tabla (T
 La prueba de Kolmogorov puede preferirse a la prueba de Ji-Cuadrada para  bondad del ajuste si el tamaño de la muestra es pequeño; la prueba de Kolmogorov es exacta incluso para muestras pequeñas, mientras que la prueba de Ji-cuadrada supone que el número de observaciones es lo suficientemente grande como para que la distribución de $\chi^2$ proporcione una buena aproximación como la distribución del estadístico de prueba. Existe controversia sobre ¿qué prueba es la más "poderosa"?, pero la sensación general parece ser que la prueba de Kolmogorov es probablemente más poderosa que la prueba de Ji-cuadrada en la mayoría de las situaciones que involucran datos ordinales. 
 
 
-**Datos**
+## Datos
 
 Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tamaño $n$ asociada con alguna función de distribución desconocida, denotada por $F(x)$.
 
-**Supuestos**
+## Supuestos
 
 1) La muestra es una muestra aleatoria.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 Sea $S(x)$ la función de distribución empírica basada en la muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$. El estadístico de prueba es definido diferente para los 3 casos para las hipótesis correspondientes. Sea $F^*(x)$ una función de distribución hipotética completamente especificada. 
 
-
-**Caso A **(Prueba de 2 colas)
+### Caso A (Prueba de 2 colas) {-}
 
 Sea el estadístico de prueba $T$ la mayor distancia vertical entre $S(x)$ y $F^*(x)$(denotado por sup o el supremo).
 
@@ -80,24 +79,23 @@ $$T=\underset{x}{sup}|F^*(x)-S(x)|$$
 Esto se lee "$T$ es igual al supremo para todas las $x$, del valor absoluto de la diferencia de $F^*(x)-S(x)$"
 
 
-**Caso B **(Prueba de 1 cola)
+### Caso B (Prueba de 1 cola) {-}
 
 Denotamos el estadístico de prueba $T^+$ la mayor distancia vertical alcanzada por $F^*(x)$ sobre $S(x)$.
 
 $$T^+=\underset{x}{sup}[F^*(x)-S(x)] $$
 Que es similar a $T$, a excepción que solo vamos a considerar la mayor diferencia alcanzada por $F^*(x)$ sobre la función $S(x)$.
 
-**Caso C **(Prueba de 1 cola)
+### Caso C (Prueba de 1 cola) {-}
 
 Denotamos el estadístico de prueba $T^-$ la mayor distancia vertical alcanzada por $S(x)$ sobre $F^*(x)$.
 
 $$T^-=\underset{x}{sup}[S(x)-F^*(x)] $$
 Que es similar a $T$, a excepción que solo vamos a considerar la mayor diferencia alcanzada por $S(x)$ sobre la función $F^*(x)$.
 
+## Hipótesis
 
-**Hipótesis**
-
-**Caso A** (Prueba de 2 colas)
+### Caso A (Prueba de 2 colas) {-}
 
 $$\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty $$
 
@@ -105,12 +103,11 @@ $$vs$$
 
 $$\textbf{H}_a: \ F(x) \neq F^*(x) \ \ \ \ \mbox{para al menos un  valor de} \   x.$$
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T>W$. Donde $W$ es el cuantil $(1-\alpha)$, obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 2 colas.
 
-**Caso B** (Prueba de 1 cola)
+### Caso B (Prueba de 1 cola) {-}
 
 $$\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty$$
 
@@ -118,11 +115,11 @@ $$vs$$
 
 $$Ha: \ F(x) < F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^+>W$. Donde $W$ es el cuantil $(1-\alpha)$,obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola.   
 
-**Caso C** (Prueba de 1 cola)
+### Caso C (Prueba de 1 cola) {-}
 
 $$\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty$$
 
@@ -130,8 +127,7 @@ $$vs$$
 
 $$\textbf{H}_a: \ F(x) > F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.$$
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^->W$. Donde $W$ es el cuantil $(1-\alpha)$,obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola. 
 

@@ -5,7 +5,7 @@ Los rangos se asignan de menor a mayor y asignamos el promedio de los rangos cor
 
 Calculamos la suma del cuadrado de los rangos asignados de cada muestra, denotamos por $$S_{1},S_{2},\cdots,S_{k} \  \ \mbox{la suma de los rangos de cada muestra.}$$
 
-**Datos**
+## Datos
 
 Se tienen $k$ m.a que pueden tener distintos tamaños, la $j-ésima$ m.a, de tamaño $n_j$ es $$x_{j1},\ x_{j2},\ x_{j3},\ \cdots, \ x_{jn_j}.$$
 
@@ -25,7 +25,7 @@ Sea $N$ el número total de observaciones:
 
 $$N=\sum_{j=1}^k n_j$$
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{Las} \  k  \ \mbox{poblaciones son identicas, excepto por diferencia en las medias.}$$
 
@@ -33,9 +33,9 @@ $$vs$$
 
 $$\textbf{H}_a: \mbox{Algunas de las varianzas de las poblaciones no son idénticas entre sí.}$$
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
-**Cuando tenemos empates**
++ **Cuando tenemos empates**
 
 $$T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right]$$
 donde:
@@ -50,7 +50,7 @@ donde:
 
 * $D^2=\frac{1}{N-1}\left[\sum_{i=1}^{N}R^4_{j}-N(\overline{S})^2\right]$ y $\sum{R_{i}^4}$ representa la suma de los rangos después de elevarlos a la cuarta potencia.
 
-**Cuando no tenemos empates**
++ **Cuando no tenemos empates**
 
 
 $D^2$ y $\overline{S}$ se simplifican:
@@ -60,7 +60,7 @@ $$D^2=N(N+1)(2N+1)(8N+11)/180$$
 
 $$\overline{S}=(N+1)(2N+1)/6$$
 
-**Regla de decisión**
+## Regla de decisión
 
 Rechazamos $H_0$ si:
 
@@ -74,7 +74,7 @@ y calculamos el $p-value$
 $$p-value= \mathbf{P}\left[\chi^2>T_{2}\right]$$
 es la probabilidad de una variable aleatoria $\chi^2$  con $k-1$ grados de libertad sea mayor a el  valor observado de $T_2$.
 
-**Comparación múltiple**
+## Comparación múltiple
 
 Si la hipótesis nula es rechazada, podriamos utilizar el siguiente procediemiento para determinar cuales pares de poblaciones tienden a ser diferentes.
 

@@ -6,7 +6,7 @@ Con este pequeño cambio, la prueba de Kuiper es tan sensible en las colas como 
 
 Las pruebas **Anderson–Darling** y **Cramér–von Mises** pertenecen a un grupo llamado **estadísticas EDF cuadráticas**, en donde el término EDF se refiere a que se basan en la función de distribución empírica. 
 
-Este grupo de estadíticas esta definido de la siguiente manera:
+Este grupo de estadísticas esta definido de la siguiente manera:
 $$n\int_{-\infty}^{\infty}(S(x)-F_0(x))^2w(x)dF_0(x)$$
 En donde la diferencia entre la distribución empírica y la hipótetica está calculada con el término cuadrático y el término $w(x)$ es un peso que se da esas diferencias.
 
@@ -29,6 +29,7 @@ ad.test(X,null = "pexp",rate=1/meanx)
 cvm.test(X,null = "pexp",rate=1/meanx)
 
 ```
+
 ## Mas ejercicios
 
 1. Cinco niños de cuarto grado de primaria fueron seleccionados al azar de todos los niños de ese grado en la escuela "15 de septiembre", para participar en una carrera. Sus tiempos en segundos fueron: 6.3, 4.2, 4.7, 6.0, y 5.7. Probar con  la hipótesis de que los tiempos provienen de una distribución uniforme en el intervalo de 4 a 8 segundos. 

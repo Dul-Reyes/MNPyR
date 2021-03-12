@@ -3,17 +3,17 @@
 La prueba de Anderson Darling, al igual que la prueba de Lilliefors sirve para probar la
 hipótesis de que una muestra aleatoria sigue una cierta distribución especificada. 
 
-**Datos**
+## Datos
 
 Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tamaño $n$ asociada con alguna función de distribución desconocida, denotada por $F(x)$.
 
-**Supuestos**
+## Supuestos
 
 * La muestra es una muestra aleatoria.
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de 2 colas) Solo será este caso
+### Caso A (Prueba de 2 colas) Solo será este caso {-}
 
 $$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty$$
 
@@ -36,7 +36,7 @@ $$A_n^2=n \int_{-\infty}^{\infty} (Sn(X)-F^*(X))^2 \frac{1}{F^*(X)(1-F^*(X))}$$
 Una característica importante es que se usa la expresión $\frac{1}{F^*(X)(1-F^*(X))}$
 debido a que se busca que las colas de distribución tengan un peso cuantificablemente mayor, con la finalidad de detectar diferencias en las colas de la distribución.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 Resolviendo la integral se obtiene la estadístico de la forma:
 
@@ -63,7 +63,7 @@ Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.6
 \end{array}
 $$
 
-**Regla de Decisión**
+## Regla de Decisión
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $A_{n}^2> A_{1-\alpha}$ donde $A_{n}^{2}$ ya tiene el ajuste para cada caso mencionado anteriormente y  $A_{1-\alpha}$ es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 

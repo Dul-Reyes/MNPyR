@@ -1,6 +1,6 @@
 # Prueba de Independencia
 
-**Datos**
+## Datos
 
 Una muestra aleatoria de tamaño $N$. Las observaciones en la muestra aleatoria son clasificados de acuerdo a dos criterios, usando el primer criterio cada observación es asociada con uno de los $r$ renglones, y usando el segundo criterio cada observación es asociada con una de las $C$ columnas. 
 Sea $O_{ij}$ el número de observaciones asociadas con el renglón $i$ y la columna $j$ simultáneamente; el número total de observaciones en el renglón $i$ es designado por $R_{i}$, (en lugar de $n_{i}$ como la prueba anterior, para enfatizar que los totales de las filas ahora son aleatorios en lugar de fijos), y en la columna $j$ por $C_{j}$. La suma de los números en todas las celdas es $N$.
@@ -24,15 +24,14 @@ $$
 \hline
 \end {array}
 $$
-**Supuestos**
+
+## Supuestos
 
 * La muestra de $N$ observaciones es una muestra aleatoria. (Cada observación tiene la misma probabilidad como cualquier otra observación de ser clasificada en el renglón $i$ y la columna $j$ independientemente de las otras observaciones).
 
 * Cada observación puede ser clasificada en una de las $r$ diferentes categorías de acuerdo al primer criterio y en una de las $C$ diferentes categorías de acuerdo al segundo criterio.
 
-
-**Estadístico de Prueba**
-
+## Estadístico de Prueba
 
 El estadístico de prueba $T$ es obtenido de la siguiente manera:
 
@@ -51,7 +50,7 @@ Es decir,
 
 $$T\sim \chi^2_{(r-1)(c-1)}$$
 
-**Hipótesis**
+## Hipótesis 
 
 $$\textbf{H}_0: \ \mbox{El evento} \  "una\ observación\ está\ en\ la\ fila\ i"\ \mbox{es independiente}$$
 $$\mbox{del evento} \ "esa\ misma\ observación\ está\ en\ la\ columna\ j"\ \mbox{para todos} \ \ i,\ j.$$
@@ -64,7 +63,7 @@ $$vs$$
 
 $$\textbf{H}_a:\mathbf{P}[\ \ renglón\ \ i\ ,\ columna\ \ j\ \ ]\ \  \neq \ \mathbf{P}[ \ \ renglón\ i\ \ ]*P[\ \ columna\ j\ \  ]\ \ \ \ ; \ para\ alguna\ \ i \ , \ j. \ $$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(r-1)\times(c-1)$ grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución. 
 

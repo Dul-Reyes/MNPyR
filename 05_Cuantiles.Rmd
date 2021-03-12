@@ -16,21 +16,21 @@ $$ \mathbf{P}[X < x]\leq p$$
 * En el caso de una variable aleatoria continua se da la igualdad.
  
  
-**Datos**
+## Datos
 
 Los datos consisten en una muestra 
 
 $$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} \ n \  \mbox{de la población}$$
  
 
-**Supuestos**
+## Supuestos
  
 1) Los datos a los que se les aplica esta prueba son una muestra aleatoria independiente e idénticamente distribuida.
 
 2) La escala de medida de las $X_{i}s$ es al menos ordinal.
 
 
-**Estadístico de Prueba** 
+## Estadístico de Prueba
 
 $$T_{1}$$
 El  número de observaciones en la muestra que son **menores o iguales**  al valor $x^*$ sobre el que se va a hacer la hipótesis.
@@ -52,9 +52,9 @@ Donde $Z_{q}$ es el cuantil de una distribución normal estándar que se puede o
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*$$ 
 
@@ -62,8 +62,7 @@ $$vs$$
 
 $$\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*$$
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -91,17 +90,17 @@ $$\mathbf{P}[Y\geq T_{2}] \thickapprox 1-\mathcal{N} \left(\frac{T_{2}-np^*-0.5}
 Con $\mathcal{N}(\cdot)$ la función de distribución de la normal estándar.
 
 
-**Caso B** (Prueba de cola inferior)
+### Caso B (Prueba de cola inferior) {-}
 
 $$\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*$$
+$$
+\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*
+$$
 
-
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -122,7 +121,7 @@ Sugerimos que si $n > 20$, el $p-value$ puede obtenerse más sencillo usando la 
 
 $$\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
-**Caso C** (Prueba de cola supeior)
+### Caso C (Prueba de cola supeior) {-}
 
 $$\textbf{H}_0: x_{p} \geq x^* \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]\leq p^*$$ 
 
@@ -131,8 +130,7 @@ $$vs$$
 $$\textbf{H}_a: x_{p} < x^*  \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]> p^*$$
 
 
-
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -273,10 +271,6 @@ Finalmente podemos utilizar la función en R.
 ```{r}
 binom.test(T_1,n,p=0.5,alternative = "less")
 ```
-
-
-
-
 
 ## Ejercicios
 

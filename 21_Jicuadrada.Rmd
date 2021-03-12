@@ -1,13 +1,13 @@
 # Prueba de la Ji-cuadrada
 
-**Datos**
+## Datos
 
 $$X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}$$
 
 Cada una de las variables se pueden acomodar en alguna clase $"k"$ (o categoría)
 
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{Los datos siguen una distribución} \ \  F_{0}(x).$$
 
@@ -33,7 +33,7 @@ Vamos a buscar las probabilidades de ocurrencia en cada categoría.
 Calcular los valores esperados $e_{j}$;  Donde  $e_{j}=n \times P_{j}$
 
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \chi^2_{(k-1)}$$
 
@@ -49,7 +49,7 @@ $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \c
 * $Q \sim \chi^2_{(k-1-r)}$  \ Donde $k$=Número de clases o intervalos, \  $r$=Número de parámetros estimados.
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ si  $Q$> $q_{teórica}$
 
@@ -81,7 +81,7 @@ $$
 \textbf{Número de hogares} & 273& 361&263 &78 & 25  \\
 \hline
 \end{array}
- $$
+$$
  
  
 **Paso 1** Prueba a utilizar **Prueba Ji-cuadrada**

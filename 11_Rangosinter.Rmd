@@ -1,10 +1,10 @@
 # Intervalo de confianza para la diferencia entre dos medias
 
-**Datos** 
+## Datos
 
 Los datos consisten en dos muestras aleatorias $X_{1}, \ldots, X_{n}$ y $Y_{1}, \ldots, Y_{m}$ de tamaño $n$ y $m$, respectivamente. Sea $X$ y $Y$ las variables aleatorias con la misma distribución que las $X_{i}$ y las $Y_{j}$, respectivamente.
 
-**Supuestos**
+## Supuestos
 
 1) Ambas muestras son muestras aleatorias de sus respectivas poblaciones.
 
@@ -12,7 +12,7 @@ Los datos consisten en dos muestras aleatorias $X_{1}, \ldots, X_{n}$ y $Y_{1}, 
 
 3) Las dos funciones de distribución de la población son idénticas, excepto por una posible diferencia en los parámetros de ubicación. Es decir, hay una constante $d$ (por ejemplo) tal que $X$ tiene la misma función de distribución que $Y + d$.
 
-**Método**
+## Método
 
 Determine el cuantil $\alpha/2$ ($\omega_{\alpha/2}$) para $n$ y $m$ de las tablas correspondientes a **Prueba Mann-Whitney**, o si $n$ y $m$ son mayores a 20 se ocupa la aproximación del cuantil, donde $1-\alpha$ es el coeficiente de confianza.Note que esto se puede utilizar incluso si hay muchos empates.
 
@@ -30,9 +30,9 @@ Entonces el intervalo de confianza es obtenido por:
 
 $$\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha$$
 
-Ahora haremos un ejemplo para ilustar la teoría:
+Ahora haremos un ejemplo para ilustrar la teoría:
 
-**Ejemplo**
+## Ejemplo
 
 Se desea mezclar una masa de pastel hasta que se alcance una consistencia específica. Se mezclan cinco lotes de la mezcla usando la batidora A, y los otros cinco lotes se mezclan usando la batidora B. Los tiempos requeridos para mezclar se dan de la siguinte manera (en minutos):
 

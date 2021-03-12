@@ -4,7 +4,7 @@ La prueba mediana está diseñada para examinar si varias muestras provienen de 
 
 Para probar si varias $c$ poblaciones tienen la misma mediana, se extrae una muestra aleatoria de cada población (la escala de medición es al menos ordinal, o el término "mediana" no tendría sentido). Se construye una tabla de contingencia $2\times c$ y las dos entidades en la $i-ésima$ columna son los números de observaciones en la $i-ésima$ muestra que están por encima y por debajo de la gran mediana (la mediana de todas las observaciones combinadas). La prueba de $\chi^2$ habitual se aplica luego a la tabla de contingencia.
 
-**Datos**
+## Datos
 
 Para cada una de las poblaciones $c$ se obtiene una muestra aleatoria de tamaño $n_{i}$, $i = 1,2,\ldots, c$. Se determina la mediana de la muestra combinada; es decir, se determina el número que excedió aproximadamente la mitad de las observaciones en toda la muestra $N = n_{1} + n_{2}+ \ldots + n_{c}$. Esto se llama mediana. Sea $O_{1i}$, el número de observaciones en la $i$-ésima muestra que excede la mediana y, sea $O_{2i}$ el número en la $i$-ésima muestra que sea menor o igual a la mediana, organice los conteos de frecuencia en una tabla de contingencia $2\times c$ de la siguiente manera:
 
@@ -22,7 +22,7 @@ $$
 
 Sea $a$ el número total de observaciones mas grandes a la mediana en todas las muestras, sea $b$ el número total de observaciones menores o iguales a la mediana. Entonces $a+b=N$ es el número total de observaciones.
 
-**Supuestos**
+## Supuestos
 
 * Cada muestra es una muestra aleatoria.
 
@@ -32,7 +32,7 @@ Sea $a$ el número total de observaciones mas grandes a la mediana en todas las 
 
 * Si todas las poblaciones tienen la misma mediana, todas las poblaciones tienen la misma probabilidad $p$ de que una observación exceda la mediana.
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 El estadístico de prueba es obtenido por el reordenamiento del estadístico utilizado en la prueba anterior, notando que $O_{2i}=n_{i}-O_{1i}$ en el caso especial con 2 renglones.
 
@@ -57,7 +57,7 @@ Es decir,
 
 $$T\sim \chi^2_{(c-1)}$$
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{Todas las} \  c \  \mbox{poblaciones tienen la misma mediana.}$$
 
@@ -66,12 +66,12 @@ $$vs$$
 $$\textbf{H}_a:\mbox{ Al menos 2 de las poblaciones tienen diferente mediana.}$$
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(c-1)$ grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
 
-**Comparación Múltiple**
+## Comparación Múltiple
 
 Si la hipótesis nula es rechazada, se pueden hacer comparaciones múltiples por parejas entre poblaciones utilizando la prueba de mediana repetidamente en tablas de contingencia de $2 \times 2$. En cada comparación se encuentra la mediana de las dos muestras, y el número por encima o por debajo de esa mediana se utiliza en la tabla de contingencia $2 \times 2$. Calculamos el estadístico de prueba T para la prueba y si $T$ es más grande que el cuantil $1-\alpha$ de la distribución $\chi^2$ con 1 grado de libertad encontrado en tablas de dicha distribución, entonces decimos que las medianas de esas 2 poblaciones son iguales.
 

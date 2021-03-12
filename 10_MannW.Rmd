@@ -4,7 +4,7 @@ Esta prueba está diseñada para determinar si dos muestras han sido extraídas 
 
 A diferencia de las pruebas binomiales bivariadas vistas en la sección anterior, esta no se basa en una muestra por pares. En lugar usa dos muestras independientes, una de cada población a probar. 
 
-**Datos**
+## Datos
 
 Se considera que los datos provienen de dos muestras aleatorias: 
 
@@ -24,7 +24,7 @@ $$F(t) \ \mbox{la función de distribución de probabilidad de X.}$$
 $$G(t) \ \mbox{la función de distribución de probabilidad de Y.}$$
 
 
-**Supuestos**
+## Supuestos
 
 1) Independencia dentro de cada muestra.
 
@@ -46,14 +46,14 @@ $$G(t) \ \mbox{la función de distribución de probabilidad de Y.}$$
 
 
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
-**Si no hay empates**
++ **Si no hay empates**
 
 
 $$T=\sum_{i=1}^{n}R(X_{i})$$
 
-**Si  hay empates**
++ **Si  hay empates**
 
 $$T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}$$
 
@@ -63,9 +63,9 @@ $$T_{1}\sim N(0,1)$$
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
 
-**Hipótesis**
+## Hipótesis
 
-**Caso A** (Prueba de dos colas)
+### Caso A (Prueba de dos colas) {-}
 
 $$\textbf{H}_0: F(x) = G(x) \ \  \forall\ x, \ \ \  \mbox{alternativo} \ \ \  \textbf{H}_0:\mathbf{E}[X] = \mathbf{E}[Y]$$
 
@@ -75,7 +75,7 @@ $$\textbf{H}_a: F(x) \neq G(x) \ \ \mbox{para alguna} \ x,  \ \ \mbox{alternativ
 \mathbf{E}[X] \neq \mathbf{E}[Y]$$
 
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -115,11 +115,11 @@ $$p-value=2*min\{\mathbf{P}[Z\leq T_{1}],\mathbf{P}[Z\geq T_{1}]\}$$
 Donde $Z$ es la variable aleatoria normal estándar.
 
 
-**Caso B**  (Prueba de cola inferior)
+### Caso B  (Prueba de cola inferior) {-}
 
 $$\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{alternativo} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 
@@ -150,11 +150,11 @@ y calculamos el $p-value$ de la siguiente manera:
 $$p-value=\mathbf{P}[Z\leq T_{1}]$$
 Donde $Z$ es la variable aleatoria normal estándar.
 
-**Caso C** (Prueba de cola superior)
+### Caso C (Prueba de cola superior) {-}
 
 $$\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) < G(x), \  \ \mbox{alternativo} \ \ \textbf{H}_a:\mathbf{E}[X]  > \mathbf{E}[Y]$$
 
-**Regla de decisión**
+#### Regla de decisión {-}
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
 

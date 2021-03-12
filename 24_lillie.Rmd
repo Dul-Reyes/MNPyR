@@ -9,7 +9,7 @@ La prueba de Kolmogorov se ha modificado para permitir su uso en varias situacio
 
 La primera modificación a la prueba de Kolmogorov es para probar la hipótesis compuesta de la normalidad. Es decir, la hipótesis nula establece que la población es una de la familia de distribuciones normales sin especificar la media o la varianza de la distribución normal. Ésta prueba fue presentada por primera vez por Hubert Lilliefors (1967). Una característica interesante de esta prueba es que este es uno de los primeros casos en que el compilador se utilizó para generar números aleatorios con el fin de obtener estimaciones precisas de los verdaderos cuantiles de la distribución exacta del estadístico de la prueba y además, aproximar a los parámetros a través del uso de los estimadores puntuales.
 
-**Datos**
+## Datos
 
 Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tamaño $n$ asociada con alguna función de distribución desconocida, denotada por $F(x)$.
 
@@ -30,12 +30,12 @@ $$Z_{i}=\frac{X_{i}-\overline{X}}{s} \ \ \ \ i=1,2,\ldots,n$$
 El estadístico de prueba se calcula a partir de $Z_{i}s$ en lugar de a partir de la muestra aleatoria. original
 
 
-**Supuestos**
+## Supuestos
 
 1) La muestra es una muestra aleatoria.
 
 
-**Hipótesis**
+## Hipótesis
 
 $$\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución normal,}$$
 $$\mbox{con media y desviación estándar desconocidas.}$$
@@ -43,14 +43,14 @@ $$vs$$
 
 $$\textbf{H}_a: \ \mbox{La función de distribución de las} \ \ X_{i}s \ \  \mbox{no es normal.}$$
 
-**Estadístico de Prueba**
+## Estadístico de Prueba
 
 Normalmente, el estadístico de prueba es el mismo para la prueba de Kolmogorov de dos colas, definida como la distancia vertical máxima entre la función de distribución empírica de $X_{i}s$ y la función de distribución normal con media $\mu=\overline{X}$  y desviación estándar $\sigma=s$.
 Sin embargo, el siguiente método para calcular el estadístico de prueba es un poco más fácil, ya que es equivalente al método indicado. Es decir, el cálculo del estadístico $T_{1}$ será en función de la $Z_{i}s$.
 
 $$T_{1}=\underset{x}{sup}|F^*(x)-S(x)|$$
 
-**Regla de Decisión**
+#### Regla de Decisión {-}
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T_{1}> W_{1-\alpha}$ donde $W_{1-\alpha}$ es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 
