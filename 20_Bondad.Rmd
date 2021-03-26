@@ -1,4 +1,6 @@
-# Bondad de Ajuste {-}
+# (PART) Bondad de Ajuste {-}
+
+# Introducción {-}
 
 Las pruebas de bondad de ajuste se utilizan para decidir si un conjunto de datos (una muestra aleatoria) se ajusta a una función de distribución dada. 
 

@@ -66,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -162,7 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="part"><span><b>II Pruebas Binomiales</b></span></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
@@ -237,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="6.7" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="part"><span><b>III Prueba de Rango</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#datos-5"><i class="fa fa-check"></i><b>7.1</b> Datos</a></li>
@@ -296,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-9"><i class="fa fa-check"></i><b>11.6</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.7" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.7</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="part"><span><b>IV Tablas de Contingencia</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#datos-10"><i class="fa fa-check"></i><b>12.1</b> Datos</a></li>
@@ -346,7 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-10"><i class="fa fa-check"></i><b>15.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="part"><span><b>V Bondad de Ajuste</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#datos-14"><i class="fa fa-check"></i><b>16.1</b> Datos</a></li>
@@ -425,7 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="part"><span><b>VI Regresión Lineal Simple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -483,7 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="part"><span><b>VII Modelo de regresión lineal múltiple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -1000,44 +1029,44 @@ Por lo tanto, <span class="math inline">\(\tilde{\sigma}\)</span> es insesgado.<
 </tbody>
 </table>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="modelo-sin-intercepto.html#cb222-1" aria-hidden="true"></a>Dia=<span class="kw">read.table</span>(<span class="st">&quot;Problema8T1.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;,&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb222-2"><a href="modelo-sin-intercepto.html#cb222-2" aria-hidden="true"></a><span class="kw">names</span>(Dia)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="modelo-sin-intercepto.html#cb222-1" aria-hidden="true" tabindex="-1"></a>Dia<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;Problema8T1.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb222-2"><a href="modelo-sin-intercepto.html#cb222-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Dia)</span></code></pre></div>
 <pre><code>[1] &quot;Dia&quot;      &quot;Facturas&quot; &quot;Tiempo&quot;  </code></pre>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="modelo-sin-intercepto.html#cb224-1" aria-hidden="true"></a><span class="kw">attach</span>(Dia)</span></code></pre></div>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="modelo-sin-intercepto.html#cb225-1" aria-hidden="true"></a><span class="kw">plot</span>(Dia<span class="op">$</span>Facturas,Dia<span class="op">$</span>Tiempo,<span class="dt">type =</span> <span class="st">&quot;p&quot;</span>,</span>
-<span id="cb225-2"><a href="modelo-sin-intercepto.html#cb225-2" aria-hidden="true"></a>     <span class="dt">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">xlab=</span><span class="st">&quot;Facturas&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Tiempo&quot;</span>, </span>
-<span id="cb225-3"><a href="modelo-sin-intercepto.html#cb225-3" aria-hidden="true"></a>     <span class="dt">main=</span> <span class="st">&quot;Relación entre las Facturas y su tiempo de llegada&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="modelo-sin-intercepto.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(Dia)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="modelo-sin-intercepto.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Dia<span class="sc">$</span>Facturas,Dia<span class="sc">$</span>Tiempo,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,</span>
+<span id="cb225-2"><a href="modelo-sin-intercepto.html#cb225-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>, <span class="at">xlab=</span><span class="st">&quot;Facturas&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Tiempo&quot;</span>, </span>
+<span id="cb225-3"><a href="modelo-sin-intercepto.html#cb225-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span> <span class="st">&quot;Relación entre las Facturas y su tiempo de llegada&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Como podemos observar el gráfico nos grita que exite una posible relación lineal entre el número de facturas y el tiempo empleado para éstas.
 Para confirmar nuestras sospechas vamos a calcular el coefieciente de correlación de Pearson:</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="modelo-sin-intercepto.html#cb226-1" aria-hidden="true"></a><span class="kw">cor</span>(Tiempo,Facturas)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="modelo-sin-intercepto.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Tiempo,Facturas)</span></code></pre></div>
 <pre><code>[1] 0.9336877</code></pre>
 <p>Es decir, r=0.9336 indica una fuerte relación lineal positiva entre el número de facturas procesadas y el tiempo. Entonces tiene “sentido” emplear un modelo de regresión lineal simple.</p>
 <p>Ahora estimaremos los parámetros <span class="math inline">\(\beta_{0}\)</span> y <span class="math inline">\(\beta_{1}\)</span> con el método de mínimos cuadrados visto.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="modelo-sin-intercepto.html#cb228-1" aria-hidden="true"></a>y=Dia<span class="op">$</span>Tiempo</span>
-<span id="cb228-2"><a href="modelo-sin-intercepto.html#cb228-2" aria-hidden="true"></a>x=Dia<span class="op">$</span>Facturas</span>
-<span id="cb228-3"><a href="modelo-sin-intercepto.html#cb228-3" aria-hidden="true"></a>y_barra=<span class="kw">mean</span>(y)</span>
-<span id="cb228-4"><a href="modelo-sin-intercepto.html#cb228-4" aria-hidden="true"></a>x_barra=<span class="kw">mean</span>(x) </span>
-<span id="cb228-5"><a href="modelo-sin-intercepto.html#cb228-5" aria-hidden="true"></a>Sxx=<span class="kw">sum</span>((x<span class="op">-</span>x_barra)<span class="op">^</span><span class="dv">2</span>) </span>
-<span id="cb228-6"><a href="modelo-sin-intercepto.html#cb228-6" aria-hidden="true"></a>Sxy=<span class="kw">sum</span>((x<span class="op">-</span>x_barra)<span class="op">*</span>(y<span class="op">-</span>y_barra))</span>
-<span id="cb228-7"><a href="modelo-sin-intercepto.html#cb228-7" aria-hidden="true"></a>beta1=Sxy<span class="op">/</span>Sxx</span>
-<span id="cb228-8"><a href="modelo-sin-intercepto.html#cb228-8" aria-hidden="true"></a>beta0=y_barra<span class="op">-</span>beta1<span class="op">*</span>x_barra</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="modelo-sin-intercepto.html#cb228-1" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span>Dia<span class="sc">$</span>Tiempo</span>
+<span id="cb228-2"><a href="modelo-sin-intercepto.html#cb228-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span>Dia<span class="sc">$</span>Facturas</span>
+<span id="cb228-3"><a href="modelo-sin-intercepto.html#cb228-3" aria-hidden="true" tabindex="-1"></a>y_barra<span class="ot">=</span><span class="fu">mean</span>(y)</span>
+<span id="cb228-4"><a href="modelo-sin-intercepto.html#cb228-4" aria-hidden="true" tabindex="-1"></a>x_barra<span class="ot">=</span><span class="fu">mean</span>(x) </span>
+<span id="cb228-5"><a href="modelo-sin-intercepto.html#cb228-5" aria-hidden="true" tabindex="-1"></a>Sxx<span class="ot">=</span><span class="fu">sum</span>((x<span class="sc">-</span>x_barra)<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb228-6"><a href="modelo-sin-intercepto.html#cb228-6" aria-hidden="true" tabindex="-1"></a>Sxy<span class="ot">=</span><span class="fu">sum</span>((x<span class="sc">-</span>x_barra)<span class="sc">*</span>(y<span class="sc">-</span>y_barra))</span>
+<span id="cb228-7"><a href="modelo-sin-intercepto.html#cb228-7" aria-hidden="true" tabindex="-1"></a>beta1<span class="ot">=</span>Sxy<span class="sc">/</span>Sxx</span>
+<span id="cb228-8"><a href="modelo-sin-intercepto.html#cb228-8" aria-hidden="true" tabindex="-1"></a>beta0<span class="ot">=</span>y_barra<span class="sc">-</span>beta1<span class="sc">*</span>x_barra</span></code></pre></div>
 <p>Entonces <span class="math inline">\(\hat{\beta_{1}}\)</span> será:</p>
 <pre><code>[1] 0.01129164</code></pre>
 <p>y <span class="math inline">\(\hat{\beta_{0}}\)</span> será:</p>
 <pre><code>[1] 0.6417099</code></pre>
 <p>Ahora estimaremos el parámetro <span class="math inline">\(\beta\)</span> con el método de mínimos cuadrados para un modelo sin intercepto.</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="modelo-sin-intercepto.html#cb231-1" aria-hidden="true"></a>beta_gorro=<span class="kw">sum</span>(x<span class="op">*</span>y)<span class="op">/</span><span class="kw">sum</span>(x<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="modelo-sin-intercepto.html#cb231-1" aria-hidden="true" tabindex="-1"></a>beta_gorro<span class="ot">=</span><span class="fu">sum</span>(x<span class="sc">*</span>y)<span class="sc">/</span><span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
 <p>Entonces <span class="math inline">\(\hat{\beta}\)</span> será:</p>
 <pre><code>[1] 0.01503001</code></pre>
 <p><strong>Residuales</strong></p>
 <p>Ahora calcularemos los residuales, es decir la diferencia entre los valores observados y los valores estimados (<span class="math inline">\(e_i = y_i-\hat{y}_i\)</span>)</p>
 <p>Primero calculamos el vector de los valores estimados <span class="math inline">\(\hat{y}\)</span>:</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="modelo-sin-intercepto.html#cb233-1" aria-hidden="true"></a>y_gorro=beta0<span class="op">+</span>beta1<span class="op">*</span>x</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="modelo-sin-intercepto.html#cb233-1" aria-hidden="true" tabindex="-1"></a>y_gorro<span class="ot">=</span>beta0<span class="sc">+</span>beta1<span class="sc">*</span>x</span></code></pre></div>
 <p>Luego los residuales y los graficamos</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="modelo-sin-intercepto.html#cb234-1" aria-hidden="true"></a>e=y<span class="op">-</span>y_gorro </span>
-<span id="cb234-2"><a href="modelo-sin-intercepto.html#cb234-2" aria-hidden="true"></a><span class="kw">plot</span>(e,<span class="dt">type =</span> <span class="st">&quot;p&quot;</span>,<span class="dt">pch=</span><span class="dv">16</span>, <span class="dt">ylab=</span><span class="st">&quot;residuales&quot;</span>,<span class="dt">col=</span><span class="st">&quot;deeppink4&quot;</span>) </span>
-<span id="cb234-3"><a href="modelo-sin-intercepto.html#cb234-3" aria-hidden="true"></a><span class="kw">abline</span>(<span class="dt">a=</span><span class="dv">0</span>,<span class="dt">b=</span><span class="dv">0</span>, <span class="dt">col=</span><span class="st">&quot;green4&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="modelo-sin-intercepto.html#cb234-1" aria-hidden="true" tabindex="-1"></a>e<span class="ot">=</span>y<span class="sc">-</span>y_gorro </span>
+<span id="cb234-2"><a href="modelo-sin-intercepto.html#cb234-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(e,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>, <span class="at">ylab=</span><span class="st">&quot;residuales&quot;</span>,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>) </span>
+<span id="cb234-3"><a href="modelo-sin-intercepto.html#cb234-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span><span class="dv">0</span>, <span class="at">col=</span><span class="st">&quot;green4&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Para que el modelo propuesto ajuste bien a los datos originales esperaríamos que los residuales estuvieran lo mas cercano al cero (linea amarilla). Mas adelante veremos como usar estos gráficos para verificar algunos de los supuestos del modelo.</p>
 

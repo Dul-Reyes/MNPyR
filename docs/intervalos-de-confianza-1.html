@@ -66,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -162,7 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="part"><span><b>II Pruebas Binomiales</b></span></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
@@ -237,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="6.7" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="part"><span><b>III Prueba de Rango</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#datos-5"><i class="fa fa-check"></i><b>7.1</b> Datos</a></li>
@@ -296,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-9"><i class="fa fa-check"></i><b>11.6</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.7" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.7</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="part"><span><b>IV Tablas de Contingencia</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#datos-10"><i class="fa fa-check"></i><b>12.1</b> Datos</a></li>
@@ -346,7 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-10"><i class="fa fa-check"></i><b>15.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="part"><span><b>V Bondad de Ajuste</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#datos-14"><i class="fa fa-check"></i><b>16.1</b> Datos</a></li>
@@ -425,7 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="part"><span><b>VI Regresión Lineal Simple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -483,7 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="part"><span><b>VII Modelo de regresión lineal múltiple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -694,17 +723,17 @@ Denotando a <span class="math inline">\(\sigma^2_{x}=\hat{\sigma}^2\left(1+ \fra
 <p>Entonces haremos el cálculo de los intervalos al <span class="math inline">\(95\%\)</span> de confianza para ambos estimadores (<span class="math inline">\(\hat{\beta_{0}} \ , \ \hat{\beta_{1}}\)</span>).</p>
 <p>Como vimos en la sección anterior, debemos estimar <span class="math inline">\(\sigma^2\)</span>, recordemos que el estimador es: <span class="math display">\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2\]</span></p>
 <pre><code>[1] 30</code></pre>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="intervalos-de-confianza-1.html#cb236-1" aria-hidden="true"></a>s2_gorro=<span class="dv">1</span><span class="op">/</span>(n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sum</span>((y<span class="op">-</span>y_gorro)<span class="op">^</span><span class="dv">2</span>)</span>
-<span id="cb236-2"><a href="intervalos-de-confianza-1.html#cb236-2" aria-hidden="true"></a>s2_gorro</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="intervalos-de-confianza-1.html#cb236-1" aria-hidden="true" tabindex="-1"></a>s2_gorro<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sum</span>((y<span class="sc">-</span>y_gorro)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb236-2"><a href="intervalos-de-confianza-1.html#cb236-2" aria-hidden="true" tabindex="-1"></a>s2_gorro</span></code></pre></div>
 <pre><code>[1] 0.1087505</code></pre>
 <p>ya con <span class="math inline">\(\hat{\sigma}^2\)</span> podemos construir los intervalos de confianza.</p>
 <ul>
 <li>Primero para <span class="math inline">\(\beta_{0}\)</span>, sustituyendo los valores en la siguiente ecuación:</li>
 </ul>
 <p><span class="math display">\[\beta_{0} \in \left( \hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ , \ \ \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right)\]</span></p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="intervalos-de-confianza-1.html#cb238-1" aria-hidden="true"></a>b0Liminf=beta0<span class="op">-</span><span class="kw">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n<span class="op">+</span>x_barra<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro)</span>
-<span id="cb238-2"><a href="intervalos-de-confianza-1.html#cb238-2" aria-hidden="true"></a></span>
-<span id="cb238-3"><a href="intervalos-de-confianza-1.html#cb238-3" aria-hidden="true"></a>b0Limsup=beta0<span class="op">+</span><span class="kw">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n<span class="op">+</span>x_barra<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="intervalos-de-confianza-1.html#cb238-1" aria-hidden="true" tabindex="-1"></a>b0Liminf<span class="ot">=</span>beta0<span class="sc">-</span><span class="fu">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>n<span class="sc">+</span>x_barra<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro)</span>
+<span id="cb238-2"><a href="intervalos-de-confianza-1.html#cb238-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb238-3"><a href="intervalos-de-confianza-1.html#cb238-3" aria-hidden="true" tabindex="-1"></a>b0Limsup<span class="ot">=</span>beta0<span class="sc">+</span><span class="fu">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>n<span class="sc">+</span>x_barra<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro)</span></code></pre></div>
 <p>Entonces el intervalo del <span class="math inline">\(95\%\)</span> de confianza para <span class="math inline">\(\beta_{0}\)</span> es:</p>
 <pre><code>      b0Liminf  b0Limsup
 [1,] 0.3912496 0.8921701</code></pre>
@@ -712,8 +741,8 @@ Denotando a <span class="math inline">\(\sigma^2_{x}=\hat{\sigma}^2\left(1+ \fra
 <li>Ahora para <span class="math inline">\(\beta_1\)</span>, sustituyendo los valores en la siguiente ecuación:</li>
 </ul>
 <p><span class="math display">\[\beta_{1} \in \left( \hat{\beta_{1}}-t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} \ \ , \ \ \hat{\beta_{1}}+t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} \ \right).\]</span></p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="intervalos-de-confianza-1.html#cb240-1" aria-hidden="true"></a>b1Liminf=beta1<span class="op">-</span><span class="kw">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro) </span>
-<span id="cb240-2"><a href="intervalos-de-confianza-1.html#cb240-2" aria-hidden="true"></a>b1Limsup=beta1<span class="op">+</span><span class="kw">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro) </span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="intervalos-de-confianza-1.html#cb240-1" aria-hidden="true" tabindex="-1"></a>b1Liminf<span class="ot">=</span>beta1<span class="sc">-</span><span class="fu">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro) </span>
+<span id="cb240-2"><a href="intervalos-de-confianza-1.html#cb240-2" aria-hidden="true" tabindex="-1"></a>b1Limsup<span class="ot">=</span>beta1<span class="sc">+</span><span class="fu">qt</span>(.<span class="dv">975</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro) </span></code></pre></div>
 <p>Entonces el intervalo del <span class="math inline">\(95\%\)</span> de confianza para <span class="math inline">\(\beta_{1}\)</span> es:</p>
 <pre><code>        b1Liminf   b1Limsup
 [1,] 0.009615224 0.01296806</code></pre>
@@ -721,15 +750,15 @@ Denotando a <span class="math inline">\(\sigma^2_{x}=\hat{\sigma}^2\left(1+ \fra
 <li>Y por último calculamos el intervalo de confianza para <span class="math inline">\(\sigma^2\)</span>, sustituyendo los valores en la siguiente ecuación:</li>
 </ul>
 <p><span class="math display">\[\sigma^2 \in \left( \frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{\chi^{2(1-\alpha/2)}_{(n-2)}} \ \ , \ \ \frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {\chi^{2(\alpha/2)}_{(n-2)}} \right).\]</span></p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="intervalos-de-confianza-1.html#cb242-1" aria-hidden="true"></a>sigLiminf=<span class="kw">sum</span>((y<span class="op">-</span>y_gorro)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.975</span>,n<span class="dv">-2</span>) </span>
-<span id="cb242-2"><a href="intervalos-de-confianza-1.html#cb242-2" aria-hidden="true"></a>sigLimsup=<span class="kw">sum</span>((y<span class="op">-</span>y_gorro)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.025</span>,n<span class="dv">-2</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="intervalos-de-confianza-1.html#cb242-1" aria-hidden="true" tabindex="-1"></a>sigLiminf<span class="ot">=</span><span class="fu">sum</span>((y<span class="sc">-</span>y_gorro)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.975</span>,n<span class="dv">-2</span>) </span>
+<span id="cb242-2"><a href="intervalos-de-confianza-1.html#cb242-2" aria-hidden="true" tabindex="-1"></a>sigLimsup<span class="ot">=</span><span class="fu">sum</span>((y<span class="sc">-</span>y_gorro)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">qchisq</span>(<span class="fl">0.025</span>,n<span class="dv">-2</span>) </span></code></pre></div>
 <p>Entonces el intervalo del <span class="math inline">\(95\%\)</span> de confianza para <span class="math inline">\(\beta_{1}\)</span> es:</p>
 <pre><code>      sigLiminf sigLimsup
 [1,] 0.06848759 0.1989182</code></pre>
 <p><strong>Valor Esperado</strong></p>
 <p>Ahora calcularemos el tiempo en horas promedio esperado para la fabulosa cantidad de 155 facturas.</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="intervalos-de-confianza-1.html#cb244-1" aria-hidden="true"></a>x_fac=<span class="dv">155</span></span>
-<span id="cb244-2"><a href="intervalos-de-confianza-1.html#cb244-2" aria-hidden="true"></a>y_esperado=beta0<span class="op">+</span>beta1<span class="op">*</span>x_fac</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="intervalos-de-confianza-1.html#cb244-1" aria-hidden="true" tabindex="-1"></a>x_fac<span class="ot">=</span><span class="dv">155</span></span>
+<span id="cb244-2"><a href="intervalos-de-confianza-1.html#cb244-2" aria-hidden="true" tabindex="-1"></a>y_esperado<span class="ot">=</span>beta0<span class="sc">+</span>beta1<span class="sc">*</span>x_fac</span></code></pre></div>
 <p>Entonces el tiempo en horas promedio esperado será:</p>
 <pre><code>[1] 2.391915</code></pre>
 <p>Gráficamente se ve así:</p>
@@ -739,12 +768,12 @@ Donde el punto azul es nuestro valor esperado.</p>
 <li>Y ahora construiremos su correspondiente intervalo del 99% de confianza, sustituyendo en la siguiente ecuación:</li>
 </ul>
 <p><span class="math display">\[\beta_{0}+\beta_{1}x&#39; \in \left(\hat{\beta_{0}}+\hat{\beta_{1}}x&#39;-t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x&#39;-\overline{x})^2}{S_{xx}}\right)}\hat{\sigma}^2 \ \ , \ \ \hat{\beta_{0}}+\hat{\beta_{1}}x&#39;+t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x&#39;-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right).\]</span></p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="intervalos-de-confianza-1.html#cb246-1" aria-hidden="true"></a>y_espLiminf=beta0<span class="op">+</span>beta1<span class="op">*</span>x_fac<span class="op">-</span><span class="kw">qt</span>(.<span class="dv">995</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n<span class="op">+</span>(x_fac<span class="op">-</span>x_barra)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro)</span>
-<span id="cb246-2"><a href="intervalos-de-confianza-1.html#cb246-2" aria-hidden="true"></a></span>
-<span id="cb246-3"><a href="intervalos-de-confianza-1.html#cb246-3" aria-hidden="true"></a>y_espLimisup=beta0<span class="op">+</span>beta1<span class="op">*</span>x_fac<span class="op">+</span><span class="kw">qt</span>(.<span class="dv">995</span>,n<span class="dv">-2</span>)<span class="op">*</span><span class="kw">sqrt</span>((<span class="dv">1</span><span class="op">/</span>n<span class="op">+</span>(x_fac<span class="op">-</span>x_barra)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Sxx)<span class="op">*</span>s2_gorro)</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="intervalos-de-confianza-1.html#cb246-1" aria-hidden="true" tabindex="-1"></a>y_espLiminf<span class="ot">=</span>beta0<span class="sc">+</span>beta1<span class="sc">*</span>x_fac<span class="sc">-</span><span class="fu">qt</span>(.<span class="dv">995</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>n<span class="sc">+</span>(x_fac<span class="sc">-</span>x_barra)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro)</span>
+<span id="cb246-2"><a href="intervalos-de-confianza-1.html#cb246-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-3"><a href="intervalos-de-confianza-1.html#cb246-3" aria-hidden="true" tabindex="-1"></a>y_espLimisup<span class="ot">=</span>beta0<span class="sc">+</span>beta1<span class="sc">*</span>x_fac<span class="sc">+</span><span class="fu">qt</span>(.<span class="dv">995</span>,n<span class="dv">-2</span>)<span class="sc">*</span><span class="fu">sqrt</span>((<span class="dv">1</span><span class="sc">/</span>n<span class="sc">+</span>(x_fac<span class="sc">-</span>x_barra)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)<span class="sc">*</span>s2_gorro)</span></code></pre></div>
 <p>Entonces el intervalo del <span class="math inline">\(99\%\)</span> de confianza para el valor esperado de <span class="math inline">\(y\)</span> es:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="intervalos-de-confianza-1.html#cb247-1" aria-hidden="true"></a>intery_esperado=<span class="kw">cbind</span>(y_espLiminf,y_espLimisup) </span>
-<span id="cb247-2"><a href="intervalos-de-confianza-1.html#cb247-2" aria-hidden="true"></a>intery_esperado</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="intervalos-de-confianza-1.html#cb247-1" aria-hidden="true" tabindex="-1"></a>intery_esperado<span class="ot">=</span><span class="fu">cbind</span>(y_espLiminf,y_espLimisup) </span>
+<span id="cb247-2"><a href="intervalos-de-confianza-1.html#cb247-2" aria-hidden="true" tabindex="-1"></a>intery_esperado</span></code></pre></div>
 <pre><code>     y_espLiminf y_espLimisup
 [1,]    2.216224     2.567605</code></pre>
 <ul>

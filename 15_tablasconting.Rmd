@@ -1,4 +1,6 @@
-# Tablas de Contingencia {-}
+# (PART) Tablas de Contingencia {-}
+
+# Introducción {-}
 
 Estas son tablas en las que se muestran las frecuencias de observaciones medidas sobre variables que tienen diferentes clases. El objetivo es observar si dos variables son independientes entre si. Para la realización de esta prueba las frecuencias son anotadas en tablas en las cuales cada observación es categorizada en solo una de las clases.
 

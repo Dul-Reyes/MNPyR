@@ -1,4 +1,6 @@
-# Prueba de Rango {-}
+# (PART) Prueba de Rango {-}
+
+# Introducción {-}
 
 Ya nos empapamos de la pruebas binomiales ahora en esta seccion se presentan tres de las pruebas de rangos más utilizadas en modelos no paramétricos, la prueba de Mann y Witney,  la prueba de Kruskal-Wallis y la prueba de Igualdad de Varianzas.
 

@@ -66,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -162,7 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="part"><span><b>II Pruebas Binomiales</b></span></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
@@ -237,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="6.7" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="part"><span><b>III Prueba de Rango</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#datos-5"><i class="fa fa-check"></i><b>7.1</b> Datos</a></li>
@@ -296,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-9"><i class="fa fa-check"></i><b>11.6</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.7" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.7</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="part"><span><b>IV Tablas de Contingencia</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#datos-10"><i class="fa fa-check"></i><b>12.1</b> Datos</a></li>
@@ -346,7 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-10"><i class="fa fa-check"></i><b>15.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="part"><span><b>V Bondad de Ajuste</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#datos-14"><i class="fa fa-check"></i><b>16.1</b> Datos</a></li>
@@ -425,7 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="part"><span><b>VI Regresión Lineal Simple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -483,7 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="part"><span><b>VII Modelo de regresión lineal múltiple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -1052,23 +1081,23 @@ Por lo tanto:</p>
 No Rechazamos <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>Paso 6</strong> Conclusión</p>
 <p>Se acepta la prueba de lognormalidad con media 1 y varianza 0, con un nivel de significancia <span class="math inline">\(\alpha\)</span> = 0.05. Es decir, Los datos se distribuyen <span class="math inline">\(LogN(0,1)\)</span>.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="prueba-kolmogorov-smirnov.html#cb180-1" aria-hidden="true"></a>i=<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">15</span></span>
-<span id="cb180-2"><a href="prueba-kolmogorov-smirnov.html#cb180-2" aria-hidden="true"></a>X=<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.6379</span>,<span class="fl">1.5299</span>,<span class="fl">0.35005</span>,<span class="fl">2.0505</span>,<span class="fl">2.1906</span>,<span class="fl">0.3459</span>,<span class="fl">2.3214</span>,<span class="fl">0.3128</span>,<span class="fl">0.6548</span>,<span class="fl">2.4373</span>,</span>
-<span id="cb180-3"><a href="prueba-kolmogorov-smirnov.html#cb180-3" aria-hidden="true"></a>               <span class="fl">1.803</span>,<span class="fl">2.3674</span>,<span class="fl">1.2716</span>,<span class="fl">0.2566</span>,<span class="fl">0.2513</span>)</span>
-<span id="cb180-4"><a href="prueba-kolmogorov-smirnov.html#cb180-4" aria-hidden="true"></a>X_i=<span class="kw">c</span>(<span class="fl">0.25130</span>,<span class="fl">0.25660</span>,<span class="fl">0.31280</span>, <span class="fl">0.34590</span>,<span class="fl">0.35005</span>,<span class="fl">0.63790</span>, <span class="fl">0.65480</span>, <span class="fl">1.27160</span>, </span>
-<span id="cb180-5"><a href="prueba-kolmogorov-smirnov.html#cb180-5" aria-hidden="true"></a>               <span class="fl">1.52990</span>,<span class="fl">1.80300</span>, <span class="fl">2.05050</span>, <span class="fl">2.19060</span>, <span class="fl">2.32140</span>, <span class="fl">2.36740</span>,<span class="fl">2.43730</span>)</span>
-<span id="cb180-6"><a href="prueba-kolmogorov-smirnov.html#cb180-6" aria-hidden="true"></a></span>
-<span id="cb180-7"><a href="prueba-kolmogorov-smirnov.html#cb180-7" aria-hidden="true"></a>Sn=<span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">1</span>)</span>
-<span id="cb180-8"><a href="prueba-kolmogorov-smirnov.html#cb180-8" aria-hidden="true"></a>Sn_<span class="dv">1</span>=<span class="kw">c</span>(<span class="dv">0</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="op">/</span><span class="dv">15</span>)</span>
-<span id="cb180-9"><a href="prueba-kolmogorov-smirnov.html#cb180-9" aria-hidden="true"></a>F_=<span class="kw">c</span>(<span class="fl">0.0836</span>,<span class="fl">0.0869</span>,<span class="fl">0.1226</span>,<span class="fl">0.1442</span>,<span class="fl">0.1472</span>,<span class="fl">0.3265</span>,<span class="fl">0.3360</span>,<span class="fl">0.5949</span>,</span>
-<span id="cb180-10"><a href="prueba-kolmogorov-smirnov.html#cb180-10" aria-hidden="true"></a>                    <span class="fl">0.6647</span>,<span class="fl">0.7222</span>,<span class="fl">0.7636</span>,<span class="fl">0.7835</span>,<span class="fl">0.8002</span>,<span class="fl">0.8056</span>,<span class="fl">0.8135</span>)</span>
-<span id="cb180-11"><a href="prueba-kolmogorov-smirnov.html#cb180-11" aria-hidden="true"></a>D_mas=<span class="kw">c</span>(<span class="op">-</span><span class="fl">0.0169</span>,<span class="fl">0.0464</span>,<span class="fl">0.0774</span>,<span class="fl">0.1224</span>,<span class="fl">0.1861</span>,<span class="fl">0.0735</span>,<span class="fl">0.1306</span>,<span class="op">-</span><span class="fl">0.0615</span>,<span class="op">-</span><span class="fl">0.0647</span>,<span class="op">-</span><span class="fl">0.0555</span>,</span>
-<span id="cb180-12"><a href="prueba-kolmogorov-smirnov.html#cb180-12" aria-hidden="true"></a>                <span class="fl">-0.0302</span>,<span class="fl">0.0165</span>,<span class="fl">0.0664</span>,<span class="fl">0.1277</span>,<span class="fl">0.1865</span>)</span>
-<span id="cb180-13"><a href="prueba-kolmogorov-smirnov.html#cb180-13" aria-hidden="true"></a>D_menos=<span class="kw">c</span>(<span class="op">-</span><span class="fl">0.0836</span>,<span class="op">-</span><span class="fl">0.0202</span>,<span class="fl">0.0107</span>,<span class="fl">0.0558</span>,<span class="fl">0.1194</span>,<span class="fl">0.0068</span>,<span class="fl">0.0640</span>,<span class="op">-</span><span class="fl">0.1282</span>,</span>
-<span id="cb180-14"><a href="prueba-kolmogorov-smirnov.html#cb180-14" aria-hidden="true"></a>          <span class="fl">-0.1313</span>,<span class="op">-</span><span class="fl">0.1222</span>,<span class="op">-</span><span class="fl">0.0969</span>,<span class="op">-</span><span class="fl">0.0501</span>,<span class="op">-</span><span class="fl">0.0002</span>,<span class="fl">0.0610</span>,<span class="fl">0.1198</span>)</span>
-<span id="cb180-15"><a href="prueba-kolmogorov-smirnov.html#cb180-15" aria-hidden="true"></a></span>
-<span id="cb180-16"><a href="prueba-kolmogorov-smirnov.html#cb180-16" aria-hidden="true"></a>Tabla=<span class="kw">cbind</span>(i,X_i,Sn,Sn_<span class="dv">1</span>,F_,D_mas,D_menos)                                                                                                                                                      </span>
-<span id="cb180-17"><a href="prueba-kolmogorov-smirnov.html#cb180-17" aria-hidden="true"></a>Tabla</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="prueba-kolmogorov-smirnov.html#cb180-1" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb180-2"><a href="prueba-kolmogorov-smirnov.html#cb180-2" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.6379</span>,<span class="fl">1.5299</span>,<span class="fl">0.35005</span>,<span class="fl">2.0505</span>,<span class="fl">2.1906</span>,<span class="fl">0.3459</span>,<span class="fl">2.3214</span>,<span class="fl">0.3128</span>,<span class="fl">0.6548</span>,<span class="fl">2.4373</span>,</span>
+<span id="cb180-3"><a href="prueba-kolmogorov-smirnov.html#cb180-3" aria-hidden="true" tabindex="-1"></a>               <span class="fl">1.803</span>,<span class="fl">2.3674</span>,<span class="fl">1.2716</span>,<span class="fl">0.2566</span>,<span class="fl">0.2513</span>)</span>
+<span id="cb180-4"><a href="prueba-kolmogorov-smirnov.html#cb180-4" aria-hidden="true" tabindex="-1"></a>X_i<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.25130</span>,<span class="fl">0.25660</span>,<span class="fl">0.31280</span>, <span class="fl">0.34590</span>,<span class="fl">0.35005</span>,<span class="fl">0.63790</span>, <span class="fl">0.65480</span>, <span class="fl">1.27160</span>, </span>
+<span id="cb180-5"><a href="prueba-kolmogorov-smirnov.html#cb180-5" aria-hidden="true" tabindex="-1"></a>               <span class="fl">1.52990</span>,<span class="fl">1.80300</span>, <span class="fl">2.05050</span>, <span class="fl">2.19060</span>, <span class="fl">2.32140</span>, <span class="fl">2.36740</span>,<span class="fl">2.43730</span>)</span>
+<span id="cb180-6"><a href="prueba-kolmogorov-smirnov.html#cb180-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-7"><a href="prueba-kolmogorov-smirnov.html#cb180-7" aria-hidden="true" tabindex="-1"></a>Sn<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span>)</span>
+<span id="cb180-8"><a href="prueba-kolmogorov-smirnov.html#cb180-8" aria-hidden="true" tabindex="-1"></a>Sn_1<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>)</span>
+<span id="cb180-9"><a href="prueba-kolmogorov-smirnov.html#cb180-9" aria-hidden="true" tabindex="-1"></a>F_<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.0836</span>,<span class="fl">0.0869</span>,<span class="fl">0.1226</span>,<span class="fl">0.1442</span>,<span class="fl">0.1472</span>,<span class="fl">0.3265</span>,<span class="fl">0.3360</span>,<span class="fl">0.5949</span>,</span>
+<span id="cb180-10"><a href="prueba-kolmogorov-smirnov.html#cb180-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fl">0.6647</span>,<span class="fl">0.7222</span>,<span class="fl">0.7636</span>,<span class="fl">0.7835</span>,<span class="fl">0.8002</span>,<span class="fl">0.8056</span>,<span class="fl">0.8135</span>)</span>
+<span id="cb180-11"><a href="prueba-kolmogorov-smirnov.html#cb180-11" aria-hidden="true" tabindex="-1"></a>D_mas<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.0169</span>,<span class="fl">0.0464</span>,<span class="fl">0.0774</span>,<span class="fl">0.1224</span>,<span class="fl">0.1861</span>,<span class="fl">0.0735</span>,<span class="fl">0.1306</span>,<span class="sc">-</span><span class="fl">0.0615</span>,<span class="sc">-</span><span class="fl">0.0647</span>,<span class="sc">-</span><span class="fl">0.0555</span>,</span>
+<span id="cb180-12"><a href="prueba-kolmogorov-smirnov.html#cb180-12" aria-hidden="true" tabindex="-1"></a>                <span class="sc">-</span><span class="fl">0.0302</span>,<span class="fl">0.0165</span>,<span class="fl">0.0664</span>,<span class="fl">0.1277</span>,<span class="fl">0.1865</span>)</span>
+<span id="cb180-13"><a href="prueba-kolmogorov-smirnov.html#cb180-13" aria-hidden="true" tabindex="-1"></a>D_menos<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.0836</span>,<span class="sc">-</span><span class="fl">0.0202</span>,<span class="fl">0.0107</span>,<span class="fl">0.0558</span>,<span class="fl">0.1194</span>,<span class="fl">0.0068</span>,<span class="fl">0.0640</span>,<span class="sc">-</span><span class="fl">0.1282</span>,</span>
+<span id="cb180-14"><a href="prueba-kolmogorov-smirnov.html#cb180-14" aria-hidden="true" tabindex="-1"></a>          <span class="sc">-</span><span class="fl">0.1313</span>,<span class="sc">-</span><span class="fl">0.1222</span>,<span class="sc">-</span><span class="fl">0.0969</span>,<span class="sc">-</span><span class="fl">0.0501</span>,<span class="sc">-</span><span class="fl">0.0002</span>,<span class="fl">0.0610</span>,<span class="fl">0.1198</span>)</span>
+<span id="cb180-15"><a href="prueba-kolmogorov-smirnov.html#cb180-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb180-16"><a href="prueba-kolmogorov-smirnov.html#cb180-16" aria-hidden="true" tabindex="-1"></a>Tabla<span class="ot">=</span><span class="fu">cbind</span>(i,X_i,Sn,Sn_1,F_,D_mas,D_menos)                                                                                                                                                      </span>
+<span id="cb180-17"><a href="prueba-kolmogorov-smirnov.html#cb180-17" aria-hidden="true" tabindex="-1"></a>Tabla</span></code></pre></div>
 <pre><code>       i     X_i         Sn       Sn_1     F_   D_mas D_menos
  [1,]  1 0.25130 0.06666667 0.00000000 0.0836 -0.0169 -0.0836
  [2,]  2 0.25660 0.13333333 0.06666667 0.0869  0.0464 -0.0202
@@ -1085,8 +1114,8 @@ No Rechazamos <span class="math inline">\(H_0\)</span>.</p>
 [13,] 13 2.32140 0.86666667 0.80000000 0.8002  0.0664 -0.0002
 [14,] 14 2.36740 0.93333333 0.86666667 0.8056  0.1277  0.0610
 [15,] 15 2.43730 1.00000000 0.93333333 0.8135  0.1865  0.1198</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="prueba-kolmogorov-smirnov.html#cb182-1" aria-hidden="true"></a>EstdPrueba =<span class="st"> </span><span class="kw">max</span>(D_mas,D_menos)</span>
-<span id="cb182-2"><a href="prueba-kolmogorov-smirnov.html#cb182-2" aria-hidden="true"></a>EstdPrueba</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="prueba-kolmogorov-smirnov.html#cb182-1" aria-hidden="true" tabindex="-1"></a>EstdPrueba <span class="ot">=</span> <span class="fu">max</span>(D_mas,D_menos)</span>
+<span id="cb182-2"><a href="prueba-kolmogorov-smirnov.html#cb182-2" aria-hidden="true" tabindex="-1"></a>EstdPrueba</span></code></pre></div>
 <pre><code>[1] 0.1865</code></pre>
 <p>Por lo tanto:</p>
 <p><span class="math display">\[D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x)\ |=max\ \{\ D^+,D^- \ \}=max \ \{ \ 0.1865,0.1198 \ \}=0.1865\]</span></p>
@@ -1094,8 +1123,8 @@ No Rechazamos <span class="math inline">\(H_0\)</span>.</p>
 <span class="math inline">\(W_{0.05}\)</span>=0.338, de esta manera se tiene que 0.338 = <span class="math inline">\(W_{0.05} &gt; D_{n}\)</span> = 0.1865, como el estadístico <span class="math inline">\(W_{0.05}\)</span> es mayor a comparación de <span class="math inline">\(D_{n}\)</span>=0.1865.
 No Rechazamos <span class="math inline">\(H_0\)</span>.</p>
 <p>Podemos concluir aceptando la prueba de lognormalidad con media 1 y varianza 0, con un nivel de significancia <span class="math inline">\(\alpha\)</span> = 0.05. Es decir, Los datos se distribuyen <span class="math inline">\(LogN(0,1)\)</span>.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="prueba-kolmogorov-smirnov.html#cb184-1" aria-hidden="true"></a><span class="co">#Ahora podemos utilizar la prueba en R</span></span>
-<span id="cb184-2"><a href="prueba-kolmogorov-smirnov.html#cb184-2" aria-hidden="true"></a><span class="kw">ks.test</span>(F_,Sn,<span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="prueba-kolmogorov-smirnov.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ahora podemos utilizar la prueba en R</span></span>
+<span id="cb184-2"><a href="prueba-kolmogorov-smirnov.html#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ks.test</span>(F_,Sn,<span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>
     Two-sample Kolmogorov-Smirnov test
 

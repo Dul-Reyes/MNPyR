@@ -66,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -162,7 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="part"><span><b>II Pruebas Binomiales</b></span></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
@@ -237,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="6.7" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="part"><span><b>III Prueba de Rango</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#datos-5"><i class="fa fa-check"></i><b>7.1</b> Datos</a></li>
@@ -296,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-9"><i class="fa fa-check"></i><b>11.6</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.7" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.7</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="part"><span><b>IV Tablas de Contingencia</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#datos-10"><i class="fa fa-check"></i><b>12.1</b> Datos</a></li>
@@ -346,7 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-10"><i class="fa fa-check"></i><b>15.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="part"><span><b>V Bondad de Ajuste</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#datos-14"><i class="fa fa-check"></i><b>16.1</b> Datos</a></li>
@@ -425,7 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="part"><span><b>VI Regresión Lineal Simple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -483,7 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="part"><span><b>VII Modelo de regresión lineal múltiple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -1101,25 +1130,25 @@ Por lo tanto:</p>
 <div id="ejemplo-en-r-studio-16" class="section level2" number="20.6">
 <h2><span class="header-section-number">20.6</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="pueba-de-lilliefors-exponencial.html#cb195-1" aria-hidden="true"></a><span class="co">#Datos</span></span>
-<span id="cb195-2"><a href="pueba-de-lilliefors-exponencial.html#cb195-2" aria-hidden="true"></a>i=<span class="dv">1</span><span class="op">:</span><span class="dv">15</span></span>
-<span id="cb195-3"><a href="pueba-de-lilliefors-exponencial.html#cb195-3" aria-hidden="true"></a>X=<span class="kw">c</span>(<span class="fl">0.4976</span>, <span class="fl">1.2514</span>, <span class="fl">0.6619</span>, <span class="fl">0.561</span>, <span class="fl">1.0026</span>, <span class="fl">0.3529</span>, <span class="fl">0.8595</span>, <span class="fl">1.6254</span>,</span>
-<span id="cb195-4"><a href="pueba-de-lilliefors-exponencial.html#cb195-4" aria-hidden="true"></a>                             <span class="fl">1.1514</span>, <span class="fl">1.5181</span>, <span class="fl">0.8642</span>, <span class="fl">0.5206</span>, <span class="fl">0.4229</span>, <span class="fl">0.9825</span>, <span class="fl">1.0183</span>)</span>
-<span id="cb195-5"><a href="pueba-de-lilliefors-exponencial.html#cb195-5" aria-hidden="true"></a>X_i=<span class="kw">c</span>(<span class="fl">0.3529</span>,<span class="fl">0.4229</span>,<span class="fl">0.4976</span>,<span class="fl">0.5206</span>,<span class="fl">0.5610</span>, <span class="fl">0.6619</span>,<span class="fl">0.8595</span>,<span class="fl">0.8642</span>,<span class="fl">0.9825</span>,<span class="fl">1.0026</span>,<span class="fl">1.0183</span>,</span>
-<span id="cb195-6"><a href="pueba-de-lilliefors-exponencial.html#cb195-6" aria-hidden="true"></a>      <span class="fl">1.1514</span>,<span class="fl">1.2514</span>,<span class="fl">1.5181</span>,<span class="fl">1.6254</span>)</span>
-<span id="cb195-7"><a href="pueba-de-lilliefors-exponencial.html#cb195-7" aria-hidden="true"></a>Z_i=<span class="kw">c</span>(<span class="fl">0.3982</span>, <span class="fl">0.4773</span>, <span class="fl">0.5616</span>,<span class="fl">0.5875</span>,<span class="fl">0.6331</span>,<span class="fl">0.7470</span>,<span class="fl">0.9700</span>,<span class="fl">0.9753</span>,<span class="fl">1.1088</span>,<span class="fl">1.1315</span>,<span class="fl">1.1492</span>,</span>
-<span id="cb195-8"><a href="pueba-de-lilliefors-exponencial.html#cb195-8" aria-hidden="true"></a>      <span class="fl">1.2995</span>,<span class="fl">1.4123</span>,<span class="fl">1.7133</span>,<span class="fl">1.8344</span>) </span>
-<span id="cb195-9"><a href="pueba-de-lilliefors-exponencial.html#cb195-9" aria-hidden="true"></a>Sn_Zi=<span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">1</span>)</span>
-<span id="cb195-10"><a href="pueba-de-lilliefors-exponencial.html#cb195-10" aria-hidden="true"></a>Sn_Zi_<span class="dv">1</span>=<span class="kw">c</span>(<span class="dv">0</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="op">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="op">/</span><span class="dv">15</span>)</span>
-<span id="cb195-11"><a href="pueba-de-lilliefors-exponencial.html#cb195-11" aria-hidden="true"></a>F_Zi=<span class="kw">c</span>(<span class="fl">0.3285</span>,<span class="fl">0.3795</span>,<span class="fl">0.4297</span>,<span class="fl">0.4443</span>,<span class="fl">0.4690</span>,<span class="fl">0.5262</span>,<span class="fl">0.6209</span>,<span class="fl">0.6229</span>,<span class="fl">0.6700</span>,<span class="fl">0.6774</span>,<span class="fl">0.6831</span>,</span>
-<span id="cb195-12"><a href="pueba-de-lilliefors-exponencial.html#cb195-12" aria-hidden="true"></a>       <span class="fl">0.7273</span>,<span class="fl">0.7564</span>,<span class="fl">0.8197</span>, <span class="fl">0.8403</span>)</span>
-<span id="cb195-13"><a href="pueba-de-lilliefors-exponencial.html#cb195-13" aria-hidden="true"></a>D_mas=<span class="kw">c</span>(<span class="op">-</span><span class="fl">0.2618</span>,<span class="op">-</span><span class="fl">0.2462</span>,<span class="op">-</span><span class="fl">0.2297</span>,<span class="op">-</span><span class="fl">0.1776</span>,<span class="op">-</span><span class="fl">0.1357</span>,<span class="op">-</span><span class="fl">0.1262</span>,<span class="op">-</span><span class="fl">0.1542</span>,<span class="op">-</span><span class="fl">0.0896</span>,<span class="op">-</span><span class="fl">0.0700</span>,</span>
-<span id="cb195-14"><a href="pueba-de-lilliefors-exponencial.html#cb195-14" aria-hidden="true"></a>        <span class="fl">-0.0108</span>,<span class="fl">0.0501</span>,<span class="fl">0.0726</span>,<span class="fl">0.1102</span>,<span class="fl">0.1135</span>,<span class="fl">0.1596</span>)</span>
-<span id="cb195-15"><a href="pueba-de-lilliefors-exponencial.html#cb195-15" aria-hidden="true"></a>D_menos=<span class="kw">c</span>(<span class="op">-</span><span class="fl">0.3285</span>,<span class="op">-</span><span class="fl">0.3128</span>,<span class="op">-</span><span class="fl">0.2963</span>,<span class="op">-</span><span class="fl">0.2443</span>, <span class="fl">-0.2024</span>,<span class="op">-</span><span class="fl">0.1929</span>,<span class="op">-</span><span class="fl">0.2209</span>,<span class="op">-</span><span class="fl">0.1562</span>,</span>
-<span id="cb195-16"><a href="pueba-de-lilliefors-exponencial.html#cb195-16" aria-hidden="true"></a>           <span class="fl">-0.1367</span>,<span class="op">-</span><span class="fl">0.0774</span>,<span class="op">-</span><span class="fl">0.0164</span>,<span class="fl">0.0059</span>,<span class="fl">0.0435</span>,<span class="fl">0.0469</span>,<span class="fl">0.0930</span>)  </span>
-<span id="cb195-17"><a href="pueba-de-lilliefors-exponencial.html#cb195-17" aria-hidden="true"></a></span>
-<span id="cb195-18"><a href="pueba-de-lilliefors-exponencial.html#cb195-18" aria-hidden="true"></a>Tabla=<span class="kw">cbind</span>(i,X_i,Z_i,Sn_Zi,Sn_Zi_<span class="dv">1</span>,F_Zi,D_mas,D_menos)                                                                                                                                                      </span>
-<span id="cb195-19"><a href="pueba-de-lilliefors-exponencial.html#cb195-19" aria-hidden="true"></a>Tabla</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="pueba-de-lilliefors-exponencial.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
+<span id="cb195-2"><a href="pueba-de-lilliefors-exponencial.html#cb195-2" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb195-3"><a href="pueba-de-lilliefors-exponencial.html#cb195-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.4976</span>, <span class="fl">1.2514</span>, <span class="fl">0.6619</span>, <span class="fl">0.561</span>, <span class="fl">1.0026</span>, <span class="fl">0.3529</span>, <span class="fl">0.8595</span>, <span class="fl">1.6254</span>,</span>
+<span id="cb195-4"><a href="pueba-de-lilliefors-exponencial.html#cb195-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fl">1.1514</span>, <span class="fl">1.5181</span>, <span class="fl">0.8642</span>, <span class="fl">0.5206</span>, <span class="fl">0.4229</span>, <span class="fl">0.9825</span>, <span class="fl">1.0183</span>)</span>
+<span id="cb195-5"><a href="pueba-de-lilliefors-exponencial.html#cb195-5" aria-hidden="true" tabindex="-1"></a>X_i<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3529</span>,<span class="fl">0.4229</span>,<span class="fl">0.4976</span>,<span class="fl">0.5206</span>,<span class="fl">0.5610</span>, <span class="fl">0.6619</span>,<span class="fl">0.8595</span>,<span class="fl">0.8642</span>,<span class="fl">0.9825</span>,<span class="fl">1.0026</span>,<span class="fl">1.0183</span>,</span>
+<span id="cb195-6"><a href="pueba-de-lilliefors-exponencial.html#cb195-6" aria-hidden="true" tabindex="-1"></a>      <span class="fl">1.1514</span>,<span class="fl">1.2514</span>,<span class="fl">1.5181</span>,<span class="fl">1.6254</span>)</span>
+<span id="cb195-7"><a href="pueba-de-lilliefors-exponencial.html#cb195-7" aria-hidden="true" tabindex="-1"></a>Z_i<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3982</span>, <span class="fl">0.4773</span>, <span class="fl">0.5616</span>,<span class="fl">0.5875</span>,<span class="fl">0.6331</span>,<span class="fl">0.7470</span>,<span class="fl">0.9700</span>,<span class="fl">0.9753</span>,<span class="fl">1.1088</span>,<span class="fl">1.1315</span>,<span class="fl">1.1492</span>,</span>
+<span id="cb195-8"><a href="pueba-de-lilliefors-exponencial.html#cb195-8" aria-hidden="true" tabindex="-1"></a>      <span class="fl">1.2995</span>,<span class="fl">1.4123</span>,<span class="fl">1.7133</span>,<span class="fl">1.8344</span>) </span>
+<span id="cb195-9"><a href="pueba-de-lilliefors-exponencial.html#cb195-9" aria-hidden="true" tabindex="-1"></a>Sn_Zi<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span>)</span>
+<span id="cb195-10"><a href="pueba-de-lilliefors-exponencial.html#cb195-10" aria-hidden="true" tabindex="-1"></a>Sn_Zi_1<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>)</span>
+<span id="cb195-11"><a href="pueba-de-lilliefors-exponencial.html#cb195-11" aria-hidden="true" tabindex="-1"></a>F_Zi<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3285</span>,<span class="fl">0.3795</span>,<span class="fl">0.4297</span>,<span class="fl">0.4443</span>,<span class="fl">0.4690</span>,<span class="fl">0.5262</span>,<span class="fl">0.6209</span>,<span class="fl">0.6229</span>,<span class="fl">0.6700</span>,<span class="fl">0.6774</span>,<span class="fl">0.6831</span>,</span>
+<span id="cb195-12"><a href="pueba-de-lilliefors-exponencial.html#cb195-12" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.7273</span>,<span class="fl">0.7564</span>,<span class="fl">0.8197</span>, <span class="fl">0.8403</span>)</span>
+<span id="cb195-13"><a href="pueba-de-lilliefors-exponencial.html#cb195-13" aria-hidden="true" tabindex="-1"></a>D_mas<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2618</span>,<span class="sc">-</span><span class="fl">0.2462</span>,<span class="sc">-</span><span class="fl">0.2297</span>,<span class="sc">-</span><span class="fl">0.1776</span>,<span class="sc">-</span><span class="fl">0.1357</span>,<span class="sc">-</span><span class="fl">0.1262</span>,<span class="sc">-</span><span class="fl">0.1542</span>,<span class="sc">-</span><span class="fl">0.0896</span>,<span class="sc">-</span><span class="fl">0.0700</span>,</span>
+<span id="cb195-14"><a href="pueba-de-lilliefors-exponencial.html#cb195-14" aria-hidden="true" tabindex="-1"></a>        <span class="sc">-</span><span class="fl">0.0108</span>,<span class="fl">0.0501</span>,<span class="fl">0.0726</span>,<span class="fl">0.1102</span>,<span class="fl">0.1135</span>,<span class="fl">0.1596</span>)</span>
+<span id="cb195-15"><a href="pueba-de-lilliefors-exponencial.html#cb195-15" aria-hidden="true" tabindex="-1"></a>D_menos<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.3285</span>,<span class="sc">-</span><span class="fl">0.3128</span>,<span class="sc">-</span><span class="fl">0.2963</span>,<span class="sc">-</span><span class="fl">0.2443</span>, <span class="sc">-</span><span class="fl">0.2024</span>,<span class="sc">-</span><span class="fl">0.1929</span>,<span class="sc">-</span><span class="fl">0.2209</span>,<span class="sc">-</span><span class="fl">0.1562</span>,</span>
+<span id="cb195-16"><a href="pueba-de-lilliefors-exponencial.html#cb195-16" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span><span class="fl">0.1367</span>,<span class="sc">-</span><span class="fl">0.0774</span>,<span class="sc">-</span><span class="fl">0.0164</span>,<span class="fl">0.0059</span>,<span class="fl">0.0435</span>,<span class="fl">0.0469</span>,<span class="fl">0.0930</span>)  </span>
+<span id="cb195-17"><a href="pueba-de-lilliefors-exponencial.html#cb195-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-18"><a href="pueba-de-lilliefors-exponencial.html#cb195-18" aria-hidden="true" tabindex="-1"></a>Tabla<span class="ot">=</span><span class="fu">cbind</span>(i,X_i,Z_i,Sn_Zi,Sn_Zi_1,F_Zi,D_mas,D_menos)                                                                                                                                                      </span>
+<span id="cb195-19"><a href="pueba-de-lilliefors-exponencial.html#cb195-19" aria-hidden="true" tabindex="-1"></a>Tabla</span></code></pre></div>
 <pre><code>       i    X_i    Z_i      Sn_Zi    Sn_Zi_1   F_Zi   D_mas D_menos
  [1,]  1 0.3529 0.3982 0.06666667 0.00000000 0.3285 -0.2618 -0.3285
  [2,]  2 0.4229 0.4773 0.13333333 0.06666667 0.3795 -0.2462 -0.3128
@@ -1136,20 +1165,20 @@ Por lo tanto:</p>
 [13,] 13 1.2514 1.4123 0.86666667 0.80000000 0.7564  0.1102  0.0435
 [14,] 14 1.5181 1.7133 0.93333333 0.86666667 0.8197  0.1135  0.0469
 [15,] 15 1.6254 1.8344 1.00000000 0.93333333 0.8403  0.1596  0.0930</code></pre>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="pueba-de-lilliefors-exponencial.html#cb197-1" aria-hidden="true"></a>EstPrueba=<span class="kw">max</span>(D_mas,D_menos)</span>
-<span id="cb197-2"><a href="pueba-de-lilliefors-exponencial.html#cb197-2" aria-hidden="true"></a>EstPrueba</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="pueba-de-lilliefors-exponencial.html#cb197-1" aria-hidden="true" tabindex="-1"></a>EstPrueba<span class="ot">=</span><span class="fu">max</span>(D_mas,D_menos)</span>
+<span id="cb197-2"><a href="pueba-de-lilliefors-exponencial.html#cb197-2" aria-hidden="true" tabindex="-1"></a>EstPrueba</span></code></pre></div>
 <pre><code>[1] 0.1596</code></pre>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="pueba-de-lilliefors-exponencial.html#cb199-1" aria-hidden="true"></a>EstdPrueba</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="pueba-de-lilliefors-exponencial.html#cb199-1" aria-hidden="true" tabindex="-1"></a>EstdPrueba</span></code></pre></div>
 <pre><code>[1] 0.2179</code></pre>
 <p>El cuantil W que acumula <span class="math inline">\(1-\alpha\)</span> de probabilidad, usando <span class="math inline">\(\alpha=0.05\)</span> es <span class="math inline">\(W = 0.2776\)</span>, encontrado en las tablas correspondientes. Por lo tanto tenemos que <span class="math inline">\(T1=0.1596 &lt; W=0.2776\)</span>, entonces rechazamos la hipotesis nula. Y concluimos que hay evidencia suficiente para decir que la muestra no proviene de una distribución exponencial.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="pueba-de-lilliefors-exponencial.html#cb201-1" aria-hidden="true"></a><span class="kw">library</span>(nortest) <span class="co">#prueba lilliefors</span></span>
-<span id="cb201-2"><a href="pueba-de-lilliefors-exponencial.html#cb201-2" aria-hidden="true"></a><span class="kw">lillie.test</span>(F_Zi) <span class="co">#Ocupamos estos datos ya que debemos recordar que </span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="pueba-de-lilliefors-exponencial.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nortest) <span class="co">#prueba lilliefors</span></span>
+<span id="cb201-2"><a href="pueba-de-lilliefors-exponencial.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lillie.test</span>(F_Zi) <span class="co">#Ocupamos estos datos ya que debemos recordar que </span></span></code></pre></div>
 <pre><code>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  F_Zi
 D = 0.15238, p-value = 0.458</code></pre>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="pueba-de-lilliefors-exponencial.html#cb203-1" aria-hidden="true"></a>                   <span class="co">#es una distribución exponencial y F_Zi son datos estandarizados </span></span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="pueba-de-lilliefors-exponencial.html#cb203-1" aria-hidden="true" tabindex="-1"></a>                   <span class="co">#es una distribución exponencial y F_Zi son datos estandarizados </span></span></code></pre></div>
 </div>
 <div id="ejercicios-15" class="section level2" number="20.7">
 <h2><span class="header-section-number">20.7</span> Ejercicios</h2>

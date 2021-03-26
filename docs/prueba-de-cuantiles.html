@@ -66,6 +66,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -126,6 +127,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
@@ -162,7 +185,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="escalas-de-medición.html"><a href="escalas-de-medición.html#escala-de-razón"><i class="fa fa-check"></i><b>1.2.2</b> Escala de razón:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pruebas-binomiales.html"><a href="pruebas-binomiales.html"><i class="fa fa-check"></i>Pruebas Binomiales</a></li>
+<li class="part"><span><b>II Pruebas Binomiales</b></span></li>
+<li class="chapter" data-level="" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="2" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html"><i class="fa fa-check"></i><b>2</b> Prueba de Proporciones</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="prueba-de-proporciones.html"><a href="prueba-de-proporciones.html#datos"><i class="fa fa-check"></i><b>2.1</b> Datos</a></li>
@@ -237,7 +261,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejemplo-en-r-studio-4"><i class="fa fa-check"></i><b>6.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="6.7" data-path="prueba-de-cox-stuart.html"><a href="prueba-de-cox-stuart.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="prueba-de-rango.html"><a href="prueba-de-rango.html"><i class="fa fa-check"></i>Prueba de Rango</a></li>
+<li class="part"><span><b>III Prueba de Rango</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="7" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html"><i class="fa fa-check"></i><b>7</b> Prueba U-Mann y Witney</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="prueba-u-mann-y-witney.html"><a href="prueba-u-mann-y-witney.html#datos-5"><i class="fa fa-check"></i><b>7.1</b> Datos</a></li>
@@ -296,7 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.6" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-9"><i class="fa fa-check"></i><b>11.6</b> Ejemplo</a></li>
 <li class="chapter" data-level="11.7" data-path="prueba-para-más-de-dos-muestras.html"><a href="prueba-para-más-de-dos-muestras.html#ejemplo-en-r-studio-8"><i class="fa fa-check"></i><b>11.7</b> Ejemplo en R-Studio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tablas-de-contingencia.html"><a href="tablas-de-contingencia.html"><i class="fa fa-check"></i>Tablas de Contingencia</a></li>
+<li class="part"><span><b>IV Tablas de Contingencia</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-2.html"><a href="introducción-2.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="12" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html"><i class="fa fa-check"></i><b>12</b> Tablas de Contingencia de 2x2</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tablas-de-contingencia-de-2x2.html"><a href="tablas-de-contingencia-de-2x2.html#datos-10"><i class="fa fa-check"></i><b>12.1</b> Datos</a></li>
@@ -346,7 +372,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejemplo-en-r-studio-12"><i class="fa fa-check"></i><b>15.6</b> Ejemplo en R-Studio</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-la-mediana.html"><a href="prueba-de-la-mediana.html#ejercicios-10"><i class="fa fa-check"></i><b>15.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bondad-de-ajuste.html"><a href="bondad-de-ajuste.html"><i class="fa fa-check"></i>Bondad de Ajuste</a></li>
+<li class="part"><span><b>V Bondad de Ajuste</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-3.html"><a href="introducción-3.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="16" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html"><i class="fa fa-check"></i><b>16</b> Prueba de la Ji-cuadrada</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="prueba-de-la-ji-cuadrada.html"><a href="prueba-de-la-ji-cuadrada.html#datos-14"><i class="fa fa-check"></i><b>16.1</b> Datos</a></li>
@@ -425,7 +452,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="22.1" data-path="otras-estadísticas.html"><a href="otras-estadísticas.html#mas-ejercicios"><i class="fa fa-check"></i><b>22.1</b> Mas ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i>Regresión Lineal Simple</a></li>
+<li class="part"><span><b>VI Regresión Lineal Simple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-4.html"><a href="introducción-4.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="23" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html"><i class="fa fa-check"></i><b>23</b> Modelo con intercepto</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="modelo-con-intercepto.html"><a href="modelo-con-intercepto.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo"><i class="fa fa-check"></i><b>23.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -483,7 +511,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27.5.2" data-path="validación-de-supuestos.html"><a href="validación-de-supuestos.html#valores-influentes"><i class="fa fa-check"></i><b>27.5.2</b> Valores influentes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelo-de-regresión-lineal-múltiple.html"><a href="modelo-de-regresión-lineal-múltiple.html"><i class="fa fa-check"></i>Modelo de regresión lineal múltiple</a></li>
+<li class="part"><span><b>VII Modelo de regresión lineal múltiple</b></span></li>
+<li class="chapter" data-level="" data-path="introducción-5.html"><a href="introducción-5.html"><i class="fa fa-check"></i>Introducción</a></li>
 <li class="chapter" data-level="28" data-path="modelo.html"><a href="modelo.html"><i class="fa fa-check"></i><b>28</b> Modelo</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="modelo.html"><a href="modelo.html#estimación-por-mínimos-cuadrados-de-los-parámetros-del-modelo-2"><i class="fa fa-check"></i><b>28.1</b> Estimación por mínimos cuadrados de los parámetros del modelo</a></li>
@@ -668,7 +697,7 @@ Con <span class="math inline">\(\mathcal{N}(\cdot)\)</span> la función de distr
 <p>Como <span class="math inline">\(n &gt; 20\)</span>, el <span class="math inline">\(p-value\)</span> puede obtenerse más sencillo usando la aproximación normal:</p>
 <p><span class="math display">\[\mathbf{P}[Y\leq 9] \thickapprox \mathcal{P} \left[Z\leq\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right]=\]</span>
 <span class="math display">\[\left(Z\leq\frac{9-(112)(0.5)+0.5}{\sqrt{(112)(0.5)(1-0.5)}}\right)=\mathbf{P}[Z\leq -8.7876] &lt; &lt; 0.0001\]</span>
-<span class="math inline">\(\therefore\)</span> Rechazo <span class="math inline">\(H_0\)</span> ya que <span class="math inline">\(p-value=0.0001&lt;&lt;0.05=\alpha.\)</span> es decir, el <span class="math inline">\(p-value\)</span> es “muy pequeño”.</p>
+<span class="math inline">\(\therefore\)</span> Rechazo <span class="math inline">\(H_0\)</span> ya que <span class="math inline">\(p-value=0.0001&lt;&lt;0.05=\alpha.\)</span> es decir, el <span class="math inline">\(p-value\)</span> es “muy pequeño.”</p>
 <p><strong>Paso 6</strong> Conclusión</p>
 <p>Existe información suficiente para decir que la mediana del intervalo de erupciones es mayor a 60 minutos.</p>
 </div>
@@ -676,27 +705,27 @@ Con <span class="math inline">\(\mathcal{N}(\cdot)\)</span> la función de distr
 <h2><span class="header-section-number">3.6</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
 <p>La estadística de prueba será <span class="math inline">\(T_1=9\)</span> y <span class="math inline">\(T_2=8\)</span>. Tomaremos <span class="math inline">\(\alpha=.1\)</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="prueba-de-cuantiles.html#cb7-1" aria-hidden="true"></a><span class="co">#Datos</span></span>
-<span id="cb7-2"><a href="prueba-de-cuantiles.html#cb7-2" aria-hidden="true"></a></span>
-<span id="cb7-3"><a href="prueba-de-cuantiles.html#cb7-3" aria-hidden="true"></a>T_<span class="dv">1</span>=<span class="dv">9</span>         <span class="co">#Observaciones menores/iguales a 60 minutos</span></span>
-<span id="cb7-4"><a href="prueba-de-cuantiles.html#cb7-4" aria-hidden="true"></a>T_<span class="dv">2</span>=<span class="dv">8</span>         <span class="co">#Observaciones que son menores estrictamente a 60 minutos</span></span>
-<span id="cb7-5"><a href="prueba-de-cuantiles.html#cb7-5" aria-hidden="true"></a>alpha=<span class="fl">0.05</span>    <span class="co">#Nivel de significancia</span></span>
-<span id="cb7-6"><a href="prueba-de-cuantiles.html#cb7-6" aria-hidden="true"></a>n=<span class="dv">112</span>         <span class="co">#Tamaño de la muestra</span></span>
-<span id="cb7-7"><a href="prueba-de-cuantiles.html#cb7-7" aria-hidden="true"></a>p=<span class="fl">0.5</span>         <span class="co">#Cuantil en este caso la mediana </span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="prueba-de-cuantiles.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
+<span id="cb7-2"><a href="prueba-de-cuantiles.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="prueba-de-cuantiles.html#cb7-3" aria-hidden="true" tabindex="-1"></a>T_1<span class="ot">=</span><span class="dv">9</span>         <span class="co">#Observaciones menores/iguales a 60 minutos</span></span>
+<span id="cb7-4"><a href="prueba-de-cuantiles.html#cb7-4" aria-hidden="true" tabindex="-1"></a>T_2<span class="ot">=</span><span class="dv">8</span>         <span class="co">#Observaciones que son menores estrictamente a 60 minutos</span></span>
+<span id="cb7-5"><a href="prueba-de-cuantiles.html#cb7-5" aria-hidden="true" tabindex="-1"></a>alpha<span class="ot">=</span><span class="fl">0.05</span>    <span class="co">#Nivel de significancia</span></span>
+<span id="cb7-6"><a href="prueba-de-cuantiles.html#cb7-6" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">112</span>         <span class="co">#Tamaño de la muestra</span></span>
+<span id="cb7-7"><a href="prueba-de-cuantiles.html#cb7-7" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fl">0.5</span>         <span class="co">#Cuantil en este caso la mediana </span></span></code></pre></div>
 <p>Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T_1\leq t_1\)</span> donde <span class="math inline">\(t_1\)</span> será el cuantil que acumule 10% en la distribución binomial</p>
 <p>Podemos graficar la función de distribución:</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>A continuación calculamos <span class="math inline">\(t_1\)</span> y el <span class="math inline">\(p-value\)</span>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="prueba-de-cuantiles.html#cb8-1" aria-hidden="true"></a>t_<span class="dv">1</span>=<span class="kw">qbinom</span>(.<span class="dv">10</span>,n,p)        <span class="co">#Cuantil a comparar con el estadístico de prueba</span></span>
-<span id="cb8-2"><a href="prueba-de-cuantiles.html#cb8-2" aria-hidden="true"></a>t_<span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="prueba-de-cuantiles.html#cb8-1" aria-hidden="true" tabindex="-1"></a>t_1<span class="ot">=</span><span class="fu">qbinom</span>(.<span class="dv">10</span>,n,p)        <span class="co">#Cuantil a comparar con el estadístico de prueba</span></span>
+<span id="cb8-2"><a href="prueba-de-cuantiles.html#cb8-2" aria-hidden="true" tabindex="-1"></a>t_1</span></code></pre></div>
 <pre><code>[1] 49</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="prueba-de-cuantiles.html#cb10-1" aria-hidden="true"></a>pvalue=<span class="kw">pbinom</span>(T_<span class="dv">1</span>,n,p)     <span class="co">#P-value correspondiente</span></span>
-<span id="cb10-2"><a href="prueba-de-cuantiles.html#cb10-2" aria-hidden="true"></a>pvalue</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="prueba-de-cuantiles.html#cb10-1" aria-hidden="true" tabindex="-1"></a>pvalue<span class="ot">=</span><span class="fu">pbinom</span>(T_1,n,p)     <span class="co">#P-value correspondiente</span></span>
+<span id="cb10-2"><a href="prueba-de-cuantiles.html#cb10-2" aria-hidden="true" tabindex="-1"></a>pvalue</span></code></pre></div>
 <pre><code>[1] 1.157256e-21</code></pre>
 <p>Tenemos que como <span class="math inline">\(T_1=9\leq 49 =t_1\)</span>, entonces se rechaza <span class="math inline">\(H_0\)</span> y por lo tanto se concluye que hay información suficiente para decir que la mediana de los intervalos de tiempo entre erupciones es mayor a 60 minutos.</p>
 <p>Al mismo resultado llegamos si en lugar de buscar <span class="math inline">\(t_1\)</span> calculamos el <span class="math inline">\(p-value\)</span> de la estadística <span class="math inline">\(T_1\)</span> la cual da un valor muy cercano a cero por lo tanto cae en la región de rechazo y se conlcuye que la mediana de los intervalos de tiempo entre erupciones es mayor a 60 minutos.</p>
 <p>Finalmente podemos utilizar la función en R.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="prueba-de-cuantiles.html#cb12-1" aria-hidden="true"></a><span class="kw">binom.test</span>(T_<span class="dv">1</span>,n,<span class="dt">p=</span><span class="fl">0.5</span>,<span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="prueba-de-cuantiles.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(T_1,n,<span class="at">p=</span><span class="fl">0.5</span>,<span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span></code></pre></div>
 <pre><code>
     Exact binomial test
 
