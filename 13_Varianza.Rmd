@@ -389,12 +389,7 @@ Como $T_1=-2.21\leq -1.96 =t_1$ entonces se cumple la regla de decisión y recha
 pvalue=2*min(pnorm(T1,0,1),(1-pnorm(T1,0,1)))
 pvalue
 ```
-Ahora utilizaremos la prueba en R:
-```{r}
-#Función en R
-var.test(TasasActuales,TasasPasadas,conf.level =.95 )
 
-```
 
 
 ## Ejercicios
