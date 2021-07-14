@@ -705,58 +705,58 @@ donde <span class="math inline">\(Z\)</span> es una normal estándar.</p>
 <div id="ejemplo-en-r-studio-9" class="section level2" number="12.6">
 <h2><span class="header-section-number">12.6</span> Ejemplo en R-Studio</h2>
 <p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tablas-de-contingencia-de-2x2.html#cb93-1" aria-hidden="true" tabindex="-1"></a>Guardias<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;LucesViejas&quot;</span>,<span class="st">&quot;LucesNuevas&quot;</span>)</span>
-<span id="cb93-2"><a href="tablas-de-contingencia-de-2x2.html#cb93-2" aria-hidden="true" tabindex="-1"></a>BuenaVision<span class="ot">=</span><span class="fu">c</span>(<span class="dv">714</span>,<span class="dv">662</span>)</span>
-<span id="cb93-3"><a href="tablas-de-contingencia-de-2x2.html#cb93-3" aria-hidden="true" tabindex="-1"></a>MalaVision<span class="ot">=</span><span class="fu">c</span>(<span class="dv">111</span>,<span class="dv">154</span>)</span>
-<span id="cb93-4"><a href="tablas-de-contingencia-de-2x2.html#cb93-4" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">=</span><span class="fu">data.frame</span>(Guardias,BuenaVision,MalaVision)</span>
-<span id="cb93-5"><a href="tablas-de-contingencia-de-2x2.html#cb93-5" aria-hidden="true" tabindex="-1"></a>datos</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="tablas-de-contingencia-de-2x2.html#cb91-1" aria-hidden="true" tabindex="-1"></a>Guardias<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;LucesViejas&quot;</span>,<span class="st">&quot;LucesNuevas&quot;</span>)</span>
+<span id="cb91-2"><a href="tablas-de-contingencia-de-2x2.html#cb91-2" aria-hidden="true" tabindex="-1"></a>BuenaVision<span class="ot">=</span><span class="fu">c</span>(<span class="dv">714</span>,<span class="dv">662</span>)</span>
+<span id="cb91-3"><a href="tablas-de-contingencia-de-2x2.html#cb91-3" aria-hidden="true" tabindex="-1"></a>MalaVision<span class="ot">=</span><span class="fu">c</span>(<span class="dv">111</span>,<span class="dv">154</span>)</span>
+<span id="cb91-4"><a href="tablas-de-contingencia-de-2x2.html#cb91-4" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">=</span><span class="fu">data.frame</span>(Guardias,BuenaVision,MalaVision)</span>
+<span id="cb91-5"><a href="tablas-de-contingencia-de-2x2.html#cb91-5" aria-hidden="true" tabindex="-1"></a>datos</span></code></pre></div>
 <pre><code>     Guardias BuenaVision MalaVision
 1 LucesViejas         714        111
 2 LucesNuevas         662        154</code></pre>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tablas-de-contingencia-de-2x2.html#cb95-1" aria-hidden="true" tabindex="-1"></a>Guardias<span class="ot">=</span><span class="fu">c</span>(Guardias,<span class="st">&quot;Total&quot;</span>)</span>
-<span id="cb95-2"><a href="tablas-de-contingencia-de-2x2.html#cb95-2" aria-hidden="true" tabindex="-1"></a>BuenaVision<span class="ot">=</span><span class="fu">c</span>(BuenaVision, <span class="fu">sum</span>(BuenaVision))</span>
-<span id="cb95-3"><a href="tablas-de-contingencia-de-2x2.html#cb95-3" aria-hidden="true" tabindex="-1"></a>MalaVision<span class="ot">=</span><span class="fu">c</span>(MalaVision, <span class="fu">sum</span>(MalaVision))</span>
-<span id="cb95-4"><a href="tablas-de-contingencia-de-2x2.html#cb95-4" aria-hidden="true" tabindex="-1"></a>Totales<span class="ot">=</span><span class="fu">c</span>(BuenaVision[<span class="dv">1</span>]<span class="sc">+</span>MalaVision[<span class="dv">1</span>],BuenaVision[<span class="dv">2</span>]<span class="sc">+</span>MalaVision[<span class="dv">2</span>],</span>
-<span id="cb95-5"><a href="tablas-de-contingencia-de-2x2.html#cb95-5" aria-hidden="true" tabindex="-1"></a>           BuenaVision[<span class="dv">1</span>]<span class="sc">+</span>MalaVision[<span class="dv">1</span>]<span class="sc">+</span>BuenaVision[<span class="dv">2</span>]<span class="sc">+</span>MalaVision[<span class="dv">2</span>])</span>
-<span id="cb95-6"><a href="tablas-de-contingencia-de-2x2.html#cb95-6" aria-hidden="true" tabindex="-1"></a>datos1<span class="ot">=</span><span class="fu">data.frame</span>(Guardias,BuenaVision,MalaVision,Totales)</span>
-<span id="cb95-7"><a href="tablas-de-contingencia-de-2x2.html#cb95-7" aria-hidden="true" tabindex="-1"></a>datos1</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="tablas-de-contingencia-de-2x2.html#cb93-1" aria-hidden="true" tabindex="-1"></a>Guardias<span class="ot">=</span><span class="fu">c</span>(Guardias,<span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb93-2"><a href="tablas-de-contingencia-de-2x2.html#cb93-2" aria-hidden="true" tabindex="-1"></a>BuenaVision<span class="ot">=</span><span class="fu">c</span>(BuenaVision, <span class="fu">sum</span>(BuenaVision))</span>
+<span id="cb93-3"><a href="tablas-de-contingencia-de-2x2.html#cb93-3" aria-hidden="true" tabindex="-1"></a>MalaVision<span class="ot">=</span><span class="fu">c</span>(MalaVision, <span class="fu">sum</span>(MalaVision))</span>
+<span id="cb93-4"><a href="tablas-de-contingencia-de-2x2.html#cb93-4" aria-hidden="true" tabindex="-1"></a>Totales<span class="ot">=</span><span class="fu">c</span>(BuenaVision[<span class="dv">1</span>]<span class="sc">+</span>MalaVision[<span class="dv">1</span>],BuenaVision[<span class="dv">2</span>]<span class="sc">+</span>MalaVision[<span class="dv">2</span>],</span>
+<span id="cb93-5"><a href="tablas-de-contingencia-de-2x2.html#cb93-5" aria-hidden="true" tabindex="-1"></a>           BuenaVision[<span class="dv">1</span>]<span class="sc">+</span>MalaVision[<span class="dv">1</span>]<span class="sc">+</span>BuenaVision[<span class="dv">2</span>]<span class="sc">+</span>MalaVision[<span class="dv">2</span>])</span>
+<span id="cb93-6"><a href="tablas-de-contingencia-de-2x2.html#cb93-6" aria-hidden="true" tabindex="-1"></a>datos1<span class="ot">=</span><span class="fu">data.frame</span>(Guardias,BuenaVision,MalaVision,Totales)</span>
+<span id="cb93-7"><a href="tablas-de-contingencia-de-2x2.html#cb93-7" aria-hidden="true" tabindex="-1"></a>datos1</span></code></pre></div>
 <pre><code>     Guardias BuenaVision MalaVision Totales
 1 LucesViejas         714        111     825
 2 LucesNuevas         662        154     816
 3       Total        1376        265    1641</code></pre>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="tablas-de-contingencia-de-2x2.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
-<span id="cb97-2"><a href="tablas-de-contingencia-de-2x2.html#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-3"><a href="tablas-de-contingencia-de-2x2.html#cb97-3" aria-hidden="true" tabindex="-1"></a>O11<span class="ot">=</span><span class="dv">714</span>    <span class="co">#Guardias Buena visión/Luces viejas</span></span>
-<span id="cb97-4"><a href="tablas-de-contingencia-de-2x2.html#cb97-4" aria-hidden="true" tabindex="-1"></a>O12<span class="ot">=</span><span class="dv">111</span>    <span class="co">#Guardias Mala vision/Luces viejas</span></span>
-<span id="cb97-5"><a href="tablas-de-contingencia-de-2x2.html#cb97-5" aria-hidden="true" tabindex="-1"></a>O21<span class="ot">=</span><span class="dv">662</span>    <span class="co">#Guardias Buena vision/Luces nuevas</span></span>
-<span id="cb97-6"><a href="tablas-de-contingencia-de-2x2.html#cb97-6" aria-hidden="true" tabindex="-1"></a>O22<span class="ot">=</span><span class="dv">154</span>    <span class="co">#Guardias Mala vision/Luces nuevas</span></span>
-<span id="cb97-7"><a href="tablas-de-contingencia-de-2x2.html#cb97-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-8"><a href="tablas-de-contingencia-de-2x2.html#cb97-8" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">=</span><span class="dv">825</span>      <span class="co">#Total luces viejas         </span></span>
-<span id="cb97-9"><a href="tablas-de-contingencia-de-2x2.html#cb97-9" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">=</span><span class="dv">816</span>      <span class="co">#Total luces nuevas</span></span>
-<span id="cb97-10"><a href="tablas-de-contingencia-de-2x2.html#cb97-10" aria-hidden="true" tabindex="-1"></a>C1<span class="ot">=</span><span class="dv">1376</span>     <span class="co">#Total buena vision</span></span>
-<span id="cb97-11"><a href="tablas-de-contingencia-de-2x2.html#cb97-11" aria-hidden="true" tabindex="-1"></a>C2<span class="ot">=</span><span class="dv">265</span>      <span class="co">#Total Mala vision</span></span>
-<span id="cb97-12"><a href="tablas-de-contingencia-de-2x2.html#cb97-12" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>n1<span class="sc">+</span>n2     <span class="co">#Tamaño total </span></span>
-<span id="cb97-13"><a href="tablas-de-contingencia-de-2x2.html#cb97-13" aria-hidden="true" tabindex="-1"></a><span class="co">#N</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tablas-de-contingencia-de-2x2.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
+<span id="cb95-2"><a href="tablas-de-contingencia-de-2x2.html#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="tablas-de-contingencia-de-2x2.html#cb95-3" aria-hidden="true" tabindex="-1"></a>O11<span class="ot">=</span><span class="dv">714</span>    <span class="co">#Guardias Buena visión/Luces viejas</span></span>
+<span id="cb95-4"><a href="tablas-de-contingencia-de-2x2.html#cb95-4" aria-hidden="true" tabindex="-1"></a>O12<span class="ot">=</span><span class="dv">111</span>    <span class="co">#Guardias Mala vision/Luces viejas</span></span>
+<span id="cb95-5"><a href="tablas-de-contingencia-de-2x2.html#cb95-5" aria-hidden="true" tabindex="-1"></a>O21<span class="ot">=</span><span class="dv">662</span>    <span class="co">#Guardias Buena vision/Luces nuevas</span></span>
+<span id="cb95-6"><a href="tablas-de-contingencia-de-2x2.html#cb95-6" aria-hidden="true" tabindex="-1"></a>O22<span class="ot">=</span><span class="dv">154</span>    <span class="co">#Guardias Mala vision/Luces nuevas</span></span>
+<span id="cb95-7"><a href="tablas-de-contingencia-de-2x2.html#cb95-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-8"><a href="tablas-de-contingencia-de-2x2.html#cb95-8" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">=</span><span class="dv">825</span>      <span class="co">#Total luces viejas         </span></span>
+<span id="cb95-9"><a href="tablas-de-contingencia-de-2x2.html#cb95-9" aria-hidden="true" tabindex="-1"></a>n2<span class="ot">=</span><span class="dv">816</span>      <span class="co">#Total luces nuevas</span></span>
+<span id="cb95-10"><a href="tablas-de-contingencia-de-2x2.html#cb95-10" aria-hidden="true" tabindex="-1"></a>C1<span class="ot">=</span><span class="dv">1376</span>     <span class="co">#Total buena vision</span></span>
+<span id="cb95-11"><a href="tablas-de-contingencia-de-2x2.html#cb95-11" aria-hidden="true" tabindex="-1"></a>C2<span class="ot">=</span><span class="dv">265</span>      <span class="co">#Total Mala vision</span></span>
+<span id="cb95-12"><a href="tablas-de-contingencia-de-2x2.html#cb95-12" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span>n1<span class="sc">+</span>n2     <span class="co">#Tamaño total </span></span>
+<span id="cb95-13"><a href="tablas-de-contingencia-de-2x2.html#cb95-13" aria-hidden="true" tabindex="-1"></a><span class="co">#N</span></span></code></pre></div>
 <p>Calcularemos el Estadístico de prueba:</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="tablas-de-contingencia-de-2x2.html#cb98-1" aria-hidden="true" tabindex="-1"></a>T_1<span class="ot">=</span>(<span class="fu">sqrt</span>(N)<span class="sc">*</span>(O11<span class="sc">*</span>O22<span class="sc">-</span>O12<span class="sc">*</span>O21))<span class="sc">/</span>(<span class="fu">sqrt</span>(n1<span class="sc">*</span>n2<span class="sc">*</span>C1<span class="sc">*</span>C2))</span>
-<span id="cb98-2"><a href="tablas-de-contingencia-de-2x2.html#cb98-2" aria-hidden="true" tabindex="-1"></a>T_1</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="tablas-de-contingencia-de-2x2.html#cb96-1" aria-hidden="true" tabindex="-1"></a>T_1<span class="ot">=</span>(<span class="fu">sqrt</span>(N)<span class="sc">*</span>(O11<span class="sc">*</span>O22<span class="sc">-</span>O12<span class="sc">*</span>O21))<span class="sc">/</span>(<span class="fu">sqrt</span>(n1<span class="sc">*</span>n2<span class="sc">*</span>C1<span class="sc">*</span>C2))</span>
+<span id="cb96-2"><a href="tablas-de-contingencia-de-2x2.html#cb96-2" aria-hidden="true" tabindex="-1"></a>T_1</span></code></pre></div>
 <pre><code>[1] 2.982177</code></pre>
 <p>Calculamos el cuantil y el <span class="math inline">\(p-value\)</span>:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="tablas-de-contingencia-de-2x2.html#cb100-1" aria-hidden="true" tabindex="-1"></a>cuantil<span class="ot">=</span><span class="fu">qnorm</span>(<span class="fl">0.95</span>)  <span class="co">#Cuantil a comparar</span></span>
-<span id="cb100-2"><a href="tablas-de-contingencia-de-2x2.html#cb100-2" aria-hidden="true" tabindex="-1"></a>cuantil</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="tablas-de-contingencia-de-2x2.html#cb98-1" aria-hidden="true" tabindex="-1"></a>cuantil<span class="ot">=</span><span class="fu">qnorm</span>(<span class="fl">0.95</span>)  <span class="co">#Cuantil a comparar</span></span>
+<span id="cb98-2"><a href="tablas-de-contingencia-de-2x2.html#cb98-2" aria-hidden="true" tabindex="-1"></a>cuantil</span></code></pre></div>
 <pre><code>[1] 1.644854</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="tablas-de-contingencia-de-2x2.html#cb102-1" aria-hidden="true" tabindex="-1"></a>pvalue<span class="ot">=</span><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(T_1)  <span class="co">#Calculamos el p-value</span></span>
-<span id="cb102-2"><a href="tablas-de-contingencia-de-2x2.html#cb102-2" aria-hidden="true" tabindex="-1"></a>pvalue</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="tablas-de-contingencia-de-2x2.html#cb100-1" aria-hidden="true" tabindex="-1"></a>pvalue<span class="ot">=</span><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(T_1)  <span class="co">#Calculamos el p-value</span></span>
+<span id="cb100-2"><a href="tablas-de-contingencia-de-2x2.html#cb100-2" aria-hidden="true" tabindex="-1"></a>pvalue</span></code></pre></div>
 <pre><code>[1] 0.00143103</code></pre>
 <p>Como el estadístico <span class="math inline">\(T_1=2.98\)</span> es mayor a el cuantil <span class="math inline">\(Z_{1-\alpha}=1.64\)</span> por lo tanto rechazamos <span class="math inline">\(H_0\)</span>
 y el <span class="math inline">\(p-value\)</span> es menor a nuestra <span class="math inline">\(\alpha=5\%\)</span>; Entonces podemos concluir que la probabilidad de buena visión es menor con el nuevo sistema de luces que con el viejo sistema de luces.</p>
 <p>Ahora podemos utilizar la prueba en R:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="tablas-de-contingencia-de-2x2.html#cb104-1" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">714</span>,<span class="dv">111</span>,<span class="dv">825</span>,<span class="dv">662</span>,<span class="dv">154</span>,<span class="dv">816</span>),<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
-<span id="cb104-2"><a href="tablas-de-contingencia-de-2x2.html#cb104-2" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="tablas-de-contingencia-de-2x2.html#cb102-1" aria-hidden="true" tabindex="-1"></a>tabla<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">714</span>,<span class="dv">111</span>,<span class="dv">825</span>,<span class="dv">662</span>,<span class="dv">154</span>,<span class="dv">816</span>),<span class="at">ncol=</span><span class="dv">3</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb102-2"><a href="tablas-de-contingencia-de-2x2.html#cb102-2" aria-hidden="true" tabindex="-1"></a>tabla</span></code></pre></div>
 <pre><code>     [,1] [,2] [,3]
 [1,]  714  111  825
 [2,]  662  154  816</code></pre>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="tablas-de-contingencia-de-2x2.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabla)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="tablas-de-contingencia-de-2x2.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tabla)</span></code></pre></div>
 <pre><code>
     Pearson&#39;s Chi-squared test
 

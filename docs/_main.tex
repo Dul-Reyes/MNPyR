@@ -3860,28 +3860,6 @@ Como \(T_1=-2.21\leq -1.96 =t_1\) entonces se cumple la regla de decisión y rec
 [1] 0.02722523
 \end{verbatim}
 
-Ahora utilizaremos la prueba en R:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Función en R}
-\FunctionTok{var.test}\NormalTok{(TasasActuales,TasasPasadas,}\AttributeTok{conf.level =}\NormalTok{.}\DecValTok{95}\NormalTok{ )}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    F test to compare two variances
-
-data:  TasasActuales and TasasPasadas
-F = 0.22334, num df = 7, denom df = 7, p-value = 0.06622
-alternative hypothesis: true ratio of variances is not equal to 1
-95 percent confidence interval:
- 0.04471393 1.11557303
-sample estimates:
-ratio of variances 
-          0.223342 
-\end{verbatim}
-
 \hypertarget{ejercicios-6}{%
 \section{Ejercicios}\label{ejercicios-6}}
 
@@ -6098,7 +6076,7 @@ Una forma lógica de comparar la muestra aleatoria con \(F^*(x)\) es mediante la
 La función de distribución empírica \(S(x)\) es útil como estimador de \(F(x)\), la función de distribución desconocida de la \(X_{i}s\). Entonces podemos comparar la función de distribución empírica \(S(x)\) con la función de distribución hipotética \(F^*(x)\) para ver si hay un buen ajuste.
 Si no hay un buen ajuste, entonces podemos rechazar la hipótesis nula y concluir que la función de distribución verdadera pero desconocida, \(F(x)\), en realidad no está dada por la función \(F^*(x)\) en la hipótesis nula.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-54-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-53-1} \end{center}
 
 Pero, ¿qué tipo de estadística de prueba podemos usar como medida de la diferencia entre \(S(x)\) y \(F^* (x)\)? Una de las medidas más simples imaginables es la mayor distancia entre los dos gráficos \(S(x)\) y \(F^*(x)\), medidos en dirección vertical. Ésta es la estadística sugerida por Kolmogorov (1993).
 Es decir, si la \textbf{figura 1} proporciona \(F^*(x)\) y se extrae una muestra aleatoria de tamaño 5 de la población, la función de distribución empírica \(S(x)\) se puede dibujar en el mismo gráfico junto con \(F^ *(x)\), como se muestra en la figura 2.
@@ -7001,7 +6979,7 @@ En R fije la semilla 2020, y genere 250 observaciones distribuidas como una \(N(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-65-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-64-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8462,7 +8440,7 @@ Ahora haremos la réplica en R.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-76-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-75-1} \end{center}
 
 Como podemos observar el gráfico nos grita que exite una posible relación lineal entre el número de facturas y el tiempo empleado para éstas.
 Para confirmar nuestras sospechas vamos a calcular el coefieciente de correlación de Pearson:
@@ -8542,7 +8520,7 @@ Luego los residuales y los graficamos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-84-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-83-1} \end{center}
 
 Para que el modelo propuesto ajuste bien a los datos originales esperaríamos que los residuales estuvieran lo mas cercano al cero (linea amarilla). Mas adelante veremos como usar estos gráficos para verificar algunos de los supuestos del modelo.
 
@@ -8919,7 +8897,7 @@ Entonces el tiempo en horas promedio esperado será:
 
 Gráficamente se ve así:
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-95-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-94-1} \end{center}
 
 Donde el punto azul es nuestro valor esperado.
 
@@ -9473,9 +9451,9 @@ Donde la función \(\phi^{-1}\) es la distribución inversa de una normal. Si lo
 
 \[\mbox{Diversas distribuciones en gráficas QQ-plot}\]
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-103-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-102-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-104-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-103-1} \end{center}
 
 Lo que podemos observar, es que las dos muestras superiores siguen una distribución normal, sin embargo, la primera tiene pocas observaciones por lo que algunos puntos se encuentran cercanos a la recta azul, línea que representa la distribución normal ideal, pero pocas veces la muestra toca esta línea y las colas presentan mucha variabilidad, la gráfica de la derecha al tener tamaño de muestra mayor, se aprecia que muchos datos caen sobre la recta, presentando ligeras irregularidades en la cola, tanto superior como inferior, por lo que se puede asumir, que las muestras siguen una distribución normal.
 
@@ -9505,9 +9483,9 @@ Las desviaciones en el supuesto de homocedasticidad pueden observarse mediante g
 
 \[\mbox{Muestra homocedástica y una Muestra heterocedástica}\]
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-105-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-104-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-105-2} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-104-2} \end{center}
 
 Como estamos observando, la primera imagen corresponde a una muestra homocedástica pues los errores se distribuyen a lo largo del eje horizontal, además que éstos fluctúan entre \(y=-2\) y \(y=2\) distribuidos de una manera simétrica. Mientras que la segunda gráfica muestra que los errores fluctúan entre -2 y 2, sin embargo los resultados siguen un patrón de tender hacia a la media conforme se presentan nuevas observaciones, simulando un megáfono, por lo que se dice que la muestra sigue una tendencia heterocedástica.
 
@@ -9637,7 +9615,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 -0.2241648  0.4807915 -0.4645390 -0.1014177 -0.2113303 -0.2966252 
 \end{verbatim}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-111-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-110-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9662,7 +9640,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-113-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-112-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9687,7 +9665,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-115-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-114-1} \end{center}
 
 \textbf{Validación de supuesto de normalidad}
 
@@ -9700,7 +9678,7 @@ Para validar gráficamente la normalidad de los errores debemos graficar los err
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-116-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-115-1} \end{center}
 
 Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.
 
@@ -9738,13 +9716,13 @@ Como el valor del \(p-value\) es mayor al nivel de significancia \(\alpha=0.05\)
 
 El supuesto de linealidad lo verificamos gráficamente haciendo el diagrama de dispersión entre las variables como lo hicimos anteriormente.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 Como lo mencionamos en su tiempo al observar nuestros datos nos grita que existe una relación lineal entre las variable facturas y tiempo empleado en ellas.
 
 Como mencionamos en el capítulo, también se pueden graficar los errores estandarizados contra los valores observados de la variable explicativa.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 En la gráfica anterior se observa un patrón aleatorio de los residuales estandarizados, esto indica que el modelo lineal es adecuado.
 
@@ -9754,7 +9732,7 @@ Un punto igual de importante es que no hay presencia de datos atípicos, ya que 
 
 Se dice que una muestra es homocedástica cuando la varianza es constante a lo largo de todas las observaciones, es decir, no varia conforme se presentan nuevas observaciones.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-120-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-119-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9871,7 +9849,7 @@ Una vez que se ha verificado el cumplimiento de los supuestos en el modelo de re
 
 Los valores atípicos, también conocidos por la terminología inglesa \(outlier\), son observaciones de la muestra aleatoria que no se comportan como el resto de los elementos que conforman el conjunto de datos, gráficamente, la observación con valor atípico no sigue la tendencia que de manera general sigue la muestra aleatoria, lo veremos en la siguiente figura, en el cual el punto rojo sobresale de toda la muestra marcada por puntos azules, por lo que la observación puede ser catalogada como un outlier o valor atípico.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-124-1} \end{center}
 
 Otra manera de detectar a los posibles valores atípicos es por medio de un análisis de residuales. Dicho análisis consiste en obtener los residuales, ya sean los estandarizados o estudentizados y observar si éstos son mayores o menores a comparación de un punto crítico con nivel de significancia \(\alpha\). Si se escoge trabajar con los residuales estandarizados sigue una distribución normal con media 0 y varianza \(\sigma^2\). Por lo que los residuales superiores o inferiores del punto crítico \(\pm Z_{1-\alpha/2}\) son considerados como un posible \(outlier\) con un nivel de significancia \(\alpha\). Por otra parte, si se decide trabajar con los residuales estudentizados entonces el punto crítico está determinado por los residuales que se encuentren por arriba o por abajo de la banda determinada por el cuantil \(\pm \ t_{1-\alpha/2,n-k-1}.\) Es decir, se tiene evidencia de un valor atípico con nivel de significancia \(\alpha\) cuando suceda alguna de las siguientes dos desigualdades:
 
@@ -9880,7 +9858,7 @@ Otra manera de detectar a los posibles valores atípicos es por medio de un aná
 
 Continuando con el ejemplo anterior, los posibles valores atípicos pueden ser visualizados en la siguiente figura, con un nivel de confianza del 99\%, y usando los residuales estandarizados para el análisis.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
 
 Como se mencionó, es más que evidente que el punto atípico corresponde a la observación 40 la cual contrasta y sale de las bandas marcadas por el cuantil de la normal.
 
@@ -9895,7 +9873,7 @@ Es por esta propiedad por lo que se busca analizar estos puntos para medir su im
 
 Por ejemplo, imagine que tiene una muestra aleatoria conformada por 8 observaciones, en la cual 6 elementos son iguales y dos con diferente valor, tal como se muestra a continuación:
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-127-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-126-1} \end{center}
 
 El modelo tiene asociado una línea de regresión, sin embargo, si se quitan los extremos o valores atípicos, el modelo cambiaría rotundamente.
 
@@ -9932,7 +9910,7 @@ En primera instancia no parece ser un gran cambio, sin embargo, es de gran impor
 
 Es importante mencionar que en un modelo de regresión múltiple se deja de ajustar una línea recta a los datos, en cambio se ajusta un hiperplano.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-128-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-127-1} \end{center}
 
 El ``scatterplot'' de arriba, se realizó con la base precargada en \(R\), \("trees"\), los datos que componen la muestra se encuentran en un vector de dimensión 3, la cual busca relacionar la variable \(\underline{Y}\), con dos variables explicativas \(X_{1}\) y \(X_{2}\), en este caso, la variable \(\underline{Y}\) hace referencia al volumen de un árbol y la variable \(X_{1}\) hace referencia al diámetro del tronco del árbol y \(X_{2}\) denota la altura del árbol, se observa que existe una tendencia, la cual es representada mediante el hiperplano de regresión marcado, en la cual a menor diámetro y menor altura, el volumen del árbol tiende a disminuir.
 
@@ -11364,7 +11342,7 @@ cigarros.PRICE      1.00000000
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-132-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-131-1} \end{center}
 
 A simple vista ``no estamos apreciando toda la información'', haremos gráficos dos a dos:
 
@@ -11376,7 +11354,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-133-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-132-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11386,7 +11364,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-134-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-133-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11396,7 +11374,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-135-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-134-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11406,7 +11384,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-136-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-135-1} \end{center}
 
 Observemos que tanto la variable de promedio de más de 25 y las cajetillas vendidas muestran una relación, al igual que la variable precio.
 
@@ -11606,7 +11584,7 @@ Siguiendo el orden de nuestros capítulos, para validar gráficamente la normali
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-143-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-142-1} \end{center}
 
 Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.
 
@@ -11631,9 +11609,9 @@ Como el valor del \(p-value\) es menor al nivel de significancia \(\alpha=0.05\)
 
 Como se menciona en el capítulo, graficaremos los errores estandarizados contra los valores observados de la variable explicativa.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-145-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-144-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-146-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-145-1} \end{center}
 
 Para ambas variables, salvo por la posible presencia de algunos valores atípicos que salen de la franja horizontal \((-2,2)\), el resto de las observaciones parecen distribuirse como ruido blanco.
 
@@ -11641,7 +11619,7 @@ Para ambas variables, salvo por la posible presencia de algunos valores atípico
 
 Se dice que una muestra es homocedástica cuando la varianza es constante a lo largo de todas las observaciones, es decir, no varia conforme se presentan nuevas observaciones.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-147-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-146-1} \end{center}
 
 \begin{itemize}
 \tightlist
