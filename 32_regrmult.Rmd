@@ -1,29 +1,29 @@
-# (PART) Modelo de regresión lineal múltiple {-}
+# Modelo de regresión lineal múltiple
 
-# Introducción {-}
+Antes de empezar, el siguiente tema “Regresión Lineal Múltiple”, queremos hacer referencia que fue obtenido de tesis: “Apoyo a la docencia”. 
 
+Rodríguez Torres Omar (2019). Estadística no Paramétrica y Análisis de Regresión. Una introducción para estudiantes de la licenciatura de actuaría. [Tesis de licenciatura]. Universidad Nacional Autónoma de México.
 
+## Introducción 
 El modelo de regresión lineal simple ajusta una variable explicativa a una variable respuesta; Por su parte, el **Modelo de regresión lineal múltiple** busca hallar el mejor ajuste con dos o más variables regresoras. Es decir, la variable respuesta $\underline{Y}$ depende de $k$ regresores de la forma:
 
 $$
+\begin{equation*}
 \underline{Y}=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots +\beta_{k}x_{k}+\epsilon
-$$
+\end{equation*}$$
 
 En primera instancia no parece ser un gran cambio, sin embargo, es de gran importancia ya que de esta forma se puede estimar de una mejor manera un evento aleatorio, pues en general, un suceso no depende de sólo una acción o variable, sino que es resultado de una serie de diversos eventos o variables. 
 
 Es importante mencionar que en un modelo de regresión múltiple se deja de ajustar una línea recta a los datos, en cambio se ajusta un hiperplano.
 
 
-```{r,echo=FALSE}
-
+```{r}
 data("trees")
 library("scatterplot3d")
-s3d <- scatterplot3d(trees, type = "h", color = "deeppink4", 
-                     angle=55, pch = 16, xlab = "Diametro del arbol",ylab = "Altura del arbol", 
-                     zlab="Volumen",col.axis = "deeppink2")
+s3d <- scatterplot3d(trees, type = "h", color = "blue",
+    angle=55, pch = 16, xlab = "Diametro del arbol",ylab = "Altura del arbol", zlab="Volumen")
 my.lm <- lm(trees$Volume ~ trees$Girth + trees$Height)
 s3d$plane3d(my.lm)
-
  
 ```
 
@@ -48,7 +48,7 @@ entonces:
 
 **a)** $\mathbf{E}[\underline{Y}]= \beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots + \beta_{k}x_{k}.$ 
 
-**b)** $\textbf{Var}(\underline{Y})= \sigma^2.$
+**b)** $Var(\underline{Y})= \sigma^2.$
 
 **Demostración:**
 
@@ -71,17 +71,19 @@ La estimación es sobre $\underline{Y}$, $\beta_{0},\beta_{1},\beta_{2},\ldots,\
 $$Var(\underline{Y})=0+0+0+\ldots+0+Var(\epsilon)$$
 $$\therefore Var(\underline{Y})=\sigma^2.\blacksquare$$
 
-# Modelo 
+## Modelo de regresión lineal múltiple
 
 El objetivo del modelo de regresión lineal múltiple consiste en modelar $\underline{Y}$ a través de $k$ variables regresoras en $n$ observaciones independientes. Es decir, se tiene el siguiente modelo:
 
 $$
+\begin{equation*}
 \begin{array}{ c c c c c c c c c c c c c }
 Y_{1}  & = & \beta_{0} & + & \beta_{1}x_{11}& +& \beta_{2}x_{12} & +& \cdots & + & \beta_{k}x_{1k} & + & \epsilon_{1}  \\ 
 Y_{2}  & = & \beta_{0} & + & \beta_{1}x_{21}& +& \beta_{2}x_{22} & +& \cdots & + & \beta_{k}x_{2k} & + & \epsilon_{2}  \\
 \vdots  &  & \vdots &  & \vdots& & \vdots & & \vdots & & \vdots &  & \vdots  \\
 Y_{n}  & = & \beta_{0} & + & \beta_{1}x_{n1}& +& \beta_{2}x_{n2} & +& \cdots & + & \beta_{k}x_{nk} & + & \epsilon_{n}  \\ 
 \end{array}
+\end{equation*}
 $$
 
 
@@ -92,6 +94,7 @@ $$\underline{Y}=X\underline{\beta}+\underline{\epsilon}$$
 
 donde:
 $$
+\begin{equation*}
 \underline{Y}=
 \left(
 \begin{array}{c}
@@ -109,8 +112,10 @@ y_{n}\\
 1      & x_{n1} & x_{n2} & \ldots & x_{nk}\\
 \end{array}
 \right)
+\end{equation*}
 $$
 $$
+\begin{equation*}
 \underline{\beta}=
 \left(
 \begin{array}{c}
@@ -128,9 +133,11 @@ $$
 \epsilon_{n}\\
 \end{array}
 \right)
+\end{equation*}
 $$
 Sustituyendo en la ecuación anterior, se observa que el modelo de regresión multiple puede ser visto como:
 $$
+\begin{equation*}
 \left(
 \begin{array}{c}
 y_{1} \\
@@ -163,11 +170,13 @@ y_{n}\\
 \epsilon_{n}\\
 \end{array}
 \right)
+\end{equation*}
 $$
 
 La dimensión de las matrices señaladas anteriormente se mencionan en el siguiente recuadro:
 
 $$
+\begin{equation*}
 \begin{array}{|c|c|}
 \hline
 Matriz & Dimensión \\
@@ -178,6 +187,7 @@ X                   & n \times (k+1) \\
 \underline{\beta}    & (k+1) \times 1 \\
 \hline
 \end{array}
+\end{equation*}
 $$
 
 Finalmente para definir correctamente el modelo es necesario realizar las siguientes suposiciones acerca de las matrices del modelo de regresión lineal múltiple.
@@ -188,9 +198,10 @@ Finalmente para definir correctamente el modelo es necesario realizar las siguie
 
 Éste supuesto es importante ya que satisface que $k+1\leq n$, es decir, **el máximo número de variables con el que se ajusta el modelo no puede ser superior al número de observaciones.**
 
-De igual forma, observe que el supuesto de la varianza de los errores en la **definición 3.1**, puede reescribirse en forma matricial:
+De igual forma, observe que el supuesto de la varianza de los errores en la definición 3.1, puede reescribirse en forma matricial:
 
 $$
+\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -200,11 +211,13 @@ Cov(\epsilon_{2},\epsilon_{1})&Var(\epsilon_{2}) & Cov(\epsilon_{2},\epsilon_{3}
 Cov(\epsilon_{n},\epsilon_{1})   & Cov(\epsilon_{n},\epsilon_{2}) & Cov(\epsilon_{n},\epsilon_{3}) & \ldots & Var(\epsilon_{n})\\
 \end{array}
 \right)
+\end{equation*}
 $$
 
 Por **definición 3.1**, $Cov(\epsilon_{i},\epsilon_{j})=0 \ \ \ i\neq j$
 
 $$
+\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -214,11 +227,13 @@ Var(\epsilon_{1}) & 0 & 0 & \ldots & 0 \\
 0 & 0 & 0 & \ldots & Var(\epsilon_{n})\\
 \end{array}
 \right)
+\end{equation*}
 $$
 
 Por **definición 3.1**, $Var(\epsilon_{i})=\sigma^2$
 
 $$
+\begin{equation*}
 Var(\epsilon)=
 \left(
 \begin{array}{c c c c c}
@@ -228,6 +243,7 @@ Var(\epsilon)=
 0 & 0 & 0 & \ldots &\sigma^2  \\
 \end{array}
 \right)
+\end{equation*}
 $$
 
 $\therefore Var(\epsilon)=\sigma^2 I_{n \times n}. \blacksquare$
@@ -251,6 +267,7 @@ Antes de continuar es necesario ver algunos resultados importantes de equivalenc
 De la **definición 3.3** se sabe que los valores esperados de $y_{i}$ pueden ser definidos como:
 
 $$
+\begin{equation*}
 \begin{array}{c}
 \hat{y_{1}} \\
 \hat{y_{2}} \\
@@ -263,11 +280,13 @@ $$
 &\vdots && \vdots && \vdots && \vdots && \vdots\\
 =&\hat{\beta_{0}}&+&\hat{\beta_{1}} x_{n1} &+& \hat{\beta_{2}}x_{n2}&+& \ldots &+&\hat{\beta_{k}} x_{nk}\\ 
 \end{array}
+\end{equation*}
 $$
 
 La anterior ecuación puede ser descompuesta en forma matricial de la siguiente manera:
 
 $$
+\begin{equation*}
 \left(
 \begin{array}{c}
 \hat{y_{1}} \\
@@ -292,6 +311,7 @@ $$
 \hat{\beta_{k}}\\
 \end{array}
 \right)
+\end{equation*}
 $$
 
 Por lo tanto, podemos renombrar a las matrices de acuerdo a los elementos que las conforman.
@@ -301,7 +321,7 @@ Se tiene la siguiente igualdad para los valores estimados $\underline{\hat{Y}}.$
 
 $$\underline{\hat{Y}}=X \underline{\hat{\beta}}.$$
 
-Ahora por la **definición 3.3** y lo anterior tenemos que los residuales se encuentran de la forma:
+Ahora por la definición 3.3 y lo anterior tenemos que los residuales se encuentran de la forma:
 
 $$\underline{e}=\underline{Y}-X \underline{\hat{\beta}}.$$
 
@@ -317,9 +337,9 @@ $$\underline{\hat{\beta}}=\left( X'X\right)^{-1}X'\underline{Y}.$$
 
 Se sabe que los residuales están definidos como $\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)$ de esta manera, por hipótesis se tiene:
 
-$$\underline{e'}\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)'\left( \underline{Y}-X \underline{\hat{\beta}}\right).$$
-$$=\left(\underline{Y}'- \underline{\hat{\beta}}'X'\right)\left( \underline{Y}-X \underline{\hat{\beta}}\right).$$
-$$=\underline{Y}'Y-\underline{Y}'X\underline{\hat{\beta}}-\underline{\hat{\beta}}'X'\underline{Y}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}.$$
+$$\underline{e'}\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)'\left( \underline{Y}-X \underline{\hat{\beta}}\right)$$
+$$=\left(\underline{Y}'- \underline{\hat{\beta}}'X'\right)\left( \underline{Y}-X \underline{\hat{\beta}}\right)$$
+$$=\underline{Y}'Y-\underline{Y}'X\underline{\hat{\beta}}-\underline{\hat{\beta}}'X'\underline{Y}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}$$
 $$\underline{e'}\underline{e}=\underline{Y}'Y-2\underline{Y}'X\underline{\hat{\beta}}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}.$$
 Lo anterior se da ya que $\underline{\hat{\beta}}'X'\underline{Y}$ es una matriz de $1\times 1$, es decir, un escalar, y que su transpuesta $(\underline{\hat{\beta}}'X'\underline{Y})'=\underline{Y}'X\underline{\hat{\beta}}$ es el mismo escalar. 
 
@@ -352,20 +372,18 @@ Esto se simplifica a:
 $$X'X\underline{\hat{\beta}}=X'\underline{Y}$$
 Ahora multiplicamos ambos lados por la inversa de $X'X$, es decir, $(X'X)^{-1}$
 
-$$\therefore \  \underline{\hat{\beta}}=\left(X'X\right)^{-1}X'\underline{Y}.$$
+$$\therefore \underline{\hat{\beta}}=\left(X'X\right)^{-1}X'\underline{Y}.$$
 Nótese que la inversa $\left(X'X\right)^{-1}$ existe porque $X$ es de rango completo en las columnas, como se mencionó en la definición. Por lo que el producto matricial $X'X$ es de rango completo ($k+1$), es decir $|X|\neq 0,$ por lo que se garantiza la existencia de la inversa.
 
 Realizando la segunda derivada, veremos si la función es cóncava o convexa para saber si es mínimo o máximo.
 
 
-$$
-\Delta \Delta \underline{\hat{\beta}}=\left\{
+$$\Delta \Delta \underline{\hat{\beta}}=\left\{
 \begin{array}{ll}
 \Delta \Delta \underline{\hat{\beta}} \ \ \ \ -2X' \underline{Y} \ \ =0 \\
 \Delta \Delta \underline{\hat{\beta}} \ \ \ \ 2X'X \underline{\hat{\beta}}  \ \ \ = \left(2X'X\right)' =2X'X \\
 \end{array}
-\right.
-$$
+\right.$$
 
 Así $\Delta \Delta \underline{\hat{\beta}}=2X'X$
 
@@ -373,11 +391,11 @@ De esta manera $\Delta \Delta \underline{\hat{\beta}}>0$ ya que $X'X$ es definid
 
 Una vez encontrada una estimación a los parámetros desconocidos de $\underline{\beta}$, será conveniente desarrollar algunas variantes en la forma en la que se denota a los residuales, para ello se define a la matriz $H$ como $H=X(X'X)^{-1}X'.$ Cabe destacar que la matriz $H$ es conocida como **"matriz sombrero"**, que junto con la matriz $(I-H)$ cumplen con ser matrices idempotentes, es decir, que al elevar las matrices a una potencia dada los valores contenidos en la matriz no se modifican; de igual forma ambas matrices cumplen con ser simétricas, denominadas así ya que al transponer las matrices los valores contenidos en ellas conservan su lugar.
 
-Debemos considerar el siguiente resultado, el cual será importante al desarrollar el siguiente **teorema 3.3** ya que demuestra que $(X'X)^{-1}$ es una matriz simétrica.
+Debemos considerar el siguiente resultado, el cual será importante al desarrollar el siguiente teorema 3.3 ya que demuestra que $(X'X)^{-1}$ es una matriz simétrica.
 
 $$[(X'X)^{-1}]'=[(X'X)']^{-1}$$
 $$=(X'(X')')^{-1}$$
-$$\therefore \  [(X'X)^{-1}]'= (X'X)^{-1}. \ \blacksquare$$
+$$\therefore [(X'X)^{-1}]'= (X'X)^{-1}. \blacksquare$$
 Es decir, la inversa de $X'X$ es simétrica, resultado importante en el siguiente teorema:
 
 **Teorema 3.3** Sea $H=X(X'X)^{-1}X'$ e $(I-H)$ entonces:
@@ -424,7 +442,7 @@ Para la simetría de $I-H$ se transpone la matriz:
 $$(I-H)'=I'-H'.$$
 
 
-Por simetría de $H$ y de $I$
+Por simetría de H y de I
 
 $$\therefore (I-H)^2=I-H$$
 
@@ -460,7 +478,6 @@ donde:
 * $"\underline{Y}"$ son los valores observados de la variable respuesta.
 
 * $I$ es la matriz identidad.
-
 * $H=X(X'X)^{-1}X'.$
 
 **Demostración:**
@@ -485,10 +502,10 @@ $$=[(I-H)^2\underline{Y}]'\underline{Y}$$
 
 $$=\underline{Y}'(I-H)'\underline{Y}$$
 
-$$\therefore SC_{error}=\underline{Y}'(I-H)'\underline{Y}. \blacksquare$$
+$$\therefore SC_{error}=\underline{Y}'(I-H)'\underline{Y}.$$
 
 Con los resultados, se procede a examinar las propiedades de los estimadores obtenidos por el método de mínimos cuadrados.
-Éstas propiedades son agrupadas y enunciadas en el **Teorema de Gauss-Markov.** 
+Éstas propiedades son agrupadas y enunciadas en el **Teorema de Gauss-Markov** 
 
 
 **Teorema 3.4** (Teorema de Gauss-Markov).
@@ -528,91 +545,49 @@ Ya que la $Var(\underline{Y})=\sigma^2I_{n}$
 
 $$=(X'X)^{-1}X'[(X'X)^{-1}X']'\sigma^2$$
 $$=\sigma^2(X'X)^{-1}X'X(X'X)^{-1}$$
-$$
-=\sigma^2I(X'X)^{-1}
-$$
-$$
-\therefore Var(\underline{\hat{\beta}})=\sigma^2(X'X)^{-1}
-$$
+$$=\sigma^2I(X'X)^{-1}$$
+$$\therefore Var(\underline{\hat{\beta}})=\sigma^2(X'X)^{-1}$$
 Para comprobar que el estimador $\underline{\hat{\beta}}$ es el estimador insesgado de mínima varianza, se propone a un estimador $\underline{\tilde{\beta}}$ el cual cumple con ser lineal e insesgado. Para ello sea $\underline{\tilde{\beta}}$ un estimador linealmente insesgado para $\underline{\beta}$. Es decir, existe una matriz de $A_{(k+1)\times n}$ tal que $\underline{\tilde{\beta}}=A \underline{Y}.$ 
 De esta forma:
 
-$$
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]
-$$
-$$
-=A \mathbf{E}[\underline{Y}]
-$$
+$$\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]$$
+$$=A \mathbf{E}[\underline{Y}]$$
 Ya que $\mathbf{E}[\underline{Y}]=X\underline{\beta}$
 
-$$
-=AX\underline{\beta}
-$$
-$$
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}
-$$
+$$=AX\underline{\beta}$$
+$$\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}$$
 
 Para que sea un estimador insesgado, entonces $AX$ tiene que cumplir: $AX=I$, así:
 
-$$
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}
-$$
+$$\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}$$
 
-$$
-\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.\blacksquare
-$$
+$$\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.$$
 
 Para conocer la varianza de $\underline{\tilde{\beta}}$ se tiene:
 
-$$
-Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A'
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA'.
-$$
+$$Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})$$
+$$Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A'$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA'.$$
 Sea $C$ una matriz de dimensión $(k+1) \times n$ tal que $C=A-(X'X)^{-1}X'$. Observe que $CX=0$ ya que $CX=AX-(X'X)^{-1}X'X=I-I=0.$ 
 De esta forma se tiene la siguiente igualdad:
 
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)((X'X)^{-1}X'+C)'
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)\left[ ((X'X)^{-1}X')'+C'\right]
-$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)((X'X)^{-1}X'+C)'$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)\left[ ((X'X)^{-1}X')'+C'\right]$$
 
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)[X(X'X)^{-1}+C']
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}X'X(X'X)^{-1}+(X'X)^{-1}X'C'+CX(X'X)^{-1}+CC']
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X'X)^{-1}X'X(X'X)^{-1}+[CX(X'X)^{-1}]'+CX(X'X)^{-1}+CC'\right]
-$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)[X(X'X)^{-1}+C']$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}X'X(X'X)^{-1}+(X'X)^{-1}X'C'+CX(X'X)^{-1}+CC']$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X'X)^{-1}X'X(X'X)^{-1}+[CX(X'X)^{-1}]'+CX(X'X)^{-1}+CC'\right]$$
 Debido a que $CX=0$
 
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X'X)^{-1}+0+0+CC'\right]
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}+CC']
-$$
-$$
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X'X)^{-1}+\sigma^2CC'.
-$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X'X)^{-1}+0+0+CC'\right]$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}+CC']$$
+$$Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X'X)^{-1}+\sigma^2CC'.$$
 
-$$
-\therefore \  Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC'. \blacksquare
-$$
+$$\therefore Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC'$$
 
 Además se observa que $CC'$, es una matriz semidefinida positiva ya que los valores propios de $CC'$ son reales y no negativos, además debido al supuesto de que $X$ es de rango completo para las columnas se cumple que $rango(CC')=rango(X)=k+1,$ esto es importante, ya que si no se cumple se tendría una solución no trivial, por lo que $0$ podría ser una solución para un egeinvalor por lo que no sería semidefinido positivo. Como $CC'\geq0$, se observa que:
 
-$$
-Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).
-$$
+$$Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).$$
 Por lo que la varianza del estimador propuesto es mayor al obtenido por mínimos cuadrados. Por lo tanto, el estimador de $MC$ de $\underline{\beta}$ es el mejor estimador linealmente insesgado y de mínima varianza.$\blacksquare$
 
 
@@ -622,42 +597,26 @@ Las anteriores propiedades de los estimadores son importantes ya que garantizan 
 
 **a)** $\mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}.$
 
-**b)** $\textbf{Var}(\underline{\hat{Y}})=\sigma^2H.$
+**b)** $Var(\underline{\hat{Y}})=\sigma^2H.$
 
 **Demostración:**
 
 **a)** Para demostrar la esperanza de los valores estimados, se observa que:
 
-$$
-\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]
-$$
-$$
-\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]
-$$
+$$\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]$$
+$$\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]$$
 
-$$
-\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare
-$$
+$$\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare$$
 
 **b)** Para la varianza se tiene:
 
-$$
-Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})
-$$
-$$
-Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X'
-$$
-$$
-Var(\underline{\hat{Y}})=X\sigma^2(X'X)^{-1}X'
-$$
+$$Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})$$
+$$Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X'$$
+$$Var(\underline{\hat{Y}})=X\sigma^2(X'X)^{-1}X'$$
 
-$$
-Var(\underline{\hat{Y}})=\sigma^2X(X'X)^{-1}X'
-$$
+$$Var(\underline{\hat{Y}})=\sigma^2X(X'X)^{-1}X'$$
 
-$$
-\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare
-$$
+$$\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare$$
 
 
 **Teorema 3.6** Sea $\underline{e}$ los residuales del modelo, de forma $\underline{e}=\underline{Y}-\underline{\hat{Y}}$, entonces cumplen con:
@@ -665,79 +624,47 @@ $$
 
 **a)** $\mathbf{E}[\underline{e}]=0.$
 
-**b)** $\textbf{Var}(\underline{e})=\sigma^2(I-H).$
+**b)** $Var(\underline{e})=\sigma^2(I-H).$
 
 **Demostración:**
 
 $**a)**$ Para demostar la esperanza de los residuales, se observa que:
 
-$$
-\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]
-$$
+$$\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]$$
 Por el **corolario 4**
 
-$$
-\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]
-$$
-$$
-\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]
-$$
+$$\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]$$
+$$\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]$$
 
 Por el **teorema 3.4**
 
-$$
-\mathbf{E}[\underline{e}]=(I-H)X\beta
-$$
+$$\mathbf{E}[\underline{e}]=(I-H)X\beta$$
 
-$$
-\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}
-$$
-$$
-\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X'X)^{-1}X'X\underline{\beta}
-$$
-$$
-\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X'X(X'X)^{-1}X'\right]'\underline{\beta}
-$$
+$$\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}$$
+$$\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X'X)^{-1}X'X\underline{\beta}$$
+$$\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X'X(X'X)^{-1}X'\right]'\underline{\beta}$$
 
-$$
-\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX']'\underline{\beta}
-$$
+$$\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX']'\underline{\beta}$$
 
-$$
-\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}
-$$
-$$
-\therefore \mathbf{E}[\underline{e}]=0. \blacksquare
-$$
+$$\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}$$
+$$\therefore \mathbf{E}[\underline{e}]=0. \blacksquare$$
 
-**b)** Para la varianza se tiene:
+$**b)**$ Para la varianza se tiene:
 
-$$
-Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)
-$$
+$$Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)$$
 
 Por el **corolario 4**
 
-$$
-Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)
-$$
-$$
-Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)'
-$$
+$$Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)$$
+$$Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)'$$
 Por el **teorema 3.3**
 
-$$
-Var(\underline{e})=(I-H)\sigma^2(I-H)
-$$
+$$Var(\underline{e})=(I-H)\sigma^2(I-H)$$
 Por idempotencia de $I-H$
 
-$$
-Var(\underline{e})=\sigma^2(I-H)(I-H)
-$$
+$$Var(\underline{e})=\sigma^2(I-H)(I-H)$$
 
-$$
-\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare
-$$
+$$\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare$$
 
 ## Estimación por máxima verosimilitud
 
@@ -769,35 +696,27 @@ Sea $\underline{\hat{\beta}}$ y $\hat{\sigma}^2$, los estimadores de $\underline
 
 Por hipótesis $\underline{Y}\sim \mathbf{N}_{n}(X\underline{\beta},\sigma^2 I_{n})$, escribiendo la función de verosimilitud se tiene que:
 
-$$
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)'(\underline{Y}-\mu) \right]
-$$
+$$L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)'(\underline{Y}-\mu) \right]$$
 
-$$
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right]
-$$
-$$
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right].
-$$
+$$L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right]$$
+$$L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right].$$
 
 
 Aplicando logaritmo natural a la función de verosimilitud:
 
-$$
-ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})
-$$
-$$ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}[ln(2\pi)+ln(\sigma^2)]-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})$$
-$$ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi)-\frac{n}{2}ln(\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})$$
+$$lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})$$
+$$lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}[ln(2\pi)+ln(\sigma^2)]-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})$$
+$$lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi)-\frac{n}{2}ln(\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})$$
 
 
 **a)** Derivando respecto a $\underline{\beta}$ para obtener su estimador.
 
-$$\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{2\sigma^2}2(X'X\underline{\beta}-X'\underline{Y}).$$
-$$\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y}).$$
+$$\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{2\sigma^2}2(X'X\underline{\beta}-X'\underline{Y}).$$
+$$\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y}).$$
 
 Igualando la derivada a 0, para encontrar el punto silla
 
-$$\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=0$$
+$$\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=0$$
 
 
 $$-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y})=0$$
@@ -814,11 +733,11 @@ Ya que $X$ es de rango completo por columnas entonces existe $(X'X)^{-1}.$
 
 **b)** Derivando respecto a $\sigma^2$ para obtener su estimador:
 
-$$\frac{\partial}{\partial\sigma^2} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}).$$
+$$\frac{\partial}{\partial\sigma^2}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}).$$
 
 Igualando la derivada parcial a 0 para hallar el punto crítico de un posible máximo.
 
-$$\frac{\partial}{\partial\sigma^2} \ ln \ L(\underline{\beta}, \sigma^2 \mid \underline{Y},X)=0$$
+$$\frac{\partial}{\partial\sigma^2}lnL(\underline{\beta}, \sigma^2 \mid \underline{Y},X)=0$$
 $$-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=0$$
 $$\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=\frac{n}{2\sigma^2}$$
 $$(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=n\sigma^2$$
@@ -829,11 +748,12 @@ $$\therefore \hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\be
 Por lo tanto los estimadores de máxima verosimilitud son:
 
 $$
-\begin{array}{c}
 \underline{\hat{\beta}}=(X'X)^{-1}X'\underline{Y} \\
+
 y \\
-\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)'\left(\underline{Y}-X \underline{\hat{\beta}}\right) \blacksquare
-\end{array}
+
+\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)'\left(\underline{Y}-X \underline{\hat{\beta}}\right) 
+\blacksquare
 $$
 
 
@@ -851,8 +771,8 @@ $$\hat{\sigma}^2_{MV}=\frac{1}{n}SC_{error}$$
 Por el **corolario 5**
 
 $$\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{e}' \ \underline{e}$$
-$$\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{Y}'(I-H)\underline{Y}. \blacksquare $$
-Cabe destacar, que el estimador de $\underline{\beta}$ por máxima verosimilitud hereda todas las propiedades que cumple el estimador de mínimos cuadrados del **teorema 3.4**, es decir, $\underline{\hat{\beta}}$ es insesgado y de mínima varianza, sin embargo, el método de máxima verosimilitud proporciona una estimación para $\sigma^2$ el cual cumple con tener sesgo $(\mathbf{E}[\sigma^2]\neq 0).$  
+$$\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{Y}'(I-H)\underline{Y}.$$
+Cabe destacar, que el estimador de $\underline{\beta}$ por máxima verosimilitud hereda todas las propiedades que cumple el estimador de mínimos cuadrados del teorema 3.4, es decir, $\underline{\hat{\beta}}$ es insesgado y de mínima varianza, sin embargo, el método de máxima verosimilitud proporciona una estimación para $\sigma^2$ el cual cumple con tener sesgo $(\mathbf{E}[\sigma^2]\neq 0).$  
 
 $$\mathbf{E}[\hat{\sigma}^2]=\mathbf{E}\left[\frac{1}{n}\sum_{i=1}^{n}(\underline{Y_{i}}-\underline{\hat{Y}})'(\underline{Y_{i}}-\underline{\hat{Y}}) \right]$$
 
@@ -862,7 +782,7 @@ $$=\sigma^2-\frac{1}{n^2}\mathbf{E}\left[\frac{1}{n}\sum_{i=1}^{n}(\underline{Y_
 
 $$=\sigma^2-\frac{n^2-nk-n}{n}\sigma^2$$
 
-$$\therefore \mathbf{E}[\hat{\sigma}^2]=\frac{n-k-1}{n}\sigma^2. $$
+$$\therefore \mathbf{E}[\hat{\sigma}^2]=\frac{n-k-1}{n}\sigma^2.$$
 
 Por lo tanto el estimador $\hat{\sigma}^2$ no es insesgado.$\blacksquare$ 
 
