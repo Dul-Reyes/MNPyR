@@ -3,7 +3,7 @@ title: "Modelos no paramétricos y de Regresión"
 author:
   - "Sofía Villers Gómez"
   - "Dulce María Reyes Varela"
- site: bookdown::bookdown_site
+site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 geometry: "top=1in, left=1in, right=1in, bottom=1in"
@@ -20,7 +20,6 @@ always_allow_html: true
 ---
 nocite: | 
  @montgomery2021introduction, @conover1998practical,@gibbons2020nonparametric
- 
 ...
 
 # Prefacio {-}
@@ -107,4 +106,18 @@ material.
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'ggplot2'
 ), 'packages.bib')
+```
+
+
+# Introducción {-}
+
+<!-- ```{r, echo=FALSE, out.width = "100%"} -->
+<!-- knitr::include_url('https://carlosfernandovg.github.io/Slides/', height = "800px") -->
+<!-- ``` -->
+
+```{=html}
+<iframe width="100%" height="350%"
+  src="https://carlosfernandovg.github.io/Slides/"
+  frameborder="0"
+  style="position:absolute; left:0; top:0; width:100%;"></iframe>
 ```
