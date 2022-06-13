@@ -164,7 +164,7 @@ $$T_{2}\sim Bin(16,1/2)$$
 
 * Tomaremos $\alpha$= 5% =0.05 el nivel de significancia.
 
-* $n=6$ tamaño de la muestra
+* $n=16$ tamaño de la muestra
 
 * $p$=1/2
 
