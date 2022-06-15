@@ -240,18 +240,6 @@ Finalmente utilizaremos la función en R:
 ```{r}
 binom.test(4,n,p,"t")
 
-
-#En el caso de tener una n mayor a 20 utilizamos la siguiente
-#prueba
-```
-Con corrección por continuidad:
-```{r}
-mcnemar.test(data, correct = TRUE) #CON CORRECCION POR CONTINUIDAD
-```
-
-Sin correción por continuidad:
-```{r}
-mcnemar.test(data, correct = FALSE) #SIN CORRECCION POR CONTINUIDAD
 ```
 
 ## Ejercicios
