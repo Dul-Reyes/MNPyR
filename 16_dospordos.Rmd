@@ -276,7 +276,6 @@ tabla
 chisq.test(tabla)
 ```
 
-## Ejercicios
 
 
 
