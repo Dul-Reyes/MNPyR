@@ -267,7 +267,7 @@ p=0.70                                 #Proporción
 
 t=qbinom(.95,n,p)                       #Valor crítico
 t
-pvalue=1-pbinom(17,20,.7)                 #P-value
+pvalue= sum(dbinom(18:20,20,.7))                #P-value
 pvalue
 ```
 
