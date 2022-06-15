@@ -262,7 +262,7 @@ Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspo
 
 Se desea hacer el siguiente contraste:
 
-$$\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \ mbox{Los datos} \  \nsim \ LogN(0,1)$$
+$$\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1)$$
 
 
 Realice la prueba de Kolmogorov al $5\%$ de significancia.
