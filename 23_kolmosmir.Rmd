@@ -203,5 +203,3 @@ Podemos concluir aceptando la prueba de lognormalidad con media 1 y varianza 0, 
 ks.test(F_,Sn,alternative = "two.sided")
 ```
 
-
-## Ejercicios
