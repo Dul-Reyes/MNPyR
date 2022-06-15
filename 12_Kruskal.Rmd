@@ -213,7 +213,7 @@ $$
 * k = 4 Número de Métodos
 * $\alpha$ = 0.05  Nivel de significancia
 * $N$  = 34 Tamaño de la muestra
-* $n_{1}$= 9,\ $n_{2}$= 10, \$n_{3}$=7, \$n_{4}$= 8, (número de registros por categoría)
+* $n_{1}$= 9,\ $n_{2}$= 10, \ $n_{3}$= 7, \ $n_{4}$= 8, (número de registros por categoría)
 
 
 Como  hubo empates utilizaremos el estadístico:
