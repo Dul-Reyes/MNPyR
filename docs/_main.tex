@@ -8,8 +8,8 @@
   openany]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -35,14 +35,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Modelos no paramétricos y de Regresión},
-  pdfauthor={Sofía Villers Gómez; Dulce María Reyes Varela; Carlos Fernando Vásquez Guerra},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[top=1in, left=1in, right=1in, bottom=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -149,14 +141,24 @@
 \usepackage{threeparttablex}
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
-\ifluatex
+\usepackage{xcolor}
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\nocite{montgomery2021introduction, conover1998practical, gibbons2020nonparametric}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Modelos no paramétricos y de Regresión},
+  pdfauthor={Sofía Villers Gómez; Dulce María Reyes Varela},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Modelos no paramétricos y de Regresión}
-\author{Sofía Villers Gómez \and Dulce María Reyes Varela \and Carlos Fernando Vásquez Guerra}
+\author{Sofía Villers Gómez \and Dulce María Reyes Varela}
 \date{}
 
 \begin{document}
@@ -241,6 +243,10 @@ permissions necessary for your intended use. For example, other rights
 such as publicity, privacy, or moral rights may limit how you use the
 material.
 
+\hypertarget{introducciuxf3n}{%
+\chapter*{Introducción}\label{introducciuxf3n}}
+
+
 \hypertarget{part-un-primer-vistazo}{%
 \part{Un primer vistazo}\label{part-un-primer-vistazo}}
 
@@ -290,8 +296,8 @@ La mayoría de los métodos estadísticos paramétricos habituales requieren una
 \hypertarget{part-pruebas-binomiales}{%
 \part{Pruebas Binomiales}\label{part-pruebas-binomiales}}
 
-\hypertarget{introducciuxf3n}{%
-\chapter*{Introducción}\label{introducciuxf3n}}
+\hypertarget{introducciuxf3n-1}{%
+\chapter*{Introducción}\label{introducciuxf3n-1}}
 
 
 La distribución de probabilidad binomial se introdujo para describir las probabilidades asociadas con el número de caras cuando se lanza una moneda \(n\) veces. En su forma más general, cada uno de \(n\) ensayos independientes da como resultado \("éxito"\), con probabilidad \(p\), o \("fracaso"\), con probabilidad \(q = 1-p\). La distribución binomial describe la probabilidad de obtener exactamente \("k"\) éxitos.
@@ -612,8 +618,7 @@ La estadística de prueba será \(T=O_1\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pvalue}\OtherTok{=}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pbinom}\NormalTok{(}\DecValTok{17}\NormalTok{,}\DecValTok{20}\NormalTok{,.}\DecValTok{7}\NormalTok{)                 }\CommentTok{\#P{-}value}
-\CommentTok{\#Otra opción sería: 1{-}pbinom(17,20,.7, lower.tail = F)}
+\NormalTok{pvalue}\OtherTok{=} \DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pbinom}\NormalTok{(}\DecValTok{17}\NormalTok{,}\DecValTok{20}\NormalTok{,}\FloatTok{0.7}\NormalTok{)                }\CommentTok{\#P{-}value}
 \NormalTok{pvalue}
 \end{Highlighting}
 \end{Shaded}
@@ -637,6 +642,7 @@ Utilizando la función de R, debemos tener cuidado ya que nuestra muestra es peq
 \end{Shaded}
 
 \begin{verbatim}
+
     Exact binomial test
 
 data:  T and n
@@ -969,6 +975,7 @@ Finalmente podemos utilizar la función en R.
 \end{Shaded}
 
 \begin{verbatim}
+
     Exact binomial test
 
 data:  T_1 and n
@@ -1377,6 +1384,7 @@ Finalmente utilizaremos la función de R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Exact binomial test
 
 data:  T and n
@@ -1689,7 +1697,7 @@ Recordando que \(b+c=4+12\) entonces \(b+c=16\leq20\) entonces utilizaremos el e
 \item
   Tomaremos \(\alpha\)= 5\% =0.05 el nivel de significancia.
 \item
-  \(n=6\) tamaño de la muestra
+  \(n=16\) tamaño de la muestra
 \item
   \(p\)=1/2
 \end{itemize}
@@ -1784,6 +1792,7 @@ Finalmente utilizaremos la función en R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Exact binomial test
 
 data:  4 and n
@@ -1794,43 +1803,6 @@ alternative hypothesis: true probability of success is not equal to 0.5
 sample estimates:
 probability of success 
                   0.25 
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#En el caso de tener una n mayor a 20 utilizamos la siguiente}
-\CommentTok{\#prueba}
-\end{Highlighting}
-\end{Shaded}
-
-Con corrección por continuidad:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mcnemar.test}\NormalTok{(data, }\AttributeTok{correct =} \ConstantTok{TRUE}\NormalTok{) }\CommentTok{\#CON CORRECCION POR CONTINUIDAD}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    McNemar's Chi-squared test with continuity correction
-
-data:  data
-McNemar's chi-squared = 3.0625, df = 1, p-value = 0.08012
-\end{verbatim}
-
-Sin correción por continuidad:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mcnemar.test}\NormalTok{(data, }\AttributeTok{correct =} \ConstantTok{FALSE}\NormalTok{) }\CommentTok{\#SIN CORRECCION POR CONTINUIDAD}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-    McNemar's Chi-squared test
-
-data:  data
-McNemar's chi-squared = 4, df = 1, p-value = 0.0455
 \end{verbatim}
 
 \hypertarget{ejercicios-3}{%
@@ -2139,7 +2111,7 @@ Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior),
 
 Podemos graficar la función de distribución:
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-22-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
 Calculamos \(t\) y el \(p-value\):
 
@@ -2176,6 +2148,7 @@ Finalmente utilizaremos la función en R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Exact binomial test
 
 data:  5 and n
@@ -2199,6 +2172,7 @@ probability of success
 \end{Shaded}
 
 \begin{verbatim}
+
     Cox Stuart test
 
 data:  x
@@ -2288,8 +2262,8 @@ Se desea corroborar la aseveración del presidente respecto a que el peso mexica
 \hypertarget{part-prueba-de-rango}{%
 \part{Prueba de Rango}\label{part-prueba-de-rango}}
 
-\hypertarget{introducciuxf3n-1}{%
-\chapter*{Introducción}\label{introducciuxf3n-1}}
+\hypertarget{introducciuxf3n-2}{%
+\chapter*{Introducción}\label{introducciuxf3n-2}}
 
 
 Ya nos empapamos de la pruebas binomiales ahora en esta seccion se presentan tres de las pruebas de rangos más utilizadas en modelos no paramétricos, la prueba de Mann y Witney, la prueba de Kruskal-Wallis y la prueba de Igualdad de Varianzas.
@@ -2677,6 +2651,7 @@ Si las distribuciones son iguales entonces se esperaría que el número de veces
 \end{Shaded}
 
 \begin{verbatim}
+
     Wilcoxon rank sum test with continuity correction
 
 data:  B and C
@@ -3090,7 +3065,7 @@ ahora regresando al problema:
 \item
   \(N\) = 34 Tamaño de la muestra
 \item
-  \(n_{1}\)= 9,~\(n_{2}\)= 10, \$n\_\{3\}\(=7, \$n_{4}\)= 8, (número de registros por categoría)
+  \(n_{1}\)= 9,~\(n_{2}\)= 10, ~\(n_{3}\)= 7, ~\(n_{4}\)= 8, (número de registros por categoría)
 \end{itemize}
 
 Como hubo empates utilizaremos el estadístico:
@@ -3206,6 +3181,7 @@ Utilizando la funcion de R
 \end{Shaded}
 
 \begin{verbatim}
+
     Kruskal-Wallis rank sum test
 
 data:  calif
@@ -3226,6 +3202,7 @@ Para determinar que método es el distinto se tendrán que hacer las comparacion
 \end{Shaded}
 
 \begin{verbatim}
+
     Pairwise comparisons using Wilcoxon rank sum test 
 
 data:  Rendimiento and Metodo 
@@ -4207,8 +4184,8 @@ Los datos observados indican una diferencia significativa entre las varianzas de
 \hypertarget{part-tablas-de-contingencia}{%
 \part{Tablas de Contingencia}\label{part-tablas-de-contingencia}}
 
-\hypertarget{introducciuxf3n-2}{%
-\chapter*{Introducción}\label{introducciuxf3n-2}}
+\hypertarget{introducciuxf3n-3}{%
+\chapter*{Introducción}\label{introducciuxf3n-3}}
 
 
 Estas son tablas en las que se muestran las frecuencias de observaciones medidas sobre variables que tienen diferentes clases. El objetivo es observar si dos variables son independientes entre si. Para la realización de esta prueba las frecuencias son anotadas en tablas en las cuales cada observación es categorizada en solo una de las clases.
@@ -4602,14 +4579,12 @@ Ahora podemos utilizar la prueba en R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Pearson's Chi-squared test
 
 data:  tabla
 X-squared = 8.8934, df = 2, p-value = 0.01172
 \end{verbatim}
-
-\hypertarget{ejercicios-7}{%
-\section{Ejercicios}\label{ejercicios-7}}
 
 \hypertarget{prueba-de-independencia}{%
 \chapter{Prueba de Independencia}\label{prueba-de-independencia}}
@@ -4927,14 +4902,15 @@ Preferencia              Sin universidad Estudios truncados Graduados
 \end{Shaded}
 
 \begin{verbatim}
+
     Pearson's Chi-squared test
 
 data:  tabla
 X-squared = 13.125, df = 2, p-value = 0.001412
 \end{verbatim}
 
-\hypertarget{ejercicios-8}{%
-\section{Ejercicios}\label{ejercicios-8}}
+\hypertarget{ejercicios-7}{%
+\section{Ejercicios}\label{ejercicios-7}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5305,14 +5281,15 @@ Ahora podemos utilizar la prueba en R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Pearson's Chi-squared test
 
 data:  tabla
 X-squared = 17.286, df = 4, p-value = 0.001701
 \end{verbatim}
 
-\hypertarget{ejercicios-9}{%
-\section{Ejercicios}\label{ejercicios-9}}
+\hypertarget{ejercicios-8}{%
+\section{Ejercicios}\label{ejercicios-8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5534,6 +5511,7 @@ Después de calcular la mediana, contamos cuantas observaciones hay por método 
 \end{Shaded}
 
 \begin{verbatim}
+
 1 2 3 
 6 3 7 
 \end{verbatim}
@@ -5545,6 +5523,7 @@ Después de calcular la mediana, contamos cuantas observaciones hay por método 
 \end{Shaded}
 
 \begin{verbatim}
+
 1 2 4 
 3 7 8 
 \end{verbatim}
@@ -5575,6 +5554,7 @@ Ya que se tiene la tabla se le puede aplicar la prueba. En este caso observaremo
 \end{Shaded}
 
 \begin{verbatim}
+
     Pearson's Chi-squared test
 
 data:  Observados
@@ -5589,6 +5569,7 @@ X-squared = 17.543, df = 3, p-value = 0.0005464
 \end{Shaded}
 
 \begin{verbatim}
+
     Fisher's Exact Test for Count Data
 
 data:  Observados
@@ -5639,6 +5620,7 @@ Podemos realizar las comparaciones múltiples. A continuación se presenta la co
 \end{Shaded}
 
 \begin{verbatim}
+
 3 
 6 
 \end{verbatim}
@@ -5650,6 +5632,7 @@ Podemos realizar las comparaciones múltiples. A continuación se presenta la co
 \end{Shaded}
 
 \begin{verbatim}
+
  2  3 
 10  1 
 \end{verbatim}
@@ -5678,6 +5661,7 @@ MenorIgual_med       10        1
 \end{Shaded}
 
 \begin{verbatim}
+
     Fisher's Exact Test for Count Data
 
 data:  Observados
@@ -5692,8 +5676,8 @@ odds ratio
 
 Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por \(m^2\).
 
-\hypertarget{ejercicios-10}{%
-\section{Ejercicios}\label{ejercicios-10}}
+\hypertarget{ejercicios-9}{%
+\section{Ejercicios}\label{ejercicios-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5718,8 +5702,8 @@ Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por \(m^
 \hypertarget{part-bondad-de-ajuste}{%
 \part{Bondad de Ajuste}\label{part-bondad-de-ajuste}}
 
-\hypertarget{introducciuxf3n-3}{%
-\chapter*{Introducción}\label{introducciuxf3n-3}}
+\hypertarget{introducciuxf3n-4}{%
+\chapter*{Introducción}\label{introducciuxf3n-4}}
 
 
 Las pruebas de bondad de ajuste se utilizan para decidir si un conjunto de datos (una muestra aleatoria) se ajusta a una función de distribución dada.
@@ -6009,14 +5993,15 @@ Ahora podemos utilizar la prueba de R:
 \end{Shaded}
 
 \begin{verbatim}
+
     Chi-squared test for given probabilities
 
 data:  c(273, 361, 263, 78, 25)
 X-squared = 20.96, df = 4, p-value = 0.0003226
 \end{verbatim}
 
-\hypertarget{ejercicios-11}{%
-\section{Ejercicios}\label{ejercicios-11}}
+\hypertarget{ejercicios-10}{%
+\section{Ejercicios}\label{ejercicios-10}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6076,7 +6061,7 @@ Una forma lógica de comparar la muestra aleatoria con \(F^*(x)\) es mediante la
 La función de distribución empírica \(S(x)\) es útil como estimador de \(F(x)\), la función de distribución desconocida de la \(X_{i}s\). Entonces podemos comparar la función de distribución empírica \(S(x)\) con la función de distribución hipotética \(F^*(x)\) para ver si hay un buen ajuste.
 Si no hay un buen ajuste, entonces podemos rechazar la hipótesis nula y concluir que la función de distribución verdadera pero desconocida, \(F(x)\), en realidad no está dada por la función \(F^*(x)\) en la hipótesis nula.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-53-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-51-1} \end{center}
 
 Pero, ¿qué tipo de estadística de prueba podemos usar como medida de la diferencia entre \(S(x)\) y \(F^* (x)\)? Una de las medidas más simples imaginables es la mayor distancia entre los dos gráficos \(S(x)\) y \(F^*(x)\), medidos en dirección vertical. Ésta es la estadística sugerida por Kolmogorov (1993).
 Es decir, si la \textbf{figura 1} proporciona \(F^*(x)\) y se extrae una muestra aleatoria de tamaño 5 de la población, la función de distribución empírica \(S(x)\) se puede dibujar en el mismo gráfico junto con \(F^ *(x)\), como se muestra en la figura 2.
@@ -6243,7 +6228,7 @@ Calculamos el Estadístico de Prueba:
 \textbf{Paso 4} Procedimiento completo para el cálculo del Estadístico de Prueba:
 La siguiente tabla representa los cálculos para encontrar nuestro Estadístico de Prueba \(T\):
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{cccccc}
 \toprule
@@ -6328,6 +6313,7 @@ Ahora haremos la prueba usando la función \textbf{``ks.test''} de R.
 \end{Shaded}
 
 \begin{verbatim}
+
     Two-sample Kolmogorov-Smirnov test
 
 data:  X_i and Sn
@@ -6352,6 +6338,7 @@ La base de datos \textbf{``Loblolly''} en R, contiene información sobre tres ca
 \end{Shaded}
 
 \begin{verbatim}
+
     One-sample Kolmogorov-Smirnov test
 
 data:  x
@@ -6361,8 +6348,8 @@ alternative hypothesis: two-sided
 
 Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspondiente \(p-value\) es \(26.13\%\), por lo tanto con \(\alpha=5\%\) no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es normal(0,1).
 
-\hypertarget{ejercicios-12}{%
-\section{Ejercicios}\label{ejercicios-12}}
+\hypertarget{ejercicios-11}{%
+\section{Ejercicios}\label{ejercicios-11}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6376,7 +6363,7 @@ Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspo
 
 Se desea hacer el siguiente contraste:
 
-\[\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \ mbox{Los datos} \  \nsim \ LogN(0,1)\]
+\[\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1)\]
 
 Realice la prueba de Kolmogorov al \(5\%\) de significancia.
 
@@ -6549,7 +6536,7 @@ Realice la prueba de Kolmogorov-Smirnov al 5\% de significancia.
   Finalmente realizada la tabla, se calcula el máximo de las columnas \(D^+\) y \(D^-\) de ésta manera, se tiene la siguiente tabla:
 \end{enumerate}
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{cccccccc}
 \toprule
@@ -6669,15 +6656,13 @@ Podemos concluir aceptando la prueba de lognormalidad con media 1 y varianza 0, 
 \end{Shaded}
 
 \begin{verbatim}
+
     Two-sample Kolmogorov-Smirnov test
 
 data:  F_ and Sn
 D = 0.2, p-value = 0.9383
 alternative hypothesis: two-sided
 \end{verbatim}
-
-\hypertarget{ejercicios-13}{%
-\section{Ejercicios}\label{ejercicios-13}}
 
 \hypertarget{prueba-lilliefors-para-normalidad}{%
 \chapter{Prueba Lilliefors para Normalidad}\label{prueba-lilliefors-para-normalidad}}
@@ -6824,7 +6809,7 @@ Realizar la prueba a un nivel de significancia del \(95\%.\)
   Finalmente realizada la tabla, se calcula el máximo de las columnas \(D^+\) y \(D^-\) de ésta manera, se tiene la siguiente tabla:
 \end{enumerate}
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{ccccccccc}
 \toprule
@@ -6951,6 +6936,7 @@ Ahora podemos utilizar la prueba en R
 \end{Shaded}
 
 \begin{verbatim}
+
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  X
@@ -6979,7 +6965,7 @@ En R fije la semilla 2020, y genere 250 observaciones distribuidas como una \(N(
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-64-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-62-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6991,6 +6977,7 @@ En R fije la semilla 2020, y genere 250 observaciones distribuidas como una \(N(
 \end{Shaded}
 
 \begin{verbatim}
+
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
@@ -6999,8 +6986,8 @@ D = 0.08739, p-value = 0.4436
 
 Observamos que la estadística de prueba tiene un valor de 0.08739 y su correspondiente p-value es \(44.36\%\), por lo tanto no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es \(N(0,1)\). Esperabamos que la prueba diera ese resultado ya que por construcción la muestra proviene de una distribucion \(N(0,1)\).
 
-\hypertarget{ejercicios-14}{%
-\section{Ejercicios}\label{ejercicios-14}}
+\hypertarget{ejercicios-12}{%
+\section{Ejercicios}\label{ejercicios-12}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7163,7 +7150,7 @@ Realizar la prueba con un nivel de significancia del \(95\%\).
   Finalmente realizada la tabla, se calcula el máximo de las columnas \(D^+\) y \(D^-\) de ésta manera, se tiene la siguiente tabla:
 \end{enumerate}
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{ccccccccc}
 \toprule
@@ -7292,6 +7279,7 @@ El cuantil W que acumula \(1-\alpha\) de probabilidad, usando \(\alpha=0.05\) es
 \end{Shaded}
 
 \begin{verbatim}
+
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  F_Zi
@@ -7304,8 +7292,8 @@ D = 0.15238, p-value = 0.458
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejercicios-15}{%
-\section{Ejercicios}\label{ejercicios-15}}
+\hypertarget{ejercicios-13}{%
+\section{Ejercicios}\label{ejercicios-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7451,7 +7439,7 @@ Sigue una distribución Normal, para ello se realizará la prueba de Anderson Da
   Y se realiza la siguiente tabla:
 \end{enumerate}
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{ccccccc}
 \toprule
@@ -7580,6 +7568,7 @@ Ahora podemos utilizar la prueba en R
 \end{Shaded}
 
 \begin{verbatim}
+
     Anderson-Darling normality test
 
 data:  X
@@ -7636,6 +7625,7 @@ Retomando el ejemplo de las alturas de los pinos, probaremos ahora que las altur
 \end{Shaded}
 
 \begin{verbatim}
+
     Anderson-Darling test of goodness-of-fit
     Null hypothesis: Normal distribution
     with parameters mean = 32.3644047619048, sd = 20.6736047504145
@@ -7652,6 +7642,7 @@ An = 2.7319, p-value = 0.03765
 \end{Shaded}
 
 \begin{verbatim}
+
     Cramer-von Mises test of goodness-of-fit
     Null hypothesis: Normal distribution
     with parameters mean = 32.3644047619048, sd = 20.6736047504145
@@ -7668,6 +7659,7 @@ omega2 = 0.38648, p-value = 0.07825
 \end{Shaded}
 
 \begin{verbatim}
+
     Anderson-Darling test of goodness-of-fit
     Null hypothesis: exponential distribution
     with parameter rate = 0.0308981428009166
@@ -7684,6 +7676,7 @@ An = 4.5223, p-value = 0.004895
 \end{Shaded}
 
 \begin{verbatim}
+
     Cramer-von Mises test of goodness-of-fit
     Null hypothesis: exponential distribution
     with parameter rate = 0.0308981428009166
@@ -7722,8 +7715,8 @@ Realizar la prueba correspondiente para verificar que su suposición es cierta c
 \hypertarget{part-regresiuxf3n-lineal-simple}{%
 \part{Regresión Lineal Simple}\label{part-regresiuxf3n-lineal-simple}}
 
-\hypertarget{introducciuxf3n-4}{%
-\chapter*{Introducción}\label{introducciuxf3n-4}}
+\hypertarget{introducciuxf3n-5}{%
+\chapter*{Introducción}\label{introducciuxf3n-5}}
 
 
 El análisis de regresión es una de las \textbf{técnicas estadísticas} de uso más frecuente para analizar datos. Su atractivo y utilidad general son el resultado de usar una ecuación para expresar la relación entre una variable de interés y un conjunto de variables predictorias relacionadas. Para usar bien la regresión se requiere tanto apreciar la teoría que hay detrás como los problemas prácticos que suelen presentarse cuando se emplea ésta técnica con datos de la vida real.
@@ -8368,7 +8361,7 @@ El gerente del departamento de ventas de la compañía \textbf{CALLCENT} desea p
 
 Se ha recolectado, durante un periodo de 30 días, la información sobre el número de facturas procesadas y el tiempo que tomó (en horas):
 
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{ccc}
 \toprule
@@ -8440,7 +8433,7 @@ Ahora haremos la réplica en R.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-75-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-73-1} \end{center}
 
 Como podemos observar el gráfico nos grita que exite una posible relación lineal entre el número de facturas y el tiempo empleado para éstas.
 Para confirmar nuestras sospechas vamos a calcular el coefieciente de correlación de Pearson:
@@ -8520,7 +8513,7 @@ Luego los residuales y los graficamos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-83-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-81-1} \end{center}
 
 Para que el modelo propuesto ajuste bien a los datos originales esperaríamos que los residuales estuvieran lo mas cercano al cero (linea amarilla). Mas adelante veremos como usar estos gráficos para verificar algunos de los supuestos del modelo.
 
@@ -8897,7 +8890,7 @@ Entonces el tiempo en horas promedio esperado será:
 
 Gráficamente se ve así:
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-94-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-92-1} \end{center}
 
 Donde el punto azul es nuestro valor esperado.
 
@@ -9451,9 +9444,9 @@ Donde la función \(\phi^{-1}\) es la distribución inversa de una normal. Si lo
 
 \[\mbox{Diversas distribuciones en gráficas QQ-plot}\]
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-102-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-100-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-103-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-101-1} \end{center}
 
 Lo que podemos observar, es que las dos muestras superiores siguen una distribución normal, sin embargo, la primera tiene pocas observaciones por lo que algunos puntos se encuentran cercanos a la recta azul, línea que representa la distribución normal ideal, pero pocas veces la muestra toca esta línea y las colas presentan mucha variabilidad, la gráfica de la derecha al tener tamaño de muestra mayor, se aprecia que muchos datos caen sobre la recta, presentando ligeras irregularidades en la cola, tanto superior como inferior, por lo que se puede asumir, que las muestras siguen una distribución normal.
 
@@ -9483,9 +9476,9 @@ Las desviaciones en el supuesto de homocedasticidad pueden observarse mediante g
 
 \[\mbox{Muestra homocedástica y una Muestra heterocedástica}\]
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-104-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-102-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-104-2} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-102-2} \end{center}
 
 Como estamos observando, la primera imagen corresponde a una muestra homocedástica pues los errores se distribuyen a lo largo del eje horizontal, además que éstos fluctúan entre \(y=-2\) y \(y=2\) distribuidos de una manera simétrica. Mientras que la segunda gráfica muestra que los errores fluctúan entre -2 y 2, sin embargo los resultados siguen un patrón de tender hacia a la media conforme se presentan nuevas observaciones, simulando un megáfono, por lo que se dice que la muestra sigue una tendencia heterocedástica.
 
@@ -9515,6 +9508,7 @@ En otro caso no se tiene evidencia sificiente para rechazar la hipótesis nula.
 En \(R\) la prueba de Breusch-Pagan puede ser fácilmente implementada, suponga que se tiene una muestra en el que se ha implementado el procedimiento de regresión lineal en \(R \ (lm(Y \sim X))\), por lo que aplicándo el siguiente código se tiene:
 
 \begin{verbatim}
+
     studentized Breusch-Pagan test
 
 data:  modelo1
@@ -9544,6 +9538,7 @@ Del anterior ajuste de regresión se procede a calcular el coeficiente de determ
 En otro caso no se tiene evidencia suficiente para rechazar la hipótesis nula.
 
 \begin{verbatim}
+
 White's Test for Heteroskedasticity:
 ==================================== 
 
@@ -9586,6 +9581,7 @@ Esta vez vamos a ocupar la función en R para el modelo de regresión que es \te
 \end{Shaded}
 
 \begin{verbatim}
+
 Call:
 lm(formula = Tiempo ~ Facturas)
 
@@ -9615,7 +9611,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 -0.2241648  0.4807915 -0.4645390 -0.1014177 -0.2113303 -0.2966252 
 \end{verbatim}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-110-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-108-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9640,7 +9636,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-112-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-110-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9665,7 +9661,7 @@ Entonces primero calcularemos los diferentes residuales vistos. Se presentaran s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-114-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-112-1} \end{center}
 
 \textbf{Validación de supuesto de normalidad}
 
@@ -9678,7 +9674,7 @@ Para validar gráficamente la normalidad de los errores debemos graficar los err
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-115-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-113-1} \end{center}
 
 Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.
 
@@ -9691,6 +9687,7 @@ Podemos aplicar la prueba de bondad de ajuste \textbf{Lilliefors para normalidad
 \end{Shaded}
 
 \begin{verbatim}
+
     Anderson-Darling normality test
 
 data:  rstandard(M1)
@@ -9704,6 +9701,7 @@ A = 0.2675, p-value = 0.6615
 \end{Shaded}
 
 \begin{verbatim}
+
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  rstandard(M1)
@@ -9716,13 +9714,13 @@ Como el valor del \(p-value\) es mayor al nivel de significancia \(\alpha=0.05\)
 
 El supuesto de linealidad lo verificamos gráficamente haciendo el diagrama de dispersión entre las variables como lo hicimos anteriormente.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-117-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-115-1} \end{center}
 
 Como lo mencionamos en su tiempo al observar nuestros datos nos grita que existe una relación lineal entre las variable facturas y tiempo empleado en ellas.
 
 Como mencionamos en el capítulo, también se pueden graficar los errores estandarizados contra los valores observados de la variable explicativa.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-116-1} \end{center}
 
 En la gráfica anterior se observa un patrón aleatorio de los residuales estandarizados, esto indica que el modelo lineal es adecuado.
 
@@ -9732,7 +9730,7 @@ Un punto igual de importante es que no hay presencia de datos atípicos, ya que 
 
 Se dice que una muestra es homocedástica cuando la varianza es constante a lo largo de todas las observaciones, es decir, no varia conforme se presentan nuevas observaciones.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -9751,6 +9749,7 @@ Adicionalmente aplicaremos las pruebas vistas en el capítulo para tener certeza
 \end{Shaded}
 
 \begin{verbatim}
+
     studentized Breusch-Pagan test
 
 data:  M1
@@ -9774,6 +9773,7 @@ El valor del \(p-value\) es mayor, por lo que la hipótesis de homocedasticidad 
 \end{Shaded}
 
 \begin{verbatim}
+
 White's Test for Heteroskedasticity:
 ==================================== 
 
@@ -9811,6 +9811,7 @@ En R se puede hacer la prueba de Durbin Watson con el comando \textbf{dwtest()}.
 \end{Shaded}
 
 \begin{verbatim}
+
     Durbin-Watson test
 
 data:  M1
@@ -9849,7 +9850,7 @@ Una vez que se ha verificado el cumplimiento de los supuestos en el modelo de re
 
 Los valores atípicos, también conocidos por la terminología inglesa \(outlier\), son observaciones de la muestra aleatoria que no se comportan como el resto de los elementos que conforman el conjunto de datos, gráficamente, la observación con valor atípico no sigue la tendencia que de manera general sigue la muestra aleatoria, lo veremos en la siguiente figura, en el cual el punto rojo sobresale de toda la muestra marcada por puntos azules, por lo que la observación puede ser catalogada como un outlier o valor atípico.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-124-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-122-1} \end{center}
 
 Otra manera de detectar a los posibles valores atípicos es por medio de un análisis de residuales. Dicho análisis consiste en obtener los residuales, ya sean los estandarizados o estudentizados y observar si éstos son mayores o menores a comparación de un punto crítico con nivel de significancia \(\alpha\). Si se escoge trabajar con los residuales estandarizados sigue una distribución normal con media 0 y varianza \(\sigma^2\). Por lo que los residuales superiores o inferiores del punto crítico \(\pm Z_{1-\alpha/2}\) son considerados como un posible \(outlier\) con un nivel de significancia \(\alpha\). Por otra parte, si se decide trabajar con los residuales estudentizados entonces el punto crítico está determinado por los residuales que se encuentren por arriba o por abajo de la banda determinada por el cuantil \(\pm \ t_{1-\alpha/2,n-k-1}.\) Es decir, se tiene evidencia de un valor atípico con nivel de significancia \(\alpha\) cuando suceda alguna de las siguientes dos desigualdades:
 
@@ -9858,7 +9859,7 @@ Otra manera de detectar a los posibles valores atípicos es por medio de un aná
 
 Continuando con el ejemplo anterior, los posibles valores atípicos pueden ser visualizados en la siguiente figura, con un nivel de confianza del 99\%, y usando los residuales estandarizados para el análisis.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-123-1} \end{center}
 
 Como se mencionó, es más que evidente que el punto atípico corresponde a la observación 40 la cual contrasta y sale de las bandas marcadas por el cuantil de la normal.
 
@@ -9873,7 +9874,7 @@ Es por esta propiedad por lo que se busca analizar estos puntos para medir su im
 
 Por ejemplo, imagine que tiene una muestra aleatoria conformada por 8 observaciones, en la cual 6 elementos son iguales y dos con diferente valor, tal como se muestra a continuación:
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-124-1} \end{center}
 
 El modelo tiene asociado una línea de regresión, sin embargo, si se quitan los extremos o valores atípicos, el modelo cambiaría rotundamente.
 
@@ -9893,12 +9894,13 @@ Donde \(\underline{\hat{Y}}\) hace referencia al modelo ajustado de la forma \(X
 
 De esta manera, se calcula la distancia de \(Cook\) para cada observación, con la finalidad de evaluar el cambio del modelo sin la i-ésima observación. Se considera que una observación es influyente si el cambio del modelo con y sin observación varía mucho entre si, aunque no hay una medida establecida, (Hair, Tatham,Anderson y Black, 1998) sugiere que si la distancia de \(Cook\) de la i-ésima observación es mayor o igual a 1 se tiene evidencia de que la observación analizada tiene gran influencia en el modelo, mientras que para otros autores como (Bollen y Jackman, 1985) mencionan que las distancias mayores que \(\frac{4}{n}\) presenta indicios de influencia en el modelo.
 
-\hypertarget{part-modelo-de-regresiuxf3n-lineal-muxfaltiple}{%
-\part{Modelo de regresión lineal múltiple}\label{part-modelo-de-regresiuxf3n-lineal-muxfaltiple}}
+\hypertarget{modelo-de-regresiuxf3n-lineal-muxfaltiple}{%
+\chapter{Modelo de regresión lineal múltiple}\label{modelo-de-regresiuxf3n-lineal-muxfaltiple}}
 
-\hypertarget{introducciuxf3n-5}{%
-\chapter*{Introducción}\label{introducciuxf3n-5}}
+Antes de empezar, el siguiente tema ``Regresión Lineal Múltiple'', queremos hacer referencia que fue obtenido de tesis: ``Apoyo a la docencia'' \citet{Tesisdelicenciatura2019Estadistica}.
 
+\hypertarget{introducciuxf3n-6}{%
+\section{Introducción}\label{introducciuxf3n-6}}
 
 El modelo de regresión lineal simple ajusta una variable explicativa a una variable respuesta; Por su parte, el \textbf{Modelo de regresión lineal múltiple} busca hallar el mejor ajuste con dos o más variables regresoras. Es decir, la variable respuesta \(\underline{Y}\) depende de \(k\) regresores de la forma:
 
@@ -9910,7 +9912,18 @@ En primera instancia no parece ser un gran cambio, sin embargo, es de gran impor
 
 Es importante mencionar que en un modelo de regresión múltiple se deja de ajustar una línea recta a los datos, en cambio se ajusta un hiperplano.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-127-1} \end{center}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(}\StringTok{"trees"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"scatterplot3d"}\NormalTok{)}
+\NormalTok{s3d }\OtherTok{\textless{}{-}} \FunctionTok{scatterplot3d}\NormalTok{(trees, }\AttributeTok{type =} \StringTok{"h"}\NormalTok{, }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{,}
+    \AttributeTok{angle=}\DecValTok{55}\NormalTok{, }\AttributeTok{pch =} \DecValTok{16}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Diametro del arbol"}\NormalTok{,}\AttributeTok{ylab =} \StringTok{"Altura del arbol"}\NormalTok{, }\AttributeTok{zlab=}\StringTok{"Volumen"}\NormalTok{)}
+\NormalTok{my.lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(trees}\SpecialCharTok{$}\NormalTok{Volume }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trees}\SpecialCharTok{$}\NormalTok{Girth }\SpecialCharTok{+}\NormalTok{ trees}\SpecialCharTok{$}\NormalTok{Height)}
+\NormalTok{s3d}\SpecialCharTok{$}\FunctionTok{plane3d}\NormalTok{(my.lm)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
 
 El ``scatterplot'' de arriba, se realizó con la base precargada en \(R\), \("trees"\), los datos que componen la muestra se encuentran en un vector de dimensión 3, la cual busca relacionar la variable \(\underline{Y}\), con dos variables explicativas \(X_{1}\) y \(X_{2}\), en este caso, la variable \(\underline{Y}\) hace referencia al volumen de un árbol y la variable \(X_{1}\) hace referencia al diámetro del tronco del árbol y \(X_{2}\) denota la altura del árbol, se observa que existe una tendencia, la cual es representada mediante el hiperplano de regresión marcado, en la cual a menor diámetro y menor altura, el volumen del árbol tiende a disminuir.
 
@@ -9936,7 +9949,7 @@ entonces:
 
 \textbf{a)} \(\mathbf{E}[\underline{Y}]= \beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots + \beta_{k}x_{k}.\)
 
-\textbf{b)} \(\textbf{Var}(\underline{Y})= \sigma^2.\)
+\textbf{b)} \(Var(\underline{Y})= \sigma^2.\)
 
 \textbf{Demostración:}
 
@@ -9959,8 +9972,8 @@ La estimación es sobre \(\underline{Y}\), \(\beta_{0},\beta_{1},\beta_{2},\ldot
 \[Var(\underline{Y})=0+0+0+\ldots+0+Var(\epsilon)\]
 \[\therefore Var(\underline{Y})=\sigma^2.\blacksquare\]
 
-\hypertarget{modelo}{%
-\chapter{Modelo}\label{modelo}}
+\hypertarget{modelo-de-regresiuxf3n-lineal-muxfaltiple-1}{%
+\section{Modelo de regresión lineal múltiple}\label{modelo-de-regresiuxf3n-lineal-muxfaltiple-1}}
 
 El objetivo del modelo de regresión lineal múltiple consiste en modelar \(\underline{Y}\) a través de \(k\) variables regresoras en \(n\) observaciones independientes. Es decir, se tiene el siguiente modelo:
 
@@ -10079,7 +10092,7 @@ Finalmente para definir correctamente el modelo es necesario realizar las siguie
 
 Éste supuesto es importante ya que satisface que \(k+1\leq n\), es decir, \textbf{el máximo número de variables con el que se ajusta el modelo no puede ser superior al número de observaciones.}
 
-De igual forma, observe que el supuesto de la varianza de los errores en la \textbf{definición 3.1}, puede reescribirse en forma matricial:
+De igual forma, observe que el supuesto de la varianza de los errores en la definición 3.1, puede reescribirse en forma matricial:
 
 \[
 Var(\epsilon)=
@@ -10189,7 +10202,7 @@ Se tiene la siguiente igualdad para los valores estimados \(\underline{\hat{Y}}.
 
 \[\underline{\hat{Y}}=X \underline{\hat{\beta}}.\]
 
-Ahora por la \textbf{definición 3.3} y lo anterior tenemos que los residuales se encuentran de la forma:
+Ahora por la definición 3.3 y lo anterior tenemos que los residuales se encuentran de la forma:
 
 \[\underline{e}=\underline{Y}-X \underline{\hat{\beta}}.\]
 
@@ -10205,9 +10218,9 @@ Entonces se tiene como estimador de \(\underline{\beta}\) a:
 
 Se sabe que los residuales están definidos como \(\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)\) de esta manera, por hipótesis se tiene:
 
-\[\underline{e'}\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)'\left( \underline{Y}-X \underline{\hat{\beta}}\right).\]
-\[=\left(\underline{Y}'- \underline{\hat{\beta}}'X'\right)\left( \underline{Y}-X \underline{\hat{\beta}}\right).\]
-\[=\underline{Y}'Y-\underline{Y}'X\underline{\hat{\beta}}-\underline{\hat{\beta}}'X'\underline{Y}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}.\]
+\[\underline{e'}\underline{e}=\left( \underline{Y}-X \underline{\hat{\beta}}\right)'\left( \underline{Y}-X \underline{\hat{\beta}}\right)\]
+\[=\left(\underline{Y}'- \underline{\hat{\beta}}'X'\right)\left( \underline{Y}-X \underline{\hat{\beta}}\right)\]
+\[=\underline{Y}'Y-\underline{Y}'X\underline{\hat{\beta}}-\underline{\hat{\beta}}'X'\underline{Y}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}\]
 \[\underline{e'}\underline{e}=\underline{Y}'Y-2\underline{Y}'X\underline{\hat{\beta}}+\underline{\hat{\beta}}'X'X\underline{\hat{\beta}}.\]
 Lo anterior se da ya que \(\underline{\hat{\beta}}'X'\underline{Y}\) es una matriz de \(1\times 1\), es decir, un escalar, y que su transpuesta \((\underline{\hat{\beta}}'X'\underline{Y})'=\underline{Y}'X\underline{\hat{\beta}}\) es el mismo escalar.
 
@@ -10240,19 +10253,17 @@ Esto se simplifica a:
 \[X'X\underline{\hat{\beta}}=X'\underline{Y}\]
 Ahora multiplicamos ambos lados por la inversa de \(X'X\), es decir, \((X'X)^{-1}\)
 
-\[\therefore \  \underline{\hat{\beta}}=\left(X'X\right)^{-1}X'\underline{Y}.\]
+\[\therefore \underline{\hat{\beta}}=\left(X'X\right)^{-1}X'\underline{Y}.\]
 Nótese que la inversa \(\left(X'X\right)^{-1}\) existe porque \(X\) es de rango completo en las columnas, como se mencionó en la definición. Por lo que el producto matricial \(X'X\) es de rango completo (\(k+1\)), es decir \(|X|\neq 0,\) por lo que se garantiza la existencia de la inversa.
 
 Realizando la segunda derivada, veremos si la función es cóncava o convexa para saber si es mínimo o máximo.
 
-\[
-\Delta \Delta \underline{\hat{\beta}}=\left\{
+\[\Delta \Delta \underline{\hat{\beta}}=\left\{
 \begin{array}{ll}
 \Delta \Delta \underline{\hat{\beta}} \ \ \ \ -2X' \underline{Y} \ \ =0 \\
 \Delta \Delta \underline{\hat{\beta}} \ \ \ \ 2X'X \underline{\hat{\beta}}  \ \ \ = \left(2X'X\right)' =2X'X \\
 \end{array}
-\right.
-\]
+\right.\]
 
 Así \(\Delta \Delta \underline{\hat{\beta}}=2X'X\)
 
@@ -10260,11 +10271,11 @@ De esta manera \(\Delta \Delta \underline{\hat{\beta}}>0\) ya que \(X'X\) es def
 
 Una vez encontrada una estimación a los parámetros desconocidos de \(\underline{\beta}\), será conveniente desarrollar algunas variantes en la forma en la que se denota a los residuales, para ello se define a la matriz \(H\) como \(H=X(X'X)^{-1}X'.\) Cabe destacar que la matriz \(H\) es conocida como \textbf{``matriz sombrero''}, que junto con la matriz \((I-H)\) cumplen con ser matrices idempotentes, es decir, que al elevar las matrices a una potencia dada los valores contenidos en la matriz no se modifican; de igual forma ambas matrices cumplen con ser simétricas, denominadas así ya que al transponer las matrices los valores contenidos en ellas conservan su lugar.
 
-Debemos considerar el siguiente resultado, el cual será importante al desarrollar el siguiente \textbf{teorema 3.3} ya que demuestra que \((X'X)^{-1}\) es una matriz simétrica.
+Debemos considerar el siguiente resultado, el cual será importante al desarrollar el siguiente teorema 3.3 ya que demuestra que \((X'X)^{-1}\) es una matriz simétrica.
 
 \[[(X'X)^{-1}]'=[(X'X)']^{-1}\]
 \[=(X'(X')')^{-1}\]
-\[\therefore \  [(X'X)^{-1}]'= (X'X)^{-1}. \ \blacksquare\]
+\[\therefore [(X'X)^{-1}]'= (X'X)^{-1}. \blacksquare\]
 Es decir, la inversa de \(X'X\) es simétrica, resultado importante en el siguiente teorema:
 
 \textbf{Teorema 3.3} Sea \(H=X(X'X)^{-1}X'\) e \((I-H)\) entonces:
@@ -10310,7 +10321,7 @@ Para la simetría de \(I-H\) se transpone la matriz:
 
 \[(I-H)'=I'-H'.\]
 
-Por simetría de \(H\) y de \(I\)
+Por simetría de H y de I
 
 \[\therefore (I-H)^2=I-H\]
 
@@ -10373,10 +10384,10 @@ Por el \textbf{corolario 4}, se puede expresar a los residuales como \(\underlin
 
 \[=\underline{Y}'(I-H)'\underline{Y}\]
 
-\[\therefore SC_{error}=\underline{Y}'(I-H)'\underline{Y}. \blacksquare\]
+\[\therefore SC_{error}=\underline{Y}'(I-H)'\underline{Y}.\]
 
 Con los resultados, se procede a examinar las propiedades de los estimadores obtenidos por el método de mínimos cuadrados.
-Éstas propiedades son agrupadas y enunciadas en el \textbf{Teorema de Gauss-Markov.}
+Éstas propiedades son agrupadas y enunciadas en el \textbf{Teorema de Gauss-Markov}
 
 \textbf{Teorema 3.4} (Teorema de Gauss-Markov).
 
@@ -10417,91 +10428,49 @@ Ya que la \(Var(\underline{Y})=\sigma^2I_{n}\)
 
 \[=(X'X)^{-1}X'[(X'X)^{-1}X']'\sigma^2\]
 \[=\sigma^2(X'X)^{-1}X'X(X'X)^{-1}\]
-\[
-=\sigma^2I(X'X)^{-1}
-\]
-\[
-\therefore Var(\underline{\hat{\beta}})=\sigma^2(X'X)^{-1}
-\]
+\[=\sigma^2I(X'X)^{-1}\]
+\[\therefore Var(\underline{\hat{\beta}})=\sigma^2(X'X)^{-1}\]
 Para comprobar que el estimador \(\underline{\hat{\beta}}\) es el estimador insesgado de mínima varianza, se propone a un estimador \(\underline{\tilde{\beta}}\) el cual cumple con ser lineal e insesgado. Para ello sea \(\underline{\tilde{\beta}}\) un estimador linealmente insesgado para \(\underline{\beta}\). Es decir, existe una matriz de \(A_{(k+1)\times n}\) tal que \(\underline{\tilde{\beta}}=A \underline{Y}.\)
 De esta forma:
 
-\[
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]
-\]
-\[
-=A \mathbf{E}[\underline{Y}]
-\]
+\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=\mathbf{E}\left[ A\underline{Y} \right]\]
+\[=A \mathbf{E}[\underline{Y}]\]
 Ya que \(\mathbf{E}[\underline{Y}]=X\underline{\beta}\)
 
-\[
-=AX\underline{\beta}
-\]
-\[
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}
-\]
+\[=AX\underline{\beta}\]
+\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=AX\underline{\beta}\]
 
 Para que sea un estimador insesgado, entonces \(AX\) tiene que cumplir: \(AX=I\), así:
 
-\[
-\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}
-\]
+\[\mathbf{E}\left[\underline{\tilde{\beta}}\right]=I\underline{\beta}\]
 
-\[
-\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.\blacksquare
-\]
+\[\therefore \mathbf{E}\left[\underline{\tilde{\beta}}\right]=\underline{\beta}.\]
 
 Para conocer la varianza de \(\underline{\tilde{\beta}}\) se tiene:
 
-\[
-Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A'
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA'.
-\]
+\[Var\left(\underline{\tilde{\beta}}\right)= Var(A\underline{Y})\]
+\[Var\left(\underline{\tilde{\beta}}\right)=A Var(\underline{Y})A'\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2 AA'.\]
 Sea \(C\) una matriz de dimensión \((k+1) \times n\) tal que \(C=A-(X'X)^{-1}X'\). Observe que \(CX=0\) ya que \(CX=AX-(X'X)^{-1}X'X=I-I=0.\)
 De esta forma se tiene la siguiente igualdad:
 
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)((X'X)^{-1}X'+C)'
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)\left[ ((X'X)^{-1}X')'+C'\right]
-\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)((X'X)^{-1}X'+C)'\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)\left[ ((X'X)^{-1}X')'+C'\right]\]
 
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)[X(X'X)^{-1}+C']
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}X'X(X'X)^{-1}+(X'X)^{-1}X'C'+CX(X'X)^{-1}+CC']
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X'X)^{-1}X'X(X'X)^{-1}+[CX(X'X)^{-1}]'+CX(X'X)^{-1}+CC'\right]
-\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2((X'X)^{-1}X'+C)[X(X'X)^{-1}+C']\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}X'X(X'X)^{-1}+(X'X)^{-1}X'C'+CX(X'X)^{-1}+CC']\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[(X'X)^{-1}X'X(X'X)^{-1}+[CX(X'X)^{-1}]'+CX(X'X)^{-1}+CC'\right]\]
 Debido a que \(CX=0\)
 
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X'X)^{-1}+0+0+CC'\right]
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}+CC']
-\]
-\[
-Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X'X)^{-1}+\sigma^2CC'.
-\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2\left[ I(X'X)^{-1}+0+0+CC'\right]\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2[(X'X)^{-1}+CC']\]
+\[Var\left(\underline{\tilde{\beta}}\right)=\sigma^2(X'X)^{-1}+\sigma^2CC'.\]
 
-\[
-\therefore \  Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC'. \blacksquare
-\]
+\[\therefore Var\left(\underline{\tilde{\beta}}\right)=Var\left(\underline{\hat{\beta}}\right)+\sigma^2CC'\]
 
 Además se observa que \(CC'\), es una matriz semidefinida positiva ya que los valores propios de \(CC'\) son reales y no negativos, además debido al supuesto de que \(X\) es de rango completo para las columnas se cumple que \(rango(CC')=rango(X)=k+1,\) esto es importante, ya que si no se cumple se tendría una solución no trivial, por lo que \(0\) podría ser una solución para un egeinvalor por lo que no sería semidefinido positivo. Como \(CC'\geq0\), se observa que:
 
-\[
-Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).
-\]
+\[Var\left(\underline{\tilde{\beta}}\right) \geq Var\left(\underline{\hat{\beta}}\right).\]
 Por lo que la varianza del estimador propuesto es mayor al obtenido por mínimos cuadrados. Por lo tanto, el estimador de \(MC\) de \(\underline{\beta}\) es el mejor estimador linealmente insesgado y de mínima varianza.\(\blacksquare\)
 
 Las anteriores propiedades de los estimadores son importantes ya que garantizan que los valores estimados \(\underline{\hat{Y}}\), asignan valores que efectivamente recaen en el hiperplano propuesto en el modelo de regresión lineal múltiple.
@@ -10510,120 +10479,72 @@ Las anteriores propiedades de los estimadores son importantes ya que garantizan 
 
 \textbf{a)} \(\mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}.\)
 
-\textbf{b)} \(\textbf{Var}(\underline{\hat{Y}})=\sigma^2H.\)
+\textbf{b)} \(Var(\underline{\hat{Y}})=\sigma^2H.\)
 
 \textbf{Demostración:}
 
 \textbf{a)} Para demostrar la esperanza de los valores estimados, se observa que:
 
-\[
-\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]
-\]
-\[
-\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]
-\]
+\[\mathbf{E}[\underline{\hat{Y}}]=\mathbf{E}[X\underline{\hat{\beta}}]\]
+\[\mathbf{E}[\underline{\hat{Y}}]=X\mathbf{E}[\underline{\hat{\beta}}]\]
 
-\[
-\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare
-\]
+\[\therefore \mathbf{E}[\underline{\hat{Y}}]=X\underline{\beta}. \blacksquare\]
 
 \textbf{b)} Para la varianza se tiene:
 
-\[
-Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})
-\]
-\[
-Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X'
-\]
-\[
-Var(\underline{\hat{Y}})=X\sigma^2(X'X)^{-1}X'
-\]
+\[Var(\underline{\hat{Y}})=Var(X\underline{\hat{\beta}})\]
+\[Var(\underline{\hat{Y}})=XVar(\underline{\hat{\beta}})X'\]
+\[Var(\underline{\hat{Y}})=X\sigma^2(X'X)^{-1}X'\]
 
-\[
-Var(\underline{\hat{Y}})=\sigma^2X(X'X)^{-1}X'
-\]
+\[Var(\underline{\hat{Y}})=\sigma^2X(X'X)^{-1}X'\]
 
-\[
-\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare
-\]
+\[\therefore Var(\underline{\hat{Y}})=\sigma^2H.\blacksquare\]
 
 \textbf{Teorema 3.6} Sea \(\underline{e}\) los residuales del modelo, de forma \(\underline{e}=\underline{Y}-\underline{\hat{Y}}\), entonces cumplen con:
 
 \textbf{a)} \(\mathbf{E}[\underline{e}]=0.\)
 
-\textbf{b)} \(\textbf{Var}(\underline{e})=\sigma^2(I-H).\)
+\textbf{b)} \(Var(\underline{e})=\sigma^2(I-H).\)
 
 \textbf{Demostración:}
 
 \(**a)**\) Para demostar la esperanza de los residuales, se observa que:
 
-\[
-\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]
-\]
+\[\mathbf{E}[\underline{e}]=\mathbf{E}[\underline{Y}-\underline{\hat{Y}}]\]
 Por el \textbf{corolario 4}
 
-\[
-\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]
-\]
-\[
-\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]
-\]
+\[\mathbf{E}[\underline{e}]=\mathbf{E}[(I-H)\underline{Y}]\]
+\[\mathbf{E}[\underline{e}]=(I-H)\mathbf{E}[\underline{Y}]\]
 
 Por el \textbf{teorema 3.4}
 
-\[
-\mathbf{E}[\underline{e}]=(I-H)X\beta
-\]
+\[\mathbf{E}[\underline{e}]=(I-H)X\beta\]
 
-\[
-\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}
-\]
-\[
-\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X'X)^{-1}X'X\underline{\beta}
-\]
-\[
-\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X'X(X'X)^{-1}X'\right]'\underline{\beta}
-\]
+\[\mathbf{E}[\underline{e}]=X\underline{\beta}-HX\underline{\beta}\]
+\[\mathbf{E}[\underline{e}]=X\underline{\beta}-X(X'X)^{-1}X'X\underline{\beta}\]
+\[\mathbf{E}[\underline{e}]=X\underline{\beta}-\left[X'X(X'X)^{-1}X'\right]'\underline{\beta}\]
 
-\[
-\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX']'\underline{\beta}
-\]
+\[\mathbf{E}[\underline{e}]=X\underline{\beta}-[IX']'\underline{\beta}\]
 
-\[
-\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}
-\]
-\[
-\therefore \mathbf{E}[\underline{e}]=0. \blacksquare
-\]
+\[\mathbf{E}[\underline{e}]=X\underline{\beta}-X\underline{\beta}\]
+\[\therefore \mathbf{E}[\underline{e}]=0. \blacksquare\]
 
-\textbf{b)} Para la varianza se tiene:
+\(**b)**\) Para la varianza se tiene:
 
-\[
-Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)
-\]
+\[Var(\underline{e})=Var\left( \underline{Y}-\underline{\hat{Y}}\right)\]
 
 Por el \textbf{corolario 4}
 
-\[
-Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)
-\]
-\[
-Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)'
-\]
+\[Var(\underline{e})=Var\left( (I-H)\underline{\hat{Y}}\right)\]
+\[Var(\underline{e})=(I-H)Var(\underline{\hat{Y}})(I-H)'\]
 Por el \textbf{teorema 3.3}
 
-\[
-Var(\underline{e})=(I-H)\sigma^2(I-H)
-\]
+\[Var(\underline{e})=(I-H)\sigma^2(I-H)\]
 Por idempotencia de \(I-H\)
 
-\[
-Var(\underline{e})=\sigma^2(I-H)(I-H)
-\]
+\[Var(\underline{e})=\sigma^2(I-H)(I-H)\]
 
-\[
-\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare
-\]
+\[\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare\]
 
 \hypertarget{estimaciuxf3n-por-muxe1xima-verosimilitud}{%
 \section{Estimación por máxima verosimilitud}\label{estimaciuxf3n-por-muxe1xima-verosimilitud}}
@@ -10657,33 +10578,25 @@ Sea \(\underline{\hat{\beta}}\) y \(\hat{\sigma}^2\), los estimadores de \(\unde
 
 Por hipótesis \(\underline{Y}\sim \mathbf{N}_{n}(X\underline{\beta},\sigma^2 I_{n})\), escribiendo la función de verosimilitud se tiene que:
 
-\[
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)'(\underline{Y}-\mu) \right]
-\]
+\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=\prod_{i=1}^{n}(2\pi\sigma^2)^{-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-\mu)'(\underline{Y}-\mu) \right]\]
 
-\[
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right]
-\]
-\[
-L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right].
-\]
+\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{\sum_{i=1}^{n}-1/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right]\]
+\[L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=(2\pi\sigma^2)^{-n/2} exp \left[ - \frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}) \right].\]
 
 Aplicando logaritmo natural a la función de verosimilitud:
 
-\[
-ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})
-\]
-\[ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}[ln(2\pi)+ln(\sigma^2)]-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})\]
-\[ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi)-\frac{n}{2}ln(\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})\]
+\[lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})\]
+\[lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}[ln(2\pi)+ln(\sigma^2)]-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})\]
+\[lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)= -\frac{n}{2}ln(2\pi)-\frac{n}{2}ln(\sigma^2)-\frac{1}{2\sigma^2}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})\]
 
 \textbf{a)} Derivando respecto a \(\underline{\beta}\) para obtener su estimador.
 
-\[\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{2\sigma^2}2(X'X\underline{\beta}-X'\underline{Y}).\]
-\[\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y}).\]
+\[\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{2\sigma^2}2(X'X\underline{\beta}-X'\underline{Y}).\]
+\[\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y}).\]
 
 Igualando la derivada a 0, para encontrar el punto silla
 
-\[\frac{\partial}{\partial \underline{\beta}} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=0\]
+\[\frac{\partial}{\partial \underline{\beta}}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=0\]
 
 \[-\frac{1}{\sigma^2}(X'X\underline{\beta}-X'\underline{Y})=0\]
 
@@ -10697,11 +10610,11 @@ Ya que \(X\) es de rango completo por columnas entonces existe \((X'X)^{-1}.\)
 
 \textbf{b)} Derivando respecto a \(\sigma^2\) para obtener su estimador:
 
-\[\frac{\partial}{\partial\sigma^2} \ ln \ L(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}).\]
+\[\frac{\partial}{\partial\sigma^2}lnL(\underline{\beta},\sigma^2 \mid \underline{Y},X)=-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta}).\]
 
 Igualando la derivada parcial a 0 para hallar el punto crítico de un posible máximo.
 
-\[\frac{\partial}{\partial\sigma^2} \ ln \ L(\underline{\beta}, \sigma^2 \mid \underline{Y},X)=0\]
+\[\frac{\partial}{\partial\sigma^2}lnL(\underline{\beta}, \sigma^2 \mid \underline{Y},X)=0\]
 \[-\frac{n}{2\sigma^2}+\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=0\]
 \[\frac{1}{2\sigma^4}(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=\frac{n}{2\sigma^2}\]
 \[(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})=n\sigma^2\]
@@ -10713,7 +10626,8 @@ Por lo tanto los estimadores de máxima verosimilitud son:
 \begin{array}{c}
 \underline{\hat{\beta}}=(X'X)^{-1}X'\underline{Y} \\
 y \\
-\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)'\left(\underline{Y}-X \underline{\hat{\beta}}\right) \blacksquare
+\hat{\sigma}^2=\frac{1}{n}\left( \underline{Y}-X\underline{\hat{\beta}}\right)'\left(\underline{Y}-X \underline{\hat{\beta}}\right) 
+\blacksquare
 \end{array}
 \]
 
@@ -10729,8 +10643,8 @@ Por el \textbf{corolario 4}
 Por el \textbf{corolario 5}
 
 \[\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{e}' \ \underline{e}\]
-\[\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{Y}'(I-H)\underline{Y}. \blacksquare \]
-Cabe destacar, que el estimador de \(\underline{\beta}\) por máxima verosimilitud hereda todas las propiedades que cumple el estimador de mínimos cuadrados del \textbf{teorema 3.4}, es decir, \(\underline{\hat{\beta}}\) es insesgado y de mínima varianza, sin embargo, el método de máxima verosimilitud proporciona una estimación para \(\sigma^2\) el cual cumple con tener sesgo \((\mathbf{E}[\sigma^2]\neq 0).\)
+\[\hat{\sigma}^2_{MV}=\frac{1}{n}\underline{Y}'(I-H)\underline{Y}.\]
+Cabe destacar, que el estimador de \(\underline{\beta}\) por máxima verosimilitud hereda todas las propiedades que cumple el estimador de mínimos cuadrados del teorema 3.4, es decir, \(\underline{\hat{\beta}}\) es insesgado y de mínima varianza, sin embargo, el método de máxima verosimilitud proporciona una estimación para \(\sigma^2\) el cual cumple con tener sesgo \((\mathbf{E}[\sigma^2]\neq 0).\)
 
 \[\mathbf{E}[\hat{\sigma}^2]=\mathbf{E}\left[\frac{1}{n}\sum_{i=1}^{n}(\underline{Y_{i}}-\underline{\hat{Y}})'(\underline{Y_{i}}-\underline{\hat{Y}}) \right]\]
 
@@ -10740,7 +10654,7 @@ Cabe destacar, que el estimador de \(\underline{\beta}\) por máxima verosimilit
 
 \[=\sigma^2-\frac{n^2-nk-n}{n}\sigma^2\]
 
-\[\therefore \mathbf{E}[\hat{\sigma}^2]=\frac{n-k-1}{n}\sigma^2. \]
+\[\therefore \mathbf{E}[\hat{\sigma}^2]=\frac{n-k-1}{n}\sigma^2.\]
 
 Por lo tanto el estimador \(\hat{\sigma}^2\) no es insesgado.\(\blacksquare\)
 
@@ -11342,7 +11256,7 @@ cigarros.PRICE      1.00000000
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-131-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-129-1} \end{center}
 
 A simple vista ``no estamos apreciando toda la información'', haremos gráficos dos a dos:
 
@@ -11354,7 +11268,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-132-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-130-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11364,7 +11278,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-133-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-131-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11374,7 +11288,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-134-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-132-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11384,7 +11298,7 @@ A simple vista ``no estamos apreciando toda la información'', haremos gráficos
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-135-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-133-1} \end{center}
 
 Observemos que tanto la variable de promedio de más de 25 y las cajetillas vendidas muestran una relación, al igual que la variable precio.
 
@@ -11429,6 +11343,7 @@ Empezaremos con el modelo inicial, le llamamos así ya que es el modelo más gra
 \end{Shaded}
 
 \begin{verbatim}
+
 Call:
 lm(formula = SCIG ~ AGE + ED + PERFEM + PRICE, data = cigarros)
 
@@ -11499,6 +11414,7 @@ Ahora observemos el mejor modelo, de acuerdo a lo arrojado en \textbf{stepAIC()}
 \end{Shaded}
 
 \begin{verbatim}
+
 Call:
 lm(formula = SCIG ~ AGE + PRICE, data = cigarros)
 
@@ -11549,6 +11465,7 @@ De los resultados obtenidos podemos refinar el \(mejor \ modelo\) obtenido:
 \end{Shaded}
 
 \begin{verbatim}
+
 Call:
 lm(formula = SCIG ~ 0 + AGE + PRICE, data = cigarros)
 
@@ -11584,7 +11501,7 @@ Siguiendo el orden de nuestros capítulos, para validar gráficamente la normali
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-142-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-140-1} \end{center}
 
 Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.
 
@@ -11597,6 +11514,7 @@ Podemos aplicar la prueba de bondad de ajuste \textbf{Lilliefors para normalidad
 \end{Shaded}
 
 \begin{verbatim}
+
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  rstandard(modelo_refinado)
@@ -11609,9 +11527,9 @@ Como el valor del \(p-value\) es menor al nivel de significancia \(\alpha=0.05\)
 
 Como se menciona en el capítulo, graficaremos los errores estandarizados contra los valores observados de la variable explicativa.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-144-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-142-1} \end{center}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-145-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-143-1} \end{center}
 
 Para ambas variables, salvo por la posible presencia de algunos valores atípicos que salen de la franja horizontal \((-2,2)\), el resto de las observaciones parecen distribuirse como ruido blanco.
 
@@ -11619,7 +11537,7 @@ Para ambas variables, salvo por la posible presencia de algunos valores atípico
 
 Se dice que una muestra es homocedástica cuando la varianza es constante a lo largo de todas las observaciones, es decir, no varia conforme se presentan nuevas observaciones.
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-146-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-144-1} \end{center}
 
 \begin{itemize}
 \tightlist
@@ -11640,6 +11558,7 @@ Adicionalmente aplicaremos las pruebas vistas en el capítulo para tener certeza
 \end{Shaded}
 
 \begin{verbatim}
+
 White's Test for Heteroskedasticity:
 ==================================== 
 

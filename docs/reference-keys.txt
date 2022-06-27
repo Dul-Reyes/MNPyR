@@ -90,7 +90,6 @@ estadístico-de-prueba-9
 hipótesis-9
 ejemplo-10
 ejemplo-en-r-studio-9
-ejercicios-7
 prueba-de-independencia
 datos-11
 supuestos-10
@@ -98,7 +97,7 @@ estadístico-de-prueba-10
 hipótesis-10
 ejercicio
 ejemplo-en-r-studio-10
-ejercicios-8
+ejercicios-7
 tablas-de-contingecia-de-r-times-c
 datos-12
 supuestos-11
@@ -106,7 +105,7 @@ estadístico-de-prueba-11
 hipótesis-11
 ejercicio-1
 ejemplo-en-r-studio-11
-ejercicios-9
+ejercicios-8
 prueba-de-la-mediana
 datos-13
 supuestos-12
@@ -115,14 +114,14 @@ hipótesis-12
 comparación-múltiple-1
 ejercicio-2
 ejemplo-en-r-studio-12
-ejercicios-10
+ejercicios-9
 prueba-de-la-ji-cuadrada
 datos-14
 hipótesis-13
 estadístico-de-prueba-13
 ejemplo-11
 ejemplo-en-r-studio-13
-ejercicios-11
+ejercicios-10
 prueba-kolmogorov
 datos-15
 supuestos-13
@@ -131,12 +130,11 @@ hipótesis-14
 ejemplo-12
 ejemplo-en-r-studio-14
 otro-ejemplo-en-r
-ejercicios-12
+ejercicios-11
 prueba-kolmogorov-smirnov
 hipótesis-15
 caso-a-prueba-de-2-colas-2
 ejemplo-13
-ejercicios-13
 prueba-lilliefors-para-normalidad
 datos-16
 supuestos-14
@@ -144,7 +142,7 @@ hipótesis-16
 estadístico-de-prueba-15
 ejemplo-14
 ejemplo-en-r-studio-15
-ejercicios-14
+ejercicios-12
 pueba-de-lilliefors-exponencial
 datos-17
 supuestos-15
@@ -152,7 +150,7 @@ hipótesis-17
 estadistico-de-prueba
 ejemplo-15
 ejemplo-en-r-studio-16
-ejercicios-15
+ejercicios-13
 prueba-anderson-darling
 datos-18
 supuestos-16

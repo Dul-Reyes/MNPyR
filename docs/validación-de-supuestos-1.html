@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 20 Pueba de Lilliefors Exponencial | Modelos no paramétricos y de Regresión</title>
+  <title>Capítulo 31 Validación de supuestos | Modelos no paramétricos y de Regresión</title>
   <meta name="description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
   <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 20 Pueba de Lilliefors Exponencial | Modelos no paramétricos y de Regresión" />
+  <meta property="og:title" content="Capítulo 31 Validación de supuestos | Modelos no paramétricos y de Regresión" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/Dul-Reyes/MNPyR" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="Dul-Reyes/MNPyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 20 Pueba de Lilliefors Exponencial | Modelos no paramétricos y de Regresión" />
+  <meta name="twitter:title" content="Capítulo 31 Validación de supuestos | Modelos no paramétricos y de Regresión" />
   
   <meta name="twitter:description" content="Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="prueba-lilliefors-para-normalidad.html"/>
-<link rel="next" href="prueba-anderson-darling.html"/>
+<link rel="prev" href="pruebas-de-hipótesis-1.html"/>
+<link rel="next" href="apéndice.html"/>
 <script src="libs/header-attrs-2.7.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -558,636 +558,300 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pueba-de-lilliefors-exponencial" class="section level1" number="20">
-<h1><span class="header-section-number">Capítulo 20</span> Pueba de Lilliefors Exponencial</h1>
-<p>Otro problema importante de bondad de ajuste es la prueba para la distribución exponencial con media no especificada. Este problema es importante porque el supuesto de una distribución exponencial con media desconocida tiene muchas aplicaciones, particularmente donde las variables aleatorias bajo estudio representan el tiempo de espera o el tiempo en que ocurre cierto evento.
-Lilliefors en 1969 desarrolló una prueba análoga a la prueba de Kolmogorov-Smirnov y dió una tabla de valores críticos basados en simulaciones Monte Carlo.</p>
-<div id="datos-17" class="section level2" number="20.1">
-<h2><span class="header-section-number">20.1</span> Datos</h2>
-<p>Los datos consisten en una muestra aleatoria <span class="math inline">\(X_{1},X_{2},\ldots,X_{n}\)</span> de tamaño <span class="math inline">\(n\)</span> que sigue una distribución exponencial con media <span class="math inline">\(\hat{\lambda} = \frac{1}{\overline{X}}\)</span>,el cual corresponde al estimador puntual de la media.</p>
-<p>Después calcularemos los valores de muestra <span class="math inline">\(Z_{i}\)</span> definidos por:</p>
-<p><span class="math display">\[Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,n\]</span></p>
-<p>El estadístico de prueba se calcula a partir de <span class="math inline">\(Z_{i}s\)</span> en lugar de a partir de la muestra aleatoria. original.</p>
+<div id="validación-de-supuestos-1" class="section level1" number="31">
+<h1><span class="header-section-number">Capítulo 31</span> Validación de supuestos</h1>
+<p>Como vimos anteriormente, debemos validar los supuestos del modelo de regresión lineal múltiple:</p>
+<ul>
+<li><p>Supuesto de normalidad</p></li>
+<li><p>Supuesto de linealidad</p></li>
+<li><p>Supuesto de homocedasticidad</p></li>
+<li><p>Valores outlier e influyentes</p></li>
+<li><p>Supuesto de multicolinealidad</p></li>
+</ul>
+<p>Los primeros enlistados ya se vieron en la sección anterior, lo que vamos a introducir ahora es el supuesto de multicolinealidad.</p>
+<div id="supuesto-de-multicolinealidad" class="section level2" number="31.1">
+<h2><span class="header-section-number">31.1</span> Supuesto de multicolinealidad</h2>
+<p>Se dice que el ajuste del modelo lineal sobre una muestra tiene problemas de multicolinealidad cuando hay una correlación alta entre dos o más variables explicativas, consecuencia de que una variable regresora es linealmente dependiente a alguna o algunas de las demás variables de la matriz diseño <span class="math inline">\(X\)</span>.</p>
+<p>Un modelo de regresión lineal con ésta característica provoca un error en la estimación de los parámetros <span class="math inline">\(\underline{\beta}\)</span>, ya que al tener variables linealmente dependientes el determinante <span class="math inline">\(\mid X&#39;X \mid \ \rightarrow 0\)</span>, lo cual provoca que la inversa <span class="math inline">\((X&#39;X)^{-1} \rightarrow \infty\)</span>.
+Esto provoca el cálculo erróneo de los parámetros, ya que el producto matricial de <span class="math inline">\(\underline{\hat{\beta}}=(X&#39;X)^{-1}X&#39;\underline{Y}\)</span> no puede ser aproximado de la mejor manera.</p>
 </div>
-<div id="supuestos-15" class="section level2" number="20.2">
-<h2><span class="header-section-number">20.2</span> Supuestos</h2>
-<ol style="list-style-type: decimal">
-<li>La muestra es una muestra aleatoria.</li>
-</ol>
+<div id="detección-de-multicolinealidad" class="section level2" number="31.2">
+<h2><span class="header-section-number">31.2</span> Detección de multicolinealidad</h2>
+<p>Debido al problema de estimación de los parámetros <span class="math inline">\(\underline{\beta}\)</span> que ocasiona un modelo con multicolinealidad, se realizan validaciones con la finalidad de tener evidencia suficiente para asumir si el modelo posee o no el problema de dependencia lineal de las variables explicativas.</p>
+<p>El método más adecuado para efectuar ésta validación, es encontrar en la matriz de diseño <span class="math inline">\(X\)</span> variables regresoras linealmente dependendientes a través de operaciones matriciales elementales, sin embargo, este procedimiento es tardado conforme el tamaño de la muestra es mayor, además de que computacionalmente el procedimiento no es óptimo, es por ello que se desarrollan diferentes métodos para conocer si el modelo presenta multicolinealidad.</p>
+<p><strong>A través de correlaciones</strong></p>
+<p>El primer método para detectar la dependencia lineal es analizar el coeficiente de correlación de las variables, ya que si el modelo posee variables altamente correlacionadas entre sí, es probable que el ajuste lineal presente problemas de multicolinealidad debido a la relación estrecha de éstas variables, una desventaja de éste método es que analiza a través de la matriz de correlaciones de una variable comparada con otra, sin embargo, puede existir una baja correlación entre variables analizándolas una a una pero al analizarlas de dos en dos, o de tres en tres, etcétera, puede encontrarse una alta correlación.</p>
+<p>Para analizar de mejor forma la información, se obtiene el determinante de la matriz de correlaciones, si este es muy cercano a cero podría proporcionar indicios de problemas de multicolinealidad, debido a que si hay dos variables que son linealmente dependientes el determinante de la matriz de correlaciones tenderá a cero. Sin embargo, depende del prejuicio del investigador a partir de qué cifra debe ser considerada una cantidad mínima.</p>
+<p><strong>A través del índice <span class="math inline">\(\kappa\)</span></strong></p>
+<p>En 1960, Jacob Cohen, presentó el método del coeficiente kappa. El coeficiente kappa o simplemente <span class="math inline">\(\kappa\)</span> se basa en el análisis de los eigenvalores <span class="math inline">\(\lambda_{1},\lambda_{2},\ldots,\lambda_{k}\)</span> de la matriz <span class="math inline">\((X&#39;X),\)</span> este procedimiento es llamado <span class="math inline">\(análisis \ del \ egeinsistema.\)</span></p>
+<p>Debido a que <span class="math inline">\((X&#39;X)\)</span> es una matriz simétrica, el producto de la matriz diseño es igual a sus valores propios o eigenvalores. De esta manera el método propone observar la proporción del eigenvalor más grande respecto al más pequeño, si la proporción es pequeña, no hay problemas de multicolinealidad pues todos los valores propios son similares, sin embargo, proporciones altas indican gran variabilidad en los valores propios por lo que se tiene indicios de multicolinealidad.
+De esta manera el coeficiente <span class="math inline">\(\kappa\)</span> es calculado como:</p>
+<p><span class="math display">\[\kappa=\frac{\lambda_{max}}{\lambda_{min}}.\]</span></p>
 </div>
-<div id="hipótesis-17" class="section level2" number="20.3">
-<h2><span class="header-section-number">20.3</span> Hipótesis</h2>
-<p><span class="math display">\[\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución exponencial:}\]</span></p>
-<p><span class="math display">\[
-\textbf{F(x)=} \left\{
-\begin{array}{lcc}
-1-e^{-\frac{x}{\lambda}} &amp; si &amp; x &gt; 0 \\
-x &amp; si &amp;  x &lt; 0 \\
-\end{array}
-\right.
-\]</span></p>
-<p>Donde <span class="math inline">\(\lambda\)</span> es un parámetro desconocido.</p>
-<p><span class="math display">\[vs\]</span></p>
-<p><span class="math display">\[\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}\]</span></p>
-</div>
-<div id="estadistico-de-prueba" class="section level2" number="20.4">
-<h2><span class="header-section-number">20.4</span> Estadistico de Prueba</h2>
-<p>El estadístico de prueba está dada por la máxima distancia vertical:</p>
-<p><span class="math display">\[T_{2}=\underset{x}{sup} \ | \ F^*(x)-S(x) \ |\]</span></p>
-<div id="regla-de-decisión-33" class="section level4 unnumbered">
-<h4>Regla de Decisión</h4>
-<p>Rechazo <span class="math inline">\(H_0\)</span> a un nivel de significancia <span class="math inline">\(\alpha\)</span> si <span class="math inline">\(T_{2}&gt; W_{1-\alpha}\)</span> donde <span class="math inline">\(W_{1-\alpha}\)</span> es el cuantil obtenido en las tablas correspondientes a nuestra prueba.</p>
-</div>
-</div>
-<div id="ejemplo-15" class="section level2" number="20.5">
-<h2><span class="header-section-number">20.5</span> Ejemplo</h2>
-<p>Dada la siguiente muestra</p>
-<p><span class="math display">\[0.4976,\ 1.2514,\ 0.6619,\ 0.561,\ 1.0026,\ 0.3529,\ 0.8595,\ 1.6254,\]</span>
-<span class="math display">\[1.1514,\ 1.5181,\ 0.8642,\ 0.5206,\ 0.4229,\ 0.9825,\ 1.0183.\]</span></p>
-<p>Se desea probar si la muestra sigue una distribución exponencial con parámetro <span class="math inline">\(\lambda\)</span> desconocido.</p>
-<p>Realizar la prueba con un nivel de significancia del <span class="math inline">\(95\%\)</span>.</p>
-<p><strong>Paso 1</strong> Prueba a utilizar <strong>Prueba de Bondad de Ajuste Lilliefors Exponencial</strong></p>
-<p><strong>Paso 2</strong> Planteamiento de Hipótesis</p>
-<p><span class="math display">\[\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución exponencial}\]</span></p>
-<p><span class="math display">\[\mbox{con} \ \  \lambda \ \  \mbox{parámetro desconocido.}\]</span></p>
-<p><span class="math display">\[vs\]</span></p>
-<p><span class="math display">\[\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}\]</span></p>
-<p><strong>Paso 3</strong> Estadístico de Prueba</p>
-<p><span class="math display">\[T_{2}=\underset{z}{sup} \ | \ F^*(z)-S(z) \ |\]</span></p>
-<p><strong>Paso 4</strong> Procedimiento completo para el cálculo del Estadístico de Prueba:</p>
-<ol style="list-style-type: decimal">
-<li><p>Se procede a ordenar nuestras observaciones de menor a mayor.</p></li>
-<li><p>Se obtiene el estimador puntual de la distribución exponencial con los datos de la muestra, por lo que el parámetro <span class="math inline">\(\lambda\)</span> es calculado como:</p></li>
-</ol>
-<p><span class="math display">\[\hat{\lambda}=\frac{1}{\overline{X}}=\frac{1}{0.88602}; \ \ \ \ \ \  \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{15}\sum_{i=1}^{15}X_{i}=0.88602\]</span>
-3) Después calcularemos los valores de muestra <span class="math inline">\(Z_{i}\)</span> definidos por:</p>
-<p><span class="math display">\[Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15\]</span></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Se calcula la función empírica, como no tenemos ningún valor repetido:</li>
-</ol>
-<p><span class="math display">\[S_{n}= \frac{i}{n}=\frac{1}{15},\frac{2}{15}, \ldots, 1. \]</span></p>
-<ol start="5" style="list-style-type: decimal">
-<li>Se calcula la función empírica menos un valor, es decir,</li>
-</ol>
-<p><span class="math display">\[S_{n}= \frac{i-1}{n}=\frac{0}{15},\frac{1}{15}, \ldots, \frac{14}{15}.\]</span></p>
-<ol start="6" style="list-style-type: decimal">
-<li>Se calcula <span class="math inline">\(D^+\)</span> que es el resultado de la resta de la distribución conocida menos la distribución empírica, es decir:</li>
-</ol>
-<p><span class="math display">\[D^+= max \ \{ \ S_{n}(Z_{i})-F^*(Z_{i}) \ \}\]</span></p>
-<ol start="7" style="list-style-type: decimal">
-<li>Se calcula <span class="math inline">\(D^-\)</span> que es el resultado de la resta de la distribución empírica menos uno menos la distribución conocida, es decir:</li>
-</ol>
-<p><span class="math display">\[D^-= max \  \{\ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}\]</span></p>
-<ol start="8" style="list-style-type: decimal">
-<li>Finalmente realizada la tabla, se calcula el máximo de las columnas <span class="math inline">\(D^+\)</span> y <span class="math inline">\(D^-\)</span> de ésta manera, se tiene la siguiente tabla:</li>
-</ol>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;">
-<span class="math inline">\(i\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(X\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(X_i\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(Z_i=\frac{X_i}{\bar{x}}\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(S_n(Z_i)\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(S_n(Z_{i-1})\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(F^*(Z_i)\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(D^+=S_n(Z_i)-F^*(Z_i)\)</span>
-</th>
-<th style="text-align:center;">
-<span class="math inline">\(D^-=S_n(Z_{i-1})-F^*(Z_i)\)</span>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-1
-</td>
-<td style="text-align:center;">
-0.4976
-</td>
-<td style="text-align:center;">
-0.3529
-</td>
-<td style="text-align:center;">
-0.3982
-</td>
-<td style="text-align:center;">
-0.0666667
-</td>
-<td style="text-align:center;">
-0.0000000
-</td>
-<td style="text-align:center;">
-0.3285
-</td>
-<td style="text-align:center;">
--0.2618
-</td>
-<td style="text-align:center;">
--0.3285
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-2
-</td>
-<td style="text-align:center;">
-1.2514
-</td>
-<td style="text-align:center;">
-0.4229
-</td>
-<td style="text-align:center;">
-0.4773
-</td>
-<td style="text-align:center;">
-0.1333333
-</td>
-<td style="text-align:center;">
-0.0666667
-</td>
-<td style="text-align:center;">
-0.3795
-</td>
-<td style="text-align:center;">
--0.2462
-</td>
-<td style="text-align:center;">
--0.3128
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-3
-</td>
-<td style="text-align:center;">
-0.6619
-</td>
-<td style="text-align:center;">
-0.4976
-</td>
-<td style="text-align:center;">
-0.5616
-</td>
-<td style="text-align:center;">
-0.2000000
-</td>
-<td style="text-align:center;">
-0.1333333
-</td>
-<td style="text-align:center;">
-0.4297
-</td>
-<td style="text-align:center;">
--0.2297
-</td>
-<td style="text-align:center;">
--0.2963
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4
-</td>
-<td style="text-align:center;">
-0.5610
-</td>
-<td style="text-align:center;">
-0.5206
-</td>
-<td style="text-align:center;">
-0.5875
-</td>
-<td style="text-align:center;">
-0.2666667
-</td>
-<td style="text-align:center;">
-0.2000000
-</td>
-<td style="text-align:center;">
-0.4443
-</td>
-<td style="text-align:center;">
--0.1776
-</td>
-<td style="text-align:center;">
--0.2443
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-5
-</td>
-<td style="text-align:center;">
-1.0026
-</td>
-<td style="text-align:center;">
-0.5610
-</td>
-<td style="text-align:center;">
-0.6331
-</td>
-<td style="text-align:center;">
-0.3333333
-</td>
-<td style="text-align:center;">
-0.2666667
-</td>
-<td style="text-align:center;">
-0.4690
-</td>
-<td style="text-align:center;">
--0.1357
-</td>
-<td style="text-align:center;">
--0.2024
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-6
-</td>
-<td style="text-align:center;">
-0.3529
-</td>
-<td style="text-align:center;">
-0.6619
-</td>
-<td style="text-align:center;">
-0.7470
-</td>
-<td style="text-align:center;">
-0.4000000
-</td>
-<td style="text-align:center;">
-0.3333333
-</td>
-<td style="text-align:center;">
-0.5262
-</td>
-<td style="text-align:center;">
--0.1262
-</td>
-<td style="text-align:center;">
--0.1929
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-7
-</td>
-<td style="text-align:center;">
-0.8595
-</td>
-<td style="text-align:center;">
-0.8595
-</td>
-<td style="text-align:center;">
-0.9700
-</td>
-<td style="text-align:center;">
-0.4666667
-</td>
-<td style="text-align:center;">
-0.4000000
-</td>
-<td style="text-align:center;">
-0.6209
-</td>
-<td style="text-align:center;">
--0.1542
-</td>
-<td style="text-align:center;">
--0.2209
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-8
-</td>
-<td style="text-align:center;">
-1.6254
-</td>
-<td style="text-align:center;">
-0.8642
-</td>
-<td style="text-align:center;">
-0.9753
-</td>
-<td style="text-align:center;">
-0.5333333
-</td>
-<td style="text-align:center;">
-0.4666667
-</td>
-<td style="text-align:center;">
-0.6229
-</td>
-<td style="text-align:center;">
--0.0896
-</td>
-<td style="text-align:center;">
--0.1562
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-9
-</td>
-<td style="text-align:center;">
-1.1514
-</td>
-<td style="text-align:center;">
-0.9825
-</td>
-<td style="text-align:center;">
-1.1088
-</td>
-<td style="text-align:center;">
-0.6000000
-</td>
-<td style="text-align:center;">
-0.5333333
-</td>
-<td style="text-align:center;">
-0.6700
-</td>
-<td style="text-align:center;">
--0.0700
-</td>
-<td style="text-align:center;">
--0.1367
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-10
-</td>
-<td style="text-align:center;">
-1.5181
-</td>
-<td style="text-align:center;">
-1.0026
-</td>
-<td style="text-align:center;">
-1.1315
-</td>
-<td style="text-align:center;">
-0.6666667
-</td>
-<td style="text-align:center;">
-0.6000000
-</td>
-<td style="text-align:center;">
-0.6774
-</td>
-<td style="text-align:center;">
--0.0108
-</td>
-<td style="text-align:center;">
--0.0774
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-11
-</td>
-<td style="text-align:center;">
-0.8642
-</td>
-<td style="text-align:center;">
-1.0183
-</td>
-<td style="text-align:center;">
-1.1492
-</td>
-<td style="text-align:center;">
-0.7333333
-</td>
-<td style="text-align:center;">
-0.6666667
-</td>
-<td style="text-align:center;">
-0.6831
-</td>
-<td style="text-align:center;">
-0.0501
-</td>
-<td style="text-align:center;">
--0.0164
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-12
-</td>
-<td style="text-align:center;">
-0.5206
-</td>
-<td style="text-align:center;">
-1.1514
-</td>
-<td style="text-align:center;">
-1.2995
-</td>
-<td style="text-align:center;">
-0.8000000
-</td>
-<td style="text-align:center;">
-0.7333333
-</td>
-<td style="text-align:center;">
-0.7273
-</td>
-<td style="text-align:center;">
-0.0726
-</td>
-<td style="text-align:center;">
-0.0059
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-13
-</td>
-<td style="text-align:center;">
-0.4229
-</td>
-<td style="text-align:center;">
-1.2514
-</td>
-<td style="text-align:center;">
-1.4123
-</td>
-<td style="text-align:center;">
-0.8666667
-</td>
-<td style="text-align:center;">
-0.8000000
-</td>
-<td style="text-align:center;">
-0.7564
-</td>
-<td style="text-align:center;">
-0.1102
-</td>
-<td style="text-align:center;">
-0.0435
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-14
-</td>
-<td style="text-align:center;">
-0.9825
-</td>
-<td style="text-align:center;">
-1.5181
-</td>
-<td style="text-align:center;">
-1.7133
-</td>
-<td style="text-align:center;">
-0.9333333
-</td>
-<td style="text-align:center;">
-0.8666667
-</td>
-<td style="text-align:center;">
-0.8197
-</td>
-<td style="text-align:center;">
-0.1135
-</td>
-<td style="text-align:center;">
-0.0469
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-15
-</td>
-<td style="text-align:center;">
-1.0183
-</td>
-<td style="text-align:center;">
-1.6254
-</td>
-<td style="text-align:center;">
-1.8344
-</td>
-<td style="text-align:center;">
-1.0000000
-</td>
-<td style="text-align:center;">
-0.9333333
-</td>
-<td style="text-align:center;">
-0.8403
-</td>
-<td style="text-align:center;">
-0.1596
-</td>
-<td style="text-align:center;">
-0.0930
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ol start="9" style="list-style-type: decimal">
-<li>Entonces</li>
-</ol>
-<p><span class="math display">\[ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930 \]</span>
-Por lo tanto:</p>
-<p><span class="math display">\[T_{2}=\underset{z}{sup}\ | \ S_{n}(z)-F^*(z) \ |=max \ \{\ D^+,D^- \ \}=max \ \{ \ 0.1596,0.0930 \ \}=0.1596 \]</span></p>
-<p><strong>Paso 5</strong> Regla de Decisión</p>
-<p>Este último resultado se compara con la tabla de valores críticos de la Tabla Lilliefors Exponencial, para un nivel de significancia <span class="math inline">\(\alpha\)</span> = 0.05 <span class="math inline">\(W_{0.05}\)</span>=0.2776, de esta manera se tiene que <span class="math inline">\(0.2776 = W_{0.05} &gt; T_{2} = 0.1596\)</span>, como el cuantil <span class="math inline">\(W_{0.05}\)</span>=0.2776 es mayor a comparación de <span class="math inline">\(T_{2}\)</span>=0.2776.</p>
-<p>No Rechazamos <span class="math inline">\(H_0\)</span>.</p>
-<p><strong>Paso 6</strong> Conclusión</p>
-<p>Podemos concluir que a un nivel de significancia <span class="math inline">\(\alpha\)</span>=0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución exponencial.</p>
-</div>
-<div id="ejemplo-en-r-studio-16" class="section level2" number="20.6">
-<h2><span class="header-section-number">20.6</span> Ejemplo en R-Studio</h2>
-<p>Ahora haremos la réplica en R.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="pueba-de-lilliefors-exponencial.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Datos</span></span>
-<span id="cb188-2"><a href="pueba-de-lilliefors-exponencial.html#cb188-2" aria-hidden="true" tabindex="-1"></a>i<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb188-3"><a href="pueba-de-lilliefors-exponencial.html#cb188-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.4976</span>, <span class="fl">1.2514</span>, <span class="fl">0.6619</span>, <span class="fl">0.561</span>, <span class="fl">1.0026</span>, <span class="fl">0.3529</span>, <span class="fl">0.8595</span>, <span class="fl">1.6254</span>,</span>
-<span id="cb188-4"><a href="pueba-de-lilliefors-exponencial.html#cb188-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fl">1.1514</span>, <span class="fl">1.5181</span>, <span class="fl">0.8642</span>, <span class="fl">0.5206</span>, <span class="fl">0.4229</span>, <span class="fl">0.9825</span>, <span class="fl">1.0183</span>)</span>
-<span id="cb188-5"><a href="pueba-de-lilliefors-exponencial.html#cb188-5" aria-hidden="true" tabindex="-1"></a>X_i<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3529</span>,<span class="fl">0.4229</span>,<span class="fl">0.4976</span>,<span class="fl">0.5206</span>,<span class="fl">0.5610</span>, <span class="fl">0.6619</span>,<span class="fl">0.8595</span>,<span class="fl">0.8642</span>,<span class="fl">0.9825</span>,<span class="fl">1.0026</span>,<span class="fl">1.0183</span>,</span>
-<span id="cb188-6"><a href="pueba-de-lilliefors-exponencial.html#cb188-6" aria-hidden="true" tabindex="-1"></a>      <span class="fl">1.1514</span>,<span class="fl">1.2514</span>,<span class="fl">1.5181</span>,<span class="fl">1.6254</span>)</span>
-<span id="cb188-7"><a href="pueba-de-lilliefors-exponencial.html#cb188-7" aria-hidden="true" tabindex="-1"></a>Z_i<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3982</span>, <span class="fl">0.4773</span>, <span class="fl">0.5616</span>,<span class="fl">0.5875</span>,<span class="fl">0.6331</span>,<span class="fl">0.7470</span>,<span class="fl">0.9700</span>,<span class="fl">0.9753</span>,<span class="fl">1.1088</span>,<span class="fl">1.1315</span>,<span class="fl">1.1492</span>,</span>
-<span id="cb188-8"><a href="pueba-de-lilliefors-exponencial.html#cb188-8" aria-hidden="true" tabindex="-1"></a>      <span class="fl">1.2995</span>,<span class="fl">1.4123</span>,<span class="fl">1.7133</span>,<span class="fl">1.8344</span>) </span>
-<span id="cb188-9"><a href="pueba-de-lilliefors-exponencial.html#cb188-9" aria-hidden="true" tabindex="-1"></a>Sn_Zi<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span>)</span>
-<span id="cb188-10"><a href="pueba-de-lilliefors-exponencial.html#cb188-10" aria-hidden="true" tabindex="-1"></a>Sn_Zi_1<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">2</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">5</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">6</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">7</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">9</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">10</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">11</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">12</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">13</span><span class="sc">/</span><span class="dv">15</span>,<span class="dv">14</span><span class="sc">/</span><span class="dv">15</span>)</span>
-<span id="cb188-11"><a href="pueba-de-lilliefors-exponencial.html#cb188-11" aria-hidden="true" tabindex="-1"></a>F_Zi<span class="ot">=</span><span class="fu">c</span>(<span class="fl">0.3285</span>,<span class="fl">0.3795</span>,<span class="fl">0.4297</span>,<span class="fl">0.4443</span>,<span class="fl">0.4690</span>,<span class="fl">0.5262</span>,<span class="fl">0.6209</span>,<span class="fl">0.6229</span>,<span class="fl">0.6700</span>,<span class="fl">0.6774</span>,<span class="fl">0.6831</span>,</span>
-<span id="cb188-12"><a href="pueba-de-lilliefors-exponencial.html#cb188-12" aria-hidden="true" tabindex="-1"></a>       <span class="fl">0.7273</span>,<span class="fl">0.7564</span>,<span class="fl">0.8197</span>, <span class="fl">0.8403</span>)</span>
-<span id="cb188-13"><a href="pueba-de-lilliefors-exponencial.html#cb188-13" aria-hidden="true" tabindex="-1"></a>D_mas<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.2618</span>,<span class="sc">-</span><span class="fl">0.2462</span>,<span class="sc">-</span><span class="fl">0.2297</span>,<span class="sc">-</span><span class="fl">0.1776</span>,<span class="sc">-</span><span class="fl">0.1357</span>,<span class="sc">-</span><span class="fl">0.1262</span>,<span class="sc">-</span><span class="fl">0.1542</span>,<span class="sc">-</span><span class="fl">0.0896</span>,<span class="sc">-</span><span class="fl">0.0700</span>,</span>
-<span id="cb188-14"><a href="pueba-de-lilliefors-exponencial.html#cb188-14" aria-hidden="true" tabindex="-1"></a>        <span class="sc">-</span><span class="fl">0.0108</span>,<span class="fl">0.0501</span>,<span class="fl">0.0726</span>,<span class="fl">0.1102</span>,<span class="fl">0.1135</span>,<span class="fl">0.1596</span>)</span>
-<span id="cb188-15"><a href="pueba-de-lilliefors-exponencial.html#cb188-15" aria-hidden="true" tabindex="-1"></a>D_menos<span class="ot">=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.3285</span>,<span class="sc">-</span><span class="fl">0.3128</span>,<span class="sc">-</span><span class="fl">0.2963</span>,<span class="sc">-</span><span class="fl">0.2443</span>, <span class="sc">-</span><span class="fl">0.2024</span>,<span class="sc">-</span><span class="fl">0.1929</span>,<span class="sc">-</span><span class="fl">0.2209</span>,<span class="sc">-</span><span class="fl">0.1562</span>,</span>
-<span id="cb188-16"><a href="pueba-de-lilliefors-exponencial.html#cb188-16" aria-hidden="true" tabindex="-1"></a>           <span class="sc">-</span><span class="fl">0.1367</span>,<span class="sc">-</span><span class="fl">0.0774</span>,<span class="sc">-</span><span class="fl">0.0164</span>,<span class="fl">0.0059</span>,<span class="fl">0.0435</span>,<span class="fl">0.0469</span>,<span class="fl">0.0930</span>)  </span>
-<span id="cb188-17"><a href="pueba-de-lilliefors-exponencial.html#cb188-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb188-18"><a href="pueba-de-lilliefors-exponencial.html#cb188-18" aria-hidden="true" tabindex="-1"></a>Tabla<span class="ot">=</span><span class="fu">cbind</span>(i,X_i,Z_i,Sn_Zi,Sn_Zi_1,F_Zi,D_mas,D_menos)                                                                                                                                                      </span>
-<span id="cb188-19"><a href="pueba-de-lilliefors-exponencial.html#cb188-19" aria-hidden="true" tabindex="-1"></a>Tabla</span></code></pre></div>
-<pre><code>       i    X_i    Z_i      Sn_Zi    Sn_Zi_1   F_Zi   D_mas D_menos
- [1,]  1 0.3529 0.3982 0.06666667 0.00000000 0.3285 -0.2618 -0.3285
- [2,]  2 0.4229 0.4773 0.13333333 0.06666667 0.3795 -0.2462 -0.3128
- [3,]  3 0.4976 0.5616 0.20000000 0.13333333 0.4297 -0.2297 -0.2963
- [4,]  4 0.5206 0.5875 0.26666667 0.20000000 0.4443 -0.1776 -0.2443
- [5,]  5 0.5610 0.6331 0.33333333 0.26666667 0.4690 -0.1357 -0.2024
- [6,]  6 0.6619 0.7470 0.40000000 0.33333333 0.5262 -0.1262 -0.1929
- [7,]  7 0.8595 0.9700 0.46666667 0.40000000 0.6209 -0.1542 -0.2209
- [8,]  8 0.8642 0.9753 0.53333333 0.46666667 0.6229 -0.0896 -0.1562
- [9,]  9 0.9825 1.1088 0.60000000 0.53333333 0.6700 -0.0700 -0.1367
-[10,] 10 1.0026 1.1315 0.66666667 0.60000000 0.6774 -0.0108 -0.0774
-[11,] 11 1.0183 1.1492 0.73333333 0.66666667 0.6831  0.0501 -0.0164
-[12,] 12 1.1514 1.2995 0.80000000 0.73333333 0.7273  0.0726  0.0059
-[13,] 13 1.2514 1.4123 0.86666667 0.80000000 0.7564  0.1102  0.0435
-[14,] 14 1.5181 1.7133 0.93333333 0.86666667 0.8197  0.1135  0.0469
-[15,] 15 1.6254 1.8344 1.00000000 0.93333333 0.8403  0.1596  0.0930</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="pueba-de-lilliefors-exponencial.html#cb190-1" aria-hidden="true" tabindex="-1"></a>EstPrueba<span class="ot">=</span><span class="fu">max</span>(D_mas,D_menos)</span>
-<span id="cb190-2"><a href="pueba-de-lilliefors-exponencial.html#cb190-2" aria-hidden="true" tabindex="-1"></a>EstPrueba</span></code></pre></div>
-<pre><code>[1] 0.1596</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="pueba-de-lilliefors-exponencial.html#cb192-1" aria-hidden="true" tabindex="-1"></a>EstdPrueba</span></code></pre></div>
-<pre><code>[1] 0.2179</code></pre>
-<p>El cuantil W que acumula <span class="math inline">\(1-\alpha\)</span> de probabilidad, usando <span class="math inline">\(\alpha=0.05\)</span> es <span class="math inline">\(W = 0.2776\)</span>, encontrado en las tablas correspondientes. Por lo tanto tenemos que <span class="math inline">\(T1=0.1596 &lt; W=0.2776\)</span>, entonces rechazamos la hipotesis nula. Y concluimos que hay evidencia suficiente para decir que la muestra no proviene de una distribución exponencial.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="pueba-de-lilliefors-exponencial.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nortest) <span class="co">#prueba lilliefors</span></span>
-<span id="cb194-2"><a href="pueba-de-lilliefors-exponencial.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lillie.test</span>(F_Zi) <span class="co">#Ocupamos estos datos ya que debemos recordar que </span></span></code></pre></div>
+<div id="ejemplo-20" class="section level2" number="31.3">
+<h2><span class="header-section-number">31.3</span> Ejemplo</h2>
+<p>Se tiene información sobre las cajetillas vendidas y queremos saber que factores influyen en dichas ventas.</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="validación-de-supuestos-1.html#cb277-1" aria-hidden="true" tabindex="-1"></a>cigarros<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;datos cigarros.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb277-2"><a href="validación-de-supuestos-1.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(cigarros)</span></code></pre></div>
+<p>Lo primero que hay que hacer es identificar las variables que hay en la base y realizar diagramas de dispersión para tener una idea de que tipo de relación existe entre las variables.</p>
+<pre><code>  ESTADO  SCIG  AGE   ED PERFEM PRICE
+1      1  89.8 27.0 41.3   51.7  42.7
+2      2 121.3 22.9 66.7   45.7  41.8
+3      3 115.2 26.3 58.1   50.8  38.5
+4      4 100.3 29.1 39.9   51.5  38.8
+5      5 123.0 28.1 62.6   50.8  39.7
+6      6 124.8 26.2 63.9   50.7  31.1</code></pre>
+<p><span class="math inline">\(\textbf{y}=\textbf{SCIG} \ : \ \mbox{Cajetillas de cigarro vendidas}\)</span></p>
+<p><span class="math inline">\(\textbf{x}_1=\textbf{AGE} \ : \ \mbox{Edad promedio}\)</span></p>
+<p><span class="math inline">\(\textbf{x}_2=\textbf{ED} \ : \ \mbox{Porcentaje de personas con más de 25 años}\)</span></p>
+<p><span class="math inline">\(\textbf{x}_3=\textbf{PERFEM} \ : \ \mbox{Porcentaje de mujeres}\)</span></p>
+<p><span class="math inline">\(\textbf{x}_4=\textbf{PRICE} \ : \ \mbox{Precio}\)</span></p>
+<pre><code>     ESTADO           SCIG            AGE              ED       
+ Min.   : 1.00   Min.   : 65.5   Min.   :22.90   Min.   :37.80  
+ 1st Qu.:14.75   1st Qu.:105.9   1st Qu.:26.48   1st Qu.:47.80  
+ Median :28.50   Median :117.5   Median :27.30   Median :53.90  
+ Mean   :28.50   Mean   :120.9   Mean   :27.50   Mean   :53.23  
+ 3rd Qu.:42.25   3rd Qu.:124.4   3rd Qu.:28.73   3rd Qu.:59.23  
+ Max.   :56.00   Max.   :265.7   Max.   :32.30   Max.   :67.30  
+     PERFEM          PRICE      
+ Min.   :45.70   Min.   :29.00  
+ 1st Qu.:50.67   1st Qu.:34.62  
+ Median :51.00   Median :38.90  
+ Mean   :50.93   Mean   :38.01  
+ 3rd Qu.:51.50   3rd Qu.:41.33  
+ Max.   :53.50   Max.   :45.50  </code></pre>
+<p><strong>Ajuste de un modelo de RLM</strong></p>
+<p>Ajustaremos un modelo de RLM considerando lo siguiente:</p>
+<ul>
+<li><p>Emplearemos el método <span class="math inline">\(\textbf{backward}.\)</span></p></li>
+<li><p>El criterio de selección del <span class="math inline">\(mejor \ modelo\)</span> estará basado en el <span class="math inline">\(\textbf{AIC}\)</span></p></li>
+</ul>
+<p>El método <strong>backward</strong> (eliminación hacia atrás) consiste en comenzar con un modelo que incluya las <span class="math inline">\(k\)</span> variables regresoras y luego ir eliminando varible por variable de acuerdo a cierto criterio.</p>
+<p>El <strong>AIC</strong> (Criterio de información de Akaike) es una medida de la calidad de un modelo estadístico, considera la <span class="math inline">\(bondad \ de \ ajuste\)</span> del modelo y su complejidad.</p>
+<p><span class="math display">\[AIC=-2log(L) +2* n_{parámetros}\]</span>
+El mejor modelo es aquel que tenga un <span class="math inline">\(\textbf{AIC}\)</span> pequeño.</p>
+<p><strong>Primer Paso: Relación entre Variables</strong></p>
+<p>Primero haremos las gráficas de dispersión correspondientes para ver el comportamiento de los datos.</p>
+<p>Diagramas de dispersion por parejas: Primero juntamos todas las variables explicativas y la dependiente en un solo objeto para hacer los diagramas de dispersion para cada pareja</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="validación-de-supuestos-1.html#cb280-1" aria-hidden="true" tabindex="-1"></a>cigarrosvars<span class="ot">=</span><span class="fu">data.frame</span>(cigarros<span class="sc">$</span>SCIG,cigarros<span class="sc">$</span>AGE,cigarros<span class="sc">$</span>ED,cigarros<span class="sc">$</span>PERFEM,cigarros<span class="sc">$</span>PRICE)</span>
+<span id="cb280-2"><a href="validación-de-supuestos-1.html#cb280-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(cigarrosvars)</span></code></pre></div>
+<pre><code>                cigarros.SCIG cigarros.AGE cigarros.ED cigarros.PERFEM
+cigarros.SCIG      1.00000000    0.2150081  0.05494773      0.14296083
+cigarros.AGE       0.21500813    1.0000000 -0.12564933      0.55508730
+cigarros.ED        0.05494773   -0.1256493  1.00000000     -0.43495874
+cigarros.PERFEM    0.14296083    0.5550873 -0.43495874      1.00000000
+cigarros.PRICE    -0.30696253    0.2660560  0.04667213      0.04906057
+                cigarros.PRICE
+cigarros.SCIG      -0.30696253
+cigarros.AGE        0.26605603
+cigarros.ED         0.04667213
+cigarros.PERFEM     0.04906057
+cigarros.PRICE      1.00000000</code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="validación-de-supuestos-1.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(cigarrosvars,<span class="at">main=</span><span class="st">&quot;Matriz de dispersion&quot;</span>,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Cajetillas vendidas&quot;</span>, <span class="st">&quot;Edad promedio&quot;</span>, <span class="st">&quot;Porcentaje con mas de 25&quot;</span>, <span class="st">&quot;Porcentaje mujeres&quot;</span>, <span class="st">&quot;Precio promedio&quot;</span>),<span class="at">pch=</span><span class="dv">21</span>,<span class="at">bg=</span><span class="st">&quot;deeppink4&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>A simple vista “no estamos apreciando toda la información”, haremos gráficos dos a dos:</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="validación-de-supuestos-1.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cigarros<span class="sc">$</span>AGE,cigarros<span class="sc">$</span>SCIG,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb283-2"><a href="validación-de-supuestos-1.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="at">xlab=</span><span class="st">&quot;Edad promedio&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cajetillas vendidas&quot;</span>,</span>
+<span id="cb283-3"><a href="validación-de-supuestos-1.html#cb283-3" aria-hidden="true" tabindex="-1"></a><span class="at">main=</span> <span class="st">&quot;Relación entre la edad promedio y las cajetillas vendidas&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-130-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="validación-de-supuestos-1.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cigarros<span class="sc">$</span>ED,cigarros<span class="sc">$</span>SCIG,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb284-2"><a href="validación-de-supuestos-1.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="at">xlab=</span><span class="st">&quot;Porcentaje con más de 25&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cajetillas vendidas&quot;</span>,</span>
+<span id="cb284-3"><a href="validación-de-supuestos-1.html#cb284-3" aria-hidden="true" tabindex="-1"></a><span class="at">main=</span> <span class="st">&quot;Relación entre el porcentaje con más de 25 y las cajetillas vendidas&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="validación-de-supuestos-1.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cigarros<span class="sc">$</span>PERFEM,cigarros<span class="sc">$</span>SCIG,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb285-2"><a href="validación-de-supuestos-1.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="at">xlab=</span><span class="st">&quot;Porcentaje de mujeres&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cajetillas vendidas&quot;</span>,</span>
+<span id="cb285-3"><a href="validación-de-supuestos-1.html#cb285-3" aria-hidden="true" tabindex="-1"></a><span class="at">main=</span> <span class="st">&quot;Relación entre el porcentaje de mujeres y las cajetillas vendidas&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="validación-de-supuestos-1.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cigarros<span class="sc">$</span>PRICE,cigarros<span class="sc">$</span>SCIG,<span class="at">type =</span> <span class="st">&quot;p&quot;</span>,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>,<span class="at">pch=</span><span class="dv">16</span>,</span>
+<span id="cb286-2"><a href="validación-de-supuestos-1.html#cb286-2" aria-hidden="true" tabindex="-1"></a><span class="at">xlab=</span><span class="st">&quot;Precio&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Cajetillas vendidas&quot;</span>,</span>
+<span id="cb286-3"><a href="validación-de-supuestos-1.html#cb286-3" aria-hidden="true" tabindex="-1"></a><span class="at">main=</span> <span class="st">&quot;Relación entre el precio y las cajetillas vendidas&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-133-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Observemos que tanto la variable de promedio de más de 25 y las cajetillas vendidas muestran una relación, al igual que la variable precio.</p>
+<p>Veamos ahora la correlación entre las variables:</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="validación-de-supuestos-1.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(cigarros)</span></code></pre></div>
+<pre><code>             ESTADO        SCIG         AGE          ED       PERFEM
+ESTADO  1.000000000 -0.11088992  0.05535895 -0.05138058 -0.002021391
+SCIG   -0.110889919  1.00000000  0.21500813  0.05494773  0.142960829
+AGE     0.055358955  0.21500813  1.00000000 -0.12564933  0.555087298
+ED     -0.051380577  0.05494773 -0.12564933  1.00000000 -0.434958738
+PERFEM -0.002021391  0.14296083  0.55508730 -0.43495874  1.000000000
+PRICE  -0.055232952 -0.30696253  0.26605603  0.04667213  0.049060568
+             PRICE
+ESTADO -0.05523295
+SCIG   -0.30696253
+AGE     0.26605603
+ED      0.04667213
+PERFEM  0.04906057
+PRICE   1.00000000</code></pre>
+<p>Las correlaciones entre las variables que no son las cajetillas vendidas no son “altas” por lo que en principio no parece haber problema de considerar todas las variables dentro del modelo.</p>
+<p><strong>Segundo Paso: Generación de Modelos y Elección del Mejor Modelo</strong></p>
+<p>Emplearemos comandos de R:</p>
+<p>Empezaremos con el modelo inicial, le llamamos así ya que es el modelo más grande que podemos suponer, ya que el modelo explica las cajetillas vendidas en función de las otras 4 variables:</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="validación-de-supuestos-1.html#cb289-1" aria-hidden="true" tabindex="-1"></a>modeloini<span class="ot">=</span><span class="fu">lm</span>(SCIG<span class="sc">~</span>AGE<span class="sc">+</span>ED<span class="sc">+</span>PERFEM<span class="sc">+</span>PRICE, <span class="at">data=</span>cigarros) </span>
+<span id="cb289-2"><a href="validación-de-supuestos-1.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modeloini)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = SCIG ~ AGE + ED + PERFEM + PRICE, data = cigarros)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-43.242 -13.160  -5.053   3.166 128.099 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)  -8.0742   231.4589  -0.035  0.97231   
+AGE           5.2521     2.6733   1.965  0.05492 . 
+ED            0.5115     0.5389   0.949  0.34699   
+PERFEM        1.3716     4.8326   0.284  0.77770   
+PRICE        -2.9599     0.9713  -3.047  0.00365 **
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 28.62 on 51 degrees of freedom
+Multiple R-squared:  0.2034,    Adjusted R-squared:  0.1409 
+F-statistic: 3.255 on 4 and 51 DF,  p-value: 0.01878</code></pre>
+<p>De este primer modelo dado que las pruebas de hipótesis para cada <span class="math inline">\(\beta_{i}\)</span> nos dicen que la única variable significativa es <span class="math inline">\(\beta_{4}\)</span> que es para la variable Precio. Y hasta el momento tiene sentido esto.</p>
+<p>Ahora si, emplearemos el método backward con el criterio AIC.</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="validación-de-supuestos-1.html#cb291-1" aria-hidden="true" tabindex="-1"></a>modelo_backward_AIC<span class="ot">=</span><span class="fu">stepAIC</span>(modeloini,<span class="at">direction =</span> <span class="st">&quot;backward&quot;</span>)</span></code></pre></div>
+<pre><code>Start:  AIC=380.41
+SCIG ~ AGE + ED + PERFEM + PRICE
+
+         Df Sum of Sq   RSS    AIC
+- PERFEM  1      66.0 41828 378.49
+- ED      1     737.8 42500 379.39
+&lt;none&gt;                41762 380.41
+- AGE     1    3160.6 44923 382.49
+- PRICE   1    7604.1 49366 387.77
+
+Step:  AIC=378.49
+SCIG ~ AGE + ED + PRICE
+
+        Df Sum of Sq   RSS    AIC
+- ED     1     689.2 42517 377.41
+&lt;none&gt;               41828 378.49
+- AGE    1    5402.7 47231 383.30
+- PRICE  1    7813.1 49641 386.08
+
+Step:  AIC=377.41
+SCIG ~ AGE + PRICE
+
+        Df Sum of Sq   RSS    AIC
+&lt;none&gt;               42517 377.41
+- AGE    1    4965.6 47483 381.60
+- PRICE  1    7481.7 49999 384.49</code></pre>
+<p>Ahora observemos el mejor modelo, de acuerdo a lo arrojado en <strong>stepAIC()</strong>.</p>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="validación-de-supuestos-1.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_backward_AIC)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = SCIG ~ AGE + PRICE, data = cigarros)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-35.828 -15.601  -6.451   3.807 130.691 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)  83.4541    61.0443   1.367  0.17736   
+AGE           5.3878     2.1656   2.488  0.01603 * 
+PRICE        -2.9121     0.9536  -3.054  0.00353 **
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 28.32 on 53 degrees of freedom
+Multiple R-squared:  0.1889,    Adjusted R-squared:  0.1583 
+F-statistic: 6.174 on 2 and 53 DF,  p-value: 0.003889</code></pre>
+<p>A través de la tablas ANOVA se tiene:</p>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="validación-de-supuestos-1.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(modelo_backward_AIC)</span></code></pre></div>
+<pre><code>Analysis of Variance Table
+
+Response: SCIG
+          Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+AGE        1   2423  2423.4  3.0209 0.088005 . 
+PRICE      1   7482  7481.7  9.3264 0.003529 **
+Residuals 53  42517   802.2                    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>De los resultados obtenidos podemos refinar el <span class="math inline">\(mejor \ modelo\)</span> obtenido:</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="validación-de-supuestos-1.html#cb297-1" aria-hidden="true" tabindex="-1"></a>modelo_refinado<span class="ot">=</span><span class="fu">lm</span>(SCIG<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>AGE<span class="sc">+</span>PRICE,cigarros)</span>
+<span id="cb297-2"><a href="validación-de-supuestos-1.html#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_refinado)</span></code></pre></div>
+<pre><code>
+Call:
+lm(formula = SCIG ~ 0 + AGE + PRICE, data = cigarros)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-30.841 -16.734  -5.385   4.999 131.509 
+
+Coefficients:
+      Estimate Std. Error t value Pr(&gt;|t|)    
+AGE      7.809      1.257   6.214 7.73e-08 ***
+PRICE   -2.477      0.906  -2.734  0.00845 ** 
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 28.55 on 54 degrees of freedom
+Multiple R-squared:  0.9495,    Adjusted R-squared:  0.9476 
+F-statistic: 507.6 on 2 and 54 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Entonces ya obtuvimos el mejor modelo, que está compuesto por:</p>
+<p><span class="math display">\[\mbox{Cajetillas vendidas}= 7.809*\mbox{Edad promedio}-2.477*\mbox{Precio}\]</span>
+Bueno todavía debemos validar los supuestos:</p>
+<p><strong>Tercer Paso Validadción de Supuestos</strong></p>
+<p>Siguiendo el orden de nuestros capítulos, para validar gráficamente la normalidad de los errores debemos graficar los errores contra los cuantiles de la distribución normal.Para ello aplicamos la función <strong>qqnorm</strong> y con <strong>qqline</strong> obtenemos la recta diagonal que nos servirá para ver que tan lejos o cerca de la distribución normal están cayendo los residuales.</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="validación-de-supuestos-1.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rstandard</span>(modelo_refinado),<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>),<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb299-2"><a href="validación-de-supuestos-1.html#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">rstandard</span>(modelo_refinado),<span class="at">distribution =</span> qnorm,<span class="at">col=</span><span class="st">&quot;deeppink4&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Podemos observar que la parte central de la distribución si se ajusta a una distribución normal, sin embargo, en los extremos los residuales ya no se comportan como una distribución normal.</p>
+<p>Podemos aplicar la prueba de bondad de ajuste <strong>Lilliefors para normalidad</strong> vista en Bondad de Ajuste:</p>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="validación-de-supuestos-1.html#cb300-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lillie.test</span>(<span class="fu">rstandard</span>(modelo_refinado))</span></code></pre></div>
 <pre><code>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
-data:  F_Zi
-D = 0.15238, p-value = 0.458</code></pre>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="pueba-de-lilliefors-exponencial.html#cb196-1" aria-hidden="true" tabindex="-1"></a>                   <span class="co">#es una distribución exponencial y F_Zi son datos estandarizados </span></span></code></pre></div>
-</div>
-<div id="ejercicios-13" class="section level2" number="20.7">
-<h2><span class="header-section-number">20.7</span> Ejercicios</h2>
-<ol style="list-style-type: decimal">
-<li>El gerente de una tienda quiere probar la hipótesis de que los clientes llegan aleatoriamente a su tienda, para ello registro el tiempo transcurrido entre las llegadas sucesivas de clientes en una mañana. El tiempo en minutos es el siguiente:</li>
-</ol>
-<p>3.6, 6.2, 12.9, 14.2, 38.0, 3.8,<br />
-10.8, 6.1, 10.1, 22.1, 4.2, 4.6,<br />
-1.4, 3.3, 8.2.</p>
-<p>Pruebe la hipótesis nula de que el tiempo entre las llegadas de los clientes se distribuyen con función de distribución exponencial.</p>
+data:  rstandard(modelo_refinado)
+D = 0.23318, p-value = 4.065e-08</code></pre>
+<p>Como el valor del <span class="math inline">\(p-value\)</span> es menor al nivel de significancia <span class="math inline">\(\alpha=0.05\)</span> entonces rechazamos <span class="math inline">\(H_{0}\)</span>, es decir nuestros residuales no tienen distribución normal.</p>
+<p><strong>Supuesto de Linealidad</strong></p>
+<p>Como se menciona en el capítulo, graficaremos los errores estandarizados contra los valores observados de la variable explicativa.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-142-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-143-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Para ambas variables, salvo por la posible presencia de algunos valores atípicos que salen de la franja horizontal <span class="math inline">\((-2,2)\)</span>, el resto de las observaciones parecen distribuirse como ruido blanco.</p>
+<p><strong>Supuesto de Homocedasticidad</strong></p>
+<p>Se dice que una muestra es homocedástica cuando la varianza es constante a lo largo de todas las observaciones, es decir, no varia conforme se presentan nuevas observaciones.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-144-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Si la varianza es constante entonces la gráfica fluctuaráentre el eje horizontal de manera simétrica, y sin seguir algún patrón, y se espera que la mayor parte de los errores estén contenidos en franjas horizontales delimitados por el eje entre -2 y 2. En éste ejemplo la dispersión regular de los residuales dentro de las Bandas superior e inferior y que no haya residuales que se alejen tanto de la Banda 0, indican varianza constante.</li>
+</ul>
+<p>Adicionalmente aplicaremos las pruebas vistas en el capítulo para tener certeza estadística de la validez del supuesto de homocedasticidad.</p>
+<p><strong>Prueba White</strong></p>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="validación-de-supuestos-1.html#cb302-1" aria-hidden="true" tabindex="-1"></a>dataset<span class="ot">=</span><span class="fu">data.frame</span>(cigarros<span class="sc">$</span>AGE,cigarros<span class="sc">$</span>PRICE,cigarros<span class="sc">$</span>SCIG)</span>
+<span id="cb302-2"><a href="validación-de-supuestos-1.html#cb302-2" aria-hidden="true" tabindex="-1"></a>mode1<span class="ot">=</span><span class="fu">VAR</span>(dataset,<span class="at">p=</span><span class="dv">1</span>)</span>
+<span id="cb302-3"><a href="validación-de-supuestos-1.html#cb302-3" aria-hidden="true" tabindex="-1"></a><span class="fu">whites.htest</span>(mode1)</span></code></pre></div>
+<pre><code>
+White&#39;s Test for Heteroskedasticity:
+==================================== 
 
+ No Cross Terms
+
+ H0: Homoskedasticity
+ H1: Heteroskedasticity
+
+ Test Statistic:
+ 39.1790 
+
+ Degrees of Freedom:
+ 36 
+
+ P-value:
+ 0.3291 </code></pre>
+<p>Por el <span class="math inline">\(p-value\)</span>, la hipótesis de homocedasticidad no se rechaza.</p>
+<p><strong>Supuesto de Multicolinealidad</strong></p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="validación-de-supuestos-1.html#cb304-1" aria-hidden="true" tabindex="-1"></a>X1<span class="ot">=</span><span class="fu">scale</span>(cigarros[,<span class="sc">-</span><span class="dv">5</span>])</span>
+<span id="cb304-2"><a href="validación-de-supuestos-1.html#cb304-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb304-3"><a href="validación-de-supuestos-1.html#cb304-3" aria-hidden="true" tabindex="-1"></a>A<span class="ot">=</span><span class="fu">t</span>(X1)<span class="sc">%*%</span>X1</span>
+<span id="cb304-4"><a href="validación-de-supuestos-1.html#cb304-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb304-5"><a href="validación-de-supuestos-1.html#cb304-5" aria-hidden="true" tabindex="-1"></a>kappa<span class="ot">=</span><span class="fu">max</span>(<span class="fu">eigen</span>(A)<span class="sc">$</span>values)<span class="sc">/</span><span class="fu">min</span>(<span class="fu">eigen</span>(A)<span class="sc">$</span>values)</span>
+<span id="cb304-6"><a href="validación-de-supuestos-1.html#cb304-6" aria-hidden="true" tabindex="-1"></a>kappa</span></code></pre></div>
+<pre><code>[1] 3.151592</code></pre>
+<p>El coeficiente <span class="math inline">\(kappa\)</span> es de 3.15 por lo tanto no tenemos problemas de multicolinealidad.</p>
 </div>
 </div>
             </section>
@@ -1195,8 +859,8 @@ D = 0.15238, p-value = 0.458</code></pre>
           </div>
         </div>
       </div>
-<a href="prueba-lilliefors-para-normalidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="prueba-anderson-darling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pruebas-de-hipótesis-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="apéndice.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
