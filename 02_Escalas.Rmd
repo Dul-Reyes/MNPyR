@@ -1,9 +1,7 @@
 
 # Escalas de Medición
 
-Este capítulo es una traducción de @conover1998practical.
-
-A continuación se definirán los tipos de escalas que se le asigna a una variable. Hay cuatro escalas básicas las cuales son: **nominal, ordinal, de intervalo y de razón.** A las variables que se consideran con escala ordinal y nominal también se les conoce como **variables categóricas**, mientras que a las variables que se consideran con escala de intervalo y razón se conocen como **variables cuantitativas**.
+Este capítulo es una traducción de @conover1998practical, a continuación se definirán los tipos de escalas que se le asigna a una variable. Hay cuatro escalas básicas las cuales son: **nominal, ordinal, de intervalo y de razón.** A las variables que se consideran con escala ordinal y nominal también se les conoce como **variables categóricas**, mientras que a las variables que se consideran con escala de intervalo y razón se conocen como **variables cuantitativas**.
 
 ##  Variables categóricas
 
@@ -25,7 +23,7 @@ Si algunos de los elementos son iguales entre sí, decimos que existen vínculos
 
 ### Escala de intervalo: 
 
-La escala de intervalo, considera como información pertinente **no sólo** el orden relativo de las mediciones como en la escala ordinal sino también el **tamaño del intervalo** entre mediciones, es decir, el tamaño de la diferencia (en un sentido de resta) entre dos mediciones. La escala de intervalo implica el concepto de una unidad de distancia, y la distancia entre dos mediciones cualquiera puede expresarse como un cierto número de unidades. Un buen ejemplo es la escala por la cual generalmente representamos la temperatura. El aumento de una unidad (grado) de temperatura se define por un cambio particular en el volumen de mercurio en un termómetro; en consecuencia, la diferencia entre dos temperaturas cualquiera puede medirse en **unidades o grados**. El valor numérico real de la temperatura es simplemente una comparación con un punto arbitrario llamado "cero grados". La escala de intervalo requiere un punto cero y una unidad de distancia (no es posible tener este último sin el primero), pero no es importante cómo se definan los "ceros" y la unidad de distancia.
+La escala de intervalo considera como información pertinente **no sólo** el orden relativo de las mediciones como en la escala ordinal sino también el **tamaño del intervalo** entre mediciones, es decir, el tamaño de la diferencia (en un sentido de resta) entre dos mediciones. La escala de intervalo implica el concepto de una unidad de distancia, y la distancia entre dos mediciones cualquiera puede expresarse como un cierto número de unidades. Un buen ejemplo es la escala por la cual generalmente representamos la temperatura. El aumento de una unidad (grado) de temperatura se define por un cambio particular en el volumen de mercurio en un termómetro; en consecuencia, la diferencia entre dos temperaturas cualquiera puede medirse en **unidades o grados**. El valor numérico real de la temperatura es simplemente una comparación con un punto arbitrario llamado "cero grados". La escala de intervalo requiere un punto cero y una unidad de distancia (no es posible tener este último sin el primero), pero no es importante cómo se definan los "ceros" y la unidad de distancia.
 
 La temperatura ha sido medida de manera bastante adecuada durante algún tiempo por las escalas Fahrenheit y Celsius, que tienen diferentes temperaturas cero y diferentes definiciones de 1 grado o unidad. El principio de las mediciones de intervalo no se viola por un cambio en la escala o la ubicación o ambos.
 
