@@ -1,8 +1,8 @@
 # Prueba de Cuantiles 
 
-Lo que nos interesa en ésta prueba binomial es hacer inferencia sobre los cuantiles de una variable aleatoria. Por ejemplo, muchos examinamos una muestra aleatoria de valores de alguna variable x para ver si la mediana de x es igual a 17 (por ejemplo).
+Lo que nos interesa en esta prueba binomial es hacer inferencia sobre los cuantiles de una variable aleatoria. Por ejemplo, muchos examinamos una muestra aleatoria de valores de alguna variable x para ver si la mediana de x es igual a 17 (por ejemplo).
 
-La escala de medición suele ser al menos ordinal para ésta prueba de hipótesis, aunque la prueba binomial solo require la escala nominal que es más débil para su medición. Esto se debe a que los cuantiles tienen poco significado con las mediciones de escala nominal. 
+La escala de medición suele ser al menos ordinal para esta prueba de hipótesis, aunque la prueba binomial solo require la escala nominal que es más débil para su medición. Esto se debe a que los cuantiles tienen poco significado con las mediciones de escala nominal. 
 
 **Recordatorio** 
 
@@ -20,7 +20,7 @@ $$ \mathbf{P}[X < x]\leq p$$
 
 Los datos consisten en una muestra 
 
-$$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} \ n \  \mbox{de la población}$$
+$$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} \ n \  \mbox{de la población}.$$
  
 
 ## Supuestos
@@ -34,6 +34,7 @@ $$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} 
 
 $$T_{1}$$
 El  número de observaciones en la muestra que son **menores o iguales**  al valor $x^*$ sobre el que se va a hacer la hipótesis.
+/break
 
 $$T_{2}$$
 El número de observaciones en la muestra que son **estrictamente menores**  a $x^*$.
@@ -121,7 +122,7 @@ Sugerimos que si $n > 20$, el $p-value$ puede obtenerse más sencillo usando la 
 
 $$\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
-### Caso C (Prueba de cola supeior) {-}
+### Caso C (Prueba de cola superior) {-}
 
 $$\textbf{H}_0: x_{p} \geq x^* \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]\leq p^*$$ 
 
@@ -148,7 +149,7 @@ y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=\mathbf{P}[Y\geq T_{2}]$$
 
-Sugerimos que si $n > 20$ ,el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Sugerimos que si $n > 20,$ el $p-value$ podría obtenerse de forma mas sencilla usando la aproximación normal:
 
 $$\mathbf{P}[Y\geq T_{2}] \thickapprox 1- \mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
@@ -173,7 +174,7 @@ $$vs$$
 $$\textbf{H}_a:  \mathbf{P}[X \leq 60]<0.50$$
 
 
-Donde $X$ es el intervalo de tiempo entre las erupciones, asumiendo que ambos intervalos son independientes e identicamente distribuidas. 
+Donde $X$ es el intervalo de tiempo entre las erupciones, suponiendo que ambos intervalos son independientes e identicamente distribuidas. 
 
 **Paso 3** Estadístico de prueba
 
