@@ -20,7 +20,7 @@ cuyo resultado se puede clasificar en dos y sólo dos categorías "categoría 1"
 
 ## Estadístico de Prueba
 
-Como nos preocupa la probabilidad del resultado "clase 1", dejaremos que el estadístico de prueba $T$ sea el número de veces que el resultado es **"clase 1"**.
+Como nos interesa la probabilidad del resultado "clase 1", dejaremos que el estadístico de prueba $T$ sea el número de veces que el resultado es **"clase 1"**.
 Es decir, si $n<20$ utilizar el estadístico
 
 $$T=O_{1}$$
