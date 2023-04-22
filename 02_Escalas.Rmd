@@ -14,8 +14,7 @@ Otro ejemplo, cuando 12 sujetos se numeran arbitrariamente del 1 al 12, se utili
 ### Escala ordinal: 
 
 La escala ordinal se refiere a mediciones en las que sólo son relevantes las comparaciones **"mayor"**,**"menor"** o **"igual"** entre ellas. El valor numérico se usa sólo como un medio para organizar los elementos que se miden en orden, de menor a mayor.
-Ésta capacidad de ordenar los elementos, en función del tamaño relativo de sus medidas, le da el nombre de
-Si algunos de los elementos son iguales entre sí, decimos que existen vínculos. Cuando se le pide a una persona que asigne el número 1 a la más preferida de las tres marcas, el número 3 a la menos preferida y el número 2 a la marca restante, está usando una escala ordinal y está usando los números 1, 2, 3; ésta podría haber usado tres números, digamos 16, 20, 75, siempre y cuando los números se asignen a las marcas de tal manera que el orden relativo del número represente la preferencia relativa de la marca.
+Ésta capacidad de ordenar los elementos, en función del tamaño relativo de sus medidas, le da el nombre de si algunos de los elementos son iguales entre sí, decimos que existen vínculos. Cuando se le pide a una persona que asigne el número 1 a la más preferida de las tres marcas, el número 3 a la menos preferida y el número 2 a la marca restante, está usando una escala ordinal y está usando los números 1, 2, 3; ésta podría haber usado tres números, digamos 16, 20, 75, siempre y cuando los números se asignen a las marcas de tal manera que el orden relativo del número represente la preferencia relativa de la marca.
 
 
 
