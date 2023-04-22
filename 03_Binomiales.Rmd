@@ -3,3 +3,22 @@
 # Introducción {-}
 
 La distribución de probabilidad binomial se introdujo para describir las probabilidades asociadas con el número de caras cuando se lanza una moneda $n$ veces. En su forma más general, cada uno de $n$ ensayos independientes da como resultado $"éxito"$, con probabilidad $p$, o $"fracaso"$, con probabilidad $q = 1-p$. La distribución binomial describe la probabilidad de obtener exactamente $"k"$ éxitos.
+
+Decimos que una variable aleatoria X se distribuye Binomial con parámetros n,p.
+
+$$X\sim Bin(n,p)$$
+$$x=0,1,2,...n$$
+
+\textbf{Función de Distribución}
+
+$$P_X(x)={n \choose p} p^x(1-p)^{n-x}$$
+
+\hfill\break
+
+\textbf{Media}
+
+$$\mathbf{E}[X]=np$$
+
+\textbf{Varianza}
+
+$$Var(X)=np(1-p)$$
