@@ -23,11 +23,13 @@ En esta prueba se agrupan en  parejas de la forma $(X_{i},X_{i+c})$ a las que se
 
 ## Estadístico de Prueba
 
-$$T=Total\ de\ signos\ "+"$$
+El estadístico de prueba es:
+
+$$T=Total\ de\ signos\ "+".$$
 
 La distribución nula de $T$ es una distribución binomial con $n$ el número de parejas de la muestra sin empates y $p=1/2$.
 
-$$T\sim Bin(n,1/2)$$
+$$T\sim Bin(n,1/2).$$
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
@@ -35,82 +37,80 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 ### Caso A (Prueba de dos colas) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -]$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -],$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -]$$
+$$\textbf{H}_a: \mathbf{P}[obtener\ +] \neq \mathbf{P}[obtener\ -].$$
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
-$$T \leq t \ \ \  o \ \ \ T>n-t$$ 
+$$T \leq t \ \ \  o \ \ \ T>n-t.$$ 
 
-Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que 
+Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que:
 
-
-$$\mathbf{P}[Y \leq t]=\alpha/2$$
+$$\mathbf{P}[Y \leq t]=\alpha/2.$$
 
 Donde $Y \sim Bin (n,1/2)$.
 
+Por otro lado, si $n>20$ resultará más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
 
-Por otro lado, si $n>20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
-
-$$t=\frac{1}{2}\left(n+z_{\alpha/2}\ \sqrt{n}\right)$$
+$$t=\frac{1}{2}\left(n+z_{\alpha/2}\ \sqrt{n}\right).$$
 
 Donde $z_{\alpha/2}$ es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=2*min\{\mathbf{P}[Y\leq T],\mathbf{P}[Y\geq T]\}$$
+$$p-value=2*min\{\mathbf{P}[Y\leq T],\mathbf{P}[Y\geq T]\}.$$
 
-Sugerimos que si $n>20$,el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Sugerimos que si $n>20$, el $p-value$ podrá obtenerse de forma más sencilla usando la aproximación normal:
 
-$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)$$
-$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)$$
+$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right).$$
+$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).$$
 
 ### Caso B (Prueba de cola inferior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -]$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -]$$
+$$\textbf{H}_a: \mathbf{P}[obtener\ +] < \mathbf{P}[obtener\ -].$$
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
-$$T \leq t$$
+$$T \leq t.$$
 
-Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que 
+Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que: 
 
-$$\mathbf{P}[Y \leq t]=\alpha$$
+$$\mathbf{P}[Y \leq t]=\alpha.$$
 
 Donde $Y \sim Bin (n,1/2)$.
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=\mathbf{P}[Y\leq T]$$
+$$p-value=\mathbf{P}[Y\leq T].$$
 
-Sugerimos que si $n>20$,el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Sugerimos que si $n>20$, el $p-value$ podrá obtenerse de forma más sencilla usando la aproximación normal:
 
-$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}})$$
+$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}}).$$
 
 ### Caso C (Prueba de cola superior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -]$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -],$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -]$$
+$$\textbf{H}_a: \mathbf{P}[obtener\ +] > \mathbf{P}[obtener\ -].$$
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
-$$T > n-t $$ 
+$$T > n-t.$$ 
 
 Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que 
 
@@ -122,19 +122,19 @@ y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=\mathbf{P}[Y\geq T]$$
 
-Sugerimos que si $n > 20$,el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Sugerimos que si $n > 20$, el $p-value$ podría obtenerse de forma más sencilla usando la aproximación normal:
 
-$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)$$
+$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).$$
 
-Ahora aplicaremos lo anterior en un ejemplo ilustrativo:
+Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
 
 ## Ejemplo
 
-Una hidroeléctrica esta muy interesada en seguir las tasas promedio de descarga de agua de las corrientes que lo alimentan. Se tienen los registros mensuales de estas tasas (en pies cúbicos por segundo) durante un período de 24 meses.
-La empresa sospecha que la tasa esta disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5%?
+Una hidroeléctrica está muy interesada en seguir las tasas promedio de descarga de agua de las corrientes que lo alimentan. Se tienen los registros mensuales de estas tasas (en pies cúbicos por segundo) durante un período de 24 meses.
+La empresa sospecha que la tasa está disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5%?
 
-Los datos están en la siguiente tabla, los cuales estan emparejados por mes ya que estas tasa de descarga siguen un ciclo anual,Se sabe que la tasa de descarga sigue un ciclo anual, por lo que no se puede emparejar las descargas de corriente durante dos meses diferentes; sin embargo, al emparejar los mismos meses consecutivos, se puede investigar la existencia de una tendencia. Los datos son los siguientes::
+Los datos están en la siguiente tabla, los cuales están emparejados por mes ya que estas tasa de descarga siguen un ciclo anual, se sabe que la tasa de descarga sigue un ciclo anual, por lo que no se puede emparejar las descargas de corriente durante dos meses diferentes; sin embargo, al emparejar los mismos meses consecutivos, se puede investigar la existencia de una tendencia. Los datos son los siguientes:
 
 $$
 \begin{array}{|c| c c|c| c c|} 
@@ -156,7 +156,7 @@ Junio&86&98.1&Diciembre&16&15.7 \\
 \end{array}
 $$
 
-Los datos ya estan emparejados ahora sólo debemos asignar los signos considerando $X_i$ el primer año y $Y_i$ el segundo año.
+Los datos ya están emparejados ahora sólo debemos asignar los signos considerando $X_i$ el primer año y $Y_i$ el segundo año.
 
 Recordando que cada par de datos en la muestra se clasificará por un signo $"+"$ cuando $X_{i} < Y_{i}$, por un signo "-" cuando $X_{i} > Y_{i}$ y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
 
@@ -181,11 +181,11 @@ Diciembre&16&15.7&-\\
 \end{array}
 $$
 
-**Paso 1** Escribimos la prueba a utilizar
+**Paso 1** Escribimos la prueba a utilizar.
 
-La prueba a utilizar **Prueba Cox-Stuart Caso B cola inferior**
+La prueba a utilizar **Prueba Cox-Stuart Caso B cola inferior.**
 
-**Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado
+**Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado:
 
 $$\textbf{H}_0:\ \mbox{La tasa promedio de descarga de agua no está disminuyendo.}$$
 $$vs$$
@@ -193,14 +193,13 @@ $$vs$$
 $$\textbf{H}_a: \  \mbox{La tasa promedio de descarga de agua está disminuyendo.}$$
 
 
-**Paso 3** Estadístico de prueba
-
+**Paso 3** Estadístico de prueba.
 
 Utilizaremos el estadístico
 
-$$T=5 \ \ número \ de \ signos\ "+"$$
+$$T=5 \ \ número \ de \ signos\ "+".$$
 
-$$T\sim Bin(12,1/2)$$
+$$T\sim Bin(12,1/2).$$
 
 
 **Paso 4** Procedimiento completo 
@@ -213,24 +212,24 @@ $$T\sim Bin(12,1/2)$$
 
 * Tomaremos $\alpha$= 5% =0.05 el nivel de significancia.
 
-* $n=12$ tamaño de la muestra
+* $n=12$ tamaño de la muestra.
 
-* $p$=1/2
+* $p$=1/2.
 
-**Paso 5** Regla de decisión
+**Paso 5** Regla de decisión.
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si $T \leq t$ 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si $T \leq t.$ 
 
-$$T=5 \nleq 3=t$$
+$$T=5 \nleq 3=t.$$
 
-$\therefore$ No rechazamos $H_0$
+$\therefore$ No rechazamos $H_0.$
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=\mathbf{P}[Y\leq T]=\mathbf{P}[Y\leq 5]=0.3872$$
+$$p-value=\mathbf{P}[Y\leq T]=\mathbf{P}[Y\leq 5]=0.3872.$$
 $\therefore$ $p-value=0.3872>0.05=\alpha$ entonces no rechazamos $H_0$.
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión.
 
 Existe evidencia suficiente para decir que la tasa promedio de descarga de agua no está disminuyendo.
 
@@ -249,7 +248,9 @@ alpha=0.05       #Nivel de significancia
 n=12              #Tamaño de la muestra 
 p=0.5            #Para la prueba de cox "p" siempre será 1/2
 ```
-Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión se rechaza $H_0$ si $T\leq t$ donde $t$ será en cuantil que acumule 5% en la distribución binomial
+Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión se rechaza $H_0$ si $T\leq t$ donde $t$ será en cuantil que acumule 5% en la distribución binomial.
+
+\break
 
 Podemos graficar la función de distribución:
 
@@ -307,7 +308,7 @@ $$
 \end{array}
 $$
 
-Se está interesado en saber si el programa de rehabilitación ecológica ha tenido efecto en la reducción de la contaminación. Use $\alpha =1%$.
+Se está interesado en saber si el programa de rehabilitación ecológica ha tenido efecto en la reducción de la contaminación. Use $\alpha =1\%$.
 
 2. Se presentan a continuación los tipos de cambio MXN-USD de los últimos 30 días.
 
@@ -343,6 +344,6 @@ Se está interesado en saber si el programa de rehabilitación ecológica ha ten
 21.91
 
 
-Se desea corroborar la aseveración del presidente respecto a que el peso mexicano esta recuperando fuerza. Use $\alpha =10%$.
+Se desea corroborar la aseveración del presidente respecto a que el peso mexicano está recuperando fuerza. Use $\alpha =10\%$.
 
 
