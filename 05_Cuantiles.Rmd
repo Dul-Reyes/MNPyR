@@ -18,7 +18,7 @@ $$ \mathbf{P}[X < x]\leq p$$
  
 ## Datos
 
-Los datos consisten en una muestra 
+Los datos consisten en una muestra: 
 
 $$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} \ n \  \mbox{de la población}.$$
  
@@ -32,11 +32,13 @@ $$X_{1},X_{2},X_{3},\cdots,X_{n}  \  \ \mbox{ una muestra aleatoria de tamaño} 
 
 ## Estadístico de Prueba
 
-$$T_{1}$$
+Los estadísticos de prueba son: 
+$$T_{1},$$
 El  número de observaciones en la muestra que son **menores o iguales**  al valor $x^*$ sobre el que se va a hacer la hipótesis.
 /break
 
-$$T_{2}$$
+Y también se utilizará como estadístico de prueba a:
+$$T_{2},$$
 El número de observaciones en la muestra que son **estrictamente menores**  a $x^*$.
 
 Cuando $n\leq 20$ la distribución nula de éstos estadísticos es $Bin(n,p=p^*)$ con $n$ el tamaño de la muestra y $p^*$ dada en la hipótesis nula (recuerde que queremos hacer pruebas relacionadas con el cuantil $x_{p}$ de la $v.a.$ en cuestión).
@@ -57,18 +59,18 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 ### Caso A (Prueba de dos colas) {-}
 
-$$\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*$$ 
+$$\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*,$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*$$
+$$\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*,$$
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
 
-$$T_{1}\leq t_{1} \ \ \ \ \  o   \ \ \ \ \ T_{2}>t_{2}$$ 
+$$T_{1}\leq t_{1} \ \ \ \ \  o   \ \ \ \ \ T_{2}>t_{2}.$$ 
 
 
 Elegimos $\alpha_{1},\alpha_{2}\geq 0$, tales que $\alpha_{1}+\alpha_{2}=\alpha$ el tamaño de la prueba y debemos encontrar $t_{1}$ y $t_{2}$ tales que: 
@@ -79,9 +81,9 @@ Donde $Y \sim Bin (n,p^*)$.
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=2*min \{ \mathbf{P}[Y\leq T_{1}],\mathbf{P}[Y \geq T_{2}] \}$$
+$$p-value=2*min \{ \mathbf{P}[Y\leq T_{1}],\mathbf{P}[Y \geq T_{2}]. \}$$
 
-Sugerimos que si $n > 20$ ,el $p-value$ puede obtenerse usando:
+Sugerimos que si $n > 20,$ el $p-value$ puede obtenerse usando:
 
 $$\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N}\left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
@@ -93,21 +95,21 @@ Con $\mathcal{N}(\cdot)$ la función de distribución de la normal estándar.
 
 ### Caso B (Prueba de cola inferior) {-}
 
-$$\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*$$ 
+$$\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*,$$ 
 
 $$vs$$
 
 $$
-\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*
+\textbf{H}_a: x_{p} > x^* \ \  \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]< p^*.
 $$
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
-$$T_{1} \leq t_{1}$$
+$$T_{1} \leq t_{1}.$$
 
-Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t_{1}$ tal que 
+Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t_{1}$ tal que: 
 
 $$\mathbf{P}[Y \leq t_{1}]=\alpha$$
 
@@ -118,27 +120,27 @@ y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value= \mathbf{P}[Y\leq T_{1}]$$
 
-Sugerimos que si $n > 20$, el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Sugerimos que si $n > 20$, el $p-value$ podría obtenerse de forma mas sencilla usando la aproximación normal:
 
 $$\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
 ### Caso C (Prueba de cola superior) {-}
 
-$$\textbf{H}_0: x_{p} \geq x^* \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]\leq p^*$$ 
+$$\textbf{H}_0: x_{p} \geq x^* \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]\leq p^*,$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: x_{p} < x^*  \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]> p^*$$
+$$\textbf{H}_a: x_{p} < x^*  \ \ \mbox{es equivalente a decir}: \ \ \mathbf{P}[X < x^*]> p^*.$$
 
 
 #### Regla de decisión {-}
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
 
 $$T_{2} > t_{2}$$
 
-Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t_{2}$ tal que 
+Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t_{2}$ tal que: 
 
 $$\mathbf{P}[Y \leq t_{2}]=1-\alpha$$\ 
 
@@ -153,33 +155,32 @@ Sugerimos que si $n > 20,$ el $p-value$ podría obtenerse de forma mas sencilla 
 
 $$\mathbf{P}[Y\geq T_{2}] \thickapprox 1- \mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)$$
 
-Ahora aplicaremos lo anterior en un ejemplo ilustrativo:
+Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
 ## Ejemplo
 
 El intervalo de tiempo entre las erupciones del geiser Old Faithful se registra 112 veces, de las cuales 8 son menores a 60 minutos y una es exactamente 60 minutos. Se quiere desea verificar que la mediana del intervalo es mayor a 60 minutos.
 
 
-**Paso 1** Escribimos la prueba a utilizar
+**Paso 1** Escribimos la prueba a utilizar.
 
 La prueba a utilizar **Prueba de cuantiles caso B cola inferior**
 
 
-**Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado
+**Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado,
 
-$$\textbf{H}_0: \mathbf{P}[X \leq 60]\geq 0.50$$
+$$\textbf{H}_0: \mathbf{P}[X \leq 60]\geq 0.50,$$
 
 $$vs$$
 
-$$\textbf{H}_a:  \mathbf{P}[X \leq 60]<0.50$$
+$$\textbf{H}_a:  \mathbf{P}[X \leq 60]<0.50.$$
 
 
 Donde $X$ es el intervalo de tiempo entre las erupciones, suponiendo que ambos intervalos son independientes e identicamente distribuidas. 
 
-**Paso 3** Estadístico de prueba
+**Paso 3** Estadístico de prueba.
 
-
-La estadística de prueba será $T_1=9$ y $T_2=8$. Tomaremos $\alpha=.1$
+La estadística de prueba será $T_1=9$ y $T_2=8$. Tomaremos $\alpha=.1,$
 
 $$T_{1}=9 \ \mbox{número  de  intervalos que  son menores o iguales  a 60 minutos.}$$
 
@@ -195,37 +196,37 @@ $$T_{1}\sim Bin(112,0.50)$$
 
 * Tomaremos $\alpha = 5% = 0.05$ el nivel de significancia.
 
-* $n = 112$ tamaño de la muestra
+* $n = 112$ tamaño de la muestra.
 
-* $p^* = 0.50$
+* $p^* = 0.50.$
 
-**Paso 5** Regla de decisión
+**Paso 5** Regla de decisión,
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si $T_{1} \leq t_{1}$ y  Rechazo $H_0$ si $p-value<\alpha$
+Rechazamos $H_0$ a un nivel de significancia $\alpha,$ si $T_{1} \leq t_{1}$ y Rechazo $H_0$ si $p-value<\alpha.$
 
-$$T_{1}=9 \leq 47.3=t_{1}$$
+$$T_{1}=9 \leq 47.3=t_{1},$$
 
 
-como $n>20$ puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
+como $n>20$ resultará más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede  utilizar el estadístico:
 
-$$t_{1}=np+Z_{q}\sqrt{np(1-p)}=(112)(0.5)+(-1.645)\sqrt{112(0.5)(1-0.5)}$$
+$$t_{1}=np+Z_{q}\sqrt{np(1-p)}=(112)(0.5)+(-1.645)\sqrt{112(0.5)(1-0.5)},$$
 
-$$t_{1}=47.3$$
+$$t_{1}=47.3.$$
 
-$\therefore$ Rechazamos $H_0$
+$\therefore$ Rechazamos $H_0.$
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value= \mathbf{P}[Y\leq T_{1}]=\mathbf{P}[Y\leq 9]$$
+$$p-value= \mathbf{P}[Y\leq T_{1}]=\mathbf{P}[Y\leq 9].$$
 
-Como $n > 20$, el $p-value$ puede obtenerse más sencillo usando la aproximación normal:
+Como $n > 20$, el $p-value$ puede obtenerse de una manera más sencilla usando la aproximación normal:
 
 $$\mathbf{P}[Y\leq 9] \thickapprox \mathcal{P} \left[Z\leq\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right]=$$
-$$\left(Z\leq\frac{9-(112)(0.5)+0.5}{\sqrt{(112)(0.5)(1-0.5)}}\right)=\mathbf{P}[Z\leq -8.7876] < < 0.0001$$
+$$\left(Z\leq\frac{9-(112)(0.5)+0.5}{\sqrt{(112)(0.5)(1-0.5)}}\right)=\mathbf{P}[Z\leq -8.7876] < < 0.0001.$$
 $\therefore$ Rechazo $H_0$ ya que  $p-value=0.0001<<0.05=\alpha.$ es decir, el $p-value$ es "muy pequeño". 
 
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión,
  
 
 Existe información suficiente para decir que la mediana del intervalo de erupciones es mayor a 60 minutos.
