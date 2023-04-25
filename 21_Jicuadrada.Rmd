@@ -2,7 +2,7 @@
 
 ## Datos
 
-$$X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}$$
+$$ Sea X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}$$
 
 Cada una de las variables se pueden acomodar en alguna clase $"k"$ (o categoría)
 
@@ -26,16 +26,18 @@ $$vs$$
 
 $$\textbf{H}_a: \ \mathbf{P}[ \ X \ \mbox{pertenezca a la categoría} \ j \ ] \  \neq \  \mathbf{P}_{j}, \ \ \ \mbox{para alguna} \ \ j=1,\ldots,k.$$
 
-**Procedimiento**
+**Procedimiento.**
 
 Vamos a buscar las probabilidades de ocurrencia en cada categoría.
 
-Calcular los valores esperados $e_{j}$;  Donde  $e_{j}=n \times P_{j}$
+Calcular los valores esperados $e_{j}$;  Donde  $e_{j}=n \times P_{j}.$
 
 
 ## Estadístico de Prueba
 
-$$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \chi^2_{(k-1)}$$
+El estadístico de prueba que ocuparemos es:
+
+$$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \chi^2_{(k-1)}.$$
 
 
 **Observaciones**
@@ -49,11 +51,11 @@ $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \c
 * $Q \sim \chi^2_{(k-1-r)}$  \ Donde $k$=Número de clases o intervalos, \  $r$=Número de parámetros estimados.
 
 
-#### Regla de decisión {-}
+#### Regla de decisión. {-}
 
-Rechazamos $H_0$ si  $Q$> $q_{teórica}$
+Rechazamos $H_0$ si  $Q$> $q_{teórica}.$
 
-* Cuando $Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha)$
+* Cuando $Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha).$
 
 
 ## Ejemplo
@@ -84,17 +86,17 @@ $$
 $$
  
  
-**Paso 1** Prueba a utilizar **Prueba Ji-cuadrada**
+**Paso 1** Prueba a utilizar **Prueba Ji-cuadrada.**
 
 **Paso 2** Planteamiento de hipótesis:
 
-$$\textbf{H}_0: \ \mbox{El número de niños por hogar sigue una distribución Poisson (1.40)}$$
+$$\textbf{H}_0: \ \mbox{El número de niños por hogar sigue una distribución Poisson (1.40).}$$
 
 $$vs$$
 
-$$\textbf{H}_a: \ \mbox{El número de niños por hogar no sige una distribución Poisson (1.40)}$$
+$$\textbf{H}_a: \ \mbox{El número de niños por hogar no sige una distribución Poisson (1.40).}$$
 
-Necesitamos buscar la Distribución de una variable aleatoria Poisson, con parámetro $\lambda$= 1.40
+Necesitamos buscar la Distribución de una variable aleatoria Poisson, con parámetro $\lambda$= 1.40.
 
 **Nota** En R-Studio tenemos dpois(c(0,1,2,3,4),1.40) para la primera categoría.
 
@@ -117,28 +119,28 @@ $$
 \end{array}
 $$
 
-**Paso 3** Estadístico de prueba
+**Paso 3** Estadístico de prueba.
 
 
 $$Q=\sum_{j=0}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}=\sum_{j=0}^{4}\frac{(f_{j}-e_{j})^2}{e_{j}}=$$
-$$=\frac{(273-247)^2}{247}+\frac{(361-345)^2}{345}+\frac{(263-242)^2}{242}+\frac{(78-113)^2}{113}+\frac{(25-39)^2}{39}$$
-$$T=21.4605$$
+$$=\frac{(273-247)^2}{247}+\frac{(361-345)^2}{345}+\frac{(263-242)^2}{242}+\frac{(78-113)^2}{113}+\frac{(25-39)^2}{39}.$$
+$$T=21.4605.$$
 
-**Paso 4** Regla de decisión
+**Paso 4** Regla de decisión.
 
-Rechazamos $H_0$ si  $Q$> $q_{teórica}$
+Rechazamos $H_0$ si  $Q$> $q_{teórica}.$
 
-* Cuando $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha)$$
+* Cuando $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha).$$
 
-Ocuparemos $\alpha=$ 0.05
+Ocuparemos $\alpha=$ 0.05.
 
-$\chi^2_{(k-1)}(1-\alpha)=\chi^2_{(5-1)}(1-0.05) =\chi^2_{(4)}(.95)$
+$\chi^2_{(k-1)}(1-\alpha)=\chi^2_{(5-1)}(1-0.05) =\chi^2_{(4)}(.95).$
 
 
-$$ Q=21.4605 > 9.48= \chi^2_{(4)}(.95)$$
+$$ Q=21.4605 > 9.48= \chi^2_{(4)}(.95).$$
 $\therefore$ Rechazamos $H_0$.
 
-**Paso 5** Conclusión
+**Paso 5** Conclusión.
 
 $\therefore$ Existe evidencia estadística suficiente para decir que el número de niños por hogar no sigue una Distribución Poisson (1.40).
 
