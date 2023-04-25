@@ -14,7 +14,7 @@ Los datos consisten en dos muestras aleatorias $X_{1}, \ldots, X_{n}$ y $Y_{1}, 
 
 ## Método
 
-Determine el cuantil $\alpha/2$ ($\omega_{\alpha/2}$) para $n$ y $m$ de las tablas correspondientes a **Prueba Mann-Whitney**, o si $n$ y $m$ son mayores a 20 se ocupa la aproximación del cuantil, donde $1-\alpha$ es el coeficiente de confianza.Note que esto se puede utilizar incluso si hay muchos empates.
+Determine el cuantil $\alpha/2$ ($\omega_{\alpha/2}$) para $n$ y $m$ de las tablas correspondientes a **Prueba Mann-Whitney**, o si $n$ y $m$ son mayores a 20 se ocupa la aproximación del cuantil, donde $1-\alpha$ es el coeficiente de confianza. Note que esto se puede utilizar incluso si hay muchos empates.
 
 Luego calcule $k$, dado por:
 
@@ -50,15 +50,15 @@ Se busca un intervalo de confianza del 95% para la diferencia de medias en los t
 
 **Paso 1**
 
-Encontrar cuantil $\alpha/2$ ($\omega_{\alpha/2}$), para nuestro ejemplo $n$=5, $m$=5, $\alpha=0.05$, y buscando en la **Tabla Mann-Whitney** tenemos $\omega_{\alpha/2}=\omega_{0.025}=18$
+Encontrar cuantil $\alpha/2$ ($\omega_{\alpha/2}$), para nuestro ejemplo $n$=5, $m$=5, $\alpha=0.05$, y buscando en la **Tabla Mann-Whitney** tenemos $\omega_{\alpha/2}=\omega_{0.025}=18.$
 
 **Paso 2**
 
 Calculamos $k$, dado por:
 
-$$k= \omega_{\alpha/2}-n(n+1)/2$$
+$$k= \omega_{\alpha/2}-n(n+1)/2.$$
 
-$$k=18-(5)(6)/2=3$$
+$$k=18-(5)(6)/2=3.$$
 
 **Paso 3**
 
