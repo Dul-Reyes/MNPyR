@@ -36,18 +36,18 @@ Sea $a$ el número total de observaciones mas grandes a la mediana en todas las 
 
 El estadístico de prueba es obtenido por el reordenamiento del estadístico utilizado en la prueba anterior, notando que $O_{2i}=n_{i}-O_{1i}$ en el caso especial con 2 renglones.
 
-$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}$$
+$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}.$$
 
 
 Para ahorrarnos algunos cálculos:
 
-$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{O_{1i}^2}{n_i}-\frac{Na}{b}$$
+$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{O_{1i}^2}{n_i}-\frac{Na}{b}.$$
 
 **NOTA:** 
 
 Si $a$ es exactamente igual a $b$ nuestro estadístico de prueba se simplifica en:
 
-$$T=\sum^{c}_{i=1}\frac{(O_{1i}-O_{2i})^2}{n_i}$$
+$$T=\sum^{c}_{i=1}\frac{(O_{1i}-O_{2i})^2}{n_i}.$$
 
 **Distribución de T**
 
@@ -55,7 +55,7 @@ La distribución nula de $T$ es obtenida aproximadamente por la Distribución $\
 
 Es decir,
 
-$$T\sim \chi^2_{(c-1)}$$
+$$T\sim \chi^2_{(c-1)}.$$
 
 ## Hipótesis
 
@@ -75,7 +75,7 @@ Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(c-1)$ grados de libertad, cuyos cua
 
 Si la hipótesis nula es rechazada, se pueden hacer comparaciones múltiples por parejas entre poblaciones utilizando la prueba de mediana repetidamente en tablas de contingencia de $2 \times 2$. En cada comparación se encuentra la mediana de las dos muestras, y el número por encima o por debajo de esa mediana se utiliza en la tabla de contingencia $2 \times 2$. Calculamos el estadístico de prueba T para la prueba y si $T$ es más grande que el cuantil $1-\alpha$ de la distribución $\chi^2$ con 1 grado de libertad encontrado en tablas de dicha distribución, entonces decimos que las medianas de esas 2 poblaciones son iguales.
 
-Aplicaremos nuestros conocimientos en el siguiente ejercicio:
+Aplicaremos nuestros conocimientos en el siguiente ejercicio.
 
 ### Ejercicio
 
@@ -100,9 +100,9 @@ $$
 Para determinar si existe una diferencia en los rendimientos como resultado del método utilizado, se empleó la prueba mediana porque se consideró que una diferencia en las medianas de la población podría interpretarse como una diferencia en el valor del método utilizado.
 
 
-**Paso 1** Prueba a utilizar **Tablas de contingencia, Prueba de la mediana**
+**Paso 1** Prueba a utilizar **Tablas de contingencia, Prueba de la mediana.**
 
-**Paso 2** Planteamineto de Hipótesis
+**Paso 2** Planteamineto de Hipótesis.
 
 $$\textbf{H}_0: \ \mbox{Todos los métodos tienen el mismo rendimiento medio (mediana) por acre.}$$
 
@@ -125,18 +125,18 @@ $$
 \end{array}
 $$
 
-**Paso 3** Estadístico de Prueba
+**Paso 3** Estadístico de Prueba.
 
 
 
-$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}$$
+$$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}.$$
 
-$$T=\frac{(34)^2}{(16)(18)}*\left(\ \frac{\left[6-\frac{(9)(16)}{34}\right]^2}{9}+\frac{\left[3-\frac{(10)(16)}{34}\right]^2}{10}+\frac{\left[7-\frac{(7)(16)}{34}\right]^2}{7}+\frac{\left[0-\frac{(8)(16)}{34}\right]^2}{8} \right)$$
+$$T=\frac{(34)^2}{(16)(18)}*\left(\ \frac{\left[6-\frac{(9)(16)}{34}\right]^2}{9}+\frac{\left[3-\frac{(10)(16)}{34}\right]^2}{10}+\frac{\left[7-\frac{(7)(16)}{34}\right]^2}{7}+\frac{\left[0-\frac{(8)(16)}{34}\right]^2}{8} \right).$$
 
 $$T=4.01(0.34+0.29+1.97+1.78) = 17.6$$
 
 
-**Paso 4** Regla de decisión
+**Paso 4** Regla de decisión.
 
 Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(c-1)$ grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
@@ -146,7 +146,7 @@ Como  $T=17.6 > 7.815=\chi^2(.95)$ rechazamos $H_0$.
 
 **Paso 5** Conclusión 
 
-Como rechazo $H_0$, entonces almenos 2 de los métodos difieren con respecto al rendimiento medio(mediana) por acre.
+Como rechazo $H_0$, entonces almenos 2 de los métodos difieren con respecto al rendimiento medio (mediana) por acre.
 
 Como se rechazó $H_0$, se le deja al lector hacer la comparación múltiple.
 
