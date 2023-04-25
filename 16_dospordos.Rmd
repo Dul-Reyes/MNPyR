@@ -42,16 +42,16 @@ El número total de observaciones es denotado por $N$.
 
 ## Estadístico de Prueba
 
-Si alguna columna total es cero, el estadístico de prueba es definido asi:
+Si alguna columna total es cero, el estadístico de prueba es definido así:
 
-$$T_{1}=0$$
+$$T_{1}=0.$$
 
 En otro caso:
 
-$$T_{1}=\frac{\sqrt{N}(O_{11}O_{22}-O_{12}O_{21})}{\sqrt{n_{1}n_{2}C_{1}C_{2}}}\sim N(0,1)$$
+$$T_{1}=\frac{\sqrt{N}(O_{11}O_{22}-O_{12}O_{21})}{\sqrt{n_{1}n_{2}C_{1}C_{2}}}\sim N(0,1).$$
 
 
-La distribución exacta de $T_1$ es difícil de array debido a todas las diferentes combinaciones de valores posibles para $O_{11},O_{22},O_{12},O_{21}$.
+La distribución exacta de $T_1$ es difícil debido a todas las diferentes combinaciones de valores posibles para $O_{11},O_{22},O_{12},O_{21}$.
 
 Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribución normal estándar cuyos cuantiles se dan en la tabla correspondiente.
 
@@ -59,11 +59,11 @@ Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribuc
 
 ### Caso A Prueba de dos colas {-}
 
-$$\textbf{H}_0: p_{1} = p_{2}$$
+$$\textbf{H}_0: p_{1} = p_{2},$$
 
 $$vs$$
 
-$$\textbf{H}_a: p_{1} \neq p_{2}$$
+$$\textbf{H}_a: p_{1} \neq p_{2}.$$
 
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
@@ -73,13 +73,13 @@ Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
 
-$$T_{1}< Z_\frac{\alpha}{2} \ \ \    o  \ \ \  T_{1} > Z_{1-\frac{\alpha}{2}}$$ 
+$$T_{1}< Z_\frac{\alpha}{2} \ \ \    o  \ \ \  T_{1} > Z_{1-\frac{\alpha}{2}}.$$ 
 
 Donde el cuantil $Z_\frac{\alpha}{2}$ y el cuantil  $Z_{1-\frac{\alpha}{2}}$ se buscan en las tablas correspondientes de la distribución Normal.
 
 Ahora calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=2*min\{ \mathbf{P}[Z<T_{1}],\mathbf{P}[Z>T_{1}]\}$$
+$$p-value=2*min\{ \mathbf{P}[Z<T_{1}],\mathbf{P}[Z>T_{1}]\},$$
 donde $Z$ es una normal estándar.
 
 **NOTA**
@@ -89,11 +89,11 @@ Para la hipótesis anterior, también es usual usar $T_{1}^2$ en lugar de $T_{1}
 
 ### Caso B Prueba de cola inferior {-}
 
-$$\textbf{H}_0: p_{1} \geq p_{2}$$
+$$\textbf{H}_0: p_{1} \geq p_{2},$$
 
 $$vs$$
 
-$$\textbf{H}_a: p_{1} < p_{2}$$
+$$\textbf{H}_a: p_{1} < p_{2}.$$
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
 
@@ -101,23 +101,23 @@ Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ 
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
-$$T_{1}< Z_{\alpha}$$ 
+$$T_{1}< Z_{\alpha}.$$ 
 
 
 Donde el cuantil $Z_{\alpha}$ se buscan en las tablas correspondientes de la distribución Normal.
 
 Ahora calcularemos el $p-value$ de la siguiente manera:
 
-$$p-value=\mathbf{P}[Z<T_{1}]$$
+$$p-value=\mathbf{P}[Z<T_{1}],$$
 donde $Z$ es una normal estándar.
 
 ### Caso C Prueba de cola superior {-}
 
-$$\textbf{H}_0: p_{1} \leq p_{2}$$
+$$\textbf{H}_0: p_{1} \leq p_{2},$$
 
 $$vs$$
 
-$$\textbf{H}_a: p_{1} > p_{2}$$
+$$\textbf{H}_a: p_{1} > p_{2}.$$
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 1$ y  $p_{2}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ en la $población\ 2$.
 
@@ -127,22 +127,20 @@ Donde $p_{1}$ es la probabilidad de elegir al azar un elemento de la $clase\ 1$ 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
 
-$$T_{1} > Z_{1-\alpha}$$ 
-
+$$T_{1} > Z_{1-\alpha}.$$ 
 
 Donde el cuantil $Z_{1-\alpha}$ se buscan en las tablas correspondientes de la distribución Normal.
 
 Ahora calcularemos el $p-value$ de la siguiente manera:
 
-$$p-value=\mathbf{P}[Z>T_{1}]$$
+$$p-value=\mathbf{P}[Z>T_{1}],$$
 donde $Z$ es una normal estándar.
 
-Ahora hagamos un ejercicio:
-
+Ahora hagamos un ejercicio.
 
 ## Ejemplo
 
-En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio).Para probar la siguiente hipótesis nula. Utilizaremos $\alpha$=0.05
+En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio). Para probar la siguiente hipótesis nula. Utilizaremos $\alpha$=0.05
 
 $$\textbf{H}_0: \ \mbox{La probabilidad de que un guardia marino tenga 20-20 (buena visión) es mayor o igual}$$
 $$\mbox{bajo el nuevo sistema de luces que con el viejo sistema de luces.}$$
@@ -153,22 +151,21 @@ $$\textbf{H}_a: \ \mbox{La probabilidad de buena visión es menor con el nuevo s
 $$\mbox{con el viejo sistema de luces.}$$
 
 
-**Paso 1** Prueba a utilizar
+**Paso 1** Prueba a utilizar.
 
-Es una prueba **Tablas de contingencia de 2x2**
+Es una prueba **Tablas de contingencia de 2x2.**
 
-**Paso 2** Planteamos las hipótesis
+**Paso 2** Planteamos las hipótesis.
 
 Es decir si planteamos nuestra hipótesis quedarían así:
 
 **Caso C** Prueba de cola superior
 
-$$\textbf{H}_0: p_{1} \leq p_{2}$$
+$$\textbf{H}_0: p_{1} \leq p_{2},$$
 
 $$vs$$
 
-$$\textbf{H}_a: p_{1} > p_{2}$$
-
+$$\textbf{H}_a: p_{1} > p_{2}.$$
 
 Donde $p_{1}$ es la probabilidad de elegir al azar un guardia marino con buena visión bajo el viejo sistema de luces y  $p_{2}$ es la probabilidad de elegir al azar un guardia marino con buena visión con el nuevo sistema de luces.
 
@@ -189,20 +186,20 @@ $$
 $$
 
 
-**Paso 4** Estadístico de Prueba
+**Paso 4** Estadístico de Prueba,
 
-$$T_{1}=\frac{\sqrt{N}(O_{11}O_{22}-O_{12}O_{21})}{\sqrt{n_{1}n_{2}C_{1}C_{2}}}$$
-$$T_{1}=\frac{\sqrt{1641}[(714)(154)-(111)(662)]}{\sqrt{(825)(816)(1376)(265)}}$$
-$$T_{1}= 2.9821$$
+$$T_{1}=\frac{\sqrt{N}(O_{11}O_{22}-O_{12}O_{21})}{\sqrt{n_{1}n_{2}C_{1}C_{2}}}.$$
+$$T_{1}=\frac{\sqrt{1641}[(714)(154)-(111)(662)]}{\sqrt{(825)(816)(1376)(265)}}.$$
+$$T_{1}= 2.9821.$$
 
-**Paso 5** Regla de decisión
+**Paso 5** Regla de decisión.
 
 Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
 
-$$T_{1} > Z_{1-\alpha}$$
+$$T_{1} > Z_{1-\alpha}.$$
 
-$$T_{1}=2.9821 > Z_{0.95}= 1.6449$$
+$$T_{1}=2.9821 > Z_{0.95}= 1.6449.$$
 
 Donde el cuantil  $Z_{1-\alpha}$ se buscan en las tablas correspondientes de la distribución Normal.
 
@@ -210,9 +207,9 @@ $\therefore$ Rechazo $H_0$.
 
 Ahora calculamos el $p-value$ la probabilidad de que Z sea mayor que el valor observado de $T_{1}$, de la tabla de la Distribución Normal.
 
-$$p-value=\mathbf{P}[Z>T_{1}]=\mathbf{P}[Z>2.9821]=1-P[Z\leq2.9821]=0.00143$$
+$$p-value=\mathbf{P}[Z>T_{1}]=\mathbf{P}[Z>2.9821]=1-P[Z\leq2.9821]=0.00143.$$
 
-$$\therefore p-value=0.00143 < 0.05=\alpha$$
+$$\therefore p-value=0.00143 < 0.05=\alpha.$$
 $\therefore$ Rechazo $H_0$. Entonces podemos concluir que la probabilidad de buena visión es menor con el nuevo sistema de luces que con el viejo sistema de luces.
 
 ## Ejemplo en R-Studio
