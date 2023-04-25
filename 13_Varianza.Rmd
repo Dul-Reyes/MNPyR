@@ -1,6 +1,6 @@
 # Prueba de Igualdad de Varianzas
 
-Usualmente para comparar varias poblaciones nos basamos en las medias u otras medidas de ubicación de las poblaciones, en algunas situaciones las varianzas podrían ser nuestro campo de interés. Por ejemplo, se ha afirmado que el efecto de sembrar nubes con yoduro de plata podría aumentar la varianza de la lluvia resultante.
+Usualmente para comparar varias poblaciones nos basamos en las medias o varianzas de las poblaciones, en algunas situaciones las varianzas podrían ser nuestro campo de interés. Por ejemplo, se ha afirmado que el efecto de sembrar nubes con yoduro de plata podría aumentar la varianza de la lluvia resultante.
 
 ## Prueba de Igualdad de Varianzas para 2 poblaciones {-}
 
@@ -23,16 +23,16 @@ $$\mbox{Sea} \ \ y_{1},y_{2},y_{3},\cdots,y_{m} \ \ \mbox{una muestra aleatoria 
 
 **Asignación de Rangos** 
 
-Modificaremos cada $X_{i}$ y $Y_{j}$ con el valor absoluto de la desviación de la media utilizando :
+Modificaremos cada $X_{i}$ y $Y_{j}$ con el valor absoluto de la desviación de la media utilizando:
 
 
-$$U_{i} = |X_{i}-\mu_{1}| \ , \ \ \ i=1,\cdots,n$$
+$$U_{i} = |X_{i}-\mu_{1}| \ , \ \ \ i=1,\cdots,n.$$
 
 $$y$$
  
-$$V_{j} = |Y_{j}-\mu_{2}|\  ,\ \ \ j=1,\cdots,m$$
+$$V_{j} = |Y_{j}-\mu_{2}|\  ,\ \ \ j=1,\cdots,m.$$
 
-donde $\mu_{1}$ y $\mu_{2}$ son las medias de las poblaciones 1 y 2 respectivamente.
+Donde $\mu_{1}$ y $\mu_{2}$ son las medias de las poblaciones 1 y 2 respectivamente.
 
 Si $\mu_{1}$ y $\mu_{2}$ son desconocidas, se usará $\overline{X}$ para $\mu_{1}$ y $\overline{Y}$ para $\mu_{2}$.
 
@@ -45,30 +45,32 @@ Sean $R(U_{i})$ y $R(V_{j})$  los rangos así asignados.
 
 ## Estadístico de Prueba
 
+Se utilizará el siguiente estadístico de prueba:
+
 + **Si no hay empates**
 
 Si no hay empates de la población $U$ con la población $V$ ocupamos:
 
 
-$$T=\sum_{i=1}^{n}[R(U_{i})]^2$$
+$$T=\sum_{i=1}^{n}[R(U_{i})]^2.$$
 
 La suma de los cuadrados de los rangos asignados a la $población \ 1$.
 
 + **Si  hay empates**
 
-$$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}$$
+$$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}.$$
 
 Donde $N= n+m$, $\overline{R^2}$ representa el promedio de los cuadrados de los rangos de ambas muestras combinadas:
 
-$$\overline{R^2}= \frac{1}{N}\left(\sum_{i=1}^{n}[R(U_{i})]^2+\sum_{j=1}^{m}[R(V_{j})]^2\right)$$
+$$\overline{R^2}= \frac{1}{N}\left(\sum_{i=1}^{n}[R(U_{i})]^2+\sum_{j=1}^{m}[R(V_{j})]^2\right).$$
 y $\sum R_{i}^4$ representa la suma de los rangos elevados a la cuarta potencia:
 
-$$ \sum_{i=1}^{N}R_{i}^4= \sum_{i=1}^{n}[R(U_{i})]^4+\sum_{j=1}^{m}[R(V_{j})]^4$$
+$$ \sum_{i=1}^{N}R_{i}^4= \sum_{i=1}^{n}[R(U_{i})]^4+\sum_{j=1}^{m}[R(V_{j})]^4.$$
 Los cuantiles exactos de la distribución nula de $T$ se obtienen de las tablas correspondientes de la prueba para los casos de no tener empates y $n \leq 10$, $m \leq 10$.
 
-Para muestras de tamaño mayor a 10 utilizamos la siguiente aproximación, basada en la estandarización normal de cuantiles $z_p$, obtenidas de la tabla de la distribución normal, puede ser usado la aproximación obtenida de cuantiles $\omega_p$ para $T$.
+Para muestras de tamaño mayor a 10 utilizamos la siguiente aproximación, basada en la estandarización normal de cuantiles $z_p$, obtenidas de la tabla de la distribución normal, puede ser usado la aproximación obtenida de cuantiles $\omega_p$ para $T$,
 
-$$\omega_p= \frac{n(N+1)(2N+1)}{6}+z_{p}\sqrt{\frac{mn(N+1)(2N+1)(8N+11)}{180}}$$
+$$\omega_p= \frac{n(N+1)(2N+1)}{6}+z_{p}\sqrt{\frac{mn(N+1)(2N+1)(8N+11)}{180}}.$$
 Donde $N= n+m$
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis: 
@@ -81,31 +83,31 @@ $$\textbf{H}_0: \ X \ \mbox{e} \  Y \ \mbox{son identicamente distribuidas, exce
 
 $$vs$$
 
-$$\textbf{H}_a: \ Var(x) \neq  Var(Y)$$
+$$\textbf{H}_a: \ Var(x) \neq  Var(Y).$$
 
 
 #### Regla de decisión {-}
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si:
 
-$$T>t_{1-\frac{\alpha}{2}} \ \ \   o \ \ \  T<t_{\frac{\alpha}{2}}$$
+$$T>t_{1-\frac{\alpha}{2}} \ \ \   o \ \ \  T<t_{\frac{\alpha}{2}}.$$
 
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si $T$ (o $T_1$ en caso de tener empates) es mayor que el cuantil $1-\frac{\alpha}{2}$ o menor  al cuantil $\frac{\alpha}{2}$ encontrados en las tablas correspodientes a la prueba (tablas de rangos al cuadrado). Y en el caso de $T_{1}$ en la tabla de distribución normal estándar.
 
-Y calculamos el $p-value$ 
+Y calculamos el $p-value$: 
 
-$$p-value= 2*(el \ menor\ p-value\ de\ una\ cola)$$
+$$p-value= 2*(el \ menor\ p-value\ de\ una\ cola).$$
 
 donde 
 
 el $p-value$ de la cola inferior es aproximadamente:
 
-$$ p-value=\mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
+$$ p-value=\mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right].$$
 
 y el $p-value$ de la cola superior es aproximadamente:
 
-$$p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
+$$p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right].$$
 
 ### Caso B Prueba de cola inferior {-}
 
@@ -113,7 +115,7 @@ $$\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, exc
 
 $$vs$$
 
-$$\textbf{H}_a: \ Var(x) < Var(Y)$$
+$$\textbf{H}_a: \ Var(x) < Var(Y).$$
 
 #### Regla de decisión {-}
 
@@ -124,7 +126,7 @@ $T<t_\alpha$ (o $T_1$ en caso de tener empates) donde, $t_\alpha$ es el cuantil 
 
 y el $p-value$ se calcula:
 
-$$ p-value= \mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
+$$ p-value= \mathbf{P}\left[Z\leq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right].$$
 
 ### Caso C Prueba de cola superior {-}
 
@@ -132,7 +134,7 @@ $$\textbf{H}_0: \ X \  \mbox{e} \  Y \ \mbox{son identicamente distribuidas, exc
 
 $$vs$$
 
-$$\textbf{H}_a: \ Var(x) > Var(Y)$$
+$$\textbf{H}_a: \ Var(x) > Var(Y).$$
 
 
 #### Regla de decisión {-}
@@ -145,10 +147,10 @@ $T>t_{1-\alpha}$(o $T_1$ en caso de tener empates)  donde, $t_{1-\alpha}$ es el 
 y el $p-value$ se calcula:
 
 
-$$p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right]$$
+$$p-value=\mathbf{P}\left[Z\geq\frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}}\right].$$
 
 
-Ahora vamos a resolver un ejemplo:
+Ahora vamos a resolver un ejemplo.
 
 ## Ejemplo
 
@@ -168,7 +170,7 @@ $$
 \end{array}
 $$
 
-Es significativa la diferencia en las varianzas? Utiliza $\alpha$=0.05
+¿Es significativa la diferencia en las varianzas? Utiliza $\alpha$=0.05
 
 
 **Paso 1** Prueba a utilizar **Prueba de Igualdad de Varianzas**
@@ -376,7 +378,7 @@ if((T1>t1) || (T1<t2)) {
 }
 
 ```
-Ya que utilizamos la estadística $T_1$, entonces el cuantil que hay que buscar es en una distribución normal. Con $\alpha=0.05$,hace que $\frac{\alpha}{2}=0.025$ y $1-\frac{\alpha}{2}=0.975$
+Ya que utilizamos la estadística $T_1$, entonces el cuantil que hay que buscar es en una distribución normal. Con $\alpha=0.05$, hace que $\frac{\alpha}{2}=0.025$ y $1-\frac{\alpha}{2}=0.975$
 
 ```{r}
 t1=qnorm(.025,0,1)
