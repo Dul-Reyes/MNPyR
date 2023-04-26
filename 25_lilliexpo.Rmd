@@ -9,7 +9,7 @@ Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tama�
 
 Después calcularemos los valores de muestra $Z_{i}$ definidos por:
 
-$$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,n$$
+$$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,n.$$
 
 El estadístico de prueba se calcula a partir de $Z_{i}s$ en lugar de a partir de la muestra aleatoria. original.
 
@@ -37,11 +37,11 @@ $$vs$$
 $$\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}$$
 
 
-## Estadistico de Prueba
+## Estadistico de Prueba.
 
 El estadístico de prueba está dada por la máxima distancia vertical:
 
-$$T_{2}=\underset{x}{sup} \ | \ F^*(x)-S(x) \ |$$
+$$T_{2}=\underset{x}{sup} \ | \ F^*(x)-S(x) \ |.$$
 
 #### Regla de Decisión {-}
 
@@ -50,7 +50,7 @@ Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T_{2}> W_{1-\alpha}$ dond
 
 ## Ejemplo
 
-Dada la siguiente muestra
+Dada la siguiente muestra:
 
 $$0.4976,\ 1.2514,\ 0.6619,\ 0.561,\ 1.0026,\ 0.3529,\ 0.8595,\ 1.6254,$$
 $$1.1514,\ 1.5181,\ 0.8642,\ 0.5206,\ 0.4229,\ 0.9825,\ 1.0183.$$
@@ -60,9 +60,9 @@ Se desea probar si la muestra sigue una distribución exponencial con parámetro
 Realizar la prueba con un nivel de significancia del $95\%$.
 
 
-**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Lilliefors Exponencial**
+**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Lilliefors Exponencial.**
 
-**Paso 2** Planteamiento de Hipótesis
+**Paso 2** Planteamiento de Hipótesis:
 
 $$\textbf{H}_0: \ \mbox{La muestra aleatoria proviene de una población con distribución exponencial}$$
 
@@ -73,9 +73,9 @@ $$vs$$
 $$\textbf{H}_a: \ \mbox{La función de distribución de las} \ \  X_{i}s \ \  \mbox{no es exponencial.}$$
 
 
-**Paso 3** Estadístico de Prueba
+**Paso 3** Estadístico de Prueba:
 
-$$T_{2}=\underset{z}{sup} \ | \ F^*(z)-S(z) \ |$$
+$$T_{2}=\underset{z}{sup} \ | \ F^*(z)-S(z) \ |.$$
 
 **Paso 4** Procedimiento completo para el cálculo del Estadístico de Prueba:
 
@@ -83,7 +83,7 @@ $$T_{2}=\underset{z}{sup} \ | \ F^*(z)-S(z) \ |$$
 
 2) Se obtiene el estimador puntual de la distribución exponencial con los datos de la muestra, por lo que el parámetro $\lambda$ es calculado como:
 
-$$\hat{\lambda}=\frac{1}{\overline{X}}=\frac{1}{0.88602}; \ \ \ \ \ \  \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{15}\sum_{i=1}^{15}X_{i}=0.88602$$
+$$\hat{\lambda}=\frac{1}{\overline{X}}=\frac{1}{0.88602}; \ \ \ \ \ \  \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{15}\sum_{i=1}^{15}X_{i}=0.88602.$$
 3) Después calcularemos los valores de muestra $Z_{i}$ definidos por:
 
 $$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15$$
@@ -100,13 +100,13 @@ $$S_{n}= \frac{i-1}{n}=\frac{0}{15},\frac{1}{15}, \ldots, \frac{14}{15}.$$
 6) Se calcula $D^+$ que es el resultado de la resta de la distribución conocida menos la  distribución empírica, es decir:
 
 
-$$D^+= max \ \{ \ S_{n}(Z_{i})-F^*(Z_{i}) \ \}$$
+$$D^+= max \ \{ \ S_{n}(Z_{i})-F^*(Z_{i}) \ \}.$$
 
 
 7) Se calcula $D^-$ que es el resultado de la resta de la distribución empírica menos uno menos la distribución conocida, es decir:
 
 
-$$D^-= max \  \{\ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}$$
+$$D^-= max \  \{\ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}.$$
 
 8) Finalmente realizada la tabla, se calcula el máximo de las columnas $D^+$ y $D^-$ de ésta manera, se tiene la siguiente tabla:
 
@@ -126,15 +126,15 @@ data_frame("$i$" = 1:15, "$X$" = c(0.4976, 1.2514, 0.6619, 0.561, 1.0026, 0.3529
 $$ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930 $$
 Por lo tanto:
 
-$$T_{2}=\underset{z}{sup}\ | \ S_{n}(z)-F^*(z) \ |=max \ \{\ D^+,D^- \ \}=max \ \{ \ 0.1596,0.0930 \ \}=0.1596 $$
+$$T_{2}=\underset{z}{sup}\ | \ S_{n}(z)-F^*(z) \ |=max \ \{\ D^+,D^- \ \}=max \ \{ \ 0.1596,0.0930 \ \}=0.1596.$$
 
-**Paso 5** Regla de Decisión
+**Paso 5** Regla de Decisión.
 
 Este último resultado se compara con la tabla de valores críticos de la Tabla Lilliefors Exponencial, para un nivel de significancia $\alpha$ = 0.05 $W_{0.05}$=0.2776, de esta manera se tiene que $0.2776 = W_{0.05} > T_{2} = 0.1596$, como el cuantil $W_{0.05}$=0.2776 es mayor a comparación de $T_{2}$=0.2776.
 
 No Rechazamos $H_0$.
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión.
 
 Podemos concluir que a un nivel de significancia $\alpha$=0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución exponencial.
 
