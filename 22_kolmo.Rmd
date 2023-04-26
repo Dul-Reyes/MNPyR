@@ -74,23 +74,25 @@ Sea $S(x)$ la función de distribución empírica basada en la muestra aleatoria
 
 Sea el estadístico de prueba $T$ la mayor distancia vertical entre $S(x)$ y $F^*(x)$(denotado por sup o el supremo).
 
-$$T=\underset{x}{sup}|F^*(x)-S(x)|$$
+$$T=\underset{x}{sup}|F^*(x)-S(x)|.$$
 
-Esto se lee "$T$ es igual al supremo para todas las $x$, del valor absoluto de la diferencia de $F^*(x)-S(x)$"
+Esto se lee "$T$ es igual al supremo para todas las $x$, del valor absoluto de la diferencia de $F^*(x)-S(x).$"
 
 
 ### Caso B (Prueba de 1 cola) {-}
 
 Denotamos el estadístico de prueba $T^+$ la mayor distancia vertical alcanzada por $F^*(x)$ sobre $S(x)$.
 
-$$T^+=\underset{x}{sup}[F^*(x)-S(x)] $$
+$$T^+=\underset{x}{sup}[F^*(x)-S(x)].$$
+
 Que es similar a $T$, a excepción que solo vamos a considerar la mayor diferencia alcanzada por $F^*(x)$ sobre la función $S(x)$.
 
 ### Caso C (Prueba de 1 cola) {-}
 
 Denotamos el estadístico de prueba $T^-$ la mayor distancia vertical alcanzada por $S(x)$ sobre $F^*(x)$.
 
-$$T^-=\underset{x}{sup}[S(x)-F^*(x)] $$
+$$T^-=\underset{x}{sup}[S(x)-F^*(x)].$$
+
 Que es similar a $T$, a excepción que solo vamos a considerar la mayor diferencia alcanzada por $S(x)$ sobre la función $F^*(x)$.
 
 ## Hipótesis
@@ -117,7 +119,7 @@ $$Ha: \ F(x) < F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.$$
 
 #### Regla de decisión {-}
 
-Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^+>W$. Donde $W$ es el cuantil $(1-\alpha)$,obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola.   
+Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^+>W$. Donde $W$ es el cuantil $(1-\alpha)$, obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola.   
 
 ### Caso C (Prueba de 1 cola) {-}
 
@@ -129,10 +131,10 @@ $$\textbf{H}_a: \ F(x) > F^*(x) \ \ \ \ \mbox{para al menos un valor de} \  x.$$
 
 #### Regla de decisión {-}
 
-Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^->W$. Donde $W$ es el cuantil $(1-\alpha)$,obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola. 
+Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^->W$. Donde $W$ es el cuantil $(1-\alpha)$, obtenido en la tabla correspondiente a nuestra prueba, para la prueba de 1 cola. 
 
 
-Vamos a aplicar este conocimiento en un ejemplo:
+Vamos a aplicar este conocimiento en un ejemplo.
 
 ## Ejemplo
 
@@ -153,9 +155,9 @@ x & si & 0 \leq x < 1 \\
 \right.
 $$
 
-**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Kolmogorov**
+**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Kolmogorov.**
 
-**Paso 2** Planteamiento de Hipótesis 
+**Paso 2** Planteamiento de Hipótesis: 
 
 
 $$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty$$
@@ -179,12 +181,12 @@ $$
 
 
 
-**Paso 3** Estadístico de Prueba
+**Paso 3** Estadístico de Prueba.
 
 Calculamos el Estadístico de Prueba:
 
-$$T=\underset{x}{sup}|F^*(x)-S(x)|$$
-$$T=0.290$$ 
+$$T=\underset{x}{sup}|F^*(x)-S(x)|.$$
+$$T=0.290.$$ 
 
 **Paso 4** Procedimiento completo para el cálculo del Estadístico de Prueba:
 La siguiente tabla representa los cálculos para encontrar nuestro Estadístico de Prueba $T$:
@@ -201,13 +203,13 @@ data_frame("$i$" = 1:10, "$X(i)=x$" = c(0.203,0.329,0.382,0.477,0.480,0.503,0.55
 ```
 
 
-**Paso 5** Regla de Decisión
+**Paso 5** Regla de Decisión.
 
 El cuantil $W$ que acumula $1-\alpha$ de probabilidad, usando $\alpha$=0.05 es $W=0.409$, encontrado en las tablas correspondientes.
 
 Tenemos que $T<W$, entonces no rechazamos la hipotesis nula.
 
-**Paso 6** Conclusión 
+**Paso 6** Conclusión. 
 
 Entonces podemos concluir que los datos siguen una distribución uniforme.
 
@@ -227,7 +229,7 @@ Tabla
 EstdPrueba = max(Tabla [,5])
 EstdPrueba
 ```
-Observamos que la estadística de prueba tiene un valor de 0.29. El cuantil W que acumula $1-\alpha$ de probabilidad, usando $\alpha=0.05$ es W = 0.409, encontrado en las tablas correspondientes. Por lo tanto tenemos que $T_1 < W$, entonces no rechazamos la hipotesis nula.y su correspondiente p-value es mucho mayor a 0.05, por lo tanto con $\alpha=5\%$ no rechazaremos $H_0$ y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es uniforme en el intervalo (0,1).
+Observamos que la estadística de prueba tiene un valor de 0.29. El cuantil W que acumula $1-\alpha$ de probabilidad, usando $\alpha=0.05$ es W = 0.409, encontrado en las tablas correspondientes. Por lo tanto tenemos que $T_1 < W$, entonces no rechazamos la hipótesis nula y su correspondiente p-value es mucho mayor a 0.05, por lo tanto con $\alpha=5\%$ no rechazaremos $H_0$ y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es uniforme en el intervalo (0,1).
 
 
 
