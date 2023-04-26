@@ -31,40 +31,37 @@ los datos que siguen la función de distribución propuesta y completamente cono
 Sin embargo, $F(x)$ al ser desconocida se recurre a la construcción de una distribución empírica
 la cual se define como:
 
-$$S_{n}(x)=\frac{ \sum_{i=1}^{n}número\ de\ valores\ muestrales\ \leq x}{n}$$
+$$S_{n}(x)=\frac{ \sum_{i=1}^{n}número\ de\ valores\ muestrales\ \leq x}{n}.$$
 
 Es decir, la función empírica mide el número de elementos menores o iguales a la observación
 $X$, puede observarse que en el caso continuo, al no haber **"empates"** la función empírica puede
 ser vista como:
 
-$$S_{n}(x)=\frac{i}{n} \ \ \ i=1,\ldots,n$$
+$$S_{n}(x)=\frac{i}{n} \ \ \ i=1,\ldots,n.$$
 
 
 Al tener una distribución desconocida $F(x)$, la función empírica $S_{n}(x)$ puede ser usada
 como un estimador insesgado de $F(x)$ pues:
 
 
-$$\mathbb{E}(S_{n}(x))=F(x)$$
-La función empírica es de gran importancia ya que gracias al teorema de **Glivenko-Cantelli**
-se sabe que cuando el tamaño de la muestra tiende a infinito cualquier distribución empírica
-se aproxima a la distribución real de los datos, la cual, es una distribución completamente especificada. El teorema de **Glivenko-Cantelli**, menciona que al calcular las diferencias de la distribución real y la empírica éstas son cero en cada observación dada, el teorema que se enuncia como:
+$$\mathbb{E}(S_{n}(x))=F(x).$$
+
+La función empírica es de gran importancia ya que gracias al teorema de **Glivenko-Cantelli** se sabe que cuando el tamaño de la muestra tiende a infinito cualquier distribución empírica se aproxima a la distribución real de los datos, la cual, es una distribución completamente especificada. El teorema de **Glivenko-Cantelli**, menciona que al calcular las diferencias de la distribución real y la empírica éstas son cero en cada observación dada, el teorema que se enuncia como:
 
 Sea $X_{1},\ldots,X_{n}$ una muestra aleatoria de distribución $F(x)$ desconocida y sea $S_{n}(x)$ la función empírica entonces:
 
-$$\underset{x}{sup} \ |\ S_{n}(x)-F(x) \ | \ \longrightarrow \ 0$$
+$$\underset{x}{sup} \ |\ S_{n}(x)-F(x) \ | \ \longrightarrow \ 0.$$
 
 
-Es decir, conforme mayor sea el tamaño de la muestra, $S_{n}(x)$ reproduce la verdadera
-distribución. De esta manera se establece el estadístico de Prueba $Dn$, el cual no depende de ningún
-parámetro desconocido, ya que engloba a la distribución empírica y a la distribución propuesta:
+Es decir, conforme mayor sea el tamaño de la muestra, $S_{n}(x)$ reproduce la verdadera distribución. De esta manera se establece el estadístico de Prueba $Dn$, el cual no depende de ningún parámetro desconocido, ya que engloba a la distribución empírica y a la distribución propuesta:
 
-$$D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \  \{ \ max \{ \  S_{n}(X_{i-1})-F^*(X_{i}) \ \},max \{ \  S_{n}(X_{i})-F^*(X_{i}) \ \} \ \} \ \  \ \forall \ i$$
-y $$D_{n}= \ \underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \ \{ \  D^+,D^- \ \}$$
+$$D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \  \{ \ max \{ \  S_{n}(X_{i-1})-F^*(X_{i}) \ \},max \{ \  S_{n}(X_{i})-F^*(X_{i}) \ \} \ \} \ \  \ \forall \ i.$$
+y $$D_{n}= \ \underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \ \{ \  D^+,D^- \ \}.$$
 
 Donde:
 
-$$D^+= max \ \{ \  S_{n}(X_{i})-F^*(X_{i}) \ \}$$
-$$D^-= max \  \{ \ S_{n}(X_{i-1})-F^*(X_{i}) \ \}$$
+$$D^+= max \ \{ \  S_{n}(X_{i})-F^*(X_{i}) \ \}.$$
+$$D^-= max \  \{ \ S_{n}(X_{i-1})-F^*(X_{i}) \ \}.$$
 
 Finalmente, se observa que si $H_0$ es cierta si $D_{n} \longrightarrow \ 0$ ya que las diferencias entre la diferencias entre la función empírica y la propuestas son mínimas, lo que cumple con el **Teorema de Glivenko-Cantelli** ; por lo que hay evidencia para rechazar $H_0$ cuando $D_{n} > W$ Donde $W$ es el cuantil que acumula el $1- \alpha$  de probabilidad de la distribución asociada a $D_{n}$ la cual puede obtenerse de la tablas correspondientes la cual muestra los cuantiles de la distribución
 Kolmogorov-Smirnov o la Tabla Kolmogorov para 2 colas.
@@ -81,32 +78,31 @@ $$ 0.65482.4373 \ \ 1.803 \ \ 2.3674 \ \ 1.2716 \ \ 0.2566 \ \ 0.2513$$
 
 Se desea hacer el siguiente contraste:
 
-$$\textbf{H}_0: \ \mbox{Los datos} \  \sim  \ LogN(0,1)$$ 
+$$\textbf{H}_0: \ \mbox{Los datos} \  \sim  \ LogN(0,1).$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \ \mbox{Los datos} \ \ \nsim \ LogN(0,1)$$ 
+$$\textbf{H}_a: \ \mbox{Los datos} \ \ \nsim \ LogN(0,1).$$ 
 
 
 Realice la prueba de Kolmogorov-Smirnov al 5% de significancia.
 
 
-**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Kolmogorov-Smirnov**
+**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Kolmogorov-Smirnov.**
 
 
-**Paso 2** Planteamiento de Hipótesis 
+**Paso 2** Planteamiento de Hipótesis: 
 
-$$\textbf{H}_0: \ \mbox{Los datos} \ \sim  \ LogN(0,1)$$ 
+$$\textbf{H}_0: \ \mbox{Los datos} \ \sim  \ LogN(0,1).$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \ \mbox{Los datos} \  \nsim \  LogN(0,1)$$ 
+$$\textbf{H}_a: \ \mbox{Los datos} \  \nsim \  LogN(0,1).$$ 
 
 
 **Paso 3** Estadístico de Prueba:
 
-$$D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \ \{\ D^+,D^- \ \}$$
-
+$$D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \ \{\ D^+,D^- \ \}.$$
 
 
 **Paso 4** Procedimiento completo para el cálculo del Estadístico de Prueba:
@@ -117,18 +113,19 @@ $$D_{n}=\underset{x}{sup} \ | \ S_{n}(x)-F^*(x) \ |=max \ \{\ D^+,D^- \ \}$$
 
 $$S_{n}= \frac{i}{n}=\frac{1}{15},\frac{2}{15}, \ldots, 1.$$
 
-3) Se calcula la función empírica menos un valor, es decir,}
+3) Se calcula la función empírica menos un valor, es decir,
+
 $$S_{n}= \frac{i-1}{n}=\frac{0}{15},\frac{1}{15}, \ldots, \frac{14}{15}.$$
 
-4) Se calcula la distribución conocida, es decir, $F^*(x) \ \ \  LogN(0,1)$ 
+4) Se calcula la distribución conocida, es decir, $F^*(x) \ \ \  LogN(0,1).$ 
 
 5) Se calcula $D^+$ que es el resultado de la resta de la distribución conocida menos la  distribución empírica, es decir:
 
-$$D^+= max \ \{\ S_{n}(X_{i})-F^*(X_{i}) \ \}$$
+$$D^+= max \ \{\ S_{n}(X_{i})-F^*(X_{i}) \ \}.$$
 
 6) Se calcula $D^-$ que es el resultado de la resta de la distribución empírica menos uno menos la distribución conocida, es decir:
 
-$$D^-= max \ \{\ S_{n}(X_{i-1})-F^*(X_{i}) \ \}$$
+$$D^-= max \ \{\ S_{n}(X_{i-1})-F^*(X_{i}) \ \}.$$
 
 7) Finalmente realizada la tabla, se calcula el máximo de las columnas $D^+$ y $D^-$ de ésta manera, se tiene la siguiente tabla:
 
@@ -145,20 +142,20 @@ data_frame("$i$" = 1:15, "$X$" = c(0.6379,1.5299,0.35005,2.0505,2.1906,0.3459,2.
 ```
 
 
-8) Entonces 
+8) Entonces, 
 
-$$ D^+= max\ \{\ S_{n}(X_{i})-F^*(X_{i}) \ \}= 0.1865 \ \ \ \ y\ \ \ \ D^-= max\ \{\ S_{n}(X_{i-1})-F^*(X_{i})\ \}=0.1198$$
+$$ D^+= max\ \{\ S_{n}(X_{i})-F^*(X_{i}) \ \}= 0.1865 \ \ \ \ y\ \ \ \ D^-= max\ \{\ S_{n}(X_{i-1})-F^*(X_{i})\ \}=0.1198.$$
 Por lo tanto:
 
 $$D_{n}=\underset{x}{sup}\ | \ S_{n}(x)-F^*(x) \ |=max \ \{ \ D^+,D^- \ \}=max \ \{ \  0.1865,0.1198 \ \}=0.1865$$
 
-**Paso 5** Regla de Decisión
+**Paso 5** Regla de Decisión.
 
-Este último resultado se compara con la tabla de valores críticos de la Tabla Kolmogorov-Smirnov, para un nivel de significancia $\alpha$ = 0.05
+Este último resultado se compara con la tabla de valores críticos de la Tabla Kolmogorov-Smirnov, para un nivel de significancia $\alpha$ = 0.05, 
 $W_{0.05}$=0.338, de esta manera se tiene que 0.338 = $W_{0.05} > D_{n}$ = 0.1865, como el estadístico $W_{0.05}$ es mayor a comparación de $D_{n}$=0.1865.
 No Rechazamos $H_0$.
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión.
 
 Se acepta la prueba de lognormalidad con media 1 y varianza 0, con un nivel de significancia $\alpha$ = 0.05. Es decir, Los datos se distribuyen $LogN(0,1)$.
 
