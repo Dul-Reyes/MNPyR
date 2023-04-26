@@ -1,7 +1,6 @@
 # Prueba Anderson-Darling 
 
-La prueba de Anderson Darling, al igual que la prueba de Lilliefors sirve para probar la
-hipótesis de que una muestra aleatoria sigue una cierta distribución especificada. 
+La prueba de Anderson Darling, al igual que la prueba de Lilliefors sirve para probar la hipótesis de que una muestra aleatoria sigue una cierta distribución especificada. 
 
 ## Datos
 
@@ -23,30 +22,23 @@ $$\textbf{H}_a: \ F(x) \neq F^*(x) \ \ \ \ \mbox{para al menos un  valor de} \  
 
 Donde $F^*(x)$ es la distribución teórica que se quiere probar con un nivel de significancia $\alpha$.
 
-Para probar dicha hipótesis Anderson propone examinar las diferencias al cuadrados entre la distribución empírica de los datos $S_{n}(X)$ y la distribución teórica propuesta y completamente
-especificada $F^*(X)$ y luego integrar respecto a la distribución propuesta.
-A este tipo de pruebas se les conoce como funciones de distribución empíricas cuadráticas **(QEDF)** por
-sus siglas en inglés.
-De esta manera la estadística de la prueba **Anderson-Darling** se obtiene de integrar la
-siguiente función **QEDF**:
+Para probar dicha hipótesis Anderson propone examinar las diferencias al cuadrados entre la distribución empírica de los datos $S_{n}(X)$ y la distribución teórica propuesta y completamente especificada $F^*(X)$ y luego integrar respecto a la distribución propuesta.
+A este tipo de pruebas se les conoce como funciones de distribución empíricas cuadráticas **(QEDF)** por sus siglas en inglés.
+De esta manera la estadística de la prueba **Anderson-Darling** se obtiene de integrar la siguiente función **QEDF**:
 
-$$A_n^2=n \int_{-\infty}^{\infty} (Sn(X)-F^*(X))^2 \frac{1}{F^*(X)(1-F^*(X))}$$
+$$A_n^2=n \int_{-\infty}^{\infty} (Sn(X)-F^*(X))^2 \frac{1}{F^*(X)(1-F^*(X))}.$$
 
 
-Una característica importante es que se usa la expresión $\frac{1}{F^*(X)(1-F^*(X))}$
-debido a que se busca que las colas de distribución tengan un peso cuantificablemente mayor, con la finalidad de detectar diferencias en las colas de la distribución.
+Una característica importante es que se usa la expresión $\frac{1}{F^*(X)(1-F^*(X))}$ debido a que se busca que las colas de distribución tengan un peso cuantificablemente mayor, con la finalidad de detectar diferencias en las colas de la distribución.
 
-## Estadístico de Prueba
+## Estadístico de Prueba.
 
 Resolviendo la integral se obtiene la estadístico de la forma:
 
+$$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right) \ [ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ].$$
 
-$$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right) \ [ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ]$$
 
-
-Dado que el estadístico no depende de $F(X)$ y sólo depende de $n$ entonces la distribución
-asintótica de **Anderson-Darling** es la que se muestra a continuación, asimismo se mostrarán algunos
-ajustes a la estadística con la finalidad de que la prueba sea más potente para determinados
+Dado que el estadístico no depende de $F(X)$ y sólo depende de $n$ entonces la distribución asintótica de **Anderson-Darling** es la que se muestra a continuación, asimismo se mostrarán algunos ajustes a la estadística con la finalidad de que la prueba sea más potente para determinados
 casos:
 
 $$
@@ -63,7 +55,7 @@ Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.6
 \end{array}
 $$
 
-## Regla de Decisión
+## Regla de Decisión.
 
 Rechazo $H_0$ a un nivel de significancia $\alpha$ si $A_{n}^2> A_{1-\alpha}$ donde $A_{n}^{2}$ ya tiene el ajuste para cada caso mencionado anteriormente y  $A_{1-\alpha}$ es el cuantil obtenido en las tablas correspondientes a nuestra prueba.
 
@@ -79,9 +71,9 @@ $$-2.0039,\ \ 1.7349,\ \ 5.7442,\ \ 2.7931,\ \ 6.2938,\ \ 11.7337,\ \ -0.1318.$$
 
 Sigue una distribución Normal, para ello se realizará la prueba de Anderson Darling con un nivel de significancia del $5\%$.
 
-**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Anderson-Darling**
+**Paso 1** Prueba a utilizar **Prueba de Bondad de Ajuste Anderson-Darling.**
 
-**Paso 2** Planteamiento de Hipótesis 
+**Paso 2** Planteamiento de Hipótesis: 
 
 $$\textbf{H}_0: \ \mbox{La muestra} \ \sim \  N(\mu,\sigma^2).$$
 
@@ -89,9 +81,9 @@ $$vs$$
 
 $$\textbf{H}_a: \ \mbox{La muestra} \ \ \nsim \ \  N(\mu,\sigma^2).$$
 
-**Paso 3** Estadístico de Prueba
+**Paso 3** Estadístico de Prueba:
 
-$$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ]$$
+$$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ].$$
 
 **Paso 4** Procedimiento completo para el cálculo del Estadístico de Prueba:
 
@@ -99,7 +91,7 @@ $$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-
 1) Se procede a ordenar nuestras observaciones de menor a mayor.
 
 2) Se obtienen los estimadores puntuales de distribución normal con los datos de la muestra, 
-$\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}= 2.66658$ y                   $s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}=5.313212$
+$\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}= 2.66658$ y                   $s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}=5.313212.$
 
 3) Se calcula la distribución propuesta, en este caso una distribución normal con media $\overline{X}$ y varianza $s^2$, es decir,$F^*(X)$, para ello se usa la aproximación a una normal estándar
 
@@ -126,10 +118,10 @@ data_frame("$i$" = 1:15, "$X$" = c(-4.1302, 9.315, 3.9757, 8.49, 5.6204, -6.9098
 
 7) Finalmente se suma todos los $Q_{i}s$ y se construye el estadístico:
 
-$$A_n^2=-n-\sum_{i=1}^{n}Qi=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ]$$
-$$A_n^2=-n-\sum_{i=1}^{n}Qi=-15-(-15.1340)=15.1340-15=0.1340$$
+$$A_n^2=-n-\sum_{i=1}^{n}Qi=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-F^*(X_{(n-i+1)})) \ ].$$
+$$A_n^2=-n-\sum_{i=1}^{n}Qi=-15-(-15.1340)=15.1340-15=0.1340.$$
 
-$$A_n^2=0.1340$$
+$$A_n^2=0.1340.$$
 
 8) Aplicando el ajuste de la tabla anterior:
 $$
@@ -143,9 +135,9 @@ Normal\ con\ N(\overline{X},S^2) & (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2} & 0.6
 \end{array}
 $$
 
-$$ (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2}=(1+\frac{4}{15}+\frac{25}{15^2})A_{n}^{2}=0.1846$$
+$$ (1+\frac{4}{n}+\frac{25}{n^2})A_{n}^{2}=(1+\frac{4}{15}+\frac{25}{15^2})A_{n}^{2}=0.1846.$$
 
-**Paso 5** Regla de Decisión
+**Paso 5** Regla de Decisión.
 
 Este último resultado se compara con la tabla de valores críticos de la Tabla Anderson-Darling para el caso de Normalidad, para un nivel de significancia $\alpha$ = 0.05.
 
@@ -153,7 +145,7 @@ Por lo anterior $A_{0.95}$=0.751, de esta manera se tiene que 0.751 = $A_{0.95} 
 
 $\therefore$ No Rechazamos $H_0$.
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión.
 
 Podemos concluir que a un nivel de significancia $\alpha=0.05$, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución normal.
 
@@ -190,6 +182,8 @@ A_2ajust
 
 ```
 Por la tabla auxiliar tenemos $A_{0.95}=0.751$, de esta manera se tiene que 0.751 = $A_{0.95} > A_{n}^2=0.1846$, como el valor crítico $A_{0.95}$ es mayor a comparación de $A_{n}^2=0.1846$, entonces no rechazamos $H_0$. Podemos concluir que a un nivel de significancia $\alpha$=0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución normal.
+
+\break
 
 Ahora podemos utilizar la prueba en R
 ```{r}
