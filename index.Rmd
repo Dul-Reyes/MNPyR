@@ -19,8 +19,7 @@ always_allow_html: true
 ---
 ---
 nocite: | 
- @montgomery2021introduction, @conover1998practical,@gibbons2020nonparametric,@Casella2002statistical,@Grolemud2014Introduction,@Tesisdelicenciatura2019Estadistica,@Kutner2005Applied,
-@Publico2000introduccion, 
+ @montgomery2021introduction, @conover1998practical, @gibbons2020nonparametric, @Casella2002statistical, @Grolemud2014Introduction, @Tesisdelicenciatura2019Estadistica, @Kutner2005Applied, @Publico2000introduccion, 
 ...
 
 # Prefacio {-}
