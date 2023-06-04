@@ -107,7 +107,7 @@ Nos ayudaremos de la siguiente tablita:
 $$
 \begin{array}{c c c c c}
 \hline
-\textbf{Número de niños} & \textbf{Número de hogares} & P_{i} & e_i=n \times P_i \\
+\textbf{Número de niños} & \textbf{Número de hogares} & P_{i}=dpois(0:4,1.4) & e_i=n \times P_i \\
 \hline
 0&273&0.2465&247 \\
 1&361&0.3452&345 \\
