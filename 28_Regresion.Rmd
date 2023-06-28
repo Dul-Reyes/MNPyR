@@ -1,7 +1,7 @@
 # (PART) Regresión Lineal Simple {-}
 
 # Introducción {-}
-En esta sección tomamos como referencia el libro @montgomery2021introduction,
+En esta sección tomamos como referencia el libro @montgomery2021introduction,@Kutner2005Applied.
 El análisis de regresión es una de las **técnicas estadísticas** de uso más frecuente para analizar datos. Su atractivo y utilidad general son el resultado de usar una ecuación para expresar la relación entre una variable de interés y un conjunto de variables predictorias relacionadas. Para usar bien la regresión se requiere tanto apreciar la teoría que hay detrás como los problemas prácticos que suelen presentarse cuando se emplea ésta técnica con datos de la vida real.   
 
 # Modelo con intercepto
