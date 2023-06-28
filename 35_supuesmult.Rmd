@@ -260,11 +260,6 @@ kappa
 ```
 El coeficiente $kappa$ es de 3.15 por lo tanto no tenemos problemas de multicolinealidad.
 
-
-
-
-
-
 # Apéndice
 
 Será conveniente desarrollar algunas variantes en la forma en la que se denota a los residuales, para ello se define a la matriz $H$ como $H=X(X'X)^{-1}X'$,es conocida como **"matriz sombrero"**, que junto con la matriz $(I-H)$ cumplen con ser matrices idempotentes, es decir, que al elevar las matrices a una potencia dada los valores contenidos en la matriz no se modifican; de igual forma ambas matrices cumplen con ser simétricas, denominadas así ya que al transponer las matrices los valores contenidos en ellas conservan su lugar.
@@ -366,9 +361,8 @@ $$\therefore \mathbf{E}[\underline{Y}]= \beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+
 **b)** Para la varianza de $\underline{Y}$ se tiene:
 
 $$Var(\underline{Y})=Var\left( \beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots + \beta_{k}x_{k}+ \epsilon\right).$$
-La estimación es sobre $\underline{Y}$, $\beta_{0},\beta_{1},\beta_{2},\ldots,\beta_{k}$ sons constantes;$x_{1},x_{2},\ldots,x_{k}$ son valores dados, por lo que cumple que:
+La estimación es sobre $\underline{Y}$, $\beta_{0},\beta_{1},\beta_{2},\ldots,\beta_{k}$ son constantes;$x_{1},x_{2},\ldots,x_{k}$ son valores dados, por lo que cumple que:
 
 $$Var(\underline{Y})=0+0+0+\ldots+0+Var(\epsilon)$$
 $$\therefore Var(\underline{Y})=\sigma^2.\blacksquare$$
-
 

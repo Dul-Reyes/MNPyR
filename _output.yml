@@ -24,3 +24,5 @@ bookdown::pdf_book:
   toc_appendix: yes
   toc_unnumbered: no
   quote_footer: ["\\VA{", "}{}"]
+  bibliography: book.bib
+  nocite: '@*'

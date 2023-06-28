@@ -8,7 +8,7 @@ output: bookdown::gitbook
 documentclass: book
 geometry: "top=1in, left=1in, right=1in, bottom=1in"
 classoption: [a4paper, oneside, openany]
-bibliography: [book.bib, packages.bib]
+bibliography: book.bib
 biblio-style: apalike
 link-citations: yes
 css: styles.css
@@ -16,11 +16,9 @@ github-repo: Dul-Reyes/MNPyR
 url: 'https://github.com/Dul-Reyes/MNPyR'
 description: "Material para el curso Modelos no paramétricos y de regresión 2021-2 en la Facultad de Ciencias, Universidad Nacional Autónoma de México"
 always_allow_html: true
+nocite: '@*'
 ---
----
-nocite: | 
- @montgomery2021introduction, @conover1998practical, @gibbons2020nonparametric, @Casella2002statistical, @Grolemud2014Introduction, @Tesisdelicenciatura2019Estadistica, @Kutner2005Applied, @Publico2000introduccion, 
-...
+<!-- nocite: '@*' -->
 
 # Prefacio {-}
 
