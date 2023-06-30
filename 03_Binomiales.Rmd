@@ -22,8 +22,3 @@ $$\mathbf{E}[X]=np$$
 \textbf{Varianza}
 
 $$Var(X)=np(1-p)$$
-
-
-
-
-* A lo largo de los siguientes capitulos de Pruebas binomiales, tomamos los siguientes libros como apoyo, el alumno puede tomarlos como consulta para reforzar las notas, @gibbons2020nonparametric, @Casella2002statistical.

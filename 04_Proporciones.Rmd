@@ -299,6 +299,3 @@ binom.test(T,n, p = 0.7, alternative = c("greater"))
 3. En una muestra de 150 partidos de básquetbol universitario, el equipo de casa ganó 98 partidos. Realice una prueba para determinar si los datos sustentan la hipótesis de que en el básquetbol universitario el equipo de casa tiene ventaja. ¿A qué conclusión llega con $\alpha= 0.05$?
 
 [^4.1]: Véase que de acuerdo al tipo de cuantil (de cola inferior o superior), el signo del cuantil $Z_q$ cambiará.
-
-
-*Para algunos será el primer contacto con R y el formato de R-Markdown asi que pueden consultar en @Grolemud2014Introduction y @Publico2000introduccion.
