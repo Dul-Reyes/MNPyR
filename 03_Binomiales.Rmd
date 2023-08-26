@@ -6,19 +6,19 @@ La distribución de probabilidad binomial se introdujo para describir las probab
 
 Decimos que una variable aleatoria X se distribuye Binomial con parámetros n,p.
 
-$$X\sim Bin(n,p)$$
-$$x=0,1,2,...n$$
+$$X\sim Bin(n,p),$$
+$$x=0,1,2,...n.$$
 
-\textbf{Función de Distribución}
+"Función de Distribución"
 
-$$P_X(x)={n \choose p} p^x(1-p)^{n-x}$$
+$$P_X(x)={n \choose p} p^x(1-p)^{n-x},$$
 
 \hfill\break
 
 \textbf{Media}
 
-$$\mathbf{E}[X]=np$$
+$$\mathbf{E}[X]=np,$$
 
 \textbf{Varianza}
 
-$$Var(X)=np(1-p)$$
+$$Var(X)=np(1-p).$$
