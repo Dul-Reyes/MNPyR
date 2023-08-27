@@ -18,7 +18,7 @@ Determine el cuantil $\alpha/2$ ($\omega_{\alpha/2}$) para $n$ y $m$ de las tabl
 
 Luego calcule $k$, dado por:
 
-$$k= \omega_{\alpha/2}-n(n+1)/2$$
+$$k= \omega_{\alpha/2}-n(n+1)/2.$$
 
 Para todos los pares posibles ($X_{i},Y_{j}$), encuentre las $k$ diferencias más grandes $X_{i}-Y_{j}$ y encontrar las $k$ diferencias más pequeñas.  
 
@@ -28,7 +28,7 @@ La k-ésima diferencia más grande es el límite superior $U$ y la $k-ésima$ di
 
 Entonces el intervalo de confianza es obtenido por:
 
-$$\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha$$
+$$\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha.$$
 
 Ahora haremos un ejemplo para ilustrar la teoría:
 
