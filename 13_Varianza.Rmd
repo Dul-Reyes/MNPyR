@@ -6,7 +6,7 @@ Usualmente para comparar varias poblaciones nos basamos en las medias o varianza
 
 ## Datos
 
-Consiste en dos muestras aleatorias
+Consiste en dos muestras aleatorias:
 
 
 $$\mbox{Sea} \ \ x_{1},x_{2},x_{3},\cdots,x_{n} \ \ \mbox{una muestra aleatoria de tamaño} \  n  \ \mbox{de la} \ población \ 1.$$
@@ -21,7 +21,7 @@ $$\mbox{Sea} \ \ y_{1},y_{2},y_{3},\cdots,y_{m} \ \ \mbox{una muestra aleatoria 
 
 3) La escala de medida es al menos intervalo.
 
-**Asignación de Rangos** 
+**Asignación de Rangos:** 
 
 Modificaremos cada $X_{i}$ y $Y_{j}$ con el valor absoluto de la desviación de la media utilizando:
 
@@ -47,7 +47,7 @@ Sean $R(U_{i})$ y $R(V_{j})$  los rangos así asignados.
 
 Se utilizará el siguiente estadístico de prueba:
 
-+ **Si no hay empates**
++ **Si no hay empates:**
 
 Si no hay empates de la población $U$ con la población $V$ ocupamos:
 
@@ -56,7 +56,7 @@ $$T=\sum_{i=1}^{n}[R(U_{i})]^2.$$
 
 La suma de los cuadrados de los rangos asignados a la $población \ 1$.
 
-+ **Si  hay empates**
++ **Si  hay empates:**
 
 $$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}.$$
 
@@ -170,21 +170,21 @@ $$
 \end{array}
 $$
 
-¿Es significativa la diferencia en las varianzas? Utiliza $\alpha$=0.05
+¿Es significativa la diferencia en las varianzas? Utiliza $\alpha$=0.05.
 
 
-**Paso 1** Prueba a utilizar **Prueba de Igualdad de Varianzas**
+**Paso 1** Prueba a utilizar **Prueba de Igualdad de Varianzas.**
 
 
-**Paso 2** Formulamos las hipótesis
+**Paso 2** Formulamos las hipótesis:
 
 $$\textbf{H}_0: \mbox{Las tasas actuales y las tasas pasadas son idénticamente distribuidas.}$$
 
 $$vs$$
 
-$$\textbf{H}_a: \ Var(\mbox{tasas pasadas}) \ \neq  \ Var(\mbox{tasas actuales})$$
+$$\textbf{H}_a: \ Var(\mbox{tasas pasadas}) \ \neq  \ Var(\mbox{tasas actuales}).$$
 
-**Paso 4** Procedimiento completo 
+**Paso 4** Procedimiento completo: 
 
 Primero como $\mu_{1}$ y $\mu_{2}$ son desconocidas se usará $\overline{X}$ para $\mu_{1}$ y $\overline{Y}$ para $\mu_{2}$.
 
@@ -207,31 +207,31 @@ $$
 $$
 
 
-$T$= Sumas del cuadrado de los rangos (Actuales) = 381
+$T$= Sumas del cuadrado de los rangos (Actuales) = 381.
 
-$\overline{R^2}=  \frac{1}{16}\left(16+4+36+\cdots+210.25+144\right)$=93.46
+$\overline{R^2}=  \frac{1}{16}\left(16+4+36+\cdots+210.25+144\right)$=93.46.
 
-$\sum_{i=1}^{N}R_{i}^4= (16)^2+(4)^2+\cdots+(210.25)^2+(144)^2$= 243217.125
+$\sum_{i=1}^{N}R_{i}^4= (16)^2+(4)^2+\cdots+(210.25)^2+(144)^2$= 243217.125.
 
-**Paso 3** Estadístico de Prueba
+**Paso 3** Estadístico de Prueba:
 
 Debido a que encontramos empates utilizaremos el estadístico $T_{1}$:
 
-$$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}$$
+$$T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}.$$
 
 Entonces tenemos:
 
-$$T_{1} = \frac{381-8(93.46)}{\left[\frac{(8)(8)}{16(15)}(243217.125)-\frac{(8)(8)}{15}(93.46)^2\right]^\frac{1}{2}}$$
+$$T_{1} = \frac{381-8(93.46)}{\left[\frac{(8)(8)}{16(15)}(243217.125)-\frac{(8)(8)}{15}(93.46)^2\right]^\frac{1}{2}},$$
 
-$$T_{1} = \frac{381-747.68}{\left[\frac{64}{240}(243217.125)-\frac{64}{15}(93.46)^2\right]^\frac{1}{2}}$$
+$$T_{1} = \frac{381-747.68}{\left[\frac{64}{240}(243217.125)-\frac{64}{15}(93.46)^2\right]^\frac{1}{2}},$$
 
-$$T_{1} = \frac{-366.68}{[64857.9-37268.35]^\frac{1}{2}}$$
+$$T_{1} = \frac{-366.68}{[64857.9-37268.35]^\frac{1}{2}},$$
 
-$$T_{1} = \frac{-366.68}{\sqrt{27589.55}}$$
-$$T_{1} = \frac{-366.68}{166.10}$$
-$$T_{1}= -2.208282$$
+$$T_{1} = \frac{-366.68}{\sqrt{27589.55}},$$
+$$T_{1} = \frac{-366.68}{166.10},$$
+$$T_{1}= -2.208282.$$
 
-**Paso 5** Regla de Decisión
+**Paso 5** Regla de Decisión:
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si:
 
@@ -243,13 +243,13 @@ Rechazamos $H_0$ al nivel de significancia $\alpha$ si $T_{1}$ (ya que tuvimos e
 
 Regresando a nuestro ejemplo:
 
-$$T_{1}>t_{0.975} \ \ \ \ \  o \ \ \ \ \ T_{1}<t_{.025}$$
+$$T_{1}>t_{0.975} \ \ \ \ \  o \ \ \ \ \ T_{1}<t_{.025}.$$
 
-$$-2.2082 \ngtr 1.96  \ \ \ \ \   o  \ \ \ \ \  -2.2082 < -1.96$$ 
+$$-2.2082 \ngtr 1.96  \ \ \ \ \   o  \ \ \ \ \  -2.2082 < -1.96.$$ 
 
 $\therefore$ Entonces Rechazo $H_0$.
 
-**Paso 6** Conclusión
+**Paso 6** Conclusión.
 
 Entonces podemos concluir que existe evidencia estadística suficiente para decir que existe diferencia significativa en las varianzas.
 
@@ -378,7 +378,7 @@ if((T1>t1) || (T1<t2)) {
 }
 
 ```
-Ya que utilizamos la estadística $T_1$, entonces el cuantil que hay que buscar es en una distribución normal. Con $\alpha=0.05$, hace que $\frac{\alpha}{2}=0.025$ y $1-\frac{\alpha}{2}=0.975$
+Ya que utilizamos la estadística $T_1$, entonces el cuantil que hay que buscar es en una distribución normal. Con $\alpha=0.05$, hace que $\frac{\alpha}{2}=0.025$ y $1-\frac{\alpha}{2}=0.975.$
 
 ```{r}
 t1=qnorm(.025,0,1)
@@ -426,10 +426,10 @@ $$
 \end{array}
 $$
 
-¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia $5\%$
+¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia $5\%.$
 
 
-2. Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia $10\%$
+2. Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia $10\%.$
 
 $$
 \begin{array}{||c| |c||} 
