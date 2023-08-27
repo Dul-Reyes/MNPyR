@@ -6,7 +6,7 @@ En este caso particular, $r$=2 y $c$=2, llamadas **Tablas de Contingencia de 2x2
 
 Una aplicación de las tablas de contingencia de $2 \times 2$ surge cuando $N$ objetos o personas, posiblemente seleccionadas aleatoriamente de alguna población, son clasificadas en una o dos categorías antes de aplicar un tratamiento o se produzca un evento.
 
-Después de aplicar el tratamiento los mismos $N$ objetos son nuevamente examinados y clasificados en las dos categorías. La pregunta a responder es ¿El tratamiento altera significativamente la proporción de objetos en cada una de las dos categorías?
+Después de aplicar el tratamiento los mismos $N$ objetos son nuevamente examinados y clasificados en las dos categorías. La pregunta a responder es ¿El tratamiento altera significativamente la proporción de objetos en cada una de las dos categorías?.
 
 El uso de las tablas de contingencia fue introducido anteriormente, y se vio que el procedimiento estadístico apropiado era una variación de la prueba de signos conocida como **McNemar**.
 
@@ -59,7 +59,7 @@ Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribuc
 
 ### Caso A Prueba de dos colas {-}
 
-$$\textbf{H}_0: p_{1} = p_{2},$$
+$$\textbf{H}_0: p_{1} = p_{2}.$$
 
 $$vs$$
 
@@ -89,7 +89,7 @@ Para la hipótesis anterior, también es usual usar $T_{1}^2$ en lugar de $T_{1}
 
 ### Caso B Prueba de cola inferior {-}
 
-$$\textbf{H}_0: p_{1} \geq p_{2},$$
+$$\textbf{H}_0: p_{1} \geq p_{2}.$$
 
 $$vs$$
 
@@ -113,7 +113,7 @@ donde $Z$ es una normal estándar.
 
 ### Caso C Prueba de cola superior {-}
 
-$$\textbf{H}_0: p_{1} \leq p_{2},$$
+$$\textbf{H}_0: p_{1} \leq p_{2}.$$
 
 $$vs$$
 
@@ -140,7 +140,7 @@ Ahora hagamos un ejercicio.
 
 ## Ejemplo
 
-En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio). Para probar la siguiente hipótesis nula. Utilizaremos $\alpha$=0.05
+En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio). Para probar la siguiente hipótesis nula. Utilizaremos $\alpha$=0.05.
 
 $$\textbf{H}_0: \ \mbox{La probabilidad de que un guardia marino tenga 20-20 (buena visión) es mayor o igual}$$
 $$\mbox{bajo el nuevo sistema de luces que con el viejo sistema de luces.}$$
@@ -161,7 +161,7 @@ Es decir si planteamos nuestra hipótesis quedarían así:
 
 **Caso C** Prueba de cola superior
 
-$$\textbf{H}_0: p_{1} \leq p_{2},$$
+$$\textbf{H}_0: p_{1} \leq p_{2}.$$
 
 $$vs$$
 
