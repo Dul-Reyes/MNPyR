@@ -37,7 +37,7 @@ $$\textbf{H}_a: \mbox{Algunas de las varianzas de las poblaciones no son idénti
 
 El estadístico de prueba que vamos a utilizar es:
 
-+ **Cuando tenemos empates**
++ **Cuando tenemos empates:**
 
 $$T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right],$$
 donde:
@@ -52,7 +52,7 @@ donde:
 
 * $D^2=\frac{1}{N-1}\left[\sum_{i=1}^{N}R^4_{j}-N(\overline{S})^2\right]$ y $\sum{R_{i}^4}$ representa la suma de los rangos después de elevarlos a la cuarta potencia.
 
-+ **Cuando no tenemos empates**
++ **Cuando no tenemos empates:**
 
 $D^2$ y $\overline{S}$ se simplifican:
 
@@ -70,9 +70,9 @@ $$T_{2}>t_{1-\alpha}.$$
 donde $t_{1-\alpha}$ es el cuantil de la distribución $\chi^2$ con $k-1$ grados de libertad donde el cuantil se localiza en las tablas de dicha distribución.
 
 
-y calculamos el $p-value$ 
+Y calculamos el $p-value$ 
 
-$$p-value= \mathbf{P}\left[\chi^2>T_{2}\right].$$
+$$p-value= \mathbf{P}\left[\chi^2>T_{2}\right],$$
 es la probabilidad de una variable aleatoria $\chi^2$  con $k-1$ grados de libertad sea mayor a el  valor observado de $T_2$.
 
 ## Comparación múltiple
@@ -122,7 +122,7 @@ $$\mbox{a al menos alguno de los otros métodos.}$$
 
 **Paso 3** Estadístico de Prueba.
 
-**Cuando tenemos empates**
+**Cuando tenemos empates:**
 
 $$T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right],$$
 donde:
@@ -216,7 +216,7 @@ Como $T_2=6.006\ngtr11.344=t_{1-\alpha}$ entonces no se cumple la regla de decis
 
 
 
-##Ejercicios
+## Ejercicios
 
 1. Una muestra aleatoria de 5 diferentes marcas de focos son probados para medir la duración del foco, y los resultados fueron los siguientes:
 
@@ -239,5 +239,5 @@ A & B&C&D&E \\
 \end{array}
 $$
 
-Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use $\alpha=10\%$
+Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use $\alpha=10\%.$
 
