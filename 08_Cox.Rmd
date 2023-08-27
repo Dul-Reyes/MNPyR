@@ -37,7 +37,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 ### Caso A (Prueba de dos colas) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -59,20 +59,21 @@ Por otro lado, si $n>20$ resultará más sencillo utilizar una aproximación nor
 
 $$t=\frac{1}{2}\left(n+z_{\alpha/2}\ \sqrt{n}\right).$$
 
-Donde $z_{\alpha/2}$ es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.
-
-y calculamos el $p-value$ de la siguiente manera:
+Donde $z_{\alpha/2}$ es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=2*min\{\mathbf{P}[Y\leq T],\mathbf{P}[Y\geq T]\}.$$
 
 Sugerimos que si $n>20$, el $p-value$ podrá obtenerse de forma más sencilla usando la aproximación normal:
 
-$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right).$$
+$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)$$
+
+$$y$$
+
 $$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).$$
 
 ### Caso B (Prueba de cola inferior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -88,9 +89,7 @@ Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que:
 
 $$\mathbf{P}[Y \leq t]=\alpha.$$
 
-Donde $Y \sim Bin (n,1/2)$.
-
-y calculamos el $p-value$ de la siguiente manera:
+Donde $Y \sim Bin (n,1/2)$ y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=\mathbf{P}[Y\leq T].$$
 
@@ -100,7 +99,7 @@ $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} (\frac{2T-n+1}{\sqrt{n}}).$$
 
 ### Caso C (Prueba de cola superior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -112,15 +111,13 @@ Rechazamos $H_0$ a un nivel de significancia $\alpha$ si:
 
 $$T > n-t.$$ 
 
-Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que 
+Elegimos $\alpha$, el tamaño de la prueba y debemos encontrar $t$ tal que: 
 
-$$\mathbf{P}[Y \leq t]=\alpha$$  
+$$\mathbf{P}[Y \leq t]=\alpha.$$  
 
-Donde $Y \sim Bin (n,1/2)$.
+Donde $Y \sim Bin (n,1/2)$ y calculamos el $p-value$ de la siguiente manera:
 
-y calculamos el $p-value$ de la siguiente manera:
-
-$$p-value=\mathbf{P}[Y\geq T]$$
+$$p-value=\mathbf{P}[Y\geq T].$$
 
 Sugerimos que si $n > 20$, el $p-value$ podría obtenerse de forma más sencilla usando la aproximación normal:
 
@@ -132,7 +129,7 @@ Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 ## Ejemplo
 
 Una hidroeléctrica está muy interesada en seguir las tasas promedio de descarga de agua de las corrientes que lo alimentan. Se tienen los registros mensuales de estas tasas (en pies cúbicos por segundo) durante un período de 24 meses.
-La empresa sospecha que la tasa está disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5%?
+La empresa sospecha que la tasa está disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5%?.
 
 Los datos están en la siguiente tabla, los cuales están emparejados por mes ya que estas tasa de descarga siguen un ciclo anual, se sabe que la tasa de descarga sigue un ciclo anual, por lo que no se puede emparejar las descargas de corriente durante dos meses diferentes; sin embargo, al emparejar los mismos meses consecutivos, se puede investigar la existencia de una tendencia. Los datos son los siguientes:
 
@@ -195,14 +192,14 @@ $$\textbf{H}_a: \  \mbox{La tasa promedio de descarga de agua está disminuyendo
 
 **Paso 3** Estadístico de prueba.
 
-Utilizaremos el estadístico
+Utilizaremos el estadístico:
 
 $$T=5 \ \ número \ de \ signos\ "+".$$
 
 $$T\sim Bin(12,1/2).$$
 
 
-**Paso 4** Procedimiento completo 
+**Paso 4** Procedimiento completo: 
 
 **Supuestos:**
 
@@ -237,7 +234,7 @@ Existe evidencia suficiente para decir que la tasa promedio de descarga de agua 
 
 Ahora haremos la réplica en R.
 
-La estadística de prueba será $T=5$. Tomaremos $\alpha=5\%$
+La estadística de prueba será $T=5$. Tomaremos $\alpha=5\%.$
 
 ```{r}
 
