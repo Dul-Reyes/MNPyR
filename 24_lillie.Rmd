@@ -17,9 +17,7 @@ Calculando la media muestral
 
 $$\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.$$
 
-para usarla como una estimación puntual de $\mu$
-
-y calculando como una estimación de $\sigma$
+para usarla como una estimación puntual de $\mu$ y calculando como una estimación de $\sigma:$
 
 $$s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}.$$
 
@@ -177,7 +175,7 @@ EstdPrueba
 ```
 Por lo tanto:
 
-$$T_{1}=\underset{x}{sup} \ | \ S_{n}(z)-F^*(z)\ |=max \ \{\ D^+,D^- \ \}=max \ \{ \  0.2179,0.1513 \ \}=0.2179 $$
+$$T_{1}=\underset{x}{sup} \ | \ S_{n}(z)-F^*(z)\ |=max \ \{\ D^+,D^- \ \}=max \ \{ \  0.2179,0.1513 \ \}=0.2179. $$
 
 Lo vamos a comparar con la tabla de valores críticos de la Tabla Lilliefors para Normalidad, para un nivel de significancia $\alpha$ = 0.05 $W_{0.05}$=0.2190, de esta manera se tiene que 0.2190 = $W_{0.05} > T_{1}$ = 0.2179, como el cuantil $W_{0.05}$ es mayor a comparación de $T_{1}$=0.2179.
 Entonces no Rechazamos $H_0$ y podemos concluir que a un nivel de significancia $\alpha$ =0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución normal.
@@ -190,8 +188,10 @@ library(nortest) #prueba lilliefors
 lillie.test(X)
 ```
 
-##Otro ejemplo en R
+## Otro ejemplo en R
+
 En R fije la semilla 2020, y genere 250 observaciones distribuidas como una $N(0, 1)$ y con ella realice:
+
 \begin{enumerate}
 \item Grafique la función de distribución empírica de las observaciones generadas.
 \item Agregar sobre esa misma gráfica, la curva de la distribución verdadera $N(0,1)$. 
