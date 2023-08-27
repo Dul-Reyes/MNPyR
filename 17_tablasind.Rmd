@@ -171,7 +171,7 @@ Entonces tenemos $\chi^2_{(.95,(2-1)*(3-1))}=\chi^2_{(.95,2)}=5.99.$
 
 Rechazo $H_0$ si $T> \chi^2(1-\alpha)$ con $(r-1)\times(c-1)$ grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución. 
 
-Como $\chi^2=5.99 < T=13.125$
+Como $\chi^2=5.99 < T=13.125.$
 
 $\therefore$ Rechazo $H_0$.
 
