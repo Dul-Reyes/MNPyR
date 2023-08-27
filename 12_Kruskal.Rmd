@@ -7,7 +7,7 @@ Un caso particular, si $k=2$ se tiene la prueba de **Mann-Whitney**.
 ## Datos
 
 Se tienen $k\ \ m.a.$ que pueden tener incluso distintos tamaños, la $i-ésima\ \ m.a.$ de tamaño $n_{i}$ es:
-$$X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \ \ \mbox{de la} \ \ i-ésima \ \ \mbox{población})$$
+$$X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \ \ \mbox{de la} \ \ i-ésima \ \ \mbox{población}).$$
 
 Así:
 
@@ -24,7 +24,7 @@ $$
 
 sea $N$ el número total de observaciones:
 
-$$ N= \sum_{i=1}^{k} n_{i}$$
+$$ N= \sum_{i=1}^{k} n_{i}.$$
 
 
 ## Supuestos
@@ -56,12 +56,12 @@ $$\textbf{H}_a: \mbox{Las} \ \ k \ \  \mbox{poblaciones no tienen medias o media
 
 * Asignamos el rango $1$ a la observación más pequeña de las $N$ observaciones, el rango $2$ a la $2da$ más pequeña, y así sucesivamente hasta llegar a la observación mayor que recibirá el rango $N$.
 
-* Sea $R(X_{ij})$ el rango asignado a la observación $X_{ij}$
+* Sea $R(X_{ij})$ el rango asignado a la observación $X_{ij}.$
 
 * Sea $R_{i}$ la suma de los rangos asignados a la $i-ésima$ muestra (la $i-ésima$ columna):
 
 
-$$R_{i}=\sum_{j=1}^{n_{i}} R(X_{ij}), \ \ i= 1, 2,\cdots,k$$
+$$R_{i}=\sum_{j=1}^{n_{i}} R(X_{ij}), \ \ i= 1, 2,\cdots,k.$$
 
 **NOTA** 
 
@@ -83,21 +83,21 @@ $$
 
 ## Estadístico de prueba
 
-$$T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right)$$
+$$T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right).$$
 donde $N$ y $R_{i}$ son como los definimos anteriormente y donde:
 
-$$ S^2 = \frac{1}{N-1}\left(\sum_{todos\ los\ rangos}R(X_{ij})^2-N\frac{(N+1)^2}{4}\right)$$
+$$ S^2 = \frac{1}{N-1}\left(\sum_{todos\ los\ rangos}R(X_{ij})^2-N\frac{(N+1)^2}{4}\right).$$
 * \textbf{Si no hay empates} $S^2$ se simplifica a $N(N+1)/12$, y la estadística de prueba se reduce a:
 
-$$ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1) $$
+$$ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1).$$
 
 ## Regla de decisión
 
 Rechazamos $H_0$ al nivel de significancia $\alpha$ si $T>\omega_{1-\alpha}$, donde $\omega_{1-\alpha}$ se obtiene de la tabla de cuantiles de la distribución de $T$ (tablas Kruskal-Wallis). En caso de no encontrarse en la tabla, los tamaños de muestra correspondientes se utiliza la aproximación Ji-cuadrada con $k-1$ grados de libertad para el estadístico de prueba.
 
-Es decir, rechazamos $H_0$ a un nivel $\alpha$ si $T > \chi^2_{(k-1)}(1-\alpha)$
+Es decir, rechazamos $H_0$ a un nivel $\alpha$ si $T > \chi^2_{(k-1)}(1-\alpha).$
 
-y calculamos el $p-value$ de la siguiente manera el $p-value$ es aproximadamente la probabilidad de una variable aleatoria chi-cuadrado con $k-1$ grados de libertad que excede el valor observado de $T$.
+Y calculamos el $p-value$ de la siguiente manera el $p-value$ es aproximadamente la probabilidad de una variable aleatoria chi-cuadrado con $k-1$ grados de libertad que excede el valor observado de $T$.
 
 **Múltiples comparaciones**
 
@@ -117,7 +117,7 @@ Ahora veamos cómo se hace un ejemplo:
 
 Se tienen 4 métodos de cultivo de maíz, para ver si hay diferencia entre uno y otro se utilizan terrenos similares y se aplican los distintos métodos y se ve la cantidad de cosecha por $m^2$ de tierra de cada terreno obtenido.
 
-**Paso 1** Prueba a utilizar **Prueba Kruskal-Wallis**
+**Paso 1** Prueba a utilizar **Prueba Kruskal-Wallis.**
 $$
 \begin{array}{|c| c| c| c|} 
 \hline
@@ -136,7 +136,7 @@ $$
   \hline
 \end{array}
 $$
-**Paso 2** Planteamiento de hipótesis 
+**Paso 2** Planteamiento de hipótesis. 
 
 Queremos probar:
 
@@ -267,7 +267,7 @@ Entonces existe evidencia suficiente para decir que al menos alguno de los méto
 
 ## Ejemplo en R-Studio
 
-Calculamos el estadístico de prueba $T$
+Calculamos el estadístico de prueba $T$.
 
 ```{r}
 ##Prueba Kruskal-Wallis
@@ -296,20 +296,21 @@ T=(1/S2)*((R1^2/n1)+(R2^2/n2)+(R3^2/n3)+(R4^2/n4))-3*(N+1)
 T
 ```
 
-Comparamos con el cuantil
+Comparamos con el cuantil:
 
 ```{r}
 qchisq(0.950,3)
 
 ```
 
-Utilizando la función de R
+Utilizando la función de R:
 
 ```{r}
 kruskal.test(calif)
 
 ```
-El valor de la estadísitca de prueba es 25.62 y su correspondiente $p-value$ es mucho menor a 0.01 ($\alpha=1\%$) por lo tanto se rechaza la hipótesis nula y se concluye que al menos uno de los 4 métodos tiene distribución diferente.
+El valor de la estadísitca de prueba es 25.62 y su correspondiente $p-value$ es mucho menor a 0.01 
+($\alpha=1\%$) por lo tanto se rechaza la hipótesis nula y se concluye que al menos uno de los 4 métodos tiene distribución diferente.
 
 Para determinar qué método es el distinto se tendrán que hacer las comparaciones dos a dos.
 
@@ -347,7 +348,7 @@ A & B&C&D&E \\
 \end{array}
 $$
 
-¿Los datos observados indican una diferencia significativa entre las marcas? De haber diferencia, ¿qué marcas parecen ser las diferentes? Use $\alpha=10\%$
+¿Los datos observados indican una diferencia significativa entre las marcas? De haber diferencia, ¿qué marcas parecen ser las diferentes? Use $\alpha=10\%.$
 
 2. Tres maestros desean comparar las claificaciones que pusieron en el semestre pasado para ver si alguno tiende a dar calificaciones diferentes que los otros.
 
@@ -370,7 +371,7 @@ $$
 \end{array}
 $$
 
-Con los datos observados se puede corroborar la sospecha de que alguno de los maestros da calificaciones diferentes a los otros? Use $\alpha=5\%$
+Con los datos observados se puede corroborar la sospecha de que alguno de los maestros da calificaciones diferentes a los otros? Use $\alpha=5\%.$
 
 3. El Hospital "Los Ángeles" realizó un estudio en 4 Dietas a un grupo de 20 individuos; cada Dieta se aplicó aleatoriamente a cada individio. Se registró la pérdida de peso en $kg$.
 Realiza la prueba correspondiente para poder concluir si, ¿Hay diferencia significativa entre la efectividad de las Dietas?
