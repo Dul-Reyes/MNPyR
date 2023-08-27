@@ -133,7 +133,7 @@ $$T=\frac{N^2}{ab}*\sum^{c}_{i=1}\frac{(O_{1i}-\frac{n_{i}a}{N})^2}{n_i}.$$
 
 $$T=\frac{(34)^2}{(16)(18)}*\left(\ \frac{\left[6-\frac{(9)(16)}{34}\right]^2}{9}+\frac{\left[3-\frac{(10)(16)}{34}\right]^2}{10}+\frac{\left[7-\frac{(7)(16)}{34}\right]^2}{7}+\frac{\left[0-\frac{(8)(16)}{34}\right]^2}{8} \right).$$
 
-$$T=4.01(0.34+0.29+1.97+1.78) = 17.6$$
+$$T=4.01(0.34+0.29+1.97+1.78) = 17.6.$$
 
 
 **Paso 4** Regla de decisión.
@@ -218,7 +218,7 @@ Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por $m^2
 
 ## Ejercicios
 
-1. En el campo de entrenamiento 100 reclutas son asignados aleatoriamente en cuatro regimientos con 4 diferentes sargentos. Al final del entrenamiento sólo quedarón 84 reclutas y sus tiempos en el ejercicio de obstáculos fue medido para todos ellos. Los resultados fueron, para el sargento Adams 11 de sus 20 reclutas tuvieron tiempos por arriba de la mediana, para el sargento Baker 8 de sus 22 reclutas tuvieron tiempos por arriba de la mediana, el sargento Callahan 8 de sus 20 reclutas tuvieron tiempos por encima de la mediana y del sargento Davis 15 de 22 tuvieron tiempos arriba de la mediana. Se puede decir con un nivel de significancia del $5\%$ que existe una diferencia significativa en los tiempos en los ejercicios de obstáculos entre cada uno de los regimientos?
+1. En el campo de entrenamiento 100 reclutas son asignados aleatoriamente en cuatro regimientos con 4 diferentes sargentos. Al final del entrenamiento sólo quedarón 84 reclutas y sus tiempos en el ejercicio de obstáculos fue medido para todos ellos. Los resultados fueron, para el sargento Adams 11 de sus 20 reclutas tuvieron tiempos por arriba de la mediana, para el sargento Baker 8 de sus 22 reclutas tuvieron tiempos por arriba de la mediana, el sargento Callahan 8 de sus 20 reclutas tuvieron tiempos por encima de la mediana y del sargento Davis 15 de 22 tuvieron tiempos arriba de la mediana. Se puede decir con un nivel de significancia del $5\%$ que existe una diferencia significativa en los tiempos en los ejercicios de obstáculos entre cada uno de los regimientos?.
 
 2. Se subastaron varios contratos de explotación de petróleo al mejor postor. Para cada contrato se recibieron una o más ofertas selladas. Pruebe la hipótesis de que los contratos que eventualmente se convirtieron en productores de petróleo tuvieron la misma mediana de ofertas que los contratos que no produjeron petróleo. A continuación se muestra una muestra aleatoria de cada tipo de contrato.
 
