@@ -33,8 +33,7 @@ $$G(t) \ \mbox{la función de distribución de probabilidad de Y.}$$
 3) La escala de medida es al menos ordinal.
 
 
-
-**Pasos a seguir para obtener R(X_{i})**
+**Pasos a seguir para obtener $R(X_{i})$**
 
 1. Formar una nueva muestra combinada de los $n+m$ datos.
 
@@ -47,15 +46,15 @@ $$G(t) \ \mbox{la función de distribución de probabilidad de Y.}$$
 
 ## Estadístico de Prueba
 
-Utilizaremos el sieguiente estadístico de prueba:
+Utilizaremos el siguiente estadístico de prueba:
 
-+ **Si no hay empates**
++ **Si no hay empates:**
 
 $$T=\sum_{i=1}^{n}R(X_{i}).$$
 
-+ **Si  hay empates**
++ **Si  hay empates:**
 
-$$T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}$$
+$$T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}.$$
 
 $$T_{1}\sim N(0,1).$$
 
@@ -90,7 +89,7 @@ donde $\omega_{1-p}$ es el cuantil inferior obtenido de la tabla correspondiente
 
 Los cuantiles aproximados en el caso de no tener empates, y $n$ o $m$ mayores a 20, se encuentra la aproximación normal
 
-$$\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}}$$
+$$\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},$$
 
 donde el cuantil $z_p$ se obtiene de la tabla de la distribución normal y calculamos el $p-value$ de la siguiente manera:
 
@@ -102,9 +101,7 @@ Donde $Z$ es la variable aleatoria normal estándar.
 
 $$T_{1} < z_{\frac{\alpha}{2}} \ \ \  o \ \ \  T_{1} > z_{1-\frac{\alpha}{2}}.$$
 
-Donde $z_\frac{\alpha}{2}$ y $z_{1-\frac{\alpha}{2}}$ son cuantiles que se buscan en la tabla de una normal estándar
-
-y calculamos el $p-value$ de la siguiente manera:
+Donde $z_\frac{\alpha}{2}$ y $z_{1-\frac{\alpha}{2}}$ son cuantiles que se buscan en la tabla de una normal estándar y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=2*min\{\mathbf{P}[Z\leq T_{1}],\mathbf{P}[Z\geq T_{1}]\}.$$
 
@@ -113,7 +110,7 @@ Donde $Z$ es la variable aleatoria normal estándar.
 
 ### Caso B  (Prueba de cola inferior) {-}
 
-$$\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{de manera equivalente} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y]$$
+$$\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{de manera equivalente} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y].$$
 
 #### Regla de decisión {-}
 
@@ -128,9 +125,7 @@ Donde $t_{\alpha}$ el cuantil inferior se busca en las tablas correspondientes a
 Los cuantiles aproximados en el caso de no tener empates, y $n$ o $m$ mayores a 20, se encuentra la aproximación normal
 
 $$\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},$$
-donde el cuantil $z_p$ se obtiene de la tabla de la distribución normal.
-
-y calculamos el $p-value$ de la siguiente manera:
+donde el cuantil $z_p$ se obtiene de la tabla de la distribución normal y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value = \mathbf{P}\left(Z\leq\frac{T+\frac{1}{2}-n\frac{N+1}{2}}{\sqrt{\frac{nm(N+1)}{12}}}\right).$$
 
@@ -158,14 +153,14 @@ $$T > t_{1-{\alpha}}.$$
 
 Y $t_{1-\alpha}$ el cuantil superior se calcula de la siguiente manera:
 
-$$\omega_p= n(n+m+1)-\omega_{1-p}$$
+$$\omega_p= n(n+m+1)-\omega_{1-p}.$$
 donde $\omega_{1-p}$ es el cuantil inferior obtenido de la tabla correspondiente a nuestra prueba.
 
 
 Los cuantiles aproximados en el caso de no tener empates, y $n$ o $m$ mayores a 20, se encuentra la aproximación normal
 
 
-$$ \omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}}.$$
+$$ \omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},$$
 donde el cuantil $z_p$ se obtiene de la tabla de la distribución normal.
 
 y calculamos el $p-value$ de la siguiente manera:
@@ -175,11 +170,9 @@ $$p-value = \mathbf{P}\left(Z\geq\frac{T+\frac{1}{2}-n\frac{N+1}{2}}{\sqrt{\frac
 * Si ocupamos $T_{1}$, rechazamos $H_0$ si: 
 
 
-$$T_{1} > z_{1-\alpha}$$ 
+$$T_{1} > z_{1-\alpha}.$$ 
 
-Donde $z_{1-\alpha}$ es el cuantil que se buscan en la tabla de una normal estándar
-
-y calculamos el $p-value$ de la siguiente manera:
+Donde $z_{1-\alpha}$ es el cuantil que se buscan en la tabla de una normal estándar y calculamos el $p-value$ de la siguiente manera:
 
 $$p-value=\mathbf{P}[Z\geq T_{1}] \ \ o \ \  \ 1-\mathbf{P}[Z\leq T_{1}].$$
 
