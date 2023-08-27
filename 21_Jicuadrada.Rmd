@@ -4,7 +4,7 @@
 
 $$ Sea X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}$$
 
-Cada una de las variables se pueden acomodar en alguna clase $"k"$ (o categoría)
+Cada una de las variables se pueden acomodar en alguna clase $"k"$ (o categoría).
 
 
 ## Hipótesis
@@ -53,7 +53,7 @@ $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}}, \ \ \ \ \ \ Donde\ \ Q \sim \c
 
 #### Regla de decisión. {-}
 
-Rechazamos $H_0$ si  $Q$> $q_{teórica}.$
+Rechazamos $H_0$ si  $Q$ > $q_{teórica}.$
 
 * Cuando $Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha).$
 
@@ -128,7 +128,7 @@ $$T=21.4605.$$
 
 **Paso 4** Regla de decisión.
 
-Rechazamos $H_0$ si  $Q$> $q_{teórica}.$
+Rechazamos $H_0$ si  $Q$ > $q_{teórica}.$
 
 * Cuando $$Q= \sum_{j=1}^{k}\frac{(f_{j}-e_{j})^2}{e_{j}} > \chi^2_{(k-1)}(1-\alpha).$$
 
@@ -226,7 +226,7 @@ $$
 \end{array}
 $$
 
-¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use $\alpha=0.10$
+¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use $\alpha=0.10.$
 
 2. Cierto banco otorga crédito a las personas con una tasa preferencial, de tal manera que los acreditados pueden pagar en cualquier momento desde que piden el préstamo hasta 8 semanas posteriores para que les sea respetada la tasa preferencial. Se seleccionaron aleatoriamente a 1,000 personas y observó su comportamiento de pago, generando de esta manera la siguiente tabla de frecuencia:
 
