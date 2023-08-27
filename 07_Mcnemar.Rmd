@@ -57,7 +57,7 @@ Por otro lado, si $b+c\leq20$, es preferible utilizar el siguiente estadístico:
 
 $$T_{2}=b\sim Bin(b+c,p).$$
 
-Es decir, la distribución de $T_{2}$ es exactamente  $Bin(b+c,p)$
+Es decir, la distribución de $T_{2}$ es exactamente  $Bin(b+c,p).$
 
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
@@ -67,7 +67,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 ### Caso A (Prueba de dos colas) {-}
 
-$$\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0],$$ 
+$$\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0].$$ 
 $$vs$$
 
 $$\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0].$$
@@ -88,9 +88,7 @@ $$\mathbf{P}[Y \leq t]=\alpha/2.$$
 
 Donde $Y \sim Bin (b+c,1/2)$.
 
-Por otro lado, si $b+c>20,$ 
-
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
+Por otro lado, si $b+c>20,$ rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
 
 $$T_{1} > t_{1-\alpha}.$$ 
 
@@ -99,7 +97,7 @@ $t_{1-\alpha}$ se encuentra en la tabla correspondiente ya que $T_{1} \sim \chi^
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=2*min\{\mathbf{P}[Y\leq T_{2}],\mathbf{P}[Y\geq T_{2}]\}$$
+$$p-value=2*min\{\mathbf{P}[Y\leq T_{2}],\mathbf{P}[Y\geq T_{2}]\}.$$
 
 Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
@@ -129,11 +127,11 @@ La prueba a utilizar **Prueba de Mc Nemar Caso A de dos colas.**
 **Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado:
 
 
-$$\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0],$$ 
+$$\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0].$$ 
 
 $$vs$$
 
-$$\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0],$$
+$$\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0].$$
 
 es decir,
 
@@ -153,7 +151,7 @@ $$T_{2}\sim Bin(16,1/2).$$
 
 **Paso 4** Procedimiento completo. 
 
-**Supuestos**
+**Supuestos:**
 
 1. Muestra aleatoria de tamaño n=16.
 
@@ -190,7 +188,7 @@ $T_2=b=4.$
 $T_2\sim Bin(16,1/2).$
 
 
-Tomaremos $\alpha=5\%$
+Tomaremos $\alpha=5\%.$
 ```{r,echo=FALSE}
 data=matrix(c(18,4,12,5),nrow=2,byrow=T, 
        dimnames=list("Antes hipnosis"=c("Sin dolor","dolor"), 
@@ -241,9 +239,9 @@ binom.test(4,n,p,"t")
 ## Ejercicios
 
 
-1. Se toma una muestra aleatoria de 135 ciudadanos de E.U. y se les preguntó su opinión con respecto a cierta política. El estudio registró a 43 ciudadanos que estaban en contra de esa política. Después de varias semanas, durante las cuales los ciudadanos recibieron cartas informativas, se les volvió a preguntar su opinión; 37 estuvieron en contra, y 30 de las 37 originalmente no estaban en contra de la política. ¿Es significativo el cambio en el número de personas en contra de la política?
+1. Se toma una muestra aleatoria de 135 ciudadanos de E.U. y se les preguntó su opinión con respecto a cierta política. El estudio registró a 43 ciudadanos que estaban en contra de esa política. Después de varias semanas, durante las cuales los ciudadanos recibieron cartas informativas, se les volvió a preguntar su opinión; 37 estuvieron en contra, y 30 de las 37 originalmente no estaban en contra de la política. ¿Es significativo el cambio en el número de personas en contra de la política?.
 
-2.  Un investigador intenta determinar si un fármaco tiene un efecto sobre una enfermedad particular. Se cuenta con la información de los individuos en el estudio con el diagnóstico (enfermedad: presente o ausente ) antes del tratamiento, y el diagnóstico después del tratamiento
+2.  Un investigador intenta determinar si un fármaco tiene un efecto sobre una enfermedad particular. Se cuenta con la información de los individuos en el estudio con el diagnóstico (enfermedad: presente o ausente ) antes del tratamiento, y el diagnóstico después del tratamiento.
 
 $$
 \begin{array}{c| c c|c} 
