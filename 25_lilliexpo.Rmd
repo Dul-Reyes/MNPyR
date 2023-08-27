@@ -86,7 +86,7 @@ $$T_{2}=\underset{z}{sup} \ | \ F^*(z)-S(z) \ |.$$
 $$\hat{\lambda}=\frac{1}{\overline{X}}=\frac{1}{0.88602}; \ \ \ \ \ \  \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{15}\sum_{i=1}^{15}X_{i}=0.88602.$$
 3) Después calcularemos los valores de muestra $Z_{i}$ definidos por:
 
-$$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15$$
+$$Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15.$$
 
 4) Se calcula la función empírica, como no tenemos ningún valor repetido:
 
@@ -123,7 +123,7 @@ data_frame("$i$" = 1:15, "$X$" = c(0.4976, 1.2514, 0.6619, 0.561, 1.0026, 0.3529
 
 9) Entonces 
 
-$$ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930 $$
+$$ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930. $$
 Por lo tanto:
 
 $$T_{2}=\underset{z}{sup}\ | \ S_{n}(z)-F^*(z) \ |=max \ \{\ D^+,D^- \ \}=max \ \{ \ 0.1596,0.0930 \ \}=0.1596.$$
@@ -185,9 +185,7 @@ lillie.test(F_Zi) #Ocupamos estos datos ya que debemos recordar que
 
 1. El gerente de una tienda quiere probar la hipótesis de que los clientes llegan aleatoriamente a su tienda, para ello registro el tiempo transcurrido entre las llegadas sucesivas de clientes en una mañana. El tiempo en minutos es el siguiente:
 
- 3.6, 6.2,  12.9, 14.2,  38.0,  3.8,  
-10.8, 6.1,  10.1, 22.1,   4.2,  4.6,  
-1.4,  3.3,  8.2.  
+ 3.6, 6.2,  12.9, 14.2,  38.0,  3.8,  10.8, 6.1,  10.1, 22.1,   4.2,  4.6,  1.4,  3.3,  8.2.  
 
 
 Pruebe la hipótesis nula de que el tiempo entre las llegadas de los clientes se distribuyen con función de distribución exponencial.
