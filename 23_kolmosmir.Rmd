@@ -13,7 +13,7 @@ Para probar la suposición de la distribución $F^*(x)$ se realiza la siguiente 
 
 Solo será este caso
 
-$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty$$
+$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty.$$
 
 $$vs$$
 
