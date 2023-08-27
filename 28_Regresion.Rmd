@@ -33,13 +33,13 @@ Una vez vista la ecuación general del modelo de regresión lineal simple se hab
 En el modelo de regresión simple se supone que $\epsilon$ satisface:
 
 
-* $\mathbf{E}[\epsilon_{i}]=0$
+* $\mathbf{E}[\epsilon_{i}]=0.$
 
-* $\textbf{Var}(\epsilon_{i})=\sigma^2$
+* $\textbf{Var}(\epsilon_{i})=\sigma^2.$
 
 * $\textbf{Cov}(\epsilon_{i},\epsilon_{j})= 0 \  \ \ \forall \ i = 1, \ldots, n, \ \  j=1, \ldots, n, \ \  i \neq j.$
 
-* $\epsilon \sim N(0,\sigma^2)$
+* $\epsilon \sim N(0,\sigma^2).$
 
 Una vez considerados estos supuestos se pueden obtener resultados aún más importantes.
 
@@ -48,15 +48,15 @@ Por ejemplo, con los supuestos dados es posible calcular la esperanza y la varia
 **Teorema 2.1** Sea $y$ una variable de interés, denominada variable de respuesta, la cual es relacionada con una variable regresora $x$, entonces:
 
 
-**a)** $\mathbf{E}[y_{i}]=\beta_{0}+\beta_{1}x_{i}$
+**a)** $\mathbf{E}[y_{i}]=\beta_{0}+\beta_{1}x_{i}.$
 
-**b)**  $\textbf{Var}(y_{i})=\sigma^2$
+**b)**  $\textbf{Var}(y_{i})=\sigma^2.$
 
 **Demostración:**
 
 **a)**
 
-$$\mathbf{E}[y_{i}]=\mathbf{E}[\beta_{0}+\beta_{1}x_{i}+\epsilon_{i}]$$
+$$\mathbf{E}[y_{i}]=\mathbf{E}[\beta_{0}+\beta_{1}x_{i}+\epsilon_{i}].$$
 
 
 La parte aleatoria de $y_{i}$ es $\epsilon_{i}$; \  $\beta_{0}$,$\beta_{1}$ son constantes y $x_{i}$ ya es un valor dado; por lo que:  
@@ -78,22 +78,22 @@ $$\therefore Var(y_{i})=\sigma^2$$
 
 El modelo de regresión lineal simple 
 
-$$y=\beta_{0}+\beta_{1}x+\epsilon$$
+$$y=\beta_{0}+\beta_{1}x+\epsilon.$$
 
 cuenta con dos parámetros desconocidos, $\beta_{0}$ y $\beta_{1}$, los cuales deben ser estimados a partir de los datos de la muestra. Con la hipótesis de varianza constante sobre los errores, aparece otro parámetro $\sigma^2$ desconocido, aunque no está incluido en el modelo también debe ser estimado. 
 Un procedimiento para estimar los parámetros de un modelo lineal simple es el **método de mínimos cuadrados**, que se puede ilustar sencillamente aplicándolo para ajustar una línea recta a $(x_{1},y_{1}),(x_{2},y_{2}),\ldots,(x_{n},y_{n})$, se estiman $\beta_{0}$ y $\beta_{1}$ tales que la suma de los cuadrados de las diferencias entre las observaciones $y_{i}$ y la línea recta sea mínima.
 
 **Definición 2.2** (Residuos). Sea $y_{i}$ los valores observados, $\hat{y_{i}}$ los valores estimados mediante la regresión lineal simple. La forma de calcular la desviación de $y_{i}$ con respecto a su media estimada $\hat{y_{i}}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}$ para un $\hat{\beta_{0}}$ y $\hat{\beta_{1}}$ dados es:
 
-$$e_{i}=y_{i}-\hat{y_{i}}$$
+$$e_{i}=y_{i}-\hat{y_{i}},$$
 donde $e_{i}$ son los residuos.
 
 Por lo anterior,
 
-$$e_{i}=y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i}$$
+$$e_{i}=y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i}.$$
 Como se mencionó, lo que se busca es que la diferencia entre todos los valores observados y los valores estimados sea 0, es decir, que la suma de distancias entre $y_{i}$ y $\hat{y_{i}}$ sea cero, lo anterior significa que:
 
-$$\sum_{i=1}^{n}e_{i}=0$$
+$$\sum_{i=1}^{n}e_{i}=0.$$
 Para estimar $\beta_{0}$ y $\beta_{1}$ el **método de mínimos cuadrados** propone minimizar la suma de los cuadrados de los residuos, ya que de ésta manera se minimizan las distancias verticales entre las observaciones reales $(y)$ y las estimadas $(\hat{y})$, ya que entre más cercanas a cero se encuentren las distancias, mejor se ajusta el modelo a los datos.
 Antes de continuar, es necesario abordar unos cuantos resultados.
 
@@ -115,15 +115,15 @@ $$=\sum_{i=1}^{n}(x_{i}-\overline{x})y_{i}$$
 $$=\sum_{i=1}^{n}x_{i}(y_{i}-\overline{y})$$
 $$=\sum_{i=1}^{n}X_{i}y_{i}-\left(\sum_{i=1}^{n}x_{i}\right) \left(\sum_{i=1}^{n}y_{i}\right) \ /{n}$$
 
-$$S_{xy}=\sum_{i=1}^{n}x_{i}y_{i}-n\overline{x}\overline{y}$$
+$$S_{xy}=\sum_{i=1}^{n}x_{i}y_{i}-n\overline{x}\overline{y}.$$
 
 Una vez definida la notación, tenemos el siguiente teorema:
 
 **Teorema 2.2** (Mínimos Cuadrados). Sea $\hat{\beta_0}$ y $\hat{\beta_{1}}$ los parámetros que minimizan la suma de cuadrados de la diferencia entre los valores observados y los estimados $\left(\sum_{i=1}^{n}e_i^2\right)$ entonces:
 
-**a)** $\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}$
+**a)** $\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}.$
 
-**b)** $\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}$
+**b)** $\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}.$
 
 **Demostración:**
 
@@ -132,11 +132,11 @@ Una vez definida la notación, tenemos el siguiente teorema:
 Tenemos:
 
 $$\sum_{i=1}^{n}e_{i}^2=\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})^2.$$
-Minimizando la suma de cuadrados, se deriva respecto a $\hat{\beta_{0}}$
+Minimizando la suma de cuadrados, se deriva respecto a $\hat{\beta_{0}}.$
 
 $$\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{0}}}=-2\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})$$
 $$\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{0}}}=-2\left(\sum_{i=1}^{n}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}-\sum_{i=1}^{n}\hat{\beta_{1}x_{i}}\right).$$
-Igualando a 0
+Igualando a 0.
 
 $$-2\left(\sum_{i=1}^{n}y_{i}-\hat{\beta_{0}}n-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}\right)=0$$
 $$\sum_{i=1}^{n}y_{i}-\hat{\beta_{0}}n-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}=0$$
@@ -148,7 +148,7 @@ Por lo tanto se obtiene el primer estimador, $\hat{\beta_{0}}$;  para el estimad
 
 $$\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{1}}}=-2\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})x_{i}$$
 $$=-2\left(\sum_{i=1}^{n}x_{i}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}x_{i}-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}^2\right).$$
-Igualando la derivada a 0 para hallar el punto crítico
+Igualando la derivada a 0 para hallar el punto crítico.
 
 $$-2\left(\sum_{i=1}^{n}x_{i}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}x_{i}-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}^2\right)=0$$
 
@@ -160,11 +160,11 @@ Sustituyendo $\hat{\beta_{0}}$ por $\overline{y}-\hat{\beta_{1}}\overline{x}$ se
 
 $$\sum_{i=1}^{n}x_{i}y_{i}=\overline{y}\overline{x}n-\hat{\beta_{1}}\overline{x}^2n+\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}^2$$
 $$\sum_{i=1}^{n}x_{i}y_{i}-\overline{y}\overline{x}n+\hat{\beta_{1}}\overline{x}^2n-\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}^2$$
-Por la notación tenemos que: $S_{xy}=\sum x_{i}y_{i} - n \overline{x}\overline{y}$ y $S_{xx}= \sum x_{i}^2 - n\overline{x}^2$
+Por la notación tenemos que: $S_{xy}=\sum x_{i}y_{i} - n \overline{x}\overline{y}$ y $S_{xx}= \sum x_{i}^2 - n\overline{x}^2.$
 
 $$\frac{\delta \sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{1}}}=-2\left(S_{xy}-\hat{\beta_{1}\left(\sum_{i=1}^{n}x_{i}^2-\overline{x}^2n\right)}\right)$$
 $$=-2(S_{xy}-\hat{\beta_{1}}S_{xx}).$$
-Igualando a 0
+Igualando a 0.
 
 $$-2(S_{xy}-\hat{\beta_{1}}S_{xx})=0$$
 $$S_{xy}-\hat{\beta_{1}}S_{xx}=0$$
@@ -185,13 +185,13 @@ Son conocidas como las **ecuaciones normales**, que en conjunto forman un sistem
 
 Un problema del método de mínimos cuadrados es que no proporciona un estimador para $\sigma^2$, sin embargo, se obtendrá bajo el supuesto de normalidad que es el siguiente:
 
-$$\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2$$
+$$\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
 De esta manera se ha cumplido el objetivo que se planteó al inicio, encontrar los estimadores de $\beta_{0}$ y $\beta_{1}$ tal que los residuales fueran igual a 0.
 
 
 **Teorema 2.3** (Diferencia de Residuales) Sea $\hat{\beta_{0}}$ y $\hat{\beta_{1}}$ los estimadores de mínimos cuadrados de $\beta_{0}$ y $\beta_{1}$, respectivamente, entonces la suma de las distancias entre $y_{i}$ y $\hat{y_{i}}$ es cero, es decir:
 
-$$\sum_{i=1}^{n}e_{i}=0$$
+$$\sum_{i=1}^{n}e_{i}=0.$$
 
 **Demostración**
 
@@ -213,19 +213,19 @@ Esto implica que si la suma de residuales es 0, entonces la $\sum_{i=1}^{n}\hat{
 
 **Corolario 1** Sea $\hat{\beta_{0}}$ y $\hat{\beta_{1}}$ los estimadores de mínimos cuadrados de $\beta_{0}$ y $\beta_{1}$ respectivamente, si se cumple el teorema anterior, entonces la suma de los valores observados y la suma de los valores ajustados por la regresión son iguales, es decir:
 
-$$\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}$$
+$$\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}.$$
 
 **Demostración**
 
 Por definición:
 
-$$\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}\left(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\right)$$
-Por la estimación de $\hat{\beta_{1}}$
+$$\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}\left(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\right).$$
+Por la estimación de $\hat{\beta_{1}}$,
 
 $$=\sum_{i=1}^{n}\left(\overline{y}-\hat{\beta_{1}}\overline{x}+\hat{\beta_{1}}x_{i}\right)$$
 $$=\sum_{i=1}^{n}\overline{y}-n\hat{\beta_{1}}\overline{x}+\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}$$
 $$=n\overline{y}-n\hat{\beta_{1}}\overline{x}+n\hat{\beta_{1}}\overline{x}$$
-$$=n\overline{y}$$
+$$=n\overline{y}.$$
 Por construcción de $\overline{y}$
 
 $$\therefore \sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}. \blacksquare$$
@@ -234,11 +234,11 @@ Una consecuencia de lo anterior,
 
 **Corolario 2** Sea $\hat{y_{i}}$ el valor estimado de la forma \  $\hat{y_{i}}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}$ \  y el residual \ $e_{i}=y_{i}-\hat{y_{i}}$, entonces se cumple que:
 
-$$\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0$$
+$$\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0.$$
 
 **Demostración**
 
-Por definición de las $\hat{y}$
+Por definición de las $\hat{y}.$
 
 $$\sum_{i=1}^{n}\hat{y_{i}}e_{i}=\sum_{i=1}^{n}(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i})e_{i}$$
 $$=\sum_{i=1}^{n}\left(\hat{\beta_{0}}e_{i}+\hat{\beta_{1}}x_{i}e_{i}\right)$$
@@ -261,9 +261,9 @@ Los estimadores $\hat{\beta_{0}}$ y $\hat{\beta_{1}}$ tienen propiedades estadí
 
 **Teorema 2.4** Sea $\hat{\beta_{0}}$, $\hat{\beta_{1}}$ los estimadores de mínimos cuadrados de $\beta_{0}$ y $\beta_{1}$, respectivamente, entonces los estimadores $\hat{\beta_{0}}$,$\hat{\beta_{1}}$ son insesgados. Es decir:
 
-**a)**  $\mathbf{E}\left[\hat{\beta_{1}}\right]=\beta_{1}$
+**a)**  $\mathbf{E}\left[\hat{\beta_{1}}\right]=\beta_{1}.$
 
-**b)**  $\mathbf{E}\left[\hat{\beta_{0}}\right]=\beta_{0}$
+**b)**  $\mathbf{E}\left[\hat{\beta_{0}}\right]=\beta_{0}.$
 
 
 **Demostración**
@@ -274,8 +274,8 @@ Los estimadores $\hat{\beta_{0}}$ y $\hat{\beta_{1}}$ tienen propiedades estadí
 
 Tenemos:
 
-$$\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}$$
-Sustituyendo $S_{xx}$ y $S_{xy}$
+$$\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}.$$
+Sustituyendo $S_{xx}$ y $S_{xy}$.
 
 $$\hat{\beta_{1}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})y_{i}}{S_{xx}}$$
 $$=\sum_{i=1}^{n}\left(\frac{x_{i}-\overline{x}}{S_{xx}}\right)y_{i}.$$
@@ -285,7 +285,7 @@ $$\therefore \hat{\beta_{1}}=\sum_{i=1}^{n}ay_{i}.$$
 Para la combinación lineal de las $y_{i}$ para $\hat{\beta_{0}}$ se tiene:
 
 $$\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}$$
-Sustituyendo la combinación lineal de $\hat{\beta_{1}}$ y notación de $S_{xx}$ 
+Sustituyendo la combinación lineal de $\hat{\beta_{1}}$ y notación de $S_{xx}.$ 
 
 $$\hat{\beta_{0}}=\sum_{i=1}^{n}\frac{y_{i}}{n}-ay_{i}\overline{x}$$
 $$=\sum_{i=1}^{n}(\frac{1}{n}-a\overline{x})y_{i}$$
@@ -370,7 +370,7 @@ Una característica importante de los estimadores obtenidos es que existe una co
 
 **Teorema 2.6** Sea $\beta_{0}$,$\beta_{1}$ los estimadores puntuales de $\beta_{0}$ y $\beta_{1}$ entonces la covarianza conjunta de los estimadores es:
 
-$$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sigma^2\left(-\frac{\overline{x}}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}\right)$$
+$$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sigma^2\left(-\frac{\overline{x}}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}\right).$$
 
 **Demostración:**
 
@@ -387,7 +387,7 @@ Por propiedades de la esperanza:
 $$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}Var[Y_{i}].$$
 Por el **teorema 2.1** se sabe que la varianza del modelo es:
 
-$$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}\sigma^2$$
+$$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}\sigma^2.$$
 Sustituyendo $a=\frac{(x_{i}-\overline{x})}{S_{xx}}$ y $b=\frac{1}{n}-\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\right)\overline{x}$ se tiene:
 
 $$Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\left[\frac{1}{n}-\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\right)\overline{x}\right]\right)\sigma^2$$
@@ -403,10 +403,10 @@ Una consecuencia inmediata del **teorema 2.3** y **teorema 2.4**, es que si la s
 
 **Corolario 3** Sea $\hat{\beta_{0}},\hat{\beta_{1}}$ los estimadores de mínimos cuadrados de $\beta_{0}$ y $\beta_{1}$ respectivamente, si se cumple el teorema 2.3, entonces la esperanza de los valores observados y la esperanza de los valores ajustados por la regresión son iguales, es decir:
 
-$$\mathbf{E}\left[\hat{y_{i}}\right]=\mathbf{E}\left[ y_{i} \right]$$
+$$\mathbf{E}\left[\hat{y_{i}}\right]=\mathbf{E}\left[ y_{i} \right].$$
 De esta manera lo que se debe demostrar es que se cumple la siguiente igualdad:
 
-$\mathbf{Pd.} \ \ \mathbf{E}\left[ Y_{i}-\hat{y_{i}}\right]=0$
+$\mathbf{Pd.} \ \ \mathbf{E}\left[ Y_{i}-\hat{y_{i}}\right]=0.$
 
 **Demostración:**
 
@@ -431,19 +431,19 @@ La manera en la que se construye el modelo de regresión lineal sin intercepto, 
 
 En primera instancia, la recta al no tener intersección con el eje $y$ con $y \neq 0,$ $\beta_{0}=0,$ lo que provoca que la ecuación de la recta de regresión lineal esté conformada por:
 
-$$y=\beta x + \epsilon$$
+$$y=\beta x + \epsilon.$$
 
 De igual manera tenemos los mismos supuestos que en la definición 2.1, son:
 
 **Supuestos**
 
-* $\mathbf{E}[\epsilon_{i}]=0$
+* $\mathbf{E}[\epsilon_{i}]=0.$
 
-* $\textbf{Var}(\epsilon_{i})=\sigma^2$
+* $\textbf{Var}(\epsilon_{i})=\sigma^2.$
 
 * $\textbf{Cov}(\epsilon_{i},\epsilon_{j})= 0 \ \forall i = 1, \ldots, n \ j=1, \ldots, n \ i \neq j.$
 
-* $\epsilon \sim N(0,\sigma^2)$
+* $\epsilon \sim N(0,\sigma^2).$
 
 Al usar estos supuestos se pueden obtener estadísticos importantes como la
 media y la varianza de $y$.
@@ -456,9 +456,7 @@ media y la varianza de $y$.
 
 **Demostración:**
 
-**a)** 
-
-$\mathbf{E}[y]=\mathbf{E}[\beta x + \epsilon]$
+**a)** $\mathbf{E}[y]=\mathbf{E}[\beta x + \epsilon].$
 
 La estimación es sobre $y,$ como se mencionó, $\beta$ es constante y $x$ es un valor dado. Por lo que:
 
@@ -468,9 +466,7 @@ $=\beta x + 0$
 
 $\therefore \mathbf{E}[y]= \beta x. \ \blacksquare$
 
-**b)** 
-
-$Var(y)=Var(\beta x + \epsilon)$
+**b)** $Var(y)=Var(\beta x + \epsilon).$
 
 La estimación es sobre $y,$ por lo que $\beta$ es constante, $x$ ya es un valor dado, así:
 
@@ -494,14 +490,14 @@ $$e_{i}=y_{i}-\hat{\beta}x_{i}.$$
 
 Lo que se busca es que la suma de la diferencia de los valores observados menos los valores estimados sea 0, es decir:
 
-$$\sum_{i=1}^{n}e_{i}=0$$
+$$\sum_{i=1}^{n}e_{i}=0.$$
 
 De aquí surge la idea nuevamente de usar el método de Mínimos Cuadrados para estimación de $\beta.$
 
 **Teorema 2.8** (Mínimos Cuadrados). 
 Si se minimiza la suma de cuadrados de la diferencia de los valores observados y los estimados $\left(\sum_{i=1}^{n}e_{i}^2\right)$ entonces se tiene como estimador de $\beta$ a:
 
-* $\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^2}$
+* $\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^2}.$
 
 **Demostración:**
 
@@ -543,7 +539,7 @@ Después de haber obtenido el estimador del modelo de regresión lineal simple s
 
 **a)** $\mathbf{E}\left[\hat{\beta}\right]=\beta.$
 
-**b)** $\textbf{Var}\left[ \hat{\beta}\right]=\frac{\sigma^2}{\sum_{i=1}^{n}x_{i}^2}$
+**b)** $\textbf{Var}\left[ \hat{\beta}\right]=\frac{\sigma^2}{\sum_{i=1}^{n}x_{i}^2}.$
 
 **Demostración:**
 
@@ -581,7 +577,7 @@ $\therefore Var\left( \hat{\beta}\right)=\frac{\sigma^2}{\sum_{i=1}^{n}x_{i}^2}.
 
 Con el método de Mínimos Cuadrados no es posible obtener un estimador para la varianza del modelo, sin embargo, se obtendrá bajo el supuesto de normalidad que es el siguiente:
 
-$$\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\hat{\beta}x_{i}\right)^2$$
+$$\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\hat{\beta}x_{i}\right)^2.$$
 La cual es equivalente a ser representada por la siguiente ecuación.
 
 $$\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\hat{y})^2.$$
