@@ -1,7 +1,7 @@
 # Otras estadísticas
 
 La prueba de Kuiper esta muy relacionada con la prueba Kolmogorov–Smirnov (o prueba K-S). Como la prueba $K-S$, esta prueba utiliza las estadísticas $D^+$ y $D^-$ que representan las diferencias más positivas y más negativas entre las distribuciones que se están comparando. La estadística de prueba de Kuiper es:
-$$V=D^+ + D^-$$
+$$V=D^+ + D^-.$$
 Con este pequeño cambio, la prueba de Kuiper es tan sensible en las colas como lo es en la mediana de la distribución.
 
 Las pruebas **Anderson–Darling** y **Cramér–von Mises** pertenecen a un grupo llamado **estadísticas EDF cuadráticas**, en donde el término EDF se refiere a que se basan en la función de distribución empírica. 
