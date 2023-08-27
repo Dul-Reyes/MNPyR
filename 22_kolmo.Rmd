@@ -99,7 +99,7 @@ Que es similar a $T$, a excepción que solo vamos a considerar la mayor diferenc
 
 ### Caso A (Prueba de 2 colas) {-}
 
-$$\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty $$
+$$\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty. $$
 
 $$vs$$
 
@@ -111,7 +111,7 @@ Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T>W$. Donde $W$ es el cua
 
 ### Caso B (Prueba de 1 cola) {-}
 
-$$\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty$$
+$$\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty.$$
 
 $$vs$$
 
@@ -123,7 +123,7 @@ Rechazo $H_0$ a un nivel de significancia $\alpha$ si $T^+>W$. Donde $W$ es el c
 
 ### Caso C (Prueba de 1 cola) {-}
 
-$$\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty$$
+$$\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty.$$
 
 $$vs$$
 
@@ -160,7 +160,7 @@ $$
 **Paso 2** Planteamiento de Hipótesis: 
 
 
-$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty$$
+$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty.$$
 
 $$vs$$
 
@@ -264,7 +264,7 @@ Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspo
 
 Se desea hacer el siguiente contraste:
 
-$$\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1)$$
+$$\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1).$$
 
 
 Realice la prueba de Kolmogorov al $5\%$ de significancia.
