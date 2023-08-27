@@ -10,8 +10,8 @@ $$(X_{1},Y_{1}),(X_{2},Y_{2}),(X_{3},Y_{3}),\cdots,(X_{n'},Y_{n'}).$$
 
 Dentro de cada par de datos en la muestra se clasificará de la siguiente manera:
 
-+ Por un signo $"+"$ cuando $X_{i} < Y_{i}$
-+ Por un signo "-" cuando $X_{i} > Y_{i}$ 
++ Por un signo $"+"$ cuando $X_{i} < Y_{i}$.
++ Por un signo "-" cuando $X_{i} > Y_{i}$. 
 + Se omitirán las parejas cuando $Xi = Yi$. 
 
 El tamaño de la muestra después de quitar los empates será $n$. 
@@ -26,7 +26,7 @@ El tamaño de la muestra después de quitar los empates será $n$.
 
 El estadístico de prueba es:
 
-$$T=Total\ de\ signos\ "+",$$
+$$T=Total\ de\ signos\ "+".$$
 
 La distribución nula de $T$ es una distribución binomial con $n$ el número de parejas de la muestra sin empates y $p=1/2$.
 
@@ -39,7 +39,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 ### Caso A (Prueba de dos colas) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -71,12 +71,15 @@ $$p-value=2*min\{\mathbf{P}[Y\leq T],\mathbf{P}[Y\geq T]\}.$$
 
 Sugerimos que si $n > 20$, el $p-value$ puede obtenerse de forma más sencilla usando la aproximación normal:
 
-$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right),$$
-$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)$$
+$$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right)$$
+
+$$y$$
+
+$$\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).$$
 
 ### Caso B (Prueba de cola inferior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -96,15 +99,15 @@ Donde $Y \sim Bin (n,1/2)$.
 
 y calculamos el $p-value$ de la siguiente manera:
 
-$$p-value=\mathbf{P}[Y\leq T]$$
+$$p-value=\mathbf{P}[Y\leq T].$$
 
-Sugerimos que si $n > 20$,el $p-value$ puedría obtenerse de forma más sencilla usando la aproximación normal:
+Sugerimos que si $n > 20$, el $p-value$ puedría obtenerse de forma más sencilla usando la aproximación normal:
 
 $$\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right).$$
 
 ### Caso C (Prueba de cola superior) {-}
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -],$$ 
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -].$$ 
 
 $$vs$$
 
@@ -156,8 +159,8 @@ El grupo de amigos desea ver si la dieta que están realizando es efectiva.
 
 Recordando que cada par de datos en la muestra se clasificará de la siguiente manera:
 
-+ $"+"$ cuando $X_{i} < Y_{i}$
-+ $"-"$ cuando $X_{i} > Y_{i}$ 
++ $"+"$ cuando $X_{i} < Y_{i}.$
++ $"-"$ cuando $X_{i} > Y_{i}.$ 
 
 y se omitirán las parejas cuando $X_i = Y_i$. Y el tamaño de la muestra después de quitar los empates será $n$, haremos lo siguiente:
 
@@ -183,7 +186,7 @@ La prueba a utilizar **Prueba de signos Caso B cola inferior.**
 
 **Paso 2** Formulamos nuestras hipótesis en contexto al problema planteado,
 
-$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],$$
+$$\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].$$
 
 $$vs$$
 
@@ -198,13 +201,13 @@ $$vs$$
 $$\textbf{H}_a:\mbox{ En promedio los pesos después de las dieta son mayores a los pesos antes de la dieta.}$$
 
 
-**Paso 3** Estadístico de prueba.
+**Paso 3** Estadístico de prueba:
 
 Utilizaremos el estadístico
 
-$$T=1 \ \ número \ de \ signos\ "+"$$
+$$T=1 \ \ número \ de \ signos\ "+".$$
 
-$$T\sim Bin(6,1/2)$$
+$$T\sim Bin(6,1/2).$$
 
 
 **Paso 4** Procedimiento completo. 
@@ -213,7 +216,7 @@ $$T\sim Bin(6,1/2)$$
 
 1. Muestra aleatoria de tamaño 6.
 
-* Tomaremos como "éxito" los que si perdieron peso, en este caso los signos "+"
+* Tomaremos como "éxito" los que si perdieron peso, en este caso los signos "+".
 
 * Tomaremos $\alpha$= 5% =0.05 el nivel de significancia.
 
@@ -221,9 +224,11 @@ $$T\sim Bin(6,1/2)$$
 
 * $p$=1/2.
 
-**Paso 5** Regla de decisión.
+**Paso 5** Regla de decisión:
 
-Rechazamos $H_0$ a un nivel de significancia $\alpha$ si, $T \leq t$ 
+Rechazamos $H_0$ a un nivel de significancia $\alpha$ si: 
+
+$$T \leq t.$$ 
 
 $$T=1 \leq 1=t.$$
 
@@ -245,7 +250,7 @@ Existe evidencia suficiente para decir que los pesos después de la dieta son me
 
 Ahora haremos la réplica en R.
 
-La estadística de prueba será $T=1$. Tomaremos $\alpha=5\%$
+La estadística de prueba será $T=1$. Tomaremos $\alpha=5\%.$
 ```{r}
 #Datos
 
@@ -254,7 +259,7 @@ alpha=0.05       #Nivel de
 n=6              #Tamaño de la muestra 
 p=0.5            #Para la prueba de signos "p" siempre será 1/2
 ```
-Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechazará $H_0$ si $T\leq t$ donde $t$ será en cuantil que acumule 5% en la distribución binomial
+Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechazará $H_0$ si $T\leq t$ donde $t$ será en cuantil que acumule 5% en la distribución binomial.
 
 Podemos graficar la función de distribución:
 
@@ -388,4 +393,4 @@ $$
 \end{array}
 $$
 
-Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use $\alpha=5\%$
+Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use $\alpha=5\%.$
