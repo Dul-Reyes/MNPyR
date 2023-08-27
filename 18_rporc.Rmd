@@ -71,7 +71,7 @@ La distribución nula de T es obtenida aproximadamente por la Distribución $\ch
 
 Es decir,
 
-$$T\sim \chi^2_{(r-1)(c-1)}$$
+$$T\sim \chi^2_{(r-1)(c-1)}.$$
 
 ## Hipótesis
 
@@ -153,12 +153,12 @@ $$
 
 Para la celda en el $renglón\ 1$, $columna\ 1$ tenemos:
 
-$$\frac{(O_{ij}-E_{ij})^2}{E_{ij}}= \frac{(O_{11}-E_{11})^2}{E_{11}}=\frac{(6-12.9)^2}{12.9}=\frac{47.61}{12.9}=3.69$$
+$$\frac{(O_{ij}-E_{ij})^2}{E_{ij}}= \frac{(O_{11}-E_{11})^2}{E_{11}}=\frac{(6-12.9)^2}{12.9}=\frac{47.61}{12.9}=3.69.$$
 
 
 Si hacemos los calculos celda por celda el resultado es:
 
-$$T=3.69+0.38+1.89+5.14+2.06+0.21+1.06+2.87=17.3$$
+$$T=3.69+0.38+1.89+5.14+2.06+0.21+1.06+2.87=17.3.$$
 
 **Paso 4** Procedimiento completo. 
 
@@ -248,7 +248,7 @@ chisq.test(tabla)
 ## Ejercicios
 
 
-1. ¿Qué tan bueno es el servicio que dan las líneas aéreas a sus clientes? En un estudio las evaluaciones dadas por los clientes fueron las siguientes: 3 excelente, 28 bueno, 45 aceptable y 24 malo (BusinessWeek, 11 de septiembre de 2000). En otro estudio sobre las empresas de servicio telefónico, en una muestra de 400 adultos las evaluaciones fueron las siguientes: 24 excelente, 124 bueno, 172 aceptable y 80 malo. ¿La distribución de las evaluaciones a las empresas telefónicas difiere de la distribución de las evaluaciones a las líneas aéreas? Emplee $\alpha=5\%$ ¿Cuál es su conclusión?
+1. ¿Qué tan bueno es el servicio que dan las líneas aéreas a sus clientes? En un estudio las evaluaciones dadas por los clientes fueron las siguientes: 3 excelente, 28 bueno, 45 aceptable y 24 malo (BusinessWeek, 11 de septiembre de 2000). En otro estudio sobre las empresas de servicio telefónico, en una muestra de 400 adultos las evaluaciones fueron las siguientes: 24 excelente, 124 bueno, 172 aceptable y 80 malo. ¿La distribución de las evaluaciones a las empresas telefónicas difiere de la distribución de las evaluaciones a las líneas aéreas? Emplee $\alpha=5\%$ ¿Cuál es su conclusión?.
 
 
 2. Estamos interesados en estudiar la fiabilidad de cierto componente informático con relación al distribuidor que nos lo suministra. Para realizar esto, tomamos una muestra de 100 componentes de cada uno de los tres distribuidores que nos sirven el producto comprobando el número de defectuosos en cada lote. La siguiente tabla muestra el número de defectuosos para cada uno de los distribuidores. 
