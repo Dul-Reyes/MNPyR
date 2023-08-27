@@ -14,7 +14,7 @@ Los datos consisten en una muestra aleatoria $X_{1},X_{2},\ldots,X_{n}$ de tama�
 
 ### Caso A (Prueba de 2 colas) Solo será este caso {-}
 
-$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty$$
+$$\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty.$$
 
 $$vs$$
 
@@ -93,9 +93,9 @@ $$A_n^2=-n-\frac{1}{n}\sum_{i=1}^{n}\left(2i-1\right)[ \ ln(F^*(X_{(i)})) +ln(1-
 2) Se obtienen los estimadores puntuales de distribución normal con los datos de la muestra, 
 $\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}= 2.66658$ y                   $s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}=5.313212.$
 
-3) Se calcula la distribución propuesta, en este caso una distribución normal con media $\overline{X}$ y varianza $s^2$, es decir,$F^*(X)$, para ello se usa la aproximación a una normal estándar
+3) Se calcula la distribución propuesta, en este caso una distribución normal con media $\overline{X}$ y varianza $s^2$, es decir, $F^*(X)$, para ello se usa la aproximación a una normal estándar.
 
-4) Se calcula el primer sumando $ln(F^*(X_{(i)}))$ el cual se denotará como $L1$, después se calculará el segundo sumando $ln(1-F^*(X_{(n-i+1)}))$ el cual se denotará como $L2$
+4) Se calcula el primer sumando $ln(F^*(X_{(i)}))$ el cual se denotará como $L1$, después se calculará el segundo sumando $ln(1-F^*(X_{(n-i+1)}))$ el cual se denotará como $L2$.
 
 5) Se realiza el sumando de manera puntal, es decir, calcular:
 
@@ -185,7 +185,8 @@ Por la tabla auxiliar tenemos $A_{0.95}=0.751$, de esta manera se tiene que 0.75
 
 \break
 
-Ahora podemos utilizar la prueba en R
+Ahora podemos utilizar la prueba en R:
+
 ```{r}
 
 ad.test(X)   #Recordemos que la función no hace el ajuste
