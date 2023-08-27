@@ -8,9 +8,9 @@ La hipótesis nula, la sentencia que se pone a prueba es denotada como $H_0$, la
 
 En el modelo de regresión lineal simple, se desea realizar dos pruebas de hipótesis de gran importancia.
 
-* $\textbf{H}_0: \hat{\beta_{1}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{1}} \neq 0$
+* $\textbf{H}_0: \hat{\beta_{1}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{1}} \neq 0.$
 
-* $\textbf{H}_0: \hat{\beta_{0}}=0  \ vs. \  \textbf{H}_a:\hat{\beta_{0}} \neq 0$
+* $\textbf{H}_0: \hat{\beta_{0}}=0  \ vs. \  \textbf{H}_a:\hat{\beta_{0}} \neq 0.$
 
 Estas pruebas son de gran importancia, ya que la primera de ellas es probar si $\beta_{1}$ es igual a cero, es decir, que el modelo no tenga pendiente y sea constante a través del tiempo, con un gran nivel de significancia dado. Si la prueba se rechaza entonces establece que el valor esperado de $y$ depende de $x$.
 
@@ -46,7 +46,7 @@ $$
 
 Suponga que se quiere ajustar un modelo con intercepto o sin intercepto. En éste caso, conviene realizar una prueba de hipótesis de dos colas sobre $\beta_{0}$ valuando el punto crítico $b_{0}=0$, es decir, se desea probar que $\beta_{0}=0$, ya que si, con un nivel de significancia $\alpha$, se rechaza $H_0$ se tiene evidencia de que el modelo a ajustar debería ser el modelo con intercepto. Detallando la prueba, en este caso en particular, tenemos:
 
-$$\textbf{H}_0: \hat{\beta_{0}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{0}}\neq 0$$
+$$\textbf{H}_0: \hat{\beta_{0}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{0}}\neq 0.$$
 
 La regla de decisión es rechazar $H_0$ cuando el estadístico  $t^*=\frac{\hat{\beta_{0}}-b_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}}$ esté contenida en la región de rechazo. En este caso en particular, se tiene lo siguiente:
 
@@ -82,9 +82,9 @@ $$
 
 Para ejemplificar, suponga que quiere ajustar un modelo de regresión lineal simple, sin embargo, duda si realmente la variable respuesta $y$ depende de la variable regresora $x$, es decir, sospecha que $\beta_{1}=0.$ Para ello se raliza la siguiente prueba de hipótesis valuando $\beta_{1}$ en el punto crítico de interés $b_{1}=0:$
 
-$$\textbf{H}_0: \hat{\beta_{1}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0$$
+$$\textbf{H}_0: \hat{\beta_{1}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0.$$
 
-La regla de decisión es rechazar $H_0$ cuando el estadístico  $$t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}$$
+La regla de decisión es rechazar $H_0$ cuando el estadístico:  $$t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}.$$
 
 Esté contenida en la región de rechazo.Por lo que se rechaza $H_0$ cuando $t^*<-t^{\alpha/2}_{(n-2)}$ o si $t^*>t^{\alpha/2}_{(n-2)}$.
 Si se rechaza $H_0$ entonces $\beta_{1} \neq 0$ por lo que la variable respuesta $y$ depende de la variable regresora $x$; si no se rechaza $H_0$ con un nivel de significancia $\alpha$, $\beta_{1}=0$, entonces la variable respuesta $y$ no depende de la variable regresora $x$, debido a ello un modelo de regresión no sería viable con esas variables.
@@ -110,7 +110,7 @@ H_0:\sigma^2\geq s \ vs. \ H_a:\sigma^2 < s & t^*<\chi^{1-\alpha}_{(n-2)} \\
 $$
 donde el estadístico $t^*:$
 
-$$t^*=\frac{(n-2)\hat{\sigma}^2}{s}$$
+$$t^*=\frac{(n-2)\hat{\sigma}^2}{s}.$$
 Con:
 $$\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
 
@@ -134,24 +134,24 @@ como $\hat{\beta_{1}}=0:$
 $$\hat{y}=\overline{y}.$$
 Es decir, no hay asociación lineal entre la variable respuesta $y$ con la variable regresora $x$. Es por ello que se desea demostrar que $\beta_{1}\neq 0,$ mediante la siguiente prueba de hipótesis:
 
-$$\textbf{H}_0:\hat{\beta_{1}}=0 \ \ \ vs. \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0$$
+$$\textbf{H}_0:\hat{\beta_{1}}=0 \ \ \ vs. \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0.$$
 Se puede usar el estadístico de prueba de hipótesis para $\beta_{1},$ con $b1=0$. Y se tiene lo siguiente:
 
-$$t^*=\frac{\hat{\beta_{1}}-b_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}} \sim t_{(n-2)}$$
+$$t^*=\frac{\hat{\beta_{1}}-b_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}} \sim t_{(n-2)}.$$
 De esta manera se rechaza la hipótesis nula y se supone que $\beta_{1}\neq 0$ cuando $|t^*|>t^{\alpha/2}_{(n-2)}$.
 
 Sin embargo, en el análisis de la varianza, lo que se busca construir es otro estadístico que pueda ser usado cuando se tenga más de una variable explicativa. Es por ello que el matemático y biológo Ronald Fisher (1920), analizó la siguiente igualdad:
 
-$$y_{i}-\overline{y}=(\hat{y_{i}}-\overline{y})+(y_{i}-\hat{y_{i}})$$
+$$y_{i}-\overline{y}=(\hat{y_{i}}-\overline{y})+(y_{i}-\hat{y_{i}}).$$
 
 Lo que busca es fraccionar la distancia del valor observado respecto a la media, por la suma de la distancia del valor estimado a la media más la distancia del valor observado al valor estimado.
 
 Obteniendo el cuadrado de la ecuación anterior:
 
-$$(y_{i}-\overline{y})^2=(\hat{y_{i}}-\overline{y})^2+(y_{i}-\hat{y_{i}})^2+2(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})$$
+$$(y_{i}-\overline{y})^2=(\hat{y_{i}}-\overline{y})^2+(y_{i}-\hat{y_{i}})^2+2(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}}).$$
 Sumando sobre todos los valores:
 
-$$\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2+2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})$$
+$$\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2+2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}}).$$
 Resolviendo la ecuación:
 
 $$2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}(y_{i}-\hat{y_{i}})-2\overline{y}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
@@ -160,9 +160,9 @@ Por la **definición 2.2**, se tiene $(y_{i}-\hat{y_{i}})=e_{i}$:
 
 $$2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}-2\overline{y}\sum_{i=1}^{n}e_{i}.$$
 
-Por el **teorema 2.3**, se sabe que $\sum_{i=1}^{n}e_{i}=0$
+Por el **teorema 2.3**, se sabe que $\sum_{i=1}^{n}e_{i}=0.$
 
-$$2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}$$
+$$2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}.$$
 Por el **corolario 2**, $\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0$, por lo tanto tenemos:
 
 $$\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.$$
@@ -177,7 +177,7 @@ De esta manera se construye la **ANOVA**, generalmente se hace un cambio de nota
 
 De esta forma se tiene la siguiente igualdad:
 
-$$SC_{T}=SC_{reg}+SC_{error}$$
+$$SC_{T}=SC_{reg}+SC_{error}.$$
 
 Además se observa que:
 
@@ -196,15 +196,15 @@ Sabemos que el modelo de Regresión Lineal con errores normales tiene las siguie
 
 Debido a un resultado de probabilidad se sabe que si $x \sim \chi^2_{(n)}$ y $y \sim \chi^2_{(m)}$ y si $x$ es independiente a $y$ entonces:
 
-$$\frac{x/n}{y/m}\sim F_{(n,m)}$$
+$$\frac{x/n}{y/m}\sim F_{(n,m)}.$$
 
 De esta forma se puede aplicar la prueba $F$ de Fisher en el análisis de varianza para probar las hipótesis. La prueba $F$ consiste en dividir $SC_{reg}$ entre sus grados de libertad y éste dividirlo entre $SC_{error}$ que a su vez está dividida entre sus grados de libertad, de esta manera:
 
-$$F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}}$$
+$$F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}}.$$
 
 Aplicando el resultado:
 
-$$F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}$$
+$$F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}.$$
 Ahora se ocupará el **Cuadrado Medio** denotado como **CM**, la cual corresponde a la Suma de Cuadrados entre los grados de libertad. Así, se define al cuadrado medio de la regresión $CM_{reg}$ y al cuadrado medio del error $CM_{error}$ como:
 
 $$
@@ -221,7 +221,7 @@ Observamos que $SC_{reg}=\hat{\beta_{1}}S_{xy}$ entonces:
 $$F=\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}.$$
 De esta manera, la región de rechazo para la prueba de hipótesis $H_0:\beta_{1}=0$ es:
 
-$$\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}>(t^{\alpha/2}_{(n-2)})^2$$
+$$\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}>(t^{\alpha/2}_{(n-2)})^2.$$
 La cual es equivalente a la prueba t.
 
 $$\frac{|\hat{\beta_{1}}|}{\sqrt{Var(\hat{\beta_{1}})}} > t^{\alpha/2}_{(n-2)}.$$
@@ -328,7 +328,7 @@ Como nuestro estadístico (5.2482) es mayor que (1.7011). Entonces rechazamos $\
 
 Ahora haremos la prueba para la hipótesis $\textbf{H}_0:\hat{\beta_{1}}=0 \ \ vs \ \ \textbf{H}_{a}:\hat{\beta_{1}} \neq 0$ con una confianza del $90\%$. Sustituimos en la siguiente ecuación:
 
-$$t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}$$
+$$t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}.$$
 
 ```{r}
 t_est=beta1/sqrt(s2_gorro/Sxx)
@@ -358,7 +358,7 @@ Por último vamos a calcular el coeficiente de determinación de nuestro modelo.
 
 Y sustituiremos en la siguiente expresión:
 
-$$R^2=\frac{\hat{\beta_{1}}S_{xy}}{\sum_{i=1}^{n}(y_{i}-\overline{y})^2}$$
+$$R^2=\frac{\hat{\beta_{1}}S_{xy}}{\sum_{i=1}^{n}(y_{i}-\overline{y})^2}.$$
 
 ```{r}
 R_2=(beta1*Sxy)/sum((y-y_barra)^2)
