@@ -9,11 +9,11 @@ Dado que el estimador de $\underline{\beta}$ es una combinación lineal, de igua
 $$\beta_{j} \sim \mathbf{N} \left(\beta_{j},\sigma^2(X'X)^{-1}_{(j+1)(j+1)}\right).$$
 Donde $(X'X)_{(j+1)(j+1)}$ es la entrada $j+1$ entrada en la diagonal de la matriz $(X'X)$, además el subíndice $j$ hace referencia al parámetro $\beta_{j}$ al que se desea examinar mediante la prueba de hipótesis, normalizando la expresión anterior se tiene:
 
-$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}} \sim \mathbf{N}(0,1)$$
+$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}} \sim \mathbf{N}(0,1).$$
 
 Como $\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^{2}_{n-k-1}$ tenemos:
 
-$$\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2}{n-k-1}}}\sim t_{n-k-1}$$
+$$\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2}{n-k-1}}}\sim t_{n-k-1}.$$
 
 Por lo tanto, el estadístico deseado para probar que los tres posibles casos de $\beta_{j}$, que sea igual, inferior o superior a un valor dado $b$, es la siguiente:
 
@@ -52,15 +52,15 @@ De manera similar, se puede realizar la anterior prueba para cualquier $\beta_{j
 
 Para ésta parte necesitaremos las siguientes relaciones de probabilidad:
 
-$$\frac{n-k-1}{\sigma^2} \ \hat{\sigma}^2 \ \sim \chi^{2}_{n-k-1}$$
+$$\frac{n-k-1}{\sigma^2} \ \hat{\sigma}^2 \ \sim \chi^{2}_{n-k-1}.$$
 
-$$\frac{n-k-1}{\sigma^2} \left( \frac{SC_{error}}{n-k-1}\right) \ \sim \chi^{2}_{n-k-1}$$
+$$\frac{n-k-1}{\sigma^2} \left( \frac{SC_{error}}{n-k-1}\right) \ \sim \chi^{2}_{n-k-1}.$$
 
 $$\frac{SC_{error}}{\sigma^2} \ \sim \chi^{2}_{n-k-1}.$$
 
 Dado que se quiere realizar inferencias sobre $\sigma^2$ definimos a la siguiente estadística $S$ como:
 
-$$S=\frac{SC_{error}}{\sigma^2_{0}}$$
+$$S=\frac{SC_{error}}{\sigma^2_{0}}.$$
 Donde $\sigma^2_{0}$ es el valor crítico que se desea poner a prueba, para verificar a través de las hipótesis, que la varianza del modelo $\sigma^2$ es igual, superior o inferior al punto crítico $\sigma^2_{0}$ propuesto.
 
 A continuación, tenemos las siguientes regiones de rechazo:
@@ -117,11 +117,11 @@ $$\therefore \  SC_{reg}=\hat{\beta}'X'\underline{Y}-n\overline{y}^2. \blacksqua
 
 Además se sabe que el modelo de regresión lineal múltiple con errores normales tiene las siguientes propiedades:
 
-* $\frac{SC_{reg}}{\sigma^2} \sim \chi^2_{k+1}$
+* $\frac{SC_{reg}}{\sigma^2} \sim \chi^2_{k+1}.$
 
-* $\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}$
+* $\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}.$
 
-* $SC_{reg}$ es independiente a $SC_{error}$
+* $SC_{reg}$ es independiente a $SC_{error}.$
 
 
 Y podemos obtener los siguientes resultados:
@@ -147,7 +147,7 @@ De esta manera podemos reescribir lo anterior como:
 $$F=\frac{CM_{reg}}{CM_{error}} \sim F_{k,n-k-1}.$$
 Entonces se define a la región de rechazo con un nivel de significancia $\alpha$ para:
 
-$$\textbf{H}_0: \beta_{1}=\beta_{2}=\beta_{3}=\ldots=\beta_{k}=0$$
+$$\textbf{H}_0: \beta_{1}=\beta_{2}=\beta_{3}=\ldots=\beta_{k}=0.$$
 $$F>F^{(\alpha)}_{k,n-k-1}.$$
 
 La forma en que se resume la información es mostrada en la siguiente tabla mejor conocida como: 
@@ -174,7 +174,7 @@ El coeficiente de determinación con frecuencia se le asocia a la proporción de
 
 Se define el coeficiente de determinación del modelo de regresión como:
 
-$$R^2=\frac{SC_{reg}}{SC_{T}}=1-\frac{SC_{error}}{SC_{T}}$$
+$$R^2=\frac{SC_{reg}}{SC_{T}}=1-\frac{SC_{error}}{SC_{T}}.$$
 
 Los valores cercanos a 1 implican que la mayor parte de la cariabilidad de $\underline{Y}$ está explicada por el modelo de regresión.
 
