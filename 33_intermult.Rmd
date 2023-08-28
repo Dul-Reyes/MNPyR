@@ -6,25 +6,25 @@ En las secciones anteriores se obtuvieron, de manera puntual, las estimaciones d
 
 Para la construcción del intervalo de confianza para el parámetro desconocido $\beta_{j}$, con $j=0,1,\ldots,n$ se mantiene la hipótesis de que los errores se distribuyen como variables aleatorias normales con media cero y varianza $I_{n}\sigma^2$, como consecuencia $\underline{Y}$ se distribuye de forma normal, con media $X\underline{\beta}$ y varianza $\sigma^2 I_{n}$, es decir:
 
-$$\underline{Y} \sim \mathbf{N}(X\underline{\beta},\sigma^2 I_{n})$$
+$$\underline{Y} \sim \mathbf{N}(X\underline{\beta},\sigma^2 I_{n}).$$
 
 De acuerdo con (Montgomery, Peck y Vining, 2012), el estimador $\underline{\hat{\beta}}$ por mínimos cuadrados es una combinación lineal de las observaciones, el cual también se distribuye con normalidad, con el vector medio $\underline{\beta}$ y varianza $\sigma^2(X'X)^{-1}$, lo cual vimos en el teorema 3.4, al igual que pudimos demostrar que el estimador es insesgado $\mathbf{E}[\underline{\hat{\beta}}]=\underline{\beta}$ y varianza $Var(\underline{\beta})=\sigma^2(X'X)^{-1}$ por lo que de manera conjunta $\underline{\hat{\beta}}$ se distribuye con normalidad de la forma:
 
-$$\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X'X)^{-1})$$
+$$\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X'X)^{-1}).$$
 Esto implica que la distribución marginal de cualquier coeficiente de la regresión $\hat{\beta}_{j}$ asimismo se distribuye normal, con media $\beta_{j}$ y varianza $\sigma^2 C_{(j+1)(j+1)}$ donde $C_{(j+1)(j+1)}$ es el j-ésimo elemento de la diagonal de la matriz $(X'X)^{-1}$, es decir, $\hat{\beta_{j}}$ tiene una distribución normal asociada de la forma:
 
-$$\hat{\beta_{j}} \sim \mathbf{N}(\beta_{j}, \sigma^2C_{(j+1)(j+1)}$$
+$$\hat{\beta_{j}} \sim \mathbf{N}(\beta_{j}, \sigma^2C_{(j+1)(j+1)}.$$
 
 Normalizando se tiene que:
 
-$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1)$$
+$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1).$$
 Como $\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}$, tenemos:
 
-$$\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}}{n-k-1}}} \sim t_{n-k-1}$$
+$$\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}}{n-k-1}}} \sim t_{n-k-1}.$$
 
 De esta  forma se obtiene la cantidad pivotal para $\beta_{j}$ sl simplificar la ecuación anterior
 
-$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}}\sim t_{n-k-1}$$
+$$\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}}\sim t_{n-k-1},$$
 
 donde $\hat{\sigma}^2=\frac{SC_{error}}{n-k-1}$. Por lo tanto el intervalo de confianza $1-\alpha$ para $\beta_{j}$ es:
 
@@ -51,7 +51,7 @@ Y así sucesivamente para $j \in \mathbf{N}$ tal que $j \in [0,k]$ donde $k$ es 
 
 Para hacer inferencias sobre $\sigma^2$ se hace notar la siguiente cantidad pivotal:
 
-$$\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}=\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}$$
+$$\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}=\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}.$$
 
 De esta manera, el intervalo de confianza $1-\alpha$ queda definido de la siguiente manera:
 
@@ -72,15 +72,15 @@ $$x^*= \left( 1 \ \ x_{1} \ \ x_{2} \ \ \ldots \ \ x_{k}\right).$$
 
 De esta forma el valor ajustado de $Y$ dado $X=x^*$ es:
 
-$$\mathbf{E}[ \ Y \mid X=x^*]=x^*\underline{\beta}$$
+$$\mathbf{E}[ \ Y \mid X=x^*]=x^*\underline{\beta}.$$
 
 Al suponer que $\underline{\beta}$ es un valor desconocido, se propone como estimador de $\underline{\beta}$ al obtenido por máxima verosimilitud, así el valor estimado de $Y$ sería:
 
-$$\mathbf{E}\left[\widehat{Y \mid X =} x^*\right]=x^*\underline{\hat{\beta}}$$
+$$\mathbf{E}\left[\widehat{Y \mid X =} x^*\right]=x^*\underline{\hat{\beta}}.$$
 
 El valor ajustado de $Y$ dado $X=x^*,\mathbf{E}\left[ \widehat{Y \mid X=}  x^*\right],$ se denota por $\hat{Y^*}$ para facilitar su tratamiento; además se observa que la esperanza y varianza están determinados por las siguientes igualdades, las cuales se demostrarán a continuación:
 
-$$\mathbf{E}[\hat{Y^*}]= x^*\underline{\beta} \ \ \ \ \ \ \ Var(\hat{Y^*})=\sigma^2 x^{*'}(X'X)^{-1}x^*$$
+$$\mathbf{E}[\hat{Y^*}]= x^*\underline{\beta} \ \ \ \ \ \ \ Var(\hat{Y^*})=\sigma^2 x^{*'}(X'X)^{-1}x^*.$$
 
 **Teorema 3.8** Sea $\hat{Y^*}$, el valor de la respuesta media de $Y$ en un determinado punto, de forma que $\hat{Y^*}=x^*\underline{\hat{\beta}}$, entonces se cumple que:
 
@@ -120,8 +120,8 @@ $$\hat{Y^*} \sim \mathbf{N}_{n}\left(x^*\underline{\beta} ,\sigma^2 x^{*'}(X'X)^
 
 Al estandarizar para obtener la cantidad pivotal se obtiene:
 
-$$\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}\sim \mathbf{N}(0,1)$$
-Como $\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}$, al dividir una distribución normal con una distribución $\chi^2$, se obtiene una distribución $t-Student$ 
+$$\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}\sim \mathbf{N}(0,1).$$
+Como $\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}$, al dividir una distribución normal con una distribución $\chi^2$, se obtiene una distribución $t-Student.$ 
 
 $$\frac{\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}}{\sqrt{\frac{\hat{\sigma}^2}{\sigma^2}}} \sim t_{n-k-1}.$$
 
@@ -174,9 +174,9 @@ $$\mathbf{E}[\hat{Y}_{x}]=x_{0}\underline{\beta}.$$
 
 **Teorema 3.9** Sea $x_{0}$ el vector que contiene los valores observados de las variables explicativas $x_{i}$, $i \in 1,\ldots,k$ en un determinado punto y sea $\hat{Y}_{x}$ la predicción de un valor $Y$ evaluado en el vector $x_{0}$ de la forma $\hat{Y}_{x}=x_{0}\underline{\hat{\beta}}+\epsilon$, en donde $\epsilon \sim \mathbf{N}(0,\sigma^2)$, entonces se cumple que:
 
-**a)** $\mathbf{E}[\hat{Y}_{x}]=x_{0}\underline{\beta}$
+**a)** $\mathbf{E}[\hat{Y}_{x}]=x_{0}\underline{\beta}.$
 
-**b)** $\textbf{Var}(\hat{Y}_{x})=\sigma^2\left(1+x'_{0}(X'X)^{-1}x_{0}\right)$
+**b)** $\textbf{Var}(\hat{Y}_{x})=\sigma^2\left(1+x'_{0}(X'X)^{-1}x_{0}\right).$
 
 **Demostración:**
 
