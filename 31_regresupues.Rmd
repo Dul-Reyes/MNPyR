@@ -11,22 +11,22 @@ Anteriormente definimos los residuales como $e_{i}=y_{i}-\hat{y_{i}}$, el cual s
 
 Muchas pruebas usan como base modificaciones o tipos específicos de residuos, es por esta razón que se indagará sobre los diversos tipos más conocidos.
 
-**residuales ordinarios**
+**Residuales ordinarios**
 
 Los residuales ordinarios o simplemente residuales, miden la diferencia entre la línea de regresión y la variable respuesta $y_{i}$, es por ello que se definen como:
 
-$$e_{i}=y_{i}-\hat{y_{i}}  \ \ \ \ \ \ \ \ i=1,2,\ldots ,n.$$
+$$e_{i}=y_{i}-\hat{y_{i}};  \ \ \ \ \ \ \ \ i=1,2,\ldots ,n.$$
 La desventaja que presentan estos residuales, es que depende de cada $y_{i}$ por lo que observaciones atípicas puede generar grandes residuales, ocasionando que pueda existir gran variabilidad al considerarse los errores en forma conjunta.
 
-**residuales estandarizados**
+**Residuales estandarizados**
 
 Una forma de disminuir esta variabilidad consiste en dividir a los residuales $e_{i}$ entre la varianza global, es decir:
 
-$$d_{i}=\frac{e_{i}}{\sqrt{\sigma^2}}$$
+$$d_{i}=\frac{e_{i}}{\sqrt{\sigma^2}}.$$
 
 Una propiedad importante es que si $e_{i}$ sigue una distribución normal, entonces al dividirlo entre la desviación estándar, se tiene que los residuales estandarizados siguen una distribución normal estándar.
 
-**residuales estudentizados**
+**Residuales estudentizados**
 
 Los residuales estudentizados se basan en la idea de involucrar la varianza de cada observación en el cálculo de los residuales, pues teóricamente los residuales no tiene varianza constante.
 
@@ -36,20 +36,20 @@ De esta manera calculando la varianza de los errores se tiene:
 
 **Corolario 6** Sea $\underline{e}$ los residuales del modelo entonces la varianza de $\underline{e}$ está dada por:
 
-$$Var(\underline{e})=\sigma^2(I-H)$$
+$$Var(\underline{e})=\sigma^2(I-H).$$
 
 **Demostración:**
 
-$$Var(\underline{e})=Var((I-H)\underline{Y})$$
+$$Var(\underline{e})=Var((I-H)\underline{Y}).$$
 
-$$Var(\underline{e})=(I-H)'Var(\underline{Y})(I-H)$$
-Sabemos que $(I-H)$ es simétrica (ver $apéndice$)
+$$Var(\underline{e})=(I-H)'Var(\underline{Y})(I-H).$$
+Sabemos que $(I-H)$ es simétrica (ver $apéndice$).
 
-$$Var(\underline{e})=(I-H)(I-H)Var(\underline{Y})$$
-Sabemos quue $(I-H)$ es idempotente (ver $apéndice$)
+$$Var(\underline{e})=(I-H)(I-H)Var(\underline{Y}).$$
+Sabemos quue $(I-H)$ es idempotente (ver $apéndice$).
 
-$$Var(\underline{e})=(I-H)Var(\underline{Y})$$
-Por el **teorema B** (demostrado en $apéndice$)
+$$Var(\underline{e})=(I-H)Var(\underline{Y}).$$
+Por el **teorema B** (demostrado en $apéndice$).
 
 **Teorema B** Sea una variable de interés $\underline{Y}$, llamada **dependiente**, relacionada con dos o más variables explicativas$x_{1},x_{2},\ldots,x_{k}$, 
 entonces:
@@ -63,12 +63,12 @@ $$\therefore Var(\underline{e})=\sigma^2(I-H). \blacksquare$$
 
 La varianza de cada residual no es constante para todas las observaciones es por ello que el resultado depende de la siguiente forma:
 
-$$Var(e_{i})=\sigma^2(1-h_{ii})$$
+$$Var(e_{i})=\sigma^2(1-h_{ii}).$$
 donde $h_{ii}$ correspondiente al $i-ésimo$ elemento de la diagonal de la matriz sombrero $H$.
 
 Cada residual se divide entre su varianza obteniendo de esta forma lo que se conoce como **residuales estudentizados**, los cuales se definen como:
 
-$$r_{i}=\frac{e_{i}}{\sqrt{\hat{\sigma}^2(1-h_{ii})}}$$
+$$r_{i}=\frac{e_{i}}{\sqrt{\hat{\sigma}^2(1-h_{ii})}}.$$
 Debido a la construcción de los **residuales estudentizados** se logra estandarizar de mejor manera a los residuales del modelo. Si se cumple que cada residual $e_{i}$ sigue una distribución normal entonces los residuales estudentizados siguen una distribución aproximada a una $t-student$ con $n-k-1$ grados de libertad.
 
 
@@ -202,12 +202,12 @@ La prueba de Breusch-Pagan fue desarrollada en 1979 por los estadísticos Trevor
 
 La prueba de Breusch-Pagan contrasta como hipótesis nula el cumplimiento de homocedasticidad, por lo que se tiene la siguiente prueba de hipótesis.
 
-$$\textbf{H}_0: \ \mbox{Muestra homocedástica  i.e.} \ \ \ \sigma^2_{j}=\sigma^2 \ \ \ \ vs  \ \ \ \
-\textbf{H}_a:  \ \mbox{Muestra Heterocedástica  i.e.} \ \ \ \sigma^2_{j} \neq \sigma^2 \ \ \ \ \forall  \ \ j = 1,\ldots,n.$$
+$$\textbf{H}_0: \ \mbox{Muestra homocedástica  i.e.} \ \ \ \sigma^2_{j}=\sigma^2 \ \ \ \ vs $$
+$$\textbf{H}_a:  \ \mbox{Muestra Heterocedástica  i.e.} \ \ \ \sigma^2_{j} \neq \sigma^2 \ \ \ \ \forall  \ \ j = 1,\ldots,n.$$
 
 El procedimiento se basa en calcular los residuales estandarizados al cuadrado $\left( \tilde{e}^2_{j}=\frac{e^2_{j}}{\sigma^2}\right)$; Con ello se realiza una regresión lineal tomando como variable respuesta a cada $\tilde{e}_{j}$ al cuadrado y con variables explicativas dentro del conjunto de variables exógenas Z:
 
-$$\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1}+ \ldots + \gamma_{n}Z_{n}$$
+$$\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1}+ \ldots + \gamma_{n}Z_{n}.$$
 
 Después se procede a calcular la suma de cuadrados de la regresión del modelo con los errores estandarizados divididos entre 2, $\frac{SC_{reg}}{2},$ donde $SC_{reg}=\underline{Y}'(H-\frac{1}{n}J)\underline{Y}'$; Breusch-Pagan descubrieron que este estadístico sigue asintóticamente una distribución ji-cuadrada con $k$ grados de libertad, siendo $k$ el número de variables del modelo. Por lo que la región de rechazo para $H_0$ sucede cuando la estadística $\frac{SC_{reg}}{2}$ es mayor al cuantil de una ji-cuadrada con $k$ grados de libertad con un nivel de significancia $\alpha$, es decir:
 
@@ -241,12 +241,12 @@ La prueba de White fue propuesta por Hilbert White en 1980, como alternativa a l
 
 El test contrasta como hipótesis nula el cumplimiento de homocedasticidad, por lo que se tiene la siguiente prueba de hipótesis.
 
-$$\textbf{H}_0: \  \mbox{Muestra homocedástica  i.e.}  \ \ \  \sigma^2_{j}=\sigma^2 \ \ \ \ vs  \ \ \ \
-\textbf{H}_a: \  \mbox{Muestra Heterocedástica i.e.}  \ \ \  \sigma^2_{j} \neq \sigma^2  \ \ \ \ \forall  \ j = 1,\ldots,n.$$
+$$\textbf{H}_0: \  \mbox{Muestra homocedástica  i.e.}  \ \ \  \sigma^2_{j}=\sigma^2 \ \ \ \ vs $$
+$$\textbf{H}_a: \  \mbox{Muestra Heterocedástica i.e.}  \ \ \  \sigma^2_{j} \neq \sigma^2  \ \ \ \ \forall  \ j = 1,\ldots,n.$$
 
 El procedimiento se basa en calcular los residuales estandarizados al cuadrado $\left( \tilde{e}^2_{j}=\frac{e^2_{j}}{\sigma^2}\right)$; Con ello se realiza una regresión lineal tomando como variable respuesta a cada $\tilde{e}_{j}$ al cuadrado y el producto cruzado de variables explicativas dentro del conjunto de variables exógenas Z:
 
-$$\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1i}+ \ldots + \gamma_{k}Z_{ki}+\gamma_{k+1}Z^2_{1k}+\ldots + \gamma_{k+k}Z_{1k}Z_{ki}+\gamma{k+k+1}Z_{2k}Z_{1k}+\ldots + \gamma{tk}Z^2_{kk}+\epsilon$$
+$$\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1i}+ \ldots + \gamma_{k}Z_{ki}+\gamma_{k+1}Z^2_{1k}+\ldots + \gamma_{k+k}Z_{1k}Z_{ki}+\gamma{k+k+1}Z_{2k}Z_{1k}+\ldots + \gamma{tk}Z^2_{kk}+\epsilon.$$
 Del anterior ajuste de regresión se procede a calcular el coeficiente de determinación $R^2=\frac{SC_{reg}}{SC_{T}}$ y sea n el tamaño de la muestra, entonces la estadística $nR^2$ sigue asintóticamente una distribución ji-cuadrada con $k$ grados de libertad, siendo $k$ el número de variables del modelo original.Por lo que la región de rechazo para $H_0$ sucede cuando la estadística $nR^2$ es mayor al cuantil de una ji-cuadrada con $k$ grados de libertad con un nivel de significancia $\alpha$, es decir:
 
 $$nR^2>\chi^{2(\alpha}_{k}).$$
@@ -428,7 +428,8 @@ El estadístico de Durbin-Watson es una estadística de prueba que se utiliza pa
 
 Las hipótesis que se plantean en la prueba de Durbin-Watson es:
 
-$$\textbf{H}_0: \mbox{La autocorrelación de los residuales es igual a } 0 \ \ \  vs \ \ \  \textbf{H}_a: \mbox{La autocorrelación de los residuales es} \neq 0$$
+$$\textbf{H}_0: \mbox{La autocorrelación de los residuales es igual a } 0 \ \ \  vs $$
+$$ \textbf{H}_a: \mbox{La autocorrelación de los residuales es} \neq 0$$
 
 En R se puede hacer la prueba de Durbin Watson con el comando **dwtest()**.
 
@@ -478,8 +479,8 @@ lines(loess.smooth(x,y, span=0.85), col="red3", lwd=3, lty=3)
 
 Otra manera de detectar a los posibles valores atípicos es por medio de un análisis de residuales. Dicho análisis consiste en obtener los residuales, ya sean los estandarizados o estudentizados y observar si éstos son mayores o menores a comparación de un punto crítico con nivel de significancia $\alpha$. Si se escoge trabajar con los residuales estandarizados sigue una distribución normal con media 0 y varianza $\sigma^2$. Por lo que los residuales superiores o inferiores del punto crítico $\pm Z_{1-\alpha/2}$ son considerados como un posible $outlier$ con un nivel de significancia $\alpha$. Por otra parte, si se decide trabajar con los residuales estudentizados entonces el punto crítico está determinado por los residuales que se encuentren por arriba o por abajo de la banda determinada por el cuantil $\pm \ t_{1-\alpha/2,n-k-1}.$ Es decir, se tiene evidencia de un valor atípico con nivel de significancia $\alpha$ cuando suceda alguna de las siguientes dos desigualdades:
 
-$$\mid d_{i} \mid \geq Z_{1-\alpha/2}$$
-$$\mid r_{i}\mid  \geq t_{1-\alpha/2,n-k-1}$$
+$$\mid d_{i} \mid \geq Z_{1-\alpha/2}.$$
+$$\mid r_{i}\mid  \geq t_{1-\alpha/2,n-k-1}.$$
 
 Continuando con el ejemplo anterior, los posibles valores atípicos pueden ser visualizados en la siguiente figura, con un nivel de confianza del 99%, y usando los residuales estandarizados para el análisis.
 
@@ -524,14 +525,14 @@ Un método para identificar la influencia del modelo es a través de los puntos 
 
 Dado que el promedio de los valores leverage es $\frac{\sum_{i=1}^{n}h_{ii}}{n},$ entonces cuando un punto sea mayor que el doble de la media de los puntos palanca, es decir, cuando se cumpla que:
 
-$$h_{ii} \geq  2 \ \frac{\sum_{i=1}^{n}h_{ii}}{n}$$
+$$h_{ii} \geq  2 \ \frac{\sum_{i=1}^{n}h_{ii}}{n}.$$
 
 
 Se puede concluir que dicha observación tiene un punto palanca muy grande. Por lo que se puede concluir que hay evidencia de que se trate de un punto influyente, sin embargo, para afirmar la anterior premisa es necesario el uso de otros métodos estadísticos, uno de ellos es la llamada distancia **Cook**.
 
 La estadística de **Cook** propone calcular la distancia cuadrática entre el modelo ajustado y el modelo ajustado sin la $i-ésima$ observación. La cual puede expresarse como:
 
-$$C_{i}=\frac{\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)}{CM_{error}\sum_{i=1}^{n}h_{ii}} \ \ \ \ \  \forall \ i \in [1,n].$$
+$$C_{i}=\frac{\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)}{CM_{error}\sum_{i=1}^{n}h_{ii}}; \ \ \ \ \  \forall \ i \in [1,n].$$
 
 
 Donde $\underline{\hat{Y}}$ hace referencia al modelo ajustado de la forma $X\underline{\hat{\beta}}$ mientras que $\underline{\hat{Y}}_{(i)}$ hace referencia al modelo ajustado sin la i-ésima observación de forma $X\underline{\hat{\beta}}_{(i)}$.
