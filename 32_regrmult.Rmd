@@ -6,7 +6,7 @@ Antes de empezar, el siguiente tema “Regresión Lineal Múltiple”, queremos 
 El modelo de regresión lineal simple ajusta una variable explicativa a una variable respuesta; Por su parte, el **Modelo de regresión lineal múltiple** busca hallar el mejor ajuste con dos o más variables regresoras. Es decir, la variable respuesta $\underline{Y}$ depende de $k$ regresores de la forma:
 
 $$
-\underline{Y}=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots +\beta_{k}x_{k}+\epsilon
+\underline{Y}=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots +\beta_{k}x_{k}+\epsilon.
 $$
 
 En primera instancia no parece ser un gran cambio, sin embargo, es de gran importancia ya que de esta forma se puede estimar de una mejor manera un evento aleatorio, pues en general, un suceso no depende de sólo una acción o variable, sino que es resultado de una serie de diversos eventos o variables. 
@@ -28,7 +28,7 @@ El "scatterplot" de arriba, se realizó con la base precargada en $R$, $"trees"$
 
 Debido a que se trabaja con cierto error $\epsilon$ en el ajuste de la regresión, es conveniente suponer que se cumplen lo siguientes supuestos:
 
-**Definición 3.1** (Supuestos del modelo de regresión múltiple)
+**Definición 3.1** (Supuestos del modelo de regresión múltiple).
 
 El error $\epsilon_{i}$ en el modelo de regresión lineal múltiple cumple:
 
@@ -85,7 +85,7 @@ $$
 
 El anterior conjunto de igualdades puede ser denotado matricialmente mediante la siguiente igualdad:
 
-$$\underline{Y}=X\underline{\beta}+\underline{\epsilon}$$
+$$\underline{Y}=X\underline{\beta}+\underline{\epsilon}.$$
 
 donde:
 $$
@@ -181,7 +181,7 @@ Finalmente para definir correctamente el modelo es necesario realizar las siguie
 
 **Definición 3.2** Sea $X$ la denominada $matriz \ diseño$ entonces satisface que:
 
-* $X_{n \times (k+1)}$ es el rango completo en la columna, es decir, $X$ es de rango $k+1$
+* $X_{n \times (k+1)}$ es el rango completo en la columna, es decir, $X$ es de rango $k+1.$
 
 Éste supuesto es importante ya que satisface que $k+1\leq n$, es decir, **el máximo número de variables con el que se ajusta el modelo no puede ser superior al número de observaciones.**
 
