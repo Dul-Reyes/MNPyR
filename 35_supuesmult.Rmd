@@ -80,20 +80,20 @@ Ajustaremos un modelo de RLM considerando lo siguiente:
 
 * Emplearemos el método $\textbf{backward}.$
 
-* El criterio de selección del $mejor \ modelo$ estará basado en el $\textbf{AIC}$
+* El criterio de selección del $mejor \ modelo$ estará basado en el $\textbf{AIC}.$
 
 El método **backward** (eliminación hacia atrás) consiste en comenzar con un modelo que incluya las $k$ variables regresoras y luego ir eliminando varible por variable de acuerdo a cierto criterio.
 
 El **AIC** (Criterio de información de Akaike) es una medida de la calidad de un modelo estadístico, considera la $bondad \ de \ ajuste$ del modelo y su complejidad.
 
-$$AIC=-2log(L) +2* n_{parámetros}$$
+$$AIC=-2log(L) +2* n_{parámetros}.$$
 El mejor modelo es aquel que tenga un $\textbf{AIC}$ pequeño.
 
 **Primer Paso: Relación entre Variables**
 
 Primero haremos las gráficas de dispersión correspondientes para ver el comportamiento de los datos.
 
-Diagramas de dispersion por parejas: Primero juntamos todas las variables explicativas y la dependiente en un solo objeto para hacer los diagramas de dispersion para cada pareja
+Diagramas de dispersion por parejas: Primero juntamos todas las variables explicativas y la dependiente en un solo objeto para hacer los diagramas de dispersion para cada pareja.
 
 ```{r}
 
