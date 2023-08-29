@@ -7,16 +7,19 @@
   oneside,
   openany]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -47,13 +50,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -61,7 +64,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -70,7 +73,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -150,7 +153,7 @@
 \nocite{*}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Modelos no paramétricos y de Regresión},
   pdfauthor={Sofía Villers Gómez; Dulce María Reyes Varela},
@@ -301,22 +304,22 @@ La distribución de probabilidad binomial se introdujo para describir las probab
 
 Decimos que una variable aleatoria X se distribuye Binomial con parámetros n,p.
 
-\[X\sim Bin(n,p)\]
-\[x=0,1,2,...n\]
+\[X\sim Bin(n,p),\]
+\[x=0,1,2,...n.\]
 
 \textbf{Función de Distribución}
 
-\[P_X(x)={n \choose p} p^x(1-p)^{n-x}\]
+\[P_X(x)={n \choose p} p^x(1-p)^{n-x},\]
 
 \hfill\break
 
 \textbf{Media}
 
-\[\mathbf{E}[X]=np\]
+\[\mathbf{E}[X]=np,\]
 
 \textbf{Varianza}
 
-\[Var(X)=np(1-p)\]
+\[Var(X)=np(1-p).\]
 
 \hypertarget{prueba-de-proporciones}{%
 \chapter{Prueba de Proporciones}\label{prueba-de-proporciones}}
@@ -331,7 +334,7 @@ Los datos consisten en una muestra
 
 \[X_{1},X_{2},X_{3},\cdots,X_{n}  \mbox{ una  muestra aleatoria  de  tamaño  n  de  la  población.}\]
 
-cuyo resultado se puede clasificar en dos y sólo dos categorías ``categoría 1'' o ``categoría 2''. El número de observaciones en la categoría 1 es \(O_{1}\) y el número de observaciones en la categoría 2 es \(O_{2}=n-O_{1}\)
+cuyo resultado se puede clasificar en dos y sólo dos categorías ``categoría 1'' o ``categoría 2''. El número de observaciones en la categoría 1 es \(O_{1}\) y el número de observaciones en la categoría 2 es \(O_{2}=n-O_{1}.\)
 
 \hypertarget{supuestos}{%
 \section{Supuestos}\label{supuestos}}
@@ -351,12 +354,12 @@ Como nos interesa la probabilidad del resultado ``clase 1'', dejaremos que el es
 Es decir, si \(n<20\) utilizar el estadístico
 
 \[T=O_{1},\]
-\[ T \sim Bin (n,p^*),\]
+\[ T \sim Bin (n,p^*).\]
 Donde \(p^*\) es la probabilidad especificada en la hipótesis nula de nuestra prueba a realizar y \(n\) es el tamaño de la muestra.
 
 Por otro lado, si \(n\geq20\) puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el siguiente cuantil:
 
-\[t=np+Z_{q}\sqrt{np(1-p)}\]
+\[t=np+Z_{q}\sqrt{np(1-p)}.\]
 Donde \(Z_{q}\) es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente\footnote{Véase que de acuerdo al tipo de cuantil (de cola inferior o superior), el signo del cuantil \(Z_q\) cambiará.}.
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis.
@@ -370,34 +373,36 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 
 \[\textbf{H}_0: p = p^*,\]
 \[vs\]
-\[\textbf{H}_a: p \neq p^*,\]
+\[\textbf{H}_a: p \neq p^*.\]
 
 \hypertarget{regla-de-decisiuxf3n}{%
 \subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n}}
 
 
-Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
+Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
-\[T \leq t_{1} \ \ \ o \ \ \ T > t_{2}\]
+\[T \leq t_{1} \ \ \ o \ \ \ T > t_{2}.\]
 
 Elegimos \(\alpha_{1}\) y \(\alpha_{2}\), los tamaños de la cola inferior y superior, respectivamente. El tamaño de la prueba es \(\alpha=\alpha_{1}+\alpha_{2}\).
 
 Debemos encontrar \(t_{1}\) y \(t_{2}\) tales que:
 
-\[\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \mathbf{P}[Y > t_{2}]=\alpha_{2}\]
+\[\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \mathbf{P}[Y > t_{2}]=\alpha_{2}.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value=2*min \{ \mathbf{P}[Y\leq T],\mathbf{P}[Y \geq T] \}\]
+\[p-value=2*min \{ \mathbf{P}[Y\leq T],\mathbf{P}[Y \geq T] \}.\]
 
 Sugerimos que si \(n > 20\),el \(p-value\) puede obtenerse usando:
 
 \[\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
-y
 
-\[\mathbf{P}[Y\geq t_{obs}] \thickapprox 1-\mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[y\]
+
+\[\mathbf{P}[Y\geq t_{obs}] \thickapprox 1-\mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right).\]
+
 Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
 \hypertarget{caso-b-prueba-de-cola-inferior}{%
@@ -408,29 +413,29 @@ Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
 \[vs\]
 
-\[\textbf{H}_a: p <p^*,\]
+\[\textbf{H}_a: p <p^*.\]
 
 \hypertarget{regla-de-decisiuxf3n-1}{%
 \subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-1}}
 
 
-Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
+Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
-\[T \leq t\]
+\[T \leq t.\]
 
-Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que
+Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que:
 
-\[\mathbf{P}[Y \leq t]=\alpha\]
+\[\mathbf{P}[Y \leq t]=\alpha.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value= \mathbf{P}[Y\leq T]\]
+\[p-value= \mathbf{P}[Y\leq T].\]
 
 Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse usando:
 
-\[\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[\mathbf{P}[Y\leq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right).\]
 
 \hypertarget{caso-c-prueba-de-cola-superior}{%
 \subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior}}
@@ -440,29 +445,29 @@ Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse usando:
 
 \[vs\]
 
-\[\textbf{H}_{a}: p >p^*,\]
+\[\textbf{H}_{a}: p >p^*.\]
 
 \hypertarget{regla-de-decisiuxf3n-2}{%
 \subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-2}}
 
 
-Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si
+Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
-\[T > t\]
+\[T > t.\]
 
-Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que
+Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que:
 
-\[\mathbf{P}[Y \leq t]=1-\alpha\]
+\[\mathbf{P}[Y \leq t]=1-\alpha.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value= \mathbf{P}[Y \geq T]\]
+\[p-value= \mathbf{P}[Y \geq T].\]
 
 Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse usando:
 
-\[\mathbf{P}[Y\geq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[\mathbf{P}[Y\geq t_{obs}] \thickapprox \mathcal{N} \left(\frac{t_{obs}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right).\]
 
 \hypertarget{intervalos-de-confianza}{%
 \section{Intervalos de Confianza}\label{intervalos-de-confianza}}
@@ -491,19 +496,19 @@ La idea detrás del método es encontrar todos los valores de \(p^*\) tales que 
 
 \[vs\]
 
-\[\textbf{H}_{a}: p \neq p^*,\]
+\[\textbf{H}_{a}: p \neq p^*.\]
 
 \(\mathbf{Procedimiento}\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
 \item
-  Fijar el nivel de confianza \(1-\alpha\)
+  Fijar el nivel de confianza \(1-\alpha.\)
 \item
   Hallar \(p_{1}\) y \(p_{2}\) tales que:
 \end{enumerate}
 
-\[\mathbf{P}[Y\leq O_{1}| \ p=p_{1}]= \alpha_{1} \ \ \ y \ \ \ \mathbf{P}[Y\geq O_{1}| \ p=p_{2}]= \alpha_{2} \]
+\[\mathbf{P}[Y\leq O_{1}| \ p=p_{1}]= \alpha_{1} \ \ \ y \ \ \ \mathbf{P}[Y\geq O_{1}| \ p=p_{2}]= \alpha_{2}.\]
 donde \(\alpha=\alpha_{1}+\alpha_{2}\) y \(Y \sim Bin (n,p)\) .
 
 \begin{enumerate}
@@ -511,12 +516,12 @@ donde \(\alpha=\alpha_{1}+\alpha_{2}\) y \(Y \sim Bin (n,p)\) .
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Hacer \(L= p_{1}\) y \(U=p_{2}\)
+  Hacer \(L= p_{1}\) y \(U=p_{2}.\)
 \end{enumerate}
 
 Recordemos que mucha de la teoría abarcada en este material esta basado en el libro \citet{conover1998practical} y en dicha referencia se pueden encontrar tablas con los valores de los intervalos de confianza para muestras menores a 30, cuando se tienen más grandes, es decir si \(n>30\), se pueden utilizar las siguientes expresiones para el cálculo de los intervalos:
 
-\[L=\frac{O_{1}}{n}-Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}} \ \ \ \ \  U=\frac{O_{1}}{n}+Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}}\]
+\[L=\frac{O_{1}}{n}-Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}} \ \ \ \ \  U=\frac{O_{1}}{n}+Z_{1-\alpha/2}\sqrt{\frac{O_{1}(n-O_{1})}{n^3}}.\]
 
 Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
@@ -542,15 +547,15 @@ vs\\
 
 De manera alternativa:
 
-\[\textbf{H}_{0}: p  \leq p^* \ \mbox{es decir},  \ p  \leq .70\ \ \  vs \ \ \ \ \textbf{H}_{a}: p >p^* \ \mbox{es decir}, \ \ p > .70\]
+\[\textbf{H}_{0}: p  \leq p^* \ \mbox{es decir},  \ p  \leq .70.\ \ \  vs \ \ \ \ \textbf{H}_{a}: p >p^* \ \mbox{es decir}, \ \ p > .70.\]
 
 \textbf{Paso 3} Estadístico de prueba,
 
-Utilizaremos el estadístico
+Utilizaremos el estadístico:
 
 \[T=O_{1} \ \mbox{número  de  observaciones  de  la clase 1.}\]
-\[T=18 \ \ número\ de\ graduados\ que\ pasaron\ el\ examen\]
-\[T\sim Bin(20,0.70)\]
+\[T=18 \ \ número\ de\ graduados\ que\ pasaron\ el\ examen.\]
+\[T\sim Bin(20,0.70).\]
 
 \textbf{Paso 4} Procedimiento completo,
 
@@ -585,7 +590,7 @@ Supuestos:
   \(p^*\)=70\%=0.70.
 \end{itemize}
 
-\textbf{Paso 5} Regla de decisión
+\textbf{Paso 5} Regla de decisión:
 
 \[Rechazo \ \  H_0 \ \  si \ \ T>t_{2} \ \  y \ \ \  Rechazo \ \  H_0 \ \ si \ \  p-value<\alpha,\]
 
@@ -696,7 +701,7 @@ La escala de medición suele ser al menos ordinal para esta prueba de hipótesis
 El cuantil de valor \(p\) de una variable aleatoria \(X\)
 es un número \(x\) tal que:
 
-\[ \mathbf{P}[X < x]\leq p\]
+\[ \mathbf{P}[X < x]\leq p.\]
 
 \begin{itemize}
 \tightlist
@@ -726,20 +731,20 @@ Los datos consisten en una muestra:
 \section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-1}}
 
 Los estadísticos de prueba son:
-\[T_{1},\]
+\[T_{1}.\]
 El número de observaciones en la muestra que son \textbf{menores o iguales} al valor \(x^*\) sobre el que se va a hacer la hipótesis.
-/break
 
 Y también se utilizará como estadístico de prueba a:
-\[T_{2},\]
+
+\[T_{2}.\]
 El número de observaciones en la muestra que son \textbf{estrictamente menores} a \(x^*\).
 
-Cuando \(n\leq 20\) la distribución nula de éstos estadísticos es \(Bin(n,p=p^*)\) con \(n\) el tamaño de la muestra y \(p^*\) dada en la hipótesis nula (recuerde que queremos hacer pruebas relacionadas con el cuantil \(x_{p}\) de la \(v.a.\) en cuestión).
+Cuando \(n\leq 20,\) la distribución nula de éstos estadísticos es \(Bin(n,p=p^*),\) con \(n\) el tamaño de la muestra y \(p^*\) dada en la hipótesis nula (recuerde que queremos hacer pruebas relacionadas con el cuantil \(x_{p}\) de la \(v.a.\) en cuestión).
 
-Por otro lado, si \(n>20\) puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el cuantil:
+Por otro lado, si \$n\textgreater20, puede resultar más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el cuantil:
 
 \[
-t=np+Z_{q}\sqrt{np(1-p)}
+t=np+Z_{q}\sqrt{np(1-p)}.
 \]
 
 Donde \(Z_{q}\) es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.
@@ -753,11 +758,11 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 \subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-1}}
 
 
-\[\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*,\]
+\[\textbf{H}_{o}: x_{p} = x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]= p^*.\]
 
 \[vs\]
 
-\[\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*,\]
+\[\textbf{H}_a: x_{p} \neq x^* \ \ \mbox{es equivalente  decir}: \ \ \mathbf{P}[X \leq x^*]\neq p^*.\]
 
 \hypertarget{regla-de-decisiuxf3n-3}{%
 \subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-3}}
@@ -769,28 +774,29 @@ Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
 Elegimos \(\alpha_{1},\alpha_{2}\geq 0\), tales que \(\alpha_{1}+\alpha_{2}=\alpha\) el tamaño de la prueba y debemos encontrar \(t_{1}\) y \(t_{2}\) tales que:
 
-\[\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \  y  \ \ \ \ \ \mathbf{P}[Y \leq t_{2}]=1-\alpha_{2}\]
+\[\mathbf{P}[Y \leq t_{1}]=\alpha_{1} \ \ \ \ \  y  \ \ \ \ \ \mathbf{P}[Y \leq t_{2}]=1-\alpha_{2}.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value=2*min \{ \mathbf{P}[Y\leq T_{1}],\mathbf{P}[Y \geq T_{2}]. \}\]
+\[p-value=2*min \{ \mathbf{P}[Y\leq T_{1}],\mathbf{P}[Y \geq T_{2}] \}.\]
 
 Sugerimos que si \(n > 20,\) el \(p-value\) puede obtenerse usando:
 
 \[\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N}\left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
 
-y
+\[y\]
 
-\[\mathbf{P}[Y\geq T_{2}] \thickapprox 1-\mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[\mathbf{P}[Y\geq T_{2}] \thickapprox 1-\mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right).\]
+
 Con \(\mathcal{N}(\cdot)\) la función de distribución de la normal estándar.
 
 \hypertarget{caso-b-prueba-de-cola-inferior-1}{%
 \subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-1}}
 
 
-\[\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*,\]
+\[\textbf{H}_0: x_{p} \leq x^* \ \ \mbox{es equivalente a decir:} \ \ \ \mathbf{P}[X < x^*]\geq p^*.\]
 
 \[vs\]
 
@@ -808,17 +814,17 @@ Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
 Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t_{1}\) tal que:
 
-\[\mathbf{P}[Y \leq t_{1}]=\alpha\]
+\[\mathbf{P}[Y \leq t_{1}]=\alpha.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value= \mathbf{P}[Y\leq T_{1}]\]
+\[p-value= \mathbf{P}[Y\leq T_{1}].\]
 
 Sugerimos que si \(n > 20\), el \(p-value\) podría obtenerse de forma mas sencilla usando la aproximación normal:
 
-\[\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[\mathbf{P}[Y\leq T_{1}] \thickapprox \mathcal{N} \left(\frac{T_{1}-np^*+0.5}{\sqrt{np^*(1-p^*)}}\right).\]
 
 \hypertarget{caso-c-prueba-de-cola-superior-1}{%
 \subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-1}}
@@ -836,21 +842,21 @@ Sugerimos que si \(n > 20\), el \(p-value\) podría obtenerse de forma mas senci
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
-\[T_{2} > t_{2}\]
+\[T_{2} > t_{2}.\]
 
 Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t_{2}\) tal que:
 
-\[\mathbf{P}[Y \leq t_{2}]=1-\alpha\]~
+\[\mathbf{P}[Y \leq t_{2}]=1-\alpha.\]
 
 Donde \(Y \sim Bin (n,p^*)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value=\mathbf{P}[Y\geq T_{2}]\]
+\[p-value=\mathbf{P}[Y\geq T_{2}].\]
 
 Sugerimos que si \(n > 20,\) el \(p-value\) podría obtenerse de forma mas sencilla usando la aproximación normal:
 
-\[\mathbf{P}[Y\geq T_{2}] \thickapprox 1- \mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right)\]
+\[\mathbf{P}[Y\geq T_{2}] \thickapprox 1- \mathcal{N} \left(\frac{T_{2}-np^*-0.5}{\sqrt{np^*(1-p^*)}}\right).\]
 
 Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
@@ -861,11 +867,11 @@ El intervalo de tiempo entre las erupciones del geiser Old Faithful se registra 
 
 \textbf{Paso 1} Escribimos la prueba a utilizar.
 
-La prueba a utilizar \textbf{Prueba de cuantiles caso B cola inferior}
+La prueba a utilizar \textbf{Prueba de cuantiles caso B cola inferior.}
 
-\textbf{Paso 2} Formulamos nuestras hipótesis en contexto al problema planteado,
+\textbf{Paso 2} Formulamos nuestras hipótesis en contexto al problema planteado:
 
-\[\textbf{H}_0: \mathbf{P}[X \leq 60]\geq 0.50,\]
+\[\textbf{H}_0: \mathbf{P}[X \leq 60]\geq 0.50.\]
 
 \[vs\]
 
@@ -873,7 +879,7 @@ La prueba a utilizar \textbf{Prueba de cuantiles caso B cola inferior}
 
 Donde \(X\) es el intervalo de tiempo entre las erupciones, suponiendo que ambos intervalos son independientes e identicamente distribuidas.
 
-\textbf{Paso 3} Estadístico de prueba.
+\textbf{Paso 3} Estadístico de prueba:
 
 La estadística de prueba será \(T_1=9\) y \(T_2=8\). Tomaremos \(\alpha=.1,\)
 
@@ -881,9 +887,9 @@ La estadística de prueba será \(T_1=9\) y \(T_2=8\). Tomaremos \(\alpha=.1,\)
 
 \[T_{2}=8 \ \mbox{número  de  intervalos que  son estrictamente menores a 60 minutos.}\]
 
-\[T_{1}\sim Bin(112,0.50)\]
+\[T_{1}\sim Bin(112,0.50).\]
 
-\textbf{Paso 4} Procedimiento completo
+\textbf{Paso 4} Procedimiento completo:
 
 \textbf{Supuestos:}
 
@@ -904,15 +910,15 @@ La estadística de prueba será \(T_1=9\) y \(T_2=8\). Tomaremos \(\alpha=.1,\)
   \(p^* = 0.50.\)
 \end{itemize}
 
-\textbf{Paso 5} Regla de decisión,
+\textbf{Paso 5} Regla de decisión:
 
 Rechazamos \(H_0\) a un nivel de significancia \(\alpha,\) si \(T_{1} \leq t_{1}\) y Rechazo \(H_0\) si \(p-value<\alpha.\)
 
 \[T_{1}=9 \leq 47.3=t_{1},\]
 
-como \(n>20\) resultará más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el estadístico:
+como \(n>20,\) resultará más sencillo utilizar una aproximación normal para realizar la prueba, en dicho caso se puede utilizar el estadístico:
 
-\[t_{1}=np+Z_{q}\sqrt{np(1-p)}=(112)(0.5)+(-1.645)\sqrt{112(0.5)(1-0.5)},\]
+\[t_{1}=np+Z_{q}\sqrt{np(1-p)}=(112)(0.5)+(-1.645)\sqrt{112(0.5)(1-0.5)}.\]
 
 \[t_{1}=47.3.\]
 
@@ -928,7 +934,7 @@ Como \(n > 20\), el \(p-value\) puede obtenerse de una manera más sencilla usan
 \[\left(Z\leq\frac{9-(112)(0.5)+0.5}{\sqrt{(112)(0.5)(1-0.5)}}\right)=\mathbf{P}[Z\leq -8.7876] < < 0.0001.\]
 \(\therefore\) Rechazo \(H_0\) ya que \(p-value=0.0001<<0.05=\alpha.\) es decir, el \(p-value\) es ``muy pequeño''.
 
-\textbf{Paso 6} Conclusión,
+\textbf{Paso 6} Conclusión:
 
 Existe información suficiente para decir que la mediana del intervalo de erupciones es mayor a 60 minutos.
 
@@ -951,7 +957,7 @@ La estadística de prueba será \(T_1=9\) y \(T_2=8\). Tomaremos \(\alpha=.1\)
 \end{Highlighting}
 \end{Shaded}
 
-Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechaza \(H_0\) si \(T_1\leq t_1\) donde \(t_1\) será el cuantil que acumule 10\% en la distribución binomial
+Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechaza \(H_0\) si \(T_1\leq t_1\) donde \(t_1\) será el cuantil que acumule 10\% en la distribución binomial.
 
 Podemos graficar la función de distribución:
 
@@ -1014,7 +1020,7 @@ probability of success
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Una muestra aleatoria de niños de tercer año de secundaria mostró las siguientes observaciones de peso (kg)
+  Una muestra aleatoria de niños de tercer año de secundaria mostró las siguientes observaciones de peso(kg).
 \end{enumerate}
 
 \[
@@ -1087,9 +1093,9 @@ Dentro de cada par de datos en la muestra se clasificará de la siguiente manera
 \begin{itemize}
 \tightlist
 \item
-  Por un signo \("+"\) cuando \(X_{i} < Y_{i}\)
+  Por un signo \("+"\) cuando \(X_{i} < Y_{i}\).
 \item
-  Por un signo ``-'' cuando \(X_{i} > Y_{i}\)
+  Por un signo ``-'' cuando \(X_{i} > Y_{i}\).
 \item
   Se omitirán las parejas cuando \(Xi = Yi\).
 \end{itemize}
@@ -1112,7 +1118,7 @@ El tamaño de la muestra después de quitar los empates será \(n\).
 
 El estadístico de prueba es:
 
-\[T=Total\ de\ signos\ "+",\]
+\[T=Total\ de\ signos\ "+".\]
 
 La distribución nula de \(T\) es una distribución binomial con \(n\) el número de parejas de la muestra sin empates y \(p=1/2\).
 
@@ -1127,7 +1133,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 \subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-2}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1159,14 +1165,17 @@ y calculamos el \(p-value\) de la siguiente manera:
 
 Sugerimos que si \(n > 20\), el \(p-value\) puede obtenerse de forma más sencilla usando la aproximación normal:
 
-\[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right),\]
-\[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right)\]
+\[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N}\left(\frac{2T-n+1}{\sqrt{n}}\right)\]
+
+\[y\]
+
+\[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).\]
 
 \hypertarget{caso-b-prueba-de-cola-inferior-2}{%
 \subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-2}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1188,9 +1197,9 @@ Donde \(Y \sim Bin (n,1/2)\).
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value=\mathbf{P}[Y\leq T]\]
+\[p-value=\mathbf{P}[Y\leq T].\]
 
-Sugerimos que si \(n > 20\),el \(p-value\) puedría obtenerse de forma más sencilla usando la aproximación normal:
+Sugerimos que si \(n > 20\), el \(p-value\) puedría obtenerse de forma más sencilla usando la aproximación normal:
 
 \[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right).\]
 
@@ -1198,7 +1207,7 @@ Sugerimos que si \(n > 20\),el \(p-value\) puedría obtenerse de forma más senc
 \subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-2}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1253,9 +1262,9 @@ Recordando que cada par de datos en la muestra se clasificará de la siguiente m
 \begin{itemize}
 \tightlist
 \item
-  \("+"\) cuando \(X_{i} < Y_{i}\)
+  \("+"\) cuando \(X_{i} < Y_{i}.\)
 \item
-  \("-"\) cuando \(X_{i} > Y_{i}\)
+  \("-"\) cuando \(X_{i} > Y_{i}.\)
 \end{itemize}
 
 y se omitirán las parejas cuando \(X_i = Y_i\). Y el tamaño de la muestra después de quitar los empates será \(n\), haremos lo siguiente:
@@ -1282,7 +1291,7 @@ La prueba a utilizar \textbf{Prueba de signos Caso B cola inferior.}
 
 \textbf{Paso 2} Formulamos nuestras hipótesis en contexto al problema planteado,
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1296,13 +1305,13 @@ es decir,
 
 \[\textbf{H}_a:\mbox{ En promedio los pesos después de las dieta son mayores a los pesos antes de la dieta.}\]
 
-\textbf{Paso 3} Estadístico de prueba.
+\textbf{Paso 3} Estadístico de prueba:
 
 Utilizaremos el estadístico
 
-\[T=1 \ \ número \ de \ signos\ "+"\]
+\[T=1 \ \ número \ de \ signos\ "+".\]
 
-\[T\sim Bin(6,1/2)\]
+\[T\sim Bin(6,1/2).\]
 
 \textbf{Paso 4} Procedimiento completo.
 
@@ -1317,7 +1326,7 @@ Utilizaremos el estadístico
 
 \begin{itemize}
 \item
-  Tomaremos como ``éxito'' los que si perdieron peso, en este caso los signos ``+''
+  Tomaremos como ``éxito'' los que si perdieron peso, en este caso los signos ``+''.
 \item
   Tomaremos \(\alpha\)= 5\% =0.05 el nivel de significancia.
 \item
@@ -1326,9 +1335,11 @@ Utilizaremos el estadístico
   \(p\)=1/2.
 \end{itemize}
 
-\textbf{Paso 5} Regla de decisión.
+\textbf{Paso 5} Regla de decisión:
 
-Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si, \(T \leq t\)
+Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
+
+\[T \leq t.\]
 
 \[T=1 \leq 1=t.\]
 
@@ -1351,7 +1362,7 @@ Existe evidencia suficiente para decir que los pesos después de la dieta son me
 
 Ahora haremos la réplica en R.
 
-La estadística de prueba será \(T=1\). Tomaremos \(\alpha=5\%\)
+La estadística de prueba será \(T=1\). Tomaremos \(\alpha=5\%.\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1364,7 +1375,7 @@ La estadística de prueba será \(T=1\). Tomaremos \(\alpha=5\%\)
 \end{Highlighting}
 \end{Shaded}
 
-Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechazará \(H_0\) si \(T\leq t\) donde \(t\) será en cuantil que acumule 5\% en la distribución binomial
+Según el planteamiento de las hipótesis, este es un Caso B (de cola inferior), por lo que siguiendo la regla de decisión, se rechazará \(H_0\) si \(T\leq t\) donde \(t\) será en cuantil que acumule 5\% en la distribución binomial.
 
 Podemos graficar la función de distribución:
 
@@ -1542,7 +1553,7 @@ Probar la hipótesis nula de que los salarios son iguales contra la hipótesis a
 \end{array}
 \]
 
-Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use \(\alpha=5\%\)
+Con los datos observados se puede corroborar la sospecha en cuanto a la eficiencia de los trituradores? Use \(\alpha=5\%.\)
 
 \hypertarget{prueba-mc-nemar}{%
 \chapter{Prueba Mc Nemar}\label{prueba-mc-nemar}}
@@ -1610,7 +1621,7 @@ Por otro lado, si \(b+c\leq20\), es preferible utilizar el siguiente estadístic
 
 \[T_{2}=b\sim Bin(b+c,p).\]
 
-Es decir, la distribución de \(T_{2}\) es exactamente \(Bin(b+c,p)\)
+Es decir, la distribución de \(T_{2}\) es exactamente \(Bin(b+c,p).\)
 
 Dependiendo del planteamiento de nuestro problema a resolver se formulan las hipótesis:
 
@@ -1621,7 +1632,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 \subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-3}}
 
 
-\[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0],\]
+\[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0].\]
 \[vs\]
 
 \[\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0].\]
@@ -1642,9 +1653,7 @@ Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que:
 
 Donde \(Y \sim Bin (b+c,1/2)\).
 
-Por otro lado, si \(b+c>20,\)
-
-Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
+Por otro lado, si \(b+c>20,\) rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
 \[T_{1} > t_{1-\alpha}.\]
 
@@ -1653,7 +1662,7 @@ Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t_{1-\alpha}\
 
 y calculamos el \(p-value\) de la siguiente manera:
 
-\[p-value=2*min\{\mathbf{P}[Y\leq T_{2}],\mathbf{P}[Y\geq T_{2}]\}\]
+\[p-value=2*min\{\mathbf{P}[Y\leq T_{2}],\mathbf{P}[Y\geq T_{2}]\}.\]
 
 Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 
@@ -1682,11 +1691,11 @@ La prueba a utilizar \textbf{Prueba de Mc Nemar Caso A de dos colas.}
 
 \textbf{Paso 2} Formulamos nuestras hipótesis en contexto al problema planteado:
 
-\[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0],\]
+\[\textbf{H}_0: \mathbf{P}[X_{i}=0,Y_{i}=1]= \mathbf{P}[X_{i}=1,Y_{i}=0].\]
 
 \[vs\]
 
-\[\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0],\]
+\[\textbf{H}_a: \mathbf{P}[X_{i}=0,Y_{i}=1]\neq \mathbf{P}[X_{i}=1,Y_{i}=0].\]
 
 es decir,
 
@@ -1705,7 +1714,7 @@ Recordando que \(b+c=4+12\) entonces \(b+c=16\leq20;\) entonces utilizaremos el 
 
 \textbf{Paso 4} Procedimiento completo.
 
-\textbf{Supuestos}
+\textbf{Supuestos:}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1750,7 +1759,7 @@ Veamos que \(b+c=4+12=16\leq 20\) por lo tanto el estadístico de prueba será:
 \(T_2=b=4.\)
 \(T_2\sim Bin(16,1/2).\)
 
-Tomaremos \(\alpha=5\%\)
+Tomaremos \(\alpha=5\%.\)
 
 \begin{verbatim}
               Despues hipnosis
@@ -1834,9 +1843,9 @@ probability of success
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Se toma una muestra aleatoria de 135 ciudadanos de E.U. y se les preguntó su opinión con respecto a cierta política. El estudio registró a 43 ciudadanos que estaban en contra de esa política. Después de varias semanas, durante las cuales los ciudadanos recibieron cartas informativas, se les volvió a preguntar su opinión; 37 estuvieron en contra, y 30 de las 37 originalmente no estaban en contra de la política. ¿Es significativo el cambio en el número de personas en contra de la política?
+  Se toma una muestra aleatoria de 135 ciudadanos de E.U. y se les preguntó su opinión con respecto a cierta política. El estudio registró a 43 ciudadanos que estaban en contra de esa política. Después de varias semanas, durante las cuales los ciudadanos recibieron cartas informativas, se les volvió a preguntar su opinión; 37 estuvieron en contra, y 30 de las 37 originalmente no estaban en contra de la política. ¿Es significativo el cambio en el número de personas en contra de la política?.
 \item
-  Un investigador intenta determinar si un fármaco tiene un efecto sobre una enfermedad particular. Se cuenta con la información de los individuos en el estudio con el diagnóstico (enfermedad: presente o ausente ) antes del tratamiento, y el diagnóstico después del tratamiento
+  Un investigador intenta determinar si un fármaco tiene un efecto sobre una enfermedad particular. Se cuenta con la información de los individuos en el estudio con el diagnóstico (enfermedad: presente o ausente ) antes del tratamiento, y el diagnóstico después del tratamiento.
 \end{enumerate}
 
 \[
@@ -1902,7 +1911,7 @@ Dependiendo del planteamiento de nuestro problema a resolver se formulan las hip
 \subsection*{Caso A (Prueba de dos colas)}\label{caso-a-prueba-de-dos-colas-4}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +]= \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1926,22 +1935,23 @@ Por otro lado, si \(n>20\) resultará más sencillo utilizar una aproximación n
 
 \[t=\frac{1}{2}\left(n+z_{\alpha/2}\ \sqrt{n}\right).\]
 
-Donde \(z_{\alpha/2}\) es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente.
-
-y calculamos el \(p-value\) de la siguiente manera:
+Donde \(z_{\alpha/2}\) es el cuantil de una distribución normal estándar que se puede obtener en la tabla correspondiente y calculamos el \(p-value\) de la siguiente manera:
 
 \[p-value=2*min\{\mathbf{P}[Y\leq T],\mathbf{P}[Y\geq T]\}.\]
 
 Sugerimos que si \(n>20\), el \(p-value\) podrá obtenerse de forma más sencilla usando la aproximación normal:
 
-\[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right).\]
+\[\mathbf{P}[Y\leq T] \thickapprox  \mathcal{N} \left(\frac{2T-n+1}{\sqrt{n}}\right)\]
+
+\[y\]
+
 \[\mathbf{P}[Y\geq T] \thickapprox 1- \mathcal{N} \left(\frac{2T-n-1}{\sqrt{n}}\right).\]
 
 \hypertarget{caso-b-prueba-de-cola-inferior-3}{%
 \subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-3}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +] \geq \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1959,9 +1969,7 @@ Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que:
 
 \[\mathbf{P}[Y \leq t]=\alpha.\]
 
-Donde \(Y \sim Bin (n,1/2)\).
-
-y calculamos el \(p-value\) de la siguiente manera:
+Donde \(Y \sim Bin (n,1/2)\) y calculamos el \(p-value\) de la siguiente manera:
 
 \[p-value=\mathbf{P}[Y\leq T].\]
 
@@ -1973,7 +1981,7 @@ Sugerimos que si \(n>20\), el \(p-value\) podrá obtenerse de forma más sencill
 \subsection*{Caso C (Prueba de cola superior)}\label{caso-c-prueba-de-cola-superior-3}}
 
 
-\[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -],\]
+\[\textbf{H}_0: \mathbf{P}[obtener\ +] \leq \mathbf{P}[obtener\ -].\]
 
 \[vs\]
 
@@ -1987,15 +1995,13 @@ Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
 \[T > n-t.\]
 
-Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que
+Elegimos \(\alpha\), el tamaño de la prueba y debemos encontrar \(t\) tal que:
 
-\[\mathbf{P}[Y \leq t]=\alpha\]
+\[\mathbf{P}[Y \leq t]=\alpha.\]
 
-Donde \(Y \sim Bin (n,1/2)\).
+Donde \(Y \sim Bin (n,1/2)\) y calculamos el \(p-value\) de la siguiente manera:
 
-y calculamos el \(p-value\) de la siguiente manera:
-
-\[p-value=\mathbf{P}[Y\geq T]\]
+\[p-value=\mathbf{P}[Y\geq T].\]
 
 Sugerimos que si \(n > 20\), el \(p-value\) podría obtenerse de forma más sencilla usando la aproximación normal:
 
@@ -2007,7 +2013,7 @@ Ahora aplicaremos lo anterior en un ejemplo ilustrativo.
 \section{Ejemplo}\label{ejemplo-4}}
 
 Una hidroeléctrica está muy interesada en seguir las tasas promedio de descarga de agua de las corrientes que lo alimentan. Se tienen los registros mensuales de estas tasas (en pies cúbicos por segundo) durante un período de 24 meses.
-La empresa sospecha que la tasa está disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5\%?
+La empresa sospecha que la tasa está disminuyendo. ¿Podemos corroborar la sospecha con un nivel de significancia del 5\%?.
 
 Los datos están en la siguiente tabla, los cuales están emparejados por mes ya que estas tasa de descarga siguen un ciclo anual, se sabe que la tasa de descarga sigue un ciclo anual, por lo que no se puede emparejar las descargas de corriente durante dos meses diferentes; sin embargo, al emparejar los mismos meses consecutivos, se puede investigar la existencia de una tendencia. Los datos son los siguientes:
 
@@ -2069,13 +2075,13 @@ La prueba a utilizar \textbf{Prueba Cox-Stuart Caso B cola inferior.}
 
 \textbf{Paso 3} Estadístico de prueba.
 
-Utilizaremos el estadístico
+Utilizaremos el estadístico:
 
 \[T=5 \ \ número \ de \ signos\ "+".\]
 
 \[T\sim Bin(12,1/2).\]
 
-\textbf{Paso 4} Procedimiento completo
+\textbf{Paso 4} Procedimiento completo:
 
 \textbf{Supuestos:}
 
@@ -2119,7 +2125,7 @@ Existe evidencia suficiente para decir que la tasa promedio de descarga de agua 
 
 Ahora haremos la réplica en R.
 
-La estadística de prueba será \(T=5\). Tomaremos \(\alpha=5\%\)
+La estadística de prueba será \(T=5\). Tomaremos \(\alpha=5\%.\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2332,7 +2338,7 @@ Sea:
   La escala de medida es al menos ordinal.
 \end{enumerate}
 
-\textbf{Pasos a seguir para obtener R(X\_\{i\})}
+\textbf{Pasos a seguir para obtener \(R(X_{i})\)}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2349,12 +2355,12 @@ Sea:
 \hypertarget{estaduxedstico-de-prueba-5}{%
 \section{Estadístico de Prueba}\label{estaduxedstico-de-prueba-5}}
 
-Utilizaremos el sieguiente estadístico de prueba:
+Utilizaremos el siguiente estadístico de prueba:
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Si no hay empates}
+  \textbf{Si no hay empates:}
 \end{itemize}
 
 \[T=\sum_{i=1}^{n}R(X_{i}).\]
@@ -2362,10 +2368,10 @@ Utilizaremos el sieguiente estadístico de prueba:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Si hay empates}
+  \textbf{Si hay empates:}
 \end{itemize}
 
-\[T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}\]
+\[T_1= \frac{T-n\frac{N+1}{2}}{\sqrt{\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_i^2-\frac{nm(N+1)^2}{4(N-1)}}}.\]
 
 \[T_{1}\sim N(0,1).\]
 
@@ -2402,7 +2408,7 @@ donde \(\omega_{1-p}\) es el cuantil inferior obtenido de la tabla correspondien
 
 Los cuantiles aproximados en el caso de no tener empates, y \(n\) o \(m\) mayores a 20, se encuentra la aproximación normal
 
-\[\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}}\]
+\[\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},\]
 
 donde el cuantil \(z_p\) se obtiene de la tabla de la distribución normal y calculamos el \(p-value\) de la siguiente manera:
 
@@ -2418,9 +2424,7 @@ Donde \(Z\) es la variable aleatoria normal estándar.
 
 \[T_{1} < z_{\frac{\alpha}{2}} \ \ \  o \ \ \  T_{1} > z_{1-\frac{\alpha}{2}}.\]
 
-Donde \(z_\frac{\alpha}{2}\) y \(z_{1-\frac{\alpha}{2}}\) son cuantiles que se buscan en la tabla de una normal estándar
-
-y calculamos el \(p-value\) de la siguiente manera:
+Donde \(z_\frac{\alpha}{2}\) y \(z_{1-\frac{\alpha}{2}}\) son cuantiles que se buscan en la tabla de una normal estándar y calculamos el \(p-value\) de la siguiente manera:
 
 \[p-value=2*min\{\mathbf{P}[Z\leq T_{1}],\mathbf{P}[Z\geq T_{1}]\}.\]
 
@@ -2430,7 +2434,7 @@ Donde \(Z\) es la variable aleatoria normal estándar.
 \subsection*{Caso B (Prueba de cola inferior)}\label{caso-b-prueba-de-cola-inferior-4}}
 
 
-\[\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{de manera equivalente} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y]\]
+\[\textbf{H}_0: F(x) = G(x) \ \ vs \ \ \textbf{H}_a: F(x) > G(x),  \ \ \mbox{de manera equivalente} \ \ \textbf{H}_a:\mathbf{E}[X]  < \mathbf{E}[Y].\]
 
 \hypertarget{regla-de-decisiuxf3n-14}{%
 \subsubsection*{Regla de decisión}\label{regla-de-decisiuxf3n-14}}
@@ -2445,9 +2449,7 @@ Donde \(t_{\alpha}\) el cuantil inferior se busca en las tablas correspondientes
 Los cuantiles aproximados en el caso de no tener empates, y \(n\) o \(m\) mayores a 20, se encuentra la aproximación normal
 
 \[\omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},\]
-donde el cuantil \(z_p\) se obtiene de la tabla de la distribución normal.
-
-y calculamos el \(p-value\) de la siguiente manera:
+donde el cuantil \(z_p\) se obtiene de la tabla de la distribución normal y calculamos el \(p-value\) de la siguiente manera:
 
 \[p-value = \mathbf{P}\left(Z\leq\frac{T+\frac{1}{2}-n\frac{N+1}{2}}{\sqrt{\frac{nm(N+1)}{12}}}\right).\]
 
@@ -2483,12 +2485,12 @@ Rechazamos \(H_0\) a un nivel de significancia \(\alpha\) si:
 
 Y \(t_{1-\alpha}\) el cuantil superior se calcula de la siguiente manera:
 
-\[\omega_p= n(n+m+1)-\omega_{1-p}\]
+\[\omega_p= n(n+m+1)-\omega_{1-p}.\]
 donde \(\omega_{1-p}\) es el cuantil inferior obtenido de la tabla correspondiente a nuestra prueba.
 
 Los cuantiles aproximados en el caso de no tener empates, y \(n\) o \(m\) mayores a 20, se encuentra la aproximación normal
 
-\[ \omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}}.\]
+\[ \omega_p= \frac{n(N+1)}{2} + z_p\sqrt{\frac{n m(N+1)}{12}},\]
 donde el cuantil \(z_p\) se obtiene de la tabla de la distribución normal.
 
 y calculamos el \(p-value\) de la siguiente manera:
@@ -2501,11 +2503,9 @@ y calculamos el \(p-value\) de la siguiente manera:
   Si ocupamos \(T_{1}\), rechazamos \(H_0\) si:
 \end{itemize}
 
-\[T_{1} > z_{1-\alpha}\]
+\[T_{1} > z_{1-\alpha}.\]
 
-Donde \(z_{1-\alpha}\) es el cuantil que se buscan en la tabla de una normal estándar
-
-y calculamos el \(p-value\) de la siguiente manera:
+Donde \(z_{1-\alpha}\) es el cuantil que se buscan en la tabla de una normal estándar y calculamos el \(p-value\) de la siguiente manera:
 
 \[p-value=\mathbf{P}[Z\geq T_{1}] \ \ o \ \  \ 1-\mathbf{P}[Z\leq T_{1}].\]
 
@@ -2696,7 +2696,8 @@ alternative hypothesis: true location shift is not equal to 0
 
 Con esta prueba se rechaza la hipótesis nula de que ambas distribuciones son iguales. Y se concluye de la misma forma que la prueba de rangos anterior. La distribución del tiempo de atención que prestan los adolescentes a los anuncios sobre comida es distinta a la distribución del tiempo de atención prestada a los anuncios de bebidas.
 
-\#\#Ejercicios
+\hypertarget{ejercicios-5}{%
+\section{Ejercicios}\label{ejercicios-5}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2786,7 +2787,7 @@ Determine el cuantil \(\alpha/2\) (\(\omega_{\alpha/2}\)) para \(n\) y \(m\) de 
 
 Luego calcule \(k\), dado por:
 
-\[k= \omega_{\alpha/2}-n(n+1)/2\]
+\[k= \omega_{\alpha/2}-n(n+1)/2.\]
 
 Para todos los pares posibles (\(X_{i},Y_{j}\)), encuentre las \(k\) diferencias más grandes \(X_{i}-Y_{j}\) y encontrar las \(k\) diferencias más pequeñas.
 
@@ -2796,7 +2797,7 @@ La k-ésima diferencia más grande es el límite superior \(U\) y la \(k-ésima\
 
 Entonces el intervalo de confianza es obtenido por:
 
-\[\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha\]
+\[\mathbf{P}[L\leq \mathbf{E}(X)-\mathbf{E}(Y)\leq U]\geq 1-\alpha.\]
 
 Ahora haremos un ejemplo para ilustrar la teoría:
 
@@ -2874,7 +2875,7 @@ Un caso particular, si \(k=2\) se tiene la prueba de \textbf{Mann-Whitney}.
 \section{Datos}\label{datos-7}}
 
 Se tienen \(k\ \ m.a.\) que pueden tener incluso distintos tamaños, la \(i-ésima\ \ m.a.\) de tamaño \(n_{i}\) es:
-\[X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \ \ \mbox{de la} \ \ i-ésima \ \ \mbox{población})\]
+\[X_{i_1},\ X_{i_2},\ \cdots, \ X_{i_{ni}} \ \ (m.a. \ \ \mbox{de la} \ \ i-ésima \ \ \mbox{población}).\]
 
 Así:
 
@@ -2890,7 +2891,7 @@ x_{1n_1}&x_{2n_2}&x_{3n_3}&...&x_{kn_k}\\
 
 sea \(N\) el número total de observaciones:
 
-\[ N= \sum_{i=1}^{k} n_{i}\]
+\[ N= \sum_{i=1}^{k} n_{i}.\]
 
 \hypertarget{supuestos-7}{%
 \section{Supuestos}\label{supuestos-7}}
@@ -2928,12 +2929,12 @@ sea \(N\) el número total de observaciones:
 \item
   Asignamos el rango \(1\) a la observación más pequeña de las \(N\) observaciones, el rango \(2\) a la \(2da\) más pequeña, y así sucesivamente hasta llegar a la observación mayor que recibirá el rango \(N\).
 \item
-  Sea \(R(X_{ij})\) el rango asignado a la observación \(X_{ij}\)
+  Sea \(R(X_{ij})\) el rango asignado a la observación \(X_{ij}.\)
 \item
   Sea \(R_{i}\) la suma de los rangos asignados a la \(i-ésima\) muestra (la \(i-ésima\) columna):
 \end{itemize}
 
-\[R_{i}=\sum_{j=1}^{n_{i}} R(X_{ij}), \ \ i= 1, 2,\cdots,k\]
+\[R_{i}=\sum_{j=1}^{n_{i}} R(X_{ij}), \ \ i= 1, 2,\cdots,k.\]
 
 \textbf{NOTA}
 
@@ -2956,22 +2957,22 @@ R_{1} & R_{2} & R_{3} & \cdots&R_{k} \\
 \hypertarget{estaduxedstico-de-prueba-6}{%
 \section{Estadístico de prueba}\label{estaduxedstico-de-prueba-6}}
 
-\[T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right)\]
+\[T= \frac{1}{S^2}\left(\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-\frac{N(N+1)^2}{4}\right).\]
 donde \(N\) y \(R_{i}\) son como los definimos anteriormente y donde:
 
-\[ S^2 = \frac{1}{N-1}\left(\sum_{todos\ los\ rangos}R(X_{ij})^2-N\frac{(N+1)^2}{4}\right)\]
+\[ S^2 = \frac{1}{N-1}\left(\sum_{todos\ los\ rangos}R(X_{ij})^2-N\frac{(N+1)^2}{4}\right).\]
 * \textbf{Si no hay empates} \(S^2\) se simplifica a \(N(N+1)/12\), y la estadística de prueba se reduce a:
 
-\[ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1) \]
+\[ T= \frac{12}{N(N+1)}\sum_{i=1}^{k}\frac{R^2_{i}}{n_{i}}-3(N+1).\]
 
 \hypertarget{regla-de-decisiuxf3n-16}{%
 \section{Regla de decisión}\label{regla-de-decisiuxf3n-16}}
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si \(T>\omega_{1-\alpha}\), donde \(\omega_{1-\alpha}\) se obtiene de la tabla de cuantiles de la distribución de \(T\) (tablas Kruskal-Wallis). En caso de no encontrarse en la tabla, los tamaños de muestra correspondientes se utiliza la aproximación Ji-cuadrada con \(k-1\) grados de libertad para el estadístico de prueba.
 
-Es decir, rechazamos \(H_0\) a un nivel \(\alpha\) si \(T > \chi^2_{(k-1)}(1-\alpha)\)
+Es decir, rechazamos \(H_0\) a un nivel \(\alpha\) si \(T > \chi^2_{(k-1)}(1-\alpha).\)
 
-y calculamos el \(p-value\) de la siguiente manera el \(p-value\) es aproximadamente la probabilidad de una variable aleatoria chi-cuadrado con \(k-1\) grados de libertad que excede el valor observado de \(T\).
+Y calculamos el \(p-value\) de la siguiente manera el \(p-value\) es aproximadamente la probabilidad de una variable aleatoria chi-cuadrado con \(k-1\) grados de libertad que excede el valor observado de \(T\).
 
 \textbf{Múltiples comparaciones}
 
@@ -2990,7 +2991,7 @@ Ahora veamos cómo se hace un ejemplo:
 
 Se tienen 4 métodos de cultivo de maíz, para ver si hay diferencia entre uno y otro se utilizan terrenos similares y se aplican los distintos métodos y se ve la cantidad de cosecha por \(m^2\) de tierra de cada terreno obtenido.
 
-\textbf{Paso 1} Prueba a utilizar \textbf{Prueba Kruskal-Wallis}
+\textbf{Paso 1} Prueba a utilizar \textbf{Prueba Kruskal-Wallis.}
 \[
 \begin{array}{|c| c| c| c|} 
 \hline
@@ -3009,7 +3010,7 @@ Se tienen 4 métodos de cultivo de maíz, para ver si hay diferencia entre uno y
   \hline
 \end{array}
 \]
-\textbf{Paso 2} Planteamiento de hipótesis
+\textbf{Paso 2} Planteamiento de hipótesis.
 
 Queremos probar:
 
@@ -3160,7 +3161,7 @@ Entonces existe evidencia suficiente para decir que al menos alguno de los méto
 \hypertarget{ejemplo-en-r-studio-6}{%
 \section{Ejemplo en R-Studio}\label{ejemplo-en-r-studio-6}}
 
-Calculamos el estadístico de prueba \(T\)
+Calculamos el estadístico de prueba \(T\).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3195,7 +3196,7 @@ Calculamos el estadístico de prueba \(T\)
 [1] 25.46437
 \end{verbatim}
 
-Comparamos con el cuantil
+Comparamos con el cuantil:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3207,7 +3208,7 @@ Comparamos con el cuantil
 [1] 7.814728
 \end{verbatim}
 
-Utilizando la función de R
+Utilizando la función de R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3223,7 +3224,8 @@ data:  calif
 Kruskal-Wallis chi-squared = 25.629, df = 3, p-value = 1.141e-05
 \end{verbatim}
 
-El valor de la estadísitca de prueba es 25.62 y su correspondiente \(p-value\) es mucho menor a 0.01 (\(\alpha=1\%\)) por lo tanto se rechaza la hipótesis nula y se concluye que al menos uno de los 4 métodos tiene distribución diferente.
+El valor de la estadísitca de prueba es 25.62 y su correspondiente \(p-value\) es mucho menor a 0.01
+(\(\alpha=1\%\)) por lo tanto se rechaza la hipótesis nula y se concluye que al menos uno de los 4 métodos tiene distribución diferente.
 
 Para determinar qué método es el distinto se tendrán que hacer las comparaciones dos a dos.
 
@@ -3252,8 +3254,8 @@ P value adjustment method: holm
 
 En este caso observamos que todos los \(p-value\)s de las comparaciones dos a dos son menores a 0.05 por lo tanto con un \(\alpha\) del 5\% podemos concluir que todos los métodos tienen distribuciones de los rendimientos distintas.
 
-\hypertarget{ejercicios-5}{%
-\section{Ejercicios}\label{ejercicios-5}}
+\hypertarget{ejercicios-6}{%
+\section{Ejercicios}\label{ejercicios-6}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3281,7 +3283,7 @@ A & B&C&D&E \\
 \end{array}
 \]
 
-¿Los datos observados indican una diferencia significativa entre las marcas? De haber diferencia, ¿qué marcas parecen ser las diferentes? Use \(\alpha=10\%\)
+¿Los datos observados indican una diferencia significativa entre las marcas? De haber diferencia, ¿qué marcas parecen ser las diferentes? Use \(\alpha=10\%.\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3310,7 +3312,7 @@ A & B&C&D&E \\
 \end{array}
 \]
 
-Con los datos observados se puede corroborar la sospecha de que alguno de los maestros da calificaciones diferentes a los otros? Use \(\alpha=5\%\)
+Con los datos observados se puede corroborar la sospecha de que alguno de los maestros da calificaciones diferentes a los otros? Use \(\alpha=5\%.\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3344,7 +3346,7 @@ Usualmente para comparar varias poblaciones nos basamos en las medias o varianza
 \hypertarget{datos-8}{%
 \section{Datos}\label{datos-8}}
 
-Consiste en dos muestras aleatorias
+Consiste en dos muestras aleatorias:
 
 \[\mbox{Sea} \ \ x_{1},x_{2},x_{3},\cdots,x_{n} \ \ \mbox{una muestra aleatoria de tamaño} \  n  \ \mbox{de la} \ población \ 1.\]
 
@@ -3363,7 +3365,7 @@ Consiste en dos muestras aleatorias
   La escala de medida es al menos intervalo.
 \end{enumerate}
 
-\textbf{Asignación de Rangos}
+\textbf{Asignación de Rangos:}
 
 Modificaremos cada \(X_{i}\) y \(Y_{j}\) con el valor absoluto de la desviación de la media utilizando:
 
@@ -3390,7 +3392,7 @@ Se utilizará el siguiente estadístico de prueba:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Si no hay empates}
+  \textbf{Si no hay empates:}
 \end{itemize}
 
 Si no hay empates de la población \(U\) con la población \(V\) ocupamos:
@@ -3402,7 +3404,7 @@ La suma de los cuadrados de los rangos asignados a la \(población \ 1\).
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Si hay empates}
+  \textbf{Si hay empates:}
 \end{itemize}
 
 \[T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}.\]
@@ -3524,19 +3526,19 @@ Una cuenca hidrográfica particular se ha construido extensivamente en los últi
 \end{array}
 \]
 
-¿Es significativa la diferencia en las varianzas? Utiliza \(\alpha\)=0.05
+¿Es significativa la diferencia en las varianzas? Utiliza \(\alpha\)=0.05.
 
-\textbf{Paso 1} Prueba a utilizar \textbf{Prueba de Igualdad de Varianzas}
+\textbf{Paso 1} Prueba a utilizar \textbf{Prueba de Igualdad de Varianzas.}
 
-\textbf{Paso 2} Formulamos las hipótesis
+\textbf{Paso 2} Formulamos las hipótesis:
 
 \[\textbf{H}_0: \mbox{Las tasas actuales y las tasas pasadas son idénticamente distribuidas.}\]
 
 \[vs\]
 
-\[\textbf{H}_a: \ Var(\mbox{tasas pasadas}) \ \neq  \ Var(\mbox{tasas actuales})\]
+\[\textbf{H}_a: \ Var(\mbox{tasas pasadas}) \ \neq  \ Var(\mbox{tasas actuales}).\]
 
-\textbf{Paso 4} Procedimiento completo
+\textbf{Paso 4} Procedimiento completo:
 
 Primero como \(\mu_{1}\) y \(\mu_{2}\) son desconocidas se usará \(\overline{X}\) para \(\mu_{1}\) y \(\overline{Y}\) para \(\mu_{2}\).
 
@@ -3558,31 +3560,31 @@ Primero como \(\mu_{1}\) y \(\mu_{2}\) son desconocidas se usará \(\overline{X}
 \end{array}
 \]
 
-\(T\)= Sumas del cuadrado de los rangos (Actuales) = 381
+\(T\)= Sumas del cuadrado de los rangos (Actuales) = 381.
 
-\(\overline{R^2}= \frac{1}{16}\left(16+4+36+\cdots+210.25+144\right)\)=93.46
+\(\overline{R^2}= \frac{1}{16}\left(16+4+36+\cdots+210.25+144\right)\)=93.46.
 
-\(\sum_{i=1}^{N}R_{i}^4= (16)^2+(4)^2+\cdots+(210.25)^2+(144)^2\)= 243217.125
+\(\sum_{i=1}^{N}R_{i}^4= (16)^2+(4)^2+\cdots+(210.25)^2+(144)^2\)= 243217.125.
 
-\textbf{Paso 3} Estadístico de Prueba
+\textbf{Paso 3} Estadístico de Prueba:
 
 Debido a que encontramos empates utilizaremos el estadístico \(T_{1}\):
 
-\[T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}\]
+\[T_{1} = \frac{T-n\overline{R^2}}{\left[\frac{nm}{N(N-1)}\sum_{i=1}^{N}R_{i}^4-\frac{nm}{N-1}(\overline{R^2})^2\right]^\frac{1}{2}}.\]
 
 Entonces tenemos:
 
-\[T_{1} = \frac{381-8(93.46)}{\left[\frac{(8)(8)}{16(15)}(243217.125)-\frac{(8)(8)}{15}(93.46)^2\right]^\frac{1}{2}}\]
+\[T_{1} = \frac{381-8(93.46)}{\left[\frac{(8)(8)}{16(15)}(243217.125)-\frac{(8)(8)}{15}(93.46)^2\right]^\frac{1}{2}},\]
 
-\[T_{1} = \frac{381-747.68}{\left[\frac{64}{240}(243217.125)-\frac{64}{15}(93.46)^2\right]^\frac{1}{2}}\]
+\[T_{1} = \frac{381-747.68}{\left[\frac{64}{240}(243217.125)-\frac{64}{15}(93.46)^2\right]^\frac{1}{2}},\]
 
-\[T_{1} = \frac{-366.68}{[64857.9-37268.35]^\frac{1}{2}}\]
+\[T_{1} = \frac{-366.68}{[64857.9-37268.35]^\frac{1}{2}},\]
 
-\[T_{1} = \frac{-366.68}{\sqrt{27589.55}}\]
-\[T_{1} = \frac{-366.68}{166.10}\]
-\[T_{1}= -2.208282\]
+\[T_{1} = \frac{-366.68}{\sqrt{27589.55}},\]
+\[T_{1} = \frac{-366.68}{166.10},\]
+\[T_{1}= -2.208282.\]
 
-\textbf{Paso 5} Regla de Decisión
+\textbf{Paso 5} Regla de Decisión:
 
 Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si:
 
@@ -3592,13 +3594,13 @@ Rechazamos \(H_0\) al nivel de significancia \(\alpha\) si \(T_{1}\) (ya que tuv
 
 Regresando a nuestro ejemplo:
 
-\[T_{1}>t_{0.975} \ \ \ \ \  o \ \ \ \ \ T_{1}<t_{.025}\]
+\[T_{1}>t_{0.975} \ \ \ \ \  o \ \ \ \ \ T_{1}<t_{.025}.\]
 
-\[-2.2082 \ngtr 1.96  \ \ \ \ \   o  \ \ \ \ \  -2.2082 < -1.96\]
+\[-2.2082 \ngtr 1.96  \ \ \ \ \   o  \ \ \ \ \  -2.2082 < -1.96.\]
 
 \(\therefore\) Entonces Rechazo \(H_0\).
 
-\textbf{Paso 6} Conclusión
+\textbf{Paso 6} Conclusión.
 
 Entonces podemos concluir que existe evidencia estadística suficiente para decir que existe diferencia significativa en las varianzas.
 
@@ -3837,7 +3839,7 @@ T1 =  -2.208273
 [1] "Rechazamos H_0"
 \end{verbatim}
 
-Ya que utilizamos la estadística \(T_1\), entonces el cuantil que hay que buscar es en una distribución normal. Con \(\alpha=0.05\), hace que \(\frac{\alpha}{2}=0.025\) y \(1-\frac{\alpha}{2}=0.975\)
+Ya que utilizamos la estadística \(T_1\), entonces el cuantil que hay que buscar es en una distribución normal. Con \(\alpha=0.05\), hace que \(\frac{\alpha}{2}=0.025\) y \(1-\frac{\alpha}{2}=0.975.\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3874,8 +3876,8 @@ Como \(T_1=-2.21\leq -1.96 =t_1\) entonces se cumple la regla de decisión y rec
 [1] 0.02722523
 \end{verbatim}
 
-\hypertarget{ejercicios-6}{%
-\section{Ejercicios}\label{ejercicios-6}}
+\hypertarget{ejercicios-7}{%
+\section{Ejercicios}\label{ejercicios-7}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3911,14 +3913,14 @@ Como \(T_1=-2.21\leq -1.96 =t_1\) entonces se cumple la regla de decisión y rec
 \end{array}
 \]
 
-¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia \(5\%\)
+¿Es la variación entre los hombres significativamente mayor que la variación entre las mujeres? nivel de significancia \(5\%.\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia \(10\%\)
+  Se desea probar que las variaciones de las temperaturas altas en Des Moines son mayores que las variaciones de las temperaturas altas en Spokane, para ello se tomó una muestra de las temperaturas altas diarias durante el verano. Use nivel de significancia \(10\%.\)
 \end{enumerate}
 
 \[
@@ -4000,7 +4002,7 @@ El estadístico de prueba que vamos a utilizar es:
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Cuando tenemos empates}
+  \textbf{Cuando tenemos empates:}
 \end{itemize}
 
 \[T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right],\]
@@ -4018,7 +4020,7 @@ donde:
 \item
   \(D^2=\frac{1}{N-1}\left[\sum_{i=1}^{N}R^4_{j}-N(\overline{S})^2\right]\) y \(\sum{R_{i}^4}\) representa la suma de los rangos después de elevarlos a la cuarta potencia.
 \item
-  \textbf{Cuando no tenemos empates}
+  \textbf{Cuando no tenemos empates:}
 \end{itemize}
 
 \(D^2\) y \(\overline{S}\) se simplifican:
@@ -4036,9 +4038,9 @@ Rechazamos \(H_0\) si:
 
 donde \(t_{1-\alpha}\) es el cuantil de la distribución \(\chi^2\) con \(k-1\) grados de libertad donde el cuantil se localiza en las tablas de dicha distribución.
 
-y calculamos el \(p-value\)
+Y calculamos el \(p-value\)
 
-\[p-value= \mathbf{P}\left[\chi^2>T_{2}\right].\]
+\[p-value= \mathbf{P}\left[\chi^2>T_{2}\right],\]
 es la probabilidad de una variable aleatoria \(\chi^2\) con \(k-1\) grados de libertad sea mayor a el valor observado de \(T_2\).
 
 \hypertarget{comparaciuxf3n-muxfaltiple}{%
@@ -4086,7 +4088,7 @@ Retomando en ejemplo de los 4 métodos de cultivo de maíz, probaremos ahora si 
 
 \textbf{Paso 3} Estadístico de Prueba.
 
-\textbf{Cuando tenemos empates}
+\textbf{Cuando tenemos empates:}
 
 \[T_{2}= \frac{1}{D^2}\left[\sum_{j=1}^{k}\frac{S_{j}^2}{n_j}-N(\overline{S})^2\right],\]
 donde:
@@ -4190,7 +4192,8 @@ Ya que utilizamos la estadística \(T_2\), entonces el cuantil que hay que busca
 
 Como \(T_2=6.006\ngtr11.344=t_{1-\alpha}\) entonces no se cumple la regla de decisión y no rechazamos \(H_0\). Conlcuimos que no hay evidencia suficiente para decir que las distribuciones de los rendimientos de los 4 métodos de cultivo no sean idénticos, excepto por diferencias en las medias.
 
-\#\#Ejercicios
+\hypertarget{ejercicios-8}{%
+\section{Ejercicios}\label{ejercicios-8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4218,7 +4221,7 @@ A & B&C&D&E \\
 \end{array}
 \]
 
-Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use \(\alpha=10\%\)
+Los datos observados indican una diferencia significativa entre las varianzas de las duraciones por marca? Use \(\alpha=10\%.\)
 
 \hypertarget{part-tablas-de-contingencia}{%
 \part{Tablas de Contingencia}\label{part-tablas-de-contingencia}}
@@ -4281,7 +4284,7 @@ En este caso particular, \(r\)=2 y \(c\)=2, llamadas \textbf{Tablas de Contingen
 
 Una aplicación de las tablas de contingencia de \(2 \times 2\) surge cuando \(N\) objetos o personas, posiblemente seleccionadas aleatoriamente de alguna población, son clasificadas en una o dos categorías antes de aplicar un tratamiento o se produzca un evento.
 
-Después de aplicar el tratamiento los mismos \(N\) objetos son nuevamente examinados y clasificados en las dos categorías. La pregunta a responder es ¿El tratamiento altera significativamente la proporción de objetos en cada una de las dos categorías?
+Después de aplicar el tratamiento los mismos \(N\) objetos son nuevamente examinados y clasificados en las dos categorías. La pregunta a responder es ¿El tratamiento altera significativamente la proporción de objetos en cada una de las dos categorías?.
 
 El uso de las tablas de contingencia fue introducido anteriormente, y se vio que el procedimiento estadístico apropiado era una variación de la prueba de signos conocida como \textbf{McNemar}.
 
@@ -4343,7 +4346,7 @@ Por lo tanto, se utiliza la aproximación de muestra grande, que es la distribuc
 \subsection*{Caso A Prueba de dos colas}\label{caso-a-prueba-de-dos-colas-7}}
 
 
-\[\textbf{H}_0: p_{1} = p_{2},\]
+\[\textbf{H}_0: p_{1} = p_{2}.\]
 
 \[vs\]
 
@@ -4374,7 +4377,7 @@ Para la hipótesis anterior, también es usual usar \(T_{1}^2\) en lugar de \(T_
 \subsection*{Caso B Prueba de cola inferior}\label{caso-b-prueba-de-cola-inferior-6}}
 
 
-\[\textbf{H}_0: p_{1} \geq p_{2},\]
+\[\textbf{H}_0: p_{1} \geq p_{2}.\]
 
 \[vs\]
 
@@ -4401,7 +4404,7 @@ donde \(Z\) es una normal estándar.
 \subsection*{Caso C Prueba de cola superior}\label{caso-c-prueba-de-cola-superior-6}}
 
 
-\[\textbf{H}_0: p_{1} \leq p_{2},\]
+\[\textbf{H}_0: p_{1} \leq p_{2}.\]
 
 \[vs\]
 
@@ -4429,7 +4432,7 @@ Ahora hagamos un ejercicio.
 \hypertarget{ejemplo-10}{%
 \section{Ejemplo}\label{ejemplo-10}}
 
-En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio). Para probar la siguiente hipótesis nula. Utilizaremos \(\alpha\)=0.05
+En la academia naval se instaló un nuevo sistema de iluminación en las habitaciones guardamarinas. Se informó que el nuevo sistema de iluminación daba como resultado una vista deficiente debido a la tensión continua en los ojos de los guardias marinos. Se consideró un estudio (ficticio). Para probar la siguiente hipótesis nula. Utilizaremos \(\alpha\)=0.05.
 
 \[\textbf{H}_0: \ \mbox{La probabilidad de que un guardia marino tenga 20-20 (buena visión) es mayor o igual}\]
 \[\mbox{bajo el nuevo sistema de luces que con el viejo sistema de luces.}\]
@@ -4449,7 +4452,7 @@ Es decir si planteamos nuestra hipótesis quedarían así:
 
 \textbf{Caso C} Prueba de cola superior
 
-\[\textbf{H}_0: p_{1} \leq p_{2},\]
+\[\textbf{H}_0: p_{1} \leq p_{2}.\]
 
 \[vs\]
 
@@ -4803,7 +4806,7 @@ Entonces tenemos \(\chi^2_{(.95,(2-1)*(3-1))}=\chi^2_{(.95,2)}=5.99.\)
 
 Rechazo \(H_0\) si \(T> \chi^2(1-\alpha)\) con \((r-1)\times(c-1)\) grados de libertad, cuyos cuantiles se encuentran en las tablas de dicha distribución.
 
-Como \(\chi^2=5.99 < T=13.125\)
+Como \(\chi^2=5.99 < T=13.125.\)
 
 \(\therefore\) Rechazo \(H_0\).
 
@@ -4948,8 +4951,8 @@ data:  tabla
 X-squared = 13.125, df = 2, p-value = 0.001412
 \end{verbatim}
 
-\hypertarget{ejercicios-7}{%
-\section{Ejercicios}\label{ejercicios-7}}
+\hypertarget{ejercicios-9}{%
+\section{Ejercicios}\label{ejercicios-9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5103,7 +5106,7 @@ La distribución nula de T es obtenida aproximadamente por la Distribución \(\c
 
 Es decir,
 
-\[T\sim \chi^2_{(r-1)(c-1)}\]
+\[T\sim \chi^2_{(r-1)(c-1)}.\]
 
 \hypertarget{hipuxf3tesis-10}{%
 \section{Hipótesis}\label{hipuxf3tesis-10}}
@@ -5190,11 +5193,11 @@ Para poder calcular nuestro estadístico de prueba podemos auxiliarnos de una pe
 
 Para la celda en el \(renglón\ 1\), \(columna\ 1\) tenemos:
 
-\[\frac{(O_{ij}-E_{ij})^2}{E_{ij}}= \frac{(O_{11}-E_{11})^2}{E_{11}}=\frac{(6-12.9)^2}{12.9}=\frac{47.61}{12.9}=3.69\]
+\[\frac{(O_{ij}-E_{ij})^2}{E_{ij}}= \frac{(O_{11}-E_{11})^2}{E_{11}}=\frac{(6-12.9)^2}{12.9}=\frac{47.61}{12.9}=3.69.\]
 
 Si hacemos los calculos celda por celda el resultado es:
 
-\[T=3.69+0.38+1.89+5.14+2.06+0.21+1.06+2.87=17.3\]
+\[T=3.69+0.38+1.89+5.14+2.06+0.21+1.06+2.87=17.3.\]
 
 \textbf{Paso 4} Procedimiento completo.
 
@@ -5327,13 +5330,13 @@ data:  tabla
 X-squared = 17.286, df = 4, p-value = 0.001701
 \end{verbatim}
 
-\hypertarget{ejercicios-8}{%
-\section{Ejercicios}\label{ejercicios-8}}
+\hypertarget{ejercicios-10}{%
+\section{Ejercicios}\label{ejercicios-10}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  ¿Qué tan bueno es el servicio que dan las líneas aéreas a sus clientes? En un estudio las evaluaciones dadas por los clientes fueron las siguientes: 3 excelente, 28 bueno, 45 aceptable y 24 malo (BusinessWeek, 11 de septiembre de 2000). En otro estudio sobre las empresas de servicio telefónico, en una muestra de 400 adultos las evaluaciones fueron las siguientes: 24 excelente, 124 bueno, 172 aceptable y 80 malo. ¿La distribución de las evaluaciones a las empresas telefónicas difiere de la distribución de las evaluaciones a las líneas aéreas? Emplee \(\alpha=5\%\) ¿Cuál es su conclusión?
+  ¿Qué tan bueno es el servicio que dan las líneas aéreas a sus clientes? En un estudio las evaluaciones dadas por los clientes fueron las siguientes: 3 excelente, 28 bueno, 45 aceptable y 24 malo (BusinessWeek, 11 de septiembre de 2000). En otro estudio sobre las empresas de servicio telefónico, en una muestra de 400 adultos las evaluaciones fueron las siguientes: 24 excelente, 124 bueno, 172 aceptable y 80 malo. ¿La distribución de las evaluaciones a las empresas telefónicas difiere de la distribución de las evaluaciones a las líneas aéreas? Emplee \(\alpha=5\%\) ¿Cuál es su conclusión?.
 \item
   Estamos interesados en estudiar la fiabilidad de cierto componente informático con relación al distribuidor que nos lo suministra. Para realizar esto, tomamos una muestra de 100 componentes de cada uno de los tres distribuidores que nos sirven el producto comprobando el número de defectuosos en cada lote. La siguiente tabla muestra el número de defectuosos para cada uno de los distribuidores.
 \end{enumerate}
@@ -5502,7 +5505,7 @@ En el conteo rápido revela que hay 34 observaciones en total, por lo que el pro
 
 \[T=\frac{(34)^2}{(16)(18)}*\left(\ \frac{\left[6-\frac{(9)(16)}{34}\right]^2}{9}+\frac{\left[3-\frac{(10)(16)}{34}\right]^2}{10}+\frac{\left[7-\frac{(7)(16)}{34}\right]^2}{7}+\frac{\left[0-\frac{(8)(16)}{34}\right]^2}{8} \right).\]
 
-\[T=4.01(0.34+0.29+1.97+1.78) = 17.6\]
+\[T=4.01(0.34+0.29+1.97+1.78) = 17.6.\]
 
 \textbf{Paso 4} Regla de decisión.
 
@@ -5715,13 +5718,13 @@ odds ratio
 
 Los métodos 2 y 3 difieren con respecto al rendimiento medio (mediana) por \(m^2\).
 
-\hypertarget{ejercicios-9}{%
-\section{Ejercicios}\label{ejercicios-9}}
+\hypertarget{ejercicios-11}{%
+\section{Ejercicios}\label{ejercicios-11}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  En el campo de entrenamiento 100 reclutas son asignados aleatoriamente en cuatro regimientos con 4 diferentes sargentos. Al final del entrenamiento sólo quedarón 84 reclutas y sus tiempos en el ejercicio de obstáculos fue medido para todos ellos. Los resultados fueron, para el sargento Adams 11 de sus 20 reclutas tuvieron tiempos por arriba de la mediana, para el sargento Baker 8 de sus 22 reclutas tuvieron tiempos por arriba de la mediana, el sargento Callahan 8 de sus 20 reclutas tuvieron tiempos por encima de la mediana y del sargento Davis 15 de 22 tuvieron tiempos arriba de la mediana. Se puede decir con un nivel de significancia del \(5\%\) que existe una diferencia significativa en los tiempos en los ejercicios de obstáculos entre cada uno de los regimientos?
+  En el campo de entrenamiento 100 reclutas son asignados aleatoriamente en cuatro regimientos con 4 diferentes sargentos. Al final del entrenamiento sólo quedarón 84 reclutas y sus tiempos en el ejercicio de obstáculos fue medido para todos ellos. Los resultados fueron, para el sargento Adams 11 de sus 20 reclutas tuvieron tiempos por arriba de la mediana, para el sargento Baker 8 de sus 22 reclutas tuvieron tiempos por arriba de la mediana, el sargento Callahan 8 de sus 20 reclutas tuvieron tiempos por encima de la mediana y del sargento Davis 15 de 22 tuvieron tiempos arriba de la mediana. Se puede decir con un nivel de significancia del \(5\%\) que existe una diferencia significativa en los tiempos en los ejercicios de obstáculos entre cada uno de los regimientos?.
 \item
   Se subastaron varios contratos de explotación de petróleo al mejor postor. Para cada contrato se recibieron una o más ofertas selladas. Pruebe la hipótesis de que los contratos que eventualmente se convirtieron en productores de petróleo tuvieron la misma mediana de ofertas que los contratos que no produjeron petróleo. A continuación se muestra una muestra aleatoria de cada tipo de contrato.
 \end{enumerate}
@@ -5761,7 +5764,7 @@ Las pruebas de bondad de ajuste desarrolladas dependen de la variable aleatoria 
 
 \[ Sea X_{1},\cdots,X_{n} \ \ m.a. \  \mbox{de tamaño} \  "n"\  \mbox{que proviene de una distribución} \  F(x) \  \mbox{desconocida.}\]
 
-Cada una de las variables se pueden acomodar en alguna clase \("k"\) (o categoría)
+Cada una de las variables se pueden acomodar en alguna clase \("k"\) (o categoría).
 
 \hypertarget{hipuxf3tesis-12}{%
 \section{Hipótesis}\label{hipuxf3tesis-12}}
@@ -5816,7 +5819,7 @@ El estadístico de prueba que ocuparemos es:
 \subsubsection*{Regla de decisión.}\label{regla-de-decisiuxf3n.}}
 
 
-Rechazamos \(H_0\) si \(Q\)\textgreater{} \(q_{teórica}.\)
+Rechazamos \(H_0\) si \(Q\) \textgreater{} \(q_{teórica}.\)
 
 \begin{itemize}
 \tightlist
@@ -5891,7 +5894,7 @@ Nos ayudaremos de la siguiente tablita:
 
 \textbf{Paso 4} Regla de decisión.
 
-Rechazamos \(H_0\) si \(Q\)\textgreater{} \(q_{teórica}.\)
+Rechazamos \(H_0\) si \(Q\) \textgreater{} \(q_{teórica}.\)
 
 \begin{itemize}
 \tightlist
@@ -6040,8 +6043,8 @@ data:  c(273, 361, 263, 78, 25)
 X-squared = 20.96, df = 4, p-value = 0.0003226
 \end{verbatim}
 
-\hypertarget{ejercicios-10}{%
-\section{Ejercicios}\label{ejercicios-10}}
+\hypertarget{ejercicios-12}{%
+\section{Ejercicios}\label{ejercicios-12}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6060,7 +6063,7 @@ X-squared = 20.96, df = 4, p-value = 0.0003226
 \end{array}
 \]
 
-¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use \(\alpha=0.10\)
+¿El dado está balanceado (es decir, los datos tienen distribución uniforme con proba 1/6)? Use \(\alpha=0.10.\)
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6168,7 +6171,7 @@ Que es similar a \(T\), a excepción que solo vamos a considerar la mayor difere
 \subsection*{Caso A (Prueba de 2 colas)}\label{caso-a-prueba-de-2-colas-1}}
 
 
-\[\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty \]
+\[\textbf{H}_0:\ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \  \mbox{de}\  \ -\infty \ \ \ \mbox{a} \  +\infty. \]
 
 \[vs\]
 
@@ -6184,7 +6187,7 @@ Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T>W\). Donde \(W\) e
 \subsection*{Caso B (Prueba de 1 cola)}\label{caso-b-prueba-de-1-cola-1}}
 
 
-\[\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty\]
+\[\textbf{H}_0: \ F(x) \geq F^*(x) \ \ \ \ \forall\ x\ \ \mbox{de} \ \ -\infty \  \ \  \mbox{a} \ \ +\infty.\]
 
 \[vs\]
 
@@ -6200,7 +6203,7 @@ Rechazo \(H_0\) a un nivel de significancia \(\alpha\) si \(T^+>W\). Donde \(W\)
 \subsection*{Caso C (Prueba de 1 cola)}\label{caso-c-prueba-de-1-cola-1}}
 
 
-\[\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty\]
+\[\textbf{H}_0:\ F(x) \leq F^*(x) \ \ \ \ \forall \ \ x \ \  \mbox{de} \  \ -\infty \ \  \mbox{a} \ \  +\infty.\]
 
 \[vs\]
 
@@ -6238,7 +6241,7 @@ x & si & 0 \leq x < 1 \\
 
 \textbf{Paso 2} Planteamiento de Hipótesis:
 
-\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty\]
+\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x \ \ \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty.\]
 
 \[vs\]
 
@@ -6390,8 +6393,8 @@ alternative hypothesis: two-sided
 
 Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspondiente \(p-value\) es \(26.13\%\), por lo tanto con \(\alpha=5\%\) no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es normal(0,1).
 
-\hypertarget{ejercicios-11}{%
-\section{Ejercicios}\label{ejercicios-11}}
+\hypertarget{ejercicios-13}{%
+\section{Ejercicios}\label{ejercicios-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6405,7 +6408,7 @@ Observamos que la estadística de prueba tiene un valor de 0.10804 y su correspo
 
 Se desea hacer el siguiente contraste:
 
-\[\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1)\]
+\[\textbf{H}_0: \ \mbox{Los datos} \ \sim LogN(0,1) \ \ vs \ \ \textbf{H}_a: \mbox{Los datos} \  \nsim \ LogN(0,1).\]
 
 Realice la prueba de Kolmogorov al \(5\%\) de significancia.
 
@@ -6448,7 +6451,7 @@ Para probar la suposición de la distribución \(F^*(x)\) se realiza la siguient
 
 Solo será este caso
 
-\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty\]
+\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall \ \ x\ \  \mbox{de} \ \ -\infty \ \  \mbox{a} \ \  +\infty.\]
 
 \[vs\]
 
@@ -6731,9 +6734,7 @@ Calculando la media muestral
 
 \[\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}.\]
 
-para usarla como una estimación puntual de \(\mu\)
-
-y calculando como una estimación de \(\sigma\)
+para usarla como una estimación puntual de \(\mu\) y calculando como una estimación de \(\sigma:\)
 
 \[s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}.\]
 
@@ -6974,7 +6975,7 @@ Ahora haremos la réplica en R.
 
 Por lo tanto:
 
-\[T_{1}=\underset{x}{sup} \ | \ S_{n}(z)-F^*(z)\ |=max \ \{\ D^+,D^- \ \}=max \ \{ \  0.2179,0.1513 \ \}=0.2179 \]
+\[T_{1}=\underset{x}{sup} \ | \ S_{n}(z)-F^*(z)\ |=max \ \{\ D^+,D^- \ \}=max \ \{ \  0.2179,0.1513 \ \}=0.2179. \]
 
 Lo vamos a comparar con la tabla de valores críticos de la Tabla Lilliefors para Normalidad, para un nivel de significancia \(\alpha\) = 0.05 \(W_{0.05}\)=0.2190, de esta manera se tiene que 0.2190 = \(W_{0.05} > T_{1}\) = 0.2179, como el cuantil \(W_{0.05}\) es mayor a comparación de \(T_{1}\)=0.2179.
 Entonces no Rechazamos \(H_0\) y podemos concluir que a un nivel de significancia \(\alpha\) =0.05, no existe evidencia estadística suficiente para decir que la muestra no tiene distribución normal.
@@ -6996,7 +6997,9 @@ data:  X
 D = 0.21793, p-value = 0.05356
 \end{verbatim}
 
-\#\#Otro ejemplo en R
+\hypertarget{otro-ejemplo-en-r-1}{%
+\section{Otro ejemplo en R}\label{otro-ejemplo-en-r-1}}
+
 En R fije la semilla 2020, y genere 250 observaciones distribuidas como una \(N(0, 1)\) y con ella realice:
 
 \begin{enumerate}
@@ -7039,8 +7042,8 @@ D = 0.08739, p-value = 0.4436
 
 Observamos que la estadística de prueba tiene un valor de 0.08739 y su correspondiente p-value es \(44.36\%\), por lo tanto no rechazaremos \(H_0\) y concluimos no existe evidencia suficiente para suponer que la distribución de la muestra no es \(N(0,1)\). Esperabamos que la prueba diera ese resultado ya que por construcción la muestra proviene de una distribucion \(N(0,1)\).
 
-\hypertarget{ejercicios-12}{%
-\section{Ejercicios}\label{ejercicios-12}}
+\hypertarget{ejercicios-14}{%
+\section{Ejercicios}\label{ejercicios-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7153,7 +7156,7 @@ Realizar la prueba con un nivel de significancia del \(95\%\).
 \[\hat{\lambda}=\frac{1}{\overline{X}}=\frac{1}{0.88602}; \ \ \ \ \ \  \overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}=\frac{1}{15}\sum_{i=1}^{15}X_{i}=0.88602.\]
 3) Después calcularemos los valores de muestra \(Z_{i}\) definidos por:
 
-\[Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15\]
+\[Z_{i}=\frac{X_{i}}{\overline{X}} \ \ \ \ i=1,2,\ldots,15.\]
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7238,7 +7241,7 @@ Realizar la prueba con un nivel de significancia del \(95\%\).
   Entonces
 \end{enumerate}
 
-\[ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930 \]
+\[ D^+= max \ \  \{\ S_{n}(Z_{i})-F^*(Z_{i}) \ \}= 0.1596 \ \ \ \ y\ \ \ \ D^-= max\  \{ \ S_{n}(Z_{i-1})-F^*(Z_{i}) \ \}=0.0930. \]
 Por lo tanto:
 
 \[T_{2}=\underset{z}{sup}\ | \ S_{n}(z)-F^*(z) \ |=max \ \{\ D^+,D^- \ \}=max \ \{ \ 0.1596,0.0930 \ \}=0.1596.\]
@@ -7345,8 +7348,8 @@ D = 0.15238, p-value = 0.458
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ejercicios-13}{%
-\section{Ejercicios}\label{ejercicios-13}}
+\hypertarget{ejercicios-15}{%
+\section{Ejercicios}\label{ejercicios-15}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7355,9 +7358,7 @@ D = 0.15238, p-value = 0.458
   El gerente de una tienda quiere probar la hipótesis de que los clientes llegan aleatoriamente a su tienda, para ello registro el tiempo transcurrido entre las llegadas sucesivas de clientes en una mañana. El tiempo en minutos es el siguiente:
 \end{enumerate}
 
-3.6, 6.2, 12.9, 14.2, 38.0, 3.8,\\
-10.8, 6.1, 10.1, 22.1, 4.2, 4.6,\\
-1.4, 3.3, 8.2.
+3.6, 6.2, 12.9, 14.2, 38.0, 3.8, 10.8, 6.1, 10.1, 22.1, 4.2, 4.6, 1.4, 3.3, 8.2.
 
 Pruebe la hipótesis nula de que el tiempo entre las llegadas de los clientes se distribuyen con función de distribución exponencial.
 
@@ -7387,7 +7388,7 @@ Los datos consisten en una muestra aleatoria \(X_{1},X_{2},\ldots,X_{n}\) de tam
 \subsection*{Caso A (Prueba de 2 colas) Solo será este caso}\label{caso-a-prueba-de-2-colas-solo-seruxe1-este-caso}}
 
 
-\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty\]
+\[\textbf{H}_0: \ F(x)=F^*(x) \ \ \ \ \forall\ \ x\  \mbox{de} \ \ -\infty \ \ \mbox{a} \ \  +\infty.\]
 
 \[vs\]
 
@@ -7468,9 +7469,9 @@ Sigue una distribución Normal, para ello se realizará la prueba de Anderson Da
   Se obtienen los estimadores puntuales de distribución normal con los datos de la muestra,
   \(\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}= 2.66658\) y \(s=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_{i}-\overline{X})^2}=5.313212.\)
 \item
-  Se calcula la distribución propuesta, en este caso una distribución normal con media \(\overline{X}\) y varianza \(s^2\), es decir,\(F^*(X)\), para ello se usa la aproximación a una normal estándar
+  Se calcula la distribución propuesta, en este caso una distribución normal con media \(\overline{X}\) y varianza \(s^2\), es decir, \(F^*(X)\), para ello se usa la aproximación a una normal estándar.
 \item
-  Se calcula el primer sumando \(ln(F^*(X_{(i)}))\) el cual se denotará como \(L1\), después se calculará el segundo sumando \(ln(1-F^*(X_{(n-i+1)}))\) el cual se denotará como \(L2\)
+  Se calcula el primer sumando \(ln(F^*(X_{(i)}))\) el cual se denotará como \(L1\), después se calculará el segundo sumando \(ln(1-F^*(X_{(n-i+1)}))\) el cual se denotará como \(L2\).
 \item
   Se realiza el sumando de manera puntal, es decir, calcular:
 \end{enumerate}
@@ -7607,7 +7608,7 @@ Por la tabla auxiliar tenemos \(A_{0.95}=0.751\), de esta manera se tiene que 0.
 
 \break
 
-Ahora podemos utilizar la prueba en R
+Ahora podemos utilizar la prueba en R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7627,7 +7628,7 @@ A = 0.13402, p-value = 0.9722
 \chapter{Otras estadísticas}\label{otras-estaduxedsticas}}
 
 La prueba de Kuiper esta muy relacionada con la prueba Kolmogorov--Smirnov (o prueba K-S). Como la prueba \(K-S\), esta prueba utiliza las estadísticas \(D^+\) y \(D^-\) que representan las diferencias más positivas y más negativas entre las distribuciones que se están comparando. La estadística de prueba de Kuiper es:
-\[V=D^+ + D^-\]
+\[V=D^+ + D^-.\]
 Con este pequeño cambio, la prueba de Kuiper es tan sensible en las colas como lo es en la mediana de la distribución.
 
 Las pruebas \textbf{Anderson--Darling} y \textbf{Cramér--von Mises} pertenecen a un grupo llamado \textbf{estadísticas EDF cuadráticas}, en donde el término EDF se refiere a que se basan en la función de distribución empírica.
@@ -7804,13 +7805,13 @@ En el modelo de regresión simple se supone que \(\epsilon\) satisface:
 
 \begin{itemize}
 \item
-  \(\mathbf{E}[\epsilon_{i}]=0\)
+  \(\mathbf{E}[\epsilon_{i}]=0.\)
 \item
-  \(\textbf{Var}(\epsilon_{i})=\sigma^2\)
+  \(\textbf{Var}(\epsilon_{i})=\sigma^2.\)
 \item
   \(\textbf{Cov}(\epsilon_{i},\epsilon_{j})= 0 \  \ \ \forall \ i = 1, \ldots, n, \ \  j=1, \ldots, n, \ \  i \neq j.\)
 \item
-  \(\epsilon \sim N(0,\sigma^2)\)
+  \(\epsilon \sim N(0,\sigma^2).\)
 \end{itemize}
 
 Una vez considerados estos supuestos se pueden obtener resultados aún más importantes.
@@ -7819,15 +7820,15 @@ Por ejemplo, con los supuestos dados es posible calcular la esperanza y la varia
 
 \textbf{Teorema 2.1} Sea \(y\) una variable de interés, denominada variable de respuesta, la cual es relacionada con una variable regresora \(x\), entonces:
 
-\textbf{a)} \(\mathbf{E}[y_{i}]=\beta_{0}+\beta_{1}x_{i}\)
+\textbf{a)} \(\mathbf{E}[y_{i}]=\beta_{0}+\beta_{1}x_{i}.\)
 
-\textbf{b)} \(\textbf{Var}(y_{i})=\sigma^2\)
+\textbf{b)} \(\textbf{Var}(y_{i})=\sigma^2.\)
 
 \textbf{Demostración:}
 
 \textbf{a)}
 
-\[\mathbf{E}[y_{i}]=\mathbf{E}[\beta_{0}+\beta_{1}x_{i}+\epsilon_{i}]\]
+\[\mathbf{E}[y_{i}]=\mathbf{E}[\beta_{0}+\beta_{1}x_{i}+\epsilon_{i}].\]
 
 La parte aleatoria de \(y_{i}\) es \(\epsilon_{i}\); ~ \(\beta_{0}\),\(\beta_{1}\) son constantes y \(x_{i}\) ya es un valor dado; por lo que:
 
@@ -7848,22 +7849,22 @@ La parte aleatoria de \(y_{i}\) es \(\epsilon_{i}\); \(\beta_{0}\),\(\beta_{1}\)
 
 El modelo de regresión lineal simple
 
-\[y=\beta_{0}+\beta_{1}x+\epsilon\]
+\[y=\beta_{0}+\beta_{1}x+\epsilon.\]
 
 cuenta con dos parámetros desconocidos, \(\beta_{0}\) y \(\beta_{1}\), los cuales deben ser estimados a partir de los datos de la muestra. Con la hipótesis de varianza constante sobre los errores, aparece otro parámetro \(\sigma^2\) desconocido, aunque no está incluido en el modelo también debe ser estimado.
 Un procedimiento para estimar los parámetros de un modelo lineal simple es el \textbf{método de mínimos cuadrados}, que se puede ilustar sencillamente aplicándolo para ajustar una línea recta a \((x_{1},y_{1}),(x_{2},y_{2}),\ldots,(x_{n},y_{n})\), se estiman \(\beta_{0}\) y \(\beta_{1}\) tales que la suma de los cuadrados de las diferencias entre las observaciones \(y_{i}\) y la línea recta sea mínima.
 
 \textbf{Definición 2.2} (Residuos). Sea \(y_{i}\) los valores observados, \(\hat{y_{i}}\) los valores estimados mediante la regresión lineal simple. La forma de calcular la desviación de \(y_{i}\) con respecto a su media estimada \(\hat{y_{i}}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\) para un \(\hat{\beta_{0}}\) y \(\hat{\beta_{1}}\) dados es:
 
-\[e_{i}=y_{i}-\hat{y_{i}}\]
+\[e_{i}=y_{i}-\hat{y_{i}},\]
 donde \(e_{i}\) son los residuos.
 
 Por lo anterior,
 
-\[e_{i}=y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i}\]
+\[e_{i}=y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i}.\]
 Como se mencionó, lo que se busca es que la diferencia entre todos los valores observados y los valores estimados sea 0, es decir, que la suma de distancias entre \(y_{i}\) y \(\hat{y_{i}}\) sea cero, lo anterior significa que:
 
-\[\sum_{i=1}^{n}e_{i}=0\]
+\[\sum_{i=1}^{n}e_{i}=0.\]
 Para estimar \(\beta_{0}\) y \(\beta_{1}\) el \textbf{método de mínimos cuadrados} propone minimizar la suma de los cuadrados de los residuos, ya que de ésta manera se minimizan las distancias verticales entre las observaciones reales \((y)\) y las estimadas \((\hat{y})\), ya que entre más cercanas a cero se encuentren las distancias, mejor se ajusta el modelo a los datos.
 Antes de continuar, es necesario abordar unos cuantos resultados.
 
@@ -7885,15 +7886,15 @@ También definimos:
 \[=\sum_{i=1}^{n}x_{i}(y_{i}-\overline{y})\]
 \[=\sum_{i=1}^{n}X_{i}y_{i}-\left(\sum_{i=1}^{n}x_{i}\right) \left(\sum_{i=1}^{n}y_{i}\right) \ /{n}\]
 
-\[S_{xy}=\sum_{i=1}^{n}x_{i}y_{i}-n\overline{x}\overline{y}\]
+\[S_{xy}=\sum_{i=1}^{n}x_{i}y_{i}-n\overline{x}\overline{y}.\]
 
 Una vez definida la notación, tenemos el siguiente teorema:
 
 \textbf{Teorema 2.2} (Mínimos Cuadrados). Sea \(\hat{\beta_0}\) y \(\hat{\beta_{1}}\) los parámetros que minimizan la suma de cuadrados de la diferencia entre los valores observados y los estimados \(\left(\sum_{i=1}^{n}e_i^2\right)\) entonces:
 
-\textbf{a)} \(\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}\)
+\textbf{a)} \(\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}.\)
 
-\textbf{b)} \(\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}\)
+\textbf{b)} \(\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}.\)
 
 \textbf{Demostración:}
 
@@ -7902,11 +7903,11 @@ Una vez definida la notación, tenemos el siguiente teorema:
 Tenemos:
 
 \[\sum_{i=1}^{n}e_{i}^2=\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})^2.\]
-Minimizando la suma de cuadrados, se deriva respecto a \(\hat{\beta_{0}}\)
+Minimizando la suma de cuadrados, se deriva respecto a \(\hat{\beta_{0}}.\)
 
 \[\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{0}}}=-2\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})\]
 \[\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{0}}}=-2\left(\sum_{i=1}^{n}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}-\sum_{i=1}^{n}\hat{\beta_{1}x_{i}}\right).\]
-Igualando a 0
+Igualando a 0.
 
 \[-2\left(\sum_{i=1}^{n}y_{i}-\hat{\beta_{0}}n-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}\right)=0\]
 \[\sum_{i=1}^{n}y_{i}-\hat{\beta_{0}}n-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}=0\]
@@ -7918,7 +7919,7 @@ Por lo tanto se obtiene el primer estimador, \(\hat{\beta_{0}}\); para el estima
 
 \[\frac{\delta\sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{1}}}=-2\sum_{i=1}^{n}(y_{i}-\hat{\beta_{0}}-\hat{\beta_{1}}x_{i})x_{i}\]
 \[=-2\left(\sum_{i=1}^{n}x_{i}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}x_{i}-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}^2\right).\]
-Igualando la derivada a 0 para hallar el punto crítico
+Igualando la derivada a 0 para hallar el punto crítico.
 
 \[-2\left(\sum_{i=1}^{n}x_{i}y_{i}-\sum_{i=1}^{n}\hat{\beta_{0}}x_{i}-\sum_{i=1}^{n}\hat{\beta_{1}}x_{i}^2\right)=0\]
 
@@ -7930,11 +7931,11 @@ Sustituyendo \(\hat{\beta_{0}}\) por \(\overline{y}-\hat{\beta_{1}}\overline{x}\
 
 \[\sum_{i=1}^{n}x_{i}y_{i}=\overline{y}\overline{x}n-\hat{\beta_{1}}\overline{x}^2n+\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}^2\]
 \[\sum_{i=1}^{n}x_{i}y_{i}-\overline{y}\overline{x}n+\hat{\beta_{1}}\overline{x}^2n-\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}^2\]
-Por la notación tenemos que: \(S_{xy}=\sum x_{i}y_{i} - n \overline{x}\overline{y}\) y \(S_{xx}= \sum x_{i}^2 - n\overline{x}^2\)
+Por la notación tenemos que: \(S_{xy}=\sum x_{i}y_{i} - n \overline{x}\overline{y}\) y \(S_{xx}= \sum x_{i}^2 - n\overline{x}^2.\)
 
 \[\frac{\delta \sum_{i=1}^{n}e_{i}^2}{\delta\hat{\beta_{1}}}=-2\left(S_{xy}-\hat{\beta_{1}\left(\sum_{i=1}^{n}x_{i}^2-\overline{x}^2n\right)}\right)\]
 \[=-2(S_{xy}-\hat{\beta_{1}}S_{xx}).\]
-Igualando a 0
+Igualando a 0.
 
 \[-2(S_{xy}-\hat{\beta_{1}}S_{xx})=0\]
 \[S_{xy}-\hat{\beta_{1}}S_{xx}=0\]
@@ -7955,12 +7956,12 @@ Son conocidas como las \textbf{ecuaciones normales}, que en conjunto forman un s
 
 Un problema del método de mínimos cuadrados es que no proporciona un estimador para \(\sigma^2\), sin embargo, se obtendrá bajo el supuesto de normalidad que es el siguiente:
 
-\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2\]
+\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]
 De esta manera se ha cumplido el objetivo que se planteó al inicio, encontrar los estimadores de \(\beta_{0}\) y \(\beta_{1}\) tal que los residuales fueran igual a 0.
 
 \textbf{Teorema 2.3} (Diferencia de Residuales) Sea \(\hat{\beta_{0}}\) y \(\hat{\beta_{1}}\) los estimadores de mínimos cuadrados de \(\beta_{0}\) y \(\beta_{1}\), respectivamente, entonces la suma de las distancias entre \(y_{i}\) y \(\hat{y_{i}}\) es cero, es decir:
 
-\[\sum_{i=1}^{n}e_{i}=0\]
+\[\sum_{i=1}^{n}e_{i}=0.\]
 
 \textbf{Demostración}
 
@@ -7981,19 +7982,19 @@ Esto implica que si la suma de residuales es 0, entonces la \(\sum_{i=1}^{n}\hat
 
 \textbf{Corolario 1} Sea \(\hat{\beta_{0}}\) y \(\hat{\beta_{1}}\) los estimadores de mínimos cuadrados de \(\beta_{0}\) y \(\beta_{1}\) respectivamente, si se cumple el teorema anterior, entonces la suma de los valores observados y la suma de los valores ajustados por la regresión son iguales, es decir:
 
-\[\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}\]
+\[\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}.\]
 
 \textbf{Demostración}
 
 Por definición:
 
-\[\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}\left(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\right)\]
-Por la estimación de \(\hat{\beta_{1}}\)
+\[\sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}\left(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\right).\]
+Por la estimación de \(\hat{\beta_{1}}\),
 
 \[=\sum_{i=1}^{n}\left(\overline{y}-\hat{\beta_{1}}\overline{x}+\hat{\beta_{1}}x_{i}\right)\]
 \[=\sum_{i=1}^{n}\overline{y}-n\hat{\beta_{1}}\overline{x}+\hat{\beta_{1}}\sum_{i=1}^{n}x_{i}\]
 \[=n\overline{y}-n\hat{\beta_{1}}\overline{x}+n\hat{\beta_{1}}\overline{x}\]
-\[=n\overline{y}\]
+\[=n\overline{y}.\]
 Por construcción de \(\overline{y}\)
 
 \[\therefore \sum_{i=1}^{n}\hat{y_{i}}=\sum_{i=1}^{n}y_{i}. \blacksquare\]
@@ -8002,11 +8003,11 @@ Una consecuencia de lo anterior,
 
 \textbf{Corolario 2} Sea \(\hat{y_{i}}\) el valor estimado de la forma ~ \(\hat{y_{i}}=\hat{\beta_{0}}+\hat{\beta_{1}}x_{i}\) ~ y el residual ~\(e_{i}=y_{i}-\hat{y_{i}}\), entonces se cumple que:
 
-\[\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0\]
+\[\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0.\]
 
 \textbf{Demostración}
 
-Por definición de las \(\hat{y}\)
+Por definición de las \(\hat{y}.\)
 
 \[\sum_{i=1}^{n}\hat{y_{i}}e_{i}=\sum_{i=1}^{n}(\hat{\beta_{0}}+\hat{\beta_{1}}x_{i})e_{i}\]
 \[=\sum_{i=1}^{n}\left(\hat{\beta_{0}}e_{i}+\hat{\beta_{1}}x_{i}e_{i}\right)\]
@@ -8030,9 +8031,9 @@ Los estimadores \(\hat{\beta_{0}}\) y \(\hat{\beta_{1}}\) tienen propiedades est
 
 \textbf{Teorema 2.4} Sea \(\hat{\beta_{0}}\), \(\hat{\beta_{1}}\) los estimadores de mínimos cuadrados de \(\beta_{0}\) y \(\beta_{1}\), respectivamente, entonces los estimadores \(\hat{\beta_{0}}\),\(\hat{\beta_{1}}\) son insesgados. Es decir:
 
-\textbf{a)} \(\mathbf{E}\left[\hat{\beta_{1}}\right]=\beta_{1}\)
+\textbf{a)} \(\mathbf{E}\left[\hat{\beta_{1}}\right]=\beta_{1}.\)
 
-\textbf{b)} \(\mathbf{E}\left[\hat{\beta_{0}}\right]=\beta_{0}\)
+\textbf{b)} \(\mathbf{E}\left[\hat{\beta_{0}}\right]=\beta_{0}.\)
 
 \textbf{Demostración}
 
@@ -8042,8 +8043,8 @@ Los estimadores \(\hat{\beta_{0}}\) y \(\hat{\beta_{1}}\) tienen propiedades est
 
 Tenemos:
 
-\[\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}\]
-Sustituyendo \(S_{xx}\) y \(S_{xy}\)
+\[\hat{\beta_{1}}=\frac{S_{xy}}{S_{xx}}.\]
+Sustituyendo \(S_{xx}\) y \(S_{xy}\).
 
 \[\hat{\beta_{1}}=\frac{\sum_{i=1}^{n}(x_{i}-\overline{x})y_{i}}{S_{xx}}\]
 \[=\sum_{i=1}^{n}\left(\frac{x_{i}-\overline{x}}{S_{xx}}\right)y_{i}.\]
@@ -8053,7 +8054,7 @@ Haciendo \(a=\frac{(x_{i}-\overline{x})}{S_{xx}}\) nada depende de \(y\), por lo
 Para la combinación lineal de las \(y_{i}\) para \(\hat{\beta_{0}}\) se tiene:
 
 \[\hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}\]
-Sustituyendo la combinación lineal de \(\hat{\beta_{1}}\) y notación de \(S_{xx}\)
+Sustituyendo la combinación lineal de \(\hat{\beta_{1}}\) y notación de \(S_{xx}.\)
 
 \[\hat{\beta_{0}}=\sum_{i=1}^{n}\frac{y_{i}}{n}-ay_{i}\overline{x}\]
 \[=\sum_{i=1}^{n}(\frac{1}{n}-a\overline{x})y_{i}\]
@@ -8136,7 +8137,7 @@ Una característica importante de los estimadores obtenidos es que existe una co
 
 \textbf{Teorema 2.6} Sea \(\beta_{0}\),\(\beta_{1}\) los estimadores puntuales de \(\beta_{0}\) y \(\beta_{1}\) entonces la covarianza conjunta de los estimadores es:
 
-\[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sigma^2\left(-\frac{\overline{x}}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}\right)\]
+\[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sigma^2\left(-\frac{\overline{x}}{\sum_{i=1}^{n}(x_{i}-\overline{x})^2}\right).\]
 
 \textbf{Demostración:}
 
@@ -8153,7 +8154,7 @@ Por propiedades de la esperanza:
 \[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}Var[Y_{i}].\]
 Por el \textbf{teorema 2.1} se sabe que la varianza del modelo es:
 
-\[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}\sigma^2\]
+\[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}a_{i}b_{i}\sigma^2.\]
 Sustituyendo \(a=\frac{(x_{i}-\overline{x})}{S_{xx}}\) y \(b=\frac{1}{n}-\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\right)\overline{x}\) se tiene:
 
 \[Cov\left(\hat{\beta_{0}},\hat{\beta_{1}}\right)=\sum_{i=1}^{n}\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\left[\frac{1}{n}-\left(\frac{(x_{i}-\overline{x})}{S_{xx}}\right)\overline{x}\right]\right)\sigma^2\]
@@ -8169,10 +8170,10 @@ Una consecuencia inmediata del \textbf{teorema 2.3} y \textbf{teorema 2.4}, es q
 
 \textbf{Corolario 3} Sea \(\hat{\beta_{0}},\hat{\beta_{1}}\) los estimadores de mínimos cuadrados de \(\beta_{0}\) y \(\beta_{1}\) respectivamente, si se cumple el teorema 2.3, entonces la esperanza de los valores observados y la esperanza de los valores ajustados por la regresión son iguales, es decir:
 
-\[\mathbf{E}\left[\hat{y_{i}}\right]=\mathbf{E}\left[ y_{i} \right]\]
+\[\mathbf{E}\left[\hat{y_{i}}\right]=\mathbf{E}\left[ y_{i} \right].\]
 De esta manera lo que se debe demostrar es que se cumple la siguiente igualdad:
 
-\(\mathbf{Pd.} \ \ \mathbf{E}\left[ Y_{i}-\hat{y_{i}}\right]=0\)
+\(\mathbf{Pd.} \ \ \mathbf{E}\left[ Y_{i}-\hat{y_{i}}\right]=0.\)
 
 \textbf{Demostración:}
 
@@ -8196,7 +8197,7 @@ La manera en la que se construye el modelo de regresión lineal sin intercepto, 
 
 En primera instancia, la recta al no tener intersección con el eje \(y\) con \(y \neq 0,\) \(\beta_{0}=0,\) lo que provoca que la ecuación de la recta de regresión lineal esté conformada por:
 
-\[y=\beta x + \epsilon\]
+\[y=\beta x + \epsilon.\]
 
 De igual manera tenemos los mismos supuestos que en la definición 2.1, son:
 
@@ -8204,13 +8205,13 @@ De igual manera tenemos los mismos supuestos que en la definición 2.1, son:
 
 \begin{itemize}
 \item
-  \(\mathbf{E}[\epsilon_{i}]=0\)
+  \(\mathbf{E}[\epsilon_{i}]=0.\)
 \item
-  \(\textbf{Var}(\epsilon_{i})=\sigma^2\)
+  \(\textbf{Var}(\epsilon_{i})=\sigma^2.\)
 \item
   \(\textbf{Cov}(\epsilon_{i},\epsilon_{j})= 0 \ \forall i = 1, \ldots, n \ j=1, \ldots, n \ i \neq j.\)
 \item
-  \(\epsilon \sim N(0,\sigma^2)\)
+  \(\epsilon \sim N(0,\sigma^2).\)
 \end{itemize}
 
 Al usar estos supuestos se pueden obtener estadísticos importantes como la
@@ -8224,9 +8225,7 @@ media y la varianza de \(y\).
 
 \textbf{Demostración:}
 
-\textbf{a)}
-
-\(\mathbf{E}[y]=\mathbf{E}[\beta x + \epsilon]\)
+\textbf{a)} \(\mathbf{E}[y]=\mathbf{E}[\beta x + \epsilon].\)
 
 La estimación es sobre \(y,\) como se mencionó, \(\beta\) es constante y \(x\) es un valor dado. Por lo que:
 
@@ -8236,9 +8235,7 @@ La estimación es sobre \(y,\) como se mencionó, \(\beta\) es constante y \(x\)
 
 \(\therefore \mathbf{E}[y]= \beta x. \ \blacksquare\)
 
-\textbf{b)}
-
-\(Var(y)=Var(\beta x + \epsilon)\)
+\textbf{b)} \(Var(y)=Var(\beta x + \epsilon).\)
 
 La estimación es sobre \(y,\) por lo que \(\beta\) es constante, \(x\) ya es un valor dado, así:
 
@@ -8263,7 +8260,7 @@ De esta manera los residuos se encuentran de la forma:
 
 Lo que se busca es que la suma de la diferencia de los valores observados menos los valores estimados sea 0, es decir:
 
-\[\sum_{i=1}^{n}e_{i}=0\]
+\[\sum_{i=1}^{n}e_{i}=0.\]
 
 De aquí surge la idea nuevamente de usar el método de Mínimos Cuadrados para estimación de \(\beta.\)
 
@@ -8273,7 +8270,7 @@ Si se minimiza la suma de cuadrados de la diferencia de los valores observados y
 \begin{itemize}
 \tightlist
 \item
-  \(\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^2}\)
+  \(\hat{\beta}=\frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^2}.\)
 \end{itemize}
 
 \textbf{Demostración:}
@@ -8316,7 +8313,7 @@ Después de haber obtenido el estimador del modelo de regresión lineal simple s
 
 \textbf{a)} \(\mathbf{E}\left[\hat{\beta}\right]=\beta.\)
 
-\textbf{b)} \(\textbf{Var}\left[ \hat{\beta}\right]=\frac{\sigma^2}{\sum_{i=1}^{n}x_{i}^2}\)
+\textbf{b)} \(\textbf{Var}\left[ \hat{\beta}\right]=\frac{\sigma^2}{\sum_{i=1}^{n}x_{i}^2}.\)
 
 \textbf{Demostración:}
 
@@ -8354,7 +8351,7 @@ Con ésta notación se tiene que:
 
 Con el método de Mínimos Cuadrados no es posible obtener un estimador para la varianza del modelo, sin embargo, se obtendrá bajo el supuesto de normalidad que es el siguiente:
 
-\[\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\hat{\beta}x_{i}\right)^2\]
+\[\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}\left(y_{i}-\hat{\beta}x_{i}\right)^2.\]
 La cual es equivalente a ser representada por la siguiente ecuación.
 
 \[\tilde{\sigma}^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\hat{y})^2.\]
@@ -8581,10 +8578,10 @@ Estandarizando:
 \[\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\sigma^2}}\sim N (0,1).\]
 Como \(\frac{(n-2)}{\sigma^2}\hat{\sigma}^2\sim\chi^2_{(n-2)}\) se tiene:
 
-\[\frac{\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\sigma^2}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}}\sim t_{(n-2)}\]
+\[\frac{\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\sigma^2}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}}\sim t_{(n-2)}.\]
 Simplificando se obtiene la cantidad pivotal para \(\hat{\beta_{0}}:\)
 
-\[\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}} \sim t_{(n-2)}\]
+\[\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}} \sim t_{(n-2)}.\]
 De esta manera, construyendo el intervalo de confianza con la cantidad pivotal:
 
 \[\mathbf{P}\left[-t^{\alpha/2}_{(n-2)}<\frac{\hat{\beta_{0}}-\beta_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}}< t^{\alpha/2}_{(n-2)}\right]=1-\alpha\]
@@ -8593,7 +8590,7 @@ De esta manera, construyendo el intervalo de confianza con la cantidad pivotal:
 \[\mathbf{P}\left[-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}<\beta_{0}-\hat{\beta_{0}}< t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right]=1-\alpha\]
 Sumando \(\hat{\beta_{0}}\) en todas las desigualdades:
 
-\[\mathbf{P}\left[\hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}<\beta_{0}< \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right]=1-\alpha\]
+\[\mathbf{P}\left[\hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}<\beta_{0}< \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right]=1-\alpha.\]
 Por lo tanto, el intervalo de confianza \(1-\alpha\) para \(\beta_{0}\) es:
 
 \[\beta_{0} \in \left( \hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ , \ \ \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \  \right).\]
@@ -8603,17 +8600,17 @@ Por lo tanto, el intervalo de confianza \(1-\alpha\) para \(\beta_{0}\) es:
 
 Dado que el estimador de \(\beta_{1}\) es una combinación lineal, de igual forma se tiene una combinación lineal de variables aleatorias normales independientes, por lo que \(\beta_{1}\) tiene una distribución normal asociada con media y varianza demostrada en el \textbf{teorema 2.4}.
 
-\[\hat{\beta_{1}}\sim N \left(\beta_{1},\frac{\sigma^2}{S_{xx}}\right)\]
+\[\hat{\beta_{1}}\sim N \left(\beta_{1},\frac{\sigma^2}{S_{xx}}\right).\]
 Estandarizando:
 
 \[\frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\sigma^2}{S_{xx}}}}\sim N(0,1).\]
 Como \(\frac{(n-2)}{\sigma^2}\hat{\sigma}^2\sim\chi^2_{(n-2)}\) se tiene:
 
-\[\frac{\frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\sigma^2}{S_{xx}}}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}} \sim t_{(n-2)}\]
+\[\frac{\frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\sigma^2}{S_{xx}}}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}} \sim t_{(n-2)}.\]
 
 Por lo tanto, simplificando se obtiene una cantidad pivotal para \(\hat{\beta_{1}}:\)
 
-\[\frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}\sim t_{(n-2)}\]
+\[\frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}\sim t_{(n-2)}.\]
 Construyendo un intervalo de confianza \(1-\alpha\) para \(\beta_{1}\) se tiene que:
 
 \[\mathbf{P}\left[-t^{\alpha/2}_{(n-2)} < \frac{\hat{\beta_{1}}-\beta_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}} < t^{\alpha/2}_{(n-2)}\right]=1-\alpha\]
@@ -8623,7 +8620,7 @@ Construyendo un intervalo de confianza \(1-\alpha\) para \(\beta_{1}\) se tiene 
 
 Sumando \(\hat{\beta_{1}}\) en todas las desigualdades:
 
-\[\mathbf{P}\left[\hat{\beta_{1}}-t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} < \beta_{1}< \hat{\beta_{1}}+t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} \ \right]=1-\alpha\]
+\[\mathbf{P}\left[\hat{\beta_{1}}-t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} < \beta_{1}< \hat{\beta_{1}}+t^{\alpha/2}_{(n-2)} \sqrt{\frac{1}{S_{xx}}\hat{\sigma}^2} \ \right]=1-\alpha.\]
 
 Por lo tanto, el intervalo de confianza \(1-\alpha\) para \(\beta_{1}\) es:
 
@@ -8637,21 +8634,21 @@ Para construir el intervalo de confianza para \(\sigma^2\) se observa que se pos
 \[\frac{(n-2)\hat{\sigma}^2_{MC}}{\sigma^2}\sim \chi^2_{(n-2)}.\]
 La distribución \(\chi^2\) no es una distribución simétrica por lo que se plantean los cuantiles \(W_{\alpha/2}\) y \(W_{1-\alpha/2}\) que corresponden a la valuación de la \(\chi^2_{(n-2)}\) en el cuantil \(\alpha/2\) y \(1-\alpha/2,\) respectivamente.
 
-\[\mathbf{P}\left[W_{\alpha/2}<\frac{(n-2)\hat{\sigma}^2_{MC}}{\sigma^2}< W_{1-\alpha/2}\right]=1-\alpha\]
+\[\mathbf{P}\left[W_{\alpha/2}<\frac{(n-2)\hat{\sigma}^2_{MC}}{\sigma^2}< W_{1-\alpha/2}\right]=1-\alpha.\]
 
 Obteniendo el recíproco en ambas partes de las desigualdades se observa que:
 
-\[\mathbf{P}\left[\frac{1}{W_{\alpha/2}}>\frac{\sigma^2}{(n-2)\hat{\sigma}^2_{MC}}>\frac{1} {W_{1-\alpha/2}}\right]=1-\alpha\]
+\[\mathbf{P}\left[\frac{1}{W_{\alpha/2}}>\frac{\sigma^2}{(n-2)\hat{\sigma}^2_{MC}}>\frac{1} {W_{1-\alpha/2}}\right]=1-\alpha.\]
 Reordenando el intervalo de confianza se tiene que:
 
-\[\mathbf{P}\left[\frac{(n-2)\hat{\sigma}^2_{MC}}{W_{\alpha/2}}>\sigma^2>\frac{(n-2)\hat{\sigma}^2_{MC}} {W_{1-\alpha/2}}\right]=1-\alpha\]
+\[\mathbf{P}\left[\frac{(n-2)\hat{\sigma}^2_{MC}}{W_{\alpha/2}}>\sigma^2>\frac{(n-2)\hat{\sigma}^2_{MC}} {W_{1-\alpha/2}}\right]=1-\alpha.\]
 Por la estimación insesgada propuesta para \(\sigma^2\) se sabe que \(\hat{\sigma}^2_{MC}=\frac{1}{n-2}\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2\) así:
 
-\[\mathbf{P}\left[\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{W_{1-\alpha/2}}<\sigma^2<\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {W_{\alpha/2}}\right]=1-\alpha\]
+\[\mathbf{P}\left[\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{W_{1-\alpha/2}}<\sigma^2<\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {W_{\alpha/2}}\right]=1-\alpha.\]
 
 Por convención se usa que \(W_{1-\alpha/2}=\chi^{2(1-\alpha/2)}_{(n-2)}\) y \(W_{\alpha/2}=\chi^{2(\alpha/2)}_{(n-2)}.\) De esta manera el intervalo de confianza para \(\sigma^2\) es:
 
-\[\mathbf{P}\left[\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{\chi^{2(1-\alpha/2)}_{(n-2)}}<\sigma^2<\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {\chi^{2(\alpha/2)}_{(n-2)}}\right]=1-\alpha,\]
+\[\mathbf{P}\left[\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{\chi^{2(1-\alpha/2)}_{(n-2)}}<\sigma^2<\frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {\chi^{2(\alpha/2)}_{(n-2)}}\right]=1-\alpha.\]
 reescribiendo el intervalo de confianza en su forma explícita:
 
 \[\sigma^2 \in \left( \frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2}{\chi^{2(1-\alpha/2)}_{(n-2)}} \ \ , \ \ \frac{\sum_{i=1}^{n}(y_i-\hat{y_{i}})^2} {\chi^{2(\alpha/2)}_{(n-2)}} \right).\]
@@ -8669,7 +8666,7 @@ Por ejemplo, suponga que después de estimar un modelo de regresión lineal simp
 
 Sustituyendo los valores del ejemplo:
 
-\[\hat{\mu}_{x}=3+5(10)\]
+\[\hat{\mu}_{x}=3+5(10).\]
 
 \[\therefore \hat{\mu}_{x}=53.\]
 
@@ -8693,7 +8690,7 @@ Por propiedades de la esperanza se tiene:
 \[\mathbf{E}[\hat{\mu}_{x}]=\mathbf{E}\left[\hat{\beta_{0}}\right]+x'\mathbf{E}\left[\hat{\beta_{1}} \right].\]
 Por el \textbf{teorema 2.4} sabemos que los estimadores son insesgados:
 
-\[\mathbf{E}[\hat{\mu}_{x}]=\beta_{0}+\beta_{1}x'\]
+\[\mathbf{E}[\hat{\mu}_{x}]=\beta_{0}+\beta_{1}x'.\]
 \[\therefore \mathbf{E}[\hat{\mu}_{x}]=\mu_{x}. \blacksquare\]
 Por lo que es insesgado para \(\mu_{x},\) es decir, \(\mathbf{E}\left[\mathbf{E}[\widehat{y|x=x'}] \right]=\mathbf{E}[y|x=x'].\)
 
@@ -8714,13 +8711,13 @@ De esta manera se busca construir un intervalo de confianza para el valor espera
 \[\hat{\mu}_{x}\sim N\left(\mu_{x},\sigma^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\right).\]
 Estandarizando \(\hat{\mu}_{x}\) para obtener una normal estándar:
 
-\[\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\sigma^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}\sim N(0,1)\]
+\[\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\sigma^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}\sim N(0,1).\]
 Como \(\frac{(n-2)}{\sigma^2}\hat{\sigma}^2\sim\chi^2_{(n-2)}\) se tiene que el cociente entre una normal y una Ji-Cuadrada se distribuye como \(t\) de Student:
 
-\[\frac{\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\sigma^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}}\sim t_{(n-2)}\]
+\[\frac{\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\sigma^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}}{\sqrt{\frac{\frac{(n-2)}{\sigma^2}\hat{\sigma}^2}{n-2}}}\sim t_{(n-2)}.\]
 Simplificando términos se tiene:
 
-\[\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\hat{\sigma}^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}\sim t_{(n-2)}\]
+\[\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\hat{\sigma}^2\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)}}\sim t_{(n-2)}.\]
 Denotando a \(\hat{\sigma}_{x}^2=\hat{\sigma}^2\left(\frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\) se tiene la cantidad pivotal para el valor esperado de \(y\) dado \(x\)
 
 \[\frac{\hat{\mu}_{x}-\mu_{x}}{\sqrt{\hat{\sigma}_{x}^2}}\sim t_{(n-2)}.\]
@@ -8731,7 +8728,7 @@ Una vez hallado el estadístico a usar se construye el intervalo de confianza (\
 \[\mathbf{P}\left[-t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}}<\hat{\mu}_{x}-\mu_{x}<t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}} \ \right]=1-\alpha\]
 \[\mathbf{P}\left[-t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}}<\mu_{x}-\hat{\mu}_{x}<t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}} \ \right]=1-\alpha\]
 \[\mathbf{P}\left[\hat{\mu}_{x}-t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}}<\mu_{x}<\hat{\mu}_{x}+t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}} \ \right]=1-\alpha\]
-\[\therefore \mathbf{P}\left[\hat{\mu}_{x}-t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2}<\mu_{x}<\hat{\mu}_{x}+t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ \right]=1-\alpha,\]
+\[\therefore \mathbf{P}\left[\hat{\mu}_{x}-t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2}<\mu_{x}<\hat{\mu}_{x}+t_{(n-2)}^{\alpha/2}\sqrt{\left( \frac{1}{n}+\frac{(x'-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ \right]=1-\alpha.\]
 En su forma más compacta:
 
 \[\mu_{x} \in \left(\hat{\mu}_{x}-t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}} \ \ , \ \ \hat{\mu}_{x}+t_{(n-2)}^{\alpha/2}\sqrt{\hat{\sigma_{x}^2}} \ \right).\]
@@ -8778,7 +8775,7 @@ Por el \textbf{teorema 2.4} e hipótesis
 \[Var\left[\hat{y_{x}}\right]=Var\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*+\epsilon\right]\]
 \[=Var\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*\right]+Var\left[\epsilon\right]+2Cov(\hat{\beta_{0}}+\hat{\beta_{1}}x^*,\epsilon)\]
 Por independencia
-\[=Var\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*\right]+Var\left[\epsilon\right]+2(0)\]
+\[=Var\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*\right]+Var\left[\epsilon\right]+2(0).\]
 Por el \textbf{teorema 2.11} e hipótesis
 
 \[=\left(\frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\sigma^2+\sigma^2\]
@@ -8791,7 +8788,7 @@ Usando los resultados, la estimación de valores futuros de \(y\) se comporta:
 
 donde \(y_{x}=\beta_{0}+\beta_{1}x^*.\) Estandarizando \(\hat{y_{x}}:\)
 
-\[\frac{\hat{y_{x}}-y_{x}}{\sqrt{\sigma^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}}\sim N (0,1)\]
+\[\frac{\hat{y_{x}}-y_{x}}{\sqrt{\sigma^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}}\sim N (0,1).\]
 
 Como \(\frac{(n-2)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{(n-2)}\):
 
@@ -8799,7 +8796,7 @@ Como \(\frac{(n-2)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{(n-2)}\):
 
 Simplificando términos se tiene:
 
-\[\frac{\hat{y_{x}}-y_{x}}{\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}}\sim t_{(n-2)}\]
+\[\frac{\hat{y_{x}}-y_{x}}{\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}}\sim t_{(n-2)}.\]
 Denotando a \(\sigma^2_{x}=\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\) se tiene la cantidad pivotal para el valor de \(y\) dado \(x\)
 
 \[\frac{\hat{y_{x}}-y_{x}}{\sqrt{\sigma_{x}^2}}\sim t_{(n-2)}.\]
@@ -8814,11 +8811,13 @@ Por lo que construyendo el intervalo de predicción:
 
 \[\mathbf{P}\left[-t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}<\beta_{0}+\beta_{1}x^*-\hat{\beta_{0}}-\hat{\beta_{1}}x^*-\epsilon<t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)} \ \right]=1-\alpha\]
 
-\[\mathbf{P}\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*-t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}<\beta_{0}+\beta_{1}x^*-\epsilon<\hat{\beta_{0}}+\hat{\beta_{1}}x^*+t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)} \ \right]=1-\alpha\]
+\[\mathbf{P}\left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*-t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}<\beta_{0}+\beta_{1}x^*-\epsilon\right.\]
+\[\left. <\hat{\beta_{0}}+\hat{\beta_{1}}x^*+t^{\alpha/2}_{(n-2)}\sqrt{\hat{\sigma}^2\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)}\right]=1-\alpha\]
 
 Dado que \(\epsilon\) es una variable aleatoria simétrica y con media 0 se tiene:
 
-\[\beta_{0}+\beta_{1}x^*+\epsilon \in \left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*-t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2},\hat{\beta_{0}}+\hat{\beta_{1}}x^*+t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right].\]
+\[\beta_{0}+\beta_{1}x^*+\epsilon \in \left[\hat{\beta_{0}}+\hat{\beta_{1}}x^*-t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2},\hat{\beta_{0}}+\hat{\beta_{1}}x^*\right.\]
+\[\left.+t^{\alpha/2}_{(n-2)}\sqrt{\left(1+ \frac{1}{n}+\frac{(x^*-\overline{x})^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right].\]
 
 \hypertarget{ejemplo-17}{%
 \subsection{Ejemplo}\label{ejemplo-17}}
@@ -8833,7 +8832,8 @@ Como se mencionó en la teoría para considerar la variabilidad en el ajuste pro
 
 Entonces haremos el cálculo de los intervalos al \(95\%\) de confianza para ambos estimadores (\(\hat{\beta_{0}} \ , \ \hat{\beta_{1}}\)).
 
-Como vimos en la sección anterior, debemos estimar \(\sigma^2\), recordemos que el estimador es: \[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2\]
+Como vimos en la sección anterior, debemos estimar \(\sigma^2\), recordemos que el estimador es:
+\[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]
 
 \begin{verbatim}
 [1] 30
@@ -8858,7 +8858,7 @@ ya con \(\hat{\sigma}^2\) podemos construir los intervalos de confianza.
   Primero para \(\beta_{0}\), sustituyendo los valores en la siguiente ecuación:
 \end{itemize}
 
-\[\beta_{0} \in \left( \hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ , \ \ \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right)\]
+\[\beta_{0} \in \left( \hat{\beta_{0}}-t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \ , \ \ \hat{\beta_{0}}+t^{\alpha/2}_{(n-2)}\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2} \ \right).\]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8975,7 +8975,7 @@ Entonces el intervalo del \(99\%\) de confianza para el valor esperado de \(y\) 
 \begin{itemize}
 \tightlist
 \item
-  El procedimiento es análogo al del valor esperado se aplica para el cálculo del intervalo de confianza para la predicción
+  El procedimiento es análogo al del valor esperado se aplica para el cálculo del intervalo de confianza para la predicción.
 \end{itemize}
 
 \hypertarget{pruebas-de-hipuxf3tesis}{%
@@ -8991,9 +8991,9 @@ En el modelo de regresión lineal simple, se desea realizar dos pruebas de hipó
 
 \begin{itemize}
 \item
-  \(\textbf{H}_0: \hat{\beta_{1}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{1}} \neq 0\)
+  \(\textbf{H}_0: \hat{\beta_{1}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{1}} \neq 0.\)
 \item
-  \(\textbf{H}_0: \hat{\beta_{0}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{0}} \neq 0\)
+  \(\textbf{H}_0: \hat{\beta_{0}}=0 \ vs. \  \textbf{H}_a:\hat{\beta_{0}} \neq 0.\)
 \end{itemize}
 
 Estas pruebas son de gran importancia, ya que la primera de ellas es probar si \(\beta_{1}\) es igual a cero, es decir, que el modelo no tenga pendiente y sea constante a través del tiempo, con un gran nivel de significancia dado. Si la prueba se rechaza entonces establece que el valor esperado de \(y\) depende de \(x\).
@@ -9030,7 +9030,7 @@ H_0:\beta_{0}\geq b_{0} \ vs. \ H_a:\beta_{0} < b_{0} & t^*<t^{1-\alpha}_{(n-2)}
 
 Suponga que se quiere ajustar un modelo con intercepto o sin intercepto. En éste caso, conviene realizar una prueba de hipótesis de dos colas sobre \(\beta_{0}\) valuando el punto crítico \(b_{0}=0\), es decir, se desea probar que \(\beta_{0}=0\), ya que si, con un nivel de significancia \(\alpha\), se rechaza \(H_0\) se tiene evidencia de que el modelo a ajustar debería ser el modelo con intercepto. Detallando la prueba, en este caso en particular, tenemos:
 
-\[\textbf{H}_0: \hat{\beta_{0}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{0}}\neq 0\]
+\[\textbf{H}_0: \hat{\beta_{0}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{0}}\neq 0.\]
 
 La regla de decisión es rechazar \(H_0\) cuando el estadístico \(t^*=\frac{\hat{\beta_{0}}-b_{0}}{\sqrt{\left(\frac{1}{n}+\frac{\overline{x}^2}{S_{xx}}\right)\hat{\sigma}^2}}\) esté contenida en la región de rechazo. En este caso en particular, se tiene lo siguiente:
 
@@ -9067,9 +9067,9 @@ H_0:\beta_{1}\geq b_{1} \ vs. \ H_a:\beta_{1} < b_{1} & t^*<t^{1-\alpha}_{(n-2)}
 
 Para ejemplificar, suponga que quiere ajustar un modelo de regresión lineal simple, sin embargo, duda si realmente la variable respuesta \(y\) depende de la variable regresora \(x\), es decir, sospecha que \(\beta_{1}=0.\) Para ello se raliza la siguiente prueba de hipótesis valuando \(\beta_{1}\) en el punto crítico de interés \(b_{1}=0:\)
 
-\[\textbf{H}_0: \hat{\beta_{1}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0\]
+\[\textbf{H}_0: \hat{\beta_{1}}=0 \ \ \ \ vs. \ \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0.\]
 
-La regla de decisión es rechazar \(H_0\) cuando el estadístico \[t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}\]
+La regla de decisión es rechazar \(H_0\) cuando el estadístico: \[t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}.\]
 
 Esté contenida en la región de rechazo.Por lo que se rechaza \(H_0\) cuando \(t^*<-t^{\alpha/2}_{(n-2)}\) o si \(t^*>t^{\alpha/2}_{(n-2)}\).
 Si se rechaza \(H_0\) entonces \(\beta_{1} \neq 0\) por lo que la variable respuesta \(y\) depende de la variable regresora \(x\); si no se rechaza \(H_0\) con un nivel de significancia \(\alpha\), \(\beta_{1}=0\), entonces la variable respuesta \(y\) no depende de la variable regresora \(x\), debido a ello un modelo de regresión no sería viable con esas variables.
@@ -9095,7 +9095,7 @@ H_0:\sigma^2\geq s \ vs. \ H_a:\sigma^2 < s & t^*<\chi^{1-\alpha}_{(n-2)} \\
 \]
 donde el estadístico \(t^*:\)
 
-\[t^*=\frac{(n-2)\hat{\sigma}^2}{s}\]
+\[t^*=\frac{(n-2)\hat{\sigma}^2}{s}.\]
 Con:
 \[\hat{\sigma}^2=\frac{1}{n-2}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]
 
@@ -9120,24 +9120,24 @@ como \(\hat{\beta_{1}}=0:\)
 \[\hat{y}=\overline{y}.\]
 Es decir, no hay asociación lineal entre la variable respuesta \(y\) con la variable regresora \(x\). Es por ello que se desea demostrar que \(\beta_{1}\neq 0,\) mediante la siguiente prueba de hipótesis:
 
-\[\textbf{H}_0:\hat{\beta_{1}}=0 \ \ \ vs. \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0\]
+\[\textbf{H}_0:\hat{\beta_{1}}=0 \ \ \ vs. \ \ \ \textbf{H}_a:\hat{\beta_{1}} \neq 0.\]
 Se puede usar el estadístico de prueba de hipótesis para \(\beta_{1},\) con \(b1=0\). Y se tiene lo siguiente:
 
-\[t^*=\frac{\hat{\beta_{1}}-b_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}} \sim t_{(n-2)}\]
+\[t^*=\frac{\hat{\beta_{1}}-b_{1}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}} \sim t_{(n-2)}.\]
 De esta manera se rechaza la hipótesis nula y se supone que \(\beta_{1}\neq 0\) cuando \(|t^*|>t^{\alpha/2}_{(n-2)}\).
 
 Sin embargo, en el análisis de la varianza, lo que se busca construir es otro estadístico que pueda ser usado cuando se tenga más de una variable explicativa. Es por ello que el matemático y biológo Ronald Fisher (1920), analizó la siguiente igualdad:
 
-\[y_{i}-\overline{y}=(\hat{y_{i}}-\overline{y})+(y_{i}-\hat{y_{i}})\]
+\[y_{i}-\overline{y}=(\hat{y_{i}}-\overline{y})+(y_{i}-\hat{y_{i}}).\]
 
 Lo que busca es fraccionar la distancia del valor observado respecto a la media, por la suma de la distancia del valor estimado a la media más la distancia del valor observado al valor estimado.
 
 Obteniendo el cuadrado de la ecuación anterior:
 
-\[(y_{i}-\overline{y})^2=(\hat{y_{i}}-\overline{y})^2+(y_{i}-\hat{y_{i}})^2+2(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})\]
+\[(y_{i}-\overline{y})^2=(\hat{y_{i}}-\overline{y})^2+(y_{i}-\hat{y_{i}})^2+2(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}}).\]
 Sumando sobre todos los valores:
 
-\[\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2+2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})\]
+\[\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2+2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}}).\]
 Resolviendo la ecuación:
 
 \[2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}(y_{i}-\hat{y_{i}})-2\overline{y}\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]
@@ -9146,9 +9146,9 @@ Por la \textbf{definición 2.2}, se tiene \((y_{i}-\hat{y_{i}})=e_{i}\):
 
 \[2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}-2\overline{y}\sum_{i=1}^{n}e_{i}.\]
 
-Por el \textbf{teorema 2.3}, se sabe que \(\sum_{i=1}^{n}e_{i}=0\)
+Por el \textbf{teorema 2.3}, se sabe que \(\sum_{i=1}^{n}e_{i}=0.\)
 
-\[2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}\]
+\[2\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})(y_{i}-\hat{y_{i}})=2\sum_{i=1}^{n}\hat{y_{i}}e_{i}.\]
 Por el \textbf{corolario 2}, \(\sum_{i=1}^{n}\hat{y_{i}}e_{i}=0\), por lo tanto tenemos:
 
 \[\sum_{i=1}^{n}(y_{i}-\overline{y})^2=\sum_{i=1}^{n}(\hat{y_{i}}-\overline{y})^2+\sum_{i=1}^{n}(y_{i}-\hat{y_{i}})^2.\]
@@ -9166,7 +9166,7 @@ De esta manera se construye la \textbf{ANOVA}, generalmente se hace un cambio de
 
 De esta forma se tiene la siguiente igualdad:
 
-\[SC_{T}=SC_{reg}+SC_{error}\]
+\[SC_{T}=SC_{reg}+SC_{error}.\]
 
 Además se observa que:
 
@@ -9188,15 +9188,15 @@ Además se observa que:
 
 Debido a un resultado de probabilidad se sabe que si \(x \sim \chi^2_{(n)}\) y \(y \sim \chi^2_{(m)}\) y si \(x\) es independiente a \(y\) entonces:
 
-\[\frac{x/n}{y/m}\sim F_{(n,m)}\]
+\[\frac{x/n}{y/m}\sim F_{(n,m)}.\]
 
 De esta forma se puede aplicar la prueba \(F\) de Fisher en el análisis de varianza para probar las hipótesis. La prueba \(F\) consiste en dividir \(SC_{reg}\) entre sus grados de libertad y éste dividirlo entre \(SC_{error}\) que a su vez está dividida entre sus grados de libertad, de esta manera:
 
-\[F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}}\]
+\[F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}}.\]
 
 Aplicando el resultado:
 
-\[F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}\]
+\[F=\frac{\frac{SC_{reg}}{1}}{\frac{SC_{error}}{n-2}} \sim F_{(1,n-2)}.\]
 Ahora se ocupará el \textbf{Cuadrado Medio} denotado como \textbf{CM}, la cual corresponde a la Suma de Cuadrados entre los grados de libertad. Así, se define al cuadrado medio de la regresión \(CM_{reg}\) y al cuadrado medio del error \(CM_{error}\) como:
 
 \[
@@ -9213,7 +9213,7 @@ Observamos que \(SC_{reg}=\hat{\beta_{1}}S_{xy}\) entonces:
 \[F=\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}.\]
 De esta manera, la región de rechazo para la prueba de hipótesis \(H_0:\beta_{1}=0\) es:
 
-\[\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}>(t^{\alpha/2}_{(n-2)})^2\]
+\[\frac{\hat{\beta_{1}}S_{xy}}{CM_{error}}>(t^{\alpha/2}_{(n-2)})^2.\]
 La cual es equivalente a la prueba t.
 
 \[\frac{|\hat{\beta_{1}}|}{\sqrt{Var(\hat{\beta_{1}})}} > t^{\alpha/2}_{(n-2)}.\]
@@ -9340,7 +9340,7 @@ Como nuestro estadístico (5.2482) es mayor que (1.7011). Entonces rechazamos \(
 
 Ahora haremos la prueba para la hipótesis \(\textbf{H}_0:\hat{\beta_{1}}=0 \ \ vs \ \ \textbf{H}_{a}:\hat{\beta_{1}} \neq 0\) con una confianza del \(90\%\). Sustituimos en la siguiente ecuación:
 
-\[t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}\]
+\[t^*=\frac{\hat{\beta_{1}}}{\sqrt{\frac{\hat{\sigma}^2}{S_{xx}}}}.\]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9387,7 +9387,7 @@ Por último vamos a calcular el coeficiente de determinación de nuestro modelo.
 
 Y sustituiremos en la siguiente expresión:
 
-\[R^2=\frac{\hat{\beta_{1}}S_{xy}}{\sum_{i=1}^{n}(y_{i}-\overline{y})^2}\]
+\[R^2=\frac{\hat{\beta_{1}}S_{xy}}{\sum_{i=1}^{n}(y_{i}-\overline{y})^2}.\]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9417,22 +9417,22 @@ Anteriormente definimos los residuales como \(e_{i}=y_{i}-\hat{y_{i}}\), el cual
 
 Muchas pruebas usan como base modificaciones o tipos específicos de residuos, es por esta razón que se indagará sobre los diversos tipos más conocidos.
 
-\textbf{residuales ordinarios}
+\textbf{Residuales ordinarios}
 
 Los residuales ordinarios o simplemente residuales, miden la diferencia entre la línea de regresión y la variable respuesta \(y_{i}\), es por ello que se definen como:
 
-\[e_{i}=y_{i}-\hat{y_{i}}  \ \ \ \ \ \ \ \ i=1,2,\ldots ,n.\]
+\[e_{i}=y_{i}-\hat{y_{i}};  \ \ \ \ \ \ \ \ i=1,2,\ldots ,n.\]
 La desventaja que presentan estos residuales, es que depende de cada \(y_{i}\) por lo que observaciones atípicas puede generar grandes residuales, ocasionando que pueda existir gran variabilidad al considerarse los errores en forma conjunta.
 
-\textbf{residuales estandarizados}
+\textbf{Residuales estandarizados}
 
 Una forma de disminuir esta variabilidad consiste en dividir a los residuales \(e_{i}\) entre la varianza global, es decir:
 
-\[d_{i}=\frac{e_{i}}{\sqrt{\sigma^2}}\]
+\[d_{i}=\frac{e_{i}}{\sqrt{\sigma^2}}.\]
 
 Una propiedad importante es que si \(e_{i}\) sigue una distribución normal, entonces al dividirlo entre la desviación estándar, se tiene que los residuales estandarizados siguen una distribución normal estándar.
 
-\textbf{residuales estudentizados}
+\textbf{Residuales estudentizados}
 
 Los residuales estudentizados se basan en la idea de involucrar la varianza de cada observación en el cálculo de los residuales, pues teóricamente los residuales no tiene varianza constante.
 
@@ -9441,20 +9441,20 @@ De esta manera calculando la varianza de los errores se tiene:
 
 \textbf{Corolario 6} Sea \(\underline{e}\) los residuales del modelo entonces la varianza de \(\underline{e}\) está dada por:
 
-\[Var(\underline{e})=\sigma^2(I-H)\]
+\[Var(\underline{e})=\sigma^2(I-H).\]
 
 \textbf{Demostración:}
 
-\[Var(\underline{e})=Var((I-H)\underline{Y})\]
+\[Var(\underline{e})=Var((I-H)\underline{Y}).\]
 
-\[Var(\underline{e})=(I-H)'Var(\underline{Y})(I-H)\]
-Sabemos que \((I-H)\) es simétrica (ver \(apéndice\))
+\[Var(\underline{e})=(I-H)'Var(\underline{Y})(I-H).\]
+Sabemos que \((I-H)\) es simétrica (ver \(apéndice\)).
 
-\[Var(\underline{e})=(I-H)(I-H)Var(\underline{Y})\]
-Sabemos quue \((I-H)\) es idempotente (ver \(apéndice\))
+\[Var(\underline{e})=(I-H)(I-H)Var(\underline{Y}).\]
+Sabemos quue \((I-H)\) es idempotente (ver \(apéndice\)).
 
-\[Var(\underline{e})=(I-H)Var(\underline{Y})\]
-Por el \textbf{teorema B} (demostrado en \(apéndice\))
+\[Var(\underline{e})=(I-H)Var(\underline{Y}).\]
+Por el \textbf{teorema B} (demostrado en \(apéndice\)).
 
 \textbf{Teorema B} Sea una variable de interés \(\underline{Y}\), llamada \textbf{dependiente}, relacionada con dos o más variables explicativas\(x_{1},x_{2},\ldots,x_{k}\),
 entonces:
@@ -9467,12 +9467,12 @@ entonces:
 
 La varianza de cada residual no es constante para todas las observaciones es por ello que el resultado depende de la siguiente forma:
 
-\[Var(e_{i})=\sigma^2(1-h_{ii})\]
+\[Var(e_{i})=\sigma^2(1-h_{ii}).\]
 donde \(h_{ii}\) correspondiente al \(i-ésimo\) elemento de la diagonal de la matriz sombrero \(H\).
 
 Cada residual se divide entre su varianza obteniendo de esta forma lo que se conoce como \textbf{residuales estudentizados}, los cuales se definen como:
 
-\[r_{i}=\frac{e_{i}}{\sqrt{\hat{\sigma}^2(1-h_{ii})}}\]
+\[r_{i}=\frac{e_{i}}{\sqrt{\hat{\sigma}^2(1-h_{ii})}}.\]
 Debido a la construcción de los \textbf{residuales estudentizados} se logra estandarizar de mejor manera a los residuales del modelo. Si se cumple que cada residual \(e_{i}\) sigue una distribución normal entonces los residuales estudentizados siguen una distribución aproximada a una \(t-student\) con \(n-k-1\) grados de libertad.
 
 \hypertarget{supuesto-de-normalidad}{%
@@ -9541,12 +9541,12 @@ La prueba de Breusch-Pagan fue desarrollada en 1979 por los estadísticos Trevor
 
 La prueba de Breusch-Pagan contrasta como hipótesis nula el cumplimiento de homocedasticidad, por lo que se tiene la siguiente prueba de hipótesis.
 
-\[\textbf{H}_0: \ \mbox{Muestra homocedástica  i.e.} \ \ \ \sigma^2_{j}=\sigma^2 \ \ \ \ vs  \ \ \ \
-\textbf{H}_a:  \ \mbox{Muestra Heterocedástica  i.e.} \ \ \ \sigma^2_{j} \neq \sigma^2 \ \ \ \ \forall  \ \ j = 1,\ldots,n.\]
+\[\textbf{H}_0: \ \mbox{Muestra homocedástica  i.e.} \ \ \ \sigma^2_{j}=\sigma^2 \ \ \ \ vs \]
+\[\textbf{H}_a:  \ \mbox{Muestra Heterocedástica  i.e.} \ \ \ \sigma^2_{j} \neq \sigma^2 \ \ \ \ \forall  \ \ j = 1,\ldots,n.\]
 
 El procedimiento se basa en calcular los residuales estandarizados al cuadrado \(\left( \tilde{e}^2_{j}=\frac{e^2_{j}}{\sigma^2}\right)\); Con ello se realiza una regresión lineal tomando como variable respuesta a cada \(\tilde{e}_{j}\) al cuadrado y con variables explicativas dentro del conjunto de variables exógenas Z:
 
-\[\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1}+ \ldots + \gamma_{n}Z_{n}\]
+\[\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1}+ \ldots + \gamma_{n}Z_{n}.\]
 
 Después se procede a calcular la suma de cuadrados de la regresión del modelo con los errores estandarizados divididos entre 2, \(\frac{SC_{reg}}{2},\) donde \(SC_{reg}=\underline{Y}'(H-\frac{1}{n}J)\underline{Y}'\); Breusch-Pagan descubrieron que este estadístico sigue asintóticamente una distribución ji-cuadrada con \(k\) grados de libertad, siendo \(k\) el número de variables del modelo. Por lo que la región de rechazo para \(H_0\) sucede cuando la estadística \(\frac{SC_{reg}}{2}\) es mayor al cuantil de una ji-cuadrada con \(k\) grados de libertad con un nivel de significancia \(\alpha\), es decir:
 
@@ -9574,12 +9574,12 @@ La prueba de White fue propuesta por Hilbert White en 1980, como alternativa a l
 
 El test contrasta como hipótesis nula el cumplimiento de homocedasticidad, por lo que se tiene la siguiente prueba de hipótesis.
 
-\[\textbf{H}_0: \  \mbox{Muestra homocedástica  i.e.}  \ \ \  \sigma^2_{j}=\sigma^2 \ \ \ \ vs  \ \ \ \
-\textbf{H}_a: \  \mbox{Muestra Heterocedástica i.e.}  \ \ \  \sigma^2_{j} \neq \sigma^2  \ \ \ \ \forall  \ j = 1,\ldots,n.\]
+\[\textbf{H}_0: \  \mbox{Muestra homocedástica  i.e.}  \ \ \  \sigma^2_{j}=\sigma^2 \ \ \ \ vs \]
+\[\textbf{H}_a: \  \mbox{Muestra Heterocedástica i.e.}  \ \ \  \sigma^2_{j} \neq \sigma^2  \ \ \ \ \forall  \ j = 1,\ldots,n.\]
 
 El procedimiento se basa en calcular los residuales estandarizados al cuadrado \(\left( \tilde{e}^2_{j}=\frac{e^2_{j}}{\sigma^2}\right)\); Con ello se realiza una regresión lineal tomando como variable respuesta a cada \(\tilde{e}_{j}\) al cuadrado y el producto cruzado de variables explicativas dentro del conjunto de variables exógenas Z:
 
-\[\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1i}+ \ldots + \gamma_{k}Z_{ki}+\gamma_{k+1}Z^2_{1k}+\ldots + \gamma_{k+k}Z_{1k}Z_{ki}+\gamma{k+k+1}Z_{2k}Z_{1k}+\ldots + \gamma{tk}Z^2_{kk}+\epsilon\]
+\[\tilde{e}_{j}^{2}=\gamma_{0}+\gamma_{1}Z_{1i}+ \ldots + \gamma_{k}Z_{ki}+\gamma_{k+1}Z^2_{1k}+\ldots + \gamma_{k+k}Z_{1k}Z_{ki}+\gamma{k+k+1}Z_{2k}Z_{1k}+\ldots + \gamma{tk}Z^2_{kk}+\epsilon.\]
 Del anterior ajuste de regresión se procede a calcular el coeficiente de determinación \(R^2=\frac{SC_{reg}}{SC_{T}}\) y sea n el tamaño de la muestra, entonces la estadística \(nR^2\) sigue asintóticamente una distribución ji-cuadrada con \(k\) grados de libertad, siendo \(k\) el número de variables del modelo original.Por lo que la región de rechazo para \(H_0\) sucede cuando la estadística \(nR^2\) es mayor al cuantil de una ji-cuadrada con \(k\) grados de libertad con un nivel de significancia \(\alpha\), es decir:
 
 \[nR^2>\chi^{2(\alpha}_{k}).\]
@@ -9848,7 +9848,8 @@ El estadístico de Durbin-Watson es una estadística de prueba que se utiliza pa
 
 Las hipótesis que se plantean en la prueba de Durbin-Watson es:
 
-\[\textbf{H}_0: \mbox{La autocorrelación de los residuales es igual a } 0 \ \ \  vs \ \ \  \textbf{H}_a: \mbox{La autocorrelación de los residuales es} \neq 0\]
+\[\textbf{H}_0: \mbox{La autocorrelación de los residuales es igual a } 0 \ \ \  vs \]
+\[ \textbf{H}_a: \mbox{La autocorrelación de los residuales es} \neq 0\]
 
 En R se puede hacer la prueba de Durbin Watson con el comando \textbf{dwtest()}.
 
@@ -9902,8 +9903,8 @@ Los valores atípicos, también conocidos por la terminología inglesa \(outlier
 
 Otra manera de detectar a los posibles valores atípicos es por medio de un análisis de residuales. Dicho análisis consiste en obtener los residuales, ya sean los estandarizados o estudentizados y observar si éstos son mayores o menores a comparación de un punto crítico con nivel de significancia \(\alpha\). Si se escoge trabajar con los residuales estandarizados sigue una distribución normal con media 0 y varianza \(\sigma^2\). Por lo que los residuales superiores o inferiores del punto crítico \(\pm Z_{1-\alpha/2}\) son considerados como un posible \(outlier\) con un nivel de significancia \(\alpha\). Por otra parte, si se decide trabajar con los residuales estudentizados entonces el punto crítico está determinado por los residuales que se encuentren por arriba o por abajo de la banda determinada por el cuantil \(\pm \ t_{1-\alpha/2,n-k-1}.\) Es decir, se tiene evidencia de un valor atípico con nivel de significancia \(\alpha\) cuando suceda alguna de las siguientes dos desigualdades:
 
-\[\mid d_{i} \mid \geq Z_{1-\alpha/2}\]
-\[\mid r_{i}\mid  \geq t_{1-\alpha/2,n-k-1}\]
+\[\mid d_{i} \mid \geq Z_{1-\alpha/2}.\]
+\[\mid r_{i}\mid  \geq t_{1-\alpha/2,n-k-1}.\]
 
 Continuando con el ejemplo anterior, los posibles valores atípicos pueden ser visualizados en la siguiente figura, con un nivel de confianza del 99\%, y usando los residuales estandarizados para el análisis.
 
@@ -9930,13 +9931,13 @@ Un método para identificar la influencia del modelo es a través de los puntos 
 
 Dado que el promedio de los valores leverage es \(\frac{\sum_{i=1}^{n}h_{ii}}{n},\) entonces cuando un punto sea mayor que el doble de la media de los puntos palanca, es decir, cuando se cumpla que:
 
-\[h_{ii} \geq  2 \ \frac{\sum_{i=1}^{n}h_{ii}}{n}\]
+\[h_{ii} \geq  2 \ \frac{\sum_{i=1}^{n}h_{ii}}{n}.\]
 
 Se puede concluir que dicha observación tiene un punto palanca muy grande. Por lo que se puede concluir que hay evidencia de que se trate de un punto influyente, sin embargo, para afirmar la anterior premisa es necesario el uso de otros métodos estadísticos, uno de ellos es la llamada distancia \textbf{Cook}.
 
 La estadística de \textbf{Cook} propone calcular la distancia cuadrática entre el modelo ajustado y el modelo ajustado sin la \(i-ésima\) observación. La cual puede expresarse como:
 
-\[C_{i}=\frac{\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)}{CM_{error}\sum_{i=1}^{n}h_{ii}} \ \ \ \ \  \forall \ i \in [1,n].\]
+\[C_{i}=\frac{\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)\left(\underline{\hat{Y}}-\underline{\hat{Y}}_{(i)}\right)}{CM_{error}\sum_{i=1}^{n}h_{ii}}; \ \ \ \ \  \forall \ i \in [1,n].\]
 
 Donde \(\underline{\hat{Y}}\) hace referencia al modelo ajustado de la forma \(X\underline{\hat{\beta}}\) mientras que \(\underline{\hat{Y}}_{(i)}\) hace referencia al modelo ajustado sin la i-ésima observación de forma \(X\underline{\hat{\beta}}_{(i)}\).
 
@@ -9953,7 +9954,7 @@ Antes de empezar, el siguiente tema ``Regresión Lineal Múltiple'', queremos ha
 El modelo de regresión lineal simple ajusta una variable explicativa a una variable respuesta; Por su parte, el \textbf{Modelo de regresión lineal múltiple} busca hallar el mejor ajuste con dos o más variables regresoras. Es decir, la variable respuesta \(\underline{Y}\) depende de \(k\) regresores de la forma:
 
 \[
-\underline{Y}=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots +\beta_{k}x_{k}+\epsilon
+\underline{Y}=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}+ \ldots +\beta_{k}x_{k}+\epsilon.
 \]
 
 En primera instancia no parece ser un gran cambio, sin embargo, es de gran importancia ya que de esta forma se puede estimar de una mejor manera un evento aleatorio, pues en general, un suceso no depende de sólo una acción o variable, sino que es resultado de una serie de diversos eventos o variables.
@@ -9977,7 +9978,7 @@ El ``scatterplot'' de arriba, se realizó con la base precargada en \(R\), \("tr
 
 Debido a que se trabaja con cierto error \(\epsilon\) en el ajuste de la regresión, es conveniente suponer que se cumplen lo siguientes supuestos:
 
-\textbf{Definición 3.1} (Supuestos del modelo de regresión múltiple)
+\textbf{Definición 3.1} (Supuestos del modelo de regresión múltiple).
 
 El error \(\epsilon_{i}\) en el modelo de regresión lineal múltiple cumple:
 
@@ -10036,7 +10037,7 @@ Y_{n}  & = & \beta_{0} & + & \beta_{1}x_{n1}& +& \beta_{2}x_{n2} & +& \cdots & +
 
 El anterior conjunto de igualdades puede ser denotado matricialmente mediante la siguiente igualdad:
 
-\[\underline{Y}=X\underline{\beta}+\underline{\epsilon}\]
+\[\underline{Y}=X\underline{\beta}+\underline{\epsilon}.\]
 
 donde:
 \[
@@ -10135,7 +10136,7 @@ Finalmente para definir correctamente el modelo es necesario realizar las siguie
 \begin{itemize}
 \tightlist
 \item
-  \(X_{n \times (k+1)}\) es el rango completo en la columna, es decir, \(X\) es de rango \(k+1\)
+  \(X_{n \times (k+1)}\) es el rango completo en la columna, es decir, \(X\) es de rango \(k+1.\)
 \end{itemize}
 
 Éste supuesto es importante ya que satisface que \(k+1\leq n\), es decir, \textbf{el máximo número de variables con el que se ajusta el modelo no puede ser superior al número de observaciones.}
@@ -10720,25 +10721,25 @@ En las secciones anteriores se obtuvieron, de manera puntual, las estimaciones d
 
 Para la construcción del intervalo de confianza para el parámetro desconocido \(\beta_{j}\), con \(j=0,1,\ldots,n\) se mantiene la hipótesis de que los errores se distribuyen como variables aleatorias normales con media cero y varianza \(I_{n}\sigma^2\), como consecuencia \(\underline{Y}\) se distribuye de forma normal, con media \(X\underline{\beta}\) y varianza \(\sigma^2 I_{n}\), es decir:
 
-\[\underline{Y} \sim \mathbf{N}(X\underline{\beta},\sigma^2 I_{n})\]
+\[\underline{Y} \sim \mathbf{N}(X\underline{\beta},\sigma^2 I_{n}).\]
 
 De acuerdo con (Montgomery, Peck y Vining, 2012), el estimador \(\underline{\hat{\beta}}\) por mínimos cuadrados es una combinación lineal de las observaciones, el cual también se distribuye con normalidad, con el vector medio \(\underline{\beta}\) y varianza \(\sigma^2(X'X)^{-1}\), lo cual vimos en el teorema 3.4, al igual que pudimos demostrar que el estimador es insesgado \(\mathbf{E}[\underline{\hat{\beta}}]=\underline{\beta}\) y varianza \(Var(\underline{\beta})=\sigma^2(X'X)^{-1}\) por lo que de manera conjunta \(\underline{\hat{\beta}}\) se distribuye con normalidad de la forma:
 
-\[\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X'X)^{-1})\]
+\[\underline{\hat{\beta}} \sim \mathbf{N}(\underline{\beta},\sigma^2(X'X)^{-1}).\]
 Esto implica que la distribución marginal de cualquier coeficiente de la regresión \(\hat{\beta}_{j}\) asimismo se distribuye normal, con media \(\beta_{j}\) y varianza \(\sigma^2 C_{(j+1)(j+1)}\) donde \(C_{(j+1)(j+1)}\) es el j-ésimo elemento de la diagonal de la matriz \((X'X)^{-1}\), es decir, \(\hat{\beta_{j}}\) tiene una distribución normal asociada de la forma:
 
-\[\hat{\beta_{j}} \sim \mathbf{N}(\beta_{j}, \sigma^2C_{(j+1)(j+1)}\]
+\[\hat{\beta_{j}} \sim \mathbf{N}(\beta_{j}, \sigma^2C_{(j+1)(j+1)}.\]
 
 Normalizando se tiene que:
 
-\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1)\]
+\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}\sim \mathbf{N}(0,1).\]
 Como \(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\), tenemos:
 
-\[\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}}{n-k-1}}} \sim t_{n-k-1}\]
+\[\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2C_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}}{n-k-1}}} \sim t_{n-k-1}.\]
 
 De esta forma se obtiene la cantidad pivotal para \(\beta_{j}\) sl simplificar la ecuación anterior
 
-\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}}\sim t_{n-k-1}\]
+\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\hat{\sigma}^2C_{(j+1)(j+1)}}}\sim t_{n-k-1},\]
 
 donde \(\hat{\sigma}^2=\frac{SC_{error}}{n-k-1}\). Por lo tanto el intervalo de confianza \(1-\alpha\) para \(\beta_{j}\) es:
 
@@ -10764,7 +10765,7 @@ Y así sucesivamente para \(j \in \mathbf{N}\) tal que \(j \in [0,k]\) donde \(k
 
 Para hacer inferencias sobre \(\sigma^2\) se hace notar la siguiente cantidad pivotal:
 
-\[\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}=\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}\]
+\[\frac{(n-k-1)\hat{\sigma}^2}{\sigma^2}=\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}.\]
 
 De esta manera, el intervalo de confianza \(1-\alpha\) queda definido de la siguiente manera:
 
@@ -10785,15 +10786,15 @@ La estimación del valor de \(Y\) a través de una \(X\) dada, se le conoce como
 
 De esta forma el valor ajustado de \(Y\) dado \(X=x^*\) es:
 
-\[\mathbf{E}[ \ Y \mid X=x^*]=x^*\underline{\beta}\]
+\[\mathbf{E}[ \ Y \mid X=x^*]=x^*\underline{\beta}.\]
 
 Al suponer que \(\underline{\beta}\) es un valor desconocido, se propone como estimador de \(\underline{\beta}\) al obtenido por máxima verosimilitud, así el valor estimado de \(Y\) sería:
 
-\[\mathbf{E}\left[\widehat{Y \mid X =} x^*\right]=x^*\underline{\hat{\beta}}\]
+\[\mathbf{E}\left[\widehat{Y \mid X =} x^*\right]=x^*\underline{\hat{\beta}}.\]
 
 El valor ajustado de \(Y\) dado \(X=x^*,\mathbf{E}\left[ \widehat{Y \mid X=} x^*\right],\) se denota por \(\hat{Y^*}\) para facilitar su tratamiento; además se observa que la esperanza y varianza están determinados por las siguientes igualdades, las cuales se demostrarán a continuación:
 
-\[\mathbf{E}[\hat{Y^*}]= x^*\underline{\beta} \ \ \ \ \ \ \ Var(\hat{Y^*})=\sigma^2 x^{*'}(X'X)^{-1}x^*\]
+\[\mathbf{E}[\hat{Y^*}]= x^*\underline{\beta} \ \ \ \ \ \ \ Var(\hat{Y^*})=\sigma^2 x^{*'}(X'X)^{-1}x^*.\]
 
 \textbf{Teorema 3.8} Sea \(\hat{Y^*}\), el valor de la respuesta media de \(Y\) en un determinado punto, de forma que \(\hat{Y^*}=x^*\underline{\hat{\beta}}\), entonces se cumple que:
 
@@ -10833,8 +10834,8 @@ Bajo el supuesto de normalidad se tiene que la respuesta media de \(Y\) en un de
 
 Al estandarizar para obtener la cantidad pivotal se obtiene:
 
-\[\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}\sim \mathbf{N}(0,1)\]
-Como \(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\), al dividir una distribución normal con una distribución \(\chi^2\), se obtiene una distribución \(t-Student\)
+\[\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}\sim \mathbf{N}(0,1).\]
+Como \(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^2_{n-k-1}\), al dividir una distribución normal con una distribución \(\chi^2\), se obtiene una distribución \(t-Student.\)
 
 \[\frac{\frac{\hat{Y^*}-x^*\underline{\beta}}{\sqrt{\sigma^2 x^{*'}(X'X)^{-1}x^*}}}{\sqrt{\frac{\hat{\sigma}^2}{\sigma^2}}} \sim t_{n-k-1}.\]
 
@@ -10885,9 +10886,9 @@ El valor esperado de \(\hat{Y}_{x}\) es igual a la esperanza de \(\hat{Y^*}\), d
 
 \textbf{Teorema 3.9} Sea \(x_{0}\) el vector que contiene los valores observados de las variables explicativas \(x_{i}\), \(i \in 1,\ldots,k\) en un determinado punto y sea \(\hat{Y}_{x}\) la predicción de un valor \(Y\) evaluado en el vector \(x_{0}\) de la forma \(\hat{Y}_{x}=x_{0}\underline{\hat{\beta}}+\epsilon\), en donde \(\epsilon \sim \mathbf{N}(0,\sigma^2)\), entonces se cumple que:
 
-\textbf{a)} \(\mathbf{E}[\hat{Y}_{x}]=x_{0}\underline{\beta}\)
+\textbf{a)} \(\mathbf{E}[\hat{Y}_{x}]=x_{0}\underline{\beta}.\)
 
-\textbf{b)} \(\textbf{Var}(\hat{Y}_{x})=\sigma^2\left(1+x'_{0}(X'X)^{-1}x_{0}\right)\)
+\textbf{b)} \(\textbf{Var}(\hat{Y}_{x})=\sigma^2\left(1+x'_{0}(X'X)^{-1}x_{0}\right).\)
 
 \textbf{Demostración:}
 
@@ -10963,11 +10964,11 @@ Dado que el estimador de \(\underline{\beta}\) es una combinación lineal, de ig
 \[\beta_{j} \sim \mathbf{N} \left(\beta_{j},\sigma^2(X'X)^{-1}_{(j+1)(j+1)}\right).\]
 Donde \((X'X)_{(j+1)(j+1)}\) es la entrada \(j+1\) entrada en la diagonal de la matriz \((X'X)\), además el subíndice \(j\) hace referencia al parámetro \(\beta_{j}\) al que se desea examinar mediante la prueba de hipótesis, normalizando la expresión anterior se tiene:
 
-\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}} \sim \mathbf{N}(0,1)\]
+\[\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}} \sim \mathbf{N}(0,1).\]
 
 Como \(\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2 \sim \chi^{2}_{n-k-1}\) tenemos:
 
-\[\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2}{n-k-1}}}\sim t_{n-k-1}\]
+\[\frac{\frac{\hat{\beta_{j}}-\beta_{j}}{\sqrt{\sigma^2(X'X)^{-1}_{(j+1)(j+1)}}}}{\sqrt{\frac{\frac{(n-k-1)}{\sigma^2}\hat{\sigma}^2}{n-k-1}}}\sim t_{n-k-1}.\]
 
 Por lo tanto, el estadístico deseado para probar que los tres posibles casos de \(\beta_{j}\), que sea igual, inferior o superior a un valor dado \(b\), es la siguiente:
 
@@ -11007,15 +11008,15 @@ De manera similar, se puede realizar la anterior prueba para cualquier \(\beta_{
 
 Para ésta parte necesitaremos las siguientes relaciones de probabilidad:
 
-\[\frac{n-k-1}{\sigma^2} \ \hat{\sigma}^2 \ \sim \chi^{2}_{n-k-1}\]
+\[\frac{n-k-1}{\sigma^2} \ \hat{\sigma}^2 \ \sim \chi^{2}_{n-k-1}.\]
 
-\[\frac{n-k-1}{\sigma^2} \left( \frac{SC_{error}}{n-k-1}\right) \ \sim \chi^{2}_{n-k-1}\]
+\[\frac{n-k-1}{\sigma^2} \left( \frac{SC_{error}}{n-k-1}\right) \ \sim \chi^{2}_{n-k-1}.\]
 
 \[\frac{SC_{error}}{\sigma^2} \ \sim \chi^{2}_{n-k-1}.\]
 
 Dado que se quiere realizar inferencias sobre \(\sigma^2\) definimos a la siguiente estadística \(S\) como:
 
-\[S=\frac{SC_{error}}{\sigma^2_{0}}\]
+\[S=\frac{SC_{error}}{\sigma^2_{0}}.\]
 Donde \(\sigma^2_{0}\) es el valor crítico que se desea poner a prueba, para verificar a través de las hipótesis, que la varianza del modelo \(\sigma^2\) es igual, superior o inferior al punto crítico \(\sigma^2_{0}\) propuesto.
 
 A continuación, tenemos las siguientes regiones de rechazo:
@@ -11078,11 +11079,11 @@ Además se sabe que el modelo de regresión lineal múltiple con errores normale
 
 \begin{itemize}
 \item
-  \(\frac{SC_{reg}}{\sigma^2} \sim \chi^2_{k+1}\)
+  \(\frac{SC_{reg}}{\sigma^2} \sim \chi^2_{k+1}.\)
 \item
-  \(\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}\)
+  \(\frac{SC_{error}}{\sigma^2} \sim \chi^2_{n-k-1}.\)
 \item
-  \(SC_{reg}\) es independiente a \(SC_{error}\)
+  \(SC_{reg}\) es independiente a \(SC_{error}.\)
 \end{itemize}
 
 Y podemos obtener los siguientes resultados:
@@ -11111,7 +11112,7 @@ De esta manera podemos reescribir lo anterior como:
 \[F=\frac{CM_{reg}}{CM_{error}} \sim F_{k,n-k-1}.\]
 Entonces se define a la región de rechazo con un nivel de significancia \(\alpha\) para:
 
-\[\textbf{H}_0: \beta_{1}=\beta_{2}=\beta_{3}=\ldots=\beta_{k}=0\]
+\[\textbf{H}_0: \beta_{1}=\beta_{2}=\beta_{3}=\ldots=\beta_{k}=0.\]
 \[F>F^{(\alpha)}_{k,n-k-1}.\]
 
 La forma en que se resume la información es mostrada en la siguiente tabla mejor conocida como:
@@ -11139,7 +11140,7 @@ El coeficiente de determinación con frecuencia se le asocia a la proporción de
 
 Se define el coeficiente de determinación del modelo de regresión como:
 
-\[R^2=\frac{SC_{reg}}{SC_{T}}=1-\frac{SC_{error}}{SC_{T}}\]
+\[R^2=\frac{SC_{reg}}{SC_{T}}=1-\frac{SC_{error}}{SC_{T}}.\]
 
 Los valores cercanos a 1 implican que la mayor parte de la cariabilidad de \(\underline{Y}\) está explicada por el modelo de regresión.
 
@@ -11260,21 +11261,21 @@ Ajustaremos un modelo de RLM considerando lo siguiente:
 \item
   Emplearemos el método \(\textbf{backward}.\)
 \item
-  El criterio de selección del \(mejor \ modelo\) estará basado en el \(\textbf{AIC}\)
+  El criterio de selección del \(mejor \ modelo\) estará basado en el \(\textbf{AIC}.\)
 \end{itemize}
 
 El método \textbf{backward} (eliminación hacia atrás) consiste en comenzar con un modelo que incluya las \(k\) variables regresoras y luego ir eliminando varible por variable de acuerdo a cierto criterio.
 
 El \textbf{AIC} (Criterio de información de Akaike) es una medida de la calidad de un modelo estadístico, considera la \(bondad \ de \ ajuste\) del modelo y su complejidad.
 
-\[AIC=-2log(L) +2* n_{parámetros}\]
+\[AIC=-2log(L) +2* n_{parámetros}.\]
 El mejor modelo es aquel que tenga un \(\textbf{AIC}\) pequeño.
 
 \textbf{Primer Paso: Relación entre Variables}
 
 Primero haremos las gráficas de dispersión correspondientes para ver el comportamiento de los datos.
 
-Diagramas de dispersion por parejas: Primero juntamos todas las variables explicativas y la dependiente en un solo objeto para hacer los diagramas de dispersion para cada pareja
+Diagramas de dispersion por parejas: Primero juntamos todas las variables explicativas y la dependiente en un solo objeto para hacer los diagramas de dispersion para cada pareja.
 
 \begin{Shaded}
 \begin{Highlighting}[]

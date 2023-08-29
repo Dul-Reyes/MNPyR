@@ -53,6 +53,7 @@ estadístico-de-prueba-5
 hipótesis-5
 ejemplo-5
 ejemplo-en-r-studio-5
+ejercicios-5
 intervalo-de-confianza-para-la-diferencia-entre-dos-medias
 datos-6
 supuestos-6
@@ -66,7 +67,7 @@ estadístico-de-prueba-6
 regla-de-decisión-16
 ejemplo-7
 ejemplo-en-r-studio-6
-ejercicios-5
+ejercicios-6
 prueba-de-igualdad-de-varianzas
 datos-8
 supuestos-8
@@ -74,7 +75,7 @@ estadístico-de-prueba-7
 hipótesis-7
 ejemplo-8
 ejemplo-en-r-studio-7
-ejercicios-6
+ejercicios-7
 prueba-para-más-de-dos-muestras
 datos-9
 hipótesis.
@@ -83,6 +84,7 @@ regla-de-decisión-20
 comparación-múltiple
 ejemplo-9
 ejemplo-en-r-studio-8
+ejercicios-8
 tablas-de-contingencia-de-2x2
 datos-10
 supuestos-9
@@ -97,7 +99,7 @@ estadístico-de-prueba-10
 hipótesis-9
 ejercicio
 ejemplo-en-r-studio-10
-ejercicios-7
+ejercicios-9
 tablas-de-contingecia-de-r-times-c
 datos-12
 supuestos-11
@@ -105,7 +107,7 @@ estadístico-de-prueba-11
 hipótesis-10
 ejercicio-1
 ejemplo-en-r-studio-11
-ejercicios-8
+ejercicios-10
 prueba-de-la-mediana
 datos-13
 supuestos-12
@@ -114,14 +116,14 @@ hipótesis-11
 comparación-múltiple-1
 ejercicio-2
 ejemplo-en-r-studio-12
-ejercicios-9
+ejercicios-11
 prueba-de-la-ji-cuadrada
 datos-14
 hipótesis-12
 estadístico-de-prueba-13
 ejemplo-11
 ejemplo-en-r-studio-13
-ejercicios-10
+ejercicios-12
 prueba-kolmogorov
 datos-15
 supuestos-13
@@ -130,7 +132,7 @@ hipótesis-13
 ejemplo-12
 ejemplo-en-r-studio-14
 otro-ejemplo-en-r
-ejercicios-11
+ejercicios-13
 prueba-kolmogorov-smirnov
 hipótesis-14
 caso-a-prueba-de-2-colas-2
@@ -142,7 +144,8 @@ hipótesis-15
 estadístico-de-prueba.
 ejemplo-14
 ejemplo-en-r-studio-15
-ejercicios-12
+otro-ejemplo-en-r-1
+ejercicios-14
 pueba-de-lilliefors-exponencial
 datos-17
 supuestos-15
@@ -150,7 +153,7 @@ hipótesis-16
 estadistico-de-prueba.
 ejemplo-15
 ejemplo-en-r-studio-16
-ejercicios-13
+ejercicios-15
 prueba-anderson-darling
 datos-18
 supuestos-16
